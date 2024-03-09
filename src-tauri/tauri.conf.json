@@ -21,9 +21,16 @@
                 "all": true
             },
             "shell": {
-                "all": false,
                 "execute": true,
-                "open": false
+                "sidecar": true,
+                "open": true,
+                "scope": [
+                    {
+                        "name": "bin/SII_Decrypt",
+                        "sidecar": true,
+                        "args": true
+                    }
+                ]
             }
         },
         "windows": [
@@ -46,7 +53,8 @@
                 "icons/128x128@2x.png",
                 "icons/icon.icns",
                 "icons/icon.ico"
-            ]
+            ],
+            "externalBin": ["bin/SII_Decrypt"]
         }
     }
 }

@@ -7,12 +7,9 @@ import {
     copyFile,
     BaseDirectory,
 } from "@tauri-apps/api/fs";
-import { resourceDir, join } from "@tauri-apps/api/path";
+import { join } from "@tauri-apps/api/path";
 import { Command } from "@tauri-apps/api/shell";
 import { convertFileSrc } from "@tauri-apps/api/tauri";
-
-const resourceDirPath = await resourceDir();
-const SII_PATH = resourceDirPath + "/utils/SII_Decrypt.exe";
 
 const getProfileImage = async (path: string): Promise<string | undefined> => {
     try {
@@ -28,18 +25,16 @@ export const arrFile = async (dir: string, fileName: string) => {
     return file.split("\r\n");
 };
 
-export const descriptFiles = async (dirFileStr: string, fileName: string) => {
+export const descriptFiles = async (savePath: string) => {
     try {
-        // se tiene que crear un backup y descriptar el archivo
-        await copyFile(
-            `${dirFileStr}/${fileName}`,
-            `${dirFileStr}/${fileName}.bak`
-        );
+        const gameSiiJoin = await join(savePath, "game.sii");
+        await copyFile(gameSiiJoin, `${savePath}/game.sii.bak`);
 
-        const cmdStr = `${SII_PATH} ${dirFileStr}/${fileName} ${dirFileStr}/${fileName}`;
-        const command = new Command(SII_PATH, [cmdStr]);
-        await command.execute();
+        const command = Command.sidecar("bin/SII_Decrypt", `${gameSiiJoin}`);
+        const res = await command.execute();
 
+        if (res.code === null) return false;
+        if (res.code === -1) return false;
         return true;
     } catch (err) {
         return false;
@@ -52,6 +47,7 @@ export const readProfileNames = async (): Promise<Array<Profile>> => {
             dir: BaseDirectory.Document,
             recursive: true,
         });
+
         const profileNames = dirProfiles.map(async (profile) => {
             try {
                 const profilesSaves = await readDir(profile.path + "/save", {
@@ -72,10 +68,13 @@ export const readProfileNames = async (): Promise<Array<Profile>> => {
                 return null;
             }
         });
+
         const resolvePromisProfiles = await Promise.all(profileNames);
+
         const filterNull = resolvePromisProfiles.filter(
             (profile) => profile !== null
         ) as Profile[];
+
         return filterNull;
     } catch (err) {
         return [];
