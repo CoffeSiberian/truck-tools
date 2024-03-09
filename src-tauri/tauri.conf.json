@@ -2,16 +2,29 @@
     "build": {
         "beforeDevCommand": "npm run dev",
         "beforeBuildCommand": "npm run build",
+        "withGlobalTauri": true,
         "devPath": "http://localhost:1420",
         "distDir": "../dist"
     },
     "package": {
         "productName": "trucktools",
-        "version": "0.0.0"
+        "version": "0.1.0"
     },
     "tauri": {
         "allowlist": {
-            "all": false
+            "all": false,
+            "fs": {
+                "all": true,
+                "scope": ["$DOCUMENT/**"]
+            },
+            "path": {
+                "all": true
+            },
+            "shell": {
+                "all": false,
+                "execute": true,
+                "open": false
+            }
         },
         "windows": [
             {
