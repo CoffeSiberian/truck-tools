@@ -1,10 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import defaultUser from "../static/img/defaultUser.svg";
-import {
-    Dropdown,
-    DropdownChangeEvent,
-    DropdownProps,
-} from "primereact/dropdown";
+import defaultUser from "../static/icons/defaultUser.svg";
 import { Profile } from "../types/SaveGameTypes";
 import { readProfileNames } from "../utils/fileEdit";
 
@@ -23,7 +18,7 @@ const ListProfiles = ({ setProfile }: ListProfilesProps) => {
     const [SavesList, setSavesList] = useState<Array<String>>([]);
 
     const loadDirectory = async () => {
-        const prof = await readProfileNames("readProfileNames");
+        const prof = await readProfileNames();
         setProfilesList(prof);
     };
 
@@ -42,20 +37,13 @@ const ListProfiles = ({ setProfile }: ListProfilesProps) => {
         }
     }, []);
 
-    const selectedProfilesTemplate = (
-        option: Profile,
-        props: DropdownProps
-    ) => {
+    const selectedProfilesTemplate = (option: Profile) => {
         if (option) {
             return (
                 <div className="flex items-center align-items-center mr-3">
                     <img
                         alt={option.name}
-                        src={
-                            option.avatar
-                                ? `data:image/png;base64, ${option.avatar}`
-                                : defaultUser
-                        }
+                        src={option.avatar ? `${option.avatar}` : defaultUser}
                         className={`mr-2 flag flag-${option.name.toLowerCase()}`}
                         style={{ width: "25px" }}
                     />
@@ -63,8 +51,6 @@ const ListProfiles = ({ setProfile }: ListProfilesProps) => {
                 </div>
             );
         }
-
-        return <span>{props.placeholder}</span>;
     };
 
     const ProfilesOptionTemplate = (option: Profile) => {
@@ -72,11 +58,7 @@ const ListProfiles = ({ setProfile }: ListProfilesProps) => {
             <div className="flex items-center align-items-center">
                 <img
                     alt={option.name}
-                    src={
-                        option.avatar
-                            ? `data:image/png;base64, ${option.avatar}`
-                            : defaultUser
-                    }
+                    src={option.avatar}
                     className={`mr-2 flag flag-${option.name.toLowerCase()}`}
                     style={{ width: "50px" }}
                 />
@@ -85,7 +67,7 @@ const ListProfiles = ({ setProfile }: ListProfilesProps) => {
         );
     };
 
-    const selectedSavesTemplate = (option: string, props: DropdownProps) => {
+    const selectedSavesTemplate = (option: string) => {
         if (option) {
             return (
                 <div className="flex align-items-center">
@@ -93,8 +75,6 @@ const ListProfiles = ({ setProfile }: ListProfilesProps) => {
                 </div>
             );
         }
-
-        return <span>{props.placeholder}</span>;
     };
 
     const SavesOptionTemplate = (option: string) => {
@@ -105,37 +85,6 @@ const ListProfiles = ({ setProfile }: ListProfilesProps) => {
         );
     };
 
-    return (
-        <div className="flex gap-3 justify-content-center">
-            <Dropdown
-                value={selectedProfile}
-                onChange={(e: DropdownChangeEvent) => onClickProfile(e.value)}
-                options={ProfilesList}
-                optionLabel="name"
-                placeholder="Select Profile"
-                filter
-                valueTemplate={selectedProfilesTemplate}
-                itemTemplate={ProfilesOptionTemplate}
-                className="max-w-xs w-full"
-            />
-            {selectedProfile ? (
-                <Dropdown
-                    value={selectedSave}
-                    onChange={(e: DropdownChangeEvent) =>
-                        setSelectedSave(e.value)
-                    }
-                    options={SavesList}
-                    optionLabel="name"
-                    placeholder="Select Save"
-                    filter
-                    valueTemplate={selectedSavesTemplate}
-                    itemTemplate={SavesOptionTemplate}
-                    className="max-w-xs w-full"
-                />
-            ) : (
-                <></>
-            )}
-        </div>
-    );
+    return <div className="flex gap-3 justify-content-center"></div>;
 };
 export default ListProfiles;

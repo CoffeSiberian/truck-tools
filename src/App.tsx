@@ -1,17 +1,26 @@
-import { Button } from "primereact/button";
-import { documentDir } from "@tauri-apps/api/path";
-import { readProfileNames } from "./utils/fileEdit";
+import { join, documentDir } from "@tauri-apps/api/path";
+import { descriptFiles } from "./utils/fileEdit";
+
+import Home from "./routes/pages/Home";
 
 const App = () => {
     const test = async () => {
-        const dirDocs = await documentDir();
-        const profiles = await readProfileNames();
-        // console.log(profiles);
+        const documentDirString = await documentDir();
+        const dir = await join(
+            documentDirString,
+            "Euro Truck Simulator 2",
+            "profiles",
+            "536962657269616E5F4D6F64735F43617A79",
+            "save",
+            "2"
+        );
+
+        const profiles = await descriptFiles(dir);
     };
     return (
         <div>
-            <h1>Welcome to Tauri!</h1>
-            <Button onClick={test} label="Click Me" />
+            <Home />
+            <button onClick={test} />
         </div>
     );
 };

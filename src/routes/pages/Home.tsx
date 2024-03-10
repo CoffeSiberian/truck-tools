@@ -2,7 +2,12 @@ import SelectProfile from "../../components/SelectProfile";
 import RenderOptions from "../../routes/pages/RenderOptions";
 
 const Home = () => {
-    return <></>;
+    return (
+        <>
+            <RenderOptions />
+            <SelectProfile />
+        </>
+    );
 };
 
 export default Home;

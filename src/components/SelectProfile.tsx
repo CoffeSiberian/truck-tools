@@ -1,9 +1,8 @@
 import { useState } from "react";
-import defaultUser from "../static/img/defaultUser.svg";
-import { useDarkMode } from "../hooks/DarkModeContex";
+import defaultUser from "../static/icons/defaultUser.svg";
+import { useDarkMode } from "../hooks/useDarkModeContex";
 import ListProfiles from "./ListProfiles";
-import { Typography } from "@mui/material";
-import { Profile } from "renderer/types/SaveGameTypes";
+import { Profile } from "../types/SaveGameTypes";
 
 interface renderProfile {
     profile: Profile;
@@ -22,7 +21,7 @@ const SelectProfile = () => {
                         className="rounded-lg w-[96px] h-[96px] overflow-hidden object-cover drop-shadow-2xl"
                         src={
                             userProfile.profile.avatar
-                                ? `data:image/png;base64, ${userProfile.profile.avatar}`
+                                ? `${userProfile.profile.avatar}`
                                 : defaultUser
                         }
                         alt={
@@ -33,14 +32,9 @@ const SelectProfile = () => {
                     />
                 </div>
                 <div className="flex p-3 items-center align-items-center">
-                    <Typography
-                        color={themeTatailwind.primary.color}
-                        variant="h5"
-                    >
-                        {userProfile.profile.name
-                            ? userProfile.profile.name
-                            : "Not found"}
-                    </Typography>
+                    {userProfile.profile.name
+                        ? userProfile.profile.name
+                        : "Not found"}
                 </div>
             </div>
         );
@@ -51,13 +45,7 @@ const SelectProfile = () => {
             <div
                 className={`flex flex-col ${themeTatailwind.secondary.main} max-w-lg w-full items-center rounded-lg border-2 border-transparent ${themeTatailwind.primary.border_color} shadow-2xl gap-3 m-4 p-4`}
             >
-                <Typography
-                    variant="h5"
-                    className="flex justify-center"
-                    color={themeTatailwind.primary.color}
-                >
-                    Select Profile
-                </Typography>
+                Select Profile
                 {Profile ? renderProfile(Profile) : <></>}
                 <ListProfiles setProfile={setProfile} />
             </div>

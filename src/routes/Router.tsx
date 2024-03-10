@@ -6,7 +6,7 @@ const RoutesPage = () => {
         <Router>
             <Routes>
                 <Route
-                    path="/index.html"
+                    path="/"
                     element={
                         <>
                             <Home />
