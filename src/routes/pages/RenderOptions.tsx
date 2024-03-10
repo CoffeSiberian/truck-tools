@@ -1,19 +1,19 @@
 import { useState } from "react";
 import { useDarkMode } from "../../hooks/useDarkModeContex";
-import testImg from "../../static/img/testimg.webp";
-import {
-    Card,
-    CardHeader,
-    CardBody,
-    CardFooter,
-    Image,
-    Button,
-} from "@nextui-org/react";
+import { Tabs, Tab } from "@nextui-org/react";
 
 import TrailersOptions from "./TrailersOptions";
 
+// icons
+import {
+    IconTruck,
+    IconUserCircle,
+    IconSettings,
+    IconPackages,
+} from "@tabler/icons-react";
+
 const RenderOptions = () => {
-    const [activeIndex, setActiveIndex] = useState<number>(0);
+    const [activeIndex, setActiveIndex] = useState<string | null>(null);
     const { themeTatailwind } = useDarkMode();
 
     const styleBox = `flex flex-col ${themeTatailwind.secondary.main} place-self-center max-w-xs w-full rounded-lg border-2 border-transparent ${themeTatailwind.primary.border_color} shadow-2xl gap-1 mt-4 p-4`;
@@ -21,48 +21,51 @@ const RenderOptions = () => {
     const nexTime = <div className={styleBox}>Available soon</div>;
 
     const items = [
-        { label: "Trailers", image: testImg },
-        { label: "Truck", image: testImg },
-        { label: "Profile", image: testImg },
-        { label: "Settings", image: testImg },
+        { label: "Trailers", jsx: <TrailersOptions />, icon: <IconPackages /> },
+        { label: "Truck", jsx: nexTime, icon: <IconTruck /> },
+        { label: "Profile", jsx: nexTime, icon: <IconUserCircle /> },
+        { label: "Settings", jsx: nexTime, icon: <IconSettings /> },
     ];
 
     const renderCart = (
-        key: number,
         name: string,
-        img: string
+        icon: JSX.Element | null
     ): JSX.Element => {
         return (
-            <Card key={key} className="py-4">
-                <CardHeader className="overflow-visible py-2">
-                    <Image
-                        alt="Card background"
-                        className="object-cover rounded-xl"
-                        src={img}
-                        width={300}
-                    />
-                </CardHeader>
-                <CardBody className="pb-0 pt-2 px-4 flex-col items-center">
-                    <h4 className="font-bold text-large">{name}</h4>
-                </CardBody>
-                <CardFooter className="flex-col items-center">
-                    <Button onClick={() => setActiveIndex(key)}>Select</Button>
-                </CardFooter>
-            </Card>
+            <Tab
+                title={
+                    <div className="flex items-center space-x-2">
+                        {icon}
+                        <span>{name}</span>
+                    </div>
+                }
+                key={name}
+            />
         );
     };
 
     return (
-        <div className="flex row justify-center p-3">
-            <div className="grid grid-cols-2 gap-5">
-                {items.map((item, index) => {
-                    return renderCart(index, item.label, item.image);
+        <div className="flex flex-col items-center p-3">
+            <Tabs
+                onSelectionChange={(index) => {
+                    setActiveIndex(index as string);
+                }}
+                selectedKey={activeIndex}
+                size="lg"
+                aria-label="options"
+                variant="bordered"
+            >
+                {items.map((item) => {
+                    return renderCart(item.label, item.icon);
                 })}
-            </div>
-            {activeIndex === 0 && <TrailersOptions />}
-            {activeIndex === 1 && nexTime}
-            {activeIndex === 2 && nexTime}
-            {activeIndex === 3 && nexTime}
+            </Tabs>
+            {items.map((item, index) => {
+                return (
+                    <div key={index}>
+                        {activeIndex === item.label && item.jsx}
+                    </div>
+                );
+            })}
         </div>
     );
 };
