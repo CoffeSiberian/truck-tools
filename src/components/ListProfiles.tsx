@@ -1,7 +1,11 @@
 import { useState, useEffect, useRef } from "react";
-import defaultUser from "../static/icons/defaultUser.svg";
 import { Profile } from "../types/SaveGameTypes";
 import { readProfileNames } from "../utils/fileEdit";
+
+import { Select, SelectItem, Avatar } from "@nextui-org/react";
+
+// icons
+import { IconUserCircle } from "@tabler/icons-react";
 
 interface ListProfilesProps {
     setProfile: (profile: { profile: Profile }) => void;
@@ -10,8 +14,8 @@ interface ListProfilesProps {
 const ListProfiles = ({ setProfile }: ListProfilesProps) => {
     const loaded = useRef(false);
 
-    const [selectedProfile, setSelectedProfile] = useState<Profile | null>(
-        null
+    const [selectedProfile, setSelectedProfile] = useState<Profile | undefined>(
+        undefined
     );
     const [selectedSave, setSelectedSave] = useState<String | null>(null);
     const [ProfilesList, setProfilesList] = useState<Array<Profile>>([]);
@@ -22,11 +26,16 @@ const ListProfiles = ({ setProfile }: ListProfilesProps) => {
         setProfilesList(prof);
     };
 
-    const onClickProfile = (profile: Profile) => {
-        setProfile({ profile: profile });
-        setSelectedProfile(profile);
-        setSavesList(profile.saves);
-        setSelectedSave(profile.saves[0]);
+    const onClickProfile = (profileHex: string) => {
+        if (!profileHex) return;
+        const profileFind = ProfilesList.find(
+            (p) => p.hex === profileHex
+        ) as Profile;
+
+        setProfile({ profile: profileFind });
+        setSelectedProfile(profileFind);
+        setSavesList(profileFind.saves);
+        setSelectedSave(profileFind.saves[0]);
     };
 
     useEffect(() => {
@@ -37,54 +46,46 @@ const ListProfiles = ({ setProfile }: ListProfilesProps) => {
         }
     }, []);
 
-    const selectedProfilesTemplate = (option: Profile) => {
-        if (option) {
-            return (
-                <div className="flex items-center align-items-center mr-3">
-                    <img
-                        alt={option.name}
-                        src={option.avatar ? `${option.avatar}` : defaultUser}
-                        className={`mr-2 flag flag-${option.name.toLowerCase()}`}
-                        style={{ width: "25px" }}
-                    />
-                    <div>{option.name}</div>
-                </div>
-            );
-        }
-    };
-
-    const ProfilesOptionTemplate = (option: Profile) => {
-        return (
-            <div className="flex items-center align-items-center">
-                <img
-                    alt={option.name}
-                    src={option.avatar}
-                    className={`mr-2 flag flag-${option.name.toLowerCase()}`}
-                    style={{ width: "50px" }}
-                />
-                <div>{option.name}</div>
-            </div>
-        );
-    };
-
-    const selectedSavesTemplate = (option: string) => {
-        if (option) {
-            return (
-                <div className="flex align-items-center">
-                    <div>{option}</div>
-                </div>
-            );
-        }
-    };
-
-    const SavesOptionTemplate = (option: string) => {
-        return (
-            <div className="flex align-items-center">
-                <div>{option}</div>
-            </div>
-        );
-    };
-
-    return <div className="flex gap-3 justify-content-center"></div>;
+    return (
+        <div className="flex flex-col w-full items-center">
+            <Select
+                items={ProfilesList}
+                selectedKeys={
+                    selectedProfile ? [selectedProfile.hex] : undefined
+                }
+                onChange={(e) => onClickProfile(e.target.value)}
+                label="Profiles"
+                placeholder="Select a profile"
+                labelPlacement="inside"
+                className="max-w-xs"
+                variant="flat"
+                size="md"
+            >
+                {(profile) => (
+                    <SelectItem key={profile.hex} textValue={profile.name}>
+                        <div className="flex gap-2 items-center">
+                            <Avatar
+                                alt={profile.avatar}
+                                className="flex-shrink-0"
+                                size="sm"
+                                src={profile.avatar}
+                                showFallback
+                                fallback={<IconUserCircle />}
+                            />
+                            <div className="flex flex-col">
+                                <span className="text-small">
+                                    {profile.name}
+                                </span>
+                                <span className="text-tiny text-default-400">
+                                    {profile.saves.length} saves
+                                </span>
+                            </div>
+                        </div>
+                    </SelectItem>
+                )}
+            </Select>
+        </div>
+    );
 };
+
 export default ListProfiles;

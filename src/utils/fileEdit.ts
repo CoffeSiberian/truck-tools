@@ -4,6 +4,7 @@ import { Profile } from "../types/SaveGameTypes";
 import {
     readTextFile,
     readDir,
+    exists,
     copyFile,
     BaseDirectory,
 } from "@tauri-apps/api/fs";
@@ -12,12 +13,11 @@ import { Command } from "@tauri-apps/api/shell";
 import { convertFileSrc } from "@tauri-apps/api/tauri";
 
 const getProfileImage = async (path: string): Promise<string | undefined> => {
-    try {
-        const imgPath = await join(path, "avatar.png");
-        return convertFileSrc(imgPath);
-    } catch (err) {
-        return undefined;
-    }
+    const imgPath = await join(path, "avatar.png");
+    const verifyExist = await exists(imgPath);
+
+    if (!verifyExist) return undefined;
+    return convertFileSrc(imgPath);
 };
 
 export const arrFile = async (dir: string, fileName: string) => {
