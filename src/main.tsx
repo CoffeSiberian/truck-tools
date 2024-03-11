@@ -9,9 +9,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>
         <NextUIProvider>
             <DarkMode>
-                <main className="dark text-foreground bg-background min-h-screen">
-                    <App />
-                </main>
+                <App />
             </DarkMode>
         </NextUIProvider>
     </React.StrictMode>
