@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useProfileContex } from "../hooks/useProfileContex";
 import ListProfiles from "./ListProfiles";
 import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 
@@ -8,31 +8,25 @@ import { Profile } from "../types/SaveGameTypes";
 // icons
 import { IconUserCircle } from "@tabler/icons-react";
 
-interface renderProfile {
-    profile: Profile;
-}
-
 const SelectProfile = () => {
-    const [Profile, setProfile] = useState<renderProfile | null>(null);
+    const { selectedProfile } = useProfileContex();
 
-    const renderProfile = (userProfile: renderProfile) => {
+    const renderProfile = (profileInfo: Profile) => {
         return (
             <div className="flex flex-row p-3">
                 <div className="flex p-3 justify-center items-center">
-                    {userProfile.profile.avatar ? (
+                    {profileInfo.avatar ? (
                         <Image
                             className="rounded-lg w-[96px] h-[96px] overflow-hidden object-cover drop-shadow-2xl"
-                            src={userProfile.profile.avatar}
-                            alt={userProfile.profile.name}
+                            src={profileInfo.avatar}
+                            alt={profileInfo.name}
                         />
                     ) : (
                         <IconUserCircle height={96} width={96} />
                     )}
                 </div>
                 <div className="flex p-3 items-center align-items-center">
-                    {userProfile.profile.name
-                        ? userProfile.profile.name
-                        : "Not found"}
+                    {profileInfo.name ? profileInfo.name : "Not found"}
                 </div>
             </div>
         );
@@ -45,8 +39,8 @@ const SelectProfile = () => {
                     <h1>Select Profile</h1>
                 </CardHeader>
                 <CardBody className="flex flex-col items-center">
-                    {Profile ? renderProfile(Profile) : <></>}
-                    <ListProfiles setProfile={setProfile} />
+                    {selectedProfile ? renderProfile(selectedProfile) : <></>}
+                    <ListProfiles />
                 </CardBody>
             </Card>
         </div>

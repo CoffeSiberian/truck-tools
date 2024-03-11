@@ -1,3 +1,5 @@
+import { Profile } from "./SaveGameTypes";
+
 export interface DarkModeTypes {
     primary: {
         main: string;
@@ -11,6 +13,14 @@ export interface DarkModeTypes {
         color: string;
         border_color: string;
     };
+}
+
+export interface ProfileTypesContext {
+    selectedProfile?: Profile;
+    selectedSave?: string;
+    listProfiles?: Array<Profile>;
+    setProfile: (profile: Profile) => void;
+    setSave: (save: string) => void;
 }
 
 export interface DarkModeContextTypes {
