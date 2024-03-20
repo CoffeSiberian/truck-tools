@@ -25,6 +25,8 @@ const ListProfiles = () => {
     return (
         <div className="flex flex-col w-full items-center">
             <Select
+                isDisabled={listProfiles ? true : false}
+                errorMessage={listProfiles ? "No profiles found" : undefined}
                 items={listProfiles}
                 selectedKeys={
                     selectedProfile ? [selectedProfile.hex] : undefined
