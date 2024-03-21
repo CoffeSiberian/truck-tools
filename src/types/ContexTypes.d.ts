@@ -18,7 +18,7 @@ export interface DarkModeTypes {
 export interface ProfileTypesContext {
     selectedProfile?: Profile;
     selectedSave?: string;
-    listProfiles?: Array<Profile>;
+    listProfiles: Array<Profile>;
     setProfile: (profile: Profile) => void;
     setSave: (save: string) => void;
 }
