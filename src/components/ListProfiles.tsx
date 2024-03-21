@@ -7,8 +7,7 @@ import { Select, SelectItem, Avatar } from "@nextui-org/react";
 import { IconUserCircle } from "@tabler/icons-react";
 
 const ListProfiles = () => {
-    const { listProfiles, selectedProfile, setProfile, setSave } =
-        useProfileContex();
+    const { listProfiles, selectedProfile, setProfile } = useProfileContex();
 
     const onClickProfile = (profileHex: string) => {
         if (!profileHex) return;
@@ -19,7 +18,6 @@ const ListProfiles = () => {
         ) as Profile;
 
         setProfile(profileFind);
-        setSave(profileFind.saves[0]);
     };
 
     return (

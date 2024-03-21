@@ -42,8 +42,10 @@ export const descriptFiles = async (savePath: string) => {
 };
 
 export const readProfileNames = async (): Promise<Array<Profile>> => {
+    const reDirProfiles = "Euro Truck Simulator 2/profiles";
+
     try {
-        const dirProfiles = await readDir("Euro Truck Simulator 2/profiles", {
+        const dirProfiles = await readDir(reDirProfiles, {
             dir: BaseDirectory.Document,
             recursive: true,
         });
@@ -60,7 +62,9 @@ export const readProfileNames = async (): Promise<Array<Profile>> => {
                 const profileObject = {
                     name: Buffer.from(profile.name!, "hex").toString("utf-8"),
                     hex: profile.name,
-                    saves: profilesSaves.map((save) => save.name),
+                    saves: profilesSaves.map((save) => {
+                        return { name: save.name, dir: save.path };
+                    }),
                     avatar: profileImg,
                 };
                 return profileObject;

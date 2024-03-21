@@ -1,6 +1,7 @@
 import { useProfileContex } from "../hooks/useProfileContex";
 import ListProfiles from "./ListProfiles";
-import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
+import ListSaves from "./ListSaves";
+import { Card, CardBody, Image } from "@nextui-org/react";
 
 // types
 import { Profile } from "../types/SaveGameTypes";
@@ -33,14 +34,12 @@ const SelectProfile = () => {
     };
 
     return (
-        <div className="flex flex-col items-center mt-auto mb-4">
-            <Card className="flex py-4 w-full max-w-md">
-                <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
-                    <h1>Select Profile</h1>
-                </CardHeader>
-                <CardBody className="flex flex-col items-center">
+        <div className="flex flex-col items-center mt-auto mb-2">
+            <Card className="flex py-2 w-full max-w-4xl">
+                <CardBody className="flex flex-row content-between">
                     {selectedProfile ? renderProfile(selectedProfile) : <></>}
                     <ListProfiles />
+                    <ListSaves />
                 </CardBody>
             </Card>
         </div>
