@@ -12,30 +12,6 @@ export const useDarkMode = (): DarkModeContextTypes => {
 export const DarkMode = ({ children }: any) => {
     const [darkMode, setDarkModeState] = useState<boolean>(true);
 
-    /*
-    const darkMaterial = {
-        palette: {
-            primary: {
-                main: "#404040",
-            },
-            secondary: {
-                main: "#f8d062",
-            },
-        },
-    };
-
-    const lightMaterial = {
-        palette: {
-            primary: {
-                main: "#3ca9d0",
-            },
-            secondary: {
-                main: "#c05212",
-            },
-        },
-    };
-    */
-
     const darkTailwind: DarkModeTypes = {
         primary: {
             main: "bg-neutral-900",
