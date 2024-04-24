@@ -10,25 +10,25 @@
         "tauri": "tauri"
     },
     "dependencies": {
-        "@nextui-org/react": "^2.2.10",
-        "@tabler/icons-react": "^3.1.0",
-        "@tauri-apps/api": "^1.5.3",
+        "@nextui-org/react": "^2.3.5",
+        "@tabler/icons-react": "^3.2.0",
+        "@tauri-apps/api": "^1.5.4",
         "buffer": "^6.0.3",
-        "framer-motion": "^11.0.24",
+        "framer-motion": "^11.1.7",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "react-router-dom": "^6.22.3"
+        "react-router-dom": "^6.23.0"
     },
     "devDependencies": {
         "@tauri-apps/cli": "^1.5.11",
-        "@types/node": "^20.12.2",
-        "@types/react": "^18.2.73",
-        "@types/react-dom": "^18.2.23",
+        "@types/node": "^20.12.7",
+        "@types/react": "^18.2.79",
+        "@types/react-dom": "^18.2.25",
         "@vitejs/plugin-react": "^4.2.1",
         "autoprefixer": "^10.4.19",
         "postcss": "^8.4.38",
         "tailwindcss": "^3.4.3",
-        "typescript": "^5.4.3",
-        "vite": "^5.2.7"
+        "typescript": "^5.4.5",
+        "vite": "^5.2.10"
     }
 }
