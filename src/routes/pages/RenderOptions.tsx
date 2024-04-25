@@ -5,6 +5,7 @@ import { Tabs, Tab } from "@nextui-org/react";
 // components
 import TrailersOptions from "./TrailersOptions/TrailersOptions";
 import TrucksOptions from "./TrucksOptions/TrucksOptions";
+import ProfilesOptions from "./ProfilesOptions/ProfilesOptions";
 
 // icons
 import {
@@ -25,7 +26,11 @@ const RenderOptions = () => {
     const items = [
         { label: "Trailers", jsx: <TrailersOptions />, icon: <IconPackages /> },
         { label: "Truck", jsx: <TrucksOptions />, icon: <IconTruck /> },
-        { label: "Profile", jsx: nexTime, icon: <IconUserCircle /> },
+        {
+            label: "Profile",
+            jsx: <ProfilesOptions />,
+            icon: <IconUserCircle />,
+        },
         { label: "Settings", jsx: nexTime, icon: <IconSettings /> },
     ];
 
