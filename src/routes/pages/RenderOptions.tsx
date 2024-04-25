@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDarkMode } from "../../hooks/useDarkModeContex";
 import { Tabs, Tab } from "@nextui-org/react";
 
-import TrailersOptions from "./TrailersOptions";
+import TrailersOptions from "./TrailersOptions/TrailersOptions";
 
 // icons
 import {
