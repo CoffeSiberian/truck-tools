@@ -7,25 +7,31 @@ import { IconPencil } from "@tabler/icons-react";
 // images
 import testImage from "../../../static/img/testimg.webp";
 
-const TrailersOptions = () => {
+const TrucksOptions = () => {
     const items = [
         {
             id: "1",
-            title: "Modify Load",
-            description: "Modify the load of the trailer",
+            title: "Repair all Trucks",
+            description: "Repair all trucks in the garage",
             image: testImage,
         },
         {
             id: "2",
-            title: "Unlock Current Trailer",
-            description: "Unlock the current trailer",
+            title: "Infinite fuel in the current truck",
+            description: "Infinite fuel in the current truck",
+            image: testImage,
+        },
+        {
+            id: "3",
+            title: "Fill fuel of all trucks",
+            description: "Fill fuel in current truck",
             image: testImage,
         },
     ];
 
     return (
         <div className="flex gap-4 flex-col">
-            <div className="grid grid-cols-2 my-4 gap-4">
+            <div className="grid grid-cols-3 my-4 gap-4">
                 {items.map((item) => {
                     return (
                         <OptionCard
@@ -51,4 +57,4 @@ const TrailersOptions = () => {
     );
 };
 
-export default TrailersOptions;
+export default TrucksOptions;

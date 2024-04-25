@@ -2,7 +2,9 @@ import { useState } from "react";
 import { useDarkMode } from "../../hooks/useDarkModeContex";
 import { Tabs, Tab } from "@nextui-org/react";
 
+// components
 import TrailersOptions from "./TrailersOptions/TrailersOptions";
+import TrucksOptions from "./TrucksOptions/TrucksOptions";
 
 // icons
 import {
@@ -22,7 +24,7 @@ const RenderOptions = () => {
 
     const items = [
         { label: "Trailers", jsx: <TrailersOptions />, icon: <IconPackages /> },
-        { label: "Truck", jsx: nexTime, icon: <IconTruck /> },
+        { label: "Truck", jsx: <TrucksOptions />, icon: <IconTruck /> },
         { label: "Profile", jsx: nexTime, icon: <IconUserCircle /> },
         { label: "Settings", jsx: nexTime, icon: <IconSettings /> },
     ];

@@ -10,7 +10,7 @@
         "tauri": "tauri"
     },
     "dependencies": {
-        "@nextui-org/react": "^2.3.5",
+        "@nextui-org/react": "^2.3.6",
         "@tabler/icons-react": "^3.2.0",
         "@tauri-apps/api": "^1.5.4",
         "buffer": "^6.0.3",

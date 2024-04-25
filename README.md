@@ -10,7 +10,6 @@
 #### Trucks
 
 -   [] Repair all trucks
--   [] Unlock all dealerships
 -   [] Infinite fuel in the current truck
 -   [] Fill fuel of all trucks
 
@@ -20,11 +19,13 @@
 -   [] Add level 100
 -   [] Unlock garages
 -   [] Unlock all cities
+-   [] Unlock all dealerships
 -   [] Unlock skills
 
 #### Settings
 
 -   [] Documents Path
+-   [] Dark Mode config
 
 ### Notable Improvements
 
