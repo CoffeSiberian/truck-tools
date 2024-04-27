@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useProfileContex } from "../../../../hooks/useProfileContex";
 import {
     Modal,
     ModalContent,
@@ -9,13 +10,25 @@ import {
     useDisclosure,
     Input,
 } from "@nextui-org/react";
+import { setCargoMassTrailersAndSlave } from "../../../../utils/fileEdit";
 
 // icons
 import { IconPencil } from "@tabler/icons-react";
 
 const ModifyWeight = () => {
     const [Weight, setWeight] = useState("");
+    const { selectedSave, selectedProfile } = useProfileContex();
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
+    const onClickApply = () => {
+        if (selectedSave && selectedProfile) {
+            selectedProfile.saves.map((save) => {
+                if (save.name === selectedSave) {
+                    setCargoMassTrailersAndSlave(Weight, save.dir);
+                }
+            });
+        }
+    };
 
     return (
         <>
@@ -50,7 +63,7 @@ const ModifyWeight = () => {
                                 >
                                     Close
                                 </Button>
-                                <Button color="success" onPress={onClose}>
+                                <Button color="success" onPress={onClickApply}>
                                     Apply
                                 </Button>
                             </ModalFooter>
