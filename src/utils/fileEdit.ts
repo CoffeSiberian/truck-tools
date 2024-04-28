@@ -64,7 +64,7 @@ const findTrailerIndex = async (
     for (let i = 0; i < arrFile.length; i++) {
         const splitTrailerMas = arrFile[i].split(":");
 
-        if (splitTrailerMas[1] === `${trailerId} {`) {
+        if (splitTrailerMas[1] === trailerId + " {") {
             return i;
         }
     }
@@ -82,7 +82,7 @@ const setCargoMassTrailer = async (
         const splitCargoMas = saveGameDeep[i].split(":");
 
         if (splitCargoMas[0] === " cargo_mass") {
-            saveGameDeep[i] = ` cargo_mass: ${cargoMass}`;
+            saveGameDeep[i] = " cargo_mass: " + cargoMass;
             return saveGameDeep;
         }
     }
@@ -151,7 +151,7 @@ const setAnySlaveTrailersWeight = async (
     return cargoMassArr;
 };
 
-export const readSaveGame = async (
+const readSaveGame = async (
     dir: string,
     fileName: string
 ): Promise<string[] | null> => {
@@ -206,18 +206,6 @@ export const readProfileNames = async (): Promise<Profile[]> => {
     }
 };
 
-export const anyToDown = (arrFile: string[], cargo_mass: string) => {
-    let arrFileCopy = arrFile.slice();
-
-    for (let i = 0; i < arrFileCopy.length; i++) {
-        let splitCargoMas = arrFileCopy[i].split(":");
-
-        if (splitCargoMas[0] === " cargo_mass") {
-            arrFileCopy[i] = ` cargo_mass: ${cargo_mass}}`;
-        }
-    }
-};
-
 export const setChassisMassTrailer = (
     arrFile: string[],
     id: string,
@@ -226,7 +214,7 @@ export const setChassisMassTrailer = (
 ) => {
     let arrFileCopy = arrFile.slice();
 
-    const indexTrailer = arrFileCopy.indexOf(`trailer :${id} {`);
+    const indexTrailer = arrFileCopy.indexOf("trailer : " + id + " {");
     let trailerDefID = "";
 
     for (let i = indexTrailer; i < arrFileCopy.length; i++) {
@@ -239,7 +227,7 @@ export const setChassisMassTrailer = (
     }
 
     const indexTrailerDef = arrFileCopy.indexOf(
-        `trailer_def :${trailerDefID} {`
+        "trailer_def : " + trailerDefID + " {"
     );
     let body_mass_redy = false;
     let chassis_mass_redy = false;
@@ -247,10 +235,10 @@ export const setChassisMassTrailer = (
         let splitTrailerMas = arrFileCopy[i].split(":");
 
         if (splitTrailerMas[0] === " chassis_mass") {
-            arrFileCopy[i] = ` chassis_mass: ${chassis_mass}}`;
+            arrFileCopy[i] = " chassis_mass: " + chassis_mass + "}";
             chassis_mass_redy = true;
         } else if (splitTrailerMas[0] === " body_mass") {
-            arrFileCopy[i] = ` body_mass: ${body_mass}}`;
+            arrFileCopy[i] = " body_mass: " + body_mass + "}";
             body_mass_redy = true;
         }
         if (body_mass_redy && chassis_mass_redy) return true;
@@ -264,9 +252,10 @@ export const setCargoMassTrailersAndSlave = async (
 ) => {
     const saveGame = await readSaveGame(dirSave, "game.sii");
     if (saveGame === null) return false;
-
+    console.time("setCargoMassTrailersAndSlave Execution Time");
     const trailerId = await findMyTrailerId(saveGame);
     if (trailerId === null) return false;
+    console.timeEnd("setCargoMassTrailersAndSlave Execution Time");
 
     const trailerIndex = await findTrailerIndex(saveGame, trailerId);
     if (trailerIndex === null) return false;
