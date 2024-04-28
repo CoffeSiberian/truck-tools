@@ -21,8 +21,10 @@ const getProfileImage = async (path: string): Promise<string | undefined> => {
 };
 
 const arrFile = async (dir: string, fileName: string): Promise<string[]> => {
+    // 1000 ms prom generate by readTextFile (tauri api)
     const file = await readTextFile(`${dir}/${fileName}`);
-    return file.split("\r\n");
+    const splitFile = file.split("\r\n");
+    return splitFile;
 };
 
 const descriptFiles = async (
@@ -44,12 +46,26 @@ const descriptFiles = async (
     }
 };
 
-const findTrailerId = (arrFile: string[]) => {
+const findMyTrailerId = async (arrFile: string[]): Promise<null | string> => {
     for (let i = 0; i < arrFile.length; i++) {
         const splitTrailerMas = arrFile[i].split(":");
 
         if (splitTrailerMas[0] === " my_trailer") {
             return splitTrailerMas[1];
+        }
+    }
+    return null;
+};
+
+const findTrailerIndex = async (
+    arrFile: string[],
+    trailerId: string
+): Promise<null | number> => {
+    for (let i = 0; i < arrFile.length; i++) {
+        const splitTrailerMas = arrFile[i].split(":");
+
+        if (splitTrailerMas[1] === `${trailerId} {`) {
+            return i;
         }
     }
     return null;
@@ -71,6 +87,68 @@ const setCargoMassTrailer = async (
         }
     }
     return null;
+};
+
+const getSlaveTrailersId = async (
+    index: number,
+    saveGame: string[]
+): Promise<null | string> => {
+    const saveGameDeep = JSON.parse(JSON.stringify(saveGame));
+    let maxRound = 70;
+
+    for (let i = index; i < saveGameDeep.length; i++) {
+        if (maxRound === 0) return null;
+        maxRound--;
+
+        const split = saveGameDeep[i].split(":");
+        if (split[0] === " slave_trailer") {
+            if (split[1] === " null") return null;
+            return split[1];
+        }
+    }
+    return null;
+};
+
+const setAnySlaveTrailersWeight = async (
+    firstSlaveId: string,
+    saveGame: string[],
+    cargoMass: string
+): Promise<string[]> => {
+    let stopWhile = false;
+    let nextSlaveId = firstSlaveId;
+    let nextSlaveIndex = 0;
+    let cargoMassArr = JSON.parse(JSON.stringify(saveGame));
+
+    while (!stopWhile) {
+        const slaveIndex = await findTrailerIndex(saveGame, nextSlaveId);
+        if (slaveIndex === null) {
+            stopWhile = true;
+            continue;
+        }
+        nextSlaveIndex = slaveIndex;
+
+        const cargoMassCurrent = await setCargoMassTrailer(
+            nextSlaveIndex,
+            cargoMassArr,
+            cargoMass
+        );
+        if (cargoMassCurrent === null) {
+            stopWhile = true;
+            continue;
+        }
+        cargoMassArr = cargoMassCurrent;
+
+        const slaveTrailerId = await getSlaveTrailersId(
+            nextSlaveIndex,
+            cargoMassArr
+        );
+        if (slaveTrailerId === null) {
+            stopWhile = true;
+            continue;
+        }
+        nextSlaveId = slaveTrailerId;
+    }
+    return cargoMassArr;
 };
 
 export const readSaveGame = async (
@@ -105,7 +183,7 @@ export const readProfileNames = async (): Promise<Profile[]> => {
                 const profileObject = {
                     name: Buffer.from(profile.name!, "hex").toString("utf-8"),
                     hex: profile.name,
-                    saves: profilesSaves.map((save) => {
+                    saves: profilesSaves.reverse().map((save) => {
                         return { name: save.name, dir: save.path };
                     }),
                     avatar: profileImg,
@@ -187,22 +265,26 @@ export const setCargoMassTrailersAndSlave = async (
     const saveGame = await readSaveGame(dirSave, "game.sii");
     if (saveGame === null) return false;
 
-    let saveGameEdit = [];
-    const trailerId = findTrailerId(saveGame);
+    const trailerId = await findMyTrailerId(saveGame);
     if (trailerId === null) return false;
 
-    for (let i = 0; i < saveGame.length; i++) {
-        const splitCargoMas = saveGame[i].split(":");
+    const trailerIndex = await findTrailerIndex(saveGame, trailerId);
+    if (trailerIndex === null) return false;
 
-        if (splitCargoMas[1] === `${trailerId} {`) {
-            const cargoMassTrailer = await setCargoMassTrailer(
-                i,
-                saveGame,
-                cargo_mass
-            );
+    const saveGameEdit = await setCargoMassTrailer(
+        trailerIndex,
+        saveGame,
+        cargo_mass
+    );
+    if (saveGameEdit === null) return false;
 
-            if (cargoMassTrailer === null) return false;
-            saveGameEdit = cargoMassTrailer;
-        }
-    }
+    const slaveTrailerId = await getSlaveTrailersId(trailerIndex, saveGameEdit);
+    if (slaveTrailerId === null) return false;
+
+    const saveGameEditSlave = await setAnySlaveTrailersWeight(
+        slaveTrailerId,
+        saveGameEdit,
+        cargo_mass
+    );
+    if (saveGameEditSlave === null) return false;
 };
