@@ -6,6 +6,7 @@ import {
     readDir,
     exists,
     copyFile,
+    writeTextFile,
     BaseDirectory,
 } from "@tauri-apps/api/fs";
 import { join } from "@tauri-apps/api/path";
@@ -199,6 +200,14 @@ const readSaveGame = async (
     return arrFileSave;
 };
 
+const saveGameToDisk = async (
+    saveGame: string[],
+    path: string
+): Promise<void> => {
+    const saveGameStr = saveGame.join("\n");
+    await writeTextFile(`${path}/test.sii`, saveGameStr);
+};
+
 export const readProfileNames = async (): Promise<Profile[]> => {
     const reDirProfiles = "Euro Truck Simulator 2/profiles";
 
@@ -287,6 +296,7 @@ export const setCargoMassTrailersAndSlave = async (
     cargo_mass: string,
     dirSave: string
 ) => {
+    console.log(dirSave);
     const saveGame = await readSaveGame(dirSave, "game.sii");
     if (saveGame === null) return false;
 
@@ -304,7 +314,10 @@ export const setCargoMassTrailersAndSlave = async (
     if (saveGameEdit === null) return false;
 
     const slaveTrailerId = await getSlaveTrailersId(trailerIndex, saveGameEdit);
-    if (slaveTrailerId === null) return true;
+    if (slaveTrailerId === null) {
+        await saveGameToDisk(saveGameEdit, dirSave);
+        return true;
+    }
 
     const saveGameEditSlave = await setAnySlaveTrailersWeight(
         slaveTrailerId,
@@ -312,5 +325,6 @@ export const setCargoMassTrailersAndSlave = async (
         cargo_mass
     );
     if (saveGameEditSlave === null) return false;
+    await saveGameToDisk(saveGameEditSlave, dirSave);
     return true;
 };
