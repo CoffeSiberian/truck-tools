@@ -12,6 +12,12 @@ import { join } from "@tauri-apps/api/path";
 import { Command } from "@tauri-apps/api/shell";
 import { convertFileSrc } from "@tauri-apps/api/tauri";
 
+// workers
+import findMyTrailerIdWorker from "./workers/findMyTrailerId?worker";
+
+// types
+import { findMyTrailerIdWorkerResTypes } from "../types/fileEditTypes";
+
 const getProfileImage = async (path: string): Promise<string | undefined> => {
     const imgPath = await join(path, "avatar.png");
     const verifyExist = await exists(imgPath);
@@ -47,14 +53,18 @@ const descriptFiles = async (
 };
 
 const findMyTrailerId = async (arrFile: string[]): Promise<null | string> => {
-    for (let i = 0; i < arrFile.length; i++) {
-        const splitTrailerMas = arrFile[i].split(":");
-
-        if (splitTrailerMas[0] === " my_trailer") {
-            return splitTrailerMas[1];
-        }
-    }
-    return null;
+    return new Promise((resolve) => {
+        const worker = new findMyTrailerIdWorker();
+        worker.postMessage(arrFile);
+        worker.onmessage = (event: findMyTrailerIdWorkerResTypes) => {
+            resolve(event.data);
+            worker.terminate();
+        };
+        worker.onerror = () => {
+            resolve(null);
+            worker.terminate();
+        };
+    });
 };
 
 const findTrailerIndex = async (
