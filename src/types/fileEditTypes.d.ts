@@ -39,3 +39,11 @@ export interface getSlaveTrailersIdWorkerTypes extends MessageEvent {
         saveGame: string[];
     };
 }
+
+export interface arrFileWorkerResTypes extends MessageEvent {
+    data: string[];
+}
+
+export interface arrFileWorkerTypes extends MessageEvent {
+    data: string;
+}

@@ -1,6 +1,6 @@
 import { Buffer } from "buffer";
-import { Profile } from "../types/SaveGameTypes";
 
+// tauri
 import {
     readTextFile,
     readDir,
@@ -17,13 +17,16 @@ import findMyTrailerIdWorker from "./workers/findMyTrailerId?worker";
 import findTrailerIndexWorker from "./workers/findTrailerIndex?worker";
 import setCargoMassTrailerWorker from "./workers/setCargoMassTrailer?worker";
 import getSlaveTrailersIdWorker from "./workers/getSlaveTrailersId?worker";
+import arrFileWorker from "./workers/arrFile?worker";
 
 // types
+import { Profile } from "../types/SaveGameTypes";
 import {
     findMyTrailerIdWorkerResTypes,
     findTrailerIndexWorkerResTypes,
     setCargoMassTrailerWorkerResTypes,
     getSlaveTrailersIdWorkerResTypes,
+    arrFileWorkerResTypes,
 } from "../types/fileEditTypes";
 
 const getProfileImage = async (path: string): Promise<string | undefined> => {
@@ -34,11 +37,24 @@ const getProfileImage = async (path: string): Promise<string | undefined> => {
     return convertFileSrc(imgPath);
 };
 
-const arrFile = async (dir: string, fileName: string): Promise<string[]> => {
-    // 1000 ms prom generate by readTextFile (tauri api)
+const arrFile = async (
+    dir: string,
+    fileName: string
+): Promise<string[] | null> => {
     const file = await readTextFile(`${dir}/${fileName}`);
-    const splitFile = file.split("\r\n");
-    return splitFile;
+
+    return new Promise((resolve) => {
+        const worker = new arrFileWorker();
+        worker.postMessage(file);
+        worker.onmessage = (event: arrFileWorkerResTypes) => {
+            resolve(event.data);
+            worker.terminate();
+        };
+        worker.onerror = () => {
+            resolve(null);
+            worker.terminate();
+        };
+    });
 };
 
 const descriptFiles = async (
