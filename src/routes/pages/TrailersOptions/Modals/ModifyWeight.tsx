@@ -11,23 +11,44 @@ import {
     Input,
 } from "@nextui-org/react";
 import { setCargoMassTrailersAndSlave } from "../../../../utils/fileEdit";
+import AlertSave from "../../../../components/AlertSave";
 
 // icons
 import { IconPencil } from "@tabler/icons-react";
 
+interface completedProps {
+    error: boolean;
+    completed: boolean;
+}
+
 const ModifyWeight = () => {
-    const [Weight, setWeight] = useState("");
-    const [isLoad, setIsLoad] = useState(false);
     const { selectedSave } = useProfileContex();
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
+    const [Weight, setWeight] = useState("");
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [completed, setCompleted] = useState<completedProps>({
+        error: false,
+        completed: false,
+    });
+
     const onClickApply = async () => {
-        if (selectedSave) {
-            setIsLoad(true);
-            await setCargoMassTrailersAndSlave(Weight, selectedSave.dir);
+        if (completed.completed) {
+            setCompleted({ error: false, completed: false });
         }
 
-        setIsLoad(false);
+        if (selectedSave) {
+            setIsLoading(true);
+            const res = await setCargoMassTrailersAndSlave(
+                Weight,
+                selectedSave.dir
+            );
+            setCompleted({
+                error: !res,
+                completed: true,
+            });
+        }
+        setIsLoading(false);
     };
 
     return (
@@ -40,23 +61,38 @@ const ModifyWeight = () => {
             >
                 Open
             </Button>
-            <Modal backdrop="blur" isOpen={isOpen} onOpenChange={onOpenChange}>
+            <Modal
+                hideCloseButton
+                backdrop="blur"
+                isOpen={isOpen}
+                onOpenChange={onOpenChange}
+            >
                 <ModalContent>
                     {(onClose) => (
                         <>
                             <ModalHeader className="flex flex-col gap-1">
                                 Change load weight
                             </ModalHeader>
-                            <ModalBody>
+                            <ModalBody className="items-center">
                                 <Input
                                     label="Weight"
                                     placeholder="Enter weight in kg"
                                     value={Weight}
                                     onValueChange={setWeight}
                                 />
+                                <AlertSave
+                                    message={
+                                        completed.error
+                                            ? "An error occurred in the process"
+                                            : "Saved successfully"
+                                    }
+                                    error={completed.error}
+                                    show={completed.completed}
+                                />
                             </ModalBody>
                             <ModalFooter>
                                 <Button
+                                    isDisabled={isLoading}
                                     color="danger"
                                     variant="light"
                                     onPress={onClose}
@@ -64,7 +100,7 @@ const ModifyWeight = () => {
                                     Close
                                 </Button>
                                 <Button
-                                    isLoading={isLoad}
+                                    isLoading={isLoading}
                                     color="success"
                                     onPress={onClickApply}
                                 >

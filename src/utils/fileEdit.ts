@@ -288,8 +288,8 @@ export const setCargoMassTrailersAndSlave = async (
     dirSave: string
 ) => {
     const saveGame = await readSaveGame(dirSave, "game.sii");
-    console.time("setCargoMassTrailersAndSlave Execution Time");
     if (saveGame === null) return false;
+
     const trailerId = await findMyTrailerId(saveGame);
     if (trailerId === null) return false;
 
@@ -304,7 +304,7 @@ export const setCargoMassTrailersAndSlave = async (
     if (saveGameEdit === null) return false;
 
     const slaveTrailerId = await getSlaveTrailersId(trailerIndex, saveGameEdit);
-    if (slaveTrailerId === null) return false;
+    if (slaveTrailerId === null) return true;
 
     const saveGameEditSlave = await setAnySlaveTrailersWeight(
         slaveTrailerId,
@@ -312,5 +312,5 @@ export const setCargoMassTrailersAndSlave = async (
         cargo_mass
     );
     if (saveGameEditSlave === null) return false;
-    console.timeEnd("setCargoMassTrailersAndSlave Execution Time");
+    return true;
 };
