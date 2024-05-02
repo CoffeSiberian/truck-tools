@@ -16,3 +16,26 @@ export interface findTrailerIndexWorkerTypes extends MessageEvent {
         trailerId: string;
     };
 }
+
+export interface setCargoMassTrailerWorkerResTypes extends MessageEvent {
+    data: string[] | null;
+}
+
+export interface setCargoMassTrailerWorkerTypes extends MessageEvent {
+    data: {
+        index: number;
+        saveGame: string[];
+        cargoMass: string;
+    };
+}
+
+export interface getSlaveTrailersIdWorkerResTypes extends MessageEvent {
+    data: string | null;
+}
+
+export interface getSlaveTrailersIdWorkerTypes extends MessageEvent {
+    data: {
+        index: number;
+        saveGame: string[];
+    };
+}

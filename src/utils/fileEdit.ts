@@ -15,11 +15,15 @@ import { convertFileSrc } from "@tauri-apps/api/tauri";
 // workers
 import findMyTrailerIdWorker from "./workers/findMyTrailerId?worker";
 import findTrailerIndexWorker from "./workers/findTrailerIndex?worker";
+import setCargoMassTrailerWorker from "./workers/setCargoMassTrailer?worker";
+import getSlaveTrailersIdWorker from "./workers/getSlaveTrailersId?worker";
 
 // types
 import {
     findMyTrailerIdWorkerResTypes,
     findTrailerIndexWorkerResTypes,
+    setCargoMassTrailerWorkerResTypes,
+    getSlaveTrailersIdWorkerResTypes,
 } from "../types/fileEditTypes";
 
 const getProfileImage = async (path: string): Promise<string | undefined> => {
@@ -94,48 +98,47 @@ const setCargoMassTrailer = async (
     saveGame: string[],
     cargoMass: string
 ): Promise<null | string[]> => {
-    const saveGameDeep = JSON.parse(JSON.stringify(saveGame));
-
-    for (let i = index; i < saveGameDeep.length; i++) {
-        const splitCargoMas = saveGameDeep[i].split(":");
-
-        if (splitCargoMas[0] === " cargo_mass") {
-            saveGameDeep[i] = " cargo_mass: " + cargoMass;
-            return saveGameDeep;
-        }
-    }
-    return null;
+    return new Promise((resolve) => {
+        const worker = new setCargoMassTrailerWorker();
+        worker.postMessage({ index, saveGame, cargoMass });
+        worker.onmessage = (event: setCargoMassTrailerWorkerResTypes) => {
+            resolve(event.data);
+            worker.terminate();
+        };
+        worker.onerror = () => {
+            resolve(null);
+            worker.terminate();
+        };
+    });
 };
 
 const getSlaveTrailersId = async (
     index: number,
     saveGame: string[]
 ): Promise<null | string> => {
-    const saveGameDeep = JSON.parse(JSON.stringify(saveGame));
-    let maxRound = 70;
-
-    for (let i = index; i < saveGameDeep.length; i++) {
-        if (maxRound === 0) return null;
-        maxRound--;
-
-        const split = saveGameDeep[i].split(":");
-        if (split[0] === " slave_trailer") {
-            if (split[1] === " null") return null;
-            return split[1];
-        }
-    }
-    return null;
+    return new Promise((resolve) => {
+        const worker = new getSlaveTrailersIdWorker();
+        worker.postMessage({ index, saveGame });
+        worker.onmessage = (event: getSlaveTrailersIdWorkerResTypes) => {
+            resolve(event.data);
+            worker.terminate();
+        };
+        worker.onerror = () => {
+            resolve(null);
+            worker.terminate();
+        };
+    });
 };
 
 const setAnySlaveTrailersWeight = async (
     firstSlaveId: string,
     saveGame: string[],
     cargoMass: string
-): Promise<string[]> => {
+): Promise<string[] | null> => {
     let stopWhile = false;
     let nextSlaveId = firstSlaveId;
     let nextSlaveIndex = 0;
-    let cargoMassArr = JSON.parse(JSON.stringify(saveGame));
+    let cargoMassArr = saveGame;
 
     while (!stopWhile) {
         const slaveIndex = await findTrailerIndex(saveGame, nextSlaveId);
