@@ -18,24 +18,16 @@ import { IconPencil } from "@tabler/icons-react";
 const ModifyWeight = () => {
     const [Weight, setWeight] = useState("");
     const [isLoad, setIsLoad] = useState(false);
-    const { selectedSave, selectedProfile } = useProfileContex();
+    const { selectedSave } = useProfileContex();
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     const onClickApply = async () => {
-        if (selectedSave && selectedProfile) {
+        if (selectedSave) {
             setIsLoad(true);
-
-            for (let i = 0; i < selectedProfile.saves.length; i++) {
-                if (selectedProfile.saves[i].name === selectedSave) {
-                    await setCargoMassTrailersAndSlave(
-                        Weight,
-                        selectedProfile.saves[i].dir
-                    );
-                }
-            }
-
-            setIsLoad(false);
+            await setCargoMassTrailersAndSlave(Weight, selectedSave.dir);
         }
+
+        setIsLoad(false);
     };
 
     return (

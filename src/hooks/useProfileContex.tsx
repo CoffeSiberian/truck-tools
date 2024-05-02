@@ -4,7 +4,7 @@ import { readProfileNames } from "../utils/fileEdit";
 
 // types
 import { ProfileTypesContext } from "../types/ContexTypes";
-import { Profile } from "../types/SaveGameTypes";
+import { Profile, SaveGame } from "../types/SaveGameTypes";
 
 const ProfileContex = createContext<ProfileTypesContext>(
     {} as ProfileTypesContext
@@ -17,16 +17,21 @@ export const useProfileContex = (): ProfileTypesContext => {
 export const ProfileContexInfo = ({ children }: any) => {
     const loaded = useRef(false);
     const [ProfilesList, setProfilesList] = useState<Array<Profile>>([]);
-    const [selectedProfile, setSelectedProfile] = useState<Profile | undefined>(
-        undefined
-    );
-    const [selectedSave, setSelectedSave] = useState<string | undefined>(
+    const [selectedProfileState, setSelectedProfileState] = useState<
+        Profile | undefined
+    >(undefined);
+    const [selectedSave, setSelectedSave] = useState<SaveGame | undefined>(
         undefined
     );
 
     const loadDirectory = async () => {
         const prof = await readProfileNames();
         setProfilesList(prof);
+    };
+
+    const setSelectedProfile = (profile: Profile | undefined) => {
+        setSelectedSave(undefined);
+        setSelectedProfileState(profile);
     };
 
     useEffect(() => {
@@ -39,7 +44,7 @@ export const ProfileContexInfo = ({ children }: any) => {
     return (
         <ProfileContex.Provider
             value={{
-                selectedProfile: selectedProfile,
+                selectedProfile: selectedProfileState,
                 selectedSave: selectedSave,
                 listProfiles: ProfilesList,
                 setProfile: setSelectedProfile,

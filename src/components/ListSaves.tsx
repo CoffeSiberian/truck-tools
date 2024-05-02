@@ -5,7 +5,11 @@ const ListSaves = () => {
     const { selectedProfile, selectedSave, setSave } = useProfileContex();
 
     const onClickSave = (saveHex: string) => {
-        setSave(saveHex);
+        selectedProfile?.saves.map((save) => {
+            if (save.name === saveHex) {
+                setSave(save);
+            }
+        });
     };
 
     return (
@@ -16,7 +20,7 @@ const ListSaves = () => {
                     selectedProfile ? undefined : "No profile selected"
                 }
                 items={selectedProfile ? selectedProfile.saves : []}
-                selectedKeys={selectedSave ? [selectedSave] : undefined}
+                selectedKeys={selectedSave ? [selectedSave.name] : []}
                 onChange={(e) => onClickSave(e.target.value)}
                 label="Saves"
                 placeholder="Select a save"
