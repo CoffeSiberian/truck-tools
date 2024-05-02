@@ -1,6 +1,6 @@
 import { setCargoMassTrailerWorkerTypes } from "../../types/fileEditTypes";
 
-self.onmessage = function (event: setCargoMassTrailerWorkerTypes) {
+self.onmessage = (event: setCargoMassTrailerWorkerTypes) => {
     let saveGame: null | string[] = null;
 
     const saveGameDeep = JSON.parse(JSON.stringify(event.data.saveGame));

@@ -1,6 +1,6 @@
 import { findMyTrailerIdWorkerTypes } from "../../types/fileEditTypes";
 
-self.onmessage = function (event: findMyTrailerIdWorkerTypes) {
+self.onmessage = (event: findMyTrailerIdWorkerTypes) => {
     let myTrailerId: null | string = null;
 
     for (let i = 0; i < event.data.length; i++) {

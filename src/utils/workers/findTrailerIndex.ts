@@ -1,6 +1,6 @@
 import { findTrailerIndexWorkerTypes } from "../../types/fileEditTypes";
 
-self.onmessage = function (event: findTrailerIndexWorkerTypes) {
+self.onmessage = (event: findTrailerIndexWorkerTypes) => {
     let trailerIndex: null | number = null;
 
     for (let i = 0; i < event.data.arrFile.length; i++) {

@@ -1,6 +1,6 @@
 import { getSlaveTrailersIdWorkerTypes } from "../../types/fileEditTypes";
 
-self.onmessage = function (event: getSlaveTrailersIdWorkerTypes) {
+self.onmessage = (event: getSlaveTrailersIdWorkerTypes) => {
     let trailerId: null | string = null;
     let maxRound = 70;
 
