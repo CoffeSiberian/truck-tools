@@ -14,9 +14,13 @@ import { convertFileSrc } from "@tauri-apps/api/tauri";
 
 // workers
 import findMyTrailerIdWorker from "./workers/findMyTrailerId?worker";
+import findTrailerIndexWorker from "./workers/findTrailerIndex?worker";
 
 // types
-import { findMyTrailerIdWorkerResTypes } from "../types/fileEditTypes";
+import {
+    findMyTrailerIdWorkerResTypes,
+    findTrailerIndexWorkerResTypes,
+} from "../types/fileEditTypes";
 
 const getProfileImage = async (path: string): Promise<string | undefined> => {
     const imgPath = await join(path, "avatar.png");
@@ -71,14 +75,18 @@ const findTrailerIndex = async (
     arrFile: string[],
     trailerId: string
 ): Promise<null | number> => {
-    for (let i = 0; i < arrFile.length; i++) {
-        const splitTrailerMas = arrFile[i].split(":");
-
-        if (splitTrailerMas[1] === trailerId + " {") {
-            return i;
-        }
-    }
-    return null;
+    return new Promise((resolve) => {
+        const worker = new findTrailerIndexWorker();
+        worker.postMessage({ arrFile, trailerId });
+        worker.onmessage = (event: findTrailerIndexWorkerResTypes) => {
+            resolve(event.data);
+            worker.terminate();
+        };
+        worker.onerror = () => {
+            resolve(null);
+            worker.terminate();
+        };
+    });
 };
 
 const setCargoMassTrailer = async (
@@ -261,11 +269,10 @@ export const setCargoMassTrailersAndSlave = async (
     dirSave: string
 ) => {
     const saveGame = await readSaveGame(dirSave, "game.sii");
-    if (saveGame === null) return false;
     console.time("setCargoMassTrailersAndSlave Execution Time");
+    if (saveGame === null) return false;
     const trailerId = await findMyTrailerId(saveGame);
     if (trailerId === null) return false;
-    console.timeEnd("setCargoMassTrailersAndSlave Execution Time");
 
     const trailerIndex = await findTrailerIndex(saveGame, trailerId);
     if (trailerIndex === null) return false;
@@ -286,4 +293,5 @@ export const setCargoMassTrailersAndSlave = async (
         cargo_mass
     );
     if (saveGameEditSlave === null) return false;
+    console.timeEnd("setCargoMassTrailersAndSlave Execution Time");
 };
