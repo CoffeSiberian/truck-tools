@@ -16,7 +16,6 @@ import { invoke } from "@tauri-apps/api/tauri";
 
 // workers
 import setCargoMassTrailerWorker from "./workers/setCargoMassTrailer?worker";
-import getSlaveTrailersIdWorker from "./workers/getSlaveTrailersId?worker";
 import arrFileWorker from "./workers/arrFile?worker";
 
 // types
@@ -25,7 +24,7 @@ import {
     findMyTrailerIdResTypes,
     findTrailerIndexResTypes,
     setCargoMassTrailerWorkerResTypes,
-    getSlaveTrailersIdWorkerResTypes,
+    getSlaveTrailersIdResTypes,
     arrFileWorkerResTypes,
 } from "../types/fileEditTypes";
 
@@ -96,8 +95,8 @@ const findTrailerIndex = async (
     };
     const invoceRes = await invoke("find_trailer_index", rustParams);
     const res = JSON.parse(invoceRes as string) as findTrailerIndexResTypes;
-
-    return res.res;
+    if (res.res === null) return null;
+    return parseInt(res.res);
 };
 
 const setCargoMassTrailer = async (
@@ -121,20 +120,15 @@ const setCargoMassTrailer = async (
 
 const getSlaveTrailersId = async (
     index: number,
-    saveGame: string[]
-): Promise<null | string> => {
-    return new Promise((resolve) => {
-        const worker = new getSlaveTrailersIdWorker();
-        worker.postMessage({ index, saveGame });
-        worker.onmessage = (event: getSlaveTrailersIdWorkerResTypes) => {
-            resolve(event.data);
-            worker.terminate();
-        };
-        worker.onerror = () => {
-            resolve(null);
-            worker.terminate();
-        };
-    });
+    arrFile: string[]
+): Promise<string | null> => {
+    const rustParams = {
+        arrFileJson: JSON.stringify({ arrFile }),
+        index,
+    };
+    const invoceRes = await invoke("get_slave_trailers_id", rustParams);
+    const res = JSON.parse(invoceRes as string) as getSlaveTrailersIdResTypes;
+    return res.res;
 };
 
 const setAnySlaveTrailersWeight = async (
@@ -301,7 +295,6 @@ export const setCargoMassTrailersAndSlave = async (
         cargo_mass
     );
     if (saveGameEdit === null) return false;
-
     const slaveTrailerId = await getSlaveTrailersId(trailerIndex, saveGameEdit);
     if (slaveTrailerId === null) {
         await saveGameToDisk(saveGameEdit, dirSave);

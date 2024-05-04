@@ -3,7 +3,7 @@ export interface findMyTrailerIdResTypes extends MessageEvent {
 }
 
 export interface findTrailerIndexResTypes extends MessageEvent {
-    res: number | null;
+    res: string | null;
 }
 
 export interface setCargoMassTrailerWorkerResTypes extends MessageEvent {
@@ -18,15 +18,8 @@ export interface setCargoMassTrailerWorkerTypes extends MessageEvent {
     };
 }
 
-export interface getSlaveTrailersIdWorkerResTypes extends MessageEvent {
-    data: string | null;
-}
-
-export interface getSlaveTrailersIdWorkerTypes extends MessageEvent {
-    data: {
-        index: number;
-        saveGame: string[];
-    };
+export interface getSlaveTrailersIdResTypes extends MessageEvent {
+    res: string | null;
 }
 
 export interface arrFileWorkerResTypes extends MessageEvent {
