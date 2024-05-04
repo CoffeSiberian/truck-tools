@@ -1,9 +1,5 @@
-export interface findMyTrailerIdWorkerResTypes extends MessageEvent {
-    data: string | null;
-}
-
-export interface findMyTrailerIdWorkerTypes extends MessageEvent {
-    data: string[];
+export interface findMyTrailerIdResTypes extends MessageEvent {
+    res: string | null;
 }
 
 export interface findTrailerIndexWorkerResTypes extends MessageEvent {

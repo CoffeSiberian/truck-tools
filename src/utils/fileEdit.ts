@@ -12,6 +12,7 @@ import {
 import { join } from "@tauri-apps/api/path";
 import { Command } from "@tauri-apps/api/shell";
 import { convertFileSrc } from "@tauri-apps/api/tauri";
+import { invoke } from "@tauri-apps/api/tauri";
 
 // workers
 import findMyTrailerIdWorker from "./workers/findMyTrailerId?worker";
@@ -23,7 +24,7 @@ import arrFileWorker from "./workers/arrFile?worker";
 // types
 import { Profile } from "../types/SaveGameTypes";
 import {
-    findMyTrailerIdWorkerResTypes,
+    findMyTrailerIdResTypes,
     findTrailerIndexWorkerResTypes,
     setCargoMassTrailerWorkerResTypes,
     getSlaveTrailersIdWorkerResTypes,
@@ -78,18 +79,13 @@ const descriptFiles = async (
 };
 
 const findMyTrailerId = async (arrFile: string[]): Promise<null | string> => {
-    return new Promise((resolve) => {
-        const worker = new findMyTrailerIdWorker();
-        worker.postMessage(arrFile);
-        worker.onmessage = (event: findMyTrailerIdWorkerResTypes) => {
-            resolve(event.data);
-            worker.terminate();
-        };
-        worker.onerror = () => {
-            resolve(null);
-            worker.terminate();
-        };
-    });
+    const rustParams = {
+        arrFileJson: JSON.stringify({ arrFile }),
+    };
+    const invoceRes = await invoke("find_my_trailer_id", rustParams);
+    const res = JSON.parse(invoceRes as string) as findMyTrailerIdResTypes;
+
+    return res.res;
 };
 
 const findTrailerIndex = async (
@@ -296,7 +292,6 @@ export const setCargoMassTrailersAndSlave = async (
     cargo_mass: string,
     dirSave: string
 ) => {
-    console.log(dirSave);
     const saveGame = await readSaveGame(dirSave, "game.sii");
     if (saveGame === null) return false;
 
