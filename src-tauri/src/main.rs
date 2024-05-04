@@ -49,9 +49,45 @@ fn find_my_trailer_id(arr_file_json: &str) -> String {
     }
 }
 
+#[tauri::command]
+fn find_trailer_index(arr_file_json: &str, trailer_id: &str) -> String {
+    let v: Value = match serde_json::from_str(arr_file_json) {
+        Ok(val) => val,
+        Err(_) => return String::from("{\"res\": null}"),
+    };
+
+    let mut resultado: String = String::new();
+
+    let arr_val = v["arrFile"].as_array();
+
+    if let Some(arr_val_s) = arr_val {
+    // Check if the value of "arrFile" is an array
+        for (i, item) in arr_val_s.iter().enumerate() {
+            // Check if the item is a string
+            if let Some(string_item) = item.as_str(){
+                let option_values: Vec<&str> = string_item.split(':').collect();
+
+                // Check if the string contains " my_trailer"
+                if option_values.len() >= 2 {
+                    if option_values[1] ==  format!("{} {}", trailer_id, "{"){
+                        resultado.push_str(format!("{}", i).as_str());
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    if resultado.is_empty() {
+        return String::from("{\"res\": null}");
+    } else {
+        return format!("{{\"res\": \"{}\"}}", resultado);
+    }
+}
+
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet, find_my_trailer_id])
+        .invoke_handler(tauri::generate_handler![greet, find_my_trailer_id, find_trailer_index])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

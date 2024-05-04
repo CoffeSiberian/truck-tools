@@ -2,15 +2,8 @@ export interface findMyTrailerIdResTypes extends MessageEvent {
     res: string | null;
 }
 
-export interface findTrailerIndexWorkerResTypes extends MessageEvent {
-    data: number | null;
-}
-
-export interface findTrailerIndexWorkerTypes extends MessageEvent {
-    data: {
-        arrFile: string[];
-        trailerId: string;
-    };
+export interface findTrailerIndexResTypes extends MessageEvent {
+    res: number | null;
 }
 
 export interface setCargoMassTrailerWorkerResTypes extends MessageEvent {
