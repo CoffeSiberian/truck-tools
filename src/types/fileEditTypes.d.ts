@@ -6,16 +6,8 @@ export interface findTrailerIndexResTypes extends MessageEvent {
     res: string | null;
 }
 
-export interface setCargoMassTrailerWorkerResTypes extends MessageEvent {
-    data: string[] | null;
-}
-
-export interface setCargoMassTrailerWorkerTypes extends MessageEvent {
-    data: {
-        index: number;
-        saveGame: string[];
-        cargoMass: string;
-    };
+export interface setCargoMassTrailerResTypes extends MessageEvent {
+    res: string[] | null;
 }
 
 export interface getSlaveTrailersIdResTypes extends MessageEvent {
