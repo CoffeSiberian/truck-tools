@@ -1,4 +1,5 @@
 use std::fs::File;
+use std::fs::write;
 use std::io::prelude::*;
 
 fn read_file(path: &str) -> Option<File> {
@@ -8,6 +9,13 @@ fn read_file(path: &str) -> Option<File> {
         Ok(file) => return Some(file),
         Err(_) => return None,
     };
+}
+
+pub fn save_file(path: String, content: Vec<String>) -> bool {
+    match write(path, content.join("\r\n")) {
+        Ok(_) => return true,
+        Err(_) => return false,
+    }
 }
 
 pub fn read_file_text(path: &str) -> Option<Vec<String>> {
