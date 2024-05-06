@@ -1,14 +1,7 @@
 import { Buffer } from "buffer";
 
 // tauri
-import {
-    readTextFile,
-    readDir,
-    exists,
-    copyFile,
-    writeTextFile,
-    BaseDirectory,
-} from "@tauri-apps/api/fs";
+import { readDir, exists, copyFile, BaseDirectory } from "@tauri-apps/api/fs";
 import { join } from "@tauri-apps/api/path";
 import { Command } from "@tauri-apps/api/shell";
 import { convertFileSrc } from "@tauri-apps/api/tauri";
