@@ -15,39 +15,40 @@ fn set_cargo_mass_trailers_and_slave(cargo_mass: &str, dir_save: &str) -> String
     let response_null: String = json!({
         "res": false
     }).to_string();
-
-    let file: Option<Vec<String>> = file_edit::read_file_text(dir_save);
-    if file.is_none() {
-        return response_null;
-    }
-
-    let trailer_id: Option<String> = file_edit::get_my_trailer_id(file.clone().unwrap());
-    if trailer_id.is_none() {
-        return response_null;
-    }
-
-    let trailer_index: Option<usize> = file_edit::get_trailer_index(file.clone().unwrap(), trailer_id.clone().unwrap());
-    if trailer_index.is_none() {
-        return response_null;
-    }
-
-    let cargo_mass_save: Option<Vec<String>> = file_edit::set_cargo_mass_trailer(file.clone().unwrap(), trailer_index.clone().unwrap(), cargo_mass);
-    if cargo_mass_save.is_none() {
-        return response_null;
-    }
-
-    let slave_trailer_id: Option<String> = file_edit::get_slave_trailers_id(file.clone().unwrap(), trailer_index.clone().unwrap());
-    if slave_trailer_id.is_none() {
-        return response_null;
-    }
-
-    let slave_trailer_index: Option<usize> = file_edit::get_trailer_index(file.clone().unwrap(), slave_trailer_id.clone().unwrap());
-    if slave_trailer_index.is_none() {
-        return response_null;
-    }
-
-    let cargo_mass_save_slave: Vec<String> = file_edit::set_any_slave_trailers_weight(file.clone().unwrap(), slave_trailer_id.clone().unwrap(), cargo_mass.to_string());
     
+    // 100 ms
+    let file: Vec<String> = match file_edit::read_file_text(dir_save) {
+        Some(file) => file,
+        None => return response_null,
+    };
+
+    // 25 ms
+    let trailer_id: String = match file_edit::get_my_trailer_id(&file) {
+        Some(trailer_id) => trailer_id,
+        None => return response_null,
+    };
+    // 25 ms
+    let trailer_index: usize = match file_edit::get_trailer_index(&file, trailer_id) {
+        Some(trailer_index) => trailer_index,
+        None => return response_null,
+    };
+    
+    // 30 ms
+    let cargo_mass_save: Vec<String> = match file_edit::set_cargo_mass_trailer(&file, trailer_index, cargo_mass) {
+        Some(cargo_mass_save) => cargo_mass_save,
+        None => return response_null,
+    };
+
+    // 0 ms
+    let slave_trailer_id: String = match file_edit::get_slave_trailers_id(&file, trailer_index) {
+        Some(slave_trailer_id) => slave_trailer_id,
+        None => return response_null,
+    };
+    
+    // 185 ms
+    let cargo_mass_save_slave: Vec<String> = file_edit::set_any_slave_trailers_weight(&cargo_mass_save, slave_trailer_id, cargo_mass.to_string());
+    
+    // 60 ms
     file_edit::save_file(dir_save.to_string(), cargo_mass_save_slave);
     return json!({
         "res": true
