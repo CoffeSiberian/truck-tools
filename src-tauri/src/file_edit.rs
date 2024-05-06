@@ -19,14 +19,19 @@ pub fn save_file(path: String, content: Vec<String>) -> bool {
 }
 
 pub fn read_file_text(path: &str) -> Option<Vec<String>> {
-    let readed_file = read_file(path);
+    let readed_file: Option<File> = read_file(path);
 
-    if !readed_file.is_none() {
-        let mut file = readed_file.unwrap();
-        let mut contents = String::new();
-        file.read_to_string(&mut contents).unwrap();
-        return Some(contents.split("\r\n").map(|x| x.to_string()).collect());
-    } return None;
+    match readed_file {
+        Some(mut file) => {
+            let mut contents = String::new();
+            
+            match file.read_to_string(&mut contents) {
+                Ok(_) => return Some(contents.split("\r\n").map(|x| x.to_string()).collect()),
+                Err(_) => return None,
+            }
+        }
+        None => return None,
+    }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
