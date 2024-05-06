@@ -83,7 +83,7 @@ pub fn set_any_slave_trailers_weight(arr_val: &Vec<String>, first_slave_id: Stri
 }
 
 pub fn get_slave_trailers_id(arr_val: &Vec<String>, index: usize) -> Option<String> {
-    let mut resultado: String = String::new();
+    let mut result: String = String::new();
 
         for (_i, item) in arr_val.iter().enumerate().skip(index) {
             let option_values: Vec<&str> = item.split(':').collect();
@@ -93,15 +93,15 @@ pub fn get_slave_trailers_id(arr_val: &Vec<String>, index: usize) -> Option<Stri
                     if option_values[1] == " null" {
                         break;
                     } else {                            
-                        resultado.push_str(option_values[1]);
+                        result.push_str(option_values[1]);
                         break;
                     }
                 }
             }
         }
 
-    if !resultado.is_empty() {
-        return Some(resultado);
+    if !result.is_empty() {
+        return Some(result);
     } return None;
 }
 
@@ -126,7 +126,7 @@ pub fn get_trailer_index(arr_val: &Vec<String>, trailer_id: String) -> Option<us
 }
 
 pub fn get_my_trailer_id(arr_val: &Vec<String>) -> Option<String> {
-    let mut resultado: String = String::new();
+    let mut result: String = String::new();
 
     for (_i, item) in arr_val.iter().enumerate() {
         let option_values: Vec<&str> = item.split(':').collect();
@@ -135,12 +135,12 @@ pub fn get_my_trailer_id(arr_val: &Vec<String>) -> Option<String> {
             if option_values[1] == " null" {
                 break;
             }
-            resultado.push_str(option_values[1]);
+            result.push_str(option_values[1]);
             break;
         }
     }
 
-    if !resultado.is_empty() {
-        return Some(resultado);
+    if !result.is_empty() {
+        return Some(result);
     } return None;
 }

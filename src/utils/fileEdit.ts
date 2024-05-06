@@ -14,18 +14,9 @@ import { Command } from "@tauri-apps/api/shell";
 import { convertFileSrc } from "@tauri-apps/api/tauri";
 import { invoke } from "@tauri-apps/api/tauri";
 
-// workers
-import arrFileWorker from "./workers/arrFile?worker";
-
 // types
 import { Profile } from "../types/SaveGameTypes";
-import {
-    findMyTrailerIdResTypes,
-    findTrailerIndexResTypes,
-    setCargoMassTrailerResTypes,
-    getSlaveTrailersIdResTypes,
-    arrFileWorkerResTypes,
-} from "../types/fileEditTypes";
+import { setCargoMassTrailersAndSlaveResTypes } from "../types/fileEditTypes";
 
 const getProfileImage = async (path: string): Promise<string | undefined> => {
     const imgPath = await join(path, "avatar.png");
@@ -33,26 +24,6 @@ const getProfileImage = async (path: string): Promise<string | undefined> => {
 
     if (!verifyExist) return undefined;
     return convertFileSrc(imgPath);
-};
-
-const arrFile = async (
-    dir: string,
-    fileName: string
-): Promise<string[] | null> => {
-    const file = await readTextFile(`${dir}/${fileName}`);
-
-    return new Promise((resolve) => {
-        const worker = new arrFileWorker();
-        worker.postMessage(file);
-        worker.onmessage = (event: arrFileWorkerResTypes) => {
-            resolve(event.data);
-            worker.terminate();
-        };
-        worker.onerror = () => {
-            resolve(null);
-            worker.terminate();
-        };
-    });
 };
 
 const descriptFiles = async (
@@ -72,119 +43,6 @@ const descriptFiles = async (
     } catch (err) {
         return false;
     }
-};
-
-const findMyTrailerId = async (arrFile: string[]): Promise<null | string> => {
-    const rustParams = {
-        arrFileJson: JSON.stringify({ arrFile }),
-    };
-    const invoceRes = await invoke("find_my_trailer_id", rustParams);
-    const res = JSON.parse(invoceRes as string) as findMyTrailerIdResTypes;
-
-    return res.res;
-};
-
-const findTrailerIndex = async (
-    arrFile: string[],
-    trailerId: string
-): Promise<number | null> => {
-    const rustParams = {
-        arrFileJson: JSON.stringify({ arrFile }),
-        trailerId,
-    };
-    const invoceRes = await invoke("find_trailer_index", rustParams);
-    const res = JSON.parse(invoceRes as string) as findTrailerIndexResTypes;
-    if (res.res === null) return null;
-    return parseInt(res.res);
-};
-
-const setCargoMassTrailer = async (
-    index: number,
-    arrFile: string[],
-    cargoMass: string
-): Promise<null | string[]> => {
-    const rustParams = {
-        arrFileJson: JSON.stringify({ arrFile }),
-        index,
-        cargoMass,
-    };
-    const invoceRes = await invoke("set_cargo_mass_trailer", rustParams);
-    const res = JSON.parse(invoceRes as string) as setCargoMassTrailerResTypes;
-    return res.res;
-};
-
-const getSlaveTrailersId = async (
-    index: number,
-    arrFile: string[]
-): Promise<string | null> => {
-    const rustParams = {
-        arrFileJson: JSON.stringify({ arrFile }),
-        index,
-    };
-    const invoceRes = await invoke("get_slave_trailers_id", rustParams);
-    const res = JSON.parse(invoceRes as string) as getSlaveTrailersIdResTypes;
-    return res.res;
-};
-
-const setAnySlaveTrailersWeight = async (
-    firstSlaveId: string,
-    saveGame: string[],
-    cargoMass: string
-): Promise<string[] | null> => {
-    let stopWhile = false;
-    let nextSlaveId = firstSlaveId;
-    let nextSlaveIndex = 0;
-    let cargoMassArr = saveGame;
-
-    while (!stopWhile) {
-        const slaveIndex = await findTrailerIndex(saveGame, nextSlaveId);
-        if (slaveIndex === null) {
-            stopWhile = true;
-            continue;
-        }
-        nextSlaveIndex = slaveIndex;
-
-        const cargoMassCurrent = await setCargoMassTrailer(
-            nextSlaveIndex,
-            cargoMassArr,
-            cargoMass
-        );
-        if (cargoMassCurrent === null) {
-            stopWhile = true;
-            continue;
-        }
-        cargoMassArr = cargoMassCurrent;
-
-        const slaveTrailerId = await getSlaveTrailersId(
-            nextSlaveIndex,
-            cargoMassArr
-        );
-        if (slaveTrailerId === null) {
-            stopWhile = true;
-            continue;
-        }
-        nextSlaveId = slaveTrailerId;
-    }
-    return cargoMassArr;
-};
-
-const readSaveGame = async (
-    dir: string,
-    fileName: string
-): Promise<string[] | null> => {
-    const descriptSave = await descriptFiles(dir, fileName);
-    if (!descriptSave) return null;
-    const arrFileSave = await arrFile(dir, fileName);
-
-    return arrFileSave;
-};
-
-const saveGameToDisk = async (
-    saveGame: string[],
-    path: string
-): Promise<void> => {
-    const saveGameStr = saveGame.join("\n");
-    await writeTextFile(`${path}/test.sii`, saveGameStr);
 };
 
 export const readProfileNames = async (): Promise<Profile[]> => {
@@ -272,36 +130,20 @@ export const setChassisMassTrailer = (
 };
 
 export const setCargoMassTrailersAndSlave = async (
-    cargo_mass: string,
+    cargoMass: string,
     dirSave: string
 ) => {
-    const saveGame = await readSaveGame(dirSave, "game.sii");
-    if (saveGame === null) return false;
-
-    const trailerId = await findMyTrailerId(saveGame);
-    if (trailerId === null) return false;
-
-    const trailerIndex = await findTrailerIndex(saveGame, trailerId);
-    if (trailerIndex === null) return false;
-
-    const saveGameEdit = await setCargoMassTrailer(
-        trailerIndex,
-        saveGame,
-        cargo_mass
+    const rustParams = {
+        cargoMass,
+        dirSave: dirSave + "/test.sii",
+    };
+    const invoceRes = await invoke(
+        "set_cargo_mass_trailers_and_slave",
+        rustParams
     );
-    if (saveGameEdit === null) return false;
-    const slaveTrailerId = await getSlaveTrailersId(trailerIndex, saveGameEdit);
-    if (slaveTrailerId === null) {
-        await saveGameToDisk(saveGameEdit, dirSave);
-        return true;
-    }
+    const res = JSON.parse(
+        invoceRes as string
+    ) as setCargoMassTrailersAndSlaveResTypes;
 
-    const saveGameEditSlave = await setAnySlaveTrailersWeight(
-        slaveTrailerId,
-        saveGameEdit,
-        cargo_mass
-    );
-    if (saveGameEditSlave === null) return false;
-    await saveGameToDisk(saveGameEditSlave, dirSave);
-    return true;
+    return res.res;
 };
