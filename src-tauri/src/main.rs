@@ -12,37 +12,44 @@ fn greet(name: &str) -> String {
 
 #[tauri::command]
 fn set_cargo_mass_trailers_and_slave(cargo_mass: &str, dir_save: &str) -> String {
-    let response_null: String = json!({
+    let response_false: String = json!({
         "res": false
+    }).to_string();
+    let response_true: String = json!({
+        "res": true
     }).to_string();
     
     // 100 ms
     let file: Vec<String> = match file_edit::read_file_text(dir_save) {
         Some(file) => file,
-        None => return response_null,
+        None => return response_false,
     };
 
     // 25 ms
     let trailer_id: String = match file_edit::get_my_trailer_id(&file) {
         Some(trailer_id) => trailer_id,
-        None => return response_null,
+        None => return response_false,
     };
+    
     // 25 ms
     let trailer_index: usize = match file_edit::get_trailer_index(&file, trailer_id) {
         Some(trailer_index) => trailer_index,
-        None => return response_null,
+        None => return response_false,
     };
     
     // 30 ms
     let cargo_mass_save: Vec<String> = match file_edit::set_cargo_mass_trailer(&file, trailer_index, cargo_mass) {
         Some(cargo_mass_save) => cargo_mass_save,
-        None => return response_null,
+        None => return response_false,
     };
 
     // 0 ms
     let slave_trailer_id: String = match file_edit::get_slave_trailers_id(&file, trailer_index) {
         Some(slave_trailer_id) => slave_trailer_id,
-        None => return response_null,
+        None => {
+            file_edit::save_file(dir_save.to_string(), cargo_mass_save);
+            return response_true;
+        },
     };
     
     // 185 ms
@@ -50,9 +57,7 @@ fn set_cargo_mass_trailers_and_slave(cargo_mass: &str, dir_save: &str) -> String
     
     // 60 ms
     file_edit::save_file(dir_save.to_string(), cargo_mass_save_slave);
-    return json!({
-        "res": true
-    }).to_string();
+    return response_true;
 }
 
 fn main() {

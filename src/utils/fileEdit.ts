@@ -133,10 +133,14 @@ export const setCargoMassTrailersAndSlave = async (
     cargoMass: string,
     dirSave: string
 ) => {
+    const descriptSucces = await descriptFiles(dirSave, "game.sii");
+    if (!descriptSucces) return false;
+
     const rustParams = {
         cargoMass,
-        dirSave: dirSave + "/test.sii",
+        dirSave: dirSave + "/game.sii",
     };
+
     const invoceRes = await invoke(
         "set_cargo_mass_trailers_and_slave",
         rustParams
