@@ -77,13 +77,14 @@ pub fn set_remove_trailer_restricted_areas(arr_val: &Vec<String>, index: usize) 
                 items_to_edit.push(VecItemsReplace{index: i, value: "".to_string(), to_delete: true});
                 counter_areas += 1;
                 let next_element: Vec<&str> = arr_val_clone[i + 1].split('[').collect();
-                if next_element[0] == " country_validity".to_string() {
+                if next_element[0] != " country_validity".to_string() {
                     break;
                 }
             }
         }
     }
 
+    items_to_edit.reverse();
     for item in items_to_edit.iter() {
         if item.to_delete {
             arr_val_clone.remove(item.index);
