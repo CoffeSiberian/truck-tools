@@ -91,9 +91,45 @@ fn set_unlock_current_trailers(dir_save: &str) -> String {
     return RESPONSE_TRUE.to_string();
 }
 
+#[tauri::command]
+fn set_cargo_mass_def_trailers(dir_save: &str, chassis_mass: &str, body_mass: &str) -> String {
+    let file: Vec<String> = match utils::file_edit::read_file_text(dir_save) {
+        Some(file) => file,
+        None => return RESPONSE_FALSE.to_string(),
+    };
+
+    let trailer_id: String = match utils::file_edit::get_my_trailer_id(&file) {
+        Some(trailer_id) => trailer_id,
+        None => return RESPONSE_FALSE.to_string(),
+    };
+
+    let trailer_index: usize = match utils::file_edit::get_trailer_index(&file, trailer_id) {
+        Some(trailer_index) => trailer_index,
+        None => return RESPONSE_FALSE.to_string(),
+    };
+
+    let trailer_def_id: String = match utils::file_edit::get_trailer_def_id(&file, trailer_index) {
+        Some(trailer_def_id) => trailer_def_id,
+        None => return RESPONSE_FALSE.to_string(),
+    };
+
+    let trailer_def_index: usize = match utils::file_edit::get_trailer_def_index(&file, trailer_def_id) {
+        Some(trailer_def_index) => trailer_def_index,
+        None => return RESPONSE_FALSE.to_string(),
+    };
+
+    let chassis_and_body_mass = match utils::file_edit::set_chassis_and_body_mass_def_trailers(&file, trailer_def_index, body_mass, chassis_mass) {
+        Some(chassis_mass_and_body_mass) => chassis_mass_and_body_mass,
+        None => return RESPONSE_FALSE.to_string(),
+    };
+
+    utils::file_edit::save_file(dir_save.to_string(), chassis_and_body_mass);
+    return RESPONSE_TRUE.to_string();
+}
+
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet, set_cargo_mass_trailers_and_slave, set_unlock_current_trailers])
+        .invoke_handler(tauri::generate_handler![greet, set_cargo_mass_trailers_and_slave, set_unlock_current_trailers, set_cargo_mass_def_trailers])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

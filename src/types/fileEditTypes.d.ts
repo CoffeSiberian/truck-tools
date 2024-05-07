@@ -1,3 +1,3 @@
-export interface setCargoMassTrailersAndSlaveResTypes {
+export interface responseRustTypes {
     res: boolean;
 }

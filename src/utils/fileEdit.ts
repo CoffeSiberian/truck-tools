@@ -9,7 +9,7 @@ import { invoke } from "@tauri-apps/api/tauri";
 
 // types
 import { Profile } from "../types/SaveGameTypes";
-import { setCargoMassTrailersAndSlaveResTypes } from "../types/fileEditTypes";
+import { responseRustTypes } from "../types/fileEditTypes";
 
 const getProfileImage = async (path: string): Promise<string | undefined> => {
     const imgPath = await join(path, "avatar.png");
@@ -82,44 +82,26 @@ export const readProfileNames = async (): Promise<Profile[]> => {
     }
 };
 
-export const setChassisMassTrailer = (
-    arrFile: string[],
-    id: string,
-    chassis_mass: string,
-    body_mass: string
+export const setChassisMassTrailer = async (
+    dirSave: string,
+    chassisMass: string,
+    bodyMass: string
 ) => {
-    let arrFileCopy = arrFile.slice();
+    const descriptSucces = await descriptFiles(dirSave, "game.sii");
+    if (!descriptSucces) return false;
 
-    const indexTrailer = arrFileCopy.indexOf("trailer : " + id + " {");
-    let trailerDefID = "";
+    const rustParams = {
+        dirSave: dirSave + "/game.sii",
+        bodyMass,
+        chassisMass,
+    };
 
-    for (let i = indexTrailer; i < arrFileCopy.length; i++) {
-        let splitTrailerMas = arrFileCopy[i].split(":");
-
-        if (splitTrailerMas[0] === " trailer_definition") {
-            trailerDefID = splitTrailerMas[1];
-            break;
-        }
-    }
-
-    const indexTrailerDef = arrFileCopy.indexOf(
-        "trailer_def : " + trailerDefID + " {"
+    const invoceRes = await invoke(
+        "set_chassis_and_body_mass_def_trailers",
+        rustParams
     );
-    let body_mass_redy = false;
-    let chassis_mass_redy = false;
-    for (let i = indexTrailerDef; i < arrFileCopy.length; i++) {
-        let splitTrailerMas = arrFileCopy[i].split(":");
-
-        if (splitTrailerMas[0] === " chassis_mass") {
-            arrFileCopy[i] = " chassis_mass: " + chassis_mass + "}";
-            chassis_mass_redy = true;
-        } else if (splitTrailerMas[0] === " body_mass") {
-            arrFileCopy[i] = " body_mass: " + body_mass + "}";
-            body_mass_redy = true;
-        }
-        if (body_mass_redy && chassis_mass_redy) return true;
-    }
-    return false;
+    const res = JSON.parse(invoceRes as string) as responseRustTypes;
+    return res.res;
 };
 
 export const setUnlockCurrentTrailers = async (dirSave: string) => {
@@ -131,9 +113,7 @@ export const setUnlockCurrentTrailers = async (dirSave: string) => {
     };
 
     const invoceRes = await invoke("set_unlock_current_trailers", rustParams);
-    const res = JSON.parse(
-        invoceRes as string
-    ) as setCargoMassTrailersAndSlaveResTypes;
+    const res = JSON.parse(invoceRes as string) as responseRustTypes;
     return res.res;
 };
 
@@ -153,9 +133,7 @@ export const setCargoMassTrailersAndSlave = async (
         "set_cargo_mass_trailers_and_slave",
         rustParams
     );
-    const res = JSON.parse(
-        invoceRes as string
-    ) as setCargoMassTrailersAndSlaveResTypes;
+    const res = JSON.parse(invoceRes as string) as responseRustTypes;
 
     return res.res;
 };

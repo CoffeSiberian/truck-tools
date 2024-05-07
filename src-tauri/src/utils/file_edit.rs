@@ -56,6 +56,36 @@ pub fn set_cargo_mass_trailer(arr_val: &Vec<String>, index: usize, cargo_mass: &
     return Some(arr_val_clone);
 }
 
+pub fn set_chassis_and_body_mass_def_trailers(arr_val: &Vec<String>, index: usize, body_mass: &str, chassis_mass: &str) -> Option<Vec<String>> {
+    let value_find_chassis: String = format!(" chassis_mass: {}", chassis_mass);
+    let value_find_body: String = format!(" body_mass: {}", body_mass);
+    let mut arr_val_clone: Vec<String> = arr_val.clone();
+
+    for (i, item) in arr_val_clone.iter().enumerate().skip(index) {
+        let option_values: Vec<&str> = item.split(':').collect();
+        
+        if option_values.len() >= 2 {
+            if option_values[0] ==  " chassis_mass"{
+                arr_val_clone[i] = value_find_chassis;
+                break;
+            }
+        }
+    }
+
+    for (i, item) in arr_val_clone.iter().enumerate().skip(index) {
+        let option_values: Vec<&str> = item.split(':').collect();
+        
+        if option_values.len() >= 2 {
+            if option_values[0] ==  " body_mass"{
+                arr_val_clone[i] = value_find_body;
+                break;
+            }
+        }
+    }
+
+    return Some(arr_val_clone);
+}
+
 pub fn set_remove_trailer_restricted_areas(arr_val: &Vec<String>, index: usize) -> Option<Vec<String>> {
     let mut arr_val_clone: Vec<String> = arr_val.clone();
     let mut counter_areas: i16 = 0;
