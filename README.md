@@ -5,7 +5,7 @@
 #### Trailers
 
 -   [x] Modify load weight `*`
--   [] Modify load trailer
+-   [x] Modify load trailer `*`
 -   [x] Unlock trailers in restricted areas `*`
 
 #### Trucks

@@ -92,7 +92,7 @@ fn set_unlock_current_trailers(dir_save: &str) -> String {
 }
 
 #[tauri::command]
-fn set_cargo_mass_def_trailers(dir_save: &str, chassis_mass: &str, body_mass: &str) -> String {
+fn set_cargo_mass_def_trailers(dir_save: &str, body_mass: &str, chassis_mass: &str) -> String {
     let file: Vec<String> = match utils::file_edit::read_file_text(dir_save) {
         Some(file) => file,
         None => return RESPONSE_FALSE.to_string(),

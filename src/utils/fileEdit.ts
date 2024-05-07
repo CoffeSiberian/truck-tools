@@ -96,10 +96,7 @@ export const setChassisMassTrailer = async (
         chassisMass,
     };
 
-    const invoceRes = await invoke(
-        "set_chassis_and_body_mass_def_trailers",
-        rustParams
-    );
+    const invoceRes = await invoke("set_cargo_mass_def_trailers", rustParams);
     const res = JSON.parse(invoceRes as string) as responseRustTypes;
     return res.res;
 };

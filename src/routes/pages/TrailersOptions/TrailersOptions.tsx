@@ -6,6 +6,7 @@ import testImage from "../../../static/img/testimg.webp";
 // modals
 import ModifyWeight from "./Modals/ModifyWeight";
 import UnlockTrailers from "./Modals/UnlockTrailers";
+import ModifyTrailerWeight from "./Modals/ModifyTrailerWeight";
 
 const TrailersOptions = () => {
     const items = [
@@ -22,6 +23,14 @@ const TrailersOptions = () => {
             description: "Unlock the current trailer",
             image: testImage,
             modal: <UnlockTrailers />,
+        },
+        {
+            id: "3",
+            title: "Change trailer weight",
+            description:
+                "Changes the weight of the trailer. It does not change the trailer's load since it is different and it is only necessary to apply it once to the trailer.",
+            image: testImage,
+            modal: <ModifyTrailerWeight />,
         },
     ];
 
