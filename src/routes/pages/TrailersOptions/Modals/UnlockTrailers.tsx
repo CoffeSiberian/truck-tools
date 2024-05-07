@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useProfileContex } from "../../../../hooks/useProfileContex";
 import {
     Modal,
     ModalContent,
@@ -7,12 +9,41 @@ import {
     Button,
     useDisclosure,
 } from "@nextui-org/react";
+import { setUnlockCurrentTrailers } from "../../../../utils/fileEdit";
+import AlertSave from "../../../../components/AlertSave";
 
 // icons
 import { IconPencil } from "@tabler/icons-react";
 
+interface completedProps {
+    error: boolean;
+    completed: boolean;
+}
+
 const UnlockTrailers = () => {
+    const { selectedSave } = useProfileContex();
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [completed, setCompleted] = useState<completedProps>({
+        error: false,
+        completed: false,
+    });
+
+    const onClickApply = async () => {
+        if (completed.completed) {
+            setCompleted({ error: false, completed: false });
+        }
+
+        if (selectedSave) {
+            setIsLoading(true);
+            const res = await setUnlockCurrentTrailers(selectedSave.dir);
+            setCompleted({
+                error: !res,
+                completed: true,
+            });
+        }
+        setIsLoading(false);
+    };
 
     return (
         <>
@@ -29,32 +60,27 @@ const UnlockTrailers = () => {
                     {(onClose) => (
                         <>
                             <ModalHeader className="flex flex-col gap-1">
-                                Modal Title
+                                Unlock Current Trailer
                             </ModalHeader>
-                            <ModalBody>
+                            <ModalBody className="items-center">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Nullam pulvinar risus non
-                                    risus hendrerit venenatis. Pellentesque sit
-                                    amet hendrerit risus, sed porttitor quam.
+                                    Unlock your trailer in all countries if it
+                                    is blocked by the game.
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Nullam pulvinar risus non
-                                    risus hendrerit venenatis. Pellentesque sit
-                                    amet hendrerit risus, sed porttitor quam.
+                                    Remember to have your trailer attached to
+                                    your truck so that the changes can take
+                                    effect.
                                 </p>
-                                <p>
-                                    Magna exercitation reprehenderit magna aute
-                                    tempor cupidatat consequat elit dolor
-                                    adipisicing. Mollit dolor eiusmod sunt ex
-                                    incididunt cillum quis. Velit duis sit
-                                    officia eiusmod Lorem aliqua enim laboris do
-                                    dolor eiusmod. Et mollit incididunt nisi
-                                    consectetur esse laborum eiusmod pariatur
-                                    proident Lorem eiusmod et. Culpa deserunt
-                                    nostrud ad veniam.
-                                </p>
+                                <AlertSave
+                                    message={
+                                        completed.error
+                                            ? "An error occurred in the process"
+                                            : "Saved successfully"
+                                    }
+                                    error={completed.error}
+                                    show={completed.completed}
+                                />
                             </ModalBody>
                             <ModalFooter>
                                 <Button
@@ -64,8 +90,12 @@ const UnlockTrailers = () => {
                                 >
                                     Close
                                 </Button>
-                                <Button color="primary" onPress={onClose}>
-                                    Action
+                                <Button
+                                    isLoading={isLoading}
+                                    color="success"
+                                    onPress={onClickApply}
+                                >
+                                    Unlock
                                 </Button>
                             </ModalFooter>
                         </>
