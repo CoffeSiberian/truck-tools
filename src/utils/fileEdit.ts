@@ -122,6 +122,21 @@ export const setChassisMassTrailer = (
     return false;
 };
 
+export const setUnlockCurrentTrailers = async (dirSave: string) => {
+    const descriptSucces = await descriptFiles(dirSave, "game.sii");
+    if (!descriptSucces) return false;
+
+    const rustParams = {
+        dirSave: dirSave + "/game.sii",
+    };
+
+    const invoceRes = await invoke("set_unlock_current_trailers", rustParams);
+    const res = JSON.parse(
+        invoceRes as string
+    ) as setCargoMassTrailersAndSlaveResTypes;
+    return res.res;
+};
+
 export const setCargoMassTrailersAndSlave = async (
     cargoMass: string,
     dirSave: string
