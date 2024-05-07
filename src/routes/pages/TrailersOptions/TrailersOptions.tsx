@@ -30,16 +30,14 @@ const TrailersOptions = () => {
             <div className="grid grid-cols-2 my-4 gap-4">
                 {items.map((item) => {
                     return (
-                        <>
-                            <OptionCard
-                                key={item.id}
-                                id={item.id}
-                                title={item.title}
-                                description={item.description}
-                                image={item.image}
-                                footerJsx={item.modal}
-                            />
-                        </>
+                        <OptionCard
+                            key={item.id}
+                            id={item.id}
+                            title={item.title}
+                            description={item.description}
+                            image={item.image}
+                            footerJsx={item.modal}
+                        />
                     );
                 })}
             </div>

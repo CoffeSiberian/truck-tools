@@ -36,7 +36,8 @@ const RenderOptions = () => {
 
     const renderCart = (
         name: string,
-        icon: JSX.Element | null
+        icon: JSX.Element | null,
+        disable: boolean
     ): JSX.Element => {
         return (
             <Tab
@@ -47,6 +48,7 @@ const RenderOptions = () => {
                     </div>
                 }
                 key={name}
+                isDisabled={disable}
             />
         );
     };
@@ -62,13 +64,13 @@ const RenderOptions = () => {
                 aria-label="options"
                 variant="bordered"
             >
-                {items.map((item) => {
-                    return renderCart(item.label, item.icon);
+                {items.map((item, index) => {
+                    return renderCart(item.label, item.icon, index > 0);
                 })}
             </Tabs>
             {items.map((item, index) => {
                 return (
-                    <div key={index}>
+                    <div key={"cardOptionNumber" + index}>
                         {activeIndex === item.label && item.jsx}
                     </div>
                 );
