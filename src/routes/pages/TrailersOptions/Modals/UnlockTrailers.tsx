@@ -62,7 +62,7 @@ const UnlockTrailers = () => {
                             <ModalHeader className="flex flex-col gap-1">
                                 Unlock Current Trailer
                             </ModalHeader>
-                            <ModalBody className="items-center">
+                            <ModalBody className="py-1 items-center">
                                 <p>
                                     Unlock your trailer in all countries if it
                                     is blocked by the game.

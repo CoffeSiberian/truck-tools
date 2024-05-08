@@ -73,8 +73,15 @@ const ModifyWeight = () => {
                             <ModalHeader className="flex flex-col gap-1">
                                 Change load weight
                             </ModalHeader>
-                            <ModalBody className="items-center">
+                            <ModalBody className="py-1 items-center">
+                                <p>
+                                    This will modify the weight of your current
+                                    job to the one you define here. Remember
+                                    that you will need to have an active job
+                                    anchored to your truck.
+                                </p>
                                 <Input
+                                    className="mt-1"
                                     label="Weight"
                                     placeholder="Enter weight in kg"
                                     value={Weight}

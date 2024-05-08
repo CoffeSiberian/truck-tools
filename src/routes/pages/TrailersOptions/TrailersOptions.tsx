@@ -12,23 +12,22 @@ const TrailersOptions = () => {
     const items = [
         {
             id: "1",
-            title: "Modify weight",
-            description: "Modify the weight of the trailer",
+            title: "Modify job weight",
+            description: "Modify the weight of your current job",
             image: testImage,
             modal: <ModifyWeight />,
         },
         {
             id: "2",
-            title: "Unlock Current Trailer",
-            description: "Unlock the current trailer",
+            title: "Trailer unblocking by country",
+            description: "Unlock regional blocking of trailers",
             image: testImage,
             modal: <UnlockTrailers />,
         },
         {
             id: "3",
             title: "Change trailer weight",
-            description:
-                "Changes the weight of the trailer. It does not change the trailer's load since it is different and it is only necessary to apply it once to the trailer.",
+            description: "Modifies the trailer weight, applying it only once.",
             image: testImage,
             modal: <ModifyTrailerWeight />,
         },

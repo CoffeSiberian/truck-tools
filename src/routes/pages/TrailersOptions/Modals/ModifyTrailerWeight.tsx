@@ -83,8 +83,15 @@ const ModifyTrailerWeight = () => {
                             <ModalHeader className="flex flex-col gap-1">
                                 Change trailer weight
                             </ModalHeader>
-                            <ModalBody className="items-center">
+                            <ModalBody className="py- 1 items-center">
+                                <p>
+                                    This modifies the weight of your trailer in
+                                    2 parameters. Usually the chassis_mass is
+                                    used but you can also edit the body_mass
+                                    (default body_mass is 0).
+                                </p>
                                 <Input
+                                    className="mt-1"
                                     label="Chassis Mass"
                                     placeholder="Enter weight in kg"
                                     value={TrailerWeight.chassisMass}
