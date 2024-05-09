@@ -44,7 +44,9 @@ const RenderOptions = () => {
                 title={
                     <div className="flex items-center space-x-2">
                         {icon}
-                        <span>{name}</span>
+                        <span>
+                            <b>{name}</b>
+                        </span>
                     </div>
                 }
                 key={name}
@@ -54,15 +56,17 @@ const RenderOptions = () => {
     };
 
     return (
-        <div className="flex flex-col items-center p-3">
+        <div className="flex flex-col items-center mb-28 mt-12 p-3">
             <Tabs
+                className="fixed justify-center top-2 z-20 w-full"
                 onSelectionChange={(index) => {
                     setActiveIndex(index as string);
                 }}
                 selectedKey={activeIndex}
                 size="lg"
                 aria-label="options"
-                variant="bordered"
+                variant="solid"
+                color="primary"
             >
                 {items.map((item, index) => {
                     return renderCart(item.label, item.icon, index > 0);

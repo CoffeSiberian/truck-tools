@@ -32,7 +32,7 @@ const SelectProfile = () => {
     };
 
     return (
-        <div className="flex flex-col items-center mb-2">
+        <div className="fixed w-full bottom-0 z-10 flex flex-col items-center mt-auto mb-2 transition-opacity opacity-70 hover:opacity-100">
             <Card className="flex w-full max-w-4xl">
                 <CardBody className="flex flex-row items-center content-between">
                     {selectedProfile
