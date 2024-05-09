@@ -55,7 +55,12 @@ const UnlockTrailers = () => {
             >
                 Open
             </Button>
-            <Modal backdrop="blur" isOpen={isOpen} onOpenChange={onOpenChange}>
+            <Modal
+                hideCloseButton
+                backdrop="blur"
+                isOpen={isOpen}
+                onOpenChange={onOpenChange}
+            >
                 <ModalContent>
                     {(onClose) => (
                         <>
