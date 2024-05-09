@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useDarkMode } from "../../hooks/useDarkModeContex";
-import { Tabs, Tab } from "@nextui-org/react";
+import { Tabs, Tab, useDisclosure } from "@nextui-org/react";
 
 // components
 import TrailersOptions from "./TrailersOptions/TrailersOptions";
 import TrucksOptions from "./TrucksOptions/TrucksOptions";
 import ProfilesOptions from "./ProfilesOptions/ProfilesOptions";
+import AboutModal from "../../components/AboutModal";
 
 // icons
 import {
@@ -13,10 +14,12 @@ import {
     IconUserCircle,
     IconSettings,
     IconPackages,
+    IconPaw,
 } from "@tabler/icons-react";
 
 const RenderOptions = () => {
     const [activeIndex, setActiveIndex] = useState<string | null>(null);
+    const { isOpen, onOpen, onOpenChange } = useDisclosure();
     const { themeTatailwind } = useDarkMode();
 
     const styleBox = `flex flex-col ${themeTatailwind.secondary.main} place-self-center max-w-xs w-full rounded-lg border-2 border-transparent ${themeTatailwind.primary.border_color} shadow-2xl gap-1 mt-4 p-4`;
@@ -24,19 +27,36 @@ const RenderOptions = () => {
     const nexTime = <div className={styleBox}>Available soon</div>;
 
     const items = [
-        { label: "Trailers", jsx: <TrailersOptions />, icon: <IconPackages /> },
-        { label: "Truck", jsx: <TrucksOptions />, icon: <IconTruck /> },
+        {
+            label: "Trailers",
+            jsx: <TrailersOptions />,
+            modal: false,
+            icon: <IconPackages />,
+        },
+        {
+            label: "Truck",
+            jsx: <TrucksOptions />,
+            modal: false,
+            icon: <IconTruck />,
+        },
         {
             label: "Profile",
             jsx: <ProfilesOptions />,
+            modal: false,
             icon: <IconUserCircle />,
         },
-        { label: "Settings", jsx: nexTime, icon: <IconSettings /> },
+        {
+            label: "Settings",
+            jsx: nexTime,
+            modal: false,
+            icon: <IconSettings />,
+        },
+        { label: "About", jsx: <></>, modal: true, icon: <IconPaw /> },
     ];
 
     const renderCart = (
         name: string,
-        icon: JSX.Element | null,
+        icon: JSX.Element,
         disable: boolean
     ): JSX.Element => {
         return (
@@ -57,10 +77,12 @@ const RenderOptions = () => {
 
     return (
         <div className="flex flex-col items-center mb-28 mt-12 p-3">
+            <AboutModal isOpen={isOpen} onOpenChange={onOpenChange} />
             <Tabs
                 className="fixed justify-center top-2 z-20 w-full"
                 onSelectionChange={(index) => {
-                    setActiveIndex(index as string);
+                    if (index === "About") onOpen();
+                    else setActiveIndex(index as string);
                 }}
                 selectedKey={activeIndex}
                 size="lg"
@@ -69,7 +91,11 @@ const RenderOptions = () => {
                 color="primary"
             >
                 {items.map((item, index) => {
-                    return renderCart(item.label, item.icon, index > 0);
+                    return renderCart(
+                        item.label,
+                        item.icon,
+                        !item.modal ? index > 0 : !item.modal
+                    );
                 })}
             </Tabs>
             {items.map((item, index) => {
