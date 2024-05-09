@@ -2,11 +2,13 @@
 
 ### TO DO
 
+`*` Means missing UI changes
+
 #### Trailers
 
--   [x] Modify load weight `*`
--   [x] Modify load trailer `*`
--   [x] Unlock trailers in restricted areas `*`
+-   [x] Modify load weight
+-   [x] Modify load trailer
+-   [x] Unlock trailers in restricted areas
 
 #### Trucks
 
