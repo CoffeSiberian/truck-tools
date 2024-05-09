@@ -7,8 +7,8 @@
         "distDir": "../dist"
     },
     "package": {
-        "productName": "trucktools",
-        "version": "0.1.0"
+        "productName": "Truck Tools",
+        "version": "0.0.1"
     },
     "tauri": {
         "allowlist": {
@@ -40,7 +40,7 @@
         },
         "windows": [
             {
-                "title": "trucktools",
+                "title": "Truck Tools - Preview",
                 "width": 1280,
                 "height": 720,
                 "minWidth": 1280,
@@ -55,7 +55,7 @@
         "bundle": {
             "active": true,
             "targets": "all",
-            "identifier": "com.tauri.dev",
+            "identifier": "com.trucktools.dev",
             "icon": [
                 "icons/32x32.png",
                 "icons/128x128.png",
