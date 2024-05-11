@@ -1,7 +1,9 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
+use serde_json::json;
 mod utils;
+mod structs;
 
 const RESPONSE_FALSE: &str = r#"{"res": false}"#;
 const RESPONSE_TRUE: &str = r#"{"res": true}"#;
@@ -127,9 +129,24 @@ fn set_cargo_mass_def_trailers(dir_save: &str, body_mass: &str, chassis_mass: &s
     return RESPONSE_TRUE.to_string();
 }
 
+#[tauri::command]
+fn get_save_game_name(dir_save: &str) -> String {
+    let save_games_name = match utils::file_edit::get_list_save_game(dir_save.to_string()) {
+        Some(save_games_name) => save_games_name,
+        None => return RESPONSE_FALSE.to_string(),
+    };
+
+    let response = json!({
+        "res": true,
+        "saves": save_games_name,
+    });
+
+    return response.to_string();
+}
+
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet, set_cargo_mass_trailers_and_slave, set_unlock_current_trailers, set_cargo_mass_def_trailers])
+        .invoke_handler(tauri::generate_handler![greet, set_cargo_mass_trailers_and_slave, set_unlock_current_trailers, set_cargo_mass_def_trailers, get_save_game_name])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
