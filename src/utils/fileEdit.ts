@@ -8,8 +8,11 @@ import { convertFileSrc } from "@tauri-apps/api/tauri";
 import { invoke } from "@tauri-apps/api/tauri";
 
 // types
-import { Profile } from "../types/SaveGameTypes";
-import { responseRustTypes } from "../types/fileEditTypes";
+import { Profile, SaveGame } from "../types/SaveGameTypes";
+import {
+    responseRustTypes,
+    responseProfileSaves,
+} from "../types/fileEditTypes";
 
 const getProfileImage = async (path: string): Promise<string | undefined> => {
     const imgPath = await join(path, "avatar.png");
@@ -17,6 +20,20 @@ const getProfileImage = async (path: string): Promise<string | undefined> => {
 
     if (!verifyExist) return undefined;
     return convertFileSrc(imgPath);
+};
+
+const getListSaveNames = async (
+    profilePath: string
+): Promise<SaveGame[] | null> => {
+    const rustParams = {
+        dirSave: profilePath,
+    };
+
+    const invoceRes = await invoke("get_save_game_name", rustParams);
+    const res = JSON.parse(invoceRes as string) as responseProfileSaves;
+    if (!res.saves) return null;
+
+    return res.saves;
 };
 
 const descriptFiles = async (
@@ -41,45 +58,28 @@ const descriptFiles = async (
 export const readProfileNames = async (): Promise<Profile[]> => {
     const reDirProfiles = "Euro Truck Simulator 2/profiles";
 
-    try {
-        const dirProfiles = await readDir(reDirProfiles, {
-            dir: BaseDirectory.Document,
-            recursive: true,
-        });
+    const dirProfiles = await readDir(reDirProfiles, {
+        dir: BaseDirectory.Document,
+        recursive: true,
+    });
 
-        const profileNames = dirProfiles.map(async (profile) => {
-            try {
-                const profilesSaves = await readDir(profile.path + "/save", {
-                    dir: BaseDirectory.Document,
-                    recursive: true,
-                });
+    let profileNames: Profile[] = [];
+    for (let i = 0; i < dirProfiles.length; i++) {
+        const profileImg = await getProfileImage(dirProfiles[i].path);
+        const saves = await getListSaveNames(dirProfiles[i].path);
+        if (!saves) continue;
 
-                const profileImg = await getProfileImage(profile.path);
+        const profileObject: Profile = {
+            name: Buffer.from(dirProfiles[i].name!, "hex").toString("utf-8"),
+            hex: dirProfiles[i].name!,
+            saves: saves,
+            avatar: profileImg,
+        };
 
-                const profileObject = {
-                    name: Buffer.from(profile.name!, "hex").toString("utf-8"),
-                    hex: profile.name,
-                    saves: profilesSaves.reverse().map((save) => {
-                        return { name: save.name, dir: save.path };
-                    }),
-                    avatar: profileImg,
-                };
-                return profileObject;
-            } catch (err) {
-                return null;
-            }
-        });
-
-        const resolvePromisProfiles = await Promise.all(profileNames);
-
-        const filterNull = resolvePromisProfiles.filter(
-            (profile) => profile !== null
-        ) as Profile[];
-
-        return filterNull;
-    } catch (err) {
-        return [];
+        profileNames.push(profileObject);
     }
+
+    return profileNames;
 };
 
 export const setChassisMassTrailer = async (
