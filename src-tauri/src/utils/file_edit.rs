@@ -108,7 +108,7 @@ pub fn get_list_save_game(path: String) -> Option<Vec<VecSaveGames>> {
             None => continue,
         };
 
-        let mut default_name: Vec<&str> = item.split("/").collect();
+        let mut default_name: Vec<&str> = item_path.split("/").collect();
         default_name.reverse();
 
         let save_game_name: String = match get_save_name(&file, default_name[0]) {
