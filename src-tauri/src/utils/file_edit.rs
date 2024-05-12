@@ -121,6 +121,15 @@ pub fn get_list_save_game(path: String) -> Option<Vec<VecSaveGames>> {
     return Some(result);
 }
 
+pub fn get_list_save_count(path: String) -> usize {
+    let dir_saves_content: Vec<String> = match get_dir_content(path + "/save") {
+        Some(dir_content) => dir_content,
+        None => return 0,
+    };
+
+    return dir_saves_content.len();
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////// These functions are related to the trailers /////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -2,6 +2,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use serde_json::json;
+use structs::vec_save_games::VecSaveGames;
 mod utils;
 mod structs;
 
@@ -131,10 +132,11 @@ fn set_cargo_mass_def_trailers(dir_save: &str, body_mass: &str, chassis_mass: &s
 
 #[tauri::command]
 fn get_save_game_name(dir_save: &str) -> String {
-    let save_games_name = match utils::file_edit::get_list_save_game(dir_save.to_string()) {
+    let mut save_games_name: Vec<VecSaveGames> = match utils::file_edit::get_list_save_game(dir_save.to_string()) {
         Some(save_games_name) => save_games_name,
         None => return RESPONSE_FALSE.to_string(),
     };
+    save_games_name.reverse();
 
     let response = json!({
         "res": true,
@@ -144,9 +146,21 @@ fn get_save_game_name(dir_save: &str) -> String {
     return response.to_string();
 }
 
+#[tauri::command]
+fn get_save_game_count(dir_save: &str) -> String {
+    let save_games: usize = utils::file_edit::get_list_save_count(dir_save.to_string());
+
+    let response: String = json!({
+        "res": true,
+        "saves": save_games,
+    }).to_string();
+
+    return response;
+}
+
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet, set_cargo_mass_trailers_and_slave, set_unlock_current_trailers, set_cargo_mass_def_trailers, get_save_game_name])
+        .invoke_handler(tauri::generate_handler![greet, set_cargo_mass_trailers_and_slave, set_unlock_current_trailers, set_cargo_mass_def_trailers, get_save_game_name, get_save_game_count])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
