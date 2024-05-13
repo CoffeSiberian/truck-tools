@@ -2,7 +2,7 @@ use std::fs::File;
 use std::fs::write;
 use std::fs::read_dir;
 use std::io::prelude::*;
-use tauri::api::process::Command;
+use tauri::api::process::{Command, CommandEvent};
 use crate::structs::vec_items_replace::VecItemsReplace;
 use crate::structs::vec_save_games::VecSaveGames;
 
@@ -33,11 +33,21 @@ fn get_dir_content(path: String) -> Option<Vec<String>> {
     return Some(result);
 }
 
-fn descript_sii_file(path: String) -> bool {
+async fn descript_sii_file(path: String) -> bool {
     match Command::new_sidecar("SII_Decrypt") {
         Ok(command) => {
             match command.args([path]).spawn() {
-                Ok(_) => return true,
+                Ok((mut rx, _child)) => {
+                    while let Some(event) = rx.recv().await {
+                        match event {
+                            CommandEvent::Terminated(_) => {
+                                return true;
+                            }
+                            _ => {}
+                        }
+                    }
+                    return false;
+                },
                 Err(_) =>  return false,
             }
         }
@@ -87,7 +97,7 @@ pub fn get_save_name(arr_val: &Vec<String>, default_name: &str) -> Option<String
     return None;
 }
 
-pub fn get_list_save_game(path: String) -> Option<Vec<VecSaveGames>> {
+pub async fn get_list_save_game(path: String) -> Option<Vec<VecSaveGames>> {
     let dir_saves_content: Vec<String> = match get_dir_content(path + "/save") {
         Some(dir_content) => dir_content,
         None => return None,
@@ -97,7 +107,7 @@ pub fn get_list_save_game(path: String) -> Option<Vec<VecSaveGames>> {
     for item in dir_saves_content.iter() {
         let item_path: String = item.to_string().replace("\\", "/");
 
-        let descripted: bool = descript_sii_file(format!("{}/info.sii", item_path));
+        let descripted: bool = descript_sii_file(format!("{}/info.sii", item_path)).await;
 
         if !descripted {
             continue;

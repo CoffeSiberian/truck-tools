@@ -131,19 +131,19 @@ fn set_cargo_mass_def_trailers(dir_save: &str, body_mass: &str, chassis_mass: &s
 }
 
 #[tauri::command]
-fn get_save_game_name(dir_save: &str) -> String {
-    let mut save_games_name: Vec<VecSaveGames> = match utils::file_edit::get_list_save_game(dir_save.to_string()) {
+async fn get_save_game_name(dir_save: &str) -> Result<String, ()> {
+    let mut save_games_name: Vec<VecSaveGames> = match utils::file_edit::get_list_save_game(dir_save.to_string()).await {
         Some(save_games_name) => save_games_name,
-        None => return RESPONSE_FALSE.to_string(),
+        None => return Ok(RESPONSE_FALSE.to_string()),
     };
+    
     save_games_name.reverse();
-
     let response = json!({
         "res": true,
         "saves": save_games_name,
     });
 
-    return response.to_string();
+    return Ok(response.to_string());
 }
 
 #[tauri::command]
