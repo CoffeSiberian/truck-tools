@@ -8,10 +8,11 @@ import { convertFileSrc } from "@tauri-apps/api/tauri";
 import { invoke } from "@tauri-apps/api/tauri";
 
 // types
-import { Profile, SaveGame } from "../types/SaveGameTypes";
+import { ProfileWithoutSaves, SaveGame } from "../types/SaveGameTypes";
 import {
     responseRustTypes,
     responseProfileSaves,
+    responseProfileSavesCount,
 } from "../types/fileEditTypes";
 
 const getProfileImage = async (path: string): Promise<string | undefined> => {
@@ -20,20 +21,6 @@ const getProfileImage = async (path: string): Promise<string | undefined> => {
 
     if (!verifyExist) return undefined;
     return convertFileSrc(imgPath);
-};
-
-const getListSaveNames = async (
-    profilePath: string
-): Promise<SaveGame[] | null> => {
-    const rustParams = {
-        dirSave: profilePath,
-    };
-
-    const invoceRes = await invoke("get_save_game_name", rustParams);
-    const res = JSON.parse(invoceRes as string) as responseProfileSaves;
-    if (!res.saves) return null;
-
-    return res.saves;
 };
 
 const descriptFiles = async (
@@ -55,7 +42,32 @@ const descriptFiles = async (
     }
 };
 
-export const readProfileNames = async (): Promise<Profile[]> => {
+const getProfileSavesCount = async (profilePath: string): Promise<number> => {
+    const rustParams = {
+        dirSave: profilePath,
+    };
+
+    const invoceRes = await invoke("get_save_game_count", rustParams);
+    const res = JSON.parse(invoceRes as string) as responseProfileSavesCount;
+
+    return res.saves;
+};
+
+export const getListSaves = async (
+    profilePath: string
+): Promise<SaveGame[] | null> => {
+    const rustParams = {
+        dirSave: profilePath,
+    };
+
+    const invoceRes = await invoke("get_save_game_name", rustParams);
+    const res = JSON.parse(invoceRes as string) as responseProfileSaves;
+    if (!res.saves) return null;
+
+    return res.saves;
+};
+
+export const readProfileNames = async (): Promise<ProfileWithoutSaves[]> => {
     const reDirProfiles = "Euro Truck Simulator 2/profiles";
 
     const dirProfiles = await readDir(reDirProfiles, {
@@ -63,17 +75,18 @@ export const readProfileNames = async (): Promise<Profile[]> => {
         recursive: true,
     });
 
-    let profileNames: Profile[] = [];
+    let profileNames: ProfileWithoutSaves[] = [];
     for (let i = 0; i < dirProfiles.length; i++) {
         const profileImg = await getProfileImage(dirProfiles[i].path);
-        const saves = await getListSaveNames(dirProfiles[i].path);
-        if (!saves) continue;
+        const saves = await getProfileSavesCount(dirProfiles[i].path);
+        if (saves === 0) continue;
 
-        const profileObject: Profile = {
+        const profileObject: ProfileWithoutSaves = {
             name: Buffer.from(dirProfiles[i].name!, "hex").toString("utf-8"),
             hex: dirProfiles[i].name!,
-            saves: saves,
+            savesCount: saves,
             avatar: profileImg,
+            dir: dirProfiles[i].path,
         };
 
         profileNames.push(profileObject);

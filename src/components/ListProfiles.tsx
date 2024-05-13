@@ -1,5 +1,5 @@
 import { useProfileContex } from "../hooks/useProfileContex";
-import { Profile } from "../types/SaveGameTypes";
+import { ProfileWithoutSaves } from "../types/SaveGameTypes";
 
 import { Select, SelectItem, Avatar } from "@nextui-org/react";
 
@@ -15,7 +15,7 @@ const ListProfiles = () => {
 
         const profileFind = listProfiles.find(
             (p) => p.hex === profileHex
-        ) as Profile;
+        ) as ProfileWithoutSaves;
 
         setProfile(profileFind);
     };
@@ -50,7 +50,7 @@ const ListProfiles = () => {
                         <div className="flex flex-col">
                             <span className="text-small">{profile.name}</span>
                             <span className="text-tiny text-default-400">
-                                {profile.saves.length} saves
+                                {profile.savesCount} saves
                             </span>
                         </div>
                     </div>

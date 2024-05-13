@@ -1,4 +1,4 @@
-import { Profile, SaveGame } from "./SaveGameTypes";
+import { Profile, SaveGame, ProfileWithoutSaves } from "./SaveGameTypes";
 
 export interface DarkModeTypes {
     primary: {
@@ -18,8 +18,8 @@ export interface DarkModeTypes {
 export interface ProfileTypesContext {
     selectedProfile?: Profile;
     selectedSave?: SaveGame;
-    listProfiles: Array<Profile>;
-    setProfile: (profile: Profile) => void;
+    listProfiles: Array<ProfileWithoutSaves>;
+    setProfile: (profile: ProfileWithoutSaves) => void;
     setSave: (save: SaveGame) => void;
 }
 

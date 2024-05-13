@@ -1,10 +1,10 @@
 import { createContext, useState, useContext, useEffect, useRef } from "react";
 
-import { readProfileNames } from "../utils/fileEdit";
+import { readProfileNames, getListSaves } from "../utils/fileEdit";
 
 // types
 import { ProfileTypesContext } from "../types/ContexTypes";
-import { Profile, SaveGame } from "../types/SaveGameTypes";
+import { Profile, SaveGame, ProfileWithoutSaves } from "../types/SaveGameTypes";
 
 const ProfileContex = createContext<ProfileTypesContext>(
     {} as ProfileTypesContext
@@ -16,7 +16,9 @@ export const useProfileContex = (): ProfileTypesContext => {
 
 export const ProfileContexInfo = ({ children }: any) => {
     const loaded = useRef(false);
-    const [ProfilesList, setProfilesList] = useState<Array<Profile>>([]);
+    const [ProfilesList, setProfilesList] = useState<
+        Array<ProfileWithoutSaves>
+    >([]);
     const [selectedProfileState, setSelectedProfileState] = useState<
         Profile | undefined
     >(undefined);
@@ -29,9 +31,25 @@ export const ProfileContexInfo = ({ children }: any) => {
         setProfilesList(prof);
     };
 
-    const setSelectedProfile = (profile: Profile | undefined) => {
-        setSelectedSave(undefined);
-        setSelectedProfileState(profile);
+    const setSelectedProfile = async (
+        profile: ProfileWithoutSaves | undefined
+    ) => {
+        if (selectedSave) setSelectedSave(undefined);
+        if (!profile) {
+            setSelectedProfileState(undefined);
+            return;
+        }
+
+        const saveList = await getListSaves(profile.dir);
+        if (!saveList) return;
+
+        setSelectedProfileState({
+            name: profile.name,
+            hex: profile.hex,
+            saves: saveList,
+            avatar: profile.avatar,
+            dir: profile.dir,
+        });
     };
 
     useEffect(() => {
