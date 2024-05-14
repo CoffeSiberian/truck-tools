@@ -3,6 +3,7 @@ use std::fs::write;
 use std::fs::read_dir;
 use std::io::prelude::*;
 use tauri::api::process::{Command, CommandEvent};
+use tauri::async_runtime::Receiver;
 use crate::structs::vec_items_replace::VecItemsReplace;
 use crate::structs::vec_save_games::VecSaveGames;
 
@@ -33,20 +34,24 @@ fn get_dir_content(path: String) -> Option<Vec<String>> {
     return Some(result);
 }
 
+async fn execute_command(mut command_rx: Receiver<CommandEvent>) -> bool {
+    while let Some(event) = command_rx.recv().await {
+        match event {
+            CommandEvent::Terminated(_) => {
+                return true;
+            }
+            _ => {}
+        }
+    }
+    return false;
+}
+
 async fn descript_sii_file(path: String) -> bool {
     match Command::new_sidecar("SII_Decrypt") {
         Ok(command) => {
             match command.args([path]).spawn() {
-                Ok((mut rx, _child)) => {
-                    while let Some(event) = rx.recv().await {
-                        match event {
-                            CommandEvent::Terminated(_) => {
-                                return true;
-                            }
-                            _ => {}
-                        }
-                    }
-                    return false;
+                Ok((rx, _child)) => {
+                    return execute_command(rx).await;
                 },
                 Err(_) =>  return false,
             }
