@@ -4,7 +4,7 @@ use tauri::api::process::{Command, CommandEvent};
 use tauri::async_runtime::Receiver;
 use crate::structs::vec_save_games::VecSaveGames;
 
-fn read_file(path: &str) -> Option<File> {
+async fn read_file(path: &str) -> Option<File> {
     let file = File::open(path);
 
     match file {
@@ -13,7 +13,7 @@ fn read_file(path: &str) -> Option<File> {
     };
 }
 
-fn get_dir_content(path: String) -> Option<Vec<String>> {
+async fn get_dir_content(path: String) -> Option<Vec<String>> {
     let mut result: Vec<String> = Vec::new();
 
     let paths = match read_dir(path) {
@@ -57,15 +57,15 @@ async fn descript_sii_file(path: String) -> bool {
     }
 }
 
-pub fn save_file(path: String, content: Vec<String>) -> bool {
+pub async fn save_file(path: String, content: Vec<String>) -> bool {
     match write(path, content.join("\r\n")) {
         Ok(_) => return true,
         Err(_) => return false,
     }
 }
 
-pub fn read_file_text(path: &str) -> Option<Vec<String>> {
-    let readed_file: Option<File> = read_file(path);
+pub async fn read_file_text(path: &str) -> Option<Vec<String>> {
+    let readed_file: Option<File> = read_file(path).await;
 
     match readed_file {
         Some(mut file) => {
@@ -100,7 +100,7 @@ pub fn get_save_name(arr_val: &Vec<String>, default_name: &str) -> Option<String
 }
 
 pub async fn get_list_save_game(path: String) -> Option<Vec<VecSaveGames>> {
-    let dir_saves_content: Vec<String> = match get_dir_content(path + "/save") {
+    let dir_saves_content: Vec<String> = match get_dir_content(path + "/save").await {
         Some(dir_content) => dir_content,
         None => return None,
     };
@@ -115,7 +115,7 @@ pub async fn get_list_save_game(path: String) -> Option<Vec<VecSaveGames>> {
             continue;
         }
 
-        let file: Vec<String> = match read_file_text(format!("{}/info.sii", item_path).as_str()) {
+        let file: Vec<String> = match read_file_text(format!("{}/info.sii", item_path).as_str()).await {
             Some(file) => file,
             None => continue,
         };
@@ -133,8 +133,8 @@ pub async fn get_list_save_game(path: String) -> Option<Vec<VecSaveGames>> {
     return Some(result);
 }
 
-pub fn get_list_save_count(path: String) -> usize {
-    let dir_saves_content: Vec<String> = match get_dir_content(path + "/save") {
+pub async fn get_list_save_count(path: String) -> usize {
+    let dir_saves_content: Vec<String> = match get_dir_content(path + "/save").await {
         Some(dir_content) => dir_content,
         None => return 0,
     };
