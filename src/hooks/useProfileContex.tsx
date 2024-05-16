@@ -16,15 +16,20 @@ export const useProfileContex = (): ProfileTypesContext => {
 
 export const ProfileContexInfo = ({ children }: any) => {
     const loaded = useRef(false);
+
     const [ProfilesList, setProfilesList] = useState<
         Array<ProfileWithoutSaves>
     >([]);
+
     const [selectedProfileState, setSelectedProfileState] = useState<
         Profile | undefined
     >(undefined);
+
     const [selectedSave, setSelectedSave] = useState<SaveGame | undefined>(
         undefined
     );
+
+    const [isSavesLoading, setIsSavesLoading] = useState<boolean>(false);
 
     const loadDirectory = async () => {
         const prof = await readProfileNames();
@@ -40,7 +45,10 @@ export const ProfileContexInfo = ({ children }: any) => {
             return;
         }
 
+        setIsSavesLoading(true);
         const saveList = await getListSaves(profile.dir);
+        setIsSavesLoading(false);
+
         if (!saveList) return;
 
         setSelectedProfileState({
@@ -65,6 +73,7 @@ export const ProfileContexInfo = ({ children }: any) => {
                 selectedProfile: selectedProfileState,
                 selectedSave: selectedSave,
                 listProfiles: ProfilesList,
+                isSavesLoading: isSavesLoading,
                 setProfile: setSelectedProfile,
                 setSave: setSelectedSave,
             }}

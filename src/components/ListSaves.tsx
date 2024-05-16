@@ -2,7 +2,8 @@ import { useProfileContex } from "../hooks/useProfileContex";
 import { Select, SelectItem } from "@nextui-org/react";
 
 const ListSaves = () => {
-    const { selectedProfile, selectedSave, setSave } = useProfileContex();
+    const { selectedProfile, selectedSave, isSavesLoading, setSave } =
+        useProfileContex();
 
     const onClickSave = (saveHex: string) => {
         selectedProfile?.saves.map((save) => {
@@ -15,8 +16,9 @@ const ListSaves = () => {
     return (
         <Select
             className="py-1"
-            isDisabled={selectedProfile ? false : true}
+            isDisabled={selectedProfile && !isSavesLoading ? false : true}
             errorMessage={selectedProfile ? undefined : "No profile selected"}
+            isLoading={isSavesLoading}
             items={selectedProfile ? selectedProfile.saves : []}
             selectedKeys={selectedSave ? [selectedSave.name] : []}
             onChange={(e) => onClickSave(e.target.value)}
