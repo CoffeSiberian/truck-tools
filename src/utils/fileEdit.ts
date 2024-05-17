@@ -23,7 +23,7 @@ const getProfileImage = async (path: string): Promise<string | undefined> => {
     return convertFileSrc(imgPath);
 };
 
-const descriptFiles = async (
+export const descriptFiles = async (
     dir: string,
     fileName: string
 ): Promise<boolean> => {
@@ -40,6 +40,11 @@ const descriptFiles = async (
     } catch (err) {
         return false;
     }
+};
+
+export const openExplorer = async (path: string) => {
+    const command = new Command("explorer", path);
+    await command.execute();
 };
 
 const getProfileSavesCount = async (profilePath: string): Promise<number> => {

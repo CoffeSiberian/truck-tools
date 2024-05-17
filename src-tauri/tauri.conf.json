@@ -29,6 +29,11 @@
                         "name": "bin/SII_Decrypt",
                         "sidecar": true,
                         "args": true
+                    },
+                    {
+                        "name": "explorer",
+                        "cmd": "explorer",
+                        "args": true
                     }
                 ]
             },
