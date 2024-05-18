@@ -5,13 +5,13 @@ import ListProfiles from "./ListProfiles";
 import ListSaves from "./ListSaves";
 
 // icons
-import { IconFolderShare, IconBinary } from "@tabler/icons-react";
+import { IconFolderShare, IconBinary, IconReload } from "@tabler/icons-react";
 
 // types
 import { Profile } from "../types/SaveGameTypes";
 
 const SelectProfile = () => {
-    const { selectedProfile, isSavesLoading, selectedSave } =
+    const { selectedProfile, isSavesLoading, selectedSave, reloadProfiles } =
         useProfileContex();
 
     const renderProfile = (profileInfo: Profile | undefined) => {
@@ -68,9 +68,13 @@ const SelectProfile = () => {
                                                     : undefined
                                             }
                                             endContent={
-                                                <IconFolderShare stroke={1} />
+                                                <IconFolderShare stroke={2} />
                                             }
-                                            color="default"
+                                            color={
+                                                selectedSave
+                                                    ? "warning"
+                                                    : "default"
+                                            }
                                         >
                                             Open
                                         </Button>
@@ -88,9 +92,13 @@ const SelectProfile = () => {
                                                     : undefined
                                             }
                                             endContent={
-                                                <IconBinary stroke={1} />
+                                                <IconBinary stroke={2} />
                                             }
-                                            color="default"
+                                            color={
+                                                selectedSave
+                                                    ? "warning"
+                                                    : "default"
+                                            }
                                         >
                                             Decrypt
                                         </Button>
@@ -124,9 +132,12 @@ const SelectProfile = () => {
             <Card className="flex w-full max-w-4xl">
                 <CardBody className="flex flex-row items-center p-1 content-between">
                     {renderProfile(selectedProfile)}
-                    <div className="flex w-full p-1 gap-2">
+                    <div className="flex w-full items-center p-1 gap-2">
                         <ListProfiles />
                         <ListSaves />
+                        <Button onPress={() => reloadProfiles()} isIconOnly>
+                            <IconReload stroke={2} />
+                        </Button>
                     </div>
                 </CardBody>
             </Card>

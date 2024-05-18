@@ -36,6 +36,13 @@ export const ProfileContexInfo = ({ children }: any) => {
         setProfilesList(prof);
     };
 
+    const reloadProfiles = async () => {
+        setSelectedSave(undefined);
+        setSelectedProfileState(undefined);
+        setProfilesList([]);
+        loadDirectory();
+    };
+
     const setSelectedProfile = async (
         profile: ProfileWithoutSaves | undefined
     ) => {
@@ -76,6 +83,7 @@ export const ProfileContexInfo = ({ children }: any) => {
                 isSavesLoading: isSavesLoading,
                 setProfile: setSelectedProfile,
                 setSave: setSelectedSave,
+                reloadProfiles: reloadProfiles,
             }}
         >
             {children}

@@ -21,6 +21,7 @@ export interface ProfileTypesContext {
     listProfiles: Array<ProfileWithoutSaves>;
     isSavesLoading: boolean;
     setProfile: (profile: ProfileWithoutSaves) => void;
+    reloadProfiles: () => void;
     setSave: (save: SaveGame) => void;
 }
 

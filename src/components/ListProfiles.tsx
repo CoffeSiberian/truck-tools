@@ -28,7 +28,7 @@ const ListProfiles = () => {
             }
             isLoading={listProfiles.length === 0}
             items={listProfiles}
-            selectedKeys={selectedProfile ? [selectedProfile.hex] : undefined}
+            selectedKeys={selectedProfile ? [selectedProfile.hex] : []}
             onChange={(e) => onClickProfile(e.target.value)}
             label="Profiles"
             placeholder="Select a profile"
