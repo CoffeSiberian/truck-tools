@@ -15,7 +15,6 @@ const ListSaves = () => {
 
     return (
         <Select
-            className="py-1"
             isDisabled={selectedProfile && !isSavesLoading ? false : true}
             errorMessage={selectedProfile ? undefined : "No profile selected"}
             isLoading={isSavesLoading}

@@ -21,7 +21,6 @@ const ListProfiles = () => {
 
     return (
         <Select
-            className="py-1"
             isDisabled={!(listProfiles.length > 0)}
             errorMessage={
                 listProfiles.length > 0 ? undefined : "No profiles found"
