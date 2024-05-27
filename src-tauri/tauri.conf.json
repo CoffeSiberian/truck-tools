@@ -8,7 +8,7 @@
     },
     "package": {
         "productName": "Truck Tools",
-        "version": "0.0.1"
+        "version": "0.0.2"
     },
     "tauri": {
         "allowlist": {
@@ -61,7 +61,7 @@
             },
             "endpoints": ["https://siberiancoffe.cloud/updater.json"],
             "dialog": true,
-            "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEM1OTU1RTQxREFEQkZFQTIKUldTaS90dmFRVjZWeGVTTnRjUThST0k4cVZqOEFQN01HcU0vNmxFZEdKYUpXS2szS3dxNytCaFgK"
+            "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEJERkMxNzRDRjFGM0ZDQTYKUldTbS9QUHhUQmY4dlV4eFoxS0VnUDVGUHJCcGI1SklzK2cwRm9VUS82NHVHNlAwMTBZaVd3bXcK"
         },
         "security": {
             "csp": "default-src 'self'; img-src 'self' asset: https://asset.localhost"
@@ -70,6 +70,7 @@
             "active": true,
             "targets": "all",
             "identifier": "com.trucktools.dev",
+            "publisher": "SiberianCoffe",
             "icon": [
                 "icons/32x32.png",
                 "icons/128x128.png",
