@@ -214,7 +214,7 @@ pub fn get_my_trailer_id(arr_val: &Vec<String>) -> Option<String> {
     for (_i, item) in arr_val.iter().enumerate() {
         let option_values: Vec<&str> = item.split(':').collect();
         
-        if option_values[0] == " my_trailer" {
+        if option_values[0] == " assigned_trailer" {
             if option_values[1] == " null" {
                 break;
             }
