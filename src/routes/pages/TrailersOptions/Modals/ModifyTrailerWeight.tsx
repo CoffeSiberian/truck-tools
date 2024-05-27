@@ -92,6 +92,7 @@ const ModifyTrailerWeight = () => {
             <Button
                 endContent={<IconPencil stroke={2} />}
                 onPress={onOpen}
+                isDisabled={!selectedSave}
                 color="primary"
                 variant="shadow"
             >

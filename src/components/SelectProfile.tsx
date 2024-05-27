@@ -1,5 +1,13 @@
 import { useProfileContex } from "../hooks/useProfileContex";
-import { Avatar, Card, CardBody, Skeleton, Button } from "@nextui-org/react";
+import {
+    Avatar,
+    Card,
+    CardBody,
+    Chip,
+    Skeleton,
+    Button,
+} from "@nextui-org/react";
+import { IconAlertTriangle } from "@tabler/icons-react";
 import { descriptFiles, openExplorer } from "../utils/fileEdit";
 import ListProfiles from "./ListProfiles";
 import ListSaves from "./ListSaves";
@@ -128,7 +136,20 @@ const SelectProfile = () => {
     };
 
     return (
-        <div className="fixed w-full bottom-0 z-10 flex flex-col items-center mt-auto mb-2 transition-opacity opacity-70 hover:opacity-100">
+        <div
+            className={`fixed w-full bottom-0 z-10 flex flex-col items-center mt-auto mb-2 transition-opacity ${
+                selectedSave ? "opacity-70" : "opacity-100"
+            } hover:opacity-100`}
+        >
+            {!selectedSave && (
+                <Chip
+                    className="opacity-100"
+                    startContent={<IconAlertTriangle stroke={1.5} />}
+                    color="warning"
+                >
+                    <b>First select your profile and save</b>
+                </Chip>
+            )}
             <Card className="flex w-full max-w-4xl">
                 <CardBody className="flex flex-row items-center p-1 content-between">
                     {renderProfile(selectedProfile)}
