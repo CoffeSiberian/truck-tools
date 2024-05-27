@@ -2,6 +2,7 @@ use std::fs::{File, write, read_dir};
 use std::io::prelude::*;
 use tauri::api::process::{Command, CommandEvent};
 use tauri::async_runtime::Receiver;
+use uuid::Uuid;
 use crate::structs::vec_save_games::VecSaveGames;
 
 async fn read_file(path: &str) -> Option<File> {
@@ -127,7 +128,9 @@ pub async fn get_list_save_game(path: String) -> Option<Vec<VecSaveGames>> {
             Some(save_game_name) => save_game_name,
             None => continue,
         };
-        result.push(VecSaveGames{name: save_game_name, dir: item.to_string()});
+        
+        let uuid: String = Uuid::new_v4().to_string();
+        result.push(VecSaveGames{id: uuid, name: save_game_name, dir: item.to_string()});
     }
 
     return Some(result);

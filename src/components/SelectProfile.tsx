@@ -139,7 +139,7 @@ const SelectProfile = () => {
         <div
             className={`fixed w-full bottom-0 z-10 flex flex-col items-center mt-auto mb-2 transition-opacity ${
                 selectedSave ? "opacity-70" : "opacity-100"
-            } hover:opacity-100`}
+            } hover:opacity-100 gap-1`}
         >
             {!selectedSave && (
                 <Chip

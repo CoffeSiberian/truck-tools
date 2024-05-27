@@ -15,6 +15,7 @@ export interface ProfileWithoutSaves {
 }
 
 export interface SaveGame {
+    id: string;
     name: string;
     dir: string;
 }

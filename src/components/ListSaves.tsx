@@ -7,7 +7,7 @@ const ListSaves = () => {
 
     const onClickSave = (saveHex: string) => {
         selectedProfile?.saves.map((save) => {
-            if (save.name === saveHex) {
+            if (save.id === saveHex) {
                 setSave(save);
             }
         });
@@ -19,7 +19,7 @@ const ListSaves = () => {
             errorMessage={selectedProfile ? undefined : "No profile selected"}
             isLoading={isSavesLoading}
             items={selectedProfile ? selectedProfile.saves : []}
-            selectedKeys={selectedSave ? [selectedSave.name] : []}
+            selectedKeys={selectedSave ? [selectedSave.id] : []}
             onChange={(e) => onClickSave(e.target.value)}
             label="Saves"
             placeholder="Select a save"
@@ -28,7 +28,7 @@ const ListSaves = () => {
             size="md"
         >
             {(save) => (
-                <SelectItem key={save.name} textValue={save.name}>
+                <SelectItem key={save.id} textValue={save.name}>
                     {save.name}
                 </SelectItem>
             )}
