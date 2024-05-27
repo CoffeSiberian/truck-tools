@@ -35,7 +35,7 @@ const AboutModal: FC<AboutModalProps> = ({ isOpen, onOpenChange }) => {
                     {(_onClose) => (
                         <>
                             <ModalHeader className="flex flex-col gap-1">
-                                Truck Tools - Preview 0.0.2
+                                Truck Tools - Preview 0.0.3
                             </ModalHeader>
                             <ModalBody className="flex py-1 justify-center items-center">
                                 <p>
