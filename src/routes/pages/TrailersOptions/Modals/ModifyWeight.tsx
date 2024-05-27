@@ -48,7 +48,15 @@ const ModifyWeight = () => {
                 completed: true,
             });
         }
+        if (!completed.error) setWeight("");
         setIsLoading(false);
+    };
+
+    const setWeightOnlyNumbers = (value: string) => {
+        const regex = /^[0-9]*$/;
+        if (value === "" || regex.test(value)) {
+            setWeight(value);
+        }
     };
 
     return (
@@ -85,7 +93,7 @@ const ModifyWeight = () => {
                                     label="Weight"
                                     placeholder="Enter weight in kg"
                                     value={Weight}
-                                    onValueChange={setWeight}
+                                    onValueChange={setWeightOnlyNumbers}
                                 />
                                 <AlertSave
                                     message={

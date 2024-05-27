@@ -58,7 +58,33 @@ const ModifyTrailerWeight = () => {
                 completed: true,
             });
         }
+        if (!completed.error) {
+            setTrailerWeight({
+                chassisMass: "",
+                bodyMass: "",
+            });
+        }
         setIsLoading(false);
+    };
+
+    const setchassisMassOnlyNumbers = (value: string) => {
+        const regex = /^[0-9]*$/;
+        if (value === "" || regex.test(value)) {
+            setTrailerWeight({
+                ...TrailerWeight,
+                chassisMass: value,
+            });
+        }
+    };
+
+    const setbodyMassOnlyNumbers = (value: string) => {
+        const regex = /^[0-9]*$/;
+        if (value === "" || regex.test(value)) {
+            setTrailerWeight({
+                ...TrailerWeight,
+                bodyMass: value,
+            });
+        }
     };
 
     return (
@@ -96,10 +122,7 @@ const ModifyTrailerWeight = () => {
                                     placeholder="Enter weight in kg"
                                     value={TrailerWeight.chassisMass}
                                     onValueChange={(value) =>
-                                        setTrailerWeight({
-                                            ...TrailerWeight,
-                                            chassisMass: value,
-                                        })
+                                        setchassisMassOnlyNumbers(value)
                                     }
                                 />
                                 <Input
@@ -107,10 +130,7 @@ const ModifyTrailerWeight = () => {
                                     placeholder="Enter weight in kg"
                                     value={TrailerWeight.bodyMass}
                                     onValueChange={(value) =>
-                                        setTrailerWeight({
-                                            ...TrailerWeight,
-                                            bodyMass: value,
-                                        })
+                                        setbodyMassOnlyNumbers(value)
                                     }
                                 />
                                 <AlertSave
