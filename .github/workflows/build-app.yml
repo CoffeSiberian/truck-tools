@@ -2,6 +2,8 @@ name: build-app
 
 on:
     push:
+        branches:
+            - main
         paths:
             - version
 
