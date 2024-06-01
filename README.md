@@ -9,12 +9,16 @@
 -   [x] Modify load weight
 -   [x] Modify load trailer
 -   [x] Unlock trailers in restricted areas
+-   [] Create customized color license plate
 
 #### Trucks
 
+-   [] Repair truck
 -   [] Repair all trucks
--   [] Infinite fuel in the current truck
--   [] Fill fuel of all trucks
+-   [] Infinite fuel on current truck
+-   [] Fill fuel
+-   [] Fill all trucks fuel
+-   [] Create customized color license plate
 
 #### Profiles
 
@@ -33,7 +37,6 @@
 ### Notable Improvements
 
 -   [] Share trailers and trucks with a link
--   [] Create customized color license plate
 -   [] Add multi-language
 -   [] (Planned) Compatibility with DLC's when sharing trailers
 -   [] (Possible) User account
