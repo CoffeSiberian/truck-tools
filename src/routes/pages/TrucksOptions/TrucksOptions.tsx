@@ -5,6 +5,7 @@ import testImage from "../../../static/img/testimg.webp";
 
 // modals
 import RepairTruck from "./Modals/RepairTruck";
+import RepairAllTruck from "./Modals/RepairAllTruck";
 
 const TrucksOptions = () => {
     const items = [
@@ -20,7 +21,7 @@ const TrucksOptions = () => {
             title: "Repair all trucks",
             description: "Infinite fuel in the current truck",
             image: testImage,
-            modal: <></>,
+            modal: <RepairAllTruck />,
         },
         {
             id: "3",
