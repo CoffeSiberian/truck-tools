@@ -1,31 +1,47 @@
-import { Button } from "@nextui-org/react";
 import OptionCard from "../../../components/OptionCard";
-
-// icons
-import { IconPencil } from "@tabler/icons-react";
 
 // images
 import testImage from "../../../static/img/testimg.webp";
+
+// modals
+import RepairTruck from "./Modals/RepairTruck";
 
 const TrucksOptions = () => {
     const items = [
         {
             id: "1",
-            title: "Repair all Trucks",
+            title: "Repair truck",
             description: "Repair all trucks in the garage",
             image: testImage,
+            modal: <RepairTruck />,
         },
         {
             id: "2",
-            title: "Infinite fuel in the current truck",
+            title: "Repair all trucks",
             description: "Infinite fuel in the current truck",
             image: testImage,
+            modal: <></>,
         },
         {
             id: "3",
-            title: "Fill fuel of all trucks",
+            title: "Fill fuel",
             description: "Fill fuel in current truck",
             image: testImage,
+            modal: <></>,
+        },
+        {
+            id: "4",
+            title: "Infinite fuel on current truck",
+            description: "Fill fuel in current truck",
+            image: testImage,
+            modal: <></>,
+        },
+        {
+            id: "5",
+            title: "Fill all trucks fuel",
+            description: "Fill fuel in current truck",
+            image: testImage,
+            modal: <></>,
         },
     ];
 
@@ -40,15 +56,7 @@ const TrucksOptions = () => {
                             title={item.title}
                             description={item.description}
                             image={item.image}
-                            footerJsx={
-                                <Button
-                                    endContent={<IconPencil stroke={2} />}
-                                    color="primary"
-                                    variant="shadow"
-                                >
-                                    Open
-                                </Button>
-                            }
+                            footerJsx={item.modal}
                         />
                     );
                 })}

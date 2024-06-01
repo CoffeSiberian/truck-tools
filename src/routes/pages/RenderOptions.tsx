@@ -94,7 +94,7 @@ const RenderOptions = () => {
                     return renderCart(
                         item.label,
                         item.icon,
-                        !item.modal ? index > 0 : !item.modal
+                        !item.modal ? index > 1 : !item.modal
                     );
                 })}
             </Tabs>
