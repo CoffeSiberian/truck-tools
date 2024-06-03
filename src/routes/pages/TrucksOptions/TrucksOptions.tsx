@@ -5,44 +5,47 @@ import testImage from "../../../static/img/testimg.webp";
 
 // modals
 import RepairTruck from "./Modals/RepairTruck";
-import RepairAllTruck from "./Modals/RepairAllTruck";
+import RepairAllTrucks from "./Modals/RepairAllTrucks";
+import FillTruckFuel from "./Modals/FillTruckFuel";
+import SetInfiniteFuel from "./Modals/SetInfiniteFuel";
+import FillAllTrucksFuel from "./Modals/FillAllTrucksFuel";
 
 const TrucksOptions = () => {
     const items = [
         {
             id: "1",
             title: "Repair truck",
-            description: "Repair all trucks in the garage",
+            description: "Repair your current truck",
             image: testImage,
             modal: <RepairTruck />,
         },
         {
             id: "2",
             title: "Repair all trucks",
-            description: "Infinite fuel in the current truck",
+            description: "Repairs all fleet trucks",
             image: testImage,
-            modal: <RepairAllTruck />,
+            modal: <RepairAllTrucks />,
         },
         {
             id: "3",
             title: "Fill fuel",
             description: "Fill fuel in current truck",
             image: testImage,
-            modal: <></>,
+            modal: <FillTruckFuel />,
         },
         {
             id: "4",
             title: "Infinite fuel on current truck",
-            description: "Fill fuel in current truck",
+            description: "Infinite fuel on current truck",
             image: testImage,
-            modal: <></>,
+            modal: <SetInfiniteFuel />,
         },
         {
             id: "5",
             title: "Fill all trucks fuel",
-            description: "Fill fuel in current truck",
+            description: "Refueling all fleet trucks",
             image: testImage,
-            modal: <></>,
+            modal: <FillAllTrucksFuel />,
         },
     ];
 

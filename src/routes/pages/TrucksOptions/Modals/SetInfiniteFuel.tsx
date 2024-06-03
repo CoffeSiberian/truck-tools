@@ -19,7 +19,7 @@ interface completedProps {
     completed: boolean;
 }
 
-const RepairAllTruck = () => {
+const SetInfiniteFuel = () => {
     const { selectedSave } = useProfileContex();
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -64,22 +64,25 @@ const RepairAllTruck = () => {
                     {(onClose) => (
                         <>
                             <ModalHeader className="flex flex-col gap-1">
-                                Repair All truck
+                                Infinite fuel on current truck
                             </ModalHeader>
-                            <ModalBody className="py-1 items-center">
+                            <ModalBody className="py-1">
                                 <p>
-                                    Repair all the trucks you have in your
-                                    company
+                                    Exactly the fuel is not infinite but it is
+                                    for approximately 5.000.000 KM (depending on
+                                    the truck).
                                 </p>
-                                <AlertSave
-                                    message={
-                                        completed.error
-                                            ? "An error occurred in the process"
-                                            : "Saved successfully"
-                                    }
-                                    error={completed.error}
-                                    show={completed.completed}
-                                />
+                                <div className="flex justify-center">
+                                    <AlertSave
+                                        message={
+                                            completed.error
+                                                ? "An error occurred in the process"
+                                                : "Saved successfully"
+                                        }
+                                        error={completed.error}
+                                        show={completed.completed}
+                                    />
+                                </div>
                             </ModalBody>
                             <ModalFooter>
                                 <Button
@@ -94,7 +97,7 @@ const RepairAllTruck = () => {
                                     color="success"
                                     onPress={onClickApply}
                                 >
-                                    Repair
+                                    Refuel
                                 </Button>
                             </ModalFooter>
                         </>
@@ -105,4 +108,4 @@ const RepairAllTruck = () => {
     );
 };
 
-export default RepairAllTruck;
+export default SetInfiniteFuel;
