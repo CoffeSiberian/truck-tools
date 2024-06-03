@@ -66,20 +66,22 @@ const RepairAllTrucks = () => {
                             <ModalHeader className="flex flex-col gap-1">
                                 Repair All truck
                             </ModalHeader>
-                            <ModalBody className="py-1 items-center">
+                            <ModalBody className="py-1">
                                 <p>
                                     Repair all the trucks you have in your
                                     company
                                 </p>
-                                <AlertSave
-                                    message={
-                                        completed.error
-                                            ? "An error occurred in the process"
-                                            : "Saved successfully"
-                                    }
-                                    error={completed.error}
-                                    show={completed.completed}
-                                />
+                                <div className="flex justify-center">
+                                    <AlertSave
+                                        message={
+                                            completed.error
+                                                ? "An error occurred in the process"
+                                                : "Saved successfully"
+                                        }
+                                        error={completed.error}
+                                        show={completed.completed}
+                                    />
+                                </div>
                             </ModalBody>
                             <ModalFooter>
                                 <Button
