@@ -46,40 +46,25 @@ pub fn set_truck_wear(arr_val: &Vec<String>, wear: &str, index: usize) -> Option
     for (i, item) in arr_val.iter().enumerate().skip(index) {
         let option_values: Vec<&str> = item.split(':').collect();
 
-        if option_values[0] == " engine_wear" {
-            arr_val_clone[i] = format!(" engine_wear: {}", wear);
-        }
-
-        if option_values[0] == " transmission_wear" {
-            arr_val_clone[i] = format!(" transmission_wear: {}", wear);
-        }
-
-        if option_values[0] == " cabin_wear" {
-            arr_val_clone[i] = format!(" cabin_wear: {}", wear);
-        }
-
-        if option_values[0] == " engine_wear_unfixable" {
-            arr_val_clone[i] = format!(" engine_wear_unfixable: {}", wear);
-        }
-
-        if option_values[0] == " transmission_wear_unfixable" {
-            arr_val_clone[i] = format!(" transmission_wear_unfixable: {}", wear);
-        }
-
-        if option_values[0] == " cabin_wear_unfixable" {
-            arr_val_clone[i] = format!(" cabin_wear_unfixable: {}", wear);
-        }
-
-        if option_values[0] == " chassis_wear" {
-            arr_val_clone[i] = format!(" chassis_wear: {}", wear);
-        }
-
-        if option_values[0] == " chassis_wear_unfixable" {
-            arr_val_clone[i] = format!(" chassis_wear_unfixable: {}", wear);
-        }
-
-        if option_values[0] == "}" {
-            break;
+        match option_values[0] {
+            "}" => break,
+            " engine_wear" => arr_val_clone[i] = format!(" engine_wear: {}", wear),
+            " transmission_wear" => arr_val_clone[i] = format!(" transmission_wear: {}", wear),
+            " cabin_wear" => arr_val_clone[i] = format!(" cabin_wear: {}", wear),
+            " engine_wear_unfixable" => {
+                arr_val_clone[i] = format!(" engine_wear_unfixable: {}", wear)
+            }
+            " transmission_wear_unfixable" => {
+                arr_val_clone[i] = format!(" transmission_wear_unfixable: {}", wear)
+            }
+            " cabin_wear_unfixable" => {
+                arr_val_clone[i] = format!(" cabin_wear_unfixable: {}", wear)
+            }
+            " chassis_wear" => arr_val_clone[i] = format!(" chassis_wear: {}", wear),
+            " chassis_wear_unfixable" => {
+                arr_val_clone[i] = format!(" chassis_wear_unfixable: {}", wear)
+            }
+            _ => (),
         }
     }
 
@@ -89,21 +74,20 @@ pub fn set_truck_wear(arr_val: &Vec<String>, wear: &str, index: usize) -> Option
     for (i, item) in arr_val.iter().enumerate().skip(index) {
         let option_values: Vec<&str> = item.split('[').collect();
 
-        if option_values[0] == " wheels_wear" {
-            arr_val_clone[i] = format!(" wheels_wear[{}]: {}", wheel_wear_number, wear);
-            wheel_wear_number += 1;
-        }
-
-        if option_values[0] == " wheels_wear_unfixable" {
-            arr_val_clone[i] = format!(
-                " wheels_wear_unfixable[{}]: {}",
-                wheel_wear_unfixable_number, wear
-            );
-            wheel_wear_unfixable_number += 1;
-        }
-
-        if option_values[0] == "}" {
-            break;
+        match option_values[0] {
+            "}" => break,
+            " wheels_wear" => {
+                arr_val_clone[i] = format!(" wheels_wear[{}]: {}", wheel_wear_number, wear);
+                wheel_wear_number += 1;
+            }
+            " wheels_wear_unfixable" => {
+                arr_val_clone[i] = format!(
+                    " wheels_wear_unfixable[{}]: {}",
+                    wheel_wear_unfixable_number, wear
+                );
+                wheel_wear_unfixable_number += 1;
+            }
+            _ => (),
         }
     }
 
