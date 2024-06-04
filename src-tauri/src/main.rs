@@ -4,13 +4,14 @@
 mod structs;
 mod utils;
 mod main_options;
+
+use serde_json::json;
 use utils::file_edit::{
     read_file_text, 
     save_file, 
     get_list_save_game, 
     get_list_save_count
 };
-use serde_json::json;
 use structs::vec_save_games::VecSaveGames;
 use main_options::trailers::{
     get_my_trailer_id, 
@@ -22,6 +23,11 @@ use main_options::trailers::{
     get_trailer_def_index, 
     set_chassis_and_body_mass_def_trailers, 
     set_remove_trailer_restricted_areas
+};
+use main_options::trucks::{
+    get_truck_id,
+    get_truck_vehicle_index,
+    set_truck_wear
 };
 
 const RESPONSE_FALSE: &str = r#"{"res": false}"#;
@@ -170,14 +176,41 @@ async fn get_save_game_count(dir_save: &str) -> Result<String, ()> {
     return Ok(response);
 }
 
+#[tauri::command]
+async fn repait_truck(dir_save: &str, wear: &str) -> Result<String, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let truck_id: String = match get_truck_id(&file) {
+        Some(truck_id) => truck_id,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let truck_index: usize = match get_truck_vehicle_index(&file, truck_id) {
+        Some(truck_index) => truck_index,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let truck_wear: Vec<String> = match set_truck_wear(&file, wear, truck_index) {
+        Some(truck_wear) => truck_wear,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    save_file(dir_save.to_string(), truck_wear).await;
+    return Ok(RESPONSE_TRUE.to_string());
+}
+
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
-            set_cargo_mass_trailers_and_slave, 
-            set_unlock_current_trailers, 
-            set_cargo_mass_def_trailers, 
-            get_save_game_name, 
-            get_save_game_count
+            set_cargo_mass_trailers_and_slave,
+            set_unlock_current_trailers,
+            set_cargo_mass_def_trailers,
+            get_save_game_name,
+            get_save_game_count,
+            repait_truck
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
