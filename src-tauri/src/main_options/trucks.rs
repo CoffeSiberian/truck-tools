@@ -41,39 +41,39 @@ pub fn get_truck_vehicle_index(arr_val: &Vec<String>, truck_id: String) -> Optio
 pub fn set_truck_wear(arr_val: &Vec<String>, wear: &str, index: usize) -> Option<Vec<String>> {
     let mut arr_val_clone: Vec<String> = arr_val.clone();
 
-    for (_i, item) in arr_val.iter().enumerate().skip(index) {
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
         let option_values: Vec<&str> = item.split(':').collect();
         
         if option_values[0] == " engine_wear" {
-            arr_val_clone[index] = format!(" engine_wear: {}", wear);
+            arr_val_clone[i] = format!(" engine_wear: {}", wear);
         }
         
         if option_values[0] == " transmission_wear" {
-            arr_val_clone[index] = format!(" transmission_wear: {}", wear);
+            arr_val_clone[i] = format!(" transmission_wear: {}", wear);
         }
 
         if option_values[0] == " cabin_wear" {
-            arr_val_clone[index] = format!(" cabin_wear: {}", wear);
+            arr_val_clone[i] = format!(" cabin_wear: {}", wear);
         }
 
         if option_values[0] == " engine_wear_unfixable" {
-            arr_val_clone[index] = format!(" engine_wear_unfixable: {}", wear);
+            arr_val_clone[i] = format!(" engine_wear_unfixable: {}", wear);
         }
 
         if option_values[0] == " transmission_wear_unfixable" {
-            arr_val_clone[index] = format!(" transmission_wear_unfixable: {}", wear);
+            arr_val_clone[i] = format!(" transmission_wear_unfixable: {}", wear);
         }
 
         if option_values[0] == " cabin_wear_unfixable" {
-            arr_val_clone[index] = format!(" cabin_wear_unfixable: {}", wear);
+            arr_val_clone[i] = format!(" cabin_wear_unfixable: {}", wear);
         }
 
         if option_values[0] == " chassis_wear" {
-            arr_val_clone[index] = format!(" chassis_wear: {}", wear);
+            arr_val_clone[i] = format!(" chassis_wear: {}", wear);
         }
 
         if option_values[0] == " chassis_wear_unfixable" {
-            arr_val_clone[index] = format!(" chassis_wear_unfixable: {}", wear);
+            arr_val_clone[i] = format!(" chassis_wear_unfixable: {}", wear);
         }
 
         if option_values[0] == "}" {
