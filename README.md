@@ -13,7 +13,7 @@
 
 #### Trucks
 
--   [] Repair truck
+-   [x] Repair truck
 -   [] Repair all trucks
 -   [] Infinite fuel on current truck
 -   [] Fill fuel

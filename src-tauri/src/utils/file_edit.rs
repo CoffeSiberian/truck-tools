@@ -1,9 +1,9 @@
-use std::fs::{File, write, read_dir};
+use crate::structs::vec_save_games::VecSaveGames;
+use std::fs::{read_dir, write, File};
 use std::io::prelude::*;
 use tauri::api::process::{Command, CommandEvent};
 use tauri::async_runtime::Receiver;
 use uuid::Uuid;
-use crate::structs::vec_save_games::VecSaveGames;
 
 async fn read_file(path: &str) -> Option<File> {
     let file = File::open(path);
@@ -20,7 +20,7 @@ async fn get_dir_content(path: String) -> Option<Vec<String>> {
     let paths = match read_dir(path) {
         Ok(paths) => paths,
         Err(_) => return None,
-    }; 
+    };
 
     for path in paths {
         let path = match path {
@@ -46,14 +46,12 @@ async fn execute_command(mut command_rx: Receiver<CommandEvent>) -> bool {
 
 async fn descript_sii_file(path: String) -> bool {
     match Command::new_sidecar("SII_Decrypt") {
-        Ok(command) => {
-            match command.args([path]).spawn() {
-                Ok((rx, _child)) => {
-                    return execute_command(rx).await;
-                },
-                Err(_) =>  return false,
+        Ok(command) => match command.args([path]).spawn() {
+            Ok((rx, _child)) => {
+                return execute_command(rx).await;
             }
-        }
+            Err(_) => return false,
+        },
         Err(_) => return false,
     }
 }
@@ -71,7 +69,7 @@ pub async fn read_file_text(path: &str) -> Option<Vec<String>> {
     match readed_file {
         Some(mut file) => {
             let mut contents = String::new();
-            
+
             match file.read_to_string(&mut contents) {
                 Ok(_) => return Some(contents.split("\r\n").map(|x| x.to_string()).collect()),
                 Err(_) => return None,
@@ -88,7 +86,7 @@ pub async fn read_file_text(path: &str) -> Option<Vec<String>> {
 pub fn get_save_name(arr_val: &Vec<String>, default_name: &str) -> Option<String> {
     for item in arr_val.iter() {
         let option_values: Vec<&str> = item.split(':').collect();
-        
+
         if option_values[0] == " name" {
             if option_values[1] == " \"\"" {
                 return Some(default_name.to_owned());
@@ -96,7 +94,7 @@ pub fn get_save_name(arr_val: &Vec<String>, default_name: &str) -> Option<String
             return Some(option_values[1].replace("\"", "").trim().to_string());
         }
     }
-    
+
     return None;
 }
 
@@ -116,10 +114,11 @@ pub async fn get_list_save_game(path: String) -> Option<Vec<VecSaveGames>> {
             continue;
         }
 
-        let file: Vec<String> = match read_file_text(format!("{}/info.sii", item_path).as_str()).await {
-            Some(file) => file,
-            None => continue,
-        };
+        let file: Vec<String> =
+            match read_file_text(format!("{}/info.sii", item_path).as_str()).await {
+                Some(file) => file,
+                None => continue,
+            };
 
         let mut default_name: Vec<&str> = item_path.split("/").collect();
         default_name.reverse();
@@ -128,9 +127,13 @@ pub async fn get_list_save_game(path: String) -> Option<Vec<VecSaveGames>> {
             Some(save_game_name) => save_game_name,
             None => continue,
         };
-        
+
         let uuid: String = Uuid::new_v4().to_string();
-        result.push(VecSaveGames{id: uuid, name: save_game_name, dir: item.to_string()});
+        result.push(VecSaveGames {
+            id: uuid,
+            name: save_game_name,
+            dir: item.to_string(),
+        });
     }
 
     return Some(result);

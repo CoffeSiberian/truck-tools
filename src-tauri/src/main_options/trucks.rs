@@ -3,7 +3,7 @@ pub fn get_truck_id(arr_val: &Vec<String>) -> Option<String> {
 
     for (_i, item) in arr_val.iter().enumerate() {
         let option_values: Vec<&str> = item.split(':').collect();
-        
+
         if option_values[0] == " assigned_truck" {
             if option_values[1] == " null" {
                 break;
@@ -15,7 +15,8 @@ pub fn get_truck_id(arr_val: &Vec<String>) -> Option<String> {
 
     if !result.is_empty() {
         return Some(result);
-    } return None;
+    }
+    return None;
 }
 
 pub fn get_truck_vehicle_index(arr_val: &Vec<String>, truck_id: String) -> Option<usize> {
@@ -35,7 +36,8 @@ pub fn get_truck_vehicle_index(arr_val: &Vec<String>, truck_id: String) -> Optio
 
     if !result.is_empty() {
         return Some(result.parse::<usize>().unwrap());
-    } return None;
+    }
+    return None;
 }
 
 pub fn set_truck_wear(arr_val: &Vec<String>, wear: &str, index: usize) -> Option<Vec<String>> {
@@ -43,11 +45,11 @@ pub fn set_truck_wear(arr_val: &Vec<String>, wear: &str, index: usize) -> Option
 
     for (i, item) in arr_val.iter().enumerate().skip(index) {
         let option_values: Vec<&str> = item.split(':').collect();
-        
+
         if option_values[0] == " engine_wear" {
             arr_val_clone[i] = format!(" engine_wear: {}", wear);
         }
-        
+
         if option_values[0] == " transmission_wear" {
             arr_val_clone[i] = format!(" transmission_wear: {}", wear);
         }
@@ -93,7 +95,10 @@ pub fn set_truck_wear(arr_val: &Vec<String>, wear: &str, index: usize) -> Option
         }
 
         if option_values[0] == " wheels_wear_unfixable" {
-            arr_val_clone[i] = format!(" wheels_wear_unfixable[{}]: {}", wheel_wear_unfixable_number, wear);
+            arr_val_clone[i] = format!(
+                " wheels_wear_unfixable[{}]: {}",
+                wheel_wear_unfixable_number, wear
+            );
             wheel_wear_unfixable_number += 1;
         }
 
