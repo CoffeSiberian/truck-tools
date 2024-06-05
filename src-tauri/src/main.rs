@@ -10,7 +10,9 @@ use main_options::trailers::{
     get_trailer_index, set_any_slave_trailers_weight, set_cargo_mass_trailer,
     set_chassis_and_body_mass_def_trailers, set_remove_trailer_restricted_areas,
 };
-use main_options::trucks::{get_truck_id, get_truck_vehicle_index, set_truck_wear};
+use main_options::trucks::{
+    get_truck_id, get_truck_vehicle_index, set_any_trucks_wear, set_truck_wear,
+};
 use serde_json::json;
 use structs::vec_save_games::VecSaveGames;
 use utils::file_edit::{get_list_save_count, get_list_save_game, read_file_text, save_file};
@@ -202,7 +204,18 @@ async fn repait_truck(dir_save: &str, wear: &str) -> Result<String, ()> {
 }
 
 #[tauri::command]
-async fn fill_truck_fuel() -> Result<String, ()> {
+async fn fill_truck_fuel(dir_save: &str, wear: &str) -> Result<String, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let trucks_wear: Vec<String> = match set_any_trucks_wear(&file, wear) {
+        Some(trucks_wear) => trucks_wear,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    save_file(dir_save.to_string(), trucks_wear).await;
     Ok(RESPONSE_TRUE.to_string())
 }
 

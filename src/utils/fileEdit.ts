@@ -166,3 +166,17 @@ export const setRepairTruck = async (dirSave: string) => {
     const res = JSON.parse(invoceRes as string) as responseRustTypes;
     return res.res;
 };
+
+export const setRepairAllTruck = async (dirSave: string) => {
+    const descriptSucces = await descriptFiles(dirSave, "game.sii");
+    if (!descriptSucces) return false;
+
+    const rustParams = {
+        dirSave: dirSave + "/game.sii",
+        wear: "0",
+    };
+
+    const invoceRes = await invoke("repait_all_trucks", rustParams);
+    const res = JSON.parse(invoceRes as string) as responseRustTypes;
+    return res.res;
+};
