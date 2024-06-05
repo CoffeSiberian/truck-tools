@@ -14,7 +14,6 @@ use main_options::trucks::{
     get_truck_id, get_truck_vehicle_index, set_any_trucks_wear, set_truck_wear,
 };
 use serde_json::json;
-use std::time::Instant;
 use std::usize;
 use structs::vec_save_games::VecSaveGames;
 use utils::file_edit::{get_list_save_count, get_list_save_game, read_file_text, save_file};
