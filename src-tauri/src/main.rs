@@ -14,6 +14,8 @@ use main_options::trucks::{
     get_truck_id, get_truck_vehicle_index, set_any_trucks_wear, set_truck_wear,
 };
 use serde_json::json;
+use std::time::Instant;
+use std::usize;
 use structs::vec_save_games::VecSaveGames;
 use utils::file_edit::{get_list_save_count, get_list_save_game, read_file_text, save_file};
 
@@ -184,12 +186,12 @@ async fn repait_truck(dir_save: &str, wear: &str) -> Result<String, ()> {
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let truck_id: String = match get_truck_id(&file) {
-        Some(truck_id) => truck_id,
+    let (truck_id, index): (String, usize) = match get_truck_id(&file) {
+        Some((truck_id, index)) => (truck_id, index),
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let truck_index: usize = match get_truck_vehicle_index(&file, truck_id) {
+    let truck_index: usize = match get_truck_vehicle_index(&file, truck_id, index) {
         Some(truck_index) => truck_index,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
@@ -204,7 +206,7 @@ async fn repait_truck(dir_save: &str, wear: &str) -> Result<String, ()> {
 }
 
 #[tauri::command]
-async fn fill_truck_fuel(dir_save: &str, wear: &str) -> Result<String, ()> {
+async fn repait_all_trucks(dir_save: &str, wear: &str) -> Result<String, ()> {
     let file: Vec<String> = match read_file_text(dir_save).await {
         Some(file) => file,
         None => return Ok(RESPONSE_FALSE.to_string()),
@@ -228,7 +230,7 @@ fn main() {
             get_save_game_name,
             get_save_game_count,
             repait_truck,
-            fill_truck_fuel,
+            repait_all_trucks,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

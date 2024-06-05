@@ -1,16 +1,52 @@
 use crate::structs::vec_trucks_id::VecTrucksId;
 
-pub fn get_truck_id(arr_val: &Vec<String>) -> Option<String> {
+pub fn get_truck_id(arr_val: &Vec<String>) -> Option<(String, usize)> {
     let mut result: String = String::new();
+    let mut index: usize = 0;
 
-    for (_i, item) in arr_val.iter().enumerate() {
+    for (i, item) in arr_val.iter().enumerate() {
         let option_values: Vec<&str> = item.split(':').collect();
 
         if option_values[0] == " assigned_truck" {
             if option_values[1] == " null" {
                 break;
             }
+
+            index = i;
             result.push_str(option_values[1]);
+            break;
+        }
+    }
+
+    if !result.is_empty() {
+        return Some((result, index));
+    }
+    return None;
+}
+
+pub fn get_list_trucks_id(arr_val: &Vec<String>) -> Option<Vec<VecTrucksId>> {
+    let mut result: Vec<VecTrucksId> = Vec::new();
+    let mut truck_enum: i16 = 0;
+    let mut truck_string_find: String = format!(" trucks[{}]", truck_enum);
+
+    for (i, item) in arr_val.iter().enumerate() {
+        let option_values: Vec<&str> = item.split(':').collect();
+
+        if option_values[0] == truck_string_find {
+            let truck_index =
+                match get_truck_vehicle_index(arr_val, option_values[1].to_string(), i) {
+                    Some(truck_index) => truck_index,
+                    None => continue,
+                };
+            result.push(VecTrucksId {
+                index: truck_index,
+                id: option_values[1].to_string(),
+            });
+            truck_enum += 1;
+            truck_string_find = format!(" trucks[{}]", truck_enum);
+        }
+
+        if option_values[0] == "}" && truck_enum > 0 {
             break;
         }
     }
@@ -21,39 +57,15 @@ pub fn get_truck_id(arr_val: &Vec<String>) -> Option<String> {
     return None;
 }
 
-pub fn get_list_trucks_id(arr_val: &Vec<String>) -> Option<Vec<VecTrucksId>> {
-    let mut result: Vec<VecTrucksId> = Vec::new();
-    let mut truck_enum: i16 = 0;
-    let mut truck_string_find: String = format!(" trucks[{}]", truck_enum);
-
-    for (_i, item) in arr_val.iter().enumerate() {
-        let option_values: Vec<&str> = item.split(':').collect();
-
-        if option_values[0] == truck_string_find {
-            let truck_index = match get_truck_vehicle_index(arr_val, option_values[1].to_string()) {
-                Some(truck_index) => truck_index,
-                None => continue,
-            };
-            result.push(VecTrucksId {
-                index: truck_index,
-                id: option_values[1].to_string(),
-            });
-            truck_enum += 1;
-            truck_string_find = format!(" trucks[{}]", truck_enum);
-        }
-    }
-
-    if !result.is_empty() {
-        return Some(result);
-    }
-    return None;
-}
-
-pub fn get_truck_vehicle_index(arr_val: &Vec<String>, truck_id: String) -> Option<usize> {
+pub fn get_truck_vehicle_index(
+    arr_val: &Vec<String>,
+    truck_id: String,
+    index: usize,
+) -> Option<usize> {
     let value_find: String = format!("{} {}", truck_id, "{");
     let mut result: String = String::new();
 
-    for (i, item) in arr_val.iter().enumerate() {
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
         let option_values: Vec<&str> = item.split(':').collect();
 
         if option_values.len() >= 2 {
@@ -126,6 +138,7 @@ pub fn set_truck_wear(arr_val: &Vec<String>, wear: &str, index: usize) -> Option
 
 pub fn set_any_trucks_wear(arr_val: &Vec<String>, wear: &str) -> Option<Vec<String>> {
     let mut arr_val_clone: Vec<String> = arr_val.clone();
+
     let trucks_list: Vec<VecTrucksId> = match get_list_trucks_id(&arr_val) {
         Some(trucks_list) => trucks_list,
         None => return None,

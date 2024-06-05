@@ -9,6 +9,7 @@ import {
     Button,
     useDisclosure,
 } from "@nextui-org/react";
+import { setRepairAllTruck } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
@@ -35,9 +36,11 @@ const RepairAllTrucks = () => {
 
         if (selectedSave) {
             setIsLoading(true);
-            /*
-            funtion to repair truck
-            */
+            const res = await setRepairAllTruck(selectedSave.dir);
+            setCompleted({
+                error: !res,
+                completed: true,
+            });
         }
         setIsLoading(false);
     };
