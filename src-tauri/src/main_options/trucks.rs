@@ -112,6 +112,27 @@ fn get_vec_truck_wear_wheels(
     return None;
 }
 
+fn get_vec_truck_fuel(
+    arr_val: &Vec<String>,
+    wear: &str,
+    index: usize,
+) -> Option<Vec<VecTrucksWearSet>> {
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
+        let option_values: Vec<&str> = item.split(':').collect();
+
+        if option_values[0] == " fuel_relative" {
+            return Some(vec![VecTrucksWearSet {
+                index: i,
+                value: format!(" fuel_relative: {}", wear),
+            }]);
+        }
+        if option_values[0] == "}" {
+            return None;
+        }
+    }
+    return None;
+}
+
 fn get_list_trucks_id(arr_val: &Vec<String>) -> Option<Vec<VecTrucksId>> {
     let mut result: Vec<VecTrucksId> = Vec::new();
     let mut truck_enum: i16 = 0;
@@ -261,6 +282,28 @@ pub fn set_truck_fuel(arr_val: &Vec<String>, fuel: &str, index: usize) -> Option
         }
         if option_values[0] == "}" {
             break;
+        }
+    }
+
+    return Some(arr_val_clone);
+}
+
+pub fn set_any_trucks_fuel(arr_val: &Vec<String>, fuel: &str) -> Option<Vec<String>> {
+    let mut arr_val_clone: Vec<String> = arr_val.clone();
+
+    let trucks_list: Vec<VecTrucksId> = match get_list_trucks_id(&arr_val) {
+        Some(trucks_list) => trucks_list,
+        None => return None,
+    };
+
+    for (_i, item) in trucks_list.iter().enumerate() {
+        let set_truck_fuel = match get_vec_truck_fuel(&arr_val, fuel, item.index) {
+            Some(set_truck_fuel) => set_truck_fuel,
+            None => continue,
+        };
+
+        for (_i, item) in set_truck_fuel.iter().enumerate() {
+            arr_val_clone[item.index] = item.value.to_string();
         }
     }
 

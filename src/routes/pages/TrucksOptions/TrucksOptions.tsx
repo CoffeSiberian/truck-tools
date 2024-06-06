@@ -35,17 +35,17 @@ const TrucksOptions = () => {
         },
         {
             id: "4",
-            title: "Infinite fuel on current truck",
-            description: "Infinite fuel on current truck",
-            image: testImage,
-            modal: <SetInfiniteFuel />,
-        },
-        {
-            id: "5",
             title: "Fill all trucks fuel",
             description: "Refueling all fleet trucks",
             image: testImage,
             modal: <FillAllTrucksFuel />,
+        },
+        {
+            id: "5",
+            title: "Infinite fuel on current truck",
+            description: "Infinite fuel on current truck",
+            image: testImage,
+            modal: <SetInfiniteFuel />,
         },
     ];
 

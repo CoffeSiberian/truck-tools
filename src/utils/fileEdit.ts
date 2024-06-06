@@ -194,3 +194,17 @@ export const setFuelTruck = async (dirSave: string) => {
     const res = JSON.parse(invoceRes as string) as responseRustTypes;
     return res.res;
 };
+
+export const setAllFuelTruck = async (dirSave: string) => {
+    const descriptSucces = await descriptFiles(dirSave, "game.sii");
+    if (!descriptSucces) return false;
+
+    const rustParams = {
+        dirSave: dirSave + "/game.sii",
+        fuel: "1",
+    };
+
+    const invoceRes = await invoke("fill_any_trucks_fuel", rustParams);
+    const res = JSON.parse(invoceRes as string) as responseRustTypes;
+    return res.res;
+};

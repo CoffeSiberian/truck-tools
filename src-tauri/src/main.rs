@@ -11,7 +11,8 @@ use main_options::trailers::{
     set_chassis_and_body_mass_def_trailers, set_remove_trailer_restricted_areas,
 };
 use main_options::trucks::{
-    get_truck_id, get_truck_vehicle_index, set_any_trucks_wear, set_truck_fuel, set_truck_wear,
+    get_truck_id, get_truck_vehicle_index, set_any_trucks_fuel, set_any_trucks_wear,
+    set_truck_fuel, set_truck_wear,
 };
 use serde_json::json;
 use structs::vec_save_games::VecSaveGames;
@@ -244,6 +245,22 @@ async fn fill_fuel_truck(dir_save: &str, fuel: &str) -> Result<String, ()> {
     return Ok(RESPONSE_TRUE.to_string());
 }
 
+#[tauri::command]
+async fn fill_any_trucks_fuel(dir_save: &str, fuel: &str) -> Result<String, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let trucks_fuel: Vec<String> = match set_any_trucks_fuel(&file, fuel) {
+        Some(trucks_fuel) => trucks_fuel,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    save_file(dir_save.to_string(), trucks_fuel).await;
+    return Ok(RESPONSE_TRUE.to_string());
+}
+
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
@@ -254,7 +271,8 @@ fn main() {
             get_save_game_count,
             repait_truck,
             repait_all_trucks,
-            fill_fuel_truck
+            fill_fuel_truck,
+            fill_any_trucks_fuel
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
