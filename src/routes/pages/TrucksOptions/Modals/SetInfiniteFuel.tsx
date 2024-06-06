@@ -9,6 +9,7 @@ import {
     Button,
     useDisclosure,
 } from "@nextui-org/react";
+import { setInfinitFuelTruck } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
@@ -35,9 +36,11 @@ const SetInfiniteFuel = () => {
 
         if (selectedSave) {
             setIsLoading(true);
-            /*
-            funtion to repair truck
-            */
+            const res = await setInfinitFuelTruck(selectedSave.dir);
+            setCompleted({
+                error: !res,
+                completed: true,
+            });
         }
         setIsLoading(false);
     };

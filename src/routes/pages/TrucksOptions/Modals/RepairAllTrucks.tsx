@@ -67,7 +67,7 @@ const RepairAllTrucks = () => {
                     {(onClose) => (
                         <>
                             <ModalHeader className="flex flex-col gap-1">
-                                Repair All truck
+                                Repair all truck
                             </ModalHeader>
                             <ModalBody className="py-1">
                                 <p>

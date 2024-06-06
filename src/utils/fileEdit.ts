@@ -208,3 +208,16 @@ export const setAllFuelTruck = async (dirSave: string) => {
     const res = JSON.parse(invoceRes as string) as responseRustTypes;
     return res.res;
 };
+
+export const setInfinitFuelTruck = async (dirSave: string) => {
+    const descriptSucces = await descriptFiles(dirSave, "game.sii");
+    if (!descriptSucces) return false;
+
+    const rustParams = {
+        dirSave: dirSave + "/game.sii",
+    };
+
+    const invoceRes = await invoke("set_infinite_fuel", rustParams);
+    const res = JSON.parse(invoceRes as string) as responseRustTypes;
+    return res.res;
+};

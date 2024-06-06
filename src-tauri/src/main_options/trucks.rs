@@ -309,3 +309,21 @@ pub fn set_any_trucks_fuel(arr_val: &Vec<String>, fuel: &str) -> Option<Vec<Stri
 
     return Some(arr_val_clone);
 }
+
+pub fn set_infinite_fuel_truck(arr_val: &Vec<String>, index: usize) -> Option<Vec<String>> {
+    let mut arr_val_clone: Vec<String> = arr_val.clone();
+
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
+        let option_values: Vec<&str> = item.split(':').collect();
+
+        if option_values[0] == " fuel_relative" {
+            arr_val_clone[i] = format!(" fuel_relative: {}", "9999");
+            break;
+        }
+        if option_values[0] == "}" {
+            break;
+        }
+    }
+
+    return Some(arr_val_clone);
+}
