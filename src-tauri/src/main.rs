@@ -14,7 +14,6 @@ use main_options::trucks::{
     get_truck_id, get_truck_vehicle_index, set_any_trucks_wear, set_truck_wear,
 };
 use serde_json::json;
-use std::usize;
 use structs::vec_save_games::VecSaveGames;
 use utils::file_edit::{get_list_save_count, get_list_save_game, read_file_text, save_file};
 
@@ -29,39 +28,38 @@ async fn set_cargo_mass_trailers_and_slave(cargo_mass: &str, dir_save: &str) -> 
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    // 25 ms
-    let trailer_id: String = match get_my_trailer_id(&file) {
-        Some(trailer_id) => trailer_id,
+    let (trailer_id, index): (String, usize) = match get_my_trailer_id(&file) {
+        Some((trailer_id, index)) => (trailer_id, index),
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    // 25 ms
-    let trailer_index: usize = match get_trailer_index(&file, trailer_id) {
+    let trailer_index: usize = match get_trailer_index(&file, trailer_id, index) {
         Some(trailer_index) => trailer_index,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    // 30 ms
     let cargo_mass_save: Vec<String> =
         match set_cargo_mass_trailer(&file, trailer_index, cargo_mass) {
             Some(cargo_mass_save) => cargo_mass_save,
             None => return Ok(RESPONSE_FALSE.to_string()),
         };
 
-    // 0 ms
-    let slave_trailer_id: String = match get_slave_trailers_id(&file, trailer_index) {
-        Some(slave_trailer_id) => slave_trailer_id,
-        None => {
-            save_file(dir_save.to_string(), cargo_mass_save).await;
-            return Ok(RESPONSE_TRUE.to_string());
-        }
-    };
+    let (slave_trailer_id, index_slave): (String, usize) =
+        match get_slave_trailers_id(&file, trailer_index) {
+            Some((slave_trailer_id, index)) => (slave_trailer_id, index),
+            None => {
+                save_file(dir_save.to_string(), cargo_mass_save).await;
+                return Ok(RESPONSE_TRUE.to_string());
+            }
+        };
 
-    // 185 ms
-    let cargo_mass_save_slave: Vec<String> =
-        set_any_slave_trailers_weight(&cargo_mass_save, slave_trailer_id, cargo_mass.to_string());
+    let cargo_mass_save_slave: Vec<String> = set_any_slave_trailers_weight(
+        &cargo_mass_save,
+        slave_trailer_id,
+        index_slave,
+        cargo_mass.to_string(),
+    );
 
-    // 60 ms
     save_file(dir_save.to_string(), cargo_mass_save_slave).await;
     return Ok(RESPONSE_TRUE.to_string());
 }
@@ -73,12 +71,12 @@ async fn set_unlock_current_trailers(dir_save: &str) -> Result<String, ()> {
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let trailer_id: String = match get_my_trailer_id(&file) {
-        Some(trailer_id) => trailer_id,
+    let (trailer_id, current_index): (String, usize) = match get_my_trailer_id(&file) {
+        Some((trailer_id, current_index)) => (trailer_id, current_index),
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let trailer_index: usize = match get_trailer_index(&file, trailer_id) {
+    let trailer_index: usize = match get_trailer_index(&file, trailer_id, current_index) {
         Some(trailer_index) => trailer_index,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
@@ -114,12 +112,12 @@ async fn set_cargo_mass_def_trailers(
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let trailer_id: String = match get_my_trailer_id(&file) {
-        Some(trailer_id) => trailer_id,
+    let (trailer_id, current_index): (String, usize) = match get_my_trailer_id(&file) {
+        Some((trailer_id, current_index)) => (trailer_id, current_index),
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let trailer_index: usize = match get_trailer_index(&file, trailer_id) {
+    let trailer_index: usize = match get_trailer_index(&file, trailer_id, current_index) {
         Some(trailer_index) => trailer_index,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };

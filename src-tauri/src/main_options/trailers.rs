@@ -110,11 +110,12 @@ pub fn set_remove_trailer_restricted_areas(
 pub fn set_any_slave_trailers_weight(
     arr_val: &Vec<String>,
     first_slave_id: String,
+    first_slave_index: usize,
     cargo_mass: String,
 ) -> Vec<String> {
     let mut counter: i16 = 0;
     let mut next_slave_trailer: String = first_slave_id;
-    let mut next_slave_trailer_index: usize = 0;
+    let mut next_slave_trailer_index: usize = first_slave_index;
     let mut current_arr_val: Vec<String> = arr_val.to_vec();
     let max_counter: i16 = 20;
 
@@ -124,7 +125,11 @@ pub fn set_any_slave_trailers_weight(
             break;
         }
 
-        let slave_index: usize = match get_trailer_index(&current_arr_val, next_slave_trailer) {
+        let slave_index: usize = match get_trailer_index(
+            &current_arr_val,
+            next_slave_trailer,
+            next_slave_trailer_index,
+        ) {
             Some(slave_index) => slave_index,
             None => break,
         };
@@ -140,21 +145,23 @@ pub fn set_any_slave_trailers_weight(
         };
         current_arr_val = cargo_mass_save;
 
-        let slave_trailer_id: String =
+        let (slave_trailer_id, index_slave): (String, usize) =
             match get_slave_trailers_id(&current_arr_val, next_slave_trailer_index) {
-                Some(slave_trailer_id) => slave_trailer_id,
+                Some((slave_trailer_id, index)) => (slave_trailer_id, index),
                 None => break,
             };
         next_slave_trailer = slave_trailer_id;
+        next_slave_trailer_index = index_slave;
     }
 
     return current_arr_val;
 }
 
-pub fn get_slave_trailers_id(arr_val: &Vec<String>, index: usize) -> Option<String> {
+pub fn get_slave_trailers_id(arr_val: &Vec<String>, index: usize) -> Option<(String, usize)> {
     let mut result: String = String::new();
+    let mut index_result: usize = 0;
 
-    for (_i, item) in arr_val.iter().enumerate().skip(index) {
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
         let option_values: Vec<&str> = item.split(':').collect();
 
         if option_values.len() >= 2 {
@@ -163,6 +170,7 @@ pub fn get_slave_trailers_id(arr_val: &Vec<String>, index: usize) -> Option<Stri
                     break;
                 } else {
                     result.push_str(option_values[1]);
+                    index_result = i;
                     break;
                 }
             }
@@ -170,16 +178,16 @@ pub fn get_slave_trailers_id(arr_val: &Vec<String>, index: usize) -> Option<Stri
     }
 
     if !result.is_empty() {
-        return Some(result);
+        return Some((result, index_result));
     }
     return None;
 }
 
-pub fn get_trailer_index(arr_val: &Vec<String>, trailer_id: String) -> Option<usize> {
+pub fn get_trailer_index(arr_val: &Vec<String>, trailer_id: String, index: usize) -> Option<usize> {
     let value_find: String = format!("{} {}", trailer_id, "{");
     let mut result: String = String::new();
 
-    for (i, item) in arr_val.iter().enumerate() {
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
         let option_values: Vec<&str> = item.split(':').collect();
 
         if option_values.len() >= 2 {
@@ -241,23 +249,25 @@ pub fn get_trailer_def_index(arr_val: &Vec<String>, trailer_def_id: String) -> O
     return None;
 }
 
-pub fn get_my_trailer_id(arr_val: &Vec<String>) -> Option<String> {
+pub fn get_my_trailer_id(arr_val: &Vec<String>) -> Option<(String, usize)> {
     let mut result: String = String::new();
+    let mut index: usize = 0;
 
-    for (_i, item) in arr_val.iter().enumerate() {
+    for (i, item) in arr_val.iter().enumerate() {
         let option_values: Vec<&str> = item.split(':').collect();
 
         if option_values[0] == " assigned_trailer" {
             if option_values[1] == " null" {
                 break;
             }
+            index = i;
             result.push_str(option_values[1]);
             break;
         }
     }
 
     if !result.is_empty() {
-        return Some(result);
+        return Some((result, index));
     }
     return None;
 }
