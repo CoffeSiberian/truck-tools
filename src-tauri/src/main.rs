@@ -9,6 +9,7 @@ use main_options::trailers::{
     get_my_trailer_id, get_slave_trailers_id, get_trailer_def_id, get_trailer_def_index,
     get_trailer_index, set_any_slave_trailers_weight, set_cargo_mass_trailer,
     set_chassis_and_body_mass_def_trailers, set_remove_trailer_restricted_areas,
+    set_trailer_license_plate,
 };
 use main_options::trucks::{
     get_truck_id, get_truck_vehicle_index, set_any_trucks_fuel, set_any_trucks_wear,
@@ -16,7 +17,9 @@ use main_options::trucks::{
 };
 use serde_json::json;
 use structs::vec_save_games::VecSaveGames;
-use utils::file_edit::{get_list_save_count, get_list_save_game, read_file_text, save_file};
+use utils::file_edit::{
+    get_list_save_count, get_list_save_game, get_rgb_hex_to_game_format, read_file_text, save_file,
+};
 
 const RESPONSE_FALSE: &str = r#"{"res": false}"#;
 const RESPONSE_TRUE: &str = r#"{"res": true}"#;
@@ -287,6 +290,46 @@ async fn set_infinite_fuel(dir_save: &str) -> Result<String, ()> {
     return Ok(RESPONSE_TRUE.to_string());
 }
 
+#[tauri::command]
+async fn set_license_plate_trailer(
+    dir_save: &str,
+    license_plate: &str,
+    bg_plate_color: &str,
+    text_plate_color: &str,
+) -> Result<String, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let (trailer_id, current_index): (String, usize) = match get_my_trailer_id(&file) {
+        Some((trailer_id, current_index)) => (trailer_id, current_index),
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let trailer_index: usize = match get_trailer_index(&file, trailer_id, current_index) {
+        Some(trailer_index) => trailer_index,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let bg_plate_color_game: String = get_rgb_hex_to_game_format(bg_plate_color);
+    let text_plate_color_game: String = get_rgb_hex_to_game_format(text_plate_color);
+
+    let trailer_plate: Vec<String> = match set_trailer_license_plate(
+        &file,
+        trailer_index,
+        license_plate,
+        &bg_plate_color_game,
+        &text_plate_color_game,
+    ) {
+        Some(trailer_plate) => trailer_plate,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    save_file(dir_save.to_string(), trailer_plate).await;
+    return Ok(RESPONSE_TRUE.to_string());
+}
+
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
@@ -299,7 +342,8 @@ fn main() {
             repait_all_trucks,
             fill_fuel_truck,
             fill_any_trucks_fuel,
-            set_infinite_fuel
+            set_infinite_fuel,
+            set_license_plate_trailer
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

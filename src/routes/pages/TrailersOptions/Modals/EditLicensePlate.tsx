@@ -10,6 +10,7 @@ import {
     Button,
     useDisclosure,
 } from "@nextui-org/react";
+import { setLicensePlateTrailer } from "../../../../utils/fileEdit";
 import CustomLicensePlate from "../../../../components/CustomLicensePlate";
 import AlertSave from "../../../../components/AlertSave";
 
@@ -27,7 +28,7 @@ const EditLicensePlate = () => {
 
     const [bgColor, setBGColor] = useColor("#bf2222");
     const [txColor, setTxColor] = useColor("#ffffff");
-    const [plateText, setPlateText] = useState<string>("coffe");
+    const [plateText, setPlateText] = useState<string>(" T-TOOLS");
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [completed, setCompleted] = useState<completedProps>({
         error: false,
@@ -40,17 +41,17 @@ const EditLicensePlate = () => {
         }
 
         if (selectedSave) {
-            /* 
             setIsLoading(true);
-            const res = await setCargoMassTrailersAndSlave(
-                Weight,
-                selectedSave.dir
+            const res = await setLicensePlateTrailer(
+                selectedSave.dir,
+                plateText,
+                bgColor.hex,
+                txColor.hex
             );
             setCompleted({
                 error: !res,
                 completed: true,
-                });
-            */
+            });
         }
         setIsLoading(false);
     };
@@ -83,7 +84,7 @@ const EditLicensePlate = () => {
                                 <p>
                                     Enter the new license plate of the trailer
                                 </p>
-                                <div className="flex justify-center">
+                                <div className="flex flex-col items-center gap-2">
                                     <CustomLicensePlate
                                         txColor={txColor}
                                         bgColor={bgColor}

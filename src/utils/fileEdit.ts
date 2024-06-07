@@ -221,3 +221,24 @@ export const setInfinitFuelTruck = async (dirSave: string) => {
     const res = JSON.parse(invoceRes as string) as responseRustTypes;
     return res.res;
 };
+
+export const setLicensePlateTrailer = async (
+    dirSave: string,
+    licensePlate: string,
+    bgPlateColor: string,
+    textPlateColor: string
+) => {
+    const descriptSucces = await descriptFiles(dirSave, "game.sii");
+    if (!descriptSucces) return false;
+
+    const rustParams = {
+        dirSave: dirSave + "/game.sii",
+        licensePlate: licensePlate,
+        bgPlateColor: bgPlateColor,
+        textPlateColor: textPlateColor,
+    };
+
+    const invoceRes = await invoke("set_license_plate_trailer", rustParams);
+    const res = JSON.parse(invoceRes as string) as responseRustTypes;
+    return res.res;
+};

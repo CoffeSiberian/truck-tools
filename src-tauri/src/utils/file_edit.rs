@@ -79,6 +79,21 @@ pub async fn read_file_text(path: &str) -> Option<Vec<String>> {
     }
 }
 
+pub fn get_rgb_hex_to_game_format(color: &str) -> String {
+    let color_replace: String = color.replace("#", "");
+    let mut chunks: Vec<String> = color_replace
+        .chars()
+        .collect::<Vec<char>>()
+        .chunks(2)
+        .map(|chunk| chunk.iter().collect::<String>())
+        .collect();
+
+    chunks.swap(0, 2);
+    let result: String = chunks.join("");
+
+    return result;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// Profile options ///////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////

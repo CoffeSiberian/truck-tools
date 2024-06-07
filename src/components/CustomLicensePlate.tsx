@@ -20,12 +20,18 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
     setTxColor,
     setPlateText,
 }) => {
+    const setUpperCase = (text: string) => {
+        setPlateText(text.toUpperCase());
+    };
+
     return (
         <div className="flex w-full justify-center flex-col gap-2">
             <div className="flex justify-center">
                 <div
-                    className="flex h-12 min-w-40 max-w-40 p-2 rounded-lg"
+                    className="flex h-12 p-2 rounded-lg"
                     style={{
+                        minWidth: "165px",
+                        maxWidth: "165px",
                         backgroundColor: `${bgColor.hex}`,
                     }}
                 >
@@ -46,7 +52,7 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
                     label="License plate text"
                     placeholder="Enter license plate text"
                     value={plateText}
-                    onValueChange={setPlateText}
+                    onValueChange={setUpperCase}
                 />
             </div>
             <div className="flex justify-center h-auto gap-6">

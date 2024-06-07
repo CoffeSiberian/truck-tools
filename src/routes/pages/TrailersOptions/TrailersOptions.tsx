@@ -7,6 +7,7 @@ import testImage from "../../../static/img/testimg.webp";
 import ModifyWeight from "./Modals/ModifyWeight";
 import UnlockTrailers from "./Modals/UnlockTrailers";
 import ModifyTrailerWeight from "./Modals/ModifyTrailerWeight";
+import EditLicensePlate from "./Modals/EditLicensePlate";
 
 const TrailersOptions = () => {
     const items = [
@@ -31,11 +32,18 @@ const TrailersOptions = () => {
             image: testImage,
             modal: <ModifyTrailerWeight />,
         },
+        {
+            id: "4",
+            title: "Change trailer license plate",
+            description: "Change the license plate of the trailer",
+            image: testImage,
+            modal: <EditLicensePlate />,
+        },
     ];
 
     return (
         <div className="flex gap-4 flex-col">
-            <div className="grid grid-cols-2 my-4 gap-4">
+            <div className="grid grid-cols-3 my-4 gap-4">
                 {items.map((item) => {
                     return (
                         <OptionCard
