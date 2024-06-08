@@ -1,11 +1,12 @@
-use crate::structs::vec_trucks::{VecTrucksId, VecTrucksWearSet};
+use crate::structs::vec_items_find::VecItemsFind;
+use crate::structs::vec_trucks::VecTrucksId;
 
 fn get_vec_truck_wear(
     arr_val: &Vec<String>,
     wear: &str,
     index: usize,
-) -> Option<Vec<VecTrucksWearSet>> {
-    let mut result: Vec<VecTrucksWearSet> = Vec::new();
+) -> Option<Vec<VecItemsFind>> {
+    let mut result: Vec<VecItemsFind> = Vec::new();
 
     for (i, item) in arr_val.iter().enumerate().skip(index) {
         let option_values: Vec<&str> = item.split(':').collect();
@@ -13,49 +14,49 @@ fn get_vec_truck_wear(
         match option_values[0] {
             "}" => break,
             " engine_wear" => {
-                result.push(VecTrucksWearSet {
+                result.push(VecItemsFind {
                     index: i,
                     value: format!(" engine_wear: {}", wear),
                 });
             }
             " transmission_wear" => {
-                result.push(VecTrucksWearSet {
+                result.push(VecItemsFind {
                     index: i,
                     value: format!(" transmission_wear: {}", wear),
                 });
             }
             " cabin_wear" => {
-                result.push(VecTrucksWearSet {
+                result.push(VecItemsFind {
                     index: i,
                     value: format!(" cabin_wear: {}", wear),
                 });
             }
             " engine_wear_unfixable" => {
-                result.push(VecTrucksWearSet {
+                result.push(VecItemsFind {
                     index: i,
                     value: format!(" engine_wear_unfixable: {}", wear),
                 });
             }
             " transmission_wear_unfixable" => {
-                result.push(VecTrucksWearSet {
+                result.push(VecItemsFind {
                     index: i,
                     value: format!(" transmission_wear_unfixable: {}", wear),
                 });
             }
             " cabin_wear_unfixable" => {
-                result.push(VecTrucksWearSet {
+                result.push(VecItemsFind {
                     index: i,
                     value: format!(" cabin_wear_unfixable: {}", wear),
                 });
             }
             " chassis_wear" => {
-                result.push(VecTrucksWearSet {
+                result.push(VecItemsFind {
                     index: i,
                     value: format!(" chassis_wear: {}", wear),
                 });
             }
             " chassis_wear_unfixable" => {
-                result.push(VecTrucksWearSet {
+                result.push(VecItemsFind {
                     index: i,
                     value: format!(" chassis_wear_unfixable: {}", wear),
                 });
@@ -74,8 +75,8 @@ fn get_vec_truck_wear_wheels(
     arr_val: &Vec<String>,
     wear: &str,
     index: usize,
-) -> Option<Vec<VecTrucksWearSet>> {
-    let mut result: Vec<VecTrucksWearSet> = Vec::new();
+) -> Option<Vec<VecItemsFind>> {
+    let mut result: Vec<VecItemsFind> = Vec::new();
 
     let mut wheel_wear_number: i16 = 0;
     let mut wheel_wear_unfixable_number: i16 = 0;
@@ -86,14 +87,14 @@ fn get_vec_truck_wear_wheels(
         match option_values[0] {
             "}" => break,
             " wheels_wear" => {
-                result.push(VecTrucksWearSet {
+                result.push(VecItemsFind {
                     index: i,
                     value: format!(" wheels_wear[{}]: {}", wheel_wear_number, wear),
                 });
                 wheel_wear_number += 1;
             }
             " wheels_wear_unfixable" => {
-                result.push(VecTrucksWearSet {
+                result.push(VecItemsFind {
                     index: i,
                     value: format!(
                         " wheels_wear_unfixable[{}]: {}",
@@ -116,12 +117,12 @@ fn get_vec_truck_fuel(
     arr_val: &Vec<String>,
     wear: &str,
     index: usize,
-) -> Option<Vec<VecTrucksWearSet>> {
+) -> Option<Vec<VecItemsFind>> {
     for (i, item) in arr_val.iter().enumerate().skip(index) {
         let option_values: Vec<&str> = item.split(':').collect();
 
         if option_values[0] == " fuel_relative" {
-            return Some(vec![VecTrucksWearSet {
+            return Some(vec![VecItemsFind {
                 index: i,
                 value: format!(" fuel_relative: {}", wear),
             }]);
