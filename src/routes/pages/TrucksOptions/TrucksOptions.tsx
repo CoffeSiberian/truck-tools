@@ -9,6 +9,7 @@ import RepairAllTrucks from "./Modals/RepairAllTrucks";
 import FillTruckFuel from "./Modals/FillTruckFuel";
 import SetInfiniteFuel from "./Modals/SetInfiniteFuel";
 import FillAllTrucksFuel from "./Modals/FillAllTrucksFuel";
+import EditLicensePlate from "./Modals/EditLicensePlate";
 
 const TrucksOptions = () => {
     const items = [
@@ -46,6 +47,13 @@ const TrucksOptions = () => {
             description: "Infinite fuel on current truck",
             image: testImage,
             modal: <SetInfiniteFuel />,
+        },
+        {
+            id: "5",
+            title: "Change truck license plate",
+            description: "Change the license plate of the truck",
+            image: testImage,
+            modal: <EditLicensePlate />,
         },
     ];
 
