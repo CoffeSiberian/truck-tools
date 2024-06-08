@@ -13,7 +13,7 @@ use main_options::trailers::{
 };
 use main_options::trucks::{
     get_truck_id, get_truck_vehicle_index, set_any_trucks_fuel, set_any_trucks_wear,
-    set_infinite_fuel_truck, set_truck_fuel, set_truck_wear,
+    set_infinite_fuel_truck, set_truck_fuel, set_truck_license_plate, set_truck_wear,
 };
 use serde_json::json;
 use structs::vec_save_games::VecSaveGames;
@@ -319,6 +319,46 @@ async fn set_license_plate_trailer(
     return Ok(RESPONSE_TRUE.to_string());
 }
 
+#[tauri::command]
+async fn set_license_plate_truck(
+    dir_save: &str,
+    license_plate: &str,
+    bg_plate_color: &str,
+    text_plate_color: &str,
+) -> Result<String, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let bg_plate_color_game: String = get_rgb_hex_to_game_format(bg_plate_color);
+    let text_plate_color_game: String = get_rgb_hex_to_game_format(text_plate_color);
+
+    let truck_id: String = match get_truck_id(&file) {
+        Some((truck_id, _)) => truck_id,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let truck_index: usize = match get_truck_vehicle_index(&file, truck_id, 0) {
+        Some(truck_index) => truck_index,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let truck_plate: Vec<String> = match set_truck_license_plate(
+        &file,
+        truck_index,
+        &bg_plate_color_game,
+        &text_plate_color_game,
+        license_plate,
+    ) {
+        Some(truck_plate) => truck_plate,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    save_file(dir_save.to_string(), truck_plate).await;
+    return Ok(RESPONSE_TRUE.to_string());
+}
+
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
@@ -332,7 +372,8 @@ fn main() {
             fill_fuel_truck,
             fill_any_trucks_fuel,
             set_infinite_fuel,
-            set_license_plate_trailer
+            set_license_plate_trailer,
+            set_license_plate_truck
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

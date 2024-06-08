@@ -328,3 +328,31 @@ pub fn set_infinite_fuel_truck(arr_val: &Vec<String>, index: usize) -> Option<Ve
 
     return Some(arr_val_clone);
 }
+
+pub fn set_truck_license_plate(
+    arr_val: &Vec<String>,
+    index: usize,
+    bg_plate_color: &str,
+    text_plate_color: &str,
+    license_plate: &str,
+) -> Option<Vec<String>> {
+    let mut arr_val_clone: Vec<String> = arr_val.clone();
+    let value: String = format!("<color value=ff{}><margin left=-15><img src=/material/ui/white.mat xscale=stretch yscale=stretch><ret><margin left=2><align hstyle=left vstyle=center><font xscale=1 yscale=1 ><color value=ff{}>{}</align></margin>|belgium", bg_plate_color, text_plate_color, license_plate);
+    let value_put: String = format!(" license_plate: \"{}\"", value);
+
+    for (i, item) in arr_val_clone.iter().enumerate().skip(index) {
+        let option_values: Vec<&str> = item.split(':').collect();
+
+        if option_values.len() >= 2 {
+            if option_values[0] == " license_plate" {
+                arr_val_clone[i] = value_put.to_string();
+                return Some(arr_val_clone);
+            }
+        }
+        if option_values[0] == "}" {
+            break;
+        }
+    }
+
+    return None;
+}
