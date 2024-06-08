@@ -302,22 +302,11 @@ async fn set_license_plate_trailer(
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let (trailer_id, current_index): (String, usize) = match get_my_trailer_id(&file) {
-        Some((trailer_id, current_index)) => (trailer_id, current_index),
-        None => return Ok(RESPONSE_FALSE.to_string()),
-    };
-
-    let trailer_index: usize = match get_trailer_index(&file, trailer_id, current_index) {
-        Some(trailer_index) => trailer_index,
-        None => return Ok(RESPONSE_FALSE.to_string()),
-    };
-
     let bg_plate_color_game: String = get_rgb_hex_to_game_format(bg_plate_color);
     let text_plate_color_game: String = get_rgb_hex_to_game_format(text_plate_color);
 
     let trailer_plate: Vec<String> = match set_trailer_license_plate(
         &file,
-        trailer_index,
         license_plate,
         &bg_plate_color_game,
         &text_plate_color_game,

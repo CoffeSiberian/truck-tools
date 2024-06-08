@@ -1,4 +1,80 @@
+use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_items_replace::VecItemsReplace;
+
+fn get_vec_trailers(arr_val: &Vec<String>) -> Option<Vec<VecItemsFind>> {
+    let max_counter: i16 = 20;
+    let mut counter: i16 = 0;
+    let mut result: Vec<VecItemsFind> = Vec::new();
+    let (trailer_id, index): (String, usize) = match get_my_trailer_id(&arr_val) {
+        Some((trailer_id, index)) => (trailer_id, index),
+        None => return None,
+    };
+    let mut current_slave_trailer_index: usize =
+        match get_trailer_index(arr_val, trailer_id.clone(), index) {
+            Some(current_slave_trailer_index) => current_slave_trailer_index,
+            None => return None,
+        };
+    result.push(VecItemsFind {
+        index: current_slave_trailer_index,
+        value: trailer_id,
+    });
+
+    loop {
+        counter += 1;
+        if counter >= max_counter {
+            break;
+        }
+
+        let (slave_trailer_id, index_slave): (String, usize) =
+            match get_slave_trailers_id(&arr_val, current_slave_trailer_index) {
+                Some((slave_trailer_id, index)) => (slave_trailer_id, index),
+                None => break,
+            };
+
+        let slave_trailer_index: usize =
+            match get_trailer_index(arr_val, slave_trailer_id.clone(), index_slave) {
+                Some(slave_trailer_index) => slave_trailer_index,
+                None => break,
+            };
+
+        current_slave_trailer_index = slave_trailer_index;
+        result.push(VecItemsFind {
+            index: slave_trailer_index,
+            value: slave_trailer_id,
+        });
+    }
+
+    return Some(result);
+}
+
+fn get_vec_license_plate_edit(
+    arr_val: &Vec<String>,
+    index: usize,
+    bg_plate_color: &str,
+    text_plate_color: &str,
+    license_plate: &str,
+) -> Option<VecItemsFind> {
+    let value: String = format!("<color value=ff{}><margin left=-15><img src=/material/ui/white.mat xscale=stretch yscale=stretch><ret><margin left=2><align hstyle=left vstyle=center><font xscale=1 yscale=1 ><color value=ff{}>{}</align></margin>|belgium", bg_plate_color, text_plate_color, license_plate);
+    let value_put: String = format!(" license_plate: \"{}\"", value);
+
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
+        let option_values: Vec<&str> = item.split(':').collect();
+
+        if option_values.len() >= 2 {
+            if option_values[0] == " license_plate" {
+                return Some(VecItemsFind {
+                    index: i,
+                    value: value_put,
+                });
+            }
+        }
+        if option_values[0] == "}" {
+            break;
+        }
+    }
+
+    return None;
+}
 
 pub fn set_cargo_mass_trailer(
     arr_val: &Vec<String>,
@@ -175,6 +251,10 @@ pub fn get_slave_trailers_id(arr_val: &Vec<String>, index: usize) -> Option<(Str
                 }
             }
         }
+
+        if option_values[0] == "}" {
+            break;
+        }
     }
 
     if !result.is_empty() {
@@ -274,27 +354,34 @@ pub fn get_my_trailer_id(arr_val: &Vec<String>) -> Option<(String, usize)> {
 
 pub fn set_trailer_license_plate(
     arr_val: &Vec<String>,
-    index: usize,
     license_plate: &str,
     bg_plate_color: &str,
     text_plate_color: &str,
 ) -> Option<Vec<String>> {
-    let value: String = format!("<color value=ff{}><margin left=-15><img src=/material/ui/white.mat xscale=stretch yscale=stretch><ret><margin left=2><align hstyle=left vstyle=center><font xscale=1 yscale=1 ><color value=ff{}>{}</align></margin>|belgium", bg_plate_color, text_plate_color, license_plate);
-    let value_put: String = format!(" license_plate: \"{}\"", value);
     let mut arr_val_clone: Vec<String> = arr_val.clone();
+    let get_trailers: Vec<VecItemsFind> = match get_vec_trailers(&arr_val) {
+        Some(get_trailers) => get_trailers,
+        None => return None,
+    };
+    let mut license_plate_to_edit: Vec<VecItemsFind> = Vec::new();
 
-    for (i, item) in arr_val_clone.iter().enumerate().skip(index) {
-        let option_values: Vec<&str> = item.split(':').collect();
-
-        if option_values.len() >= 2 {
-            if option_values[0] == " license_plate" {
-                arr_val_clone[i] = value_put;
-                break;
-            }
-            if option_values[0] == "}" {
-                break;
-            }
-        }
+    for item in get_trailers.iter() {
+        let license_plate_edit: VecItemsFind = match get_vec_license_plate_edit(
+            &arr_val_clone,
+            item.index,
+            bg_plate_color,
+            text_plate_color,
+            license_plate,
+        ) {
+            Some(license_plate_edit) => license_plate_edit,
+            None => break,
+        };
+        license_plate_to_edit.push(license_plate_edit);
     }
+
+    for item in license_plate_to_edit.iter() {
+        arr_val_clone[item.index] = item.value.to_string();
+    }
+
     return Some(arr_val_clone);
 }
