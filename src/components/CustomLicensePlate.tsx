@@ -60,7 +60,7 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
                     <p className="font-bold text-large">Background color</p>
                     <ColorPicker
                         height={100}
-                        hideInput={["hsv", "rgb"]}
+                        hideInput={["hsv", "hex"]}
                         hideAlpha={true}
                         color={bgColor}
                         onChange={setBGColor}
@@ -70,7 +70,7 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
                     <p className="font-bold text-large">Text color</p>
                     <ColorPicker
                         height={100}
-                        hideInput={["hsv", "rgb"]}
+                        hideInput={["hsv", "hex"]}
                         hideAlpha={true}
                         color={txColor}
                         onChange={setTxColor}
