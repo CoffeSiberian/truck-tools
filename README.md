@@ -9,7 +9,7 @@ To download and install the application you will first need to download the late
 
 ## Install
 
-To install you will need to run the downloaded file (**.msi**) where it is likely that Windows will run a SmartScreen alert warning that the executable is unknown and will prevent you from installing the application. To avoid this you will have to enter the options indicated in the following screen shots.
+To install you will need to run the downloaded file (**.msi**) where it is likely that Windows will run a SmartScreen alert warning that the executable is unknown and will prevent you from installing the application. To avoid this you will have to enter the options indicated in the following ScreenShot.
 
 <p align="center">
   <img width="450" src="https://i.imgur.com/tpHbu3n.png">
@@ -17,6 +17,14 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 
 > [!NOTE]
 > This message appears because the application does not have a digital signature (which usually has to be paid for) so the system does not trust it, but it does not directly mean that it is some kind of malicious file. As long as the file you are downloading is from this repository and not from a third party.
+
+## Screenshot
+
+<p align="center">
+  <img width="450" src="https://i.imgur.com/8Enjyyq.jpeg">
+  <img width="450" src="https://i.imgur.com/K9guW2z.jpeg">
+  <img width="450" src="https://i.imgur.com/fc31u14.jpeg">
+</p>
 
 ### TO DO
 
