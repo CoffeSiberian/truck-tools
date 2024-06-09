@@ -21,9 +21,9 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 ## Screenshot
 
 <p align="center">
-  <img width="450" src="https://i.imgur.com/8Enjyyq.jpeg">
-  <img width="450" src="https://i.imgur.com/K9guW2z.jpeg">
-  <img width="450" src="https://i.imgur.com/fc31u14.jpeg">
+  <img src="https://i.imgur.com/8Enjyyq.jpeg">
+  <img src="https://i.imgur.com/K9guW2z.jpeg">
+  <img src="https://i.imgur.com/fc31u14.jpeg">
 </p>
 
 ### TO DO
