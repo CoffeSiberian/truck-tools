@@ -1,0 +1,11 @@
+{
+    "version": "v0.0.4",
+    "notes": "- A new option has been integrated to edit license patent plates in a customized way\n\n- New modifications for trucks were integrated\n- Performance optimization",
+    "pub_date": "2024-06-07T00:00:00-00:00",
+    "platforms": {
+        "windows-x86_64": {
+            "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlUzaS9ybG0xZXR2VmtieWIyclFqTWpYa2N6OEFmV3BseVNWQXpoazhaVWdSMVhLSFRySHBjdG9BRjRqY3NwWm85Q1dhY2xva3Njd2hMN0hIWXRsSFFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzE3ODgyMTA2CWZpbGU6VHJ1Y2sgVG9vbHNfMC4wLjRfeDY0X2VuLVVTLm1zaS56aXAKTkJ1and3NjB1Z2hXREM1TUhLd21CWmZYQTh6Y1FzYWpzMytsMThCeXR2VWFibFhUbm95OTJCVUh5QTIxK0ZpTHlweW1OZXBQeXhIK28zR2tlMGFtQnc9PQo=",
+            "url": "https://siberiancoffe.cloud/Truck_Tools_0.0.4_x64_en-US.msi.zip"
+        }
+    }
+}

@@ -45,6 +45,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 -   [] Unlock all cities
 -   [] Unlock all dealerships
 -   [] Unlock skills
+-   [] Enable console and developer mode
 
 #### Settings
 

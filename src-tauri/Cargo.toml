@@ -1,7 +1,7 @@
 [package]
 name = "trucktools"
 version = "0.0.4"
-description = "Edit your saves in ETS2"
+description = "Truck Tools"
 authors = ["SiberianCoffe"]
 edition = "2021"
 
