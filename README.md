@@ -1,5 +1,8 @@
 # Truck Tools
 
+> [!WARNING]
+> This application is not yet completely ready so it could have bugs and problems. This is why the updates arrive as a pre-release.
+
 ## Download
 
 To download and install the application you will first need to download the latest version at the following link <https://github.com/CoffeSiberian/truck-tools/releases/latest>
