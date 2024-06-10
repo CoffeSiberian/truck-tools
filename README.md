@@ -62,11 +62,11 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 
 -   [] Documents Path
 -   [] Dark Mode config
+-   [] Change language
 
-### Notable Improvements
+#### Possible features
 
--   [] Share trailers and trucks with a link
--   [] Add multi-language
--   [] (Planned) Compatibility with DLC's when sharing trailers
--   [] (Possible) User account
--   [] (Possible) Create custom routes
+-   Share trailers and trucks with a link
+-   Compatibility with DLC's when sharing trailers
+-   User account
+-   Create custom routes
