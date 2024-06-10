@@ -15,6 +15,7 @@ pub struct TransmissionStruct<'a> {
     pub name_id: &'a str,
     pub name: &'a str,
     pub speeds: &'a str,
+    pub retarder: bool,
     pub ratio: &'a str,
-    pub price: &'a str,
+    pub code: &'a str,
 }
