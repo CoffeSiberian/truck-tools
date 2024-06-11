@@ -11,6 +11,14 @@ use main_options::trailers::{
     set_chassis_and_body_mass_def_trailers, set_remove_trailer_restricted_areas,
     set_trailer_license_plate,
 };
+use main_options::truck_engines::{
+    SCANIA_R_2009_ENGINES, SCANIA_R_ENGINES, SCANIA_STREAMLINE_ENGINES, SCANIA_S_ENGINES, VOLVO_FK,
+    VOLVO_FK_CLASSIC,
+};
+use main_options::truck_transmissions::{
+    SCANIA_R_2009_TRANSMISSION, SCANIA_R_TRANSMISSION, SCANIA_STREAMLINE_TRANSMISSION,
+    SCANIA_S_TRANSMISSION, VOLVO_FH_CLASSIC_TRANSMISSION, VOLVO_FH_TRANSMISSION,
+};
 use main_options::trucks::{
     get_truck_id, get_truck_vehicle_index, set_any_trucks_fuel, set_any_trucks_wear,
     set_infinite_fuel_truck, set_truck_engine, set_truck_fuel, set_truck_license_plate,
@@ -175,6 +183,50 @@ async fn get_save_game_count(dir_save: &str) -> Result<String, ()> {
     let response: String = json!({
         "res": true,
         "saves": save_games,
+    })
+    .to_string();
+
+    return Ok(response);
+}
+
+#[tauri::command]
+async fn get_list_engines() -> Result<String, ()> {
+    let response: String = json!({
+        "res": true,
+        "engines": {
+            "scania": [
+                SCANIA_R_2009_ENGINES,
+                SCANIA_R_ENGINES,
+                SCANIA_STREAMLINE_ENGINES,
+                SCANIA_S_ENGINES,
+            ],
+            "volvo": [
+                VOLVO_FK,
+                VOLVO_FK_CLASSIC,
+            ],
+        },
+    })
+    .to_string();
+
+    return Ok(response);
+}
+
+#[tauri::command]
+async fn get_list_transmissions() -> Result<String, ()> {
+    let response: String = json!({
+        "res": true,
+        "transmissions": {
+            "scania": [
+                SCANIA_R_2009_TRANSMISSION,
+                SCANIA_R_TRANSMISSION,
+                SCANIA_STREAMLINE_TRANSMISSION,
+                SCANIA_S_TRANSMISSION,
+            ],
+            "volvo": [
+                VOLVO_FH_CLASSIC_TRANSMISSION,
+                VOLVO_FH_TRANSMISSION,
+            ],
+        },
     })
     .to_string();
 
@@ -394,6 +446,8 @@ fn main() {
             set_cargo_mass_def_trailers,
             get_save_game_name,
             get_save_game_count,
+            get_list_engines,
+            get_list_transmissions,
             repait_truck,
             repait_all_trucks,
             fill_fuel_truck,
