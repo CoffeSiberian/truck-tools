@@ -134,6 +134,26 @@ fn get_vec_truck_fuel(
     return None;
 }
 
+fn get_truck_accessories_index(
+    arr_val: &Vec<String>,
+    accessory_id: &str,
+    index: usize,
+) -> Option<usize> {
+    let value_find: String = format!("{} {}", accessory_id, "{");
+
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
+        let option_values: Vec<&str> = item.split(':').collect();
+
+        if option_values.len() >= 2 {
+            if option_values[1] == value_find {
+                return Some(i);
+            }
+        }
+    }
+
+    return None;
+}
+
 fn get_list_trucks_id(arr_val: &Vec<String>) -> Option<Vec<VecTrucksId>> {
     let mut result: Vec<VecTrucksId> = Vec::new();
     let mut truck_enum: i16 = 0;
@@ -167,27 +187,86 @@ fn get_list_trucks_id(arr_val: &Vec<String>) -> Option<Vec<VecTrucksId>> {
     return None;
 }
 
-pub fn get_truck_id(arr_val: &Vec<String>) -> Option<(String, usize)> {
-    let mut result: String = String::new();
-    let mut index: usize = 0;
+fn get_list_trucks_accessories_id(
+    arr_val: &Vec<String>,
+    index: usize,
+) -> Option<Vec<VecItemsFind>> {
+    let mut result: Vec<VecItemsFind> = Vec::new();
+    let mut accessories_enum: i16 = 0;
+    let mut truck_accessories_find: String = format!(" accessories[{}]", accessories_enum);
 
-    for (i, item) in arr_val.iter().enumerate() {
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
         let option_values: Vec<&str> = item.split(':').collect();
 
-        if option_values[0] == " assigned_truck" {
-            if option_values[1] == " null" {
-                break;
-            }
+        if option_values[0] == truck_accessories_find {
+            let truck_accessories_index =
+                match get_truck_accessories_index(arr_val, option_values[1], i) {
+                    Some(truck_accessories_index) => truck_accessories_index,
+                    None => continue,
+                };
 
-            index = i;
-            result.push_str(option_values[1]);
+            result.push(VecItemsFind {
+                index: truck_accessories_index,
+                value: option_values[1].to_string(),
+            });
+
+            accessories_enum += 1;
+            truck_accessories_find = format!(" accessories[{}]", accessories_enum);
+        }
+
+        if option_values[0] == "}" && accessories_enum > 0 {
             break;
         }
     }
 
     if !result.is_empty() {
-        return Some((result, index));
+        return Some(result);
     }
+
+    return None;
+}
+
+fn get_accessories_data_path(arr_val: &Vec<String>, index: usize) -> Option<VecItemsFind> {
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
+        let option_values: Vec<&str> = item.split(':').collect();
+        if option_values[0] == " data_path" {
+            return Some(VecItemsFind {
+                index: i,
+                value: option_values[1].to_string(),
+            });
+        }
+
+        if option_values[0] == "}" {
+            return None;
+        }
+    }
+    return None;
+}
+
+fn is_engine(value_split: &String) -> bool {
+    let value_split: Vec<&str> = value_split.split('/').collect();
+
+    for item in value_split.iter() {
+        if item == &"engine" {
+            return true;
+        }
+    }
+    return false;
+}
+
+pub fn get_truck_id(arr_val: &Vec<String>) -> Option<(String, usize)> {
+    for (i, item) in arr_val.iter().enumerate() {
+        let option_values: Vec<&str> = item.split(':').collect();
+
+        if option_values[0] == " assigned_truck" {
+            if option_values[1] == " null" {
+                return None;
+            }
+
+            return Some((option_values[1].to_string(), i));
+        }
+    }
+
     return None;
 }
 
@@ -197,22 +276,17 @@ pub fn get_truck_vehicle_index(
     index: usize,
 ) -> Option<usize> {
     let value_find: String = format!("{} {}", truck_id, "{");
-    let mut result: String = String::new();
 
     for (i, item) in arr_val.iter().enumerate().skip(index) {
         let option_values: Vec<&str> = item.split(':').collect();
 
         if option_values.len() >= 2 {
             if option_values[1] == value_find {
-                result.push_str(format!("{}", i).as_str());
-                break;
+                return Some(i);
             }
         }
     }
 
-    if !result.is_empty() {
-        return Some(result.parse::<usize>().unwrap());
-    }
     return None;
 }
 
@@ -351,6 +425,35 @@ pub fn set_truck_license_plate(
         }
         if option_values[0] == "}" {
             break;
+        }
+    }
+
+    return None;
+}
+
+pub fn set_truck_engine(
+    arr_val: &Vec<String>,
+    index: usize,
+    engine_code: &str,
+) -> Option<Vec<String>> {
+    let truck_accessories: Vec<VecItemsFind> = match get_list_trucks_accessories_id(&arr_val, index)
+    {
+        Some(truck_accessories) => truck_accessories,
+        None => return None,
+    };
+    let mut arr_val_clone: Vec<String> = arr_val.clone();
+    let value_engine: String = format!(" engine: {}", engine_code);
+
+    for item in truck_accessories.iter() {
+        let data_path: VecItemsFind = match get_accessories_data_path(&arr_val, item.index) {
+            Some(data_path) => data_path,
+            None => continue,
+        };
+        let is_engine = is_engine(&data_path.value);
+
+        if is_engine {
+            arr_val_clone[data_path.index] = value_engine.to_string();
+            return Some(arr_val_clone);
         }
     }
 
