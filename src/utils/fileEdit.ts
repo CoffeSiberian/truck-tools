@@ -280,6 +280,23 @@ export const setTruckEngine = async (dirSave: string, engineCode: string) => {
     return res.res;
 };
 
+export const setTruckTransmission = async (
+    dirSave: string,
+    transmissionCode: string
+) => {
+    const descriptSucces = await descriptFiles(dirSave, "game.sii");
+    if (!descriptSucces) return false;
+
+    const rustParams = {
+        dirSave: dirSave + "/game.sii",
+        transmissionCode,
+    };
+
+    const invoceRes = await invoke("set_truck_transmissions_def", rustParams);
+    const res = JSON.parse(invoceRes as string) as responseRustTypes;
+    return res.res;
+};
+
 export const getListEngines = async () => {
     const invoceRes = await invoke("get_list_engines");
     const res = JSON.parse(invoceRes as string) as responseTrucksEngines;

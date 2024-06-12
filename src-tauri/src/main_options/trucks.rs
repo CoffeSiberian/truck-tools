@@ -254,6 +254,17 @@ fn is_engine(value_split: &String) -> bool {
     return false;
 }
 
+fn is_transmissions(value_split: &String) -> bool {
+    let value_split: Vec<&str> = value_split.split('/').collect();
+
+    for item in value_split.iter() {
+        if item == &"transmissions" {
+            return true;
+        }
+    }
+    return false;
+}
+
 pub fn get_truck_id(arr_val: &Vec<String>) -> Option<(String, usize)> {
     for (i, item) in arr_val.iter().enumerate() {
         let option_values: Vec<&str> = item.split(':').collect();
@@ -442,7 +453,7 @@ pub fn set_truck_engine(
         None => return None,
     };
     let mut arr_val_clone: Vec<String> = arr_val.clone();
-    let value_engine: String = format!(" engine: {}", engine_code);
+    let value_engine: String = format!(" data_path: \"{}\"", engine_code);
 
     for item in truck_accessories.iter() {
         let data_path: VecItemsFind = match get_accessories_data_path(&arr_val, item.index) {
@@ -452,7 +463,36 @@ pub fn set_truck_engine(
         let is_engine = is_engine(&data_path.value);
 
         if is_engine {
-            arr_val_clone[data_path.index] = value_engine.to_string();
+            arr_val_clone[data_path.index] = value_engine;
+            return Some(arr_val_clone);
+        }
+    }
+
+    return None;
+}
+
+pub fn set_truck_transmissions(
+    arr_val: &Vec<String>,
+    index: usize,
+    transmissions_code: &str,
+) -> Option<Vec<String>> {
+    let truck_accessories: Vec<VecItemsFind> = match get_list_trucks_accessories_id(&arr_val, index)
+    {
+        Some(truck_accessories) => truck_accessories,
+        None => return None,
+    };
+    let mut arr_val_clone: Vec<String> = arr_val.clone();
+    let value_transmissions: String = format!(" data_path: \"{}\"", transmissions_code);
+
+    for item in truck_accessories.iter() {
+        let data_path: VecItemsFind = match get_accessories_data_path(&arr_val, item.index) {
+            Some(data_path) => data_path,
+            None => continue,
+        };
+        let is_transmissions = is_transmissions(&data_path.value);
+
+        if is_transmissions {
+            arr_val_clone[data_path.index] = value_transmissions;
             return Some(arr_val_clone);
         }
     }

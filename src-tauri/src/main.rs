@@ -22,7 +22,7 @@ use main_options::truck_transmissions::{
 use main_options::trucks::{
     get_truck_id, get_truck_vehicle_index, set_any_trucks_fuel, set_any_trucks_wear,
     set_infinite_fuel_truck, set_truck_engine, set_truck_fuel, set_truck_license_plate,
-    set_truck_wear,
+    set_truck_transmissions, set_truck_wear,
 };
 use serde_json::json;
 use structs::vec_save_games::VecSaveGames;
@@ -438,6 +438,36 @@ async fn set_truck_engine_def(dir_save: &str, engine_code: &str) -> Result<Strin
     return Ok(RESPONSE_TRUE.to_string());
 }
 
+#[tauri::command]
+async fn set_truck_transmissions_def(
+    dir_save: &str,
+    transmissions_code: &str,
+) -> Result<String, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let (truck_id, index): (String, usize) = match get_truck_id(&file) {
+        Some((truck_id, index)) => (truck_id, index),
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let truck_index: usize = match get_truck_vehicle_index(&file, truck_id, index) {
+        Some(truck_index) => truck_index,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let truck_transmissions: Vec<String> =
+        match set_truck_transmissions(&file, truck_index, transmissions_code) {
+            Some(truck_engine) => truck_engine,
+            None => return Ok(RESPONSE_FALSE.to_string()),
+        };
+
+    save_file(dir_save.to_string(), truck_transmissions).await;
+    return Ok(RESPONSE_TRUE.to_string());
+}
+
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
@@ -455,7 +485,8 @@ fn main() {
             set_infinite_fuel,
             set_license_plate_trailer,
             set_license_plate_truck,
-            set_truck_engine_def
+            set_truck_engine_def,
+            set_truck_transmissions_def
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
