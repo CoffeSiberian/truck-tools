@@ -263,3 +263,15 @@ export const setLicensePlateTruck = async (
     const res = JSON.parse(invoceRes as string) as responseRustTypes;
     return res.res;
 };
+
+export const getListEngines = async () => {
+    const invoceRes = await invoke("get_list_engines");
+    const res = JSON.parse(invoceRes as string) as responseRustTypes;
+    return res.res;
+};
+
+export const getListTransmissions = async () => {
+    const invoceRes = await invoke("get_list_transmissions");
+    const res = JSON.parse(invoceRes as string) as responseRustTypes;
+    return res.res;
+};

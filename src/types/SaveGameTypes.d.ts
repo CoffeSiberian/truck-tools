@@ -19,3 +19,20 @@ export interface SaveGame {
     name: string;
     dir: string;
 }
+
+export interface EngineTypes {
+    name_id: string;
+    name: string;
+    cv: string;
+    nm: string;
+    code: string;
+}
+
+export interface TransmissionTypes {
+    name_id: string;
+    name: string;
+    speeds: string;
+    retarde: boolean;
+    ratio: string;
+    code: string;
+}
