@@ -413,7 +413,7 @@ async fn set_license_plate_truck(
 }
 
 #[tauri::command]
-async fn set_truck_engine_def(dir_save: &str, engine: &str) -> Result<String, ()> {
+async fn set_truck_engine_def(dir_save: &str, engine_code: &str) -> Result<String, ()> {
     let file: Vec<String> = match read_file_text(dir_save).await {
         Some(file) => file,
         None => return Ok(RESPONSE_FALSE.to_string()),
@@ -429,7 +429,7 @@ async fn set_truck_engine_def(dir_save: &str, engine: &str) -> Result<String, ()
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let truck_engine: Vec<String> = match set_truck_engine(&file, truck_index, engine) {
+    let truck_engine: Vec<String> = match set_truck_engine(&file, truck_index, engine_code) {
         Some(truck_engine) => truck_engine,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };

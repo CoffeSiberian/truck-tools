@@ -13,6 +13,8 @@ import {
     responseRustTypes,
     responseProfileSaves,
     responseProfileSavesCount,
+    responseTrucksEngines,
+    responseTrucksTransmissions,
 } from "../types/fileEditTypes";
 
 const getProfileImage = async (path: string): Promise<string | undefined> => {
@@ -264,14 +266,28 @@ export const setLicensePlateTruck = async (
     return res.res;
 };
 
+export const setTruckEngine = async (dirSave: string, engineCode: string) => {
+    const descriptSucces = await descriptFiles(dirSave, "game.sii");
+    if (!descriptSucces) return false;
+
+    const rustParams = {
+        dirSave: dirSave + "/game.sii",
+        engineCode,
+    };
+
+    const invoceRes = await invoke("set_truck_engine_def", rustParams);
+    const res = JSON.parse(invoceRes as string) as responseRustTypes;
+    return res.res;
+};
+
 export const getListEngines = async () => {
     const invoceRes = await invoke("get_list_engines");
-    const res = JSON.parse(invoceRes as string) as responseRustTypes;
+    const res = JSON.parse(invoceRes as string) as responseTrucksEngines;
     return res.res;
 };
 
 export const getListTransmissions = async () => {
     const invoceRes = await invoke("get_list_transmissions");
-    const res = JSON.parse(invoceRes as string) as responseRustTypes;
+    const res = JSON.parse(invoceRes as string) as responseTrucksTransmissions;
     return res.res;
 };
