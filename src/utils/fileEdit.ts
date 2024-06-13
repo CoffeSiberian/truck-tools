@@ -8,7 +8,12 @@ import { convertFileSrc } from "@tauri-apps/api/tauri";
 import { invoke } from "@tauri-apps/api/tauri";
 
 // types
-import { ProfileWithoutSaves, SaveGame } from "../types/SaveGameTypes";
+import {
+    ProfileWithoutSaves,
+    SaveGame,
+    EnginesTypes,
+    TransmissionsTypes,
+} from "../types/SaveGameTypes";
 import {
     responseRustTypes,
     responseProfileSaves,
@@ -106,7 +111,7 @@ export const setChassisMassTrailer = async (
     dirSave: string,
     chassisMass: string,
     bodyMass: string
-) => {
+): Promise<boolean> => {
     const descriptSucces = await descriptFiles(dirSave, "game.sii");
     if (!descriptSucces) return false;
 
@@ -121,7 +126,9 @@ export const setChassisMassTrailer = async (
     return res.res;
 };
 
-export const setUnlockCurrentTrailers = async (dirSave: string) => {
+export const setUnlockCurrentTrailers = async (
+    dirSave: string
+): Promise<boolean> => {
     const descriptSucces = await descriptFiles(dirSave, "game.sii");
     if (!descriptSucces) return false;
 
@@ -137,7 +144,7 @@ export const setUnlockCurrentTrailers = async (dirSave: string) => {
 export const setCargoMassTrailersAndSlave = async (
     cargoMass: string,
     dirSave: string
-) => {
+): Promise<boolean> => {
     const descriptSucces = await descriptFiles(dirSave, "game.sii");
     if (!descriptSucces) return false;
 
@@ -155,7 +162,7 @@ export const setCargoMassTrailersAndSlave = async (
     return res.res;
 };
 
-export const setRepairTruck = async (dirSave: string) => {
+export const setRepairTruck = async (dirSave: string): Promise<boolean> => {
     const descriptSucces = await descriptFiles(dirSave, "game.sii");
     if (!descriptSucces) return false;
 
@@ -169,7 +176,7 @@ export const setRepairTruck = async (dirSave: string) => {
     return res.res;
 };
 
-export const setRepairAllTruck = async (dirSave: string) => {
+export const setRepairAllTruck = async (dirSave: string): Promise<boolean> => {
     const descriptSucces = await descriptFiles(dirSave, "game.sii");
     if (!descriptSucces) return false;
 
@@ -183,7 +190,7 @@ export const setRepairAllTruck = async (dirSave: string) => {
     return res.res;
 };
 
-export const setFuelTruck = async (dirSave: string) => {
+export const setFuelTruck = async (dirSave: string): Promise<boolean> => {
     const descriptSucces = await descriptFiles(dirSave, "game.sii");
     if (!descriptSucces) return false;
 
@@ -197,7 +204,7 @@ export const setFuelTruck = async (dirSave: string) => {
     return res.res;
 };
 
-export const setAllFuelTruck = async (dirSave: string) => {
+export const setAllFuelTruck = async (dirSave: string): Promise<boolean> => {
     const descriptSucces = await descriptFiles(dirSave, "game.sii");
     if (!descriptSucces) return false;
 
@@ -211,7 +218,9 @@ export const setAllFuelTruck = async (dirSave: string) => {
     return res.res;
 };
 
-export const setInfinitFuelTruck = async (dirSave: string) => {
+export const setInfinitFuelTruck = async (
+    dirSave: string
+): Promise<boolean> => {
     const descriptSucces = await descriptFiles(dirSave, "game.sii");
     if (!descriptSucces) return false;
 
@@ -229,7 +238,7 @@ export const setLicensePlateTrailer = async (
     licensePlate: string,
     bgPlateColor: string,
     textPlateColor: string
-) => {
+): Promise<boolean> => {
     const descriptSucces = await descriptFiles(dirSave, "game.sii");
     if (!descriptSucces) return false;
 
@@ -250,7 +259,7 @@ export const setLicensePlateTruck = async (
     licensePlate: string,
     bgPlateColor: string,
     textPlateColor: string
-) => {
+): Promise<boolean> => {
     const descriptSucces = await descriptFiles(dirSave, "game.sii");
     if (!descriptSucces) return false;
 
@@ -266,7 +275,10 @@ export const setLicensePlateTruck = async (
     return res.res;
 };
 
-export const setTruckEngine = async (dirSave: string, engineCode: string) => {
+export const setTruckEngine = async (
+    dirSave: string,
+    engineCode: string
+): Promise<boolean> => {
     const descriptSucces = await descriptFiles(dirSave, "game.sii");
     if (!descriptSucces) return false;
 
@@ -283,7 +295,7 @@ export const setTruckEngine = async (dirSave: string, engineCode: string) => {
 export const setTruckTransmission = async (
     dirSave: string,
     transmissionCode: string
-) => {
+): Promise<boolean> => {
     const descriptSucces = await descriptFiles(dirSave, "game.sii");
     if (!descriptSucces) return false;
 
@@ -297,14 +309,16 @@ export const setTruckTransmission = async (
     return res.res;
 };
 
-export const getListEngines = async () => {
+export const getListEngines = async (): Promise<EnginesTypes | undefined> => {
     const invoceRes = await invoke("get_list_engines");
     const res = JSON.parse(invoceRes as string) as responseTrucksEngines;
-    return res.res;
+    return res.engines;
 };
 
-export const getListTransmissions = async () => {
+export const getListTransmissions = async (): Promise<
+    TransmissionsTypes | undefined
+> => {
     const invoceRes = await invoke("get_list_transmissions");
     const res = JSON.parse(invoceRes as string) as responseTrucksTransmissions;
-    return res.res;
+    return res.transmissions;
 };

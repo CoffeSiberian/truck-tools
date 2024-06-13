@@ -36,3 +36,13 @@ export interface TransmissionTypes {
     ratio: string;
     code: string;
 }
+
+export interface EnginesTypes {
+    scania: EngineTypes[];
+    volvo: EngineTypes[];
+}
+
+export interface TransmissionsTypes {
+    scania: TransmissionTypes[];
+    volvo: TransmissionTypes[];
+}
