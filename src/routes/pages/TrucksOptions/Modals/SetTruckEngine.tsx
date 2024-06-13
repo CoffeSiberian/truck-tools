@@ -9,16 +9,16 @@ import {
     ModalFooter,
     Button,
     useDisclosure,
+    Image,
 } from "@nextui-org/react";
-import { setTruckEngine } from "../../../../utils/fileEdit";
-import { getListEngines } from "../../../../utils/fileEdit";
+import { setTruckEngine, getListEngines } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
-import { IconPencil, IconSteeringWheel } from "@tabler/icons-react";
+import { IconPencil, IconSteeringWheel, IconEngine } from "@tabler/icons-react";
 
 // types
-import { EnginesTypes } from "../../../../types/SaveGameTypes";
+import { EngineTypes } from "../../../../types/SaveGameTypes";
 
 // images
 import ScaniaIcon from "../../../../static/icons/brands/scania.svg";
@@ -43,10 +43,19 @@ const SetTruckEngine = () => {
     ];
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const [Engines, setEngines] = useState<EnginesTypes | undefined>(undefined);
+
+    const [Engines, setEngines] = useState<EngineTypes[] | undefined>(
+        undefined
+    );
+
+    const [SelectedEngine, setSelectedEngine] = useState<
+        EngineTypes | undefined
+    >(undefined);
+
     const [selectedBrand, setSelectedBrand] = useState<BrandType | undefined>(
         undefined
     );
+
     const [completed, setCompleted] = useState<completedProps>({
         error: false,
         completed: false,
@@ -68,24 +77,39 @@ const SetTruckEngine = () => {
         setIsLoading(false);
     };
 
-    const onOpenModal = async () => {
-        onOpen();
-        const res = await getListEngines();
-        setEngines(res);
-    };
-
-    const onClickBrand = (branName: string) => {
+    const onClickBrand = async (branName: string) => {
         if (!branName) return;
 
         const brandFind = BRANDS.find((p) => p.name === branName) as BrandType;
         setSelectedBrand(brandFind);
+        const resEngines = await getListEngines();
+        console.log(resEngines);
+
+        if (resEngines) {
+            switch (brandFind.name) {
+                case "Volvo":
+                    setEngines(resEngines.volvo);
+                    console.log(resEngines.volvo);
+                    break;
+                case "Scania":
+                    setEngines(resEngines.scania);
+                    break;
+            }
+        }
+    };
+
+    const onClickEngine = (engineId: string) => {
+        if (!Engines) return;
+
+        const engineFind = Engines.find((p) => p.name_id === engineId);
+        setSelectedEngine(engineFind);
     };
 
     return (
         <>
             <Button
                 endContent={<IconPencil stroke={2} />}
-                onPress={onOpenModal}
+                onPress={onOpen}
                 isDisabled={!selectedSave}
                 color="primary"
                 variant="shadow"
@@ -124,7 +148,17 @@ const SetTruckEngine = () => {
                                     placeholder="Select truck brand"
                                     labelPlacement="inside"
                                     variant="bordered"
-                                    size="md"
+                                    startContent={
+                                        selectedBrand ? (
+                                            <Image
+                                                alt={selectedBrand.icon}
+                                                src={selectedBrand.icon}
+                                                width={30}
+                                            />
+                                        ) : (
+                                            <></>
+                                        )
+                                    }
                                 >
                                     {(BrandObj) => (
                                         <SelectItem
@@ -144,6 +178,38 @@ const SetTruckEngine = () => {
                                                 <div className="flex flex-col">
                                                     <span className="text-small">
                                                         {BrandObj.name}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </SelectItem>
+                                    )}
+                                </Select>
+                                <Select
+                                    isDisabled={!Engines}
+                                    items={Engines ? Engines : []}
+                                    selectedKeys={
+                                        SelectedEngine
+                                            ? [SelectedEngine.name_id]
+                                            : []
+                                    }
+                                    onChange={(e) =>
+                                        onClickEngine(e.target.value)
+                                    }
+                                    label="Engines"
+                                    placeholder="Select truck engine"
+                                    labelPlacement="inside"
+                                    variant="bordered"
+                                    startContent={<IconEngine stroke={2} />}
+                                >
+                                    {(engineObj) => (
+                                        <SelectItem
+                                            key={engineObj.name_id}
+                                            textValue={engineObj.name}
+                                        >
+                                            <div className="flex gap-2 items-center">
+                                                <div className="flex flex-col">
+                                                    <span className="text-small">
+                                                        {engineObj.name}
                                                     </span>
                                                 </div>
                                             </div>

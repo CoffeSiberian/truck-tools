@@ -194,16 +194,16 @@ async fn get_list_engines() -> Result<String, ()> {
     let response: String = json!({
         "res": true,
         "engines": {
-            "scania": [
-                SCANIA_R_2009_ENGINES,
-                SCANIA_R_ENGINES,
-                SCANIA_STREAMLINE_ENGINES,
-                SCANIA_S_ENGINES,
-            ],
-            "volvo": [
-                VOLVO_FK,
-                VOLVO_FK_CLASSIC,
-            ],
+            "scania": {
+                "scania_r": SCANIA_R_ENGINES,
+                "scania_s": SCANIA_S_ENGINES,
+                "scania_r_2009": SCANIA_R_2009_ENGINES,
+                "scania_streamline": SCANIA_STREAMLINE_ENGINES,
+            },
+            "volvo": {
+                "volvo_fh_classic": VOLVO_FK_CLASSIC,
+                "volvo_fk": VOLVO_FK,
+            }
         },
     })
     .to_string();
@@ -216,16 +216,16 @@ async fn get_list_transmissions() -> Result<String, ()> {
     let response: String = json!({
         "res": true,
         "transmissions": {
-            "scania": [
-                SCANIA_R_2009_TRANSMISSION,
-                SCANIA_R_TRANSMISSION,
-                SCANIA_STREAMLINE_TRANSMISSION,
-                SCANIA_S_TRANSMISSION,
-            ],
-            "volvo": [
-                VOLVO_FH_CLASSIC_TRANSMISSION,
-                VOLVO_FH_TRANSMISSION,
-            ],
+            "scania": {
+                "scania_r": SCANIA_R_TRANSMISSION,
+                "scania_s": SCANIA_S_TRANSMISSION,
+                "scania_r_2009": SCANIA_R_2009_TRANSMISSION,
+                "scania_streamline": SCANIA_STREAMLINE_TRANSMISSION,
+            },
+            "volvo": {
+                "volvo_fh_classic": VOLVO_FH_CLASSIC_TRANSMISSION,
+                "volvo_fk": VOLVO_FH_TRANSMISSION,
+            }
         },
     })
     .to_string();

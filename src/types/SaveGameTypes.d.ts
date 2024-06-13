@@ -1,3 +1,10 @@
+import {
+    ScaniaModelsEngines,
+    ScaniaModelsTransmissions,
+    VolvoModelsEngines,
+    VolvoModelsTransmissions,
+} from "./TrucksTypes";
+
 export interface Profile {
     name: string;
     hex: string;
@@ -38,11 +45,11 @@ export interface TransmissionTypes {
 }
 
 export interface EnginesTypes {
-    scania: EngineTypes[];
-    volvo: EngineTypes[];
+    scania: ScaniaModelsEngines;
+    volvo: VolvoModelsEngines;
 }
 
 export interface TransmissionsTypes {
-    scania: TransmissionTypes[];
-    volvo: TransmissionTypes[];
+    scania: ScaniaModelsTransmissions;
+    volvo: VolvoModelsTransmissions;
 }
