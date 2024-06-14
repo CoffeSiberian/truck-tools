@@ -120,6 +120,8 @@ const SetTruckTransmission = () => {
 
         const brandFind = BRANDS.find((p) => p.name === branName) as BrandType;
         setSelectedBrand(brandFind);
+        setSelectedModel(undefined);
+        setSelectedTransmission(undefined);
     };
 
     const onClickBrandModel = async (modelKey: string) => {
@@ -127,6 +129,7 @@ const SetTruckTransmission = () => {
 
         const modelFind = selectedBrand.models.find((p) => p.key === modelKey);
         setSelectedModel(modelFind);
+        setSelectedTransmission(undefined);
 
         if (!modelFind) return;
         const resTransmissions = await getListTransmissions();

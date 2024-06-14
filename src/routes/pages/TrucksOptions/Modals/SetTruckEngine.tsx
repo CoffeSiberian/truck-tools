@@ -117,6 +117,8 @@ const SetTruckEngine = () => {
 
         const brandFind = BRANDS.find((p) => p.name === branName) as BrandType;
         setSelectedBrand(brandFind);
+        setSelectedModel(undefined);
+        setSelectedEngine(undefined);
     };
 
     const onClickBrandModel = async (modelKey: string) => {
@@ -124,6 +126,7 @@ const SetTruckEngine = () => {
 
         const modelFind = selectedBrand.models.find((p) => p.key === modelKey);
         setSelectedModel(modelFind);
+        setSelectedEngine(undefined);
 
         if (!modelFind) return;
         const resEngines = await getListEngines();
