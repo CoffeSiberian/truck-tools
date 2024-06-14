@@ -13,31 +13,31 @@ const TrailersOptions = () => {
     const items = [
         {
             id: "1",
+            title: "Change trailer license plate",
+            description: "Change the license plate of the trailer",
+            image: testImage,
+            modal: <EditLicensePlate />,
+        },
+        {
+            id: "2",
             title: "Modify job weight",
             description: "Modify the weight of your current job",
             image: testImage,
             modal: <ModifyWeight />,
         },
         {
-            id: "2",
+            id: "3",
             title: "Trailer unblocking by country",
             description: "Unlock regional blocking of trailers",
             image: testImage,
             modal: <UnlockTrailers />,
         },
         {
-            id: "3",
+            id: "4",
             title: "Change trailer weight",
             description: "Modifies the trailer weight, applying it only once.",
             image: testImage,
             modal: <ModifyTrailerWeight />,
-        },
-        {
-            id: "4",
-            title: "Change trailer license plate",
-            description: "Change the license plate of the trailer",
-            image: testImage,
-            modal: <EditLicensePlate />,
         },
     ];
 

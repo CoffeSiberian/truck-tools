@@ -18,6 +18,7 @@ const ListSaves = () => {
             isDisabled={selectedProfile && !isSavesLoading ? false : true}
             errorMessage={selectedProfile ? undefined : "No profile selected"}
             isLoading={isSavesLoading}
+            isInvalid={selectedProfile ? (selectedSave ? false : true) : false}
             items={selectedProfile ? selectedProfile.saves : []}
             selectedKeys={selectedSave ? [selectedSave.id] : []}
             onChange={(e) => onClickSave(e.target.value)}
