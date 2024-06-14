@@ -1,11 +1,11 @@
 {
-    "version": "v0.0.4",
-    "notes": "- A new option has been integrated to edit license patent plates in a customized way\n\n- New modifications for trucks were integrated\n- Performance optimization",
-    "pub_date": "2024-06-07T00:00:00-00:00",
-    "platforms": {
-        "windows-x86_64": {
-            "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlUzaS9ybG0xZXR2VmtieWIyclFqTWpYa2N6OEFmV3BseVNWQXpoazhaVWdSMVhLSFRySHBjdG9BRjRqY3NwWm85Q1dhY2xva3Njd2hMN0hIWXRsSFFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzE3ODgyMTA2CWZpbGU6VHJ1Y2sgVG9vbHNfMC4wLjRfeDY0X2VuLVVTLm1zaS56aXAKTkJ1and3NjB1Z2hXREM1TUhLd21CWmZYQTh6Y1FzYWpzMytsMThCeXR2VWFibFhUbm95OTJCVUh5QTIxK0ZpTHlweW1OZXBQeXhIK28zR2tlMGFtQnc9PQo=",
-            "url": "https://siberiancoffe.cloud/Truck_Tools_0.0.4_x64_en-US.msi.zip"
-        }
-    }
+	"version": "v0.0.6",
+	"notes": "- New option to change the transmission and engine of any truck (currently only Scania and Volvo).\n\n- Minimal interface changes.\n\n- Changes in the web client code.",
+	"pub_date": "2024-06-14T00:00:00-00:00",
+	"platforms": {
+		"windows-x86_64": {
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmFIdnI4TWg5RW1KTlpuZ2lpazFXR3YvdGd4TERMNTB2bjNDT2lQRzN4TlVTS2VHVlJYU0NUdVZXekhaZmtoL2pWVjJqL2VpUGI1RUVSUkVDVmNHcUFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzE4MzQzNDc1CWZpbGU6VHJ1Y2sgVG9vbHNfMC4wLjZfeDY0X2VuLVVTLm1zaS56aXAKSDZnQ1dXbm5ZckcxbURXWHZGbGFpL0tNTEZVeU5uejBzK0VsbDZaejI2T3FEdTA5akxkWXVleEg1OXkvZWVXU01MaGJrWXhYRHJoSHJ5RktRNElBRGc9PQo=",
+			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.0.6/Truck_Tools_0.0.6_x64_en-US.msi"
+		}
+	}
 }
