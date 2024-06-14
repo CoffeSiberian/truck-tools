@@ -202,7 +202,7 @@ async fn get_list_engines() -> Result<String, ()> {
             },
             "volvo": {
                 "volvo_fh_classic": VOLVO_FK_CLASSIC,
-                "volvo_fk": VOLVO_FK,
+                "volvo_fh": VOLVO_FK,
             }
         },
     })
@@ -224,7 +224,7 @@ async fn get_list_transmissions() -> Result<String, ()> {
             },
             "volvo": {
                 "volvo_fh_classic": VOLVO_FH_CLASSIC_TRANSMISSION,
-                "volvo_fk": VOLVO_FH_TRANSMISSION,
+                "volvo_fh": VOLVO_FH_TRANSMISSION,
             }
         },
     })

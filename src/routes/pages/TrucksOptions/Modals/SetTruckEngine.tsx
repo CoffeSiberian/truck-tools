@@ -97,13 +97,17 @@ const SetTruckEngine = () => {
             setCompleted({ error: false, completed: false });
         }
 
+        if (!SelectedEngine) return;
         if (selectedSave) {
             setIsLoading(true);
-            /*const res = await setTruckEngine(selectedSave.dir);
+            const res = await setTruckEngine(
+                selectedSave.dir,
+                SelectedEngine.code
+            );
             setCompleted({
                 error: !res,
                 completed: true,
-            });*/
+            });
         }
         setIsLoading(false);
     };
