@@ -2,12 +2,12 @@ import Home from "./routes/pages/Home";
 import SelectProfile from "./components/SelectProfile";
 
 const App = () => {
-    return (
-        <div className="flex flex-col min-h-screen">
-            <Home />
-            <SelectProfile />
-        </div>
-    );
+	return (
+		<div className="flex min-h-screen flex-col">
+			<Home />
+			<SelectProfile />
+		</div>
+	);
 };
 
 export default App;
