@@ -11,19 +11,22 @@ import {
     useDisclosure,
     Image,
 } from "@nextui-org/react";
-import { setTruckEngine, getListEngines } from "../../../../utils/fileEdit";
+import {
+    setTruckTransmission,
+    getListTransmissions,
+} from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
 import {
     IconPencil,
     IconSteeringWheel,
-    IconEngine,
+    IconManualGearbox,
     IconLayersSubtract,
 } from "@tabler/icons-react";
 
 // types
-import { EngineTypes } from "../../../../types/SaveGameTypes";
+import { TransmissionTypes } from "../../../../types/SaveGameTypes";
 
 // images
 import ScaniaIcon from "../../../../static/icons/brands/scania.svg";
@@ -45,7 +48,7 @@ interface BrandType {
     icon: string;
 }
 
-const SetTruckEngine = () => {
+const SetTruckTransmission = () => {
     const { selectedSave } = useProfileContex();
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
     const BRANDS: BrandType[] = [
@@ -71,12 +74,12 @@ const SetTruckEngine = () => {
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
-    const [Engines, setEngines] = useState<EngineTypes[] | undefined>(
-        undefined
-    );
+    const [Transmissions, setTransmissions] = useState<
+        TransmissionTypes[] | undefined
+    >(undefined);
 
-    const [SelectedEngine, setSelectedEngine] = useState<
-        EngineTypes | undefined
+    const [SelectedTransmission, setSelectedTransmission] = useState<
+        TransmissionTypes | undefined
     >(undefined);
 
     const [selectedBrand, setSelectedBrand] = useState<BrandType | undefined>(
@@ -97,12 +100,12 @@ const SetTruckEngine = () => {
             setCompleted({ error: false, completed: false });
         }
 
-        if (!SelectedEngine) return;
+        if (!SelectedTransmission) return;
         if (selectedSave) {
             setIsLoading(true);
-            const res = await setTruckEngine(
+            const res = await setTruckTransmission(
                 selectedSave.dir,
-                SelectedEngine.code
+                SelectedTransmission.code
             );
             setCompleted({
                 error: !res,
@@ -126,37 +129,39 @@ const SetTruckEngine = () => {
         setSelectedModel(modelFind);
 
         if (!modelFind) return;
-        const resEngines = await getListEngines();
+        const resTransmissions = await getListTransmissions();
 
-        if (resEngines) {
+        if (resTransmissions) {
             switch (modelFind.key) {
                 case "scania_r":
-                    setEngines(resEngines.scania.scania_r);
+                    setTransmissions(resTransmissions.scania.scania_r);
                     break;
                 case "scania_s":
-                    setEngines(resEngines.scania.scania_s);
+                    setTransmissions(resTransmissions.scania.scania_s);
                     break;
                 case "scania_r_2009":
-                    setEngines(resEngines.scania.scania_r_2009);
+                    setTransmissions(resTransmissions.scania.scania_r_2009);
                     break;
                 case "scania_streamline":
-                    setEngines(resEngines.scania.scania_streamline);
+                    setTransmissions(resTransmissions.scania.scania_streamline);
                     break;
                 case "volvo_fh_classic":
-                    setEngines(resEngines.volvo.volvo_fh_classic);
+                    setTransmissions(resTransmissions.volvo.volvo_fh_classic);
                     break;
                 case "volvo_fh":
-                    setEngines(resEngines.volvo.volvo_fh);
+                    setTransmissions(resTransmissions.volvo.volvo_fh);
                     break;
             }
         }
     };
 
-    const onClickEngine = (engineId: string) => {
-        if (!Engines) return;
+    const onClickTransmission = (transmissionId: string) => {
+        if (!Transmissions) return;
 
-        const engineFind = Engines.find((p) => p.name_id === engineId);
-        setSelectedEngine(engineFind);
+        const transmissionFind = Transmissions.find(
+            (p) => p.name_id === transmissionId
+        );
+        setSelectedTransmission(transmissionFind);
     };
 
     return (
@@ -181,12 +186,12 @@ const SetTruckEngine = () => {
                     {(onClose) => (
                         <>
                             <ModalHeader className="flex flex-col gap-1">
-                                Change truck engine
+                                Change truck transmission
                             </ModalHeader>
                             <ModalBody className="py-1">
                                 <p>
-                                    Change the engine of your truck to the one
-                                    of your choice
+                                    Change the transmission of your truck to the
+                                    one of your choice
                                 </p>
                                 <Select
                                     items={BRANDS}
@@ -275,37 +280,47 @@ const SetTruckEngine = () => {
                                     )}
                                 </Select>
                                 <Select
-                                    isDisabled={!Engines}
-                                    items={Engines ? Engines : []}
+                                    isDisabled={!Transmissions}
+                                    items={Transmissions ? Transmissions : []}
                                     selectedKeys={
-                                        SelectedEngine
-                                            ? [SelectedEngine.name_id]
+                                        SelectedTransmission
+                                            ? [SelectedTransmission.name_id]
                                             : []
                                     }
                                     onChange={(e) =>
-                                        onClickEngine(e.target.value)
+                                        onClickTransmission(e.target.value)
                                     }
-                                    label="Engines"
-                                    placeholder="Select truck engine"
+                                    label="Transmissions"
+                                    placeholder="Select truck transmission"
                                     labelPlacement="inside"
                                     variant="bordered"
-                                    startContent={<IconEngine stroke={2} />}
+                                    startContent={
+                                        <IconManualGearbox stroke={2} />
+                                    }
                                 >
-                                    {(engineObj) => (
+                                    {(transmissionObj) => (
                                         <SelectItem
-                                            key={engineObj.name_id}
-                                            textValue={engineObj.name}
+                                            key={transmissionObj.name_id}
+                                            textValue={transmissionObj.name}
                                         >
                                             <div className="flex gap-2 items-center">
-                                                <div className="flex flex-col">
+                                                <div className="flex flex-col w-full">
                                                     <span className="font-medium text-small">
-                                                        {engineObj.name}
+                                                        {transmissionObj.name}
                                                     </span>
                                                     <span className="text-tiny text-default-600">
-                                                        CV: {engineObj.cv}
+                                                        Speeds:{" "}
+                                                        {transmissionObj.speeds}
                                                     </span>
                                                     <span className="text-tiny text-default-600">
-                                                        NM: {engineObj.nm}
+                                                        Retarder:{" "}
+                                                        {transmissionObj.retarder
+                                                            ? "\u2714\ufe0f"
+                                                            : "\u274c"}
+                                                    </span>
+                                                    <span className="text-tiny text-default-600">
+                                                        Ratio:{" "}
+                                                        {transmissionObj.ratio}
                                                     </span>
                                                 </div>
                                             </div>
@@ -348,4 +363,4 @@ const SetTruckEngine = () => {
     );
 };
 
-export default SetTruckEngine;
+export default SetTruckTransmission;

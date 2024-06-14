@@ -39,7 +39,7 @@ export interface TransmissionTypes {
     name_id: string;
     name: string;
     speeds: string;
-    retarde: boolean;
+    retarder: boolean;
     ratio: string;
     code: string;
 }

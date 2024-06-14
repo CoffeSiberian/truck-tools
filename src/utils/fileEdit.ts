@@ -294,14 +294,14 @@ export const setTruckEngine = async (
 
 export const setTruckTransmission = async (
     dirSave: string,
-    transmissionCode: string
+    transmissionsCode: string
 ): Promise<boolean> => {
     const descriptSucces = await descriptFiles(dirSave, "game.sii");
     if (!descriptSucces) return false;
 
     const rustParams = {
         dirSave: dirSave + "/game.sii",
-        transmissionCode,
+        transmissionsCode,
     };
 
     const invoceRes = await invoke("set_truck_transmissions_def", rustParams);

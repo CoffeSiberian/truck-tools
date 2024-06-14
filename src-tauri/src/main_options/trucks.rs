@@ -258,7 +258,7 @@ fn is_transmissions(value_split: &String) -> bool {
     let value_split: Vec<&str> = value_split.split('/').collect();
 
     for item in value_split.iter() {
-        if item == &"transmissions" {
+        if item == &"transmission" {
             return true;
         }
     }
