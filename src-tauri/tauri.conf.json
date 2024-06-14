@@ -1,88 +1,88 @@
 {
-    "build": {
-        "beforeDevCommand": "npm run dev",
-        "beforeBuildCommand": "npm run build",
-        "withGlobalTauri": true,
-        "devPath": "http://localhost:1420",
-        "distDir": "../dist"
-    },
-    "package": {
-        "productName": "Truck Tools",
-        "version": "0.0.5"
-    },
-    "tauri": {
-        "allowlist": {
-            "all": false,
-            "fs": {
-                "all": true,
-                "scope": ["$DOCUMENT/**"]
-            },
-            "path": {
-                "all": true
-            },
-            "shell": {
-                "execute": true,
-                "sidecar": true,
-                "open": true,
-                "scope": [
-                    {
-                        "name": "bin/SII_Decrypt",
-                        "sidecar": true,
-                        "args": true
-                    },
-                    {
-                        "name": "explorer",
-                        "cmd": "explorer",
-                        "args": true
-                    }
-                ]
-            },
-            "protocol": {
-                "all": false,
-                "asset": true,
-                "assetScope": ["$DOCUMENT/**"]
-            }
-        },
-        "windows": [
-            {
-                "title": "Truck Tools - Preview",
-                "width": 1280,
-                "height": 720,
-                "minWidth": 1280,
-                "minHeight": 720,
-                "resizable": true,
-                "center": true
-            }
-        ],
-        "updater": {
-            "active": true,
-            "windows": {
-                "installMode": "passive"
-            },
-            "endpoints": [
-                "https://raw.githubusercontent.com/CoffeSiberian/truck-tools/main/src-tauri/updater.json",
-                "https://siberiancoffe.cloud/updater.json"
-            ],
-            "dialog": true,
-            "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEJERkMxNzRDRjFGM0ZDQTYKUldTbS9QUHhUQmY4dlV4eFoxS0VnUDVGUHJCcGI1SklzK2cwRm9VUS82NHVHNlAwMTBZaVd3bXcK"
-        },
-        "security": {
-            "csp": "default-src 'self'; img-src 'self' asset: https://asset.localhost"
-        },
-        "bundle": {
-            "active": true,
-            "targets": "all",
-            "identifier": "com.trucktools.dev",
-            "publisher": "SiberianCoffe",
-            "copyright": "SiberianCoffe",
-            "icon": [
-                "icons/32x32.png",
-                "icons/128x128.png",
-                "icons/128x128@2x.png",
-                "icons/icon.icns",
-                "icons/icon.ico"
-            ],
-            "externalBin": ["bin/SII_Decrypt"]
-        }
-    }
+	"build": {
+		"beforeDevCommand": "npm run dev",
+		"beforeBuildCommand": "npm run build",
+		"withGlobalTauri": true,
+		"devPath": "http://localhost:1420",
+		"distDir": "../dist"
+	},
+	"package": {
+		"productName": "Truck Tools",
+		"version": "0.0.6"
+	},
+	"tauri": {
+		"allowlist": {
+			"all": false,
+			"fs": {
+				"all": true,
+				"scope": ["$DOCUMENT/**"]
+			},
+			"path": {
+				"all": true
+			},
+			"shell": {
+				"execute": true,
+				"sidecar": true,
+				"open": true,
+				"scope": [
+					{
+						"name": "bin/SII_Decrypt",
+						"sidecar": true,
+						"args": true
+					},
+					{
+						"name": "explorer",
+						"cmd": "explorer",
+						"args": true
+					}
+				]
+			},
+			"protocol": {
+				"all": false,
+				"asset": true,
+				"assetScope": ["$DOCUMENT/**"]
+			}
+		},
+		"windows": [
+			{
+				"title": "Truck Tools - Preview",
+				"width": 1280,
+				"height": 720,
+				"minWidth": 1280,
+				"minHeight": 720,
+				"resizable": true,
+				"center": true
+			}
+		],
+		"updater": {
+			"active": true,
+			"windows": {
+				"installMode": "passive"
+			},
+			"endpoints": [
+				"https://raw.githubusercontent.com/CoffeSiberian/truck-tools/main/src-tauri/updater.json",
+				"https://siberiancoffe.cloud/updater.json"
+			],
+			"dialog": true,
+			"pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEJERkMxNzRDRjFGM0ZDQTYKUldTbS9QUHhUQmY4dlV4eFoxS0VnUDVGUHJCcGI1SklzK2cwRm9VUS82NHVHNlAwMTBZaVd3bXcK"
+		},
+		"security": {
+			"csp": "default-src 'self'; img-src 'self' asset: https://asset.localhost"
+		},
+		"bundle": {
+			"active": true,
+			"targets": "all",
+			"identifier": "com.trucktools.dev",
+			"publisher": "SiberianCoffe",
+			"copyright": "SiberianCoffe",
+			"icon": [
+				"icons/32x32.png",
+				"icons/128x128.png",
+				"icons/128x128@2x.png",
+				"icons/icon.icns",
+				"icons/icon.ico"
+			],
+			"externalBin": ["bin/SII_Decrypt"]
+		}
+	}
 }
