@@ -33,40 +33,41 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 
 #### Trailers
 
--   [x] Modify load weight
--   [x] Modify load trailer
--   [x] Unlock trailers in restricted areas
--   [x] Create customized color license plate
+- [x] Modify load weight
+- [x] Modify load trailer
+- [x] Unlock trailers in restricted areas
+- [x] Create customized color license plate
 
 #### Trucks
 
--   [x] Repair truck
--   [x] Repair all trucks
--   [x] Infinite fuel on current truck
--   [x] Fill fuel
--   [x] Fill all trucks fuel
--   [x] Create customized color license plate
--   [] Set custom engines and transmission
+- [x] Repair truck
+- [x] Repair all trucks
+- [x] Infinite fuel on current truck
+- [x] Fill fuel
+- [x] Fill all trucks fuel
+- [x] Create customized color license plate
+- [x] Set custom engines and transmission
 
 #### Profiles
 
--   [] Add infinite money
--   [] Add level 100
--   [] Unlock garages
--   [] Unlock all cities
--   [] Unlock all dealerships
--   [] Unlock skills
--   [] Enable console and developer mode
+- [] Add infinite money
+- [] Add level 100
+- [] Unlock garages
+- [] Unlock all cities
+- [] Unlock all dealerships
+- [] Unlock skills
 
 #### Settings
 
--   [] Documents Path
--   [] Dark Mode config
--   [] Change language
+- [] Documents Path
+- [] Dark Mode config
+- [] Change language
+- [] Enable console and developer mode
+- [] Change save format
 
 #### Possible features
 
--   Share trailers and trucks with a link
--   Compatibility with DLC's when sharing trailers
--   User account
--   Create custom routes
+- Share trailers and trucks with a link
+- Compatibility with DLC's when sharing trailers
+- User account
+- Create custom routes
