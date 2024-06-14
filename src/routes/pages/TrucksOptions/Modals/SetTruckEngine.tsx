@@ -15,7 +15,12 @@ import { setTruckEngine, getListEngines } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
-import { IconPencil, IconSteeringWheel, IconEngine } from "@tabler/icons-react";
+import {
+    IconPencil,
+    IconSteeringWheel,
+    IconEngine,
+    IconLayersSubtract,
+} from "@tabler/icons-react";
 
 // types
 import { EngineTypes } from "../../../../types/SaveGameTypes";
@@ -29,8 +34,14 @@ interface completedProps {
     completed: boolean;
 }
 
+interface BrandModelTypes {
+    key: string;
+    name: string;
+}
+
 interface BrandType {
     name: string;
+    models: BrandModelTypes[];
     icon: string;
 }
 
@@ -38,8 +49,24 @@ const SetTruckEngine = () => {
     const { selectedSave } = useProfileContex();
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
     const BRANDS: BrandType[] = [
-        { name: "Scania", icon: ScaniaIcon },
-        { name: "Volvo", icon: VolvoIcon },
+        {
+            name: "Scania",
+            models: [
+                { key: "scania_r", name: "Scania R" },
+                { key: "scania_s", name: "Scania S" },
+                { key: "scania_r_2009", name: "Scania R 2009" },
+                { key: "scania_streamline", name: "Scania Streamline" },
+            ],
+            icon: ScaniaIcon,
+        },
+        {
+            name: "Volvo",
+            models: [
+                { key: "volvo_fh_classic", name: "Volvo FH Classic" },
+                { key: "volvo_fh", name: "Volvo FH" },
+            ],
+            icon: VolvoIcon,
+        },
     ];
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -55,6 +82,10 @@ const SetTruckEngine = () => {
     const [selectedBrand, setSelectedBrand] = useState<BrandType | undefined>(
         undefined
     );
+
+    const [selectedModel, setSelectedModel] = useState<
+        BrandModelTypes | undefined
+    >(undefined);
 
     const [completed, setCompleted] = useState<completedProps>({
         error: false,
@@ -82,17 +113,36 @@ const SetTruckEngine = () => {
 
         const brandFind = BRANDS.find((p) => p.name === branName) as BrandType;
         setSelectedBrand(brandFind);
+    };
+
+    const onClickBrandModel = async (modelKey: string) => {
+        if (!selectedBrand) return;
+
+        const modelFind = selectedBrand.models.find((p) => p.key === modelKey);
+        setSelectedModel(modelFind);
+
+        if (!modelFind) return;
         const resEngines = await getListEngines();
-        console.log(resEngines);
 
         if (resEngines) {
-            switch (brandFind.name) {
-                case "Volvo":
-                    setEngines(resEngines.volvo);
-                    console.log(resEngines.volvo);
+            switch (modelFind.key) {
+                case "scania_r":
+                    setEngines(resEngines.scania.scania_r);
                     break;
-                case "Scania":
-                    setEngines(resEngines.scania);
+                case "scania_s":
+                    setEngines(resEngines.scania.scania_s);
+                    break;
+                case "scania_r_2009":
+                    setEngines(resEngines.scania.scania_r_2009);
+                    break;
+                case "scania_streamline":
+                    setEngines(resEngines.scania.scania_streamline);
+                    break;
+                case "volvo_fh_classic":
+                    setEngines(resEngines.volvo.volvo_fh_classic);
+                    break;
+                case "volvo_fh":
+                    setEngines(resEngines.volvo.volvo_fh);
                     break;
             }
         }
@@ -178,6 +228,42 @@ const SetTruckEngine = () => {
                                                 <div className="flex flex-col">
                                                     <span className="text-small">
                                                         {BrandObj.name}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </SelectItem>
+                                    )}
+                                </Select>
+                                <Select
+                                    isDisabled={selectedBrand ? false : true}
+                                    items={
+                                        selectedBrand
+                                            ? selectedBrand.models
+                                            : []
+                                    }
+                                    selectedKeys={
+                                        selectedModel ? [selectedModel.key] : []
+                                    }
+                                    onChange={(e) =>
+                                        onClickBrandModel(e.target.value)
+                                    }
+                                    label="Models"
+                                    placeholder="Select truck model"
+                                    labelPlacement="inside"
+                                    variant="bordered"
+                                    startContent={
+                                        <IconLayersSubtract stroke={2} />
+                                    }
+                                >
+                                    {(modelObj) => (
+                                        <SelectItem
+                                            key={modelObj.key}
+                                            textValue={modelObj.name}
+                                        >
+                                            <div className="flex gap-2 items-center">
+                                                <div className="flex flex-col">
+                                                    <span className="text-small">
+                                                        {modelObj.name}
                                                     </span>
                                                 </div>
                                             </div>
