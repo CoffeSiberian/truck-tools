@@ -23,7 +23,8 @@ interface UpdateInfo {
 
 const UpdaterModal = () => {
 	const [updateInfo, setUpdateInfo] = useState<UpdateInfo | null>(null);
-	const isLoaded = useRef(false);
+	const [isInstalling, setIsInstalling] = useState(false);
+	const updateChecked = useRef(false);
 
 	const checkUpdateState = async () => {
 		const { shouldUpdate, manifest } = await checkUpdate();
@@ -43,19 +44,21 @@ const UpdaterModal = () => {
 	};
 
 	const setIsOpen = (open: boolean) => {
-		if (!open) {
+		if (!open && !isInstalling) {
 			setUpdateInfo(null);
 		}
 	};
 
 	const onClickUpdate = async () => {
+		setIsInstalling(true);
 		await installUpdate();
+		setIsInstalling(false);
 		await relaunch();
 	};
 
 	useEffect(() => {
-		if (!isLoaded.current) {
-			isLoaded.current = true;
+		if (!updateChecked.current) {
+			updateChecked.current = true;
 			checkUpdateState();
 		}
 	}, []);
@@ -105,13 +108,19 @@ const UpdaterModal = () => {
 							</ModalBody>
 							<ModalFooter className="items-center justify-center gap-1">
 								<Button
+									isDisabled={isInstalling}
 									color="danger"
 									variant="light"
 									onPress={() => setIsOpen(false)}
 								>
 									Cancel
 								</Button>
-								<Button color="success" variant="ghost" onPress={onClickUpdate}>
+								<Button
+									isLoading={isInstalling}
+									color="success"
+									variant="ghost"
+									onPress={onClickUpdate}
+								>
 									Update Now
 								</Button>
 							</ModalFooter>
