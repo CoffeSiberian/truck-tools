@@ -46,7 +46,7 @@ async fn set_cargo_mass_trailers_and_slave(cargo_mass: &str, dir_save: &str) -> 
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let trailer_index: usize = match get_trailer_index(&file, trailer_id, index) {
+    let trailer_index: usize = match get_trailer_index(&file, &trailer_id, &index) {
         Some(trailer_index) => trailer_index,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
@@ -89,7 +89,7 @@ async fn set_unlock_current_trailers(dir_save: &str) -> Result<String, ()> {
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let trailer_index: usize = match get_trailer_index(&file, trailer_id, current_index) {
+    let trailer_index: usize = match get_trailer_index(&file, &trailer_id, &current_index) {
         Some(trailer_index) => trailer_index,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
@@ -130,7 +130,7 @@ async fn set_cargo_mass_def_trailers(
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let trailer_index: usize = match get_trailer_index(&file, trailer_id, current_index) {
+    let trailer_index: usize = match get_trailer_index(&file, &trailer_id, &current_index) {
         Some(trailer_index) => trailer_index,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };

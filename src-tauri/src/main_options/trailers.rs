@@ -10,7 +10,7 @@ fn get_vec_trailers(arr_val: &Vec<String>) -> Option<Vec<VecItemsFind>> {
         None => return None,
     };
     let mut current_slave_trailer_index: usize =
-        match get_trailer_index(arr_val, trailer_id.clone(), index) {
+        match get_trailer_index(arr_val, &trailer_id, &index) {
             Some(current_slave_trailer_index) => current_slave_trailer_index,
             None => return None,
         };
@@ -32,7 +32,7 @@ fn get_vec_trailers(arr_val: &Vec<String>) -> Option<Vec<VecItemsFind>> {
             };
 
         let slave_trailer_index: usize =
-            match get_trailer_index(arr_val, slave_trailer_id.clone(), index_slave) {
+            match get_trailer_index(arr_val, &slave_trailer_id, &index_slave) {
                 Some(slave_trailer_index) => slave_trailer_index,
                 None => break,
             };
@@ -203,8 +203,8 @@ pub fn set_any_slave_trailers_weight(
 
         let slave_index: usize = match get_trailer_index(
             &current_arr_val,
-            next_slave_trailer,
-            next_slave_trailer_index,
+            &next_slave_trailer,
+            &next_slave_trailer_index,
         ) {
             Some(slave_index) => slave_index,
             None => break,
@@ -263,11 +263,15 @@ pub fn get_slave_trailers_id(arr_val: &Vec<String>, index: usize) -> Option<(Str
     return None;
 }
 
-pub fn get_trailer_index(arr_val: &Vec<String>, trailer_id: String, index: usize) -> Option<usize> {
+pub fn get_trailer_index(
+    arr_val: &Vec<String>,
+    trailer_id: &String,
+    index: &usize,
+) -> Option<usize> {
     let value_find: String = format!("{} {}", trailer_id, "{");
     let mut result: String = String::new();
 
-    for (i, item) in arr_val.iter().enumerate().skip(index) {
+    for (i, item) in arr_val.iter().enumerate().skip(*index) {
         let option_values: Vec<&str> = item.split(':').collect();
 
         if option_values.len() >= 2 {
@@ -287,7 +291,7 @@ pub fn get_trailer_index(arr_val: &Vec<String>, trailer_id: String, index: usize
 pub fn get_trailer_def_id(arr_val: &Vec<String>, index: usize) -> Option<String> {
     let mut result: String = String::new();
 
-    for (_i, item) in arr_val.iter().enumerate().skip(index) {
+    for item in arr_val.iter().skip(index) {
         let option_values: Vec<&str> = item.split(':').collect();
 
         if option_values.len() >= 2 {

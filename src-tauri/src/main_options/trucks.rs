@@ -309,7 +309,7 @@ pub fn set_truck_wear(arr_val: &Vec<String>, wear: &str, index: usize) -> Option
         None => return None,
     };
 
-    for (_i, item) in set_truck_wear.iter().enumerate() {
+    for item in set_truck_wear.iter() {
         arr_val_clone[item.index] = item.value.to_string();
     }
 
@@ -318,7 +318,7 @@ pub fn set_truck_wear(arr_val: &Vec<String>, wear: &str, index: usize) -> Option
         None => return None,
     };
 
-    for (_i, item) in set_truck_wear_wheels.iter().enumerate() {
+    for item in set_truck_wear_wheels.iter() {
         arr_val_clone[item.index] = item.value.to_string();
     }
 
@@ -333,13 +333,13 @@ pub fn set_any_trucks_wear(arr_val: &Vec<String>, wear: &str) -> Option<Vec<Stri
         None => return None,
     };
 
-    for (_i, item) in trucks_list.iter().enumerate() {
+    for item in trucks_list.iter() {
         let set_truck_wear = match get_vec_truck_wear(&arr_val, wear, item.index) {
             Some(set_truck_wear) => set_truck_wear,
             None => continue,
         };
 
-        for (_i, item) in set_truck_wear.iter().enumerate() {
+        for item in set_truck_wear.iter() {
             arr_val_clone[item.index] = item.value.to_string();
         }
 
@@ -348,7 +348,7 @@ pub fn set_any_trucks_wear(arr_val: &Vec<String>, wear: &str) -> Option<Vec<Stri
             None => continue,
         };
 
-        for (_i, item) in set_truck_wear_wheels.iter().enumerate() {
+        for item in set_truck_wear_wheels.iter() {
             arr_val_clone[item.index] = item.value.to_string();
         }
     }
@@ -382,13 +382,13 @@ pub fn set_any_trucks_fuel(arr_val: &Vec<String>, fuel: &str) -> Option<Vec<Stri
         None => return None,
     };
 
-    for (_i, item) in trucks_list.iter().enumerate() {
+    for item in trucks_list.iter() {
         let set_truck_fuel = match get_vec_truck_fuel(&arr_val, fuel, item.index) {
             Some(set_truck_fuel) => set_truck_fuel,
             None => continue,
         };
 
-        for (_i, item) in set_truck_fuel.iter().enumerate() {
+        for item in set_truck_fuel.iter() {
             arr_val_clone[item.index] = item.value.to_string();
         }
     }
