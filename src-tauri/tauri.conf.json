@@ -41,6 +41,11 @@
 				"all": false,
 				"asset": true,
 				"assetScope": ["$DOCUMENT/**"]
+			},
+			"process": {
+				"all": false,
+				"exit": false,
+				"relaunch": true
 			}
 		},
 		"windows": [
@@ -62,7 +67,7 @@
 			"endpoints": [
 				"https://raw.githubusercontent.com/CoffeSiberian/truck-tools/main/src-tauri/updater.json"
 			],
-			"dialog": true,
+			"dialog": false,
 			"pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEJERkMxNzRDRjFGM0ZDQTYKUldTbS9QUHhUQmY4dlV4eFoxS0VnUDVGUHJCcGI1SklzK2cwRm9VUS82NHVHNlAwMTBZaVd3bXcK"
 		},
 		"security": {

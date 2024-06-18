@@ -1,4 +1,5 @@
 import Home from "./routes/pages/Home";
+import UpdaterModal from "./components/UpdaterModal";
 import SelectProfile from "./components/SelectProfile";
 
 const App = () => {
@@ -6,6 +7,7 @@ const App = () => {
 		<div className="flex min-h-screen flex-col">
 			<Home />
 			<SelectProfile />
+			<UpdaterModal />
 		</div>
 	);
 };
