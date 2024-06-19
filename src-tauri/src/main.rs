@@ -240,12 +240,12 @@ async fn repait_truck(dir_save: &str, wear: &str) -> Result<String, ()> {
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let (truck_id, index): (String, usize) = match get_truck_id(&file) {
-        Some((truck_id, index)) => (truck_id, index),
+    let truck_find = match get_truck_id(&file) {
+        Some(truck_find) => truck_find,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let truck_index: usize = match get_truck_vehicle_index(&file, truck_id, index) {
+    let truck_index: usize = match get_truck_vehicle_index(&file, truck_find.id, truck_find.index) {
         Some(truck_index) => truck_index,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
@@ -282,12 +282,12 @@ async fn fill_fuel_truck(dir_save: &str, fuel: &str) -> Result<String, ()> {
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let (truck_id, index): (String, usize) = match get_truck_id(&file) {
-        Some((truck_id, index)) => (truck_id, index),
+    let truck_find = match get_truck_id(&file) {
+        Some(truck_find) => truck_find,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let truck_index: usize = match get_truck_vehicle_index(&file, truck_id, index) {
+    let truck_index: usize = match get_truck_vehicle_index(&file, truck_find.id, truck_find.index) {
         Some(truck_index) => truck_index,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
@@ -324,12 +324,12 @@ async fn set_infinite_fuel(dir_save: &str) -> Result<String, ()> {
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let (truck_id, index): (String, usize) = match get_truck_id(&file) {
-        Some((truck_id, index)) => (truck_id, index),
+    let truck_find = match get_truck_id(&file) {
+        Some(truck_find) => truck_find,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let truck_index: usize = match get_truck_vehicle_index(&file, truck_id, index) {
+    let truck_index: usize = match get_truck_vehicle_index(&file, truck_find.id, truck_find.index) {
         Some(truck_index) => truck_index,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
@@ -387,12 +387,12 @@ async fn set_license_plate_truck(
     let bg_plate_color_game: String = get_rgb_hex_to_game_format(bg_plate_color);
     let text_plate_color_game: String = get_rgb_hex_to_game_format(text_plate_color);
 
-    let truck_id: String = match get_truck_id(&file) {
-        Some((truck_id, _)) => truck_id,
+    let truck_find = match get_truck_id(&file) {
+        Some(truck_find) => truck_find,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let truck_index: usize = match get_truck_vehicle_index(&file, truck_id, 0) {
+    let truck_index: usize = match get_truck_vehicle_index(&file, truck_find.id, truck_find.index) {
         Some(truck_index) => truck_index,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
@@ -419,12 +419,12 @@ async fn set_truck_engine_def(dir_save: &str, engine_code: &str) -> Result<Strin
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let (truck_id, index): (String, usize) = match get_truck_id(&file) {
-        Some((truck_id, index)) => (truck_id, index),
+    let truck_find = match get_truck_id(&file) {
+        Some(truck_find) => truck_find,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let truck_index: usize = match get_truck_vehicle_index(&file, truck_id, index) {
+    let truck_index: usize = match get_truck_vehicle_index(&file, truck_find.id, truck_find.index) {
         Some(truck_index) => truck_index,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
@@ -448,12 +448,12 @@ async fn set_truck_transmissions_def(
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let (truck_id, index): (String, usize) = match get_truck_id(&file) {
-        Some((truck_id, index)) => (truck_id, index),
+    let truck_find = match get_truck_id(&file) {
+        Some(truck_find) => truck_find,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    let truck_index: usize = match get_truck_vehicle_index(&file, truck_id, index) {
+    let truck_index: usize = match get_truck_vehicle_index(&file, truck_find.id, truck_find.index) {
         Some(truck_index) => truck_index,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };

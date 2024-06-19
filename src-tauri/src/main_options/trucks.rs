@@ -265,7 +265,7 @@ fn is_transmissions(value_split: &String) -> bool {
     return false;
 }
 
-pub fn get_truck_id(arr_val: &Vec<String>) -> Option<(String, usize)> {
+pub fn get_truck_id(arr_val: &Vec<String>) -> Option<VecTrucksId> {
     for (i, item) in arr_val.iter().enumerate() {
         let option_values: Vec<&str> = item.split(':').collect();
 
@@ -274,7 +274,10 @@ pub fn get_truck_id(arr_val: &Vec<String>) -> Option<(String, usize)> {
                 return None;
             }
 
-            return Some((option_values[1].to_string(), i));
+            return Some(VecTrucksId {
+                index: i,
+                id: option_values[1].to_string(),
+            });
         }
     }
 
