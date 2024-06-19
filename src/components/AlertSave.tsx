@@ -22,7 +22,7 @@ const AlertSave: FC<props> = ({ message, error, show }) => {
 				)
 			}
 			variant="faded"
-			color={error ? "danger" : "success"}
+			color={error ? "warning" : "success"}
 		>
 			{message}
 		</Chip>

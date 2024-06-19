@@ -11,6 +11,7 @@ import {
 	Divider,
 	Chip,
 } from "@nextui-org/react";
+import AlertSave from "./AlertSave";
 
 // icons
 import { IconCalendarWeek, IconBrandWindows } from "@tabler/icons-react";
@@ -24,23 +25,25 @@ interface UpdateInfo {
 const UpdaterModal = () => {
 	const [updateInfo, setUpdateInfo] = useState<UpdateInfo | null>(null);
 	const [isInstalling, setIsInstalling] = useState(false);
+	const [installError, setInstallError] = useState(false);
 	const updateChecked = useRef(false);
 
 	const checkUpdateState = async () => {
-		const { shouldUpdate, manifest } = await checkUpdate();
+		try {
+			const { shouldUpdate, manifest } = await checkUpdate();
+			if (shouldUpdate) {
+				const splitDate = manifest?.date!.split(" ")[0];
+				if (!splitDate) return;
 
-		if (shouldUpdate) {
-			const splitDate = manifest?.date!.split(" ")[0];
-			if (!splitDate) return;
+				const date = new Date(splitDate);
 
-			const date = new Date(splitDate);
-
-			setUpdateInfo({
-				body: manifest?.body!,
-				version: manifest?.version!,
-				date: date.toLocaleDateString(),
-			});
-		}
+				setUpdateInfo({
+					body: manifest?.body!,
+					version: manifest?.version!,
+					date: date.toLocaleDateString(),
+				});
+			}
+		} catch {}
 	};
 
 	const setIsOpen = (open: boolean) => {
@@ -50,10 +53,17 @@ const UpdaterModal = () => {
 	};
 
 	const onClickUpdate = async () => {
+		if (installError) setInstallError(false);
 		setIsInstalling(true);
-		await installUpdate();
-		setIsInstalling(false);
-		await relaunch();
+
+		try {
+			await installUpdate();
+			setIsInstalling(false);
+			await relaunch();
+		} catch {
+			setIsInstalling(false);
+			setInstallError(true);
+		}
 	};
 
 	useEffect(() => {
@@ -79,7 +89,7 @@ const UpdaterModal = () => {
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="flex items-center justify-center py-1">
-								<div className="mt-2 flex flex-col gap-2">
+								<div className="mb-2 mt-2 flex w-full flex-col gap-2">
 									<div className="flex justify-center gap-5">
 										<Chip
 											color="primary"
@@ -105,6 +115,11 @@ const UpdaterModal = () => {
 										{updateInfo?.body}
 									</p>
 								</div>
+								<AlertSave
+									message="Installation failed. Retry Update"
+									error={installError}
+									show={installError}
+								/>
 							</ModalBody>
 							<ModalFooter className="items-center justify-center gap-1">
 								<Button
