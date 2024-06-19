@@ -25,7 +25,7 @@ const ModifyWeight = () => {
 	const { selectedSave } = useProfileContex();
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-	const [Weight, setWeight] = useState("");
+	const [Weight, setWeight] = useState("0");
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [completed, setCompleted] = useState<completedProps>({
 		error: false,
@@ -37,6 +37,8 @@ const ModifyWeight = () => {
 			setCompleted({ error: false, completed: false });
 		}
 
+		if (Weight === "") return;
+
 		if (selectedSave) {
 			setIsLoading(true);
 			const res = await setCargoMassTrailersAndSlave(Weight, selectedSave.dir);
@@ -45,7 +47,6 @@ const ModifyWeight = () => {
 				completed: true,
 			});
 		}
-		if (!completed.error) setWeight("");
 		setIsLoading(false);
 	};
 
@@ -87,6 +88,7 @@ const ModifyWeight = () => {
 								</p>
 								<Input
 									className="mt-1"
+									isInvalid={Weight === ""}
 									label="Weight"
 									placeholder="Enter weight in kg"
 									value={Weight}

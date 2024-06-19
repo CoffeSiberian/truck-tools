@@ -31,8 +31,8 @@ const ModifyTrailerWeight = () => {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [TrailerWeight, setTrailerWeight] = useState<ModifyTrailerWeightProps>({
-		chassisMass: "",
-		bodyMass: "",
+		chassisMass: "0",
+		bodyMass: "0",
 	});
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [completed, setCompleted] = useState<completedProps>({
@@ -44,6 +44,9 @@ const ModifyTrailerWeight = () => {
 		if (completed.completed) {
 			setCompleted({ error: false, completed: false });
 		}
+
+		if (TrailerWeight.chassisMass === "") return;
+		if (TrailerWeight.bodyMass === "") return;
 
 		if (selectedSave) {
 			setIsLoading(true);
@@ -57,12 +60,7 @@ const ModifyTrailerWeight = () => {
 				completed: true,
 			});
 		}
-		if (!completed.error) {
-			setTrailerWeight({
-				chassisMass: "",
-				bodyMass: "",
-			});
-		}
+
 		setIsLoading(false);
 	};
 
@@ -117,6 +115,7 @@ const ModifyTrailerWeight = () => {
 								</p>
 								<Input
 									className="mt-1"
+									isInvalid={TrailerWeight.chassisMass === ""}
 									label="Chassis Mass"
 									placeholder="Enter weight in kg"
 									value={TrailerWeight.chassisMass}
@@ -124,6 +123,7 @@ const ModifyTrailerWeight = () => {
 								/>
 								<Input
 									label="Body Mass"
+									isInvalid={TrailerWeight.bodyMass === ""}
 									placeholder="Enter weight in kg"
 									value={TrailerWeight.bodyMass}
 									onValueChange={(value) => setbodyMassOnlyNumbers(value)}
