@@ -157,6 +157,18 @@ const SetTruckEngine = () => {
 		setSelectedEngine(engineFind);
 	};
 
+	const errorModelEmpty = selectedBrand
+		? selectedModel
+			? false
+			: true
+		: false;
+
+	const errorEngineEmpty = selectedModel
+		? SelectedEngine
+			? false
+			: true
+		: false;
+
 	return (
 		<>
 			<Button
@@ -222,6 +234,7 @@ const SetTruckEngine = () => {
 								</Select>
 								<Select
 									isDisabled={selectedBrand ? false : true}
+									isInvalid={errorModelEmpty}
 									items={selectedBrand ? selectedBrand.models : []}
 									selectedKeys={selectedModel ? [selectedModel.key] : []}
 									onChange={(e) => onClickBrandModel(e.target.value)}
@@ -243,6 +256,7 @@ const SetTruckEngine = () => {
 								</Select>
 								<Select
 									isDisabled={!Engines}
+									isInvalid={errorEngineEmpty}
 									items={Engines ? Engines : []}
 									selectedKeys={SelectedEngine ? [SelectedEngine.name_id] : []}
 									onChange={(e) => onClickEngine(e.target.value)}

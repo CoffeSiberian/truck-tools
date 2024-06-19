@@ -167,6 +167,18 @@ const SetTruckTransmission = () => {
 		setSelectedTransmission(transmissionFind);
 	};
 
+	const errorModelEmpty = selectedBrand
+		? selectedModel
+			? false
+			: true
+		: false;
+
+	const errorTransmissionEmpty = Transmissions
+		? SelectedTransmission
+			? false
+			: true
+		: false;
+
 	return (
 		<>
 			<Button
@@ -235,6 +247,7 @@ const SetTruckTransmission = () => {
 								</Select>
 								<Select
 									isDisabled={selectedBrand ? false : true}
+									isInvalid={errorModelEmpty}
 									items={selectedBrand ? selectedBrand.models : []}
 									selectedKeys={selectedModel ? [selectedModel.key] : []}
 									onChange={(e) => onClickBrandModel(e.target.value)}
@@ -256,6 +269,7 @@ const SetTruckTransmission = () => {
 								</Select>
 								<Select
 									isDisabled={!Transmissions}
+									isInvalid={errorTransmissionEmpty}
 									items={Transmissions ? Transmissions : []}
 									selectedKeys={
 										SelectedTransmission ? [SelectedTransmission.name_id] : []
