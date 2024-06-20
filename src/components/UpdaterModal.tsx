@@ -14,7 +14,11 @@ import {
 import AlertSave from "./AlertSave";
 
 // icons
-import { IconCalendarWeek, IconBrandWindows } from "@tabler/icons-react";
+import {
+	IconCalendarWeek,
+	IconBrandWindows,
+	IconDownload,
+} from "@tabler/icons-react";
 
 interface UpdateInfo {
 	body: string;
@@ -132,6 +136,7 @@ const UpdaterModal = () => {
 								</Button>
 								<Button
 									isLoading={isInstalling}
+									endContent={<IconDownload />}
 									color="success"
 									variant="ghost"
 									onPress={onClickUpdate}

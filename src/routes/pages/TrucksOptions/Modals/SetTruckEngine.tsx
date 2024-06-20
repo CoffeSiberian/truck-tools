@@ -5,6 +5,7 @@ import {
 	Modal,
 	ModalContent,
 	ModalHeader,
+	Divider,
 	ModalBody,
 	ModalFooter,
 	Button,
@@ -20,6 +21,7 @@ import {
 	IconSteeringWheel,
 	IconEngine,
 	IconLayersSubtract,
+	IconReplace,
 } from "@tabler/icons-react";
 
 // types
@@ -193,6 +195,7 @@ const SetTruckEngine = () => {
 							<ModalHeader className="flex flex-col gap-1">
 								Change truck engine
 							</ModalHeader>
+							<Divider />
 							<ModalBody className="py-1">
 								<p>Change the engine of your truck to the one of your choice</p>
 								<Select
@@ -304,6 +307,7 @@ const SetTruckEngine = () => {
 									Close
 								</Button>
 								<Button
+									endContent={<IconReplace />}
 									isLoading={isLoading}
 									color="success"
 									onPress={onClickApply}

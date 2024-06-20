@@ -4,6 +4,7 @@ import {
 	Modal,
 	ModalContent,
 	ModalHeader,
+	Divider,
 	ModalBody,
 	ModalFooter,
 	Button,
@@ -13,7 +14,7 @@ import { setRepairTruck } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
-import { IconPencil } from "@tabler/icons-react";
+import { IconPencil, IconTool } from "@tabler/icons-react";
 
 interface completedProps {
 	error: boolean;
@@ -69,6 +70,7 @@ const RepairTruck = () => {
 							<ModalHeader className="flex flex-col gap-1">
 								Repair truck
 							</ModalHeader>
+							<Divider />
 							<ModalBody className="py-1">
 								<p>Repair your truck to the maximum for continued use</p>
 								<div className="flex justify-center">
@@ -88,6 +90,7 @@ const RepairTruck = () => {
 									Close
 								</Button>
 								<Button
+									endContent={<IconTool />}
 									isLoading={isLoading}
 									color="success"
 									onPress={onClickApply}

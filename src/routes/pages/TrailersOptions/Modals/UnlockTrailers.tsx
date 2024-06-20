@@ -4,6 +4,7 @@ import {
 	Modal,
 	ModalContent,
 	ModalHeader,
+	Divider,
 	ModalBody,
 	ModalFooter,
 	Button,
@@ -13,7 +14,7 @@ import { setUnlockCurrentTrailers } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
-import { IconPencil } from "@tabler/icons-react";
+import { IconPencil, IconLockOpen } from "@tabler/icons-react";
 
 interface completedProps {
 	error: boolean;
@@ -68,6 +69,7 @@ const UnlockTrailers = () => {
 							<ModalHeader className="flex flex-col gap-1">
 								Unlock Current Trailer
 							</ModalHeader>
+							<Divider />
 							<ModalBody className="items-center py-1">
 								<p>
 									Unlock your trailer in all countries if it is blocked by the
@@ -92,6 +94,7 @@ const UnlockTrailers = () => {
 									Close
 								</Button>
 								<Button
+									endContent={<IconLockOpen />}
 									isLoading={isLoading}
 									color="success"
 									onPress={onClickApply}

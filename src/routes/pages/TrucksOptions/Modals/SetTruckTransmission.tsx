@@ -5,6 +5,7 @@ import {
 	Modal,
 	ModalContent,
 	ModalHeader,
+	Divider,
 	ModalBody,
 	ModalFooter,
 	Button,
@@ -23,6 +24,7 @@ import {
 	IconSteeringWheel,
 	IconManualGearbox,
 	IconLayersSubtract,
+	IconReplace,
 } from "@tabler/icons-react";
 
 // types
@@ -203,6 +205,7 @@ const SetTruckTransmission = () => {
 							<ModalHeader className="flex flex-col gap-1">
 								Change truck transmission
 							</ModalHeader>
+							<Divider />
 							<ModalBody className="py-1">
 								<p>
 									Change the transmission of your truck to the one of your
@@ -325,6 +328,7 @@ const SetTruckTransmission = () => {
 									Close
 								</Button>
 								<Button
+									endContent={<IconReplace />}
 									isLoading={isLoading}
 									color="success"
 									onPress={onClickApply}

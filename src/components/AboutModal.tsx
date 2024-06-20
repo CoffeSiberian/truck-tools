@@ -4,6 +4,7 @@ import {
 	Modal,
 	ModalContent,
 	ModalHeader,
+	Divider,
 	ModalBody,
 	ModalFooter,
 	Button,
@@ -37,6 +38,7 @@ const AboutModal: FC<AboutModalProps> = ({ isOpen, onOpenChange }) => {
 							<ModalHeader className="flex flex-col gap-1">
 								Truck Tools - Preview 0.0.7
 							</ModalHeader>
+							<Divider />
 							<ModalBody className="flex items-center justify-center py-1">
 								<p>
 									This is an open source application created in order to help

@@ -4,6 +4,7 @@ import {
 	Modal,
 	ModalContent,
 	ModalHeader,
+	Divider,
 	ModalBody,
 	ModalFooter,
 	Button,
@@ -13,7 +14,7 @@ import { setInfinitFuelTruck } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
-import { IconPencil } from "@tabler/icons-react";
+import { IconPencil, IconGasStation } from "@tabler/icons-react";
 
 interface completedProps {
 	error: boolean;
@@ -69,6 +70,7 @@ const SetInfiniteFuel = () => {
 							<ModalHeader className="flex flex-col gap-1">
 								Infinite fuel on current truck
 							</ModalHeader>
+							<Divider />
 							<ModalBody className="py-1">
 								<p>
 									Exactly the fuel is not infinite but it is for approximately
@@ -91,6 +93,7 @@ const SetInfiniteFuel = () => {
 									Close
 								</Button>
 								<Button
+									endContent={<IconGasStation />}
 									isLoading={isLoading}
 									color="success"
 									onPress={onClickApply}

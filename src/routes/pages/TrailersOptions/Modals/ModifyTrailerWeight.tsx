@@ -4,6 +4,7 @@ import {
 	Modal,
 	ModalContent,
 	ModalHeader,
+	Divider,
 	ModalBody,
 	ModalFooter,
 	Button,
@@ -14,7 +15,7 @@ import { setChassisMassTrailer } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
-import { IconPencil } from "@tabler/icons-react";
+import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";
 
 interface completedProps {
 	error: boolean;
@@ -107,7 +108,8 @@ const ModifyTrailerWeight = () => {
 							<ModalHeader className="flex flex-col gap-1">
 								Change trailer weight
 							</ModalHeader>
-							<ModalBody className="py- 1 items-center">
+							<Divider />
+							<ModalBody className="items-center py-1">
 								<p>
 									This modifies the weight of your trailer in 2 parameters.
 									Usually the chassis_mass is used but you can also edit the
@@ -148,6 +150,7 @@ const ModifyTrailerWeight = () => {
 									Close
 								</Button>
 								<Button
+									endContent={<IconDeviceFloppy />}
 									isLoading={isLoading}
 									color="success"
 									onPress={onClickApply}

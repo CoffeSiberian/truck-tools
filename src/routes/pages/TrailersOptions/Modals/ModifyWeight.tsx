@@ -4,6 +4,7 @@ import {
 	Modal,
 	ModalContent,
 	ModalHeader,
+	Divider,
 	ModalBody,
 	ModalFooter,
 	Button,
@@ -14,7 +15,7 @@ import { setCargoMassTrailersAndSlave } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
-import { IconPencil } from "@tabler/icons-react";
+import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";
 
 interface completedProps {
 	error: boolean;
@@ -80,6 +81,7 @@ const ModifyWeight = () => {
 							<ModalHeader className="flex flex-col gap-1">
 								Change load weight
 							</ModalHeader>
+							<Divider />
 							<ModalBody className="items-center py-1">
 								<p>
 									This will modify the weight of your current job to the one you
@@ -114,6 +116,7 @@ const ModifyWeight = () => {
 									Close
 								</Button>
 								<Button
+									endContent={<IconDeviceFloppy />}
 									isLoading={isLoading}
 									color="success"
 									onPress={onClickApply}

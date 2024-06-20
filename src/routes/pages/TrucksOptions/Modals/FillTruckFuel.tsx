@@ -4,6 +4,7 @@ import {
 	Modal,
 	ModalContent,
 	ModalHeader,
+	Divider,
 	ModalBody,
 	ModalFooter,
 	Button,
@@ -13,7 +14,7 @@ import { setFuelTruck } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
-import { IconPencil } from "@tabler/icons-react";
+import { IconPencil, IconGasStation } from "@tabler/icons-react";
 
 interface completedProps {
 	error: boolean;
@@ -69,6 +70,7 @@ const FillTruckFuel = () => {
 							<ModalHeader className="flex flex-col gap-1">
 								Fill fuel
 							</ModalHeader>
+							<Divider />
 							<ModalBody className="py-1">
 								<p>Refuels your truck completely</p>
 								<div className="flex justify-center">
@@ -88,6 +90,7 @@ const FillTruckFuel = () => {
 									Close
 								</Button>
 								<Button
+									endContent={<IconGasStation />}
 									isLoading={isLoading}
 									color="success"
 									onPress={onClickApply}

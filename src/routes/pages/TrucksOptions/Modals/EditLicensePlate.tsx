@@ -5,6 +5,7 @@ import {
 	Modal,
 	ModalContent,
 	ModalHeader,
+	Divider,
 	ModalBody,
 	ModalFooter,
 	Button,
@@ -15,7 +16,7 @@ import CustomLicensePlate from "../../../../components/CustomLicensePlate";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
-import { IconPencil } from "@tabler/icons-react";
+import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";
 
 interface completedProps {
 	error: boolean;
@@ -80,6 +81,7 @@ const EditLicensePlate = () => {
 							<ModalHeader className="flex flex-col gap-1">
 								Change truck license plate
 							</ModalHeader>
+							<Divider />
 							<ModalBody className="py-1">
 								<p>Enter the new license plate of the truck</p>
 								<div className="flex flex-col items-center gap-2">
@@ -112,6 +114,7 @@ const EditLicensePlate = () => {
 									Close
 								</Button>
 								<Button
+									endContent={<IconDeviceFloppy />}
 									isLoading={isLoading}
 									color="success"
 									onPress={onClickApply}
