@@ -113,7 +113,10 @@ pub fn get_save_name(arr_val: &Vec<String>, default_name: &str) -> Option<String
     return None;
 }
 
-pub async fn get_list_save_game(path: String) -> Option<Vec<VecSaveGames>> {
+pub async fn get_list_save_game(
+    path: String,
+    ignore_auto_saves: bool,
+) -> Option<Vec<VecSaveGames>> {
     let dir_saves_content: Vec<String> = match get_dir_content(path + "/save").await {
         Some(dir_content) => dir_content,
         None => return None,
@@ -122,6 +125,17 @@ pub async fn get_list_save_game(path: String) -> Option<Vec<VecSaveGames>> {
     let mut result: Vec<VecSaveGames> = Vec::new();
     for item in dir_saves_content.iter() {
         let item_path: String = item.to_string().replace("\\", "/");
+        let item_path_split: Vec<&str> = item_path.split("/").collect();
+        let save_path_name: &str = item_path_split[item_path_split.len() - 1];
+
+        if ignore_auto_saves {
+            if save_path_name.contains("autosave_job")
+                || save_path_name.contains("multiplayer_backup")
+                || save_path_name.contains("autosave_drive")
+            {
+                continue;
+            }
+        }
 
         let descripted: bool = descript_sii_file(format!("{}/info.sii", item_path)).await;
 
@@ -135,10 +149,7 @@ pub async fn get_list_save_game(path: String) -> Option<Vec<VecSaveGames>> {
                 None => continue,
             };
 
-        let mut default_name: Vec<&str> = item_path.split("/").collect();
-        default_name.reverse();
-
-        let save_game_name: String = match get_save_name(&file, default_name[0]) {
+        let save_game_name: String = match get_save_name(&file, save_path_name) {
             Some(save_game_name) => save_game_name,
             None => continue,
         };
@@ -154,11 +165,32 @@ pub async fn get_list_save_game(path: String) -> Option<Vec<VecSaveGames>> {
     return Some(result);
 }
 
-pub async fn get_list_save_count(path: String) -> usize {
+pub async fn get_list_save_count(path: String, ignore_auto_saves: bool) -> usize {
     let dir_saves_content: Vec<String> = match get_dir_content(path + "/save").await {
         Some(dir_content) => dir_content,
         None => return 0,
     };
+
+    if ignore_auto_saves {
+        let mut index: usize = 0;
+
+        for item in dir_saves_content.iter() {
+            let item_path: String = item.to_string().replace("\\", "/");
+            let item_path_split: Vec<&str> = item_path.split("/").collect();
+            let save_path_name: &str = item_path_split[item_path_split.len() - 1];
+
+            if save_path_name.contains("autosave_job")
+                || save_path_name.contains("multiplayer_backup")
+                || save_path_name.contains("autosave_drive")
+            {
+                continue;
+            }
+
+            index += 1;
+        }
+
+        return index;
+    }
 
     return dir_saves_content.len();
 }

@@ -57,6 +57,7 @@ export const openExplorer = async (path: string) => {
 const getProfileSavesCount = async (profilePath: string): Promise<number> => {
 	const rustParams = {
 		dirSave: profilePath,
+		ignoreAutoSaves: true,
 	};
 
 	const invoceRes = await invoke("get_save_game_count", rustParams);
@@ -70,6 +71,7 @@ export const getListSaves = async (
 ): Promise<SaveGame[] | null> => {
 	const rustParams = {
 		dirSave: profilePath,
+		ignoreAutoSaves: true,
 	};
 
 	const invoceRes = await invoke("get_save_game_name", rustParams);
