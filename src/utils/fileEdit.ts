@@ -1,7 +1,8 @@
 import { Buffer } from "buffer";
 
 // tauri
-import { readDir, exists, copyFile, BaseDirectory } from "@tauri-apps/api/fs";
+import { documentDir } from "@tauri-apps/api/path";
+import { exists, copyFile } from "@tauri-apps/api/fs";
 import { join } from "@tauri-apps/api/path";
 import { Command } from "@tauri-apps/api/shell";
 import { convertFileSrc } from "@tauri-apps/api/tauri";
@@ -13,6 +14,7 @@ import {
 	SaveGame,
 	EnginesTypes,
 	TransmissionsTypes,
+	ProfileDir,
 } from "../types/SaveGameTypes";
 import {
 	responseRustTypes,
@@ -20,6 +22,7 @@ import {
 	responseProfileSavesCount,
 	responseTrucksEngines,
 	responseTrucksTransmissions,
+	responseProfileDir,
 } from "../types/fileEditTypes";
 
 const getProfileImage = async (path: string): Promise<string | undefined> => {
@@ -28,6 +31,18 @@ const getProfileImage = async (path: string): Promise<string | undefined> => {
 
 	if (!verifyExist) return undefined;
 	return convertFileSrc(imgPath);
+};
+
+const getProfileSavesCount = async (profilePath: string): Promise<number> => {
+	const rustParams = {
+		dirSave: profilePath,
+		ignoreAutoSaves: true,
+	};
+
+	const invoceRes = await invoke("get_save_game_count", rustParams);
+	const res = JSON.parse(invoceRes as string) as responseProfileSavesCount;
+
+	return res.saves;
 };
 
 export const descriptFiles = async (
@@ -54,18 +69,6 @@ export const openExplorer = async (path: string) => {
 	await command.execute();
 };
 
-const getProfileSavesCount = async (profilePath: string): Promise<number> => {
-	const rustParams = {
-		dirSave: profilePath,
-		ignoreAutoSaves: true,
-	};
-
-	const invoceRes = await invoke("get_save_game_count", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseProfileSavesCount;
-
-	return res.saves;
-};
-
 export const getListSaves = async (
 	profilePath: string
 ): Promise<SaveGame[] | null> => {
@@ -81,26 +84,39 @@ export const getListSaves = async (
 	return res.saves;
 };
 
+export const getListDirProfiles = async (
+	profilePath: string
+): Promise<ProfileDir[] | null> => {
+	const rustParams = {
+		dirProfile: profilePath,
+	};
+
+	const invoceRes = await invoke("get_list_dir_profile", rustParams);
+	const res = JSON.parse(invoceRes as string) as responseProfileDir;
+	if (!res.dirs) return null;
+
+	return res.dirs;
+};
+
 export const readProfileNames = async (): Promise<ProfileWithoutSaves[]> => {
 	const reDirProfiles = "Euro Truck Simulator 2/profiles";
+	const docsDir = await documentDir();
 
-	const dirProfiles = await readDir(reDirProfiles, {
-		dir: BaseDirectory.Document,
-		recursive: true,
-	});
+	const dirProfiles = await getListDirProfiles(docsDir + reDirProfiles);
+	if (!dirProfiles) return [];
 
 	let profileNames: ProfileWithoutSaves[] = [];
 	for (let i = 0; i < dirProfiles.length; i++) {
-		const profileImg = await getProfileImage(dirProfiles[i].path);
-		const saves = await getProfileSavesCount(dirProfiles[i].path);
+		const profileImg = await getProfileImage(dirProfiles[i].dir);
+		const saves = await getProfileSavesCount(dirProfiles[i].dir);
 		if (saves === 0) continue;
 
 		const profileObject: ProfileWithoutSaves = {
 			name: Buffer.from(dirProfiles[i].name!, "hex").toString("utf-8"),
-			hex: dirProfiles[i].name!,
+			hex: dirProfiles[i].name,
 			savesCount: saves,
 			avatar: profileImg,
-			dir: dirProfiles[i].path,
+			dir: dirProfiles[i].dir,
 		};
 
 		profileNames.push(profileObject);

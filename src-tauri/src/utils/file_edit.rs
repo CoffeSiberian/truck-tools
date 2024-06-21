@@ -1,4 +1,4 @@
-use crate::structs::vec_save_games::VecSaveGames;
+use crate::structs::vec_save_games::{VecProfileDir, VecSaveGames};
 use std::fs::{read_dir, write, File};
 use std::io::prelude::*;
 use tauri::api::process::{Command, CommandEvent};
@@ -159,6 +159,27 @@ pub async fn get_list_save_game(
             id: uuid,
             name: save_game_name,
             dir: item.to_string(),
+        });
+    }
+
+    return Some(result);
+}
+
+pub async fn get_list_save_game_dirs(path: String) -> Option<Vec<VecProfileDir>> {
+    let dir_saves_content: Vec<String> = match get_dir_content(path).await {
+        Some(dir_content) => dir_content,
+        None => return None,
+    };
+
+    let mut result: Vec<VecProfileDir> = Vec::new();
+    for item in dir_saves_content.iter() {
+        let item_path: String = item.to_string().replace("\\", "/");
+        let item_path_split: Vec<&str> = item_path.split("/").collect();
+        let profile_path_name: &str = item_path_split[item_path_split.len() - 1];
+
+        result.push(VecProfileDir {
+            name: profile_path_name.to_string(),
+            dir: item_path,
         });
     }
 

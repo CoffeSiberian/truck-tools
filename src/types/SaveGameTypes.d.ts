@@ -13,6 +13,11 @@ export interface Profile {
 	dir: string;
 }
 
+export interface ProfileDir {
+	name: string;
+	dir: string;
+}
+
 export interface ProfileWithoutSaves {
 	name: string;
 	hex: string;

@@ -27,7 +27,8 @@ use main_options::trucks::{
 use serde_json::json;
 use structs::vec_save_games::VecSaveGames;
 use utils::file_edit::{
-    get_list_save_count, get_list_save_game, get_rgb_hex_to_game_format, read_file_text, save_file,
+    get_list_save_count, get_list_save_game, get_list_save_game_dirs, get_rgb_hex_to_game_format,
+    read_file_text, save_file,
 };
 
 const RESPONSE_FALSE: &str = r#"{"res": false}"#;
@@ -468,6 +469,22 @@ async fn set_truck_transmissions_def(
     return Ok(RESPONSE_TRUE.to_string());
 }
 
+#[tauri::command]
+async fn get_list_dir_profile(dir_profile: &str) -> Result<String, ()> {
+    let dirs = match get_list_save_game_dirs(dir_profile.to_string()).await {
+        Some(dirs) => dirs,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let response: String = json!({
+        "res": true,
+        "dirs": dirs,
+    })
+    .to_string();
+
+    return Ok(response);
+}
+
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
@@ -478,6 +495,7 @@ fn main() {
             get_save_game_count,
             get_list_engines,
             get_list_transmissions,
+            get_list_dir_profile,
             repait_truck,
             repait_all_trucks,
             fill_fuel_truck,

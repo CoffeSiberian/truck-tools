@@ -1,4 +1,9 @@
-import { SaveGame, EnginesTypes, TransmissionsTypes } from "./SaveGameTypes";
+import {
+	SaveGame,
+	EnginesTypes,
+	ProfileDir,
+	TransmissionsTypes,
+} from "./SaveGameTypes";
 
 export interface responseRustTypes {
 	res: boolean;
@@ -18,4 +23,8 @@ export interface responseTrucksEngines extends responseRustTypes {
 
 export interface responseTrucksTransmissions extends responseRustTypes {
 	transmissions?: TransmissionsTypes;
+}
+
+export interface responseProfileDir extends responseRustTypes {
+	dirs?: ProfileDir[];
 }
