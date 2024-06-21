@@ -1,11 +1,11 @@
 {
-	"version": "v0.1.0",
-	"notes": "- Minimal UI changes\n- Error handling in the update",
-	"pub_date": "2024-06-20T00:00:00-00:00",
+	"version": "v0.1.1",
+	"notes": "- Automatic saves are now ignored\n- Profile pictures now display correctly\n- Minimal improvement in profile list loading time",
+	"pub_date": "2024-06-21T00:00:00-00:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlZxamJsTFM1ajBKMDVTZlk5MDdUbVhLb2hRU2xmcXFzMHd4Wmovakc2OTNrbWhGdTJyUGtaSS9UdUJPdHlWZDhiaUJ3ZWRkejhKOWZxSGxkNTYvVlFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzE4ODU2NjkzCWZpbGU6VHJ1Y2sgVG9vbHNfMC4xLjBfeDY0X2VuLVVTLm1zaS56aXAKbzBENmZOS0dicndSUFVIdFA0dW0yb25yQldKNENBTzdiYi9QbFhMczBjYnljYmd0QkxIQnFyT0JQNUUvczBQODBLR1BUVlhaOGRXNHhZcStkcHduRHc9PQo=",
-			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.1.0/Truck_Tools_0.1.0_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlZBMFZaN0Z3QkRMQkttWXd5ZFFRWWZkeXZseStqUEFpaUJIMjQ1TUx5akZ3dmp1eUV6MFlXSFhCK3c0d1RINUQ1M0w5ejhVZ1JZUkV1UkQ1QlhZaFE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzE4OTQ5OTcyCWZpbGU6VHJ1Y2sgVG9vbHNfMC4xLjFfeDY0X2VuLVVTLm1zaS56aXAKM0NGWVVVdkdBUkIzdGNSaVlEdjRvYTRtSmdFK1FkTVZhL0c2bjBvSFFDWFR1dllFaHdZVnZhQ0h1dlA4TExhcXVGR1M1aVIxQk4xYVAzRm5kK2RMQnc9PQo=",
+			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.1.1/Truck_Tools_0.1.1_x64_en-US.msi.zip"
 		}
 	}
 }
