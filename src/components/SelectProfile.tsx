@@ -86,11 +86,7 @@ const SelectProfile = () => {
 									onPress={
 										selectedSave
 											? () =>
-													openExplorer(
-														selectedSave.dir
-															.replace("/", "\\")
-															.replace("/", "\\")
-													)
+													openExplorer(selectedSave.dir.replace(/\//g, "\\"))
 											: undefined
 									}
 									endContent={<IconFolderShare stroke={2} />}
