@@ -1,9 +1,9 @@
 import { useProfileContex } from "../hooks/useProfileContex";
 import {
-	Avatar,
 	Card,
 	CardBody,
 	Chip,
+	Image,
 	Skeleton,
 	Button,
 } from "@nextui-org/react";
@@ -13,7 +13,12 @@ import ListProfiles from "./ListProfiles";
 import ListSaves from "./ListSaves";
 
 // icons
-import { IconFolderShare, IconBinary, IconReload } from "@tabler/icons-react";
+import {
+	IconFolderShare,
+	IconBinary,
+	IconReload,
+	IconUserCircle,
+} from "@tabler/icons-react";
 
 // types
 import { Profile } from "../types/SaveGameTypes";
@@ -37,72 +42,78 @@ const SelectProfile = () => {
 					</div>
 				) : (
 					<div className="flex w-full items-center gap-2">
-						{profileInfo ? (
-							<>
-								<div>
-									<Avatar
+						<div className="w-[77px]">
+							{profileInfo ? (
+								profileInfo.avatar ? (
+									<Image
 										src={profileInfo.avatar}
-										size="lg"
-										name={profileInfo.name}
 										alt="profile avatar"
+										radius="full"
+										loading="lazy"
+										style={{
+											zoom: 0.62,
+											objectFit: "none",
+											objectPosition: "0% 0%",
+										}}
 									/>
-								</div>
-								<div className="flex w-full flex-col gap-0">
+								) : (
+									<IconUserCircle size={60} />
+								)
+							) : (
+								<IconUserCircle size={60} />
+							)}
+						</div>
+						<div className="flex w-full flex-col gap-0">
+							{profileInfo ? (
+								<>
 									<p className="text-pretty">{profileInfo.name}</p>
 									<small className="text-default-500">
 										{profileInfo.saves.length} saves
 									</small>
-									<div className="mt-1 flex flex-row gap-1">
-										<Button
-											size="sm"
-											variant="bordered"
-											disabled={!selectedSave}
-											onPress={
-												selectedSave
-													? () =>
-															openExplorer(
-																selectedSave.dir
-																	.replace("/", "\\")
-																	.replace("/", "\\")
-															)
-													: undefined
-											}
-											endContent={<IconFolderShare stroke={2} />}
-											color={selectedSave ? "warning" : "default"}
-										>
-											Open
-										</Button>
-										<Button
-											size="sm"
-											variant="bordered"
-											disabled={!selectedSave}
-											onPress={
-												selectedSave
-													? () => descriptFiles(selectedSave.dir, "game.sii")
-													: undefined
-											}
-											endContent={<IconBinary stroke={2} />}
-											color={selectedSave ? "warning" : "default"}
-										>
-											Decrypt
-										</Button>
-									</div>
-								</div>
-							</>
-						) : (
-							<>
-								<div>
-									<Avatar
-										size="lg"
-										name="No profile selected"
-										alt="profile avatar"
-									/>
-								</div>
-								<div className="flex flex-col gap-0">
+								</>
+							) : (
+								<>
 									<p className="text-pretty">No profile selected</p>
-								</div>
-							</>
-						)}
+									<small className="text-default-500">0 saves</small>
+								</>
+							)}
+
+							<div className="mt-1 flex flex-row gap-1">
+								<Button
+									size="sm"
+									variant="bordered"
+									disabled={!selectedSave}
+									onPress={
+										selectedSave
+											? () =>
+													openExplorer(
+														selectedSave.dir
+															.replace("/", "\\")
+															.replace("/", "\\")
+													)
+											: undefined
+									}
+									endContent={<IconFolderShare stroke={2} />}
+									color={selectedSave ? "warning" : "default"}
+								>
+									Open
+								</Button>
+								<Button
+									size="sm"
+									variant="bordered"
+									disabled={!selectedSave}
+									onPress={
+										selectedSave
+											? () => descriptFiles(selectedSave.dir, "game.sii")
+											: undefined
+									}
+									endContent={<IconBinary stroke={2} />}
+									color={selectedSave ? "warning" : "default"}
+								>
+									Decrypt
+								</Button>
+							</div>
+						</div>
 					</div>
 				)}
 			</div>

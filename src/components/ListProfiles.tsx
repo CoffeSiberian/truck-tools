@@ -1,7 +1,7 @@
 import { useProfileContex } from "../hooks/useProfileContex";
 import { ProfileWithoutSaves } from "../types/SaveGameTypes";
 
-import { Select, SelectItem, Avatar } from "@nextui-org/react";
+import { Select, SelectItem, Image } from "@nextui-org/react";
 
 // icons
 import { IconUserCircle } from "@tabler/icons-react";
@@ -36,14 +36,23 @@ const ListProfiles = () => {
 			{(profile) => (
 				<SelectItem key={profile.hex} textValue={profile.name}>
 					<div className="flex items-center gap-2">
-						<Avatar
-							alt={profile.avatar}
-							className="flex-shrink-0"
-							size="sm"
-							src={profile.avatar}
-							showFallback
-							fallback={<IconUserCircle />}
-						/>
+						<div className="w-[30px]">
+							{profile.avatar ? (
+								<Image
+									src={profile.avatar}
+									alt="profile avatar select"
+									radius="full"
+									loading="lazy"
+									style={{
+										zoom: 0.31,
+										objectFit: "none",
+										objectPosition: "0% 0%",
+									}}
+								/>
+							) : (
+								<IconUserCircle size={30} />
+							)}
+						</div>
 						<div className="flex flex-col">
 							<span className="text-small">{profile.name}</span>
 							<span className="text-tiny text-default-400">

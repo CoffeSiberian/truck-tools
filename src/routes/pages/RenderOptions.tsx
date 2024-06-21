@@ -54,6 +54,14 @@ const RenderOptions = () => {
 		{ label: "About", jsx: <></>, modal: true, icon: <IconPaw /> },
 	];
 
+	const setActiveIndexOptions = (index: string) => {
+		setActiveIndex(index);
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
+	};
+
 	const renderCart = (
 		name: string,
 		icon: JSX.Element,
@@ -82,7 +90,7 @@ const RenderOptions = () => {
 				className="fixed top-2 z-20 w-full justify-center"
 				onSelectionChange={(index) => {
 					if (index === "About") onOpen();
-					else setActiveIndex(index as string);
+					else setActiveIndexOptions(index as string);
 				}}
 				selectedKey={activeIndex}
 				size="lg"
