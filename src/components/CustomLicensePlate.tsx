@@ -24,6 +24,30 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 		setPlateText(text.toUpperCase());
 	};
 
+	const BgColor = (color: IColor): void => {
+		setBGColor({
+			...color,
+			rgb: {
+				...color.rgb,
+				r: color.rgb.r < 0 ? 0 : color.rgb.r,
+				g: color.rgb.g < 0 ? 0 : color.rgb.g,
+				b: color.rgb.b < 0 ? 0 : color.rgb.b,
+			},
+		});
+	};
+
+	const TxColor = (color: IColor): void => {
+		setTxColor({
+			...color,
+			rgb: {
+				...color.rgb,
+				r: color.rgb.r < 0 ? 0 : color.rgb.r,
+				g: color.rgb.g < 0 ? 0 : color.rgb.g,
+				b: color.rgb.b < 0 ? 0 : color.rgb.b,
+			},
+		});
+	};
+
 	return (
 		<div className="flex w-full flex-col justify-center gap-2">
 			<div className="flex justify-center">
@@ -63,7 +87,7 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 						hideInput={["hsv", "hex"]}
 						hideAlpha={true}
 						color={bgColor}
-						onChange={setBGColor}
+						onChange={BgColor}
 					/>
 				</div>
 				<div className="space-y-2 text-center">
@@ -73,7 +97,7 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 						hideInput={["hsv", "hex"]}
 						hideAlpha={true}
 						color={txColor}
-						onChange={setTxColor}
+						onChange={TxColor}
 					/>
 				</div>
 			</div>
