@@ -1,11 +1,11 @@
 {
-	"version": "v0.1.2",
-	"notes": "- Automatic saves are now ignored\n- Profile pictures now display correctly\n- Minimal improvement in profile list loading time\n- Update of dependencies\n- Bug fix when opening a game save folder",
-	"pub_date": "2024-06-21T00:00:00-00:00",
+	"version": "v0.1.3",
+	"notes": "- Fix taking negative value RGB colors",
+	"pub_date": "2024-06-23T22:00:00-03:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlI3ZTI4ZDRLbjV3dENOcDMrWnRSY3llYkZoSVM4UGxJa3VzV0xTaEVoK0hDQWhTMjB5MVJ3YmxKcytkNHUxUlljN3plVkxGOHBiWTkrNkczZXNIb3dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzE4OTk4ODM2CWZpbGU6VHJ1Y2sgVG9vbHNfMC4xLjJfeDY0X2VuLVVTLm1zaS56aXAKYUpCVHVSazBGa0kyMlhZcjhwRE9nSVVRbHpJYm5XcGROYkxEOGxXc01ZZU1uZmR3QU80bFdOWWZabmRtSEdXTmpIZ1MxekoxZEwvUjQyUEF1M2UzQlE9PQo=",
-			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.1.2/Truck_Tools_0.1.2_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmJELzV4N0JwbWJnUXh2L2k4dy9PbGRuOTJJYTQ2S3ZoTEl1RXRPZEloMGF5Mm55emR2MTAzNW00aXpyOVhsTHlCRHhJUWNyVDlmekpINVBUekZyOUFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzE5MTk4NjM4CWZpbGU6VHJ1Y2sgVG9vbHNfMC4xLjNfeDY0X2VuLVVTLm1zaS56aXAKUGF1d3lVK1NqS245SWNsQjFKRDU3RmV4eWFRSmlPYklWQ3hRZit2bTNzSzB3NktZL1VuQTZzU0hIMWJNS09DcHU5Rm50aTVtcFRvOGRrclJTblZqQkE9PQo=",
+			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.1.3/Truck_Tools_0.1.3_x64_en-US.msi.zip"
 		}
 	}
 }
