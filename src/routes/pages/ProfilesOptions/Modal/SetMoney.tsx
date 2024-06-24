@@ -11,22 +11,26 @@ import {
 	useDisclosure,
 	Input,
 } from "@nextui-org/react";
-import { setCargoMassTrailersAndSlave } from "../../../../utils/fileEdit";
+import { setProfileMoney } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
-import { IconPencil, IconDeviceFloppy, IconWeight } from "@tabler/icons-react";
+import {
+	IconPencil,
+	IconCurrencyEuro,
+	IconCreditCardPay,
+} from "@tabler/icons-react";
 
 interface completedProps {
 	error: boolean;
 	completed: boolean;
 }
 
-const ModifyWeight = () => {
+const SetMoney = () => {
 	const { selectedSave } = useProfileContex();
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-	const [Weight, setWeight] = useState("0");
+	const [money, setMoney] = useState<string>("1000000");
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [completed, setCompleted] = useState<completedProps>({
 		error: false,
@@ -38,11 +42,9 @@ const ModifyWeight = () => {
 			setCompleted({ error: false, completed: false });
 		}
 
-		if (Weight === "") return;
-
 		if (selectedSave) {
 			setIsLoading(true);
-			const res = await setCargoMassTrailersAndSlave(Weight, selectedSave.dir);
+			const res = await setProfileMoney(selectedSave.dir, money);
 			setCompleted({
 				error: !res,
 				completed: true,
@@ -51,10 +53,10 @@ const ModifyWeight = () => {
 		setIsLoading(false);
 	};
 
-	const setWeightOnlyNumbers = (value: string) => {
+	const setMoneyNumbers = (value: string) => {
 		const regex = /^[0-9]*$/;
 		if (value === "" || regex.test(value)) {
-			setWeight(value);
+			setMoney(value);
 		}
 	};
 
@@ -71,6 +73,7 @@ const ModifyWeight = () => {
 			</Button>
 			<Modal
 				hideCloseButton
+				size="sm"
 				backdrop="blur"
 				isOpen={isOpen}
 				onOpenChange={onOpenChange}
@@ -79,50 +82,43 @@ const ModifyWeight = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								Change load weight
+								Add money
 							</ModalHeader>
 							<Divider />
-							<ModalBody className="items-center py-1">
-								<p>
-									This will modify the weight of your current job to the one you
-									define here. Remember that you will need to have an active job
-									anchored to your truck
-								</p>
+							<ModalBody className="py-1">
+								<p>Add the amount of money you want in your profile</p>
 								<Input
 									className="mt-1"
-									startContent={<IconWeight />}
-									isInvalid={Weight === ""}
-									label="Weight"
-									placeholder="Enter weight in kg"
-									value={Weight}
-									onValueChange={setWeightOnlyNumbers}
+									startContent={<IconCurrencyEuro />}
+									isInvalid={money === ""}
+									label="Money"
+									placeholder="Enter the amount of money in EUR"
+									value={money}
+									onValueChange={(value) => setMoneyNumbers(value)}
 								/>
-								<AlertSave
-									message={
-										completed.error
-											? "An error occurred in the process"
-											: "Saved successfully"
-									}
-									error={completed.error}
-									show={completed.completed}
-								/>
+								<div className="flex justify-center">
+									<AlertSave
+										message={
+											completed.error
+												? "An error occurred in the process"
+												: "Saved successfully"
+										}
+										error={completed.error}
+										show={completed.completed}
+									/>
+								</div>
 							</ModalBody>
 							<ModalFooter>
-								<Button
-									isDisabled={isLoading}
-									color="danger"
-									variant="light"
-									onPress={onClose}
-								>
+								<Button color="danger" variant="light" onPress={onClose}>
 									Close
 								</Button>
 								<Button
-									endContent={<IconDeviceFloppy />}
+									endContent={<IconCreditCardPay />}
 									isLoading={isLoading}
 									color="success"
 									onPress={onClickApply}
 								>
-									Apply
+									Add
 								</Button>
 							</ModalFooter>
 						</>
@@ -133,4 +129,4 @@ const ModifyWeight = () => {
 	);
 };
 
-export default ModifyWeight;
+export default SetMoney;

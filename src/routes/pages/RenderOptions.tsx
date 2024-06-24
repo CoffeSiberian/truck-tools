@@ -102,7 +102,7 @@ const RenderOptions = () => {
 					return renderCart(
 						item.label,
 						item.icon,
-						!item.modal ? index > 1 : !item.modal
+						!item.modal ? index > 2 : !item.modal
 					);
 				})}
 			</Tabs>

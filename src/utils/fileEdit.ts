@@ -327,6 +327,23 @@ export const setTruckTransmission = async (
 	return res.res;
 };
 
+export const setProfileMoney = async (
+	dirSave: string,
+	money: string
+): Promise<boolean> => {
+	const descriptSucces = await descriptFiles(dirSave, "game.sii");
+	if (!descriptSucces) return false;
+
+	const rustParams = {
+		dirSave: dirSave + "/game.sii",
+		money,
+	};
+
+	const invoceRes = await invoke("set_profile_money", rustParams);
+	const res = JSON.parse(invoceRes as string) as responseRustTypes;
+	return res.res;
+};
+
 export const getListEngines = async (): Promise<EnginesTypes | undefined> => {
 	const invoceRes = await invoke("get_list_engines");
 	const res = JSON.parse(invoceRes as string) as responseTrucksEngines;

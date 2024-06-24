@@ -15,7 +15,7 @@ import { setChassisMassTrailer } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
-import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";
+import { IconPencil, IconDeviceFloppy, IconWeight } from "@tabler/icons-react";
 
 interface completedProps {
 	error: boolean;
@@ -117,6 +117,7 @@ const ModifyTrailerWeight = () => {
 								</p>
 								<Input
 									className="mt-1"
+									startContent={<IconWeight />}
 									isInvalid={TrailerWeight.chassisMass === ""}
 									label="Chassis Mass"
 									placeholder="Enter weight in kg"
@@ -124,6 +125,7 @@ const ModifyTrailerWeight = () => {
 									onValueChange={(value) => setchassisMassOnlyNumbers(value)}
 								/>
 								<Input
+									startContent={<IconWeight />}
 									label="Body Mass"
 									isInvalid={TrailerWeight.bodyMass === ""}
 									placeholder="Enter weight in kg"
