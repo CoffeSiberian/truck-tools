@@ -134,7 +134,7 @@ const SelectProfile = () => {
 			<Card className="flex w-full max-w-4xl">
 				<CardBody className="flex flex-row content-between items-center p-1">
 					{renderProfile(selectedProfile)}
-					<div className="flex w-full items-center gap-2 p-1">
+					<div className="flex w-full flex-nowrap items-center gap-2">
 						<ListProfiles />
 						<ListSaves />
 						<Button onPress={() => reloadProfiles()} isIconOnly>

@@ -24,6 +24,7 @@ const ListProfiles = () => {
 			isDisabled={!(listProfiles.length > 0)}
 			errorMessage={listProfiles.length > 0 ? undefined : "No profiles found"}
 			isLoading={listProfiles.length === 0}
+			isInvalid={selectedProfile ? false : true}
 			items={listProfiles}
 			selectedKeys={selectedProfile ? [selectedProfile.hex] : []}
 			onChange={(e) => onClickProfile(e.target.value)}
