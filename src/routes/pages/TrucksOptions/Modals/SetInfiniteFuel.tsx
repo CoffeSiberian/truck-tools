@@ -74,7 +74,7 @@ const SetInfiniteFuel = () => {
 							<ModalBody className="py-1">
 								<p>
 									Exactly the fuel is not infinite but it is for approximately
-									5.000.000 KM (depending on the truck).
+									5.000.000 KM (depending on the truck)
 								</p>
 								<div className="flex justify-center">
 									<AlertSave

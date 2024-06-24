@@ -113,7 +113,7 @@ const ModifyTrailerWeight = () => {
 								<p>
 									This modifies the weight of your trailer in 2 parameters.
 									Usually the chassis_mass is used but you can also edit the
-									body_mass (default body_mass is 0).
+									body_mass (default body_mass is 0)
 								</p>
 								<Input
 									className="mt-1"

@@ -86,7 +86,7 @@ const ModifyWeight = () => {
 								<p>
 									This will modify the weight of your current job to the one you
 									define here. Remember that you will need to have an active job
-									anchored to your truck.
+									anchored to your truck
 								</p>
 								<Input
 									className="mt-1"

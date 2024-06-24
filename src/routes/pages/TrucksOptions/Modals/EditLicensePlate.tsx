@@ -83,7 +83,10 @@ const EditLicensePlate = () => {
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="py-1">
-								<p>Enter the new license plate of the truck</p>
+								<p>
+									Enter the new truck license plate. Remember to remove your
+									license plate from Word of Trucks
+								</p>
 								<div className="flex flex-col items-center gap-2">
 									<CustomLicensePlate
 										txColor={txColor}

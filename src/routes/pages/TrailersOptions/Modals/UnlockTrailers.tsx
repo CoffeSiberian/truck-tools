@@ -73,11 +73,11 @@ const UnlockTrailers = () => {
 							<ModalBody className="items-center py-1">
 								<p>
 									Unlock your trailer in all countries if it is blocked by the
-									game.
+									game
 								</p>
 								<p>
 									Remember to have your trailer attached to your truck so that
-									the changes can take effect.
+									the changes can take effect
 								</p>
 								<AlertSave
 									message={

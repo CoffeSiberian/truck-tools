@@ -50,20 +50,23 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 
 #### Profiles
 
-- [] Add infinite money
-- [] Add level 100
-- [] Unlock garages
-- [] Unlock all cities
-- [] Unlock all dealerships
-- [] Unlock skills
+- [ ] Add infinite money
+- [ ] Add level 100
+- [ ] Unlock garages
+- [ ] Unlock all cities
+- [ ] Unlock all dealerships
+- [ ] Unlock skills
+- [ ] Profile backup
+- [ ] Clone profile
+- [ ] Clone config
 
 #### Settings
 
-- [] Documents Path
-- [] Dark Mode config
-- [] Change language
-- [] Enable console and developer mode
-- [] Change save format
+- [ ] Documents Path
+- [ ] Dark Mode config
+- [ ] Change language
+- [ ] Enable console and developer mode
+- [ ] Change save format
 
 #### Possible features
 

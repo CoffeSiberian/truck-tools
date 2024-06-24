@@ -73,8 +73,7 @@ const FillAllTrucksFuel = () => {
 							<Divider />
 							<ModalBody className="py-1">
 								<p>
-									This option will allow you to refuel all your purchased
-									trucks.
+									This option will allow you to refuel all your purchased trucks
 								</p>
 								<div className="flex justify-center">
 									<AlertSave
