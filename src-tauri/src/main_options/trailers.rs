@@ -2,8 +2,8 @@ use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_items_replace::VecItemsReplace;
 
 fn get_vec_trailers(arr_val: &Vec<String>) -> Option<Vec<VecItemsFind>> {
-    let max_counter: i16 = 20;
-    let mut counter: i16 = 0;
+    let max_counter: u16 = 20;
+    let mut counter: u16 = 0;
     let mut result: Vec<VecItemsFind> = Vec::new();
     let (trailer_id, index): (String, usize) = match get_my_trailer_id(&arr_val) {
         Some((trailer_id, index)) => (trailer_id, index),
@@ -137,7 +137,7 @@ pub fn set_remove_trailer_restricted_areas(
     index: usize,
 ) -> Option<Vec<String>> {
     let mut arr_val_clone: Vec<String> = arr_val.clone();
-    let mut counter_areas: i16 = 0;
+    let mut counter_areas: u16 = 0;
     let mut items_to_edit: Vec<VecItemsReplace> = Vec::new();
 
     for (i, item) in arr_val_clone.iter().enumerate().skip(index) {
@@ -189,11 +189,11 @@ pub fn set_any_slave_trailers_weight(
     first_slave_index: usize,
     cargo_mass: String,
 ) -> Vec<String> {
-    let mut counter: i16 = 0;
+    let mut counter: u16 = 0;
     let mut next_slave_trailer: String = first_slave_id;
     let mut next_slave_trailer_index: usize = first_slave_index;
     let mut current_arr_val: Vec<String> = arr_val.to_vec();
-    let max_counter: i16 = 20;
+    let max_counter: u16 = 20;
 
     loop {
         counter += 1;

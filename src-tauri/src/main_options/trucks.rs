@@ -78,8 +78,8 @@ fn get_vec_truck_wear_wheels(
 ) -> Option<Vec<VecItemsFind>> {
     let mut result: Vec<VecItemsFind> = Vec::new();
 
-    let mut wheel_wear_number: i16 = 0;
-    let mut wheel_wear_unfixable_number: i16 = 0;
+    let mut wheel_wear_number: u16 = 0;
+    let mut wheel_wear_unfixable_number: u16 = 0;
 
     for (i, item) in arr_val.iter().enumerate().skip(index) {
         let option_values: Vec<&str> = item.split('[').collect();
@@ -156,7 +156,7 @@ fn get_truck_accessories_index(
 
 fn get_list_trucks_id(arr_val: &Vec<String>) -> Option<Vec<VecTrucksId>> {
     let mut result: Vec<VecTrucksId> = Vec::new();
-    let mut truck_enum: i16 = 0;
+    let mut truck_enum: u16 = 0;
     let mut truck_string_find: String = format!(" trucks[{}]", truck_enum);
 
     for (i, item) in arr_val.iter().enumerate() {
@@ -192,7 +192,7 @@ fn get_list_trucks_accessories_id(
     index: usize,
 ) -> Option<Vec<VecItemsFind>> {
     let mut result: Vec<VecItemsFind> = Vec::new();
-    let mut accessories_enum: i16 = 0;
+    let mut accessories_enum: u16 = 0;
     let mut truck_accessories_find: String = format!(" accessories[{}]", accessories_enum);
 
     for (i, item) in arr_val.iter().enumerate().skip(index) {
