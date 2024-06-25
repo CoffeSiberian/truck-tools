@@ -17,6 +17,87 @@ fn get_bank_id(arr_val: &Vec<String>) -> Option<VecItemsFind> {
     return bank_id;
 }
 
+fn get_index_element_rev(arr_val: &Vec<String>, element: &String) -> Option<usize> {
+    for (i, item) in arr_val.iter().enumerate().rev() {
+        if item.contains(element) {
+            return Some(i);
+        }
+    }
+
+    return None;
+}
+
+fn get_index_element(
+    arr_val: &Vec<String>,
+    element: &String,
+    rev: bool,
+    index: usize,
+) -> Option<usize> {
+    if rev {
+        return get_index_element_rev(arr_val, element);
+    }
+
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
+        if item.contains(element) {
+            return Some(i);
+        }
+    }
+
+    return None;
+}
+
+pub fn get_garage_vec_names(arr_val: &Vec<String>) -> Option<Vec<VecItemsFind>> {
+    let mut garage_vec_string: Vec<&str> = Vec::new();
+    let mut garage_count: u16 = 0;
+    let mut garage_string_find = format!(" garages[{}]", garage_count);
+
+    for item in arr_val {
+        if item.contains(&garage_string_find) {
+            let split_item: Vec<&str> = item.split(":").collect();
+
+            garage_vec_string.push(split_item[1]);
+
+            garage_count += 1;
+            garage_string_find = format!(" garages[{}]", garage_count);
+        }
+
+        if garage_count > 0 && !item.contains(" garages") {
+            break;
+        }
+    }
+
+    let mut last_index: usize = 0;
+    let mut garage_rev_complete: bool = false;
+    let mut garage_vec: Vec<VecItemsFind> = Vec::new();
+
+    for item in garage_vec_string {
+        let item_find = format!("garage :{} {}", item, "{");
+
+        let index_element =
+            match get_index_element(&arr_val, &item_find, !garage_rev_complete, last_index) {
+                Some(val) => val,
+                None => continue,
+            };
+
+        if !garage_rev_complete {
+            garage_rev_complete = true;
+        }
+
+        last_index = index_element;
+
+        garage_vec.push(VecItemsFind {
+            index: index_element,
+            value: item.to_string(),
+        });
+    }
+
+    if garage_vec.len() == 0 {
+        return None;
+    }
+
+    return Some(garage_vec);
+}
+
 pub fn set_bank_money(arr_val: &Vec<String>, money: &str) -> Option<Vec<String>> {
     let bank_id = match get_bank_id(arr_val) {
         Some(val) => val,
