@@ -1,3 +1,4 @@
+pub mod profiles;
 pub mod trailers;
 pub mod truck_engines;
 pub mod truck_transmissions;

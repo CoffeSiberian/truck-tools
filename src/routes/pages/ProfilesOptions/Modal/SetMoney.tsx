@@ -30,7 +30,7 @@ const SetMoney = () => {
 	const { selectedSave } = useProfileContex();
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-	const [money, setMoney] = useState<string>("1000000");
+	const [money, setMoney] = useState<string>("70000000");
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [completed, setCompleted] = useState<completedProps>({
 		error: false,
