@@ -344,6 +344,23 @@ export const setProfileMoney = async (
 	return res.res;
 };
 
+export const setProfileExperience = async (
+	dirSave: string,
+	experience: string
+): Promise<boolean> => {
+	const descriptSucces = await descriptFiles(dirSave, "game.sii");
+	if (!descriptSucces) return false;
+
+	const rustParams = {
+		dirSave: dirSave + "/game.sii",
+		experience,
+	};
+
+	const invoceRes = await invoke("set_profile_experience", rustParams);
+	const res = JSON.parse(invoceRes as string) as responseRustTypes;
+	return res.res;
+};
+
 export const getListEngines = async (): Promise<EnginesTypes | undefined> => {
 	const invoceRes = await invoke("get_list_engines");
 	const res = JSON.parse(invoceRes as string) as responseTrucksEngines;

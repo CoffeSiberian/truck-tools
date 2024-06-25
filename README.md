@@ -50,8 +50,8 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 
 #### Profiles
 
-- [ ] Add infinite money
-- [ ] Add level 100
+- [x] Add infinite money
+- [x] Add level 100
 - [ ] Unlock garages
 - [ ] Unlock all cities
 - [ ] Unlock all dealerships
