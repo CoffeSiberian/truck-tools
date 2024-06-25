@@ -5,7 +5,7 @@ mod main_options;
 mod structs;
 mod utils;
 
-use main_options::profiles::set_bank_money;
+use main_options::profiles::{set_bank_money, set_experience};
 use main_options::trailers::{
     get_my_trailer_id, get_slave_trailers_id, get_trailer_def_id, get_trailer_def_index,
     get_trailer_index, set_any_slave_trailers_weight, set_cargo_mass_trailer,
@@ -503,6 +503,23 @@ async fn set_profile_money(dir_save: &str, money: &str) -> Result<String, ()> {
     Ok(RESPONSE_TRUE.to_string())
 }
 
+#[tauri::command]
+async fn set_profile_experience(dir_save: &str, experience: &str) -> Result<String, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let profile_experience: Vec<String> = match set_experience(&file, experience) {
+        Some(profile_experience) => profile_experience,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    save_file(dir_save.to_string(), profile_experience).await;
+
+    Ok(RESPONSE_TRUE.to_string())
+}
+
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
@@ -524,6 +541,7 @@ fn main() {
             set_truck_engine_def,
             set_truck_transmissions_def,
             set_profile_money,
+            set_profile_experience,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

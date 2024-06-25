@@ -35,3 +35,16 @@ pub fn set_bank_money(arr_val: &Vec<String>, money: &str) -> Option<Vec<String>>
 
     return Some(arr_val);
 }
+
+pub fn set_experience(arr_val: &Vec<String>, experience: &str) -> Option<Vec<String>> {
+    let mut arr_val = arr_val.clone();
+
+    for (i, item) in arr_val.iter().enumerate() {
+        if item.contains(" experience_points:") {
+            arr_val[i] = format!(" experience_points: {}", experience);
+            break;
+        }
+    }
+
+    return Some(arr_val);
+}
