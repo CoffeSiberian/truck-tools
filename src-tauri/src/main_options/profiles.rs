@@ -47,11 +47,61 @@ fn get_index_element(
     return None;
 }
 
+fn check_garage_vehicle_exists(arr_val: &Vec<String>, index: usize) -> bool {
+    let mut vehicle_count: u16 = 0;
+    let mut vehicle_string_find = format!(" vehicles[{}]", vehicle_count);
+
+    for item in arr_val.iter().skip(index) {
+        if item.contains(&vehicle_string_find) {
+            if !item.contains(" null") {
+                return true;
+            }
+            vehicle_count += 1;
+            vehicle_string_find = format!(" vehicles[{}]", vehicle_count);
+        }
+
+        if item.contains("}") {
+            break;
+        }
+    }
+
+    return false;
+}
+
+fn check_garage_drivers_exists(arr_val: &Vec<String>, index: usize) -> bool {
+    let mut driver_count: u16 = 0;
+    let mut driver_string_find = format!(" drivers[{}]", driver_count);
+
+    for item in arr_val.iter().skip(index) {
+        if item.contains(&driver_string_find) {
+            if !item.contains(" null") {
+                println!("{}", item);
+                return true;
+            }
+            driver_count += 1;
+            driver_string_find = format!(" drivers[{}]:", driver_count);
+        }
+
+        if item.contains("}") {
+            break;
+        }
+    }
+
+    return false;
+}
+
 fn set_garage_status(
     arr_val: &Vec<String>,
     garage_index: usize,
     status: &str,
 ) -> Option<VecItemsReplace> {
+    if check_garage_vehicle_exists(arr_val, garage_index) {
+        return None;
+    }
+    if check_garage_drivers_exists(arr_val, garage_index) {
+        return None;
+    }
+
     for (i, item) in arr_val.iter().enumerate().skip(garage_index) {
         if item.contains(" status:") {
             return Some(VecItemsReplace {
