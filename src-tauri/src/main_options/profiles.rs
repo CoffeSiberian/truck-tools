@@ -1,4 +1,5 @@
 use crate::structs::vec_items_find::VecItemsFind;
+use crate::structs::vec_items_replace::VecItemsReplace;
 
 fn get_bank_id(arr_val: &Vec<String>) -> Option<VecItemsFind> {
     let mut bank_id: Option<VecItemsFind> = None;
@@ -40,6 +41,28 @@ fn get_index_element(
     for (i, item) in arr_val.iter().enumerate().skip(index) {
         if item.contains(element) {
             return Some(i);
+        }
+    }
+
+    return None;
+}
+
+fn set_garage_status(
+    arr_val: &Vec<String>,
+    garage_index: usize,
+    status: &str,
+) -> Option<VecItemsReplace> {
+    for (i, item) in arr_val.iter().enumerate().skip(garage_index) {
+        if item.contains(" status:") {
+            return Some(VecItemsReplace {
+                index: i,
+                value: format!(" status: {}", status),
+                to_delete: false,
+            });
+        }
+
+        if item.contains("}") {
+            break;
         }
     }
 
@@ -96,6 +119,28 @@ pub fn get_garage_vec_names(arr_val: &Vec<String>) -> Option<Vec<VecItemsFind>> 
     }
 
     return Some(garage_vec);
+}
+
+pub fn set_any_status_garage(arr_val: &Vec<String>, status: &str) -> Option<Vec<String>> {
+    let mut arr_val = arr_val.clone();
+
+    let list_garage = match get_garage_vec_names(&arr_val) {
+        Some(val) => val,
+        None => return None,
+    };
+
+    for item in list_garage {
+        let garage_index = item.index;
+
+        let garage_status = match set_garage_status(&arr_val, garage_index, status) {
+            Some(val) => val,
+            None => continue,
+        };
+
+        arr_val[garage_status.index] = garage_status.value;
+    }
+
+    return Some(arr_val);
 }
 
 pub fn set_bank_money(arr_val: &Vec<String>, money: &str) -> Option<Vec<String>> {
