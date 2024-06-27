@@ -1,5 +1,32 @@
-use crate::structs::vec_items_find::VecItemsFind;
-use crate::structs::vec_items_replace::VecItemsReplace;
+use crate::structs::vec_items_find::{VecItemsFind, VecItemsFindGarages};
+
+const GARAGE_STATUS_2: [&str; 10] = [
+    " vehicles: 3",
+    " vehicles[0]: null",
+    " vehicles[1]: null",
+    " vehicles[2]: null",
+    " drivers: 5",
+    " drivers[0]: null",
+    " drivers[1]: null",
+    " drivers[2]: null",
+    " drivers[3]: null",
+    " drivers[4]: null",
+];
+
+const GARAGE_STATUS_3: [&str; 12] = [
+    " vehicles: 5",
+    " vehicles[0]: null",
+    " vehicles[1]: null",
+    " vehicles[2]: null",
+    " vehicles[3]: null",
+    " vehicles[4]: null",
+    " drivers: 5",
+    " drivers[0]: null",
+    " drivers[1]: null",
+    " drivers[2]: null",
+    " drivers[3]: null",
+    " drivers[4]: null",
+];
 
 fn get_bank_id(arr_val: &Vec<String>) -> Option<VecItemsFind> {
     let mut bank_id: Option<VecItemsFind> = None;
@@ -75,7 +102,6 @@ fn check_garage_drivers_exists(arr_val: &Vec<String>, index: usize) -> bool {
     for item in arr_val.iter().skip(index) {
         if item.contains(&driver_string_find) {
             if !item.contains(" null") {
-                println!("{}", item);
                 return true;
             }
             driver_count += 1;
@@ -90,11 +116,26 @@ fn check_garage_drivers_exists(arr_val: &Vec<String>, index: usize) -> bool {
     return false;
 }
 
+fn get_number_vehicle(arr_val: &Vec<String>, garage_index: usize) -> Option<String> {
+    for item in arr_val.iter().skip(garage_index) {
+        if item.contains(" vehicles:") {
+            let split_item: Vec<&str> = item.split(":").collect();
+            return Some(split_item[1].to_string().replace(" ", ""));
+        }
+
+        if item.contains("}") {
+            break;
+        }
+    }
+
+    return None;
+}
+
 fn set_garage_status(
     arr_val: &Vec<String>,
     garage_index: usize,
     status: &str,
-) -> Option<VecItemsReplace> {
+) -> Option<VecItemsFindGarages> {
     if check_garage_vehicle_exists(arr_val, garage_index) {
         return None;
     }
@@ -102,12 +143,17 @@ fn set_garage_status(
         return None;
     }
 
+    let number_vehicle = match get_number_vehicle(arr_val, garage_index) {
+        Some(val) => val,
+        None => return None,
+    };
+
     for (i, item) in arr_val.iter().enumerate().skip(garage_index) {
         if item.contains(" status:") {
-            return Some(VecItemsReplace {
+            return Some(VecItemsFindGarages {
                 index: i,
                 value: format!(" status: {}", status),
-                to_delete: false,
+                veicle_number: number_vehicle,
             });
         }
 
@@ -159,7 +205,7 @@ pub fn get_garage_vec_names(arr_val: &Vec<String>) -> Option<Vec<VecItemsFind>> 
         last_index = index_element;
 
         garage_vec.push(VecItemsFind {
-            index: index_element,
+            index: last_index.clone(),
             value: item.to_string(),
         });
     }
@@ -179,14 +225,50 @@ pub fn set_any_status_garage(arr_val: &Vec<String>, status: &str) -> Option<Vec<
         None => return None,
     };
 
+    let mut index_sum: usize = 0;
+
     for item in list_garage {
-        let garage_index = item.index;
+        let garage_index = item.index + index_sum;
+        let mut replace_index: bool = false;
+        let mut replace_index_value: usize = 0;
 
         let garage_status = match set_garage_status(&arr_val, garage_index, status) {
             Some(val) => val,
             None => continue,
         };
 
+        if garage_status.veicle_number.contains("0") {
+            let items_to_insert = match status {
+                "2" => {
+                    replace_index = true;
+                    index_sum += 10;
+                    replace_index_value += 10;
+                    GARAGE_STATUS_2
+                        .iter()
+                        .map(|x| x.to_string())
+                        .collect::<Vec<String>>()
+                }
+                "3" => {
+                    replace_index = true;
+                    index_sum += 12;
+                    replace_index_value += 12;
+                    GARAGE_STATUS_3
+                        .iter()
+                        .map(|x| x.to_string())
+                        .collect::<Vec<String>>()
+                }
+                _ => Vec::new(),
+            };
+
+            if !items_to_insert.is_empty() {
+                arr_val.splice(garage_index..garage_index, items_to_insert.into_iter());
+            }
+        }
+
+        if replace_index {
+            arr_val[garage_status.index + replace_index_value] = garage_status.value;
+            continue;
+        }
         arr_val[garage_status.index] = garage_status.value;
     }
 
