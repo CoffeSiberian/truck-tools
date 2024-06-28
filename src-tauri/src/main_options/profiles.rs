@@ -1,25 +1,30 @@
-use crate::structs::vec_items_find::{VecItemsFind, VecItemsFindGarages};
+use crate::structs::vec_items_find::VecItemsFind;
+use crate::structs::vec_items_replace::{VecGaragesReplace, VecItemsReplace};
 
-const GARAGE_STATUS_2: [&str; 10] = [
+const GARAGE_STATUS_VEHICLES_2: [&str; 4] = [
     " vehicles: 3",
     " vehicles[0]: null",
     " vehicles[1]: null",
     " vehicles[2]: null",
-    " drivers: 5",
+];
+
+const GARAGE_STATUS_DRIVERS_2: [&str; 4] = [
+    " drivers: 3",
     " drivers[0]: null",
     " drivers[1]: null",
     " drivers[2]: null",
-    " drivers[3]: null",
-    " drivers[4]: null",
 ];
 
-const GARAGE_STATUS_3: [&str; 12] = [
+const GARAGE_STATUS_VEHICLES_3: [&str; 6] = [
     " vehicles: 5",
     " vehicles[0]: null",
     " vehicles[1]: null",
     " vehicles[2]: null",
     " vehicles[3]: null",
     " vehicles[4]: null",
+];
+
+const GARAGE_STATUS_DRIVERS_3: [&str; 6] = [
     " drivers: 5",
     " drivers[0]: null",
     " drivers[1]: null",
@@ -116,11 +121,26 @@ fn check_garage_drivers_exists(arr_val: &Vec<String>, index: usize) -> bool {
     return false;
 }
 
-fn get_number_vehicle(arr_val: &Vec<String>, garage_index: usize) -> Option<String> {
-    for item in arr_val.iter().skip(garage_index) {
-        if item.contains(" vehicles:") {
-            let split_item: Vec<&str> = item.split(":").collect();
-            return Some(split_item[1].to_string().replace(" ", ""));
+fn is_editable_garage(arr_val: &Vec<String>, garage_index: usize) -> bool {
+    return !check_garage_vehicle_exists(arr_val, garage_index)
+        && !check_garage_drivers_exists(arr_val, garage_index);
+}
+
+fn delete_vehicles_and_drivers_garage_range(
+    arr_val: &Vec<String>,
+    garage_index: usize,
+) -> Option<(usize, usize)> {
+    let mut first_index: usize = 0;
+    let mut last_index: usize = 0;
+
+    for (i, item) in arr_val.iter().enumerate().skip(garage_index) {
+        if first_index == 0 && item.contains(" vehicles") {
+            first_index = i;
+            continue;
+        }
+        if item.contains(" drivers") {
+            last_index = i;
+            continue;
         }
 
         if item.contains("}") {
@@ -128,14 +148,67 @@ fn get_number_vehicle(arr_val: &Vec<String>, garage_index: usize) -> Option<Stri
         }
     }
 
-    return None;
+    if first_index == 0 || first_index == 0 {
+        return None;
+    }
+    return Some((first_index, last_index));
+}
+
+fn add_vehicles_and_drivers_garage(
+    vehicle_number_index: usize,
+    driver_number_index: usize,
+    status: &str,
+) -> Option<VecGaragesReplace> {
+    let mut vec_items_vehicles: Vec<VecItemsReplace> = Vec::new();
+    let mut vec_items_drivers: Vec<VecItemsReplace> = Vec::new();
+
+    if status == "2" {
+        for item in GARAGE_STATUS_VEHICLES_2.iter() {
+            vec_items_vehicles.push(VecItemsReplace {
+                index: vehicle_number_index,
+                value: item.to_string(),
+                to_delete: false,
+            });
+        }
+
+        for item in GARAGE_STATUS_DRIVERS_2.iter() {
+            vec_items_drivers.push(VecItemsReplace {
+                index: driver_number_index,
+                value: item.to_string(),
+                to_delete: false,
+            });
+        }
+    } else if status == "3" {
+        for item in GARAGE_STATUS_VEHICLES_3.iter() {
+            vec_items_vehicles.push(VecItemsReplace {
+                index: vehicle_number_index,
+                value: item.to_string(),
+                to_delete: false,
+            });
+        }
+
+        for item in GARAGE_STATUS_DRIVERS_3.iter() {
+            vec_items_drivers.push(VecItemsReplace {
+                index: driver_number_index,
+                value: item.to_string(),
+                to_delete: false,
+            });
+        }
+    } else {
+        return None;
+    }
+
+    return Some(VecGaragesReplace {
+        veicles: vec_items_vehicles,
+        drivers: vec_items_drivers,
+    });
 }
 
 fn set_garage_status(
     arr_val: &Vec<String>,
     garage_index: usize,
     status: &str,
-) -> Option<VecItemsFindGarages> {
+) -> Option<VecItemsFind> {
     if check_garage_vehicle_exists(arr_val, garage_index) {
         return None;
     }
@@ -143,17 +216,11 @@ fn set_garage_status(
         return None;
     }
 
-    let number_vehicle = match get_number_vehicle(arr_val, garage_index) {
-        Some(val) => val,
-        None => return None,
-    };
-
     for (i, item) in arr_val.iter().enumerate().skip(garage_index) {
         if item.contains(" status:") {
-            return Some(VecItemsFindGarages {
+            return Some(VecItemsFind {
                 index: i,
                 value: format!(" status: {}", status),
-                veicle_number: number_vehicle,
             });
         }
 
@@ -225,51 +292,60 @@ pub fn set_any_status_garage(arr_val: &Vec<String>, status: &str) -> Option<Vec<
         None => return None,
     };
 
-    let mut index_sum: usize = 0;
+    for item in list_garage.iter().rev() {
+        let garage_index = item.index;
 
-    for item in list_garage {
-        let garage_index = item.index + index_sum;
-        let mut replace_index: bool = false;
-        let mut replace_index_value: usize = 0;
+        if !is_editable_garage(&arr_val, garage_index) {
+            continue;
+        }
+
+        match delete_vehicles_and_drivers_garage_range(&arr_val, garage_index) {
+            Some(val) => {
+                let index_vehicle_number = val.0;
+                let index_driver_number = val.1;
+
+                arr_val.drain(index_vehicle_number..index_driver_number + 1);
+            }
+            None => continue,
+        };
+
+        let items_add_vehicles_and_drivers =
+            match add_vehicles_and_drivers_garage(garage_index, garage_index, status) {
+                Some(val) => val,
+                None => continue,
+            };
 
         let garage_status = match set_garage_status(&arr_val, garage_index, status) {
             Some(val) => val,
             None => continue,
         };
 
-        if garage_status.veicle_number.contains("0") {
-            let items_to_insert = match status {
-                "2" => {
-                    replace_index = true;
-                    index_sum += 10;
-                    replace_index_value += 10;
-                    GARAGE_STATUS_2
-                        .iter()
-                        .map(|x| x.to_string())
-                        .collect::<Vec<String>>()
-                }
-                "3" => {
-                    replace_index = true;
-                    index_sum += 12;
-                    replace_index_value += 12;
-                    GARAGE_STATUS_3
-                        .iter()
-                        .map(|x| x.to_string())
-                        .collect::<Vec<String>>()
-                }
-                _ => Vec::new(),
-            };
-
-            if !items_to_insert.is_empty() {
-                arr_val.splice(garage_index..garage_index, items_to_insert.into_iter());
-            }
-        }
-
-        if replace_index {
-            arr_val[garage_status.index + replace_index_value] = garage_status.value;
-            continue;
-        }
         arr_val[garage_status.index] = garage_status.value;
+        println!("{}", arr_val[garage_status.index]);
+        let vehicles = items_add_vehicles_and_drivers
+            .veicles
+            .into_iter()
+            .map(|x| x.value)
+            .collect::<Vec<String>>();
+
+        let drivers = items_add_vehicles_and_drivers
+            .drivers
+            .into_iter()
+            .map(|x| x.value)
+            .collect::<Vec<String>>();
+
+        let garage_index_to_splice = garage_index + 1;
+        arr_val.splice(
+            garage_index_to_splice..garage_index_to_splice,
+            drivers.into_iter(),
+        );
+
+        arr_val.splice(
+            garage_index_to_splice..garage_index_to_splice,
+            vehicles.into_iter(),
+        );
+
+        break;
     }
 
     return Some(arr_val);
