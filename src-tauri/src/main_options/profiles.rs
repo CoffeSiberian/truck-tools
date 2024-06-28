@@ -321,7 +321,6 @@ pub fn set_any_status_garage(arr_val: &Vec<String>, status: &str) -> Option<Vec<
         };
 
         arr_val[garage_status.index] = garage_status.value;
-        println!("{}", arr_val[garage_status.index]);
         let vehicles = items_add_vehicles_and_drivers
             .veicles
             .into_iter()
@@ -335,17 +334,13 @@ pub fn set_any_status_garage(arr_val: &Vec<String>, status: &str) -> Option<Vec<
             .collect::<Vec<String>>();
 
         let garage_index_to_splice = garage_index + 1;
-        arr_val.splice(
-            garage_index_to_splice..garage_index_to_splice,
-            drivers.into_iter(),
-        );
+        let mut vehicles_and_drivers = vehicles.clone();
+        vehicles_and_drivers.extend(drivers.clone());
 
         arr_val.splice(
             garage_index_to_splice..garage_index_to_splice,
-            vehicles.into_iter(),
+            vehicles_and_drivers.into_iter(),
         );
-
-        break;
     }
 
     return Some(arr_val);
