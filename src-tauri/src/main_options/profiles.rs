@@ -169,18 +169,14 @@ fn delete_vehicles_and_drivers_garage_range(
     return Some((first_index, last_index));
 }
 
-fn add_vehicles_and_drivers_garage(
-    vehicle_number_index: usize,
-    driver_number_index: usize,
-    status: &str,
-) -> Option<VecGaragesReplace> {
+fn add_vehicles_and_drivers_garage(garage_index: usize, status: &str) -> Option<VecGaragesReplace> {
     let mut vec_items_vehicles: Vec<VecItemsReplace> = Vec::new();
     let mut vec_items_drivers: Vec<VecItemsReplace> = Vec::new();
 
     if status == "2" {
         for item in GARAGE_STATUS_VEHICLES_2.iter() {
             vec_items_vehicles.push(VecItemsReplace {
-                index: vehicle_number_index,
+                index: garage_index,
                 value: item.to_string(),
                 to_delete: false,
             });
@@ -188,7 +184,7 @@ fn add_vehicles_and_drivers_garage(
 
         for item in GARAGE_STATUS_DRIVERS_2.iter() {
             vec_items_drivers.push(VecItemsReplace {
-                index: driver_number_index,
+                index: garage_index,
                 value: item.to_string(),
                 to_delete: false,
             });
@@ -196,7 +192,7 @@ fn add_vehicles_and_drivers_garage(
     } else if status == "3" {
         for item in GARAGE_STATUS_VEHICLES_3.iter() {
             vec_items_vehicles.push(VecItemsReplace {
-                index: vehicle_number_index,
+                index: garage_index,
                 value: item.to_string(),
                 to_delete: false,
             });
@@ -204,7 +200,7 @@ fn add_vehicles_and_drivers_garage(
 
         for item in GARAGE_STATUS_DRIVERS_3.iter() {
             vec_items_drivers.push(VecItemsReplace {
-                index: driver_number_index,
+                index: garage_index,
                 value: item.to_string(),
                 to_delete: false,
             });
@@ -212,7 +208,7 @@ fn add_vehicles_and_drivers_garage(
     } else if status == "6" {
         for item in GARAGE_STATUS_VEHICLES_6.iter() {
             vec_items_vehicles.push(VecItemsReplace {
-                index: vehicle_number_index,
+                index: garage_index,
                 value: item.to_string(),
                 to_delete: false,
             });
@@ -220,7 +216,7 @@ fn add_vehicles_and_drivers_garage(
 
         for item in GARAGE_STATUS_DRIVERS_6.iter() {
             vec_items_drivers.push(VecItemsReplace {
-                index: driver_number_index,
+                index: garage_index,
                 value: item.to_string(),
                 to_delete: false,
             });
@@ -354,7 +350,7 @@ pub fn set_any_status_garage(arr_val: &Vec<String>, status: &str) -> Option<Vec<
         };
 
         let items_add_vehicles_and_drivers =
-            match add_vehicles_and_drivers_garage(garage_index, garage_index, status) {
+            match add_vehicles_and_drivers_garage(garage_index, status) {
                 Some(val) => val,
                 None => continue,
             };
