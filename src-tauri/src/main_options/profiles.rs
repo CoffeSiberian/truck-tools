@@ -137,6 +137,10 @@ fn is_editable_garage(arr_val: &Vec<String>, garage_index: usize) -> bool {
         && !check_garage_trailers_exists(arr_val, garage_index);
 }
 
+fn is_valid_status(status: &str) -> bool {
+    return status == "1" || status == "2" || status == "3" || status == "6";
+}
+
 fn delete_vehicles_and_drivers_garage_range(
     arr_val: &Vec<String>,
     garage_index: usize,
@@ -312,6 +316,9 @@ pub fn get_garage_vec_names(arr_val: &Vec<String>) -> Option<Vec<VecItemsFind>> 
 }
 
 pub fn set_any_status_garage(arr_val: &Vec<String>, status: &str) -> Option<Vec<String>> {
+    if !is_valid_status(status) {
+        return None;
+    }
     let mut arr_val = arr_val.clone();
 
     let list_garage = match get_garage_vec_names(&arr_val) {
