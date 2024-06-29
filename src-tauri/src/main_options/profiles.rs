@@ -80,16 +80,11 @@ fn get_index_element(
 }
 
 fn check_garage_vehicle_exists(arr_val: &Vec<String>, index: usize) -> bool {
-    let mut vehicle_count: u16 = 0;
-    let mut vehicle_string_find = format!(" vehicles[{}]", vehicle_count);
-
     for item in arr_val.iter().skip(index) {
-        if item.contains(&vehicle_string_find) {
+        if item.contains(" vehicles[") {
             if !item.contains(" null") {
                 return true;
             }
-            vehicle_count += 1;
-            vehicle_string_find = format!(" vehicles[{}]", vehicle_count);
         }
 
         if item.contains("}") {
@@ -101,16 +96,27 @@ fn check_garage_vehicle_exists(arr_val: &Vec<String>, index: usize) -> bool {
 }
 
 fn check_garage_drivers_exists(arr_val: &Vec<String>, index: usize) -> bool {
-    let mut driver_count: u16 = 0;
-    let mut driver_string_find = format!(" drivers[{}]", driver_count);
-
     for item in arr_val.iter().skip(index) {
-        if item.contains(&driver_string_find) {
+        if item.contains(" drivers[") {
             if !item.contains(" null") {
                 return true;
             }
-            driver_count += 1;
-            driver_string_find = format!(" drivers[{}]:", driver_count);
+        }
+
+        if item.contains("}") {
+            break;
+        }
+    }
+
+    return false;
+}
+
+fn check_garage_trailers_exists(arr_val: &Vec<String>, index: usize) -> bool {
+    for item in arr_val.iter().skip(index) {
+        if item.contains(" trailers[") {
+            if !item.contains(" null") {
+                return true;
+            }
         }
 
         if item.contains("}") {
@@ -123,7 +129,8 @@ fn check_garage_drivers_exists(arr_val: &Vec<String>, index: usize) -> bool {
 
 fn is_editable_garage(arr_val: &Vec<String>, garage_index: usize) -> bool {
     return !check_garage_vehicle_exists(arr_val, garage_index)
-        && !check_garage_drivers_exists(arr_val, garage_index);
+        && !check_garage_drivers_exists(arr_val, garage_index)
+        && !check_garage_trailers_exists(arr_val, garage_index);
 }
 
 fn delete_vehicles_and_drivers_garage_range(
