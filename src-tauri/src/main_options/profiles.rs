@@ -1,6 +1,10 @@
 use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_items_replace::{VecGaragesReplace, VecItemsReplace};
 
+const GARAGE_STATUS_VEHICLES_6: [&str; 2] = [" vehicles: 1", " vehicles[0]: null"];
+
+const GARAGE_STATUS_DRIVERS_6: [&str; 2] = [" drivers: 1", " drivers[0]: null"];
+
 const GARAGE_STATUS_VEHICLES_2: [&str; 4] = [
     " vehicles: 3",
     " vehicles[0]: null",
@@ -195,6 +199,22 @@ fn add_vehicles_and_drivers_garage(
         }
 
         for item in GARAGE_STATUS_DRIVERS_3.iter() {
+            vec_items_drivers.push(VecItemsReplace {
+                index: driver_number_index,
+                value: item.to_string(),
+                to_delete: false,
+            });
+        }
+    } else if status == "6" {
+        for item in GARAGE_STATUS_VEHICLES_6.iter() {
+            vec_items_vehicles.push(VecItemsReplace {
+                index: vehicle_number_index,
+                value: item.to_string(),
+                to_delete: false,
+            });
+        }
+
+        for item in GARAGE_STATUS_DRIVERS_6.iter() {
             vec_items_drivers.push(VecItemsReplace {
                 index: driver_number_index,
                 value: item.to_string(),
