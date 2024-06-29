@@ -299,6 +299,16 @@ pub fn set_any_status_garage(arr_val: &Vec<String>, status: &str) -> Option<Vec<
             continue;
         }
 
+        if status == "1" {
+            let garage_status = match set_garage_status(&arr_val, garage_index, status) {
+                Some(val) => val,
+                None => continue,
+            };
+
+            arr_val[garage_status.index] = garage_status.value;
+            continue;
+        }
+
         match delete_vehicles_and_drivers_garage_range(&arr_val, garage_index) {
             Some(val) => {
                 let index_vehicle_number = val.0;
