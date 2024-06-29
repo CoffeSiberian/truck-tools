@@ -361,6 +361,23 @@ export const setProfileExperience = async (
 	return res.res;
 };
 
+export const setProfileGarageStatus = async (
+	dirSave: string,
+	status: string
+): Promise<boolean> => {
+	const descriptSucces = await descriptFiles(dirSave, "game.sii");
+	if (!descriptSucces) return false;
+
+	const rustParams = {
+		dirSave: dirSave + "/game.sii",
+		status,
+	};
+
+	const invoceRes = await invoke("set_any_garage_status", rustParams);
+	const res = JSON.parse(invoceRes as string) as responseRustTypes;
+	return res.res;
+};
+
 export const getListEngines = async (): Promise<EnginesTypes | undefined> => {
 	const invoceRes = await invoke("get_list_engines");
 	const res = JSON.parse(invoceRes as string) as responseTrucksEngines;
