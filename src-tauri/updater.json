@@ -1,11 +1,11 @@
 {
-	"version": "v0.1.3",
-	"notes": "- Fix taking negative value RGB colors",
-	"pub_date": "2024-06-23T22:00:00-03:00",
+	"version": "v0.2.0",
+	"notes": "New options to modify the game profile\n\n- Ability to add money\n- Ability to add experience\n- Change purchase status of all garages",
+	"pub_date": "2024-06-30T03:00:00-03:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmJELzV4N0JwbWJnUXh2L2k4dy9PbGRuOTJJYTQ2S3ZoTEl1RXRPZEloMGF5Mm55emR2MTAzNW00aXpyOVhsTHlCRHhJUWNyVDlmekpINVBUekZyOUFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzE5MTk4NjM4CWZpbGU6VHJ1Y2sgVG9vbHNfMC4xLjNfeDY0X2VuLVVTLm1zaS56aXAKUGF1d3lVK1NqS245SWNsQjFKRDU3RmV4eWFRSmlPYklWQ3hRZit2bTNzSzB3NktZL1VuQTZzU0hIMWJNS09DcHU5Rm50aTVtcFRvOGRrclJTblZqQkE9PQo=",
-			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.1.3/Truck_Tools_0.1.3_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlRHSmVVcktpSGIvVVg1aWxOMlZrayt1a2VyQVQzTmNNaHpjVVFnMVhKV0Y4N09yc3BJNVZhaEdjUGxPRWtaRUxHVHBGMkY4emdXdmxEVkNuck9MQ2d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzE5NzMwNDM1CWZpbGU6VHJ1Y2sgVG9vbHNfMC4yLjBfeDY0X2VuLVVTLm1zaS56aXAKMEMrY05kR2ZyRGYxTzFSTmQ0ekxRR25hYmVXeTM1UWlrc2ZqaUYxYitjanVDNEpRYjUvZ3hBMWZoM05hR2xrTkFvaWgwRFNQRlBZNWtieXZ2SVhsQkE9PQo=",
+			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.2.0/Truck_Tools_0.2.0_x64_en-US.msi.zip"
 		}
 	}
 }
