@@ -6,6 +6,7 @@ import testImage from "../../../static/img/testimg.webp";
 // modals
 import SetMoney from "./Modal/SetMoney";
 import SetExperience from "./Modal/SetExperience";
+import SetGarageStatus from "./Modal/SetGarageStatus";
 
 const ProfilesOptions = () => {
 	const items = [
@@ -22,6 +23,13 @@ const ProfilesOptions = () => {
 			description: "Add experience to your profile",
 			image: testImage,
 			modal: <SetExperience />,
+		},
+		{
+			id: "3",
+			title: "Set any garages status",
+			description: "Set any garages status to your profile",
+			image: testImage,
+			modal: <SetGarageStatus />,
 		},
 	];
 
