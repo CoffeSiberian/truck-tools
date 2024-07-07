@@ -1,11 +1,11 @@
 {
-	"version": "v0.2.0",
-	"notes": "New options to modify the game profile\n\n- Ability to add money\n- Ability to add experience\n- Change purchase status of all garages",
-	"pub_date": "2024-06-30T03:00:00-03:00",
+	"version": "v0.3.0",
+	"notes": "- Implemented the SII_Decrypt library to improve compatibility when decrypting save games.\n\n- Improved performance when applying changes (this is because decryption results are loaded to RAM and not to disk).",
+	"pub_date": "2024-07-07T01:00:00-04:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlRHSmVVcktpSGIvVVg1aWxOMlZrayt1a2VyQVQzTmNNaHpjVVFnMVhKV0Y4N09yc3BJNVZhaEdjUGxPRWtaRUxHVHBGMkY4emdXdmxEVkNuck9MQ2d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzE5NzMwNDM1CWZpbGU6VHJ1Y2sgVG9vbHNfMC4yLjBfeDY0X2VuLVVTLm1zaS56aXAKMEMrY05kR2ZyRGYxTzFSTmQ0ekxRR25hYmVXeTM1UWlrc2ZqaUYxYitjanVDNEpRYjUvZ3hBMWZoM05hR2xrTkFvaWgwRFNQRlBZNWtieXZ2SVhsQkE9PQo=",
-			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.2.0/Truck_Tools_0.2.0_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dllFSnlQQkJ2L1FTNldvNVo0ZGhUMytpS3REU2NoUGMyTFVtNS9tWXVURkhnK3QvbXg4cm1UbTgvOWJubjJ6NjRkZ3ROT1FubFMxUllnVGw2SkVNaFFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzIwMzMxMTQ3CWZpbGU6VHJ1Y2sgVG9vbHNfMC4zLjBfeDY0X2VuLVVTLm1zaS56aXAKZ2VyeTZvcGFDQnduTjdGalRaZlZUUlpUKzNvSndNNVV0S1gycUpWN091K3htY095OTNaWlJ2cTA2UFIzQThuZm5lZjZIaGxWSWdwZlZ4a1JnRjNSRFE9PQo=",
+			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.3.0/Truck_Tools_0.3.0_x64_en-US.msi.zip"
 		}
 	}
 }
