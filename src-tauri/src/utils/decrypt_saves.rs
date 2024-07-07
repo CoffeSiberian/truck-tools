@@ -1,5 +1,5 @@
 use libloading::{Library, Symbol};
-use std::fs::File;
+use std::fs::{write, File};
 use std::io::Read;
 use std::os::raw::c_uint;
 
@@ -23,6 +23,13 @@ fn read_file_bin(path: &str) -> Option<Vec<u8>> {
     match file.read_to_end(&mut buffer) {
         Ok(_) => Some(buffer),
         Err(_) => None,
+    }
+}
+
+fn save_file(path: &String, file_data: &String) -> bool {
+    match write(path, file_data) {
+        Ok(_) => true,
+        Err(_) => false,
     }
 }
 
@@ -160,5 +167,17 @@ pub async fn decrypt_file(bin_dir: &str) -> Option<String> {
             };
         }
         _ => return None,
+    }
+}
+
+pub async fn decrypt_file_to_save(bin_dir: &str) -> bool {
+    let string_file = match decrypt_file(bin_dir).await {
+        Some(res) => res,
+        None => return false,
+    };
+
+    match save_file(&bin_dir.to_string(), &string_file) {
+        true => true,
+        false => false,
     }
 }

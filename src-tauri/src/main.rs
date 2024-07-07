@@ -27,6 +27,7 @@ use main_options::trucks::{
 };
 use serde_json::json;
 use structs::vec_save_games::VecSaveGames;
+use utils::decrypt_saves::decrypt_file_to_save;
 use utils::file_edit::{
     get_list_save_count, get_list_save_game, get_list_save_game_dirs, get_rgb_hex_to_game_format,
     read_file_text, save_file,
@@ -36,8 +37,18 @@ const RESPONSE_FALSE: &str = r#"{"res": false}"#;
 const RESPONSE_TRUE: &str = r#"{"res": true}"#;
 
 #[tauri::command]
+async fn decrypt_to_save(dir_save: &str) -> Result<String, ()> {
+    let result: bool = decrypt_file_to_save(dir_save).await;
+
+    if result {
+        return Ok(RESPONSE_TRUE.to_string());
+    }
+
+    return Ok(RESPONSE_FALSE.to_string());
+}
+
+#[tauri::command]
 async fn set_cargo_mass_trailers_and_slave(cargo_mass: &str, dir_save: &str) -> Result<String, ()> {
-    // 100 ms
     let file: Vec<String> = match read_file_text(dir_save).await {
         Some(file) => file,
         None => return Ok(RESPONSE_FALSE.to_string()),
@@ -540,6 +551,7 @@ async fn set_any_garage_status(dir_save: &str, status: &str) -> Result<String, (
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
+            decrypt_to_save,
             set_cargo_mass_trailers_and_slave,
             set_unlock_current_trailers,
             set_cargo_mass_def_trailers,

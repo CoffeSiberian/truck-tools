@@ -100,7 +100,7 @@ const SelectProfile = () => {
 									disabled={!selectedSave}
 									onPress={
 										selectedSave
-											? () => descriptFiles(selectedSave.dir, "game.sii")
+											? () => descriptFiles(selectedSave.dir + "/game.sii")
 											: undefined
 									}
 									endContent={<IconBinary stroke={2} />}

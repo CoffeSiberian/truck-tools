@@ -2,7 +2,7 @@ import { Buffer } from "buffer";
 
 // tauri
 import { documentDir } from "@tauri-apps/api/path";
-import { exists, copyFile } from "@tauri-apps/api/fs";
+import { exists } from "@tauri-apps/api/fs";
 import { join } from "@tauri-apps/api/path";
 import { Command } from "@tauri-apps/api/shell";
 import { convertFileSrc } from "@tauri-apps/api/tauri";
@@ -45,23 +45,14 @@ const getProfileSavesCount = async (profilePath: string): Promise<number> => {
 	return res.saves;
 };
 
-export const descriptFiles = async (
-	dir: string,
-	fileName: string
-): Promise<boolean> => {
-	try {
-		const gameSiiJoin = await join(dir, fileName);
-		await copyFile(gameSiiJoin, `${dir}/${fileName}.bak`);
+export const descriptFiles = async (path: string): Promise<boolean> => {
+	const rustParams = {
+		dirSave: path,
+	};
 
-		const command = Command.sidecar("bin/SII_Decrypt", `${gameSiiJoin}`);
-		const res = await command.execute();
-
-		if (res.code === null) return false;
-		if (res.code === -1) return false;
-		return true;
-	} catch (err) {
-		return false;
-	}
+	const invoceRes = await invoke("decrypt_to_save", rustParams);
+	const res = JSON.parse(invoceRes as string) as responseRustTypes;
+	return res.res;
 };
 
 export const openExplorer = async (path: string) => {
@@ -130,9 +121,6 @@ export const setChassisMassTrailer = async (
 	chassisMass: string,
 	bodyMass: string
 ): Promise<boolean> => {
-	const descriptSucces = await descriptFiles(dirSave, "game.sii");
-	if (!descriptSucces) return false;
-
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 		bodyMass,
@@ -147,9 +135,6 @@ export const setChassisMassTrailer = async (
 export const setUnlockCurrentTrailers = async (
 	dirSave: string
 ): Promise<boolean> => {
-	const descriptSucces = await descriptFiles(dirSave, "game.sii");
-	if (!descriptSucces) return false;
-
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 	};
@@ -163,9 +148,6 @@ export const setCargoMassTrailersAndSlave = async (
 	cargoMass: string,
 	dirSave: string
 ): Promise<boolean> => {
-	const descriptSucces = await descriptFiles(dirSave, "game.sii");
-	if (!descriptSucces) return false;
-
 	const rustParams = {
 		cargoMass,
 		dirSave: dirSave + "/game.sii",
@@ -176,14 +158,10 @@ export const setCargoMassTrailersAndSlave = async (
 		rustParams
 	);
 	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-
 	return res.res;
 };
 
 export const setRepairTruck = async (dirSave: string): Promise<boolean> => {
-	const descriptSucces = await descriptFiles(dirSave, "game.sii");
-	if (!descriptSucces) return false;
-
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 		wear: "0",
@@ -195,9 +173,6 @@ export const setRepairTruck = async (dirSave: string): Promise<boolean> => {
 };
 
 export const setRepairAllTruck = async (dirSave: string): Promise<boolean> => {
-	const descriptSucces = await descriptFiles(dirSave, "game.sii");
-	if (!descriptSucces) return false;
-
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 		wear: "0",
@@ -209,9 +184,6 @@ export const setRepairAllTruck = async (dirSave: string): Promise<boolean> => {
 };
 
 export const setFuelTruck = async (dirSave: string): Promise<boolean> => {
-	const descriptSucces = await descriptFiles(dirSave, "game.sii");
-	if (!descriptSucces) return false;
-
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 		fuel: "1",
@@ -223,9 +195,6 @@ export const setFuelTruck = async (dirSave: string): Promise<boolean> => {
 };
 
 export const setAllFuelTruck = async (dirSave: string): Promise<boolean> => {
-	const descriptSucces = await descriptFiles(dirSave, "game.sii");
-	if (!descriptSucces) return false;
-
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 		fuel: "1",
@@ -239,9 +208,6 @@ export const setAllFuelTruck = async (dirSave: string): Promise<boolean> => {
 export const setInfinitFuelTruck = async (
 	dirSave: string
 ): Promise<boolean> => {
-	const descriptSucces = await descriptFiles(dirSave, "game.sii");
-	if (!descriptSucces) return false;
-
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 	};
@@ -257,9 +223,6 @@ export const setLicensePlateTrailer = async (
 	bgPlateColor: string,
 	textPlateColor: string
 ): Promise<boolean> => {
-	const descriptSucces = await descriptFiles(dirSave, "game.sii");
-	if (!descriptSucces) return false;
-
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 		licensePlate: licensePlate,
@@ -278,9 +241,6 @@ export const setLicensePlateTruck = async (
 	bgPlateColor: string,
 	textPlateColor: string
 ): Promise<boolean> => {
-	const descriptSucces = await descriptFiles(dirSave, "game.sii");
-	if (!descriptSucces) return false;
-
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 		licensePlate: licensePlate,
@@ -297,9 +257,6 @@ export const setTruckEngine = async (
 	dirSave: string,
 	engineCode: string
 ): Promise<boolean> => {
-	const descriptSucces = await descriptFiles(dirSave, "game.sii");
-	if (!descriptSucces) return false;
-
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 		engineCode,
@@ -314,9 +271,6 @@ export const setTruckTransmission = async (
 	dirSave: string,
 	transmissionsCode: string
 ): Promise<boolean> => {
-	const descriptSucces = await descriptFiles(dirSave, "game.sii");
-	if (!descriptSucces) return false;
-
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 		transmissionsCode,
@@ -331,9 +285,6 @@ export const setProfileMoney = async (
 	dirSave: string,
 	money: string
 ): Promise<boolean> => {
-	const descriptSucces = await descriptFiles(dirSave, "game.sii");
-	if (!descriptSucces) return false;
-
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 		money,
@@ -348,9 +299,6 @@ export const setProfileExperience = async (
 	dirSave: string,
 	experience: string
 ): Promise<boolean> => {
-	const descriptSucces = await descriptFiles(dirSave, "game.sii");
-	if (!descriptSucces) return false;
-
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 		experience,
@@ -365,9 +313,6 @@ export const setProfileGarageStatus = async (
 	dirSave: string,
 	status: string
 ): Promise<boolean> => {
-	const descriptSucces = await descriptFiles(dirSave, "game.sii");
-	if (!descriptSucces) return false;
-
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 		status,
