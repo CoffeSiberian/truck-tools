@@ -8,13 +8,14 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [build-dependencies]
-tauri-build = { version = "1.5.2", features = [] }
+tauri-build = { version = "1", features = [] }
 
 [dependencies]
-tauri = { version = "1.6.8", features = [ "process-relaunch", "updater", "protocol-asset", "shell-open", "shell-sidecar", "path-all", "shell-execute", "fs-all", "process-command-api"] }
-serde = { version = "1.0.203", features = ["derive"] }
-serde_json = "1.0.118"
-uuid = "1.9.1"
+tauri = { version = "1", features = [ "process-relaunch", "updater", "protocol-asset", "shell-open", "shell-sidecar", "path-all", "shell-execute", "fs-all", "process-command-api"] }
+serde = { version = "1", features = ["derive"] }
+libloading = "0"
+serde_json = "1"
+uuid = "1"
 
 [features]
 # This feature is used for production builds or when a dev server is not specified, DO NOT REMOVE!!

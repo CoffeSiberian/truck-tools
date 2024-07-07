@@ -86,7 +86,8 @@
 				"icons/icon.icns",
 				"icons/icon.ico"
 			],
-			"externalBin": ["bin/SII_Decrypt"]
+			"externalBin": ["bin/SII_Decrypt"],
+			"resources": ["resources/SII_Decrypt.dll"]
 		}
 	}
 }

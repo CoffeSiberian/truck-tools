@@ -1,11 +1,13 @@
+use super::decrypt_saves::decrypt_file;
 use crate::structs::vec_save_games::{VecProfileDir, VecSaveGames};
 use std::fs::{read_dir, write, File};
-use std::io::prelude::*;
 use tauri::api::process::{Command, CommandEvent};
 use tauri::async_runtime::Receiver;
 use uuid::Uuid;
 
+#[allow(dead_code)]
 async fn read_file(path: &str) -> Option<File> {
+    // currently not in use but will be used with future functionalities
     let file = File::open(path);
 
     match file {
@@ -64,16 +66,11 @@ pub async fn save_file(path: String, content: Vec<String>) -> bool {
 }
 
 pub async fn read_file_text(path: &str) -> Option<Vec<String>> {
-    let readed_file: Option<File> = read_file(path).await;
+    let readed_file: Option<String> = decrypt_file(path).await;
 
     match readed_file {
-        Some(mut file) => {
-            let mut contents = String::new();
-
-            match file.read_to_string(&mut contents) {
-                Ok(_) => return Some(contents.split("\r\n").map(|x| x.to_string()).collect()),
-                Err(_) => return None,
-            }
+        Some(res) => {
+            return Some(res.split("\r\n").map(|s| s.to_owned()).collect());
         }
         None => return None,
     }
