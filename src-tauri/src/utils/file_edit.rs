@@ -1,8 +1,6 @@
 use super::decrypt_saves::decrypt_file;
 use crate::structs::vec_save_games::{VecProfileDir, VecSaveGames};
 use std::fs::{read_dir, write, File};
-use tauri::api::process::{Command, CommandEvent};
-use tauri::async_runtime::Receiver;
 use uuid::Uuid;
 
 #[allow(dead_code)]
@@ -32,30 +30,6 @@ async fn get_dir_content(path: String) -> Option<Vec<String>> {
         result.push(path.path().display().to_string());
     }
     return Some(result);
-}
-
-async fn execute_command(mut command_rx: Receiver<CommandEvent>) -> bool {
-    while let Some(event) = command_rx.recv().await {
-        match event {
-            CommandEvent::Terminated(_) => {
-                return true;
-            }
-            _ => {}
-        }
-    }
-    return false;
-}
-
-async fn descript_sii_file(path: String) -> bool {
-    match Command::new_sidecar("SII_Decrypt") {
-        Ok(command) => match command.args([path]).spawn() {
-            Ok((rx, _child)) => {
-                return execute_command(rx).await;
-            }
-            Err(_) => return false,
-        },
-        Err(_) => return false,
-    }
 }
 
 pub async fn save_file(path: String, content: Vec<String>) -> bool {
@@ -132,12 +106,6 @@ pub async fn get_list_save_game(
             {
                 continue;
             }
-        }
-
-        let descripted: bool = descript_sii_file(format!("{}/info.sii", item_path)).await;
-
-        if !descripted {
-            continue;
         }
 
         let file: Vec<String> =

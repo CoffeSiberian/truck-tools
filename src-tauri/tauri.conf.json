@@ -22,14 +22,8 @@
 			},
 			"shell": {
 				"execute": true,
-				"sidecar": true,
 				"open": true,
 				"scope": [
-					{
-						"name": "bin/SII_Decrypt",
-						"sidecar": true,
-						"args": true
-					},
 					{
 						"name": "explorer",
 						"cmd": "explorer",
@@ -86,7 +80,6 @@
 				"icons/icon.icns",
 				"icons/icon.ico"
 			],
-			"externalBin": ["bin/SII_Decrypt"],
 			"resources": ["resources/SII_Decrypt.dll"]
 		}
 	}
