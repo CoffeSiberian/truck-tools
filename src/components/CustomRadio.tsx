@@ -19,7 +19,7 @@ const CustomRadio: FC<CustomRadioProps> = ({
 			classNames={{
 				base: cn(
 					"m-0 bg-content1 hover:bg-content2 max-w-full w-full",
-					"flex-row-reverse cursor-pointer justify-between rounded-lg gap-4 p-4 border-2 border-transparent",
+					"flex-row-reverse cursor-pointer justify-between rounded-lg gap-2 p-2 border-2 border-transparent",
 					"data-[selected=true]:border-primary"
 				),
 			}}
