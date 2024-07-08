@@ -9,14 +9,19 @@ import {
 	ModalFooter,
 	Button,
 	useDisclosure,
-	Radio,
 	RadioGroup,
 } from "@nextui-org/react";
+import CustomRadio from "../../../../components/CustomRadio";
 import { setProfileGarageStatus } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
 import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";
+
+// images
+import smallGarage from "../../../../static/img/garages/small.webp";
+import mediumGarage from "../../../../static/img/garages/medium.webp";
+import largeGarage from "../../../../static/img/garages/large.webp";
 
 interface completedProps {
 	error: boolean;
@@ -81,15 +86,35 @@ const SetGarageStatus = () => {
 									profile
 								</p>
 								<RadioGroup
+									className="items-center"
 									value={GarageStatus}
 									onValueChange={(value) => setGarageStatus(value)}
 									orientation="horizontal"
 									label="Garage status"
 								>
-									<Radio value="1">Sell Garage</Radio>
-									<Radio value="6">Small Garage</Radio>
-									<Radio value="2">Medium Garage</Radio>
-									<Radio value="3">Large Garage</Radio>
+									<CustomRadio
+										selectedGarage={GarageStatus}
+										text="Sell Garage"
+										value="1"
+									/>
+									<CustomRadio
+										selectedGarage={GarageStatus}
+										image={smallGarage}
+										text="Small Garage"
+										value="6"
+									/>
+									<CustomRadio
+										selectedGarage={GarageStatus}
+										image={mediumGarage}
+										text="Medium Garage"
+										value="2"
+									/>
+									<CustomRadio
+										selectedGarage={GarageStatus}
+										image={largeGarage}
+										text="Large Garage"
+										value="3"
+									/>
 								</RadioGroup>
 								<div className="flex justify-center">
 									<AlertSave
