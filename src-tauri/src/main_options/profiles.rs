@@ -1,5 +1,7 @@
 use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_items_replace::{VecGaragesReplace, VecItemsReplace};
+use std::collections::HashSet;
+use std::vec;
 
 const GARAGE_STATUS_VEHICLES_6: [&str; 2] = [" vehicles: 1", " vehicles[0]: null"];
 
@@ -37,6 +39,8 @@ const GARAGE_STATUS_DRIVERS_3: [&str; 6] = [
     " drivers[4]: null",
 ];
 
+const CITIES_VISITED_FALSE: [&str; 2] = [" visited_cities: 0", " visited_cities_count: 0"];
+
 fn get_bank_id(arr_val: &Vec<String>) -> Option<VecItemsFind> {
     let mut bank_id: Option<VecItemsFind> = None;
 
@@ -62,6 +66,22 @@ fn get_index_element_rev(arr_val: &Vec<String>, element: &String) -> Option<usiz
     }
 
     return None;
+}
+
+fn get_all_city_names(arr_val: &Vec<String>) -> HashSet<String> {
+    let mut city_names: HashSet<String> = HashSet::new();
+
+    for item in arr_val.iter() {
+        if item.contains(" companies[") {
+            let split_item: Vec<&str> = item.split(":").collect();
+            let split_names: Vec<&str> = split_item[1].split(".").collect();
+            city_names.insert(split_names[3].to_owned());
+        } else if item.contains(" garages") {
+            break;
+        }
+    }
+
+    return city_names;
 }
 
 fn get_index_element(
@@ -156,6 +176,32 @@ fn delete_vehicles_and_drivers_garage_range(
         if item.contains(" drivers") {
             last_index = i;
             continue;
+        }
+
+        if item.contains("}") {
+            break;
+        }
+    }
+
+    if first_index == 0 || first_index == 0 {
+        return None;
+    }
+    return Some((first_index, last_index));
+}
+
+fn delete_visited_cities(arr_val: &Vec<String>) -> Option<(usize, usize)> {
+    let mut first_index: usize = 0;
+    let mut last_index: usize = 0;
+
+    for (i, item) in arr_val.iter().enumerate() {
+        if first_index == 0 && item.starts_with(" visited_cities") {
+            first_index = i;
+            continue;
+        }
+
+        if item.starts_with(" last_visited_city:") {
+            last_index = i;
+            break;
         }
 
         if item.contains("}") {
@@ -414,6 +460,47 @@ pub fn set_experience(arr_val: &Vec<String>, experience: &str) -> Option<Vec<Str
             break;
         }
     }
+
+    return Some(arr_val);
+}
+
+pub fn set_visited_cities(arr_val: &Vec<String>, visited_cities: bool) -> Option<Vec<String>> {
+    let mut arr_val = arr_val.clone();
+    let city_names = get_all_city_names(&arr_val);
+
+    let city_index_start: usize = match delete_visited_cities(&arr_val) {
+        Some((index_visited_cities_start, index_visited_cities_end)) => {
+            arr_val.drain(index_visited_cities_start..index_visited_cities_end);
+            index_visited_cities_start
+        }
+        None => return None,
+    };
+
+    if !visited_cities {
+        arr_val.splice(
+            city_index_start..city_index_start,
+            CITIES_VISITED_FALSE.iter().map(|x| x.to_string()),
+        );
+        return Some(arr_val);
+    }
+
+    let mut visited_cities_vec: Vec<String> =
+        vec![format!(" visited_cities: {}", city_names.len())];
+
+    let mut visited_cities_count_vec: Vec<String> =
+        vec![format!(" visited_cities_count: {}", city_names.len())];
+
+    let mut result_cities: Vec<String> = Vec::new();
+
+    for (i, item) in city_names.iter().enumerate() {
+        visited_cities_vec.push(format!(" visited_cities[{}]: {}", i, item));
+        visited_cities_count_vec.push(format!(" visited_cities_count[{}]: 1", i));
+    }
+
+    result_cities.extend(visited_cities_vec);
+    result_cities.extend(visited_cities_count_vec);
+
+    arr_val.splice(city_index_start..city_index_start, result_cities);
 
     return Some(arr_val);
 }

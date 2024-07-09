@@ -5,7 +5,9 @@ mod main_options;
 mod structs;
 mod utils;
 
-use main_options::profiles::{set_any_status_garage, set_bank_money, set_experience};
+use main_options::profiles::{
+    set_any_status_garage, set_bank_money, set_experience, set_visited_cities,
+};
 use main_options::trailers::{
     get_my_trailer_id, get_slave_trailers_id, get_trailer_def_id, get_trailer_def_index,
     get_trailer_index, set_any_slave_trailers_weight, set_cargo_mass_trailer,
@@ -548,6 +550,23 @@ async fn set_any_garage_status(dir_save: &str, status: &str) -> Result<String, (
     return Ok(RESPONSE_TRUE.to_string());
 }
 
+#[tauri::command]
+async fn set_cities_visited(dir_save: &str, cities_visited: bool) -> Result<String, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let visited_cities: Vec<String> = match set_visited_cities(&file, cities_visited) {
+        Some(visited_cities) => visited_cities,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    save_file(dir_save.to_string(), visited_cities).await;
+
+    return Ok(RESPONSE_TRUE.to_string());
+}
+
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
@@ -572,6 +591,7 @@ fn main() {
             set_profile_money,
             set_profile_experience,
             set_any_garage_status,
+            set_cities_visited,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
