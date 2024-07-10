@@ -1,5 +1,6 @@
 use crate::structs::vec_items_find::VecItemsFind;
-use crate::structs::vec_items_replace::VecItemsReplace;
+
+const COUNTRY_VALIDITY: &str = " country_validity: 0";
 
 fn get_vec_trailers(arr_val: &Vec<String>) -> Option<Vec<VecItemsFind>> {
     let max_counter: u16 = 20;
@@ -58,18 +59,15 @@ fn get_vec_license_plate_edit(
     let value_put: String = format!(" license_plate: \"{}\"", value);
 
     for (i, item) in arr_val.iter().enumerate().skip(index) {
-        let option_values: Vec<&str> = item.split(':').collect();
-
-        if option_values.len() >= 2 {
-            if option_values[0] == " license_plate" {
-                return Some(VecItemsFind {
-                    index: i,
-                    value: value_put,
-                });
-            }
+        if item.contains(" license_plate:") {
+            return Some(VecItemsFind {
+                index: i,
+                value: value_put,
+            });
         }
-        if option_values[0] == "}" {
-            break;
+
+        if item.contains("}") {
+            return None;
         }
     }
 
@@ -85,15 +83,12 @@ pub fn set_cargo_mass_trailer(
     let mut arr_val_clone: Vec<String> = arr_val.clone();
 
     for (i, item) in arr_val_clone.iter().enumerate().skip(index) {
-        let option_values: Vec<&str> = item.split(':').collect();
-
-        if option_values.len() >= 2 {
-            if option_values[0] == " cargo_mass" {
-                arr_val_clone[i] = value_find;
-                break;
-            }
+        if item.contains(" cargo_mass:") {
+            arr_val_clone[i] = value_find;
+            break;
         }
     }
+
     return Some(arr_val_clone);
 }
 
@@ -107,27 +102,34 @@ pub fn set_chassis_and_body_mass_def_trailers(
     let value_find_body: String = format!(" body_mass: {}", body_mass);
     let mut arr_val_clone: Vec<String> = arr_val.clone();
 
+    let mut chassis_index: usize = 0;
+    let mut body_index: usize = 0;
     for (i, item) in arr_val_clone.iter().enumerate().skip(index) {
-        let option_values: Vec<&str> = item.split(':').collect();
+        if chassis_index == 0 && item.contains(" chassis_mass:") {
+            chassis_index = i;
+            continue;
+        }
 
-        if option_values.len() >= 2 {
-            if option_values[0] == " chassis_mass" {
-                arr_val_clone[i] = value_find_chassis;
-                break;
-            }
+        if body_index == 0 && item.contains(" body_mass:") {
+            body_index = i;
+            continue;
+        }
+
+        if chassis_index != 0 && body_index != 0 {
+            break;
+        }
+
+        if item.contains("}") {
+            break;
         }
     }
 
-    for (i, item) in arr_val_clone.iter().enumerate().skip(index) {
-        let option_values: Vec<&str> = item.split(':').collect();
-
-        if option_values.len() >= 2 {
-            if option_values[0] == " body_mass" {
-                arr_val_clone[i] = value_find_body;
-                break;
-            }
-        }
+    if chassis_index == 0 || body_index == 0 {
+        return None;
     }
+
+    arr_val_clone[chassis_index] = value_find_chassis;
+    arr_val_clone[body_index] = value_find_body;
 
     return Some(arr_val_clone);
 }
@@ -137,48 +139,26 @@ pub fn set_remove_trailer_restricted_areas(
     index: usize,
 ) -> Option<Vec<String>> {
     let mut arr_val_clone: Vec<String> = arr_val.clone();
-    let mut counter_areas: u16 = 0;
-    let mut items_to_edit: Vec<VecItemsReplace> = Vec::new();
+
+    let mut index_start: usize = 0;
+    let mut index_end: usize = 0;
 
     for (i, item) in arr_val_clone.iter().enumerate().skip(index) {
-        let option_values: Vec<&str> = item.split(':').collect();
+        if index_start == 0 && item.contains(" country_validity:") {
+            index_start = i;
+        }
 
-        if option_values.len() >= 2 {
-            if option_values[0] == " country_validity" {
-                if option_values[1] == " 0" {
-                    break;
-                }
-                items_to_edit.push(VecItemsReplace {
-                    index: i,
-                    value: " country_validity: 0".to_string(),
-                    to_delete: false,
-                });
-                continue;
-            }
-
-            if option_values[0] == format!(" country_validity[{}]", counter_areas) {
-                items_to_edit.push(VecItemsReplace {
-                    index: i,
-                    value: "".to_string(),
-                    to_delete: true,
-                });
-                counter_areas += 1;
-                let next_element: Vec<&str> = arr_val_clone[i + 1].split('[').collect();
-                if next_element[0] != " country_validity".to_string() {
-                    break;
-                }
-            }
+        if item.contains(" country_validity[") {
+            index_end = i;
         }
     }
 
-    items_to_edit.reverse();
-    for item in items_to_edit.iter() {
-        if item.to_delete {
-            arr_val_clone.remove(item.index);
-        } else {
-            arr_val_clone[item.index] = item.value.clone();
-        }
+    if index_start == 0 || index_end == 0 {
+        return None;
     }
+
+    arr_val_clone.drain(index_start..index_end + 1);
+    arr_val_clone[index_start] = COUNTRY_VALIDITY.to_string();
 
     return Some(arr_val_clone);
 }
@@ -234,32 +214,20 @@ pub fn set_any_slave_trailers_weight(
 }
 
 pub fn get_slave_trailers_id(arr_val: &Vec<String>, index: usize) -> Option<(String, usize)> {
-    let mut result: String = String::new();
-    let mut index_result: usize = 0;
-
     for (i, item) in arr_val.iter().enumerate().skip(index) {
-        let option_values: Vec<&str> = item.split(':').collect();
-
-        if option_values.len() >= 2 {
-            if option_values[0] == " slave_trailer" {
-                if option_values[1] == " null" {
-                    break;
-                } else {
-                    result.push_str(option_values[1]);
-                    index_result = i;
-                    break;
-                }
+        if item.contains(" slave_trailer:") {
+            if item.contains(" null") {
+                return None;
             }
+            let option_values: Vec<&str> = item.split(':').collect();
+            return Some((option_values[1].to_string(), i));
         }
 
-        if option_values[0] == "}" {
-            break;
+        if item.contains("}") {
+            return None;
         }
     }
 
-    if !result.is_empty() {
-        return Some((result, index_result));
-    }
     return None;
 }
 
@@ -269,90 +237,53 @@ pub fn get_trailer_index(
     index: &usize,
 ) -> Option<usize> {
     let value_find: String = format!("{} {}", trailer_id, "{");
-    let mut result: String = String::new();
 
     for (i, item) in arr_val.iter().enumerate().skip(*index) {
-        let option_values: Vec<&str> = item.split(':').collect();
-
-        if option_values.len() >= 2 {
-            if option_values[1] == value_find {
-                result.push_str(format!("{}", i).as_str());
-                break;
-            }
+        if item.contains(value_find.as_str()) {
+            return Some(i);
         }
     }
 
-    if !result.is_empty() {
-        return Some(result.parse::<usize>().unwrap());
-    }
     return None;
 }
 
 pub fn get_trailer_def_id(arr_val: &Vec<String>, index: usize) -> Option<String> {
-    let mut result: String = String::new();
-
     for item in arr_val.iter().skip(index) {
-        let option_values: Vec<&str> = item.split(':').collect();
-
-        if option_values.len() >= 2 {
-            if option_values[0] == " trailer_definition" {
-                if option_values[1] == " null" {
-                    break;
-                } else {
-                    result.push_str(option_values[1]);
-                    break;
-                }
+        if item.contains(" trailer_definition:") {
+            if item.contains(" null") {
+                return None;
             }
+            let option_values: Vec<&str> = item.split(':').collect();
+            return Some(option_values[1].to_string());
         }
     }
 
-    if !result.is_empty() {
-        return Some(result);
-    }
     return None;
 }
 
 pub fn get_trailer_def_index(arr_val: &Vec<String>, trailer_def_id: String) -> Option<usize> {
     let value_find: String = format!("{} {}", trailer_def_id, "{");
-    let mut result: String = String::new();
 
     for (i, item) in arr_val.iter().enumerate() {
-        let option_values: Vec<&str> = item.split(':').collect();
-
-        if option_values.len() >= 2 {
-            if option_values[1] == value_find {
-                result.push_str(format!("{}", i).as_str());
-                break;
-            }
+        if item.contains(value_find.as_str()) {
+            return Some(i);
         }
     }
 
-    if !result.is_empty() {
-        return Some(result.parse::<usize>().unwrap());
-    }
     return None;
 }
 
 pub fn get_my_trailer_id(arr_val: &Vec<String>) -> Option<(String, usize)> {
-    let mut result: String = String::new();
-    let mut index: usize = 0;
-
     for (i, item) in arr_val.iter().enumerate() {
-        let option_values: Vec<&str> = item.split(':').collect();
-
-        if option_values[0] == " assigned_trailer" {
-            if option_values[1] == " null" {
-                break;
+        if item.contains(" assigned_trailer:") {
+            if item.contains(" null") {
+                return None;
             }
-            index = i;
-            result.push_str(option_values[1]);
-            break;
+            let option_values: Vec<&str> = item.split(':').collect();
+            return Some((option_values[1].to_string(), i));
         }
     }
 
-    if !result.is_empty() {
-        return Some((result, index));
-    }
     return None;
 }
 
