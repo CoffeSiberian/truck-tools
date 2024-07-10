@@ -111,7 +111,7 @@ fn check_garage_vehicle_exists(arr_val: &Vec<String>, index: usize) -> bool {
             }
         }
 
-        if item.contains("}") {
+        if item == "}" {
             break;
         }
     }
@@ -127,7 +127,7 @@ fn check_garage_drivers_exists(arr_val: &Vec<String>, index: usize) -> bool {
             }
         }
 
-        if item.contains("}") {
+        if item == "}" {
             break;
         }
     }
@@ -143,7 +143,7 @@ fn check_garage_trailers_exists(arr_val: &Vec<String>, index: usize) -> bool {
             }
         }
 
-        if item.contains("}") {
+        if item == "}" {
             break;
         }
     }
@@ -178,7 +178,7 @@ fn delete_vehicles_and_drivers_garage_range(
             continue;
         }
 
-        if item.contains("}") {
+        if item == "}" {
             break;
         }
     }
@@ -204,7 +204,7 @@ fn delete_visited_cities(arr_val: &Vec<String>) -> Option<(usize, usize)> {
             break;
         }
 
-        if item.contains("}") {
+        if item == "}" {
             break;
         }
     }
@@ -285,7 +285,7 @@ fn set_garage_status(
             });
         }
 
-        if item.contains("}") {
+        if item == "}" {
             break;
         }
     }

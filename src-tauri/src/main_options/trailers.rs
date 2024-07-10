@@ -66,7 +66,7 @@ fn get_vec_license_plate_edit(
             });
         }
 
-        if item.contains("}") {
+        if item == "}" {
             return None;
         }
     }
@@ -119,7 +119,7 @@ pub fn set_chassis_and_body_mass_def_trailers(
             break;
         }
 
-        if item.contains("}") {
+        if item == "}" {
             break;
         }
     }
@@ -223,7 +223,7 @@ pub fn get_slave_trailers_id(arr_val: &Vec<String>, index: usize) -> Option<(Str
             return Some((option_values[1].to_string(), i));
         }
 
-        if item.contains("}") {
+        if item == "}" {
             return None;
         }
     }
