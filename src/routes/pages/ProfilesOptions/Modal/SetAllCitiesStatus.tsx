@@ -12,27 +12,26 @@ import {
 	RadioGroup,
 } from "@nextui-org/react";
 import CustomRadio from "../../../../components/CustomRadio";
-import { setProfileGarageStatus } from "../../../../utils/fileEdit";
+import { setProfileVisitedCities } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
 import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";
 
 // images
-import smallGarage from "../../../../static/img/garages/small.webp";
-import mediumGarage from "../../../../static/img/garages/medium.webp";
-import largeGarage from "../../../../static/img/garages/large.webp";
+import unvisited from "../../../../static/img/cities/unvisited.webp";
+import visited from "../../../../static/img/cities/visited.webp";
 
 interface completedProps {
 	error: boolean;
 	completed: boolean;
 }
 
-const SetGarageStatus = () => {
+const SetAllCitiesStatus = () => {
 	const { selectedSave } = useProfileContex();
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-	const [GarageStatus, setGarageStatus] = useState<string>("3");
+	const [GarageStatus, setGarageStatus] = useState<string>("1");
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [completed, setCompleted] = useState<completedProps>({
 		error: false,
@@ -46,7 +45,8 @@ const SetGarageStatus = () => {
 
 		if (selectedSave) {
 			setIsLoading(true);
-			const res = await setProfileGarageStatus(selectedSave.dir, GarageStatus);
+			const boolStatus = GarageStatus === "1" ? true : false;
+			const res = await setProfileVisitedCities(selectedSave.dir, boolStatus);
 			setCompleted({
 				error: !res,
 				completed: true,
@@ -77,43 +77,29 @@ const SetGarageStatus = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								Set Garage Status
+								Set all cities visited status
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="py-1">
-								<p>
-									Select the status of the garage you want to apply to your
-									profile
-								</p>
+								<p>Select the status of all cities visited</p>
 								<RadioGroup
 									className="items-center"
 									value={GarageStatus}
 									onValueChange={(value) => setGarageStatus(value)}
 									orientation="horizontal"
-									label="Garage status"
+									label="Visited cities"
 								>
 									<CustomRadio
 										selectedGarage={GarageStatus}
-										text="Sell Garage"
+										image={visited}
+										text="Visited all cities"
 										value="1"
 									/>
 									<CustomRadio
 										selectedGarage={GarageStatus}
-										image={smallGarage}
-										text="Small Garage"
-										value="6"
-									/>
-									<CustomRadio
-										selectedGarage={GarageStatus}
-										image={mediumGarage}
-										text="Medium Garage"
-										value="2"
-									/>
-									<CustomRadio
-										selectedGarage={GarageStatus}
-										image={largeGarage}
-										text="Large Garage"
-										value="3"
+										image={unvisited}
+										text="Unvisited all cities"
+										value="0"
 									/>
 								</RadioGroup>
 								<div className="flex justify-center">
@@ -149,4 +135,4 @@ const SetGarageStatus = () => {
 	);
 };
 
-export default SetGarageStatus;
+export default SetAllCitiesStatus;
