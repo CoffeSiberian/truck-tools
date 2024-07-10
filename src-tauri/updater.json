@@ -1,11 +1,11 @@
 {
-	"version": "v0.3.0",
-	"notes": "- Implemented the SII_Decrypt library to improve compatibility when decrypting save games.\n\n- Improved performance when applying changes (this is because decryption results are loaded to RAM and not to disk).",
-	"pub_date": "2024-07-07T01:00:00-04:00",
+	"version": "v0.3.1",
+	"notes": "- Added images to differentiate garage sizes\n\n- A new option was added to profiles to be able to discover or not all the cities\n\n- Code refactored to make it more readable and optimal",
+	"pub_date": "2024-07-10T12:00:00-04:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dllFSnlQQkJ2L1FTNldvNVo0ZGhUMytpS3REU2NoUGMyTFVtNS9tWXVURkhnK3QvbXg4cm1UbTgvOWJubjJ6NjRkZ3ROT1FubFMxUllnVGw2SkVNaFFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzIwMzMxMTQ3CWZpbGU6VHJ1Y2sgVG9vbHNfMC4zLjBfeDY0X2VuLVVTLm1zaS56aXAKZ2VyeTZvcGFDQnduTjdGalRaZlZUUlpUKzNvSndNNVV0S1gycUpWN091K3htY095OTNaWlJ2cTA2UFIzQThuZm5lZjZIaGxWSWdwZlZ4a1JnRjNSRFE9PQo=",
-			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.3.0/Truck_Tools_0.3.0_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlN2eDJ6akdBWFVaUnFpai9yRFM3RG91TndXcmpKemtXQ0thckQzVkxCaThQODMrRzhGRDVmUnIrNHNUeU5URUhvRWNDTENKRlNRbm5GcGczaGZ2bVFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzIwNTg2NDQyCWZpbGU6VHJ1Y2sgVG9vbHNfMC4zLjFfeDY0X2VuLVVTLm1zaS56aXAKSFVLcDU4cGcvbkFKdXZqMmdrcnVOcy9QaW5QbkphcXhhRHUvb3Z6cms1cjI3MUtjWThTZm0vb2RDRlJkM1BRa1ZXcUdBWk5wc2hTVldvaHlmQ3NlRHc9PQo=",
+			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.3.1/Truck_Tools_0.3.1_x64_en-US.msi.zip"
 		}
 	}
 }

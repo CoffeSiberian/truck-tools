@@ -53,7 +53,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 - [x] Add infinite money
 - [x] Add level 100
 - [x] Unlock garages
-- [ ] Unlock all cities
+- [x] Unlock all cities
 - [ ] Unlock all dealerships
 - [ ] Unlock skills
 - [ ] Profile backup
