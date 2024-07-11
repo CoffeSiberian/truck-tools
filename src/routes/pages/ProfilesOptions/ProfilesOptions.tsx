@@ -8,6 +8,7 @@ import SetMoney from "./Modal/SetMoney";
 import SetExperience from "./Modal/SetExperience";
 import SetGarageStatus from "./Modal/SetGarageStatus";
 import SetAllCitiesStatus from "./Modal/SetAllCitiesStatus";
+import SetAllDealerStatus from "./Modal/SetAllDealerStatus";
 
 const ProfilesOptions = () => {
 	const items = [
@@ -38,6 +39,13 @@ const ProfilesOptions = () => {
 			description: "Set any city visited status to your profile",
 			image: testImage,
 			modal: <SetAllCitiesStatus />,
+		},
+		{
+			id: "5",
+			title: "Set all dealer status",
+			description: "Set all dealer status to your profile",
+			image: testImage,
+			modal: <SetAllDealerStatus />,
 		},
 	];
 

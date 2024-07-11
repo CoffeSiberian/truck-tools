@@ -12,22 +12,22 @@ import {
 	RadioGroup,
 } from "@nextui-org/react";
 import CustomRadio from "../../../../components/CustomRadio";
-import { setProfileVisitedCities } from "../../../../utils/fileEdit";
+import { setProfileDealerDiscovered } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
 import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";
 
 // images
-import unvisited from "../../../../static/img/cities/unvisited.webp";
-import visited from "../../../../static/img/cities/visited.webp";
+import discovered from "../../../../static/img/dealers/discovered.webp";
+import undiscovered from "../../../../static/img/dealers/undiscovered.webp";
 
 interface completedProps {
 	error: boolean;
 	completed: boolean;
 }
 
-const SetAllCitiesStatus = () => {
+const SetAllDealerStatus = () => {
 	const { selectedSave } = useProfileContex();
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
@@ -45,7 +45,7 @@ const SetAllCitiesStatus = () => {
 
 		if (selectedSave) {
 			setIsLoading(true);
-			const res = await setProfileVisitedCities(
+			const res = await setProfileDealerDiscovered(
 				selectedSave.dir,
 				GarageStatus === "1" ? true : false
 			);
@@ -79,11 +79,11 @@ const SetAllCitiesStatus = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								Set all cities visited status
+								Set all dealer status
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="py-1">
-								<p>Select the status of all cities visited</p>
+								<p>Select the status of all the dealers in your profile</p>
 								<RadioGroup
 									className="items-center"
 									value={GarageStatus}
@@ -93,14 +93,14 @@ const SetAllCitiesStatus = () => {
 								>
 									<CustomRadio
 										selectedGarage={GarageStatus}
-										image={visited}
-										text="Visited all cities"
+										image={discovered}
+										text="Discovered all dealers"
 										value="1"
 									/>
 									<CustomRadio
 										selectedGarage={GarageStatus}
-										image={unvisited}
-										text="Unvisited all cities"
+										image={undiscovered}
+										text="Undiscover all dealers"
 										value="0"
 									/>
 								</RadioGroup>
@@ -137,4 +137,4 @@ const SetAllCitiesStatus = () => {
 	);
 };
 
-export default SetAllCitiesStatus;
+export default SetAllDealerStatus;
