@@ -349,9 +349,9 @@ pub fn set_any_status_garage(arr_val: &Vec<String>, status: &str) -> Option<Vec<
     if !is_valid_status(status) {
         return None;
     }
-    let mut arr_val = arr_val.clone();
+    let mut arr_val_clone = arr_val.clone();
 
-    let list_garage = match get_garage_vec_names(&arr_val) {
+    let list_garage = match get_garage_vec_names(&arr_val_clone) {
         Some(val) => val,
         None => return None,
     };
@@ -359,26 +359,26 @@ pub fn set_any_status_garage(arr_val: &Vec<String>, status: &str) -> Option<Vec<
     for item in list_garage.iter().rev() {
         let garage_index = item.index;
 
-        if !is_editable_garage(&arr_val, garage_index) {
+        if !is_editable_garage(&arr_val_clone, garage_index) {
             continue;
         }
 
         if status == "1" {
-            let garage_status = match set_garage_status(&arr_val, garage_index, status) {
+            let garage_status = match set_garage_status(&arr_val_clone, garage_index, status) {
                 Some(val) => val,
                 None => continue,
             };
 
-            arr_val[garage_status.index] = garage_status.value;
+            arr_val_clone[garage_status.index] = garage_status.value;
             continue;
         }
 
-        match delete_vehicles_and_drivers_garage_range(&arr_val, garage_index) {
+        match delete_vehicles_and_drivers_garage_range(&arr_val_clone, garage_index) {
             Some(val) => {
                 let index_vehicle_number = val.0;
                 let index_driver_number = val.1;
 
-                arr_val.drain(index_vehicle_number..index_driver_number + 1);
+                arr_val_clone.drain(index_vehicle_number..index_driver_number + 1);
             }
             None => continue,
         };
@@ -388,12 +388,12 @@ pub fn set_any_status_garage(arr_val: &Vec<String>, status: &str) -> Option<Vec<
             None => continue,
         };
 
-        let garage_status = match set_garage_status(&arr_val, garage_index, status) {
+        let garage_status = match set_garage_status(&arr_val_clone, garage_index, status) {
             Some(val) => val,
             None => continue,
         };
 
-        arr_val[garage_status.index] = garage_status.value;
+        arr_val_clone[garage_status.index] = garage_status.value;
         let vehicles = items_add_vehicles_and_drivers
             .veicles
             .into_iter()
@@ -410,13 +410,13 @@ pub fn set_any_status_garage(arr_val: &Vec<String>, status: &str) -> Option<Vec<
         let mut vehicles_and_drivers = vehicles.clone();
         vehicles_and_drivers.extend(drivers.clone());
 
-        arr_val.splice(
+        arr_val_clone.splice(
             garage_index_to_splice..garage_index_to_splice,
             vehicles_and_drivers.into_iter(),
         );
     }
 
-    return Some(arr_val);
+    return Some(arr_val_clone);
 }
 
 pub fn set_bank_money(arr_val: &Vec<String>, money: &str) -> Option<Vec<String>> {
@@ -424,51 +424,51 @@ pub fn set_bank_money(arr_val: &Vec<String>, money: &str) -> Option<Vec<String>>
         Some(val) => val,
         None => return None,
     };
-    let mut arr_val = arr_val.clone();
+    let mut arr_val_clone = arr_val.clone();
 
-    for (i, item) in arr_val.iter().enumerate().skip(bank_id.index) {
+    for (i, item) in arr_val_clone.iter().enumerate().skip(bank_id.index) {
         let split_item: Vec<&str> = item.split(":").collect();
 
         if split_item[0] == " money_account" {
-            arr_val[i] = format!(" money_account: {}", money);
+            arr_val_clone[i] = format!(" money_account: {}", money);
             break;
         }
     }
 
-    return Some(arr_val);
+    return Some(arr_val_clone);
 }
 
 pub fn set_experience(arr_val: &Vec<String>, experience: &str) -> Option<Vec<String>> {
-    let mut arr_val = arr_val.clone();
+    let mut arr_val_clone = arr_val.clone();
 
     for (i, item) in arr_val.iter().enumerate() {
         if item.contains(" experience_points:") {
-            arr_val[i] = format!(" experience_points: {}", experience);
+            arr_val_clone[i] = format!(" experience_points: {}", experience);
             break;
         }
     }
 
-    return Some(arr_val);
+    return Some(arr_val_clone);
 }
 
 pub fn set_visited_cities(arr_val: &Vec<String>, visited_cities: bool) -> Option<Vec<String>> {
-    let mut arr_val = arr_val.clone();
-    let city_names = get_all_city_names(&arr_val);
+    let mut arr_val_clone = arr_val.clone();
+    let city_names = get_all_city_names(&arr_val_clone);
 
-    let city_index_start: usize = match delete_visited_cities(&arr_val) {
+    let city_index_start: usize = match delete_visited_cities(&arr_val_clone) {
         Some((index_visited_cities_start, index_visited_cities_end)) => {
-            arr_val.drain(index_visited_cities_start..index_visited_cities_end);
+            arr_val_clone.drain(index_visited_cities_start..index_visited_cities_end);
             index_visited_cities_start
         }
         None => return None,
     };
 
     if !visited_cities {
-        arr_val.splice(
+        arr_val_clone.splice(
             city_index_start..city_index_start,
             CITIES_VISITED_FALSE.iter().map(|x| x.to_string()),
         );
-        return Some(arr_val);
+        return Some(arr_val_clone);
     }
 
     let mut visited_cities_vec: Vec<String> =
@@ -487,7 +487,7 @@ pub fn set_visited_cities(arr_val: &Vec<String>, visited_cities: bool) -> Option
     result_cities.extend(visited_cities_vec);
     result_cities.extend(visited_cities_count_vec);
 
-    arr_val.splice(city_index_start..city_index_start, result_cities);
+    arr_val_clone.splice(city_index_start..city_index_start, result_cities);
 
-    return Some(arr_val);
+    return Some(arr_val_clone);
 }
