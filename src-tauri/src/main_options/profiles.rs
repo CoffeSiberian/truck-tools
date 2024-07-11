@@ -40,6 +40,7 @@ const GARAGE_STATUS_DRIVERS_3: [&str; 6] = [
 ];
 
 const CITIES_VISITED_FALSE: [&str; 2] = [" visited_cities: 0", " visited_cities_count: 0"];
+const DEALER_DISCOVERED_FALSE: &str = " unlocked_dealers: 0";
 
 fn get_bank_id(arr_val: &Vec<String>) -> Option<VecItemsFind> {
     let mut bank_id: Option<VecItemsFind> = None;
@@ -194,12 +195,38 @@ fn delete_visited_cities(arr_val: &Vec<String>) -> Option<(usize, usize)> {
     let mut last_index: usize = 0;
 
     for (i, item) in arr_val.iter().enumerate() {
-        if first_index == 0 && item.starts_with(" visited_cities") {
+        if first_index == 0 && item.starts_with(" visited_cities:") {
             first_index = i;
             continue;
         }
 
         if item.starts_with(" last_visited_city:") {
+            last_index = i;
+            break;
+        }
+
+        if item == "}" {
+            break;
+        }
+    }
+
+    if first_index == 0 || first_index == 0 {
+        return None;
+    }
+    return Some((first_index, last_index));
+}
+
+fn delete_visited_dealership(arr_val: &Vec<String>) -> Option<(usize, usize)> {
+    let mut first_index: usize = 0;
+    let mut last_index: usize = 0;
+
+    for (i, item) in arr_val.iter().enumerate() {
+        if first_index == 0 && item.starts_with(" unlocked_dealers:") {
+            first_index = i;
+            continue;
+        }
+
+        if item.starts_with(" unlocked_recruitments:") {
             last_index = i;
             break;
         }
@@ -488,6 +515,38 @@ pub fn set_visited_cities(arr_val: &Vec<String>, visited_cities: bool) -> Option
     result_cities.extend(visited_cities_count_vec);
 
     arr_val_clone.splice(city_index_start..city_index_start, result_cities);
+
+    return Some(arr_val_clone);
+}
+
+pub fn set_dealerships_discovered_status(
+    arr_val: &Vec<String>,
+    discovered: bool,
+) -> Option<Vec<String>> {
+    let mut arr_val_clone = arr_val.clone();
+    let city_names = get_all_city_names(&arr_val_clone);
+
+    let dealer_index_start: usize = match delete_visited_dealership(&arr_val_clone) {
+        Some((index_dealer_start, index_dealer_end)) => {
+            arr_val_clone.drain(index_dealer_start..index_dealer_end);
+            index_dealer_start
+        }
+        None => return None,
+    };
+
+    if !discovered {
+        arr_val_clone.insert(dealer_index_start, DEALER_DISCOVERED_FALSE.to_string());
+        return Some(arr_val_clone);
+    }
+
+    let mut dealer_discovered: Vec<String> =
+        vec![format!(" unlocked_dealers: {}", city_names.len())];
+
+    for (i, item) in city_names.iter().enumerate() {
+        dealer_discovered.push(format!(" unlocked_dealers[{}]: {}", i, item));
+    }
+
+    arr_val_clone.splice(dealer_index_start..dealer_index_start, dealer_discovered);
 
     return Some(arr_val_clone);
 }

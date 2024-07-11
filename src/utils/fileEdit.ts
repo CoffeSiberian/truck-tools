@@ -337,6 +337,20 @@ export const setProfileVisitedCities = async (
 	return res.res;
 };
 
+export const setProfileDealerDiscovered = async (
+	dirSave: string,
+	discovered: boolean
+): Promise<boolean> => {
+	const rustParams = {
+		dirSave: dirSave + "/game.sii",
+		discovered,
+	};
+
+	const invoceRes = await invoke("set_dealerships_discovered", rustParams);
+	const res = JSON.parse(invoceRes as string) as responseRustTypes;
+	return res.res;
+};
+
 export const getListEngines = async (): Promise<EnginesTypes | undefined> => {
 	const invoceRes = await invoke("get_list_engines");
 	const res = JSON.parse(invoceRes as string) as responseTrucksEngines;

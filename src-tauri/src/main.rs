@@ -6,7 +6,8 @@ mod structs;
 mod utils;
 
 use main_options::profiles::{
-    set_any_status_garage, set_bank_money, set_experience, set_visited_cities,
+    set_any_status_garage, set_bank_money, set_dealerships_discovered_status, set_experience,
+    set_visited_cities,
 };
 use main_options::trailers::{
     get_my_trailer_id, get_slave_trailers_id, get_trailer_def_id, get_trailer_def_index,
@@ -567,6 +568,24 @@ async fn set_cities_visited(dir_save: &str, cities_visited: bool) -> Result<Stri
     return Ok(RESPONSE_TRUE.to_string());
 }
 
+#[tauri::command]
+async fn set_dealerships_discovered(dir_save: &str, discovered: bool) -> Result<String, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let discovered_dealerships: Vec<String> =
+        match set_dealerships_discovered_status(&file, discovered) {
+            Some(discovered_dealerships) => discovered_dealerships,
+            None => return Ok(RESPONSE_FALSE.to_string()),
+        };
+
+    save_file(dir_save.to_string(), discovered_dealerships).await;
+
+    return Ok(RESPONSE_TRUE.to_string());
+}
+
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
@@ -592,6 +611,7 @@ fn main() {
             set_profile_experience,
             set_any_garage_status,
             set_cities_visited,
+            set_dealerships_discovered,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
