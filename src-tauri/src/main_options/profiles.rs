@@ -1,3 +1,4 @@
+use crate::structs::experience_skills::ExperienceSkills;
 use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_items_replace::{VecGaragesReplace, VecItemsReplace};
 use std::collections::HashSet;
@@ -67,6 +68,19 @@ fn get_index_element_rev(arr_val: &Vec<String>, element: &String) -> Option<usiz
     }
 
     return None;
+}
+
+fn get_number_from_binary_string(binary_string: &str) -> Option<String> {
+    // The string needs to have the 6 bits
+    // necessary for the transformation but must not be reversed.
+    let bin_rev = binary_string.chars().rev().collect::<String>();
+
+    let number = match isize::from_str_radix(&bin_rev, 2) {
+        Ok(val) => val,
+        Err(_) => return None,
+    };
+
+    return Some(number.to_string());
 }
 
 fn get_all_city_names(arr_val: &Vec<String>) -> HashSet<String> {
@@ -547,6 +561,48 @@ pub fn set_dealerships_discovered_status(
     }
 
     arr_val_clone.splice(dealer_index_start..dealer_index_start, dealer_discovered);
+
+    return Some(arr_val_clone);
+}
+
+pub fn set_experience_skills(
+    arr_val: &Vec<String>,
+    experience_skills: ExperienceSkills,
+) -> Option<Vec<String>> {
+    let adr_number_string = match get_number_from_binary_string(&experience_skills.adr_number) {
+        Some(val) => val,
+        None => return None,
+    };
+    let mut arr_val_clone = arr_val.clone();
+
+    for (i, item) in arr_val.iter().enumerate() {
+        let split_item: Vec<&str> = item.split(":").collect();
+
+        match split_item[0] {
+            " adr" => {
+                arr_val_clone[i] = format!(" adr: {}", adr_number_string);
+            }
+            " long_dist" => {
+                arr_val_clone[i] = format!(" long_dist: {}", experience_skills.long_dist);
+            }
+            " heavy" => {
+                arr_val_clone[i] = format!(" heavy: {}", experience_skills.heavy);
+            }
+            " fragile" => {
+                arr_val_clone[i] = format!(" fragile: {}", experience_skills.fragile);
+            }
+            " urgent" => {
+                arr_val_clone[i] = format!(" urgent: {}", experience_skills.urgent);
+            }
+            " mechanical" => {
+                arr_val_clone[i] = format!(" mechanical: {}", experience_skills.mechanical);
+            }
+            " user_colors" => {
+                break;
+            }
+            _ => continue,
+        }
+    }
 
     return Some(arr_val_clone);
 }

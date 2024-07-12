@@ -351,6 +351,30 @@ export const setProfileDealerDiscovered = async (
 	return res.res;
 };
 
+export const setProfileSkill = async (
+	dirSave: string,
+	adrBin: string,
+	longDist: string,
+	heavy: string,
+	fragile: string,
+	urgent: string,
+	mechanical: string
+): Promise<boolean> => {
+	const rustParams = {
+		dirSave: dirSave + "/game.sii",
+		adrBin,
+		longDist,
+		heavy,
+		fragile,
+		urgent,
+		mechanical,
+	};
+
+	const invoceRes = await invoke("set_profile_experience_skills", rustParams);
+	const res = JSON.parse(invoceRes as string) as responseRustTypes;
+	return res.res;
+};
+
 export const getListEngines = async (): Promise<EnginesTypes | undefined> => {
 	const invoceRes = await invoke("get_list_engines");
 	const res = JSON.parse(invoceRes as string) as responseTrucksEngines;

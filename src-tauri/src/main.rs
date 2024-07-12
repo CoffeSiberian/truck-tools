@@ -7,7 +7,7 @@ mod utils;
 
 use main_options::profiles::{
     set_any_status_garage, set_bank_money, set_dealerships_discovered_status, set_experience,
-    set_visited_cities,
+    set_experience_skills, set_visited_cities,
 };
 use main_options::trailers::{
     get_my_trailer_id, get_slave_trailers_id, get_trailer_def_id, get_trailer_def_index,
@@ -29,6 +29,7 @@ use main_options::trucks::{
     set_truck_transmissions, set_truck_wear,
 };
 use serde_json::json;
+use structs::experience_skills::ExperienceSkills;
 use structs::vec_save_games::VecSaveGames;
 use utils::decrypt_saves::decrypt_file_to_save;
 use utils::file_edit::{
@@ -586,6 +587,40 @@ async fn set_dealerships_discovered(dir_save: &str, discovered: bool) -> Result<
     return Ok(RESPONSE_TRUE.to_string());
 }
 
+#[tauri::command]
+async fn set_profile_experience_skills(
+    dir_save: &str,
+    adr_bin: &str,
+    long_dist: &str,
+    heavy: &str,
+    fragile: &str,
+    urgent: &str,
+    mechanical: &str,
+) -> Result<String, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let experience_skills: ExperienceSkills = ExperienceSkills {
+        adr_number: adr_bin.to_string(),
+        long_dist: long_dist.to_string(),
+        heavy: heavy.to_string(),
+        fragile: fragile.to_string(),
+        urgent: urgent.to_string(),
+        mechanical: mechanical.to_string(),
+    };
+
+    let experience_skills: Vec<String> = match set_experience_skills(&file, experience_skills) {
+        Some(experience_skills) => experience_skills,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    save_file(dir_save.to_string(), experience_skills).await;
+
+    return Ok(RESPONSE_TRUE.to_string());
+}
+
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
@@ -612,6 +647,7 @@ fn main() {
             set_any_garage_status,
             set_cities_visited,
             set_dealerships_discovered,
+            set_profile_experience_skills,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
