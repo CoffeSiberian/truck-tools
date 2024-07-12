@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useProfileContex } from "../hooks/useProfileContex";
 import {
 	Card,
@@ -26,6 +27,14 @@ import { Profile } from "../types/SaveGameTypes";
 const SelectProfile = () => {
 	const { selectedProfile, isSavesLoading, selectedSave, reloadProfiles } =
 		useProfileContex();
+
+	const [isLoading, setIsLoading] = useState<boolean>(false);
+
+	const decryptSave = async (dir: string) => {
+		setIsLoading(true);
+		await descriptFiles(dir);
+		setIsLoading(false);
+	};
 
 	const renderProfile = (profileInfo: Profile | undefined) => {
 		return (
@@ -100,10 +109,11 @@ const SelectProfile = () => {
 									disabled={!selectedSave}
 									onPress={
 										selectedSave
-											? () => descriptFiles(selectedSave.dir + "/game.sii")
+											? () => decryptSave(selectedSave.dir + "/game.sii")
 											: undefined
 									}
-									endContent={<IconBinary stroke={2} />}
+									isLoading={isLoading}
+									endContent={isLoading ? null : <IconBinary stroke={2} />}
 									color={selectedSave ? "warning" : "default"}
 								>
 									Decrypt
