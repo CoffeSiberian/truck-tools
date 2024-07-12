@@ -31,6 +31,8 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 
 ### TO DO
 
+- [ ] ATS compatibility
+
 #### Trailers
 
 - [x] Modify load weight
@@ -54,7 +56,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 - [x] Add level 100
 - [x] Unlock garages
 - [x] Unlock all cities
-- [ ] Unlock all dealerships
+- [x] Unlock all dealerships
 - [ ] Unlock skills
 - [ ] Profile backup
 - [ ] Clone profile
@@ -74,3 +76,14 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 - Compatibility with DLC's when sharing trailers
 - User account
 - Create custom routes
+
+### Related projects
+
+#### DecryptTruck
+
+To decrypt the .sii files, we used as a basis the code from https://github.com/CoffeSiberian/DecryptTruck
+
+#### SII_Decrypt
+
+This repository makes use of SII Decrypt. A library that allows access to ATS and ETS 2 save games.
+https://github.com/TheLazyTomcat/SII_Decrypt
