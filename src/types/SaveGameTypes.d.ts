@@ -58,3 +58,12 @@ export interface TransmissionsTypes {
 	scania: ScaniaModelsTransmissions;
 	volvo: VolvoModelsTransmissions;
 }
+
+export interface ExperienceSkillsTypes {
+	adrBin: string;
+	longDist: string;
+	heavy: string;
+	fragile: string;
+	urgent: string;
+	mechanical: string;
+}

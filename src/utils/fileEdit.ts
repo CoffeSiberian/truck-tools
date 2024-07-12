@@ -15,6 +15,7 @@ import {
 	EnginesTypes,
 	TransmissionsTypes,
 	ProfileDir,
+	ExperienceSkillsTypes,
 } from "../types/SaveGameTypes";
 import {
 	responseRustTypes,
@@ -353,21 +354,11 @@ export const setProfileDealerDiscovered = async (
 
 export const setProfileSkill = async (
 	dirSave: string,
-	adrBin: string,
-	longDist: string,
-	heavy: string,
-	fragile: string,
-	urgent: string,
-	mechanical: string
+	experience: ExperienceSkillsTypes
 ): Promise<boolean> => {
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
-		adrBin,
-		longDist,
-		heavy,
-		fragile,
-		urgent,
-		mechanical,
+		...experience,
 	};
 
 	const invoceRes = await invoke("set_profile_experience_skills", rustParams);

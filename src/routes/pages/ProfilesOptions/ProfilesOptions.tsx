@@ -9,6 +9,7 @@ import SetExperience from "./Modal/SetExperience";
 import SetGarageStatus from "./Modal/SetGarageStatus";
 import SetAllCitiesStatus from "./Modal/SetAllCitiesStatus";
 import SetAllDealerStatus from "./Modal/SetAllDealerStatus";
+import SetExperienceSkills from "./Modal/SetExperienceSkills";
 
 const ProfilesOptions = () => {
 	const items = [
@@ -46,6 +47,13 @@ const ProfilesOptions = () => {
 			description: "Set all dealer status to your profile",
 			image: testImage,
 			modal: <SetAllDealerStatus />,
+		},
+		{
+			id: "6",
+			title: "Set experience skills",
+			description: "Set experience skills to your profile",
+			image: testImage,
+			modal: <SetExperienceSkills />,
 		},
 	];
 
