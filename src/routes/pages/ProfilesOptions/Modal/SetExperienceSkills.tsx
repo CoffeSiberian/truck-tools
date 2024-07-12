@@ -19,6 +19,12 @@ import AlertSave from "../../../../components/AlertSave";
 
 // icons
 import { IconPencil, IconArrowBigUpLine } from "@tabler/icons-react";
+import Explosives from "../../../../static/icons/trailers/Explosives.svg";
+import Gases from "../../../../static/icons/trailers/Gases.svg";
+import FlammableLiquids from "../../../../static/icons/trailers/FlammableLiquids.svg";
+import FlammableSolids from "../../../../static/icons/trailers/FlammableSolids.svg";
+import ToxicInfectiousSubstances from "../../../../static/icons/trailers/ToxicInfectiousSubstances.svg";
+import CorrosiveSubstances from "../../../../static/icons/trailers/CorrosiveSubstances.svg";
 
 // types
 import { ATR_Values } from "../../../../types/ConstTypes";
@@ -49,27 +55,27 @@ const SetExperienceSkills = () => {
 	const ATR_LIST: ATR_Values[] = [
 		{
 			name: "Explosives",
-			img: "test",
+			img: Explosives,
 		},
 		{
 			name: "Gases",
-			img: "test",
+			img: Gases,
 		},
 		{
 			name: "Flammable liquids",
-			img: "test",
+			img: FlammableLiquids,
 		},
 		{
 			name: "Flammable solids",
-			img: "test",
+			img: FlammableSolids,
 		},
 		{
 			name: "Toxic and infectious substances",
-			img: "test",
+			img: ToxicInfectiousSubstances,
 		},
 		{
 			name: "Corrosive substances",
-			img: "test",
+			img: CorrosiveSubstances,
 		},
 	];
 
