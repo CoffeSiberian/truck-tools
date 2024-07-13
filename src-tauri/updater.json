@@ -1,11 +1,11 @@
 {
-	"version": "v0.3.1",
-	"notes": "- Added images to differentiate garage sizes\n\n- A new option was added to profiles to be able to discover or not all the cities\n\n- Code refactored to make it more readable and optimal",
-	"pub_date": "2024-07-10T12:00:00-04:00",
+	"version": "v0.3.2",
+	"notes": "- Now you can unlock dealers\n\n- Now you can unlock profile skills\n\n- Load icon when decrypting saved files",
+	"pub_date": "2024-07-13T02:00:00-04:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlN2eDJ6akdBWFVaUnFpai9yRFM3RG91TndXcmpKemtXQ0thckQzVkxCaThQODMrRzhGRDVmUnIrNHNUeU5URUhvRWNDTENKRlNRbm5GcGczaGZ2bVFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzIwNTg2NDQyCWZpbGU6VHJ1Y2sgVG9vbHNfMC4zLjFfeDY0X2VuLVVTLm1zaS56aXAKSFVLcDU4cGcvbkFKdXZqMmdrcnVOcy9QaW5QbkphcXhhRHUvb3Z6cms1cjI3MUtjWThTZm0vb2RDRlJkM1BRa1ZXcUdBWk5wc2hTVldvaHlmQ3NlRHc9PQo=",
-			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.3.1/Truck_Tools_0.3.1_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmJlNUJhMmdNanJodFRCUGRrUFpFOXdNSVVmRnNRWGVBaUxLZEluRzdpS05nUGg3bGFnbkx6S3daSGdqK08vb3RLQ0xSQk85c2VsK3ZsZGV4dGUvZXdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzIwODUxNjcxCWZpbGU6VHJ1Y2sgVG9vbHNfMC4zLjJfeDY0X2VuLVVTLm1zaS56aXAKZHhUVHRwQ0JsVW54M3Z3aVhCcnJ0cHRkWWR3c09WUm5nc2NHMFV1WXVuSVpqbWNrTUszMHRMYmQ4WkFvaG81U09UVVJLNEJrdGhjTTlNVzBKN0k5QVE9PQo=",
+			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.3.2/Truck_Tools_0.3.2_x64_en-US.msi.zip"
 		}
 	}
 }
