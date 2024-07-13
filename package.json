@@ -1,7 +1,7 @@
 {
 	"name": "trucktools",
 	"private": true,
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
@@ -24,9 +24,9 @@
 		"@tabler/icons-react": "^3.10.0",
 		"@tauri-apps/api": "^1.6.0",
 		"buffer": "^6.0.3",
-		"framer-motion": "^11.2.14",
+		"framer-motion": "^11.3.2",
 		"react": "^18.3.1",
-		"react-color-palette": "^7.2.0",
+		"react-color-palette": "^7.2.1",
 		"react-dom": "^18.3.1",
 		"react-router-dom": "^6.24.1"
 	},

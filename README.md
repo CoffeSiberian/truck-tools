@@ -57,7 +57,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 - [x] Unlock garages
 - [x] Unlock all cities
 - [x] Unlock all dealerships
-- [ ] Unlock skills
+- [x] Unlock skills
 - [ ] Profile backup
 - [ ] Clone profile
 - [ ] Clone config
