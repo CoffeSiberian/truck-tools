@@ -599,6 +599,10 @@ async fn set_profile_experience_skills(
     urgent: &str,
     mechanical: &str,
 ) -> Result<String, ()> {
+    if adr_bin.chars().count() != 6 {
+        return Ok(RESPONSE_FALSE.to_string());
+    }
+
     let file: Vec<String> = match read_file_text(dir_save).await {
         Some(file) => file,
         None => return Ok(RESPONSE_FALSE.to_string()),
