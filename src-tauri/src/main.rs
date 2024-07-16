@@ -31,6 +31,7 @@ use main_options::trucks::{
 use serde_json::json;
 use structs::experience_skills::ExperienceSkills;
 use structs::vec_save_games::VecSaveGames;
+use utils::compress_folder::compress_folder_files;
 use utils::decrypt_saves::decrypt_file_to_save;
 use utils::file_edit::{
     get_list_save_count, get_list_save_game, get_list_save_game_dirs, get_rgb_hex_to_game_format,
@@ -39,6 +40,7 @@ use utils::file_edit::{
 
 const RESPONSE_FALSE: &str = r#"{"res": false}"#;
 const RESPONSE_TRUE: &str = r#"{"res": true}"#;
+const IGNORED_FOLDERS: [&str; 1] = ["album"];
 
 #[tauri::command]
 async fn decrypt_to_save(dir_save: &str) -> Result<String, ()> {
@@ -621,6 +623,18 @@ async fn set_profile_experience_skills(
     return Ok(RESPONSE_TRUE.to_string());
 }
 
+#[tauri::command]
+async fn backup_profile(dir_profile: &str, dest_dir_zip: &str) -> Result<String, ()> {
+    let result: bool =
+        compress_folder_files(dir_profile, dest_dir_zip, IGNORED_FOLDERS.to_vec()).await;
+
+    if result {
+        return Ok(RESPONSE_TRUE.to_string());
+    }
+
+    return Ok(RESPONSE_FALSE.to_string());
+}
+
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
@@ -648,6 +662,7 @@ fn main() {
             set_cities_visited,
             set_dealerships_discovered,
             set_profile_experience_skills,
+            backup_profile,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

@@ -6,7 +6,11 @@ use walkdir::WalkDir;
 use zip::write::{SimpleFileOptions, ZipWriter};
 use zip::CompressionMethod;
 
-pub fn compress_folder_files(src_dir: &str, dest_dir_zip: &str, ignore_folders: Vec<&str>) -> bool {
+pub async fn compress_folder_files(
+    src_dir: &str,
+    dest_dir_zip: &str,
+    ignore_folders: Vec<&str>,
+) -> bool {
     let zip_file = match File::create(dest_dir_zip) {
         Ok(file) => file,
         Err(_) => return false,

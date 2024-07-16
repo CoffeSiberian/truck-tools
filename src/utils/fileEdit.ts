@@ -366,6 +366,20 @@ export const setProfileSkill = async (
 	return res.res;
 };
 
+export const backup_profile = async (
+	dirProfile: string,
+	destDirZip: string
+): Promise<boolean> => {
+	const rustParams = {
+		dirProfile,
+		destDirZip,
+	};
+
+	const invoceRes = await invoke("backup_profile", rustParams);
+	const res = JSON.parse(invoceRes as string) as responseRustTypes;
+	return res.res;
+};
+
 export const getListEngines = async (): Promise<EnginesTypes | undefined> => {
 	const invoceRes = await invoke("get_list_engines");
 	const res = JSON.parse(invoceRes as string) as responseTrucksEngines;
