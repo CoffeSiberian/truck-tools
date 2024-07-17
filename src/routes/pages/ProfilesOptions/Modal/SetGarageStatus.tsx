@@ -44,14 +44,16 @@ const SetGarageStatus = () => {
 			setCompleted({ error: false, completed: false });
 		}
 
-		if (selectedSave) {
-			setIsLoading(true);
-			const res = await setProfileGarageStatus(selectedSave.dir, GarageStatus);
-			setCompleted({
-				error: !res,
-				completed: true,
-			});
-		}
+		if (!selectedSave) return;
+
+		setIsLoading(true);
+
+		const res = await setProfileGarageStatus(selectedSave.dir, GarageStatus);
+
+		setCompleted({
+			error: !res,
+			completed: true,
+		});
 		setIsLoading(false);
 	};
 

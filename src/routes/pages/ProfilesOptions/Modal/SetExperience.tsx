@@ -38,14 +38,16 @@ const SetExperience = () => {
 			setCompleted({ error: false, completed: false });
 		}
 
-		if (selectedSave) {
-			setIsLoading(true);
-			const res = await setProfileExperience(selectedSave.dir, Experience);
-			setCompleted({
-				error: !res,
-				completed: true,
-			});
-		}
+		if (!selectedSave) return;
+
+		setIsLoading(true);
+
+		const res = await setProfileExperience(selectedSave.dir, Experience);
+
+		setCompleted({
+			error: !res,
+			completed: true,
+		});
 		setIsLoading(false);
 	};
 

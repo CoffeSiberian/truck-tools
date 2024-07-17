@@ -84,17 +84,17 @@ const SetExperienceSkills = () => {
 			setCompleted({ error: false, completed: false });
 		}
 
-		if (selectedSave) {
-			setIsLoading(true);
+		if (!selectedSave) return;
 
-			const adrBin = getBinATR();
-			const res = await setProfileSkill(selectedSave.dir, { adrBin, ...Skill });
+		setIsLoading(true);
 
-			setCompleted({
-				error: !res,
-				completed: true,
-			});
-		}
+		const adrBin = getBinATR();
+		const res = await setProfileSkill(selectedSave.dir, { adrBin, ...Skill });
+
+		setCompleted({
+			error: !res,
+			completed: true,
+		});
 		setIsLoading(false);
 	};
 

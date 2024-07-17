@@ -43,17 +43,17 @@ const SetAllDealerStatus = () => {
 			setCompleted({ error: false, completed: false });
 		}
 
-		if (selectedSave) {
-			setIsLoading(true);
-			const res = await setProfileDealerDiscovered(
-				selectedSave.dir,
-				GarageStatus === "1" ? true : false
-			);
-			setCompleted({
-				error: !res,
-				completed: true,
-			});
-		}
+		if (!selectedSave) return;
+
+		setIsLoading(true);
+		const res = await setProfileDealerDiscovered(
+			selectedSave.dir,
+			GarageStatus === "1" ? true : false
+		);
+		setCompleted({
+			error: !res,
+			completed: true,
+		});
 		setIsLoading(false);
 	};
 

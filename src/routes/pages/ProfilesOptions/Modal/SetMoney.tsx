@@ -42,14 +42,16 @@ const SetMoney = () => {
 			setCompleted({ error: false, completed: false });
 		}
 
-		if (selectedSave) {
-			setIsLoading(true);
-			const res = await setProfileMoney(selectedSave.dir, money);
-			setCompleted({
-				error: !res,
-				completed: true,
-			});
-		}
+		if (!selectedSave) return;
+
+		setIsLoading(true);
+
+		const res = await setProfileMoney(selectedSave.dir, money);
+
+		setCompleted({
+			error: !res,
+			completed: true,
+		});
 		setIsLoading(false);
 	};
 

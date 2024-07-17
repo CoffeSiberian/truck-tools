@@ -366,7 +366,7 @@ export const setProfileSkill = async (
 	return res.res;
 };
 
-export const backup_profile = async (
+export const backupProfile = async (
 	dirProfile: string,
 	destDirZip: string
 ): Promise<boolean> => {

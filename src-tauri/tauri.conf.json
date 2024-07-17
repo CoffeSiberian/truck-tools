@@ -40,6 +40,10 @@
 				"all": false,
 				"exit": false,
 				"relaunch": true
+			},
+			"dialog": {
+				"save": true,
+				"open": true
 			}
 		},
 		"windows": [
