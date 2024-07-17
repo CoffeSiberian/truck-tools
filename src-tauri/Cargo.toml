@@ -11,7 +11,8 @@ edition = "2021"
 tauri-build = { version = "1", features = [] }
 
 [dependencies]
-tauri = { version = "1", features = [ "dialog-open", "dialog-save",
+tauri = { version = "1", features = [
+    "dialog-save",
     "process-relaunch",
     "updater",
     "protocol-asset",
