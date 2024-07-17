@@ -13,7 +13,7 @@ import {
 	useDisclosure,
 	Input,
 } from "@nextui-org/react";
-import { backupProfile } from "../../../../utils/fileEdit";
+import { backupProfile, openExplorer } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
@@ -21,6 +21,7 @@ import {
 	IconPencil,
 	IconFolderSearch,
 	IconFileTypeZip,
+	IconFolderShare,
 } from "@tabler/icons-react";
 
 interface completedProps {
@@ -78,6 +79,14 @@ const BackupProfile = () => {
 		setDestDirZip(filePath);
 	};
 
+	const clickOpenExplorer = async () => {
+		if (destDirZip.length === 0) return;
+		const dirSplit = destDirZip.split("\\");
+		const removeFile = [...dirSplit.slice(0, -1)].join("\\");
+
+		openExplorer(removeFile);
+	};
+
 	return (
 		<>
 			<Button
@@ -125,6 +134,20 @@ const BackupProfile = () => {
 									value={destDirZip}
 									onValueChange={(value) => setDestDirZip(value)}
 								/>
+								<div className="flex justify-end">
+									{completed.completed ? (
+										<Button
+											size="sm"
+											variant="bordered"
+											disabled={destDirZip.length === 0 && completed.error}
+											onPress={clickOpenExplorer}
+											endContent={<IconFolderShare stroke={2} />}
+											color={destDirZip.length === 0 ? "default" : "success"}
+										>
+											Open Folder
+										</Button>
+									) : null}
+								</div>
 								<div className="flex justify-center">
 									<AlertSave
 										message={
