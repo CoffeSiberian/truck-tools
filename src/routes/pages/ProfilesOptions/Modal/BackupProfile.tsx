@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, FC } from "react";
 import { save, SaveDialogOptions } from "@tauri-apps/api/dialog";
 import { documentDir } from "@tauri-apps/api/path";
 import { useProfileContex } from "../../../../hooks/useProfileContex";
@@ -10,7 +10,6 @@ import {
 	ModalBody,
 	ModalFooter,
 	Button,
-	useDisclosure,
 	Input,
 } from "@nextui-org/react";
 import { backupProfile, openExplorer } from "../../../../utils/fileEdit";
@@ -18,7 +17,6 @@ import AlertSave from "../../../../components/AlertSave";
 
 // icons
 import {
-	IconPencil,
 	IconFolderSearch,
 	IconFileTypeZip,
 	IconFolderShare,
@@ -29,9 +27,13 @@ interface completedProps {
 	completed: boolean;
 }
 
-const BackupProfile = () => {
+interface BackupProfileProps {
+	isOpen: boolean;
+	onOpenChange: () => void;
+}
+
+const BackupProfile: FC<BackupProfileProps> = ({ isOpen, onOpenChange }) => {
 	const { selectedProfile } = useProfileContex();
-	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [destDirZip, setDestDirZip] = useState<string>("");
 	const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -88,96 +90,85 @@ const BackupProfile = () => {
 	};
 
 	return (
-		<>
-			<Button
-				endContent={<IconPencil stroke={2} />}
-				onPress={onOpen}
-				isDisabled={!selectedProfile}
-				color="primary"
-				variant="shadow"
-			>
-				Open
-			</Button>
-			<Modal
-				hideCloseButton
-				size="md"
-				backdrop="blur"
-				isOpen={isOpen}
-				onOpenChange={() => {
-					if (isLoading) return;
-					onOpenChange();
-				}}
-			>
-				<ModalContent>
-					{(onClose) => (
-						<>
-							<ModalHeader className="flex flex-col gap-1">
-								Backup Profile
-							</ModalHeader>
-							<Divider />
-							<ModalBody className="py-1">
-								<p>Create a backup copy, remember to enter the destination</p>
-								<Input
-									className="mt-1"
-									disabled={true}
-									isInvalid={destDirZip.length === 0}
-									startContent={<IconFileTypeZip />}
-									endContent={
-										<Button
-											color="primary"
-											startContent={<IconFolderSearch />}
-											onPress={onClickFolder}
-										/>
-									}
-									label="Choose the destination folder"
-									placeholder="Enter the destination folder"
-									value={destDirZip}
-									onValueChange={(value) => setDestDirZip(value)}
-								/>
-								<div className="flex justify-end">
-									{completed.completed ? (
-										<Button
-											size="sm"
-											variant="bordered"
-											disabled={destDirZip.length === 0 && completed.error}
-											onPress={clickOpenExplorer}
-											endContent={<IconFolderShare stroke={2} />}
-											color={destDirZip.length === 0 ? "default" : "success"}
-										>
-											Open Folder
-										</Button>
-									) : null}
-								</div>
-								<div className="flex justify-center">
-									<AlertSave
-										message={
-											completed.error
-												? "An error occurred in the process"
-												: "Saved successfully"
-										}
-										error={completed.error}
-										show={completed.completed}
+		<Modal
+			hideCloseButton
+			size="md"
+			backdrop="blur"
+			isOpen={isOpen}
+			onOpenChange={() => {
+				if (isLoading) return;
+				onOpenChange();
+			}}
+		>
+			<ModalContent>
+				{(onClose) => (
+					<>
+						<ModalHeader className="flex flex-col gap-1">
+							Backup Profile
+						</ModalHeader>
+						<Divider />
+						<ModalBody className="py-1">
+							<p>Create a backup copy, remember to enter the destination</p>
+							<Input
+								className="mt-1"
+								disabled={true}
+								isInvalid={destDirZip.length === 0}
+								startContent={<IconFileTypeZip />}
+								endContent={
+									<Button
+										color="primary"
+										startContent={<IconFolderSearch />}
+										onPress={onClickFolder}
 									/>
-								</div>
-							</ModalBody>
-							<ModalFooter>
-								<Button color="danger" variant="light" onPress={onClose}>
-									Close
-								</Button>
-								<Button
-									endContent={<IconFileTypeZip />}
-									isLoading={isLoading}
-									color="success"
-									onPress={onClickApply}
-								>
-									Backup
-								</Button>
-							</ModalFooter>
-						</>
-					)}
-				</ModalContent>
-			</Modal>
-		</>
+								}
+								label="Choose the destination folder"
+								placeholder="Enter the destination folder"
+								value={destDirZip}
+								onValueChange={(value) => setDestDirZip(value)}
+							/>
+							<div className="flex justify-end">
+								{completed.completed ? (
+									<Button
+										size="sm"
+										variant="bordered"
+										disabled={destDirZip.length === 0 && completed.error}
+										onPress={clickOpenExplorer}
+										endContent={<IconFolderShare stroke={2} />}
+										color={destDirZip.length === 0 ? "default" : "success"}
+									>
+										Open Folder
+									</Button>
+								) : null}
+							</div>
+							<div className="flex justify-center">
+								<AlertSave
+									message={
+										completed.error
+											? "An error occurred in the process"
+											: "Saved successfully"
+									}
+									error={completed.error}
+									show={completed.completed}
+								/>
+							</div>
+						</ModalBody>
+						<ModalFooter>
+							<Button color="danger" variant="light" onPress={onClose}>
+								Close
+							</Button>
+							<Button
+								endContent={<IconFileTypeZip />}
+								isLoading={isLoading}
+								color="success"
+								onPress={onClickApply}
+							>
+								Backup
+							</Button>
+						</ModalFooter>
+					</>
+				)}
+			</ModalContent>
+		</Modal>
 	);
 };
 

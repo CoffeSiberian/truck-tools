@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useProfileContex } from "../hooks/useProfileContex";
 import {
 	Card,
@@ -9,17 +8,12 @@ import {
 	Button,
 } from "@nextui-org/react";
 import { IconAlertTriangle } from "@tabler/icons-react";
-import { descriptFiles, openExplorer } from "../utils/fileEdit";
 import ListProfiles from "./ListProfiles";
 import ListSaves from "./ListSaves";
+import ProfileOptions from "./ProfileOptions";
 
 // icons
-import {
-	IconFolderShare,
-	IconBinary,
-	IconReload,
-	IconUserCircle,
-} from "@tabler/icons-react";
+import { IconReload, IconUserCircle } from "@tabler/icons-react";
 
 // types
 import { Profile } from "../types/SaveGameTypes";
@@ -27,14 +21,6 @@ import { Profile } from "../types/SaveGameTypes";
 const SelectProfile = () => {
 	const { selectedProfile, isSavesLoading, selectedSave, reloadProfiles } =
 		useProfileContex();
-
-	const [isLoading, setIsLoading] = useState<boolean>(false);
-
-	const decryptSave = async (dir: string) => {
-		setIsLoading(true);
-		await descriptFiles(dir);
-		setIsLoading(false);
-	};
 
 	const renderProfile = (profileInfo: Profile | undefined) => {
 		return (
@@ -87,37 +73,8 @@ const SelectProfile = () => {
 								</>
 							)}
 
-							<div className="mt-1 flex flex-row gap-1">
-								<Button
-									size="sm"
-									variant="bordered"
-									disabled={!selectedSave}
-									onPress={
-										selectedSave
-											? () =>
-													openExplorer(selectedSave.dir.replace(/\//g, "\\"))
-											: undefined
-									}
-									endContent={<IconFolderShare stroke={2} />}
-									color={selectedSave ? "warning" : "default"}
-								>
-									Open
-								</Button>
-								<Button
-									size="sm"
-									variant="bordered"
-									disabled={!selectedSave}
-									onPress={
-										selectedSave
-											? () => decryptSave(selectedSave.dir + "/game.sii")
-											: undefined
-									}
-									isLoading={isLoading}
-									endContent={isLoading ? null : <IconBinary stroke={2} />}
-									color={selectedSave ? "warning" : "default"}
-								>
-									Decrypt
-								</Button>
+							<div className="mt-1 flex flex-row justify-start gap-1">
+								<ProfileOptions />
 							</div>
 						</div>
 					</div>
