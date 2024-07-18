@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useProfileContex } from "../hooks/useProfileContex";
+import { useProfileContex } from "../../hooks/useProfileContex";
 import {
 	Button,
 	Dropdown,
@@ -10,8 +10,9 @@ import {
 	useDisclosure,
 	cn,
 } from "@nextui-org/react";
-import { descriptFiles, openExplorer } from "../utils/fileEdit";
-import BackupProfile from "../routes/pages/ProfilesOptions/Modal/BackupProfile";
+import { descriptFiles, openExplorer } from "../../utils/fileEdit";
+import BackupProfile from "./Modal/BackupProfile";
+import CloneProfile from "./Modal/CloneProfile";
 
 // icons
 import {
@@ -19,6 +20,7 @@ import {
 	IconBinary,
 	IconMenu,
 	IconFileTypeZip,
+	IconCopy,
 } from "@tabler/icons-react";
 import { Spinner } from "@nextui-org/spinner";
 
@@ -34,6 +36,12 @@ const ProfileOptions = () => {
 		isOpen: isOpenBackup,
 		onOpen: onOpenBackup,
 		onOpenChange: onOpenChangeBackup,
+	} = useDisclosure();
+
+	const {
+		isOpen: isOpenClone,
+		onOpen: onOpenClone,
+		onOpenChange: onOpenChangeClone,
 	} = useDisclosure();
 
 	const [decryptResult, setDecryptResult] = useState<DecryptResult>({
@@ -95,6 +103,7 @@ const ProfileOptions = () => {
 	return (
 		<>
 			<BackupProfile isOpen={isOpenBackup} onOpenChange={onOpenChangeBackup} />
+			<CloneProfile isOpen={isOpenClone} onOpenChange={onOpenChangeClone} />
 			<Dropdown backdrop="opaque" closeOnSelect={false}>
 				<DropdownTrigger>
 					<Button
@@ -127,7 +136,7 @@ const ProfileOptions = () => {
 						</DropdownItem>
 						<DropdownItem
 							key="decrypt"
-							description="Decrypt selected Save game"
+							description="Decrypt selected save game"
 							className={decryptStyles.textColor}
 							color={decryptStyles.color as any}
 							startContent={
@@ -155,6 +164,15 @@ const ProfileOptions = () => {
 							onPress={onOpenBackup}
 						>
 							Backup Profile
+						</DropdownItem>
+						<DropdownItem
+							key="clone"
+							description="Clone your profile to a new one"
+							startContent={<IconCopy className={iconClasses} />}
+							closeOnSelect={true}
+							onPress={onOpenClone}
+						>
+							Clone Profile
 						</DropdownItem>
 					</DropdownSection>
 				</DropdownMenu>

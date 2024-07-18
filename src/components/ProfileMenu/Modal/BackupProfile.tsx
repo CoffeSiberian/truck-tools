@@ -1,7 +1,7 @@
 import { useState, FC } from "react";
 import { save, SaveDialogOptions } from "@tauri-apps/api/dialog";
 import { documentDir } from "@tauri-apps/api/path";
-import { useProfileContex } from "../../../../hooks/useProfileContex";
+import { useProfileContex } from "../../../hooks/useProfileContex";
 import {
 	Modal,
 	ModalContent,
@@ -12,8 +12,8 @@ import {
 	Button,
 	Input,
 } from "@nextui-org/react";
-import { backupProfile, openExplorer } from "../../../../utils/fileEdit";
-import AlertSave from "../../../../components/AlertSave";
+import { backupProfile, openExplorer } from "../../../utils/fileEdit";
+import AlertSave from "../../AlertSave";
 
 // icons
 import {
@@ -27,12 +27,12 @@ interface completedProps {
 	completed: boolean;
 }
 
-interface BackupProfileProps {
+interface ModalProps {
 	isOpen: boolean;
 	onOpenChange: () => void;
 }
 
-const BackupProfile: FC<BackupProfileProps> = ({ isOpen, onOpenChange }) => {
+const BackupProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 	const { selectedProfile } = useProfileContex();
 
 	const [destDirZip, setDestDirZip] = useState<string>("");

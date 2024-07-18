@@ -1,6 +1,6 @@
 import Home from "./routes/pages/Home";
 import UpdaterModal from "./components/UpdaterModal";
-import SelectProfile from "./components/SelectProfile";
+import SelectProfile from "./components/ProfileMenu/SelectProfile";
 
 const App = () => {
 	return (

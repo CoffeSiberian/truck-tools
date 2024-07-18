@@ -382,12 +382,10 @@ export const backupProfile = async (
 
 export const copyProfile = async (
 	dirProfile: string,
-	destDir: string,
 	newProfileName: string
 ): Promise<boolean> => {
 	const rustParams = {
 		dirProfile,
-		destDir,
 		newProfileName,
 	};
 

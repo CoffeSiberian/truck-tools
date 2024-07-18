@@ -1,4 +1,4 @@
-import { useProfileContex } from "../hooks/useProfileContex";
+import { useProfileContex } from "../../hooks/useProfileContex";
 import {
 	Card,
 	CardBody,
@@ -16,7 +16,7 @@ import ProfileOptions from "./ProfileOptions";
 import { IconReload, IconUserCircle } from "@tabler/icons-react";
 
 // types
-import { Profile } from "../types/SaveGameTypes";
+import { Profile } from "../../types/SaveGameTypes";
 
 const SelectProfile = () => {
 	const { selectedProfile, isSavesLoading, selectedSave, reloadProfiles } =

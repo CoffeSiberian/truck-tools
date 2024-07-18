@@ -1,5 +1,5 @@
-import { useProfileContex } from "../hooks/useProfileContex";
-import { ProfileWithoutSaves } from "../types/SaveGameTypes";
+import { useProfileContex } from "../../hooks/useProfileContex";
+import { ProfileWithoutSaves } from "../../types/SaveGameTypes";
 
 import { Select, SelectItem, Image } from "@nextui-org/react";
 
