@@ -18,6 +18,10 @@ async fn read_file(path: &str) -> Option<File> {
 }
 
 pub async fn copy_folder(src_dir: &str, dest_dir: &str, ignore_folders: Vec<&str>) -> bool {
+    if Path::new(dest_dir).exists() {
+        return false;
+    }
+
     let mut files_dir: Vec<FilePath> = Vec::new();
     let mut list_folders: Vec<String> = Vec::new();
 
