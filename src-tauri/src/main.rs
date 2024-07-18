@@ -5,6 +5,7 @@ mod main_options;
 mod structs;
 mod utils;
 
+use hex::encode_upper;
 use main_options::profiles::{
     set_any_status_garage, set_bank_money, set_dealerships_discovered_status, set_experience,
     set_experience_skills, set_profile_name, set_visited_cities,
@@ -29,6 +30,7 @@ use main_options::trucks::{
     set_truck_transmissions, set_truck_wear,
 };
 use serde_json::json;
+use std::path::Path;
 use structs::experience_skills::ExperienceSkills;
 use structs::vec_save_games::VecSaveGames;
 use utils::compress_folder::compress_folder_files;
@@ -640,28 +642,43 @@ async fn backup_profile(dir_profile: &str, dest_dir_zip: &str) -> Result<String,
 }
 
 #[tauri::command]
-async fn copy_profile(
-    dir_profile: &str,
-    dest_dir: &str,
-    new_profile_name: &str,
-) -> Result<String, ()> {
-    let result: bool = copy_folder(dir_profile, dest_dir, IGNORED_FOLDERS.to_vec()).await;
+async fn copy_profile(dir_profile: &str, new_profile_name: &str) -> Result<String, ()> {
+    let profile_name_hex: String = encode_upper(new_profile_name);
+    let dir_profile_path = Path::new(dir_profile);
+    let dest_dir_path = dir_profile_path.join("..").join(profile_name_hex);
+
+    if dest_dir_path.exists() {
+        return Ok(RESPONSE_FALSE.to_string());
+    }
+
+    let result: bool = copy_folder(
+        dir_profile_path,
+        dest_dir_path.as_path(),
+        IGNORED_FOLDERS.to_vec(),
+    )
+    .await;
 
     if !result {
         return Ok(RESPONSE_FALSE.to_string());
     }
 
-    let file: Vec<String> = match read_file_text(&format!("{}/profile.sii", dest_dir)).await {
-        Some(file) => file,
+    let dest_dir_path_str: &str = match dest_dir_path.to_str() {
+        Some(dest_dir_path_str) => dest_dir_path_str,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
+
+    let file: Vec<String> =
+        match read_file_text(&format!("{}/profile.sii", dest_dir_path_str)).await {
+            Some(file) => file,
+            None => return Ok(RESPONSE_FALSE.to_string()),
+        };
 
     let profile_name: Vec<String> = match set_profile_name(&file, new_profile_name) {
         Some(profile_name) => profile_name,
         None => return Ok(RESPONSE_FALSE.to_string()),
     };
 
-    save_file(format!("{}/profile.sii", dest_dir), profile_name).await;
+    save_file(format!("{}/profile.sii", dest_dir_path_str), profile_name).await;
 
     return Ok(RESPONSE_TRUE.to_string());
 }

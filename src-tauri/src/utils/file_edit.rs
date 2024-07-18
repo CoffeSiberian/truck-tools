@@ -17,11 +17,7 @@ async fn read_file(path: &str) -> Option<File> {
     };
 }
 
-pub async fn copy_folder(src_dir: &str, dest_dir: &str, ignore_folders: Vec<&str>) -> bool {
-    if Path::new(dest_dir).exists() {
-        return false;
-    }
-
+pub async fn copy_folder(src_dir: &Path, dest_dir: &Path, ignore_folders: Vec<&str>) -> bool {
     let mut files_dir: Vec<FilePath> = Vec::new();
     let mut list_folders: Vec<String> = Vec::new();
 
@@ -35,7 +31,7 @@ pub async fn copy_folder(src_dir: &str, dest_dir: &str, ignore_folders: Vec<&str
         }
 
         if path.is_file() {
-            let name = match path.strip_prefix(Path::new(src_dir)) {
+            let name = match path.strip_prefix(src_dir) {
                 Ok(name) => name.to_string_lossy().into_owned(),
                 Err(_) => continue,
             };
@@ -49,7 +45,7 @@ pub async fn copy_folder(src_dir: &str, dest_dir: &str, ignore_folders: Vec<&str
         }
 
         if path.is_dir() {
-            let name = match path.strip_prefix(Path::new(src_dir)) {
+            let name = match path.strip_prefix(src_dir) {
                 Ok(name) => name.to_string_lossy().into_owned(),
                 Err(_) => continue,
             };
@@ -63,16 +59,16 @@ pub async fn copy_folder(src_dir: &str, dest_dir: &str, ignore_folders: Vec<&str
     }
 
     for folder in list_folders {
-        let dest_folder = format!("{}/{}", dest_dir, folder);
+        let dest_folder = Path::new(&dest_dir).join(&folder);
 
-        match std::fs::create_dir_all(&dest_folder) {
+        match std::fs::create_dir_all(dest_folder) {
             Ok(_) => (),
             Err(_) => return false,
         }
     }
 
     for file in files_dir {
-        let dest_file = format!("{}/{}", dest_dir, file.name);
+        let dest_file = Path::new(&dest_dir).join(&file.name);
 
         match std::fs::copy(&file.path, &dest_file) {
             Ok(_) => (),
