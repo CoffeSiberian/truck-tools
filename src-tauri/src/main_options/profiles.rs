@@ -334,6 +334,19 @@ fn set_garage_status(
     return None;
 }
 
+pub fn set_profile_name(arr_val: &Vec<String>, name: &str) -> Option<Vec<String>> {
+    let mut arr_val_clone = arr_val.clone();
+
+    for (i, item) in arr_val.iter().enumerate() {
+        if item.contains(" profile_name:") {
+            arr_val_clone[i] = format!(" profile_name: \"{}\"", name);
+            break;
+        }
+    }
+
+    return Some(arr_val_clone);
+}
+
 pub fn get_garage_vec_names(arr_val: &Vec<String>) -> Option<Vec<VecItemsFind>> {
     let mut garage_vec_string: Vec<&str> = Vec::new();
     let mut garage_count: u16 = 0;

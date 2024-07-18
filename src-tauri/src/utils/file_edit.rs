@@ -1,7 +1,10 @@
 use super::decrypt_saves::decrypt_file;
+use crate::structs::file_path::FilePath;
 use crate::structs::vec_save_games::{VecProfileDir, VecSaveGames};
 use std::fs::{read_dir, write, File};
+use std::path::Path;
 use uuid::Uuid;
+use walkdir::WalkDir;
 
 #[allow(dead_code)]
 async fn read_file(path: &str) -> Option<File> {
@@ -12,6 +15,68 @@ async fn read_file(path: &str) -> Option<File> {
         Ok(file) => return Some(file),
         Err(_) => return None,
     };
+}
+
+pub async fn copy_folder(src_dir: &str, dest_dir: &str, ignore_folders: Vec<&str>) -> bool {
+    let mut files_dir: Vec<FilePath> = Vec::new();
+    let mut list_folders: Vec<String> = Vec::new();
+
+    for entry in WalkDir::new(src_dir).into_iter().filter_map(|e| e.ok()) {
+        let path = entry.path();
+        if ignore_folders
+            .iter()
+            .any(|&folder| path.to_string_lossy().contains(folder))
+        {
+            continue;
+        }
+
+        if path.is_file() {
+            let name = match path.strip_prefix(Path::new(src_dir)) {
+                Ok(name) => name.to_string_lossy().into_owned(),
+                Err(_) => continue,
+            };
+
+            files_dir.push({
+                FilePath {
+                    path: path.to_string_lossy().into_owned(),
+                    name,
+                }
+            });
+        }
+
+        if path.is_dir() {
+            let name = match path.strip_prefix(Path::new(src_dir)) {
+                Ok(name) => name.to_string_lossy().into_owned(),
+                Err(_) => continue,
+            };
+
+            if name.is_empty() {
+                continue;
+            }
+
+            list_folders.push(name);
+        }
+    }
+
+    for folder in list_folders {
+        let dest_folder = format!("{}/{}", dest_dir, folder);
+
+        match std::fs::create_dir_all(&dest_folder) {
+            Ok(_) => (),
+            Err(_) => return false,
+        }
+    }
+
+    for file in files_dir {
+        let dest_file = format!("{}/{}", dest_dir, file.name);
+
+        match std::fs::copy(&file.path, &dest_file) {
+            Ok(_) => (),
+            Err(_) => return false,
+        }
+    }
+
+    return true;
 }
 
 async fn get_dir_content(path: String) -> Option<Vec<String>> {

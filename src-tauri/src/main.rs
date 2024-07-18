@@ -7,7 +7,7 @@ mod utils;
 
 use main_options::profiles::{
     set_any_status_garage, set_bank_money, set_dealerships_discovered_status, set_experience,
-    set_experience_skills, set_visited_cities,
+    set_experience_skills, set_profile_name, set_visited_cities,
 };
 use main_options::trailers::{
     get_my_trailer_id, get_slave_trailers_id, get_trailer_def_id, get_trailer_def_index,
@@ -34,8 +34,8 @@ use structs::vec_save_games::VecSaveGames;
 use utils::compress_folder::compress_folder_files;
 use utils::decrypt_saves::decrypt_file_to_save;
 use utils::file_edit::{
-    get_list_save_count, get_list_save_game, get_list_save_game_dirs, get_rgb_hex_to_game_format,
-    read_file_text, save_file,
+    copy_folder, get_list_save_count, get_list_save_game, get_list_save_game_dirs,
+    get_rgb_hex_to_game_format, read_file_text, save_file,
 };
 
 const RESPONSE_FALSE: &str = r#"{"res": false}"#;
@@ -639,6 +639,33 @@ async fn backup_profile(dir_profile: &str, dest_dir_zip: &str) -> Result<String,
     return Ok(RESPONSE_FALSE.to_string());
 }
 
+#[tauri::command]
+async fn copy_profile(
+    dir_profile: &str,
+    dest_dir: &str,
+    new_profile_name: &str,
+) -> Result<String, ()> {
+    let result: bool = copy_folder(dir_profile, dest_dir, IGNORED_FOLDERS.to_vec()).await;
+
+    if !result {
+        return Ok(RESPONSE_FALSE.to_string());
+    }
+
+    let file: Vec<String> = match read_file_text(&format!("{}/profile.sii", dest_dir)).await {
+        Some(file) => file,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    let profile_name: Vec<String> = match set_profile_name(&file, new_profile_name) {
+        Some(profile_name) => profile_name,
+        None => return Ok(RESPONSE_FALSE.to_string()),
+    };
+
+    save_file(format!("{}/profile.sii", dest_dir), profile_name).await;
+
+    return Ok(RESPONSE_TRUE.to_string());
+}
+
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
@@ -667,6 +694,7 @@ fn main() {
             set_dealerships_discovered,
             set_profile_experience_skills,
             backup_profile,
+            copy_profile,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
