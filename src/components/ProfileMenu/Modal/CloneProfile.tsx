@@ -37,7 +37,7 @@ const CloneProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 	});
 
 	const onClickApply = async () => {
-		if (ProfileName.length === 0) return;
+		if (ProfileName.length === 0 || ProfileName.length > 20) return;
 		if (completed.completed) {
 			setCompleted({ error: false, completed: false });
 		}
@@ -58,7 +58,7 @@ const CloneProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 	useEffect(() => {
 		if (isOpen) {
 			if (selectedProfile) {
-				setProfileName(selectedProfile.name + " - Copy");
+				setProfileName(selectedProfile.name + " - Clone");
 			}
 		}
 	}, [isOpen]);
@@ -90,7 +90,7 @@ const CloneProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 							<Input
 								className="mt-1"
 								startContent={<IconUserEdit />}
-								isInvalid={ProfileName === ""}
+								isInvalid={ProfileName.length === 0 || ProfileName.length > 20}
 								label="New Profile Name"
 								placeholder="Enter the name of the profile"
 								value={ProfileName}

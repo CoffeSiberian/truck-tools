@@ -643,6 +643,10 @@ async fn backup_profile(dir_profile: &str, dest_dir_zip: &str) -> Result<String,
 
 #[tauri::command]
 async fn copy_profile(dir_profile: &str, new_profile_name: &str) -> Result<String, ()> {
+    if new_profile_name.chars().count() == 0 || new_profile_name.chars().count() > 20 {
+        return Ok(RESPONSE_FALSE.to_string());
+    }
+
     let profile_name_hex: String = encode_upper(new_profile_name);
     let dir_profile_path = Path::new(dir_profile);
     let dest_dir_path = dir_profile_path.join("..").join(profile_name_hex);
