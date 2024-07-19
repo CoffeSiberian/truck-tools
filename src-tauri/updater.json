@@ -1,11 +1,11 @@
 {
-	"version": "v0.3.3",
-	"notes": "- New option will be added to allow full profile backups",
-	"pub_date": "2024-07-17T02:00:00-04:00",
+	"version": "v0.3.4",
+	"notes": "- New drop-down menu with common profile selection and saving options\n\n- New feature to copy settings between profiles\n\n- New feature that allows to clone profiles with a new name",
+	"pub_date": "2024-07-19T02:00:00-04:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmFOWXlnWGNHcTVueWRRZlVBdURod1NYQlQ1RW9CYXpZZHN2Q0J0anEzSGQ0bVpaWXdNVkF6WDdFVTdEVmwvZlEwRWpkOE4zV25SYU1sVnBneUlHQXc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzIxMTk3NDk3CWZpbGU6VHJ1Y2sgVG9vbHNfMC4zLjNfeDY0X2VuLVVTLm1zaS56aXAKOGFuVUFuajVnUkNHUmZEeGYxK3lmcjdHYUJieTJmS1ZZM2grakRyY3RuMmVFS1JRb0VRL1dDOEswSUgraXNkR3g4S0gxRnpjekJJS3NaajhLbFVrREE9PQo=",
-			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.3.3/Truck_Tools_0.3.3_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmRqR2k2UW1FQ0Qyc3VTaDZWU1dERjBkRGxwRlJaSmMrREhDY204Q2dMUnVJZEVKZ20zVXMyTGlUNEYzUGJkKzN3YmlLYnZuOGk1VVVldUZBMnVvekFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzIxNDIyNDQxCWZpbGU6VHJ1Y2sgVG9vbHNfMC4zLjRfeDY0X2VuLVVTLm1zaS56aXAKQ1lubEtMVEcwUXB6TzByajNEWWZLTmxTcHRvM3Irc1l1MW40cXR5bzFOemNKZXBvNHZ2ei9qWU0wSGRjWkRXb0ZvNVNZVHB2eFMzL1ZwMDhmR2Q3QVE9PQo=",
+			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.3.4/Truck_Tools_0.3.4_x64_en-US.msi.zip"
 		}
 	}
 }
