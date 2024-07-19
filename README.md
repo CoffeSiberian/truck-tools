@@ -60,7 +60,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 - [x] Unlock skills
 - [x] Profile backup
 - [x] Clone profile
-- [ ] Clone config
+- [x] Clone config
 
 #### Settings
 

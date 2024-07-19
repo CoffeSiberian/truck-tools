@@ -11,8 +11,11 @@ import {
 	cn,
 } from "@nextui-org/react";
 import { descriptFiles, openExplorer } from "../../utils/fileEdit";
+
+// modals
 import BackupProfile from "./Modal/BackupProfile";
 import CloneProfile from "./Modal/CloneProfile";
+import CopyConfig from "./Modal/CopyConfig";
 
 // icons
 import {
@@ -21,6 +24,7 @@ import {
 	IconMenu,
 	IconFileTypeZip,
 	IconCopy,
+	IconSettingsShare,
 } from "@tabler/icons-react";
 import { Spinner } from "@nextui-org/spinner";
 
@@ -42,6 +46,12 @@ const ProfileOptions = () => {
 		isOpen: isOpenClone,
 		onOpen: onOpenClone,
 		onOpenChange: onOpenChangeClone,
+	} = useDisclosure();
+
+	const {
+		isOpen: isOpenCopyConfig,
+		onOpen: onOpenCopyConfig,
+		onOpenChange: onOpenChangeCopyConfig,
 	} = useDisclosure();
 
 	const [decryptResult, setDecryptResult] = useState<DecryptResult>({
@@ -104,6 +114,10 @@ const ProfileOptions = () => {
 		<>
 			<BackupProfile isOpen={isOpenBackup} onOpenChange={onOpenChangeBackup} />
 			<CloneProfile isOpen={isOpenClone} onOpenChange={onOpenChangeClone} />
+			<CopyConfig
+				isOpen={isOpenCopyConfig}
+				onOpenChange={onOpenChangeCopyConfig}
+			/>
 			<Dropdown backdrop="opaque" closeOnSelect={false}>
 				<DropdownTrigger>
 					<Button
@@ -173,6 +187,15 @@ const ProfileOptions = () => {
 							onPress={onOpenClone}
 						>
 							Clone Profile
+						</DropdownItem>
+						<DropdownItem
+							key="copy-config"
+							description="Copy settings from other profiles"
+							startContent={<IconSettingsShare className={iconClasses} />}
+							closeOnSelect={true}
+							onPress={onOpenCopyConfig}
+						>
+							Copy Config
 						</DropdownItem>
 					</DropdownSection>
 				</DropdownMenu>
