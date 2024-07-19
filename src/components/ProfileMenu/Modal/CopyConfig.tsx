@@ -92,7 +92,7 @@ const CopyConfig: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 							<p>
 								Select the profile to which you want to copy the settings,
 								remember that your settings will be replaced, we recommend that
-								you make a backup copy.
+								you <b>make a backup copy of your profile</b>.
 							</p>
 							<SelectProfileObject
 								listProfiles={listProfiles}
