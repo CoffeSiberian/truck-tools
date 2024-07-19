@@ -21,7 +21,7 @@ const ListProfiles = () => {
 
 	return (
 		<Select
-			isDisabled={!(listProfiles.length > 0)}
+			isDisabled={listProfiles.length === 0}
 			errorMessage={listProfiles.length > 0 ? undefined : "No profiles found"}
 			isLoading={listProfiles.length === 0}
 			isInvalid={selectedProfile ? false : true}
