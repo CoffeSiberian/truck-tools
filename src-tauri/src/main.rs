@@ -7,8 +7,8 @@ mod utils;
 
 use hex::encode_upper;
 use main_options::profiles::{
-    set_any_status_garage, set_bank_money, set_dealerships_discovered_status, set_experience,
-    set_experience_skills, set_profile_name, set_visited_cities,
+    copy_profile_configs, set_any_status_garage, set_bank_money, set_dealerships_discovered_status,
+    set_experience, set_experience_skills, set_profile_name, set_visited_cities,
 };
 use main_options::trailers::{
     get_my_trailer_id, get_slave_trailers_id, get_trailer_def_id, get_trailer_def_index,
@@ -687,6 +687,20 @@ async fn copy_profile(dir_profile: &str, new_profile_name: &str) -> Result<Strin
     return Ok(RESPONSE_TRUE.to_string());
 }
 
+#[tauri::command]
+async fn copy_controls_config(dir_profile: &str, dest_dir_profile: &str) -> Result<String, ()> {
+    let dir_profile_path = Path::new(dir_profile);
+    let dest_dir_profile_path = Path::new(dest_dir_profile);
+
+    let result: bool = copy_profile_configs(&dir_profile_path, &dest_dir_profile_path).await;
+
+    if !result {
+        return Ok(RESPONSE_FALSE.to_string());
+    }
+
+    return Ok(RESPONSE_TRUE.to_string());
+}
+
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
@@ -716,6 +730,7 @@ fn main() {
             set_profile_experience_skills,
             backup_profile,
             copy_profile,
+            copy_controls_config,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

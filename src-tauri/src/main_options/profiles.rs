@@ -1,7 +1,9 @@
 use crate::structs::experience_skills::ExperienceSkills;
 use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_items_replace::{VecGaragesReplace, VecItemsReplace};
+use crate::utils::file_edit::copy_single_file;
 use std::collections::HashSet;
+use std::path::Path;
 use std::vec;
 
 const GARAGE_STATUS_VEHICLES_6: [&str; 2] = [" vehicles: 1", " vehicles[0]: null"];
@@ -42,6 +44,8 @@ const GARAGE_STATUS_DRIVERS_3: [&str; 6] = [
 
 const CITIES_VISITED_FALSE: [&str; 2] = [" visited_cities: 0", " visited_cities_count: 0"];
 const DEALER_DISCOVERED_FALSE: &str = " unlocked_dealers: 0";
+
+const PROFILES_CONFIGS_FILES_NAMES: [&str; 3] = ["config.cfg", "config_local.cfg", "controls.sii"];
 
 fn get_bank_id(arr_val: &Vec<String>) -> Option<VecItemsFind> {
     let mut bank_id: Option<VecItemsFind> = None;
@@ -618,4 +622,21 @@ pub fn set_experience_skills(
     }
 
     return Some(arr_val_clone);
+}
+
+pub async fn copy_profile_configs(dir_profile: &Path, dest_dir_profile: &Path) -> bool {
+    for item in PROFILES_CONFIGS_FILES_NAMES.iter() {
+        let file_path = dir_profile.join(item);
+        let dest_file_path = dest_dir_profile.join(item);
+
+        if !file_path.exists() {
+            return false;
+        }
+
+        if !copy_single_file(&file_path, &dest_file_path).await {
+            return false;
+        }
+    }
+
+    return true;
 }

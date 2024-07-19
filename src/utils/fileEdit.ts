@@ -392,6 +392,20 @@ export const copyProfile = async (
 	return res.res;
 };
 
+export const copyProfileConfigs = async (
+	dirProfile: string,
+	destDirProfile: string
+): Promise<boolean> => {
+	const rustParams = {
+		dirProfile,
+		destDirProfile,
+	};
+
+	const invoceRes = await invoke("copy_controls_config", rustParams);
+	const res = JSON.parse(invoceRes as string) as responseRustTypes;
+	return res.res;
+};
+
 export const getListEngines = async (): Promise<EnginesTypes | undefined> => {
 	const invoceRes = await invoke("get_list_engines");
 	const res = JSON.parse(invoceRes as string) as responseTrucksEngines;

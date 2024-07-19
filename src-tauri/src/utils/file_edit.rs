@@ -18,6 +18,13 @@ async fn read_file(path: &str) -> Option<File> {
     };
 }
 
+pub async fn copy_single_file(src_file: &Path, dest_file: &Path) -> bool {
+    match std::fs::copy(src_file, dest_file) {
+        Ok(_) => return true,
+        Err(_) => return false,
+    }
+}
+
 pub async fn copy_folder(src_dir: &Path, dest_dir: &Path, ignore_folders: Vec<&str>) -> bool {
     let mut files_dir: Vec<FilePath> = Vec::new();
     let mut list_folders: Vec<String> = Vec::new();
