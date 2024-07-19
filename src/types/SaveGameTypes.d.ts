@@ -15,6 +15,7 @@ export interface Profile {
 
 export interface ProfileDir {
 	name: string;
+	hex: string;
 	dir: string;
 }
 

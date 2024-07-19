@@ -1,5 +1,3 @@
-import { Buffer } from "buffer";
-
 // tauri
 import { documentDir } from "@tauri-apps/api/path";
 import { exists } from "@tauri-apps/api/fs";
@@ -104,8 +102,8 @@ export const readProfileNames = async (): Promise<ProfileWithoutSaves[]> => {
 		if (saves === 0) continue;
 
 		const profileObject: ProfileWithoutSaves = {
-			name: Buffer.from(dirProfiles[i].name!, "hex").toString("utf-8"),
-			hex: dirProfiles[i].name,
+			name: dirProfiles[i].name,
+			hex: dirProfiles[i].hex,
 			savesCount: saves,
 			avatar: profileImg,
 			dir: dirProfiles[i].dir,

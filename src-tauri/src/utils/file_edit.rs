@@ -1,6 +1,7 @@
 use super::decrypt_saves::decrypt_file;
 use crate::structs::file_path::FilePath;
 use crate::structs::vec_save_games::{VecProfileDir, VecSaveGames};
+use hex::decode;
 use std::fs::{read_dir, write, File};
 use std::path::Path;
 use uuid::Uuid;
@@ -205,10 +206,18 @@ pub async fn get_list_save_game_dirs(path: String) -> Option<Vec<VecProfileDir>>
     for item in dir_saves_content.iter() {
         let item_path: String = item.to_string().replace("\\", "/");
         let item_path_split: Vec<&str> = item_path.split("/").collect();
-        let profile_path_name: &str = item_path_split[item_path_split.len() - 1];
+        let profile_path_hex: &str = item_path_split[item_path_split.len() - 1];
+        let profile_path_name: String = match decode(&profile_path_hex) {
+            Ok(profile_path_name) => match String::from_utf8(profile_path_name) {
+                Ok(profile_path_name) => profile_path_name,
+                Err(_) => continue,
+            },
+            Err(_) => continue,
+        };
 
         result.push(VecProfileDir {
-            name: profile_path_name.to_string(),
+            name: profile_path_name,
+            hex: profile_path_hex.to_string(),
             dir: item_path,
         });
     }

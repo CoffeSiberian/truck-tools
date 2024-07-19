@@ -10,5 +10,6 @@ pub struct VecSaveGames {
 #[derive(Serialize)]
 pub struct VecProfileDir {
     pub name: String,
+    pub hex: String,
     pub dir: String,
 }
