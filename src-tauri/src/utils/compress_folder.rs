@@ -7,8 +7,8 @@ use zip::write::{SimpleFileOptions, ZipWriter};
 use zip::CompressionMethod;
 
 pub async fn compress_folder_files(
-    src_dir: &str,
-    dest_dir_zip: &str,
+    src_dir: &Path,
+    dest_dir_zip: &Path,
     ignore_folders: Vec<&str>,
 ) -> bool {
     let zip_file = match File::create(dest_dir_zip) {
@@ -17,7 +17,7 @@ pub async fn compress_folder_files(
     };
     let mut zip = ZipWriter::new(zip_file);
     let options = SimpleFileOptions::default().compression_method(CompressionMethod::Deflated);
-    let folder_name = match Path::new(src_dir).file_name() {
+    let folder_name = match src_dir.file_name() {
         Some(name) => match name.to_str() {
             Some(name) => name,
             None => return false,
@@ -26,10 +26,11 @@ pub async fn compress_folder_files(
     };
 
     let mut files_in_memory: Vec<(String, Vec<u8>)> = Vec::new();
-    let mut list_folders: Vec<String> = vec![format!("./{}", folder_name)];
+    let mut list_folders: Vec<String> = vec![folder_name.to_string()];
 
     for entry in WalkDir::new(src_dir).into_iter().filter_map(|e| e.ok()) {
         let path = entry.path();
+
         if ignore_folders
             .iter()
             .any(|&folder| path.to_string_lossy().contains(folder))
@@ -38,7 +39,7 @@ pub async fn compress_folder_files(
         }
 
         if path.is_file() {
-            let name = match path.strip_prefix(Path::new(src_dir)) {
+            let name = match path.strip_prefix(src_dir) {
                 Ok(name) => name.to_string_lossy().into_owned(),
                 Err(_) => continue,
             };
@@ -54,11 +55,11 @@ pub async fn compress_folder_files(
                 Err(_) => continue,
             }
 
-            files_in_memory.push((format!("./{}/{}", folder_name, name), buffer));
+            files_in_memory.push((format!("{}/{}", folder_name, name), buffer));
         }
 
         if path.is_dir() {
-            let name = match path.strip_prefix(Path::new(src_dir)) {
+            let name = match path.strip_prefix(src_dir) {
                 Ok(name) => name.to_string_lossy().into_owned(),
                 Err(_) => continue,
             };
@@ -67,7 +68,7 @@ pub async fn compress_folder_files(
                 continue;
             }
 
-            list_folders.push(format!("./{}/{}", folder_name, name));
+            list_folders.push(format!("{}/{}", folder_name, name));
         }
     }
 

@@ -631,8 +631,12 @@ async fn set_profile_experience_skills(
 
 #[tauri::command]
 async fn backup_profile(dir_profile: &str, dest_dir_zip: &str) -> Result<String, ()> {
-    let result: bool =
-        compress_folder_files(dir_profile, dest_dir_zip, IGNORED_FOLDERS.to_vec()).await;
+    let result: bool = compress_folder_files(
+        Path::new(dir_profile),
+        Path::new(dest_dir_zip),
+        IGNORED_FOLDERS.to_vec(),
+    )
+    .await;
 
     if result {
         return Ok(RESPONSE_TRUE.to_string());
