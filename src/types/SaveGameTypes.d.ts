@@ -53,6 +53,13 @@ export interface TransmissionTypes {
 export interface EnginesTypes {
 	scania: ScaniaModelsEngines;
 	volvo: VolvoModelsEngines;
+	man: ManModelsEngines;
+	daf: DafModelsEngines;
+	mercedes: MercedesModelsEngines;
+	man: ManModelsEngines;
+	renault: RenaultModelsEngines;
+	iveco: IvecoModelsEngines;
+	
 }
 
 export interface TransmissionsTypes {
