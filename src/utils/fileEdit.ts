@@ -22,6 +22,8 @@ import {
 	responseTrucksEngines,
 	responseTrucksTransmissions,
 	responseProfileDir,
+	responseSystemTheme,
+	themeTypes,
 } from "../types/fileEditTypes";
 
 const getProfileImage = async (path: string): Promise<string | undefined> => {
@@ -418,4 +420,11 @@ export const getListTransmissions = async (): Promise<
 	const invoceRes = await invoke("get_list_transmissions");
 	const res = JSON.parse(invoceRes as string) as responseTrucksTransmissions;
 	return res.transmissions;
+};
+
+export const getSystemTheme = async (): Promise<themeTypes> => {
+	const invoceRes = await invoke("get_os_theme");
+	const res = JSON.parse(invoceRes as string) as responseSystemTheme;
+
+	return res.theme;
 };

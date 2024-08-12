@@ -5,6 +5,8 @@ import {
 	TransmissionsTypes,
 } from "./SaveGameTypes";
 
+export type themeTypes = "light" | "dark";
+
 export interface responseRustTypes {
 	res: boolean;
 }
@@ -27,4 +29,8 @@ export interface responseTrucksTransmissions extends responseRustTypes {
 
 export interface responseProfileDir extends responseRustTypes {
 	dirs?: ProfileDir[];
+}
+
+export interface responseSystemTheme extends responseRustTypes {
+	theme: themeTypes;
 }

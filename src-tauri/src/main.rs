@@ -33,6 +33,7 @@ use serde_json::json;
 use std::path::Path;
 use structs::experience_skills::ExperienceSkills;
 use structs::vec_save_games::VecSaveGames;
+use tauri::{Theme, Window};
 use utils::compress_folder::compress_folder_files;
 use utils::decrypt_saves::decrypt_file_to_save;
 use utils::file_edit::{
@@ -705,6 +706,27 @@ async fn copy_controls_config(dir_profile: &str, dest_dir_profile: &str) -> Resu
     return Ok(RESPONSE_TRUE.to_string());
 }
 
+#[tauri::command]
+fn get_os_theme(window: Window) -> String {
+    match window.theme() {
+        Ok(Theme::Dark) => {
+            return json!({
+                "res": true,
+                "theme": "dark",
+            })
+            .to_string()
+        }
+        Ok(Theme::Light) => {
+            return json!({
+                "res": true,
+                "theme": "light",
+            })
+            .to_string()
+        }
+        _ => return RESPONSE_FALSE.to_string(),
+    }
+}
+
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
@@ -735,6 +757,7 @@ fn main() {
             backup_profile,
             copy_profile,
             copy_controls_config,
+            get_os_theme,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
