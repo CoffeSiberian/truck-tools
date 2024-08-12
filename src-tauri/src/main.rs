@@ -17,8 +17,13 @@ use main_options::trailers::{
     set_trailer_license_plate,
 };
 use main_options::truck_engines::{
-    SCANIA_R_2009_ENGINES, SCANIA_R_ENGINES, SCANIA_STREAMLINE_ENGINES, SCANIA_S_ENGINES, VOLVO_FK,
-    VOLVO_FK_CLASSIC,
+    IVECO_HIWAY, IVECO_STRALIS,
+    DAF_XF, DAF_XF_EURO6,
+    RENAULT_MAGNUM, RENAULT_PREMIUM, RENAULT_T,
+    MERCEDES_ACTROS, MERCEDES_NEW_ACTROS,
+    MAN_TGX, MAN_TGX_EURO6, 
+    SCANIA_R_2009_ENGINES, SCANIA_R_ENGINES, SCANIA_STREAMLINE_ENGINES, SCANIA_S_ENGINES, 
+    VOLVO_FK, VOLVO_FK_CLASSIC
 };
 use main_options::truck_transmissions::{
     SCANIA_R_2009_TRANSMISSION, SCANIA_R_TRANSMISSION, SCANIA_STREAMLINE_TRANSMISSION,
@@ -224,7 +229,28 @@ async fn get_list_engines() -> Result<String, ()> {
             "volvo": {
                 "volvo_fh_classic": VOLVO_FK_CLASSIC,
                 "volvo_fh": VOLVO_FK,
-            }
+            },
+            "man": {
+                "man_tgx": MAN_TGX,
+                "man_tgx_euro6": MAN_TGX_EURO6,
+            },
+            "mercedes": {
+                "mercedes_actros": MERCEDES_ACTROS,
+                "mercedes_new_actros": MERCEDES_NEW_ACTROS,
+            },
+            "renault": {
+                "renault_premium": RENAULT_PREMIUM,
+                "renault_magnum": RENAULT_MAGNUM,
+                "renault_t": RENAULT_T,
+            },
+            "daf": {
+                "daf_xf": DAF_XF,
+                "daf_xf_euro6": DAF_XF_EURO6,
+            },
+            "iveco": {
+                "iveco_stralis": IVECO_STRALIS,
+                "iveco_hiway": IVECO_HIWAY,
+            },
         },
     })
     .to_string();
