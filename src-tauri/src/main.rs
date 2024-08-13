@@ -18,7 +18,7 @@ use main_options::trailers::{
 };
 use main_options::truck_engines::{
     IVECO_HIWAY, IVECO_STRALIS,
-    DAF_XF, DAF_XF_EURO6,
+    DAF_XF, DAF_XF_EURO6, DAF_2021,
     RENAULT_MAGNUM, RENAULT_PREMIUM, RENAULT_T,
     MERCEDES_ACTROS, MERCEDES_NEW_ACTROS,
     MAN_TGX, MAN_TGX_EURO6, 
@@ -246,6 +246,7 @@ async fn get_list_engines() -> Result<String, ()> {
             "daf": {
                 "daf_xf": DAF_XF,
                 "daf_xf_euro6": DAF_XF_EURO6,
+                "daf_2021": DAF_2021,
             },
             "iveco": {
                 "iveco_stralis": IVECO_STRALIS,
