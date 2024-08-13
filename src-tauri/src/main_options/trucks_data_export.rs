@@ -6,38 +6,38 @@ use super::truck_transmissions::{
     SCANIA_R_2009_TRANSMISSION, SCANIA_R_TRANSMISSION, SCANIA_STREAMLINE_TRANSMISSION,
     SCANIA_S_TRANSMISSION, VOLVO_FH_CLASSIC_TRANSMISSION, VOLVO_FH_TRANSMISSION,
 };
-use crate::structs::vec_trucks::{brand_scania, brand_volvo, truck_brands, truck_values};
+use crate::structs::vec_trucks::{BrandScania, BrandVolvo, TruckBrands, TruckValues};
 
-pub fn get_trucks_values() -> truck_brands {
-    let scania: brand_scania = brand_scania {
-        scania_r: truck_values {
+pub fn get_trucks_values() -> TruckBrands {
+    let scania: BrandScania = BrandScania {
+        scania_r: TruckValues {
             engines: SCANIA_R_ENGINES.to_vec(),
             transmissions: SCANIA_R_TRANSMISSION.to_vec(),
         },
-        scania_s: truck_values {
+        scania_s: TruckValues {
             engines: SCANIA_S_ENGINES.to_vec(),
             transmissions: SCANIA_S_TRANSMISSION.to_vec(),
         },
-        scania_streamline: truck_values {
+        scania_streamline: TruckValues {
             engines: SCANIA_STREAMLINE_ENGINES.to_vec(),
             transmissions: SCANIA_STREAMLINE_TRANSMISSION.to_vec(),
         },
-        scania_r_2009: truck_values {
+        scania_r_2009: TruckValues {
             engines: SCANIA_R_2009_ENGINES.to_vec(),
             transmissions: SCANIA_R_2009_TRANSMISSION.to_vec(),
         },
     };
 
-    let volvo: brand_volvo = brand_volvo {
-        volvo_fh: truck_values {
+    let volvo: BrandVolvo = BrandVolvo {
+        volvo_fh: TruckValues {
             engines: VOLVO_FH.to_vec(),
             transmissions: VOLVO_FH_TRANSMISSION.to_vec(),
         },
-        volvo_fh_classic: truck_values {
+        volvo_fh_classic: TruckValues {
             engines: VOLVO_FH_CLASSIC.to_vec(),
             transmissions: VOLVO_FH_CLASSIC_TRANSMISSION.to_vec(),
         },
     };
 
-    return truck_brands { scania, volvo };
+    return TruckBrands { scania, volvo };
 }

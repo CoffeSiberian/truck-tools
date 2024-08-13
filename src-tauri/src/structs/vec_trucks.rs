@@ -24,27 +24,27 @@ pub struct TransmissionStruct {
 }
 
 #[derive(Serialize, Clone)]
-pub struct truck_values {
+pub struct TruckValues {
     pub engines: Vec<EngineStruct>,
     pub transmissions: Vec<TransmissionStruct>,
 }
 
 #[derive(Serialize)]
-pub struct brand_scania {
-    pub scania_r: truck_values,
-    pub scania_s: truck_values,
-    pub scania_streamline: truck_values,
-    pub scania_r_2009: truck_values,
+pub struct BrandScania {
+    pub scania_r: TruckValues,
+    pub scania_s: TruckValues,
+    pub scania_streamline: TruckValues,
+    pub scania_r_2009: TruckValues,
 }
 
 #[derive(Serialize)]
-pub struct brand_volvo {
-    pub volvo_fh: truck_values,
-    pub volvo_fh_classic: truck_values,
+pub struct BrandVolvo {
+    pub volvo_fh: TruckValues,
+    pub volvo_fh_classic: TruckValues,
 }
 
 #[derive(Serialize)]
-pub struct truck_brands {
-    pub scania: brand_scania,
-    pub volvo: brand_volvo,
+pub struct TruckBrands {
+    pub scania: BrandScania,
+    pub volvo: BrandVolvo,
 }
