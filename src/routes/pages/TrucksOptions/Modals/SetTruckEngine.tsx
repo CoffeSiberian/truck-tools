@@ -87,6 +87,7 @@ const SetTruckEngine = () => {
 			models: [
 				{ key: "daf_xf", name: "DAF XF" },
 				{ key: "daf_xf_euro6", name: "DAF XF EURO6" },
+				{ key: "daf_2021", name: "DAF 2021" },
 			],
 			icon: DafIcon,
 		},
@@ -205,6 +206,9 @@ const SetTruckEngine = () => {
 					break;
 				case "daf_xf_euro6":
 					setEngines(resEngines.daf.daf_xf_euro6);
+					break;
+				case "daf_2021":
+					setEngines(resEngines.daf.daf_2021);
 					break;
 				case "mercedes_actros":
 					setEngines(resEngines.mercedes.mercedes_actros);
