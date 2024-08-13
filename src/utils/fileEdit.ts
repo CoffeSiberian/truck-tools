@@ -417,6 +417,7 @@ export const getListEngines = async (): Promise<EnginesTypes | undefined> => {
 export const getListTransmissions = async (): Promise<
 	TransmissionsTypes | undefined
 > => {
+	// deprecated
 	const invoceRes = await invoke("get_list_transmissions");
 	const res = JSON.parse(invoceRes as string) as responseTrucksTransmissions;
 	return res.transmissions;
