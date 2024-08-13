@@ -21,6 +21,7 @@ export interface ManModelsEngines {
 export interface DafModelsEngines {
 	daf_xf: EngineTypes[];
 	daf_xf_euro6: EngineTypes[];
+	daf_2021: EngineTypes[];
 }
 
 export interface MercedesModelsEngines {
