@@ -20,7 +20,7 @@ use super::trucks_engines_data::volvo::{
 };
 use crate::structs::vec_trucks::EngineStruct;
 
-pub const SCANIA_R_ENGINES: [EngineStruct<'static>; 8] = [
+pub const SCANIA_R_ENGINES: [EngineStruct; 8] = [
     SCANIA_R_370,
     SCANIA_R_410,
     SCANIA_R_450,
@@ -31,7 +31,7 @@ pub const SCANIA_R_ENGINES: [EngineStruct<'static>; 8] = [
     SCANIA_R_730,
 ];
 
-pub const SCANIA_S_ENGINES: [EngineStruct<'static>; 8] = [
+pub const SCANIA_S_ENGINES: [EngineStruct; 8] = [
     SCANIA_S_370,
     SCANIA_S_410,
     SCANIA_S_450,
@@ -42,7 +42,7 @@ pub const SCANIA_S_ENGINES: [EngineStruct<'static>; 8] = [
     SCANIA_S_730,
 ];
 
-pub const SCANIA_R_2009_ENGINES: [EngineStruct<'static>; 14] = [
+pub const SCANIA_R_2009_ENGINES: [EngineStruct; 14] = [
     SCANIA_R_2009_360,
     SCANIA_R_2009_380,
     SCANIA_R_2009_400,
@@ -59,7 +59,7 @@ pub const SCANIA_R_2009_ENGINES: [EngineStruct<'static>; 14] = [
     SCANIA_R_2009_730,
 ];
 
-pub const SCANIA_STREAMLINE_ENGINES: [EngineStruct<'static>; 19] = [
+pub const SCANIA_STREAMLINE_ENGINES: [EngineStruct; 19] = [
     SCANIA_STREAMLINE_360,
     SCANIA_STREAMLINE_370,
     SCANIA_STREAMLINE_380,
@@ -81,7 +81,7 @@ pub const SCANIA_STREAMLINE_ENGINES: [EngineStruct<'static>; 19] = [
     SCANIA_STREAMLINE_730_2,
 ];
 
-pub const VOLVO_FH_CLASSIC: [EngineStruct<'static>; 9] = [
+pub const VOLVO_FH_CLASSIC: [EngineStruct; 9] = [
     VOLVO_FH_2012_D13C_420,
     VOLVO_FH_2012_D13C_460,
     VOLVO_FH_2012_D13C_500,
@@ -93,7 +93,7 @@ pub const VOLVO_FH_CLASSIC: [EngineStruct<'static>; 9] = [
     VOLVO_FH_2012_D16G_750,
 ];
 
-pub const VOLVO_FH: [EngineStruct<'static>; 8] = [
+pub const VOLVO_FH: [EngineStruct; 8] = [
     VOLVO_FH_CLASSIC_D13C_420,
     VOLVO_FH_CLASSIC_D13C_460,
     VOLVO_FH_CLASSIC_D13C_500,
