@@ -25,8 +25,8 @@ export interface DafModelsEngines {
 }
 
 export interface MercedesModelsEngines {
-	merc_actros: EngineTypes[];
-	merc_new_actros: EngineTypes[];
+	mercedes_actros: EngineTypes[];
+	mercedes_new_actros: EngineTypes[];
 }
 
 export interface RenaultModelsEngines {
@@ -50,4 +50,31 @@ export interface ScaniaModelsTransmissions {
 export interface VolvoModelsTransmissions {
 	volvo_fh_classic: TransmissionTypes[];
 	volvo_fh: TransmissionTypes[];
+}
+
+export interface ManModelsTransmissions{
+	man_tgx: TransmissionTypes[];
+	man_tgx_eu6: TransmissionTypes[];
+}
+
+export interface DafModelsTransmissions {
+	daf_xf: TransmissionTypes[];
+	daf_xf_euro6: TransmissionTypes[];
+	daf_2021: TransmissionTypes[];
+}
+
+export interface MercedesModelsTransmissions {
+	mercedes_actros: TransmissionTypes[];
+	mercedes_new_actros: TransmissionTypes[];
+}
+
+export interface RenaultModelsTransmissions {
+	renault_t: TransmissionTypes[];
+	renault_magnum: TransmissionTypes[];
+	renault_premium: TransmissionTypes[];
+}
+
+export interface IvecoModelsTransmissions {
+	iveco_stralis: TransmissionTypes[];
+	iveco_hiway: TransmissionTypes[];
 }
