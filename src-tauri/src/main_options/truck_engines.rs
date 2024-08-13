@@ -44,6 +44,8 @@ use super::trucks_engines_data::daf::{
     DAF_XF_MX265_360, DAF_XF_MX300_410, DAF_XF_MX340_460, DAF_XF_MX375_510, 
     DAF_XF_EU6_MX11_370,DAF_XF_EU6_MX11_435, DAF_XF_EU6_MX13_460,DAF_XF_EU6_MX13_510,
     DAF_XF_EU6_MX13_410, DAF_XF_EU6_MX11_450, DAF_XF_EU6_MX13_480, DAF_XF_EU6_MX13_530,
+    DAF_2021_MX11_367, DAF_2021_MX11_408, DAF_2021_MX11_449, DAF_2021_MX13_428, DAF_2021_MX13_483,
+    DAF_2021_MX13_530,
 };
 
 use super::trucks_engines_data::iveco::{
@@ -226,6 +228,15 @@ pub const DAF_XF_EURO6: [EngineStruct<'static>; 8] = [
     DAF_XF_EU6_MX11_435,
     DAF_XF_EU6_MX13_460,
     DAF_XF_EU6_MX13_510,
+];
+
+pub const DAF_2021: [EngineStruct<'static>; 6] = [
+    DAF_2021_MX11_367, 
+    DAF_2021_MX11_408, 
+    DAF_2021_MX11_449, 
+    DAF_2021_MX13_428, 
+    DAF_2021_MX13_483,
+    DAF_2021_MX13_530,
 ];
 
 pub const IVECO_HIWAY: [EngineStruct<'static>; 8] = [
