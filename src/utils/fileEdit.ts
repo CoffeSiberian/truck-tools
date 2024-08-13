@@ -40,10 +40,12 @@ const getProfileSavesCount = async (profilePath: string): Promise<number> => {
 		ignoreAutoSaves: true,
 	};
 
-	const invoceRes = await invoke("get_save_game_count", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseProfileSavesCount;
+	const invoceRes = (await invoke(
+		"get_save_game_count",
+		rustParams
+	)) as responseProfileSavesCount;
 
-	return res.saves;
+	return invoceRes.saves;
 };
 
 export const descriptFiles = async (path: string): Promise<boolean> => {
@@ -51,9 +53,12 @@ export const descriptFiles = async (path: string): Promise<boolean> => {
 		dirSave: path,
 	};
 
-	const invoceRes = await invoke("decrypt_to_save", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"decrypt_to_save",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const openExplorer = async (path: string) => {
@@ -69,11 +74,13 @@ export const getListSaves = async (
 		ignoreAutoSaves: true,
 	};
 
-	const invoceRes = await invoke("get_save_game_name", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseProfileSaves;
-	if (!res.saves) return null;
+	const invoceRes = (await invoke(
+		"get_save_game_name",
+		rustParams
+	)) as responseProfileSaves;
 
-	return res.saves;
+	if (invoceRes.save_games.length === 0) return null;
+	return invoceRes.save_games;
 };
 
 export const getListDirProfiles = async (
@@ -83,11 +90,13 @@ export const getListDirProfiles = async (
 		dirProfile: profilePath,
 	};
 
-	const invoceRes = await invoke("get_list_dir_profile", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseProfileDir;
-	if (!res.dirs) return null;
+	const invoceRes = (await invoke(
+		"get_list_dir_profile",
+		rustParams
+	)) as responseProfileDir;
 
-	return res.dirs;
+	if (invoceRes.profiles.length === 0) return null;
+	return invoceRes.profiles;
 };
 
 export const readProfileNames = async (): Promise<ProfileWithoutSaves[]> => {
@@ -128,9 +137,12 @@ export const setChassisMassTrailer = async (
 		chassisMass,
 	};
 
-	const invoceRes = await invoke("set_cargo_mass_def_trailers", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"set_cargo_mass_def_trailers",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const setUnlockCurrentTrailers = async (
@@ -140,9 +152,12 @@ export const setUnlockCurrentTrailers = async (
 		dirSave: dirSave + "/game.sii",
 	};
 
-	const invoceRes = await invoke("set_unlock_current_trailers", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"set_unlock_current_trailers",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const setCargoMassTrailersAndSlave = async (
@@ -154,12 +169,12 @@ export const setCargoMassTrailersAndSlave = async (
 		dirSave: dirSave + "/game.sii",
 	};
 
-	const invoceRes = await invoke(
+	const invoceRes = (await invoke(
 		"set_cargo_mass_trailers_and_slave",
 		rustParams
-	);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const setRepairTruck = async (dirSave: string): Promise<boolean> => {
@@ -168,9 +183,12 @@ export const setRepairTruck = async (dirSave: string): Promise<boolean> => {
 		wear: "0",
 	};
 
-	const invoceRes = await invoke("repait_truck", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"repait_truck",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const setRepairAllTruck = async (dirSave: string): Promise<boolean> => {
@@ -179,9 +197,12 @@ export const setRepairAllTruck = async (dirSave: string): Promise<boolean> => {
 		wear: "0",
 	};
 
-	const invoceRes = await invoke("repait_all_trucks", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"repait_all_trucks",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const setFuelTruck = async (dirSave: string): Promise<boolean> => {
@@ -190,9 +211,12 @@ export const setFuelTruck = async (dirSave: string): Promise<boolean> => {
 		fuel: "1",
 	};
 
-	const invoceRes = await invoke("fill_fuel_truck", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"fill_fuel_truck",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const setAllFuelTruck = async (dirSave: string): Promise<boolean> => {
@@ -201,9 +225,12 @@ export const setAllFuelTruck = async (dirSave: string): Promise<boolean> => {
 		fuel: "1",
 	};
 
-	const invoceRes = await invoke("fill_any_trucks_fuel", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"fill_any_trucks_fuel",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const setInfinitFuelTruck = async (
@@ -213,9 +240,12 @@ export const setInfinitFuelTruck = async (
 		dirSave: dirSave + "/game.sii",
 	};
 
-	const invoceRes = await invoke("set_infinite_fuel", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"set_infinite_fuel",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const setLicensePlateTrailer = async (
@@ -231,9 +261,12 @@ export const setLicensePlateTrailer = async (
 		textPlateColor: textPlateColor,
 	};
 
-	const invoceRes = await invoke("set_license_plate_trailer", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"set_license_plate_trailer",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const setLicensePlateTruck = async (
@@ -249,9 +282,12 @@ export const setLicensePlateTruck = async (
 		textPlateColor: textPlateColor,
 	};
 
-	const invoceRes = await invoke("set_license_plate_truck", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"set_license_plate_truck",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const setTruckEngine = async (
@@ -263,9 +299,12 @@ export const setTruckEngine = async (
 		engineCode,
 	};
 
-	const invoceRes = await invoke("set_truck_engine_def", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"set_truck_engine_def",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const setTruckTransmission = async (
@@ -277,9 +316,12 @@ export const setTruckTransmission = async (
 		transmissionsCode,
 	};
 
-	const invoceRes = await invoke("set_truck_transmissions_def", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"set_truck_transmissions_def",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const setProfileMoney = async (
@@ -291,9 +333,12 @@ export const setProfileMoney = async (
 		money,
 	};
 
-	const invoceRes = await invoke("set_profile_money", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"set_profile_money",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const setProfileExperience = async (
@@ -305,9 +350,12 @@ export const setProfileExperience = async (
 		experience,
 	};
 
-	const invoceRes = await invoke("set_profile_experience", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"set_profile_experience",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const setProfileGarageStatus = async (
@@ -319,9 +367,12 @@ export const setProfileGarageStatus = async (
 		status,
 	};
 
-	const invoceRes = await invoke("set_any_garage_status", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"set_any_garage_status",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const setProfileVisitedCities = async (
@@ -333,9 +384,12 @@ export const setProfileVisitedCities = async (
 		citiesVisited,
 	};
 
-	const invoceRes = await invoke("set_cities_visited", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"set_cities_visited",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const setProfileDealerDiscovered = async (
@@ -347,9 +401,12 @@ export const setProfileDealerDiscovered = async (
 		discovered,
 	};
 
-	const invoceRes = await invoke("set_dealerships_discovered", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"set_dealerships_discovered",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const setProfileSkill = async (
@@ -361,9 +418,12 @@ export const setProfileSkill = async (
 		...experience,
 	};
 
-	const invoceRes = await invoke("set_profile_experience_skills", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"set_profile_experience_skills",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const backupProfile = async (
@@ -375,9 +435,12 @@ export const backupProfile = async (
 		destDirZip,
 	};
 
-	const invoceRes = await invoke("backup_profile", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"backup_profile",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const copyProfile = async (
@@ -389,9 +452,12 @@ export const copyProfile = async (
 		newProfileName,
 	};
 
-	const invoceRes = await invoke("copy_profile", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"copy_profile",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const copyProfileConfigs = async (
@@ -403,12 +469,16 @@ export const copyProfileConfigs = async (
 		destDirProfile,
 	};
 
-	const invoceRes = await invoke("copy_controls_config", rustParams);
-	const res = JSON.parse(invoceRes as string) as responseRustTypes;
-	return res.res;
+	const invoceRes = (await invoke(
+		"copy_controls_config",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
 };
 
 export const getListEngines = async (): Promise<EnginesTypes | undefined> => {
+	// deprecated
 	const invoceRes = await invoke("get_list_engines");
 	const res = JSON.parse(invoceRes as string) as responseTrucksEngines;
 	return res.engines;
@@ -424,8 +494,7 @@ export const getListTransmissions = async (): Promise<
 };
 
 export const getSystemTheme = async (): Promise<themeTypes> => {
-	const invoceRes = await invoke("get_os_theme");
-	const res = JSON.parse(invoceRes as string) as responseSystemTheme;
+	const invoceRes = (await invoke("get_os_theme")) as responseSystemTheme;
 
-	return res.theme;
+	return invoceRes.theme;
 };
