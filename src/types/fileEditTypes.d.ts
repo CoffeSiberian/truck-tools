@@ -3,6 +3,7 @@ import {
 	EnginesTypes,
 	ProfileDir,
 	TransmissionsTypes,
+	TruckBrands,
 } from "./SaveGameTypes";
 
 export type themeTypes = "light" | "dark";
@@ -19,14 +20,8 @@ export interface responseProfileSavesCount extends responseRustTypes {
 	saves: number;
 }
 
-export interface responseTrucksEngines extends responseRustTypes {
-	// deprecated
-	engines?: EnginesTypes;
-}
-
-export interface responseTrucksTransmissions extends responseRustTypes {
-	// deprecated
-	transmissions?: TransmissionsTypes;
+export interface responseTrucksInfo extends responseRustTypes {
+	trucks: TruckBrands;
 }
 
 export interface responseProfileDir extends responseRustTypes {

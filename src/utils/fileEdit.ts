@@ -10,17 +10,15 @@ import { invoke } from "@tauri-apps/api/tauri";
 import {
 	ProfileWithoutSaves,
 	SaveGame,
-	EnginesTypes,
-	TransmissionsTypes,
 	ProfileDir,
 	ExperienceSkillsTypes,
+	TruckBrands,
 } from "../types/SaveGameTypes";
 import {
 	responseRustTypes,
 	responseProfileSaves,
 	responseProfileSavesCount,
-	responseTrucksEngines,
-	responseTrucksTransmissions,
+	responseTrucksInfo,
 	responseProfileDir,
 	responseSystemTheme,
 	themeTypes,
@@ -477,20 +475,12 @@ export const copyProfileConfigs = async (
 	return invoceRes.res;
 };
 
-export const getListEngines = async (): Promise<EnginesTypes | undefined> => {
-	// deprecated
-	const invoceRes = await invoke("get_list_engines");
-	const res = JSON.parse(invoceRes as string) as responseTrucksEngines;
-	return res.engines;
-};
+export const getTrucksInfoList = async (): Promise<TruckBrands | undefined> => {
+	const invoceRes = (await invoke(
+		"get_list_trucks_info"
+	)) as responseTrucksInfo;
 
-export const getListTransmissions = async (): Promise<
-	TransmissionsTypes | undefined
-> => {
-	// deprecated
-	const invoceRes = await invoke("get_list_transmissions");
-	const res = JSON.parse(invoceRes as string) as responseTrucksTransmissions;
-	return res.transmissions;
+	return invoceRes.trucks;
 };
 
 export const getSystemTheme = async (): Promise<themeTypes> => {

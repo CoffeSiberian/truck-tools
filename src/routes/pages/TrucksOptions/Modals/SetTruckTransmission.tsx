@@ -14,7 +14,7 @@ import {
 } from "@nextui-org/react";
 import {
 	setTruckTransmission,
-	getListTransmissions,
+	getTrucksInfoList,
 } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
@@ -134,27 +134,31 @@ const SetTruckTransmission = () => {
 		setSelectedTransmission(undefined);
 
 		if (!modelFind) return;
-		const resTransmissions = await getListTransmissions();
+		const resTransmissions = await getTrucksInfoList();
 
 		if (resTransmissions) {
 			switch (modelFind.key) {
 				case "scania_r":
-					setTransmissions(resTransmissions.scania.scania_r);
+					setTransmissions(resTransmissions.scania.scania_r.transmissions);
 					break;
 				case "scania_s":
-					setTransmissions(resTransmissions.scania.scania_s);
+					setTransmissions(resTransmissions.scania.scania_s.transmissions);
 					break;
 				case "scania_r_2009":
-					setTransmissions(resTransmissions.scania.scania_r_2009);
+					setTransmissions(resTransmissions.scania.scania_r_2009.transmissions);
 					break;
 				case "scania_streamline":
-					setTransmissions(resTransmissions.scania.scania_streamline);
+					setTransmissions(
+						resTransmissions.scania.scania_streamline.transmissions
+					);
 					break;
 				case "volvo_fh_classic":
-					setTransmissions(resTransmissions.volvo.volvo_fh_classic);
+					setTransmissions(
+						resTransmissions.volvo.volvo_fh_classic.transmissions
+					);
 					break;
 				case "volvo_fh":
-					setTransmissions(resTransmissions.volvo.volvo_fh);
+					setTransmissions(resTransmissions.volvo.volvo_fh.transmissions);
 					break;
 			}
 		}

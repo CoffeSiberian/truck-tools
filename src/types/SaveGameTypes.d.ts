@@ -5,11 +5,20 @@ import {
 	VolvoModelsTransmissions,
 } from "./TrucksTypes";
 
+/////////////////////////////////////////////////////////
+// PROFILE TYPES
+
 export interface Profile {
 	name: string;
 	hex: string;
 	saves: Array<SaveGame>;
 	avatar?: string;
+	dir: string;
+}
+
+export interface SaveGame {
+	id: string;
+	name: string;
 	dir: string;
 }
 
@@ -27,11 +36,17 @@ export interface ProfileWithoutSaves {
 	dir: string;
 }
 
-export interface SaveGame {
-	id: string;
-	name: string;
-	dir: string;
+export interface ExperienceSkillsTypes {
+	adrBin: string;
+	longDist: string;
+	heavy: string;
+	fragile: string;
+	urgent: string;
+	mechanical: string;
 }
+
+/////////////////////////////////////////////////////////
+// TRUCKS TYPES
 
 export interface EngineTypes {
 	name_id: string;
@@ -50,21 +65,26 @@ export interface TransmissionTypes {
 	code: string;
 }
 
-export interface EnginesTypes {
-	scania: ScaniaModelsEngines;
-	volvo: VolvoModelsEngines;
+export interface TruckValues {
+	engines: EngineTypes[];
+	transmissions: TransmissionTypes[];
 }
 
-export interface TransmissionsTypes {
-	scania: ScaniaModelsTransmissions;
-	volvo: VolvoModelsTransmissions;
+export interface BrandScania {
+	scania_r: TruckValues;
+	scania_s: TruckValues;
+	scania_streamline: TruckValues;
+	scania_r_2009: TruckValues;
 }
 
-export interface ExperienceSkillsTypes {
-	adrBin: string;
-	longDist: string;
-	heavy: string;
-	fragile: string;
-	urgent: string;
-	mechanical: string;
+export interface BrandVolvo {
+	volvo_fh: TruckValues;
+	volvo_fh_classic: TruckValues;
 }
+
+export interface TruckBrands {
+	scania: BrandScania;
+	volvo: BrandVolvo;
+}
+
+/////////////////////////////////////////////////////////
