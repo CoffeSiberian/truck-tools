@@ -31,6 +31,7 @@ const EditLicensePlate = () => {
 	const [txColor, setTxColor] = useColor("#ffffff");
 	const [plateText, setPlateText] = useState<string>(" T-TOOLS");
 	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [IsColorMargin, setIsColorMargin] = useState<boolean>(false);
 	const [completed, setCompleted] = useState<completedProps>({
 		error: false,
 		completed: false,
@@ -47,7 +48,8 @@ const EditLicensePlate = () => {
 				selectedSave.dir,
 				plateText,
 				bgColor.hex,
-				txColor.hex
+				txColor.hex,
+				IsColorMargin
 			);
 			setCompleted({
 				error: !res,
@@ -89,9 +91,11 @@ const EditLicensePlate = () => {
 										txColor={txColor}
 										bgColor={bgColor}
 										plateText={plateText}
+										isColorMargin={IsColorMargin}
 										setBGColor={setBGColor}
 										setTxColor={setTxColor}
 										setPlateText={setPlateText}
+										setIsColorMargin={setIsColorMargin}
 									/>
 									<AlertSave
 										message={
