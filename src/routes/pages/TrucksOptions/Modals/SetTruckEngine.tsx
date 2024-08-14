@@ -55,6 +55,7 @@ interface BrandType {
 const SetTruckEngine = () => {
 	const { selectedSave } = useProfileContex();
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
 	const BRANDS: BrandType[] = [
 		{
 			name: "Scania",
@@ -341,7 +342,7 @@ const SetTruckEngine = () => {
 									)}
 								</Select>
 								<Select
-									isDisabled={!Engines}
+									isDisabled={!selectedModel}
 									isInvalid={errorEngineEmpty}
 									items={Engines ? Engines : []}
 									selectedKeys={SelectedEngine ? [SelectedEngine.name_id] : []}

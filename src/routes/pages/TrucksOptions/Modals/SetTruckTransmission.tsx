@@ -58,6 +58,7 @@ interface BrandType {
 const SetTruckTransmission = () => {
 	const { selectedSave } = useProfileContex();
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
 	const BRANDS: BrandType[] = [
 		{
 			name: "Scania",
@@ -123,11 +124,11 @@ const SetTruckTransmission = () => {
 
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 
-	const [Transmissions, setTransmissions] = useState<
+	const [transmissions, setTransmissions] = useState<
 		TransmissionTypes[] | undefined
 	>(undefined);
 
-	const [SelectedTransmission, setSelectedTransmission] = useState<
+	const [selectedTransmission, setSelectedTransmission] = useState<
 		TransmissionTypes | undefined
 	>(undefined);
 
@@ -149,12 +150,12 @@ const SetTruckTransmission = () => {
 			setCompleted({ error: false, completed: false });
 		}
 
-		if (!SelectedTransmission) return;
+		if (!selectedTransmission) return;
 		if (selectedSave) {
 			setIsLoading(true);
 			const res = await setTruckTransmission(
 				selectedSave.dir,
-				SelectedTransmission.code
+				selectedTransmission.code
 			);
 			setCompleted({
 				error: !res,
@@ -256,9 +257,9 @@ const SetTruckTransmission = () => {
 	};
 
 	const onClickTransmission = (transmissionId: string) => {
-		if (!Transmissions) return;
+		if (!transmissions) return;
 
-		const transmissionFind = Transmissions.find(
+		const transmissionFind = transmissions.find(
 			(p) => p.name_id === transmissionId
 		);
 		setSelectedTransmission(transmissionFind);
@@ -270,8 +271,8 @@ const SetTruckTransmission = () => {
 			: true
 		: false;
 
-	const errorTransmissionEmpty = Transmissions
-		? SelectedTransmission
+	const errorTransmissionEmpty = selectedModel
+		? selectedTransmission
 			? false
 			: true
 		: false;
@@ -366,11 +367,11 @@ const SetTruckTransmission = () => {
 									)}
 								</Select>
 								<Select
-									isDisabled={!Transmissions}
+									isDisabled={!selectedModel}
 									isInvalid={errorTransmissionEmpty}
-									items={Transmissions ? Transmissions : []}
+									items={transmissions ? transmissions : []}
 									selectedKeys={
-										SelectedTransmission ? [SelectedTransmission.name_id] : []
+										selectedTransmission ? [selectedTransmission.name_id] : []
 									}
 									onChange={(e) => onClickTransmission(e.target.value)}
 									label="Transmissions"
