@@ -26,8 +26,10 @@ use main_options::truck_engines::{
     VOLVO_FK, VOLVO_FK_CLASSIC
 };
 use main_options::truck_transmissions::{
+    MAN_TGX_TRANSMISSION, MAN_TGX_EU6_TRANSMISSION,
     SCANIA_R_2009_TRANSMISSION, SCANIA_R_TRANSMISSION, SCANIA_STREAMLINE_TRANSMISSION,
-    SCANIA_S_TRANSMISSION, VOLVO_FH_CLASSIC_TRANSMISSION, VOLVO_FH_TRANSMISSION,
+    SCANIA_S_TRANSMISSION, 
+    VOLVO_FH_CLASSIC_TRANSMISSION, VOLVO_FH_TRANSMISSION,
 };
 use main_options::trucks::{
     get_truck_id, get_truck_vehicle_index, set_any_trucks_fuel, set_any_trucks_wear,
@@ -273,6 +275,10 @@ async fn get_list_transmissions() -> Result<String, ()> {
             "volvo": {
                 "volvo_fh_classic": VOLVO_FH_CLASSIC_TRANSMISSION,
                 "volvo_fh": VOLVO_FH_TRANSMISSION,
+            },
+            "man": {
+                "man_tgx": MAN_TGX_TRANSMISSION,
+                "man_tgx_eu6": MAN_TGX_EU6_TRANSMISSION,
             }
         },
     })
