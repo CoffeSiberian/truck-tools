@@ -65,6 +65,11 @@ export interface EnginesTypes {
 export interface TransmissionsTypes {
 	scania: ScaniaModelsTransmissions;
 	volvo: VolvoModelsTransmissions;
+	man: ManModelsTransmissions;
+	daf: DafModelsTransmissions;
+	mercedes: MercedesModelsTransmissions;
+	renault: RenaultModelsTransmissions;
+	iveco: IvecoModelsTransmissions;
 }
 
 export interface ExperienceSkillsTypes {
