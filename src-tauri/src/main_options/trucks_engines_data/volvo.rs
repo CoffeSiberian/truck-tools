@@ -20,7 +20,7 @@ Y88b  d88P 888 888  888      X88      X88 888 Y88b.
  "Y8888P"  888 "Y888888  88888P'  88888P' 888  "Y8888P
 */
 
-pub const VOLVO_FK_CLASSIC_D13C_420: EngineStruct = EngineStruct {
+pub const VOLVO_FH_CLASSIC_D13C_420: EngineStruct = EngineStruct {
     name_id: "d13c420.volvo.fh16.engine",
     name: "D13C420 Euro 5 EVV",
     cv: "420",
@@ -28,7 +28,7 @@ pub const VOLVO_FK_CLASSIC_D13C_420: EngineStruct = EngineStruct {
     code: "/def/vehicle/truck/volvo.fh16/engine/d13c420.sii",
 };
 
-pub const VOLVO_FK_CLASSIC_D13C_460: EngineStruct = EngineStruct {
+pub const VOLVO_FH_CLASSIC_D13C_460: EngineStruct = EngineStruct {
     name_id: "d13c460.volvo.fh16.engine",
     name: "D13C460 Euro 5 EVV",
     cv: "460",
@@ -36,7 +36,7 @@ pub const VOLVO_FK_CLASSIC_D13C_460: EngineStruct = EngineStruct {
     code: "/def/vehicle/truck/volvo.fh16/engine/d13c460.sii",
 };
 
-pub const VOLVO_FK_CLASSIC_D13C_500: EngineStruct = EngineStruct {
+pub const VOLVO_FH_CLASSIC_D13C_500: EngineStruct = EngineStruct {
     name_id: "d13c500.volvo.fh16.engine",
     name: "D13C500 Euro 5 EVV",
     cv: "500",
@@ -44,7 +44,7 @@ pub const VOLVO_FK_CLASSIC_D13C_500: EngineStruct = EngineStruct {
     code: "/def/vehicle/truck/volvo.fh16/engine/d13c500.sii",
 };
 
-pub const VOLVO_FK_CLASSIC_D13C_540: EngineStruct = EngineStruct {
+pub const VOLVO_FH_CLASSIC_D13C_540: EngineStruct = EngineStruct {
     name_id: "d13c540.volvo.fh16.engine",
     name: "D13C540 Euro 5 EVV",
     cv: "540",
@@ -52,7 +52,7 @@ pub const VOLVO_FK_CLASSIC_D13C_540: EngineStruct = EngineStruct {
     code: "/def/vehicle/truck/volvo.fh16/engine/d13c540.sii",
 };
 
-pub const VOLVO_FK_CLASSIC_D16G_540: EngineStruct = EngineStruct {
+pub const VOLVO_FH_CLASSIC_D16G_540: EngineStruct = EngineStruct {
     name_id: "d16g540.volvo.fh16.engine",
     name: "D16G540 Euro 5 EVV",
     cv: "540",
@@ -60,7 +60,7 @@ pub const VOLVO_FK_CLASSIC_D16G_540: EngineStruct = EngineStruct {
     code: "/def/vehicle/truck/volvo.fh16/engine/d16g540.sii",
 };
 
-pub const VOLVO_FK_CLASSIC_D16G_600: EngineStruct = EngineStruct {
+pub const VOLVO_FH_CLASSIC_D16G_600: EngineStruct = EngineStruct {
     name_id: "d16g600.volvo.fh16.engine",
     name: "D16G600 Euro 5 EVV",
     cv: "600",
@@ -68,7 +68,7 @@ pub const VOLVO_FK_CLASSIC_D16G_600: EngineStruct = EngineStruct {
     code: "/def/vehicle/truck/volvo.fh16/engine/d16g600.sii",
 };
 
-pub const VOLVO_FK_CLASSIC_D16G_700: EngineStruct = EngineStruct {
+pub const VOLVO_FH_CLASSIC_D16G_700: EngineStruct = EngineStruct {
     name_id: "d16g700.volvo.fh16.engine",
     name: "D16G700 Euro 5 EVV",
     cv: "700",
@@ -76,7 +76,7 @@ pub const VOLVO_FK_CLASSIC_D16G_700: EngineStruct = EngineStruct {
     code: "/def/vehicle/truck/volvo.fh16/engine/d16g700.sii",
 };
 
-pub const VOLVO_FK_CLASSIC_D16G_750: EngineStruct = EngineStruct {
+pub const VOLVO_FH_CLASSIC_D16G_750: EngineStruct = EngineStruct {
     name_id: "d16g750.volvo.fh16.engine",
     name: "D16G750 Euro 5 EVV",
     cv: "750",
@@ -95,7 +95,7 @@ Y88b   d88P  .d88b.  888 888  888  .d88b.      8888888    8888888888
     Y8P      "Y88P"  888   Y88P    "Y88P"      888        888    888
 */
 
-pub const VOLVO_FK_2012_D13C_420: EngineStruct = EngineStruct {
+pub const VOLVO_FH_2012_D13C_420: EngineStruct = EngineStruct {
     name_id: "d13c420.volvo.fh16_2012.engine",
     name: "D13C420 Euro 5 EVV",
     cv: "420",
@@ -103,7 +103,7 @@ pub const VOLVO_FK_2012_D13C_420: EngineStruct = EngineStruct {
     code: "/def/vehicle/truck/volvo.fh16_2012/engine/d13c420.sii",
 };
 
-pub const VOLVO_FK_2012_D13C_460: EngineStruct = EngineStruct {
+pub const VOLVO_FH_2012_D13C_460: EngineStruct = EngineStruct {
     name_id: "d13c460.volvo.fh16_2012.engine",
     name: "D13C460 Euro 5 EVV",
     cv: "460",
@@ -111,7 +111,7 @@ pub const VOLVO_FK_2012_D13C_460: EngineStruct = EngineStruct {
     code: "/def/vehicle/truck/volvo.fh16_2012/engine/d13c460.sii",
 };
 
-pub const VOLVO_FK_2012_D13K_460: EngineStruct = EngineStruct {
+pub const VOLVO_FH_2012_D13K_460: EngineStruct = EngineStruct {
     name_id: "d13k460.volvo.fh16_2012.engine",
     name: "D13K460 Euro 6",
     cv: "460",
@@ -119,7 +119,7 @@ pub const VOLVO_FK_2012_D13K_460: EngineStruct = EngineStruct {
     code: "/def/vehicle/truck/volvo.fh16_2012/engine/d13k460.sii",
 };
 
-pub const VOLVO_FK_2012_D13C_500: EngineStruct = EngineStruct {
+pub const VOLVO_FH_2012_D13C_500: EngineStruct = EngineStruct {
     name_id: "d13c500.volvo.fh16_2012.engine",
     name: "D13C500 Euro 5 EVV",
     cv: "500",
@@ -127,7 +127,7 @@ pub const VOLVO_FK_2012_D13C_500: EngineStruct = EngineStruct {
     code: "/def/vehicle/truck/volvo.fh16_2012/engine/d13c500.sii",
 };
 
-pub const VOLVO_FK_2012_D13C_540: EngineStruct = EngineStruct {
+pub const VOLVO_FH_2012_D13C_540: EngineStruct = EngineStruct {
     name_id: "d13c540.volvo.fh16_2012.engine",
     name: "D13C540 Euro 5 EVV",
     cv: "540",
@@ -135,7 +135,7 @@ pub const VOLVO_FK_2012_D13C_540: EngineStruct = EngineStruct {
     code: "/def/vehicle/truck/volvo.fh16_2012/engine/d13c540.sii",
 };
 
-pub const VOLVO_FK_2012_D16G_540: EngineStruct = EngineStruct {
+pub const VOLVO_FH_2012_D16G_540: EngineStruct = EngineStruct {
     name_id: "d16g540.volvo.fh16_2012.engine",
     name: "D16G540 Euro 5 EVV",
     cv: "540",
@@ -143,7 +143,7 @@ pub const VOLVO_FK_2012_D16G_540: EngineStruct = EngineStruct {
     code: "/def/vehicle/truck/volvo.fh16_2012/engine/d16g540.sii",
 };
 
-pub const VOLVO_FK_2012_D16G_600: EngineStruct = EngineStruct {
+pub const VOLVO_FH_2012_D16G_600: EngineStruct = EngineStruct {
     name_id: "d16g600.volvo.fh16_2012.engine",
     name: "D16G600 Euro 5 EVV",
     cv: "600",
@@ -151,7 +151,7 @@ pub const VOLVO_FK_2012_D16G_600: EngineStruct = EngineStruct {
     code: "/def/vehicle/truck/volvo.fh16_2012/engine/d16g600.sii",
 };
 
-pub const VOLVO_FK_2012_D16G_700: EngineStruct = EngineStruct {
+pub const VOLVO_FH_2012_D16G_700: EngineStruct = EngineStruct {
     name_id: "d16g700.volvo.fh16_2012.engine",
     name: "D16G700 Euro 5 EVV",
     cv: "700",
@@ -159,7 +159,7 @@ pub const VOLVO_FK_2012_D16G_700: EngineStruct = EngineStruct {
     code: "/def/vehicle/truck/volvo.fh16_2012/engine/d16g700.sii",
 };
 
-pub const VOLVO_FK_2012_D16G_750: EngineStruct = EngineStruct {
+pub const VOLVO_FH_2012_D16G_750: EngineStruct = EngineStruct {
     name_id: "d16g750.volvo.fh16_2012.engine",
     name: "D16G750 Euro 5 EVV",
     cv: "750",
