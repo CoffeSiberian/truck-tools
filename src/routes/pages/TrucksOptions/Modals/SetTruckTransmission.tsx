@@ -33,6 +33,11 @@ import { TransmissionTypes } from "../../../../types/SaveGameTypes";
 // images
 import ScaniaIcon from "../../../../static/icons/brands/scania.svg";
 import VolvoIcon from "../../../../static/icons/brands/volvo.svg";
+import ManIcon from "../../../../static/icons/brands/man.svg";
+import DafIcon from "../../../../static/icons/brands/daf.svg";
+import MercedesIcon from "../../../../static/icons/brands/mercedes.svg";
+import RenaultIcon from "../../../../static/icons/brands/renault.svg";
+import IvecoIcon from "../../../../static/icons/brands/iveco.svg";
 
 interface completedProps {
 	error: boolean;
@@ -71,6 +76,48 @@ const SetTruckTransmission = () => {
 				{ key: "volvo_fh", name: "Volvo FH" },
 			],
 			icon: VolvoIcon,
+		},
+		{
+			name: "MAN",
+			models: [
+				{ key: "man_tgx", name: "MAN TGX" },
+				{ key: "man_tgx_eu6", name: "MAN TGX Euro 6" },
+			],
+			icon: ManIcon,
+		},
+		{
+			name: "DAF",
+			models: [
+				{ key: "daf_xf", name: "DAF XF" },
+				{ key: "daf_xf_euro6", name: "DAF XF EURO6" },
+				{ key: "daf_2021", name: "DAF 2021" },
+			],
+			icon: DafIcon,
+		},
+		{
+			name: "Mercedes-Benz",
+			models: [
+				{ key: "mercedes_actros", name: "Mercedes-Benz Actros" },
+				{ key: "mercedes_new_actros", name: "Mercedes-Benz New Actros" },
+			],
+			icon: MercedesIcon,
+		},
+		{
+			name: "Renault",
+			models: [
+				{ key: "renault_t", name: "Renault T" },
+				{ key: "renault_magnum", name: "Renault Magnum" },
+				{ key: "renault_premium", name: "Renault Premium" },
+			],
+			icon: RenaultIcon,
+		},
+		{
+			name: "Iveco",
+			models: [
+				{ key: "iveco_stralis", name: "Iveco Stralis" },
+				{ key: "iveco_hiway", name: "Iveco Hi-Way" },
+			],
+			icon: IvecoIcon,
 		},
 	];
 
@@ -155,6 +202,42 @@ const SetTruckTransmission = () => {
 					break;
 				case "volvo_fh":
 					setTransmissions(resTransmissions.volvo.volvo_fh);
+					break;
+				case "man_tgx":
+					setTransmissions(resTransmissions.man.man_tgx);
+					break;
+				case "man_tgx_eu6":
+						setTransmissions(resTransmissions.man.man_tgx_eu6);
+					break;
+				case "daf_xf":
+					setTransmissions(resTransmissions.daf.daf_xf);
+					break;
+				case "daf_xf_euro6":
+					setTransmissions(resTransmissions.daf.daf_xf_euro6);
+					break;
+				case "daf_2021":
+					setTransmissions(resTransmissions.daf.daf_2021);
+					break;
+				case "mercedes_actros":
+					setTransmissions(resTransmissions.mercedes.mercedes_actros);
+					break;
+				case "mercedes_new_actros":
+					setTransmissions(resTransmissions.mercedes.mercedes_new_actros);
+					break;
+				case "renault_t":
+					setTransmissions(resTransmissions.renault.renault_t);
+					break;
+				case "renault_magnum":
+					setTransmissions(resTransmissions.renault.renault_magnum);
+					break;
+				case "renault_premium":
+					setTransmissions(resTransmissions.renault.renault_premium);
+					break;
+				case "iveco_stralis":
+					setTransmissions(resTransmissions.iveco.iveco_stralis);
+					break;
+				case "iveco_hiway":
+					setTransmissions(resTransmissions.iveco.iveco_hiway);
 					break;
 			}
 		}
