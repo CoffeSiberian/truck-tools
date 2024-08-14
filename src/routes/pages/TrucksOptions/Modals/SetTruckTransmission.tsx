@@ -211,7 +211,7 @@ const SetTruckTransmission = () => {
 					setTransmissions(resTransmissions.man.man_tgx.transmissions);
 					break;
 				case "man_tgx_eu6":
-						setTransmissions(resTransmissions.man.man_tgx_eu6.transmissions);
+					setTransmissions(resTransmissions.man.man_tgx_eu6.transmissions);
 					break;
 				case "daf_xf":
 					setTransmissions(resTransmissions.daf.daf_xf.transmissions);
@@ -223,19 +223,27 @@ const SetTruckTransmission = () => {
 					setTransmissions(resTransmissions.daf.daf_2021.transmissions);
 					break;
 				case "mercedes_actros":
-					setTransmissions(resTransmissions.mercedes.mercedes_actros.transmissions);
+					setTransmissions(
+						resTransmissions.mercedes.mercedes_actros.transmissions
+					);
 					break;
 				case "mercedes_new_actros":
-					setTransmissions(resTransmissions.mercedes.mercedes_new_actros.transmissions);
+					setTransmissions(
+						resTransmissions.mercedes.mercedes_new_actros.transmissions
+					);
 					break;
 				case "renault_t":
 					setTransmissions(resTransmissions.renault.renault_t.transmissions);
 					break;
 				case "renault_magnum":
-					setTransmissions(resTransmissions.renault.renault_magnum.transmissions);
+					setTransmissions(
+						resTransmissions.renault.renault_magnum.transmissions
+					);
 					break;
 				case "renault_premium":
-					setTransmissions(resTransmissions.renault.renault_premium.transmissions);
+					setTransmissions(
+						resTransmissions.renault.renault_premium.transmissions
+					);
 					break;
 				case "iveco_stralis":
 					setTransmissions(resTransmissions.iveco.iveco_stralis.transmissions);

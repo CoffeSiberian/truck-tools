@@ -3,9 +3,9 @@ use super::super::super::structs::vec_trucks::EngineStruct;
 /*
 __  __              _   _     _______    _____  __   __
 |  \/  |     /\     | \ | |   |__   __|  / ____| \ \ / /
-| \  / |    /  \    |  \| |      | |    | |  __   \ V / 
-| |\/| |   / /\ \   | . ` |      | |    | | |_ |   > <  
-| |  | |  / ____ \  | |\  |      | |    | |__| |  / . \ 
+| \  / |    /  \    |  \| |      | |    | |  __   \ V /
+| |\/| |   / /\ \   | . ` |      | |    | | |_ |   > <
+| |  | |  / ____ \  | |\  |      | |    | |__| |  / . \
 |_|  |_| /_/    \_\ |_| \_|      |_|     \_____| /_/ \_\
 */
 
@@ -41,7 +41,6 @@ pub const MAN_TGX_D2676_440: EngineStruct = EngineStruct {
     code: "/def/vehicle/truck/man.tgx/engine/d2676_324.sii",
 };
 
-
 pub const MAN_TGX_D2676_480: EngineStruct = EngineStruct {
     name_id: "d2676_353.man.tgx.engine",
     name: "D2676 353",
@@ -66,19 +65,18 @@ pub const MAN_TGX_D2868_680: EngineStruct = EngineStruct {
     code: "/def/vehicle/truck/man.tgx/engine/d2868_500.sii",
 };
 
-/*__  __              _   _     _______    _____  __   __    ______   _    _     __  
-|  \/  |     /\     | \ | |   |__   __|  / ____| \ \ / /   |  ____| | |  | |   / /  
-| \  / |    /  \    |  \| |      | |    | |  __   \ V /    | |__    | |  | |  / /_  
-| |\/| |   / /\ \   | . ` |      | |    | | |_ |   > <     |  __|   | |  | | | '_ \ 
+/*__  __              _   _     _______    _____  __   __    ______   _    _     __
+|  \/  |     /\     | \ | |   |__   __|  / ____| \ \ / /   |  ____| | |  | |   / /
+| \  / |    /  \    |  \| |      | |    | |  __   \ V /    | |__    | |  | |  / /_
+| |\/| |   / /\ \   | . ` |      | |    | | |_ |   > <     |  __|   | |  | | | '_ \
 | |  | |  / ____ \  | |\  |      | |    | |__| |  / . \    | |____  | |__| | | (_) |
-|_|  |_| /_/    \_\ |_| \_|      |_|     \_____| /_/ \_\   |______|  \____/   \___/ 
+|_|  |_| /_/    \_\ |_| \_|      |_|     \_____| /_/ \_\   |______|  \____/   \___/
 */
-
 
 pub const MAN_TGX_EURO6_D1556_330: EngineStruct = EngineStruct {
     name_id: "d1556_243.man.tgx_euro6.engine",
     name: "D1556 LF09 243 Euro 6D",
-    cv: "330", 
+    cv: "330",
     nm: "1600",
     code: "/def/vehicle/truck/man.tgx_euro6/engine/d1556_243.sii",
 };
@@ -102,7 +100,7 @@ pub const MAN_TGX_EURO6_D1556_400: EngineStruct = EngineStruct {
 pub const MAN_TGX_EURO6_D2066_360: EngineStruct = EngineStruct {
     name_id: "d2066_265.man.tgx_euro6.engine",
     name: "D2066 LF67 265 Euro 6",
-    cv: "360", 
+    cv: "360",
     nm: "1800",
     code: "/def/vehicle/truck/man.tgx_euro6/engine/d2066_265.sii",
 };
@@ -110,7 +108,7 @@ pub const MAN_TGX_EURO6_D2066_360: EngineStruct = EngineStruct {
 pub const MAN_TGX_EURO6_D2066_400: EngineStruct = EngineStruct {
     name_id: "d2066_294.man.tgx_euro6.engine",
     name: "D2066 LF61 294 Euro 6",
-    cv: "400", 
+    cv: "400",
     nm: "1900",
     code: "/def/vehicle/truck/man.tgx_euro6/engine/d2066_294.sii",
 };
@@ -202,6 +200,3 @@ pub const MAN_TGX_EURO6_D3876_471A: EngineStruct = EngineStruct {
     nm: "3000",
     code: "/def/vehicle/truck/man.tgx_euro6/engine/d3876_471a.sii",
 };
-
-
-

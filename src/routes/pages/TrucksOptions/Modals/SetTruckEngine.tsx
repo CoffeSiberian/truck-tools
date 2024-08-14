@@ -199,7 +199,7 @@ const SetTruckEngine = () => {
 					setEngines(resEngines.man.man_tgx.engines);
 					break;
 				case "man_tgx_euro6":
-					setEngines(resEngines.man.man_tgx_euro6.engines);
+					setEngines(resEngines.man.man_tgx_eu6.engines);
 					break;
 				case "daf_xf":
 					setEngines(resEngines.daf.daf_xf.engines);

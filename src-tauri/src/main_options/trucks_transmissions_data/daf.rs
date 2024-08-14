@@ -1,11 +1,11 @@
 use crate::structs::vec_trucks::TransmissionStruct;
 
-/*_____               ______    __   __  ______ 
+/*_____               ______    __   __  ______
 |  __ \      /\     |  ____|   \ \ / / |  ____|
-| |  | |    /  \    | |__       \ V /  | |__   
-| |  | |   / /\ \   |  __|       > <   |  __|  
-| |__| |  / ____ \  | |         / . \  | |     
-|_____/  /_/    \_\ |_|        /_/ \_\ |_|     
+| |  | |    /  \    | |__       \ V /  | |__
+| |  | |   / /\ \   |  __|       > <   |  __|
+| |__| |  / ____ \  | |         / . \  | |
+|_____/  /_/    \_\ |_|        /_/ \_\ |_|
 */
 
 pub const DAF_XF_ZF12: TransmissionStruct = TransmissionStruct {
@@ -16,7 +16,6 @@ pub const DAF_XF_ZF12: TransmissionStruct = TransmissionStruct {
     ratio: "15.86 - 1.00",
     code: "/def/vehicle/truck/daf.xf/transmission/12_speed.sii",
 };
-
 
 pub const DAF_XF_ZF12_O: TransmissionStruct = TransmissionStruct {
     name_id: "12_speed_o.daf.xf.transmission",
@@ -81,18 +80,18 @@ pub const DAF_XF_ZF16_R: TransmissionStruct = TransmissionStruct {
     code: "/def/vehicle/truck/daf.xf/transmission/zf_16as2631to.sii",
 };
 
-/*_____               ______    __   __  ______ 
+/*_____               ______    __   __  ______
 |  __ \      /\     |  ____|   \ \ / / |  ____|
-| |  | |    /  \    | |__       \ V /  | |__   
-| |  | |   / /\ \   |  __|       > <   |  __|  
-| |__| |  / ____ \  | |         / . \  | |     
+| |  | |    /  \    | |__       \ V /  | |__
+| |  | |   / /\ \   |  __|       > <   |  __|
+| |__| |  / ____ \  | |         / . \  | |
 |_____/  /_/    \_\ |_|        /_/ \_\ |_|
-______   _    _   _____     ____        __  
-|  ____| | |  | | |  __ \   / __ \      / /  
-| |__    | |  | | | |__) | | |  | |    / /_  
-|  __|   | |  | | |  _  /  | |  | |   | '_ \ 
+______   _    _   _____     ____        __
+|  ____| | |  | | |  __ \   / __ \      / /
+| |__    | |  | | | |__) | | |  | |    / /_
+|  __|   | |  | | |  _  /  | |  | |   | '_ \
 | |____  | |__| | | | \ \  | |__| |   | (_) |
-|______|  \____/  |_|  \_\  \____/     \___/      
+|______|  \____/  |_|  \_\  \____/     \___/
 */
 
 pub const DAF_XF_EURO6_ZF12: TransmissionStruct = TransmissionStruct {
@@ -221,20 +220,19 @@ pub const DAF_XF_EURO6_ZF16_R: TransmissionStruct = TransmissionStruct {
     code: "/def/vehicle/truck/daf.xf_euro6/transmission/zf_16tx2641to.sii",
 };
 
-/*_____               ______  
-|  __ \      /\     |  ____|  
-| |  | |    /  \    | |__    
-| |  | |   / /\ \   |  __|   
-| |__| |  / ____ \  | |       
-|_____/  /_/    \_\ |_|           
-  ___     ___    ___    __ 
+/*_____               ______
+|  __ \      /\     |  ____|
+| |  | |    /  \    | |__
+| |  | |   / /\ \   |  __|
+| |__| |  / ____ \  | |
+|_____/  /_/    \_\ |_|
+  ___     ___    ___    __
  |__ \   / _ \  |__ \  /_ |
     ) | | | | |    ) |  | |
    / /  | | | |   / /   | |
   / /_  | |_| |  / /_   | |
  |____|  \___/  |____|  |_|
 */
-
 
 pub const DAF_2021_ZF12T: TransmissionStruct = TransmissionStruct {
     name_id: "zf12tx2420td.daf.2021.transmission",
@@ -289,4 +287,3 @@ pub const DAF_2021_ZF16_R: TransmissionStruct = TransmissionStruct {
     ratio: "14.68 - 0.82",
     code: "/def/vehicle/truck/daf.2021/transmission/zf_16tx2641to.sii",
 };
-

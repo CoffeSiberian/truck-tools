@@ -76,7 +76,6 @@ pub struct BrandMercedes {
     pub mercedes_new_actros: TruckValues,
 }
 
-
 #[derive(Serialize)]
 pub struct TruckBrands {
     pub scania: BrandScania,

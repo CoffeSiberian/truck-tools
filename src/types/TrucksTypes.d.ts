@@ -1,4 +1,3 @@
-import exp from "constants";
 import { EngineTypes, TransmissionTypes } from "./SaveGameTypes";
 
 export interface ScaniaModelsEngines {

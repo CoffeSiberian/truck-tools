@@ -82,29 +82,29 @@ export interface BrandVolvo {
 	volvo_fh_classic: TruckValues;
 }
 
-export interface BranMan {
+export interface BrandMan {
 	man_tgx: TruckValues;
 	man_tgx_eu6: TruckValues;
 }
 
-export interface BranDaf {
+export interface BrandDaf {
 	daf_xf: TruckValues;
 	daf_xf_euro6: TruckValues;
 	daf_2021: TruckValues;
 }
 
-export interface BranIveco {
+export interface BrandIveco {
 	iveco_hiway: TruckValues;
 	iveco_stralis: TruckValues;
 }
 
-export interface BranRenault {
+export interface BrandRenault {
 	renault_magnum: TruckValues;
 	renault_premium: TruckValues;
 	renault_t: TruckValues;
 }
 
-export interface BranMercedes {
+export interface BrandMercedes {
 	mercedes_actros: TruckValues;
 	mercedes_new_actros: TruckValues;
 }
@@ -113,10 +113,10 @@ export interface TruckBrands {
 	scania: BrandScania;
 	volvo: BrandVolvo;
 	man: BrandMan;
-	daf: BranDaf;
+	daf: BrandDaf;
 	iveco: BranIveco;
-	renault: BranRenault;
-	mercedes: BranMercedes;
+	renault: BrandRenault;
+	mercedes: BrandMercedes;
 }
 
 /////////////////////////////////////////////////////////
