@@ -69,6 +69,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 - [ ] Change language
 - [ ] Enable console and developer mode
 - [ ] Change save format
+- [ ] Change convoy mode slots to `128`
 
 #### Possible features
 

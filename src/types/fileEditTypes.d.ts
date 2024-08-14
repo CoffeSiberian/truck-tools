@@ -3,28 +3,31 @@ import {
 	EnginesTypes,
 	ProfileDir,
 	TransmissionsTypes,
+	TruckBrands,
 } from "./SaveGameTypes";
+
+export type themeTypes = "light" | "dark";
 
 export interface responseRustTypes {
 	res: boolean;
 }
 
 export interface responseProfileSaves extends responseRustTypes {
-	saves: SaveGame[];
+	save_games: SaveGame[];
 }
 
 export interface responseProfileSavesCount extends responseRustTypes {
 	saves: number;
 }
 
-export interface responseTrucksEngines extends responseRustTypes {
-	engines?: EnginesTypes;
-}
-
-export interface responseTrucksTransmissions extends responseRustTypes {
-	transmissions?: TransmissionsTypes;
+export interface responseTrucksInfo extends responseRustTypes {
+	trucks: TruckBrands;
 }
 
 export interface responseProfileDir extends responseRustTypes {
-	dirs?: ProfileDir[];
+	profiles: ProfileDir[];
+}
+
+export interface responseSystemTheme extends responseRustTypes {
+	theme: themeTypes;
 }

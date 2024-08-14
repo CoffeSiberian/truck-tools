@@ -12,7 +12,7 @@ import {
 	useDisclosure,
 	Image,
 } from "@nextui-org/react";
-import { setTruckEngine, getListEngines } from "../../../../utils/fileEdit";
+import { setTruckEngine, getTrucksInfoList } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
 // icons
@@ -173,27 +173,27 @@ const SetTruckEngine = () => {
 		setSelectedEngine(undefined);
 
 		if (!modelFind) return;
-		const resEngines = await getListEngines();
+		const resEngines = await getTrucksInfoList();
 
 		if (resEngines) {
 			switch (modelFind.key) {
 				case "scania_r":
-					setEngines(resEngines.scania.scania_r);
+					setEngines(resEngines.scania.scania_r.engines);
 					break;
 				case "scania_s":
-					setEngines(resEngines.scania.scania_s);
+					setEngines(resEngines.scania.scania_s.engines);
 					break;
 				case "scania_r_2009":
-					setEngines(resEngines.scania.scania_r_2009);
+					setEngines(resEngines.scania.scania_r_2009.engines);
 					break;
 				case "scania_streamline":
-					setEngines(resEngines.scania.scania_streamline);
+					setEngines(resEngines.scania.scania_streamline.engines);
 					break;
 				case "volvo_fh_classic":
-					setEngines(resEngines.volvo.volvo_fh_classic);
+					setEngines(resEngines.volvo.volvo_fh_classic.engines);
 					break;
 				case "volvo_fh":
-					setEngines(resEngines.volvo.volvo_fh);
+					setEngines(resEngines.volvo.volvo_fh.engines);
 					break;
 				case "man_tgx":
 					setEngines(resEngines.man.man_tgx);

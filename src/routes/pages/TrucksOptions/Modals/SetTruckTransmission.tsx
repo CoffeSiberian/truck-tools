@@ -14,7 +14,7 @@ import {
 } from "@nextui-org/react";
 import {
 	setTruckTransmission,
-	getListTransmissions,
+	getTrucksInfoList,
 } from "../../../../utils/fileEdit";
 import AlertSave from "../../../../components/AlertSave";
 
@@ -181,63 +181,67 @@ const SetTruckTransmission = () => {
 		setSelectedTransmission(undefined);
 
 		if (!modelFind) return;
-		const resTransmissions = await getListTransmissions();
+		const resTransmissions = await getTrucksInfoList();
 
 		if (resTransmissions) {
 			switch (modelFind.key) {
 				case "scania_r":
-					setTransmissions(resTransmissions.scania.scania_r);
+					setTransmissions(resTransmissions.scania.scania_r.transmissions);
 					break;
 				case "scania_s":
-					setTransmissions(resTransmissions.scania.scania_s);
+					setTransmissions(resTransmissions.scania.scania_s.transmissions);
 					break;
 				case "scania_r_2009":
-					setTransmissions(resTransmissions.scania.scania_r_2009);
+					setTransmissions(resTransmissions.scania.scania_r_2009.transmissions);
 					break;
 				case "scania_streamline":
-					setTransmissions(resTransmissions.scania.scania_streamline);
+					setTransmissions(
+						resTransmissions.scania.scania_streamline.transmissions
+					);
 					break;
 				case "volvo_fh_classic":
-					setTransmissions(resTransmissions.volvo.volvo_fh_classic);
+					setTransmissions(
+						resTransmissions.volvo.volvo_fh_classic.transmissions
+					);
 					break;
 				case "volvo_fh":
-					setTransmissions(resTransmissions.volvo.volvo_fh);
+					setTransmissions(resTransmissions.volvo.volvo_fh.transmissions);
 					break;
 				case "man_tgx":
-					setTransmissions(resTransmissions.man.man_tgx);
+					setTransmissions(resTransmissions.man.man_tgx.transmissions);
 					break;
 				case "man_tgx_eu6":
-						setTransmissions(resTransmissions.man.man_tgx_eu6);
+						setTransmissions(resTransmissions.man.man_tgx_eu6.transmissions);
 					break;
 				case "daf_xf":
-					setTransmissions(resTransmissions.daf.daf_xf);
+					setTransmissions(resTransmissions.daf.daf_xf.transmissions);
 					break;
 				case "daf_xf_euro6":
-					setTransmissions(resTransmissions.daf.daf_xf_euro6);
+					setTransmissions(resTransmissions.daf.daf_xf_euro6.transmissions);
 					break;
 				case "daf_2021":
-					setTransmissions(resTransmissions.daf.daf_2021);
+					setTransmissions(resTransmissions.daf.daf_2021.transmissions);
 					break;
 				case "mercedes_actros":
-					setTransmissions(resTransmissions.mercedes.mercedes_actros);
+					setTransmissions(resTransmissions.mercedes.mercedes_actros.transmissions);
 					break;
 				case "mercedes_new_actros":
-					setTransmissions(resTransmissions.mercedes.mercedes_new_actros);
+					setTransmissions(resTransmissions.mercedes.mercedes_new_actros.transmissions);
 					break;
 				case "renault_t":
-					setTransmissions(resTransmissions.renault.renault_t);
+					setTransmissions(resTransmissions.renault.renault_t.transmissions);
 					break;
 				case "renault_magnum":
-					setTransmissions(resTransmissions.renault.renault_magnum);
+					setTransmissions(resTransmissions.renault.renault_magnum.transmissions);
 					break;
 				case "renault_premium":
-					setTransmissions(resTransmissions.renault.renault_premium);
+					setTransmissions(resTransmissions.renault.renault_premium.transmissions);
 					break;
 				case "iveco_stralis":
-					setTransmissions(resTransmissions.iveco.iveco_stralis);
+					setTransmissions(resTransmissions.iveco.iveco_stralis.transmissions);
 					break;
 				case "iveco_hiway":
-					setTransmissions(resTransmissions.iveco.iveco_hiway);
+					setTransmissions(resTransmissions.iveco.iveco_hiway.transmissions);
 					break;
 			}
 		}

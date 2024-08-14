@@ -151,6 +151,10 @@ pub fn set_remove_trailer_restricted_areas(
         if item.contains(" country_validity[") {
             index_end = i;
         }
+
+        if item.contains("}") {
+            break;
+        }
     }
 
     if index_start == 0 || index_end == 0 {
