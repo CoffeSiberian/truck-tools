@@ -45,7 +45,45 @@ pub struct BrandVolvo {
 }
 
 #[derive(Serialize)]
+pub struct BrandMan {
+    pub man_tgx: TruckValues,
+    pub man_tgx_eu6: TruckValues,
+}
+
+#[derive(Serialize)]
+pub struct BrandIveco {
+    pub iveco_hiway: TruckValues,
+    pub iveco_stralis: TruckValues,
+}
+
+#[derive(Serialize)]
+pub struct BrandDaf {
+    pub daf_xf: TruckValues,
+    pub daf_xf_euro6: TruckValues,
+    pub daf_2021: TruckValues,
+}
+
+#[derive(Serialize)]
+pub struct BrandRenault {
+    pub renault_magnum: TruckValues,
+    pub renault_premium: TruckValues,
+    pub renault_t: TruckValues,
+}
+
+#[derive(Serialize)]
+pub struct BrandMercedes {
+    pub mercedes_actros: TruckValues,
+    pub mercedes_new_actros: TruckValues,
+}
+
+
+#[derive(Serialize)]
 pub struct TruckBrands {
     pub scania: BrandScania,
     pub volvo: BrandVolvo,
+    pub man: BrandMan,
+    pub iveco: BrandIveco,
+    pub daf: BrandDaf,
+    pub renault: BrandRenault,
+    pub mercedes: BrandMercedes,
 }

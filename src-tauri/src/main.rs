@@ -23,7 +23,6 @@ use main_options::trucks::{
     set_truck_transmissions, set_truck_wear,
 };
 use main_options::trucks_data_export::get_trucks_values;
-
 use std::path::Path;
 
 use structs::experience_skills::ExperienceSkills;
@@ -32,9 +31,8 @@ use structs::responses::{
     SystemThemeResponse, TrucksResponse,
 };
 use structs::vec_save_games::VecSaveGames;
-
 use tauri::{Theme, Window};
-
+use tauri::{Theme, Window};
 use utils::compress_folder::compress_folder_files;
 use utils::decrypt_saves::decrypt_file_to_save;
 use utils::file_edit::{
