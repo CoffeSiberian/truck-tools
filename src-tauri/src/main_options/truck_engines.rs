@@ -12,11 +12,11 @@ use super::trucks_engines_data::scania::{
     SCANIA_S_730,
 };
 use super::trucks_engines_data::volvo::{
-    VOLVO_FK_2012_D13C_420, VOLVO_FK_2012_D13C_460, VOLVO_FK_2012_D13C_500, VOLVO_FK_2012_D13C_540,
-    VOLVO_FK_2012_D13K_460, VOLVO_FK_2012_D16G_540, VOLVO_FK_2012_D16G_600, VOLVO_FK_2012_D16G_700,
-    VOLVO_FK_2012_D16G_750, VOLVO_FK_CLASSIC_D13C_420, VOLVO_FK_CLASSIC_D13C_460,
-    VOLVO_FK_CLASSIC_D13C_500, VOLVO_FK_CLASSIC_D13C_540, VOLVO_FK_CLASSIC_D16G_540,
-    VOLVO_FK_CLASSIC_D16G_600, VOLVO_FK_CLASSIC_D16G_700, VOLVO_FK_CLASSIC_D16G_750,
+    VOLVO_FH_2012_D13C_420, VOLVO_FH_2012_D13C_460, VOLVO_FH_2012_D13C_500, VOLVO_FH_2012_D13C_540,
+    VOLVO_FH_2012_D13K_460, VOLVO_FH_2012_D16G_540, VOLVO_FH_2012_D16G_600, VOLVO_FH_2012_D16G_700,
+    VOLVO_FH_2012_D16G_750, VOLVO_FH_CLASSIC_D13C_420, VOLVO_FH_CLASSIC_D13C_460,
+    VOLVO_FH_CLASSIC_D13C_500, VOLVO_FH_CLASSIC_D13C_540, VOLVO_FH_CLASSIC_D16G_540,
+    VOLVO_FH_CLASSIC_D16G_600, VOLVO_FH_CLASSIC_D16G_700, VOLVO_FH_CLASSIC_D16G_750,
 };
 use super::trucks_engines_data::man::{
     MAN_TGX_D2066_320, MAN_TGX_D2066_360, MAN_TGX_D2066_400, MAN_TGX_D2676_440, MAN_TGX_D2676_480,
@@ -56,7 +56,7 @@ use super::trucks_engines_data::iveco::{
 
 use crate::structs::vec_trucks::EngineStruct;
 
-pub const SCANIA_R_ENGINES: [EngineStruct<'static>; 8] = [
+pub const SCANIA_R_ENGINES: [EngineStruct; 8] = [
     SCANIA_R_370,
     SCANIA_R_410,
     SCANIA_R_450,
@@ -67,7 +67,7 @@ pub const SCANIA_R_ENGINES: [EngineStruct<'static>; 8] = [
     SCANIA_R_730,
 ];
 
-pub const SCANIA_S_ENGINES: [EngineStruct<'static>; 8] = [
+pub const SCANIA_S_ENGINES: [EngineStruct; 8] = [
     SCANIA_S_370,
     SCANIA_S_410,
     SCANIA_S_450,
@@ -78,7 +78,7 @@ pub const SCANIA_S_ENGINES: [EngineStruct<'static>; 8] = [
     SCANIA_S_730,
 ];
 
-pub const SCANIA_R_2009_ENGINES: [EngineStruct<'static>; 14] = [
+pub const SCANIA_R_2009_ENGINES: [EngineStruct; 14] = [
     SCANIA_R_2009_360,
     SCANIA_R_2009_380,
     SCANIA_R_2009_400,
@@ -95,7 +95,7 @@ pub const SCANIA_R_2009_ENGINES: [EngineStruct<'static>; 14] = [
     SCANIA_R_2009_730,
 ];
 
-pub const SCANIA_STREAMLINE_ENGINES: [EngineStruct<'static>; 19] = [
+pub const SCANIA_STREAMLINE_ENGINES: [EngineStruct; 19] = [
     SCANIA_STREAMLINE_360,
     SCANIA_STREAMLINE_370,
     SCANIA_STREAMLINE_380,
@@ -117,30 +117,30 @@ pub const SCANIA_STREAMLINE_ENGINES: [EngineStruct<'static>; 19] = [
     SCANIA_STREAMLINE_730_2,
 ];
 
-pub const VOLVO_FK_CLASSIC: [EngineStruct<'static>; 9] = [
-    VOLVO_FK_2012_D13C_420,
-    VOLVO_FK_2012_D13C_460,
-    VOLVO_FK_2012_D13C_500,
-    VOLVO_FK_2012_D13C_540,
-    VOLVO_FK_2012_D13K_460,
-    VOLVO_FK_2012_D16G_540,
-    VOLVO_FK_2012_D16G_600,
-    VOLVO_FK_2012_D16G_700,
-    VOLVO_FK_2012_D16G_750,
+pub const VOLVO_FH_CLASSIC: [EngineStruct; 9] = [
+    VOLVO_FH_2012_D13C_420,
+    VOLVO_FH_2012_D13C_460,
+    VOLVO_FH_2012_D13C_500,
+    VOLVO_FH_2012_D13C_540,
+    VOLVO_FH_2012_D13K_460,
+    VOLVO_FH_2012_D16G_540,
+    VOLVO_FH_2012_D16G_600,
+    VOLVO_FH_2012_D16G_700,
+    VOLVO_FH_2012_D16G_750,
 ];
 
-pub const VOLVO_FK: [EngineStruct<'static>; 8] = [
-    VOLVO_FK_CLASSIC_D13C_420,
-    VOLVO_FK_CLASSIC_D13C_460,
-    VOLVO_FK_CLASSIC_D13C_500,
-    VOLVO_FK_CLASSIC_D13C_540,
-    VOLVO_FK_CLASSIC_D16G_540,
-    VOLVO_FK_CLASSIC_D16G_600,
-    VOLVO_FK_CLASSIC_D16G_700,
-    VOLVO_FK_CLASSIC_D16G_750,
+pub const VOLVO_FH: [EngineStruct; 8] = [
+    VOLVO_FH_CLASSIC_D13C_420,
+    VOLVO_FH_CLASSIC_D13C_460,
+    VOLVO_FH_CLASSIC_D13C_500,
+    VOLVO_FH_CLASSIC_D13C_540,
+    VOLVO_FH_CLASSIC_D16G_540,
+    VOLVO_FH_CLASSIC_D16G_600,
+    VOLVO_FH_CLASSIC_D16G_700,
+    VOLVO_FH_CLASSIC_D16G_750,
 ];
 
-pub const MAN_TGX: [EngineStruct<'static>; 7] = [ 
+pub const MAN_TGX: [EngineStruct; 7] = [ 
     MAN_TGX_D2066_320, 
     MAN_TGX_D2066_360, 
     MAN_TGX_D2066_400, 
@@ -150,7 +150,7 @@ pub const MAN_TGX: [EngineStruct<'static>; 7] = [
     MAN_TGX_D2868_680,
 ]; 
 
-pub const MAN_TGX_EURO6: [EngineStruct<'static>; 16] = [
+pub const MAN_TGX_EURO6: [EngineStruct; 16] = [
     MAN_TGX_EURO6_D1556_330, 
     MAN_TGX_EURO6_D1556_360,
     MAN_TGX_EURO6_D1556_400, 
@@ -169,7 +169,7 @@ pub const MAN_TGX_EURO6: [EngineStruct<'static>; 16] = [
     MAN_TGX_EURO6_D3876_471A,
 ];
 
-pub const MERCEDES_ACTROS: [EngineStruct<'static>; 9] = [
+pub const MERCEDES_ACTROS: [EngineStruct; 9] = [
     MERCEDES_ACTROS_1832LS, 
     MERCEDES_ACTROS_1836LS, 
     MERCEDES_ACTROS_1841LS, 
@@ -181,7 +181,7 @@ pub const MERCEDES_ACTROS: [EngineStruct<'static>; 9] = [
     MERCEDES_ACTROS_1860LS, 
 ];
 
-pub const MERCEDES_NEW_ACTROS: [EngineStruct<'static>; 7] = [
+pub const MERCEDES_NEW_ACTROS: [EngineStruct; 7] = [
     MERCEDES_NEW_ACTROS_1842, 
     MERCEDES_NEW_ACTROS_1845, 
     MERCEDES_NEW_ACTROS_1848, 
@@ -191,19 +191,19 @@ pub const MERCEDES_NEW_ACTROS: [EngineStruct<'static>; 7] = [
     MERCEDES_NEW_ACTROS_1863,
 ];
 
-pub const RENAULT_PREMIUM: [EngineStruct<'static>; 3] = [
+pub const RENAULT_PREMIUM: [EngineStruct; 3] = [
     RENAULT_PREMIUM_380DXI_380, 
     RENAULT_PREMIUM_430DXI_430, 
     RENAULT_PREMIUM_460DXI_460,
 ];
 
-pub const RENAULT_MAGNUM: [EngineStruct<'static>; 3] = [
+pub const RENAULT_MAGNUM: [EngineStruct; 3] = [
     RENAULT_MAGNUM_440DXI_440, 
     RENAULT_MAGNUM_480DXI_480, 
     RENAULT_MAGNUM_520DXI_520,
 ];
 
-pub const RENAULT_T: [EngineStruct<'static>; 6] = [
+pub const RENAULT_T: [EngineStruct; 6] = [
     RENAULT_T_DTI_380, 
     RENAULT_T_DTI_430, 
     RENAULT_T_DTI_460, 
@@ -212,14 +212,14 @@ pub const RENAULT_T: [EngineStruct<'static>; 6] = [
     RENAULT_T_DTI_520,
 ];
 
-pub const DAF_XF: [EngineStruct<'static>; 4] = [
+pub const DAF_XF: [EngineStruct; 4] = [
     DAF_XF_MX265_360, 
     DAF_XF_MX300_410, 
     DAF_XF_MX340_460, 
     DAF_XF_MX375_510,
 ];
 
-pub const DAF_XF_EURO6: [EngineStruct<'static>; 8] = [
+pub const DAF_XF_EURO6: [EngineStruct; 8] = [
     DAF_XF_EU6_MX11_370,
     DAF_XF_EU6_MX13_410, 
     DAF_XF_EU6_MX11_450,
@@ -230,7 +230,7 @@ pub const DAF_XF_EURO6: [EngineStruct<'static>; 8] = [
     DAF_XF_EU6_MX13_510,
 ];
 
-pub const DAF_2021: [EngineStruct<'static>; 6] = [
+pub const DAF_2021: [EngineStruct; 6] = [
     DAF_2021_MX11_367, 
     DAF_2021_MX11_408, 
     DAF_2021_MX11_449, 
@@ -239,7 +239,7 @@ pub const DAF_2021: [EngineStruct<'static>; 6] = [
     DAF_2021_MX13_530,
 ];
 
-pub const IVECO_HIWAY: [EngineStruct<'static>; 8] = [
+pub const IVECO_HIWAY: [EngineStruct; 8] = [
     IVECO_HIWAY_310, 
     IVECO_HIWAY_330, 
     IVECO_HIWAY_360, 
@@ -250,7 +250,7 @@ pub const IVECO_HIWAY: [EngineStruct<'static>; 8] = [
     IVECO_HIWAY_560,
 ];
 
-pub const IVECO_STRALIS: [EngineStruct<'static>; 7] = [
+pub const IVECO_STRALIS: [EngineStruct; 7] = [
     IVECO_STRALIS_310, 
     IVECO_STRALIS_330, 
     IVECO_STRALIS_360, 
