@@ -196,40 +196,40 @@ const SetTruckEngine = () => {
 					setEngines(resEngines.volvo.volvo_fh.engines);
 					break;
 				case "man_tgx":
-					setEngines(resEngines.man.man_tgx);
+					setEngines(resEngines.man.man_tgx.engines);
 					break;
 				case "man_tgx_euro6":
-					setEngines(resEngines.man.man_tgx_euro6);
+					setEngines(resEngines.man.man_tgx_euro6.engines);
 					break;
 				case "daf_xf":
-					setEngines(resEngines.daf.daf_xf);
+					setEngines(resEngines.daf.daf_xf.engines);
 					break;
 				case "daf_xf_euro6":
-					setEngines(resEngines.daf.daf_xf_euro6);
+					setEngines(resEngines.daf.daf_xf_euro6.engines);
 					break;
 				case "daf_2021":
-					setEngines(resEngines.daf.daf_2021);
+					setEngines(resEngines.daf.daf_2021.engines);
 					break;
 				case "mercedes_actros":
-					setEngines(resEngines.mercedes.mercedes_actros);
+					setEngines(resEngines.mercedes.mercedes_actros.engines);
 					break;
 				case "mercedes_new_actros":
-					setEngines(resEngines.mercedes.mercedes_new_actros);
+					setEngines(resEngines.mercedes.mercedes_new_actros.engines);
 					break;
 				case "renault_t":
-					setEngines(resEngines.renault.renault_t);
+					setEngines(resEngines.renault.renault_t.engines);
 					break;
 				case "renault_magnum":
-					setEngines(resEngines.renault.renault_magnum);
+					setEngines(resEngines.renault.renault_magnum.engines);
 					break;
 				case "renault_premium":
-					setEngines(resEngines.renault.renault_premium);
+					setEngines(resEngines.renault.renault_premium.engines);
 					break;
 				case "iveco_stralis":
-					setEngines(resEngines.iveco.iveco_stralis);
+					setEngines(resEngines.iveco.iveco_stralis.engines);
 					break;
 				case "iveco_hiway":
-					setEngines(resEngines.iveco.iveco_hiway);
+					setEngines(resEngines.iveco.iveco_hiway.engines);
 					break;
 			}
 		}

@@ -250,13 +250,15 @@ export const setLicensePlateTrailer = async (
 	dirSave: string,
 	licensePlate: string,
 	bgPlateColor: string,
-	textPlateColor: string
+	textPlateColor: string,
+	rounded: boolean
 ): Promise<boolean> => {
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 		licensePlate: licensePlate,
 		bgPlateColor: bgPlateColor,
 		textPlateColor: textPlateColor,
+		rounded,
 	};
 
 	const invoceRes = (await invoke(
@@ -271,13 +273,15 @@ export const setLicensePlateTruck = async (
 	dirSave: string,
 	licensePlate: string,
 	bgPlateColor: string,
-	textPlateColor: string
+	textPlateColor: string,
+	colorMargin: boolean
 ): Promise<boolean> => {
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 		licensePlate: licensePlate,
 		bgPlateColor: bgPlateColor,
 		textPlateColor: textPlateColor,
+		colorMargin,
 	};
 
 	const invoceRes = (await invoke(

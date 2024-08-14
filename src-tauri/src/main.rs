@@ -6,6 +6,7 @@ mod structs;
 mod utils;
 
 use hex::encode_upper;
+
 use main_options::profiles::{
     copy_profile_configs, set_any_status_garage, set_bank_money, set_dealerships_discovered_status,
     set_experience, set_experience_skills, set_profile_name, set_visited_cities,
@@ -23,12 +24,14 @@ use main_options::trucks::{
 };
 use main_options::trucks_data_export::get_trucks_values;
 use std::path::Path;
+
 use structs::experience_skills::ExperienceSkills;
 use structs::responses::{
     DefaultResponse, ListProfilesResponse, SaveGameCountResponse, SaveGameResponse,
     SystemThemeResponse, TrucksResponse,
 };
 use structs::vec_save_games::VecSaveGames;
+use tauri::{Theme, Window};
 use tauri::{Theme, Window};
 use utils::compress_folder::compress_folder_files;
 use utils::decrypt_saves::decrypt_file_to_save;
@@ -341,6 +344,7 @@ async fn set_license_plate_trailer(
     license_plate: &str,
     bg_plate_color: &str,
     text_plate_color: &str,
+    color_margin: bool,
 ) -> Result<DefaultResponse, ()> {
     let file: Vec<String> = match read_file_text(dir_save).await {
         Some(file) => file,
@@ -355,6 +359,7 @@ async fn set_license_plate_trailer(
         license_plate,
         &bg_plate_color_game,
         &text_plate_color_game,
+        color_margin,
     ) {
         Some(trailer_plate) => trailer_plate,
         None => return Ok(DefaultResponse { res: false }),
@@ -370,6 +375,7 @@ async fn set_license_plate_truck(
     license_plate: &str,
     bg_plate_color: &str,
     text_plate_color: &str,
+    color_margin: bool,
 ) -> Result<DefaultResponse, ()> {
     let file: Vec<String> = match read_file_text(dir_save).await {
         Some(file) => file,
@@ -395,6 +401,7 @@ async fn set_license_plate_truck(
         &bg_plate_color_game,
         &text_plate_color_game,
         license_plate,
+        color_margin,
     ) {
         Some(truck_plate) => truck_plate,
         None => return Ok(DefaultResponse { res: false }),

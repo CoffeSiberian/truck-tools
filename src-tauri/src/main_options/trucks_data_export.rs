@@ -13,6 +13,13 @@ use super::truck_transmissions::{
     RENAULT_PREMIUM_TRANSMISSION, RENAULT_MAGNUM_TRANSMISSION, RENAULT_T_TRANSMISSION,
 };
 use crate::structs::vec_trucks::{BrandDaf, BrandIveco, BrandMan, BrandMercedes, BrandRenault, BrandScania, BrandVolvo, TruckBrands, TruckValues};
+    VOLVO_FH_CLASSIC,
+};
+use super::truck_transmissions::{
+    SCANIA_R_2009_TRANSMISSION, SCANIA_R_TRANSMISSION, SCANIA_STREAMLINE_TRANSMISSION,
+    SCANIA_S_TRANSMISSION, VOLVO_FH_CLASSIC_TRANSMISSION, VOLVO_FH_TRANSMISSION,
+};
+use crate::structs::vec_trucks::{BrandScania, BrandVolvo, TruckBrands, TruckValues};
 
 pub fn get_trucks_values() -> TruckBrands {
     let scania: BrandScania = BrandScania {
@@ -44,7 +51,6 @@ pub fn get_trucks_values() -> TruckBrands {
             transmissions: VOLVO_FH_CLASSIC_TRANSMISSION.to_vec(),
         },
     };
-
     let man: BrandMan = BrandMan {
         man_tgx: TruckValues {
             engines: MAN_TGX.to_vec(),

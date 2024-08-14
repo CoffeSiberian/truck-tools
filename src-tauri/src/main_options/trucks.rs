@@ -1,3 +1,5 @@
+use super::license_plate::get_license_plate_formated;
+
 use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_trucks::VecTrucksId;
 
@@ -407,9 +409,15 @@ pub fn set_truck_license_plate(
     bg_plate_color: &str,
     text_plate_color: &str,
     license_plate: &str,
+    color_margin: bool,
 ) -> Option<Vec<String>> {
     let mut arr_val_clone: Vec<String> = arr_val.clone();
-    let value: String = format!("<color value=ff{}><margin left=-15><img src=/material/ui/white.mat xscale=stretch yscale=stretch><ret><margin left=2><align hstyle=left vstyle=center><font xscale=1 yscale=1 ><color value=ff{}>{}</align></margin>|belgium", bg_plate_color, text_plate_color, license_plate);
+    let value: String = get_license_plate_formated(
+        bg_plate_color,
+        text_plate_color,
+        license_plate,
+        color_margin,
+    );
     let value_put: String = format!(" license_plate: \"{}\"", value);
 
     for (i, item) in arr_val_clone.iter().enumerate().skip(index) {
