@@ -251,14 +251,14 @@ export const setLicensePlateTrailer = async (
 	licensePlate: string,
 	bgPlateColor: string,
 	textPlateColor: string,
-	rounded: boolean
+	colorMargin: boolean
 ): Promise<boolean> => {
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 		licensePlate: licensePlate,
 		bgPlateColor: bgPlateColor,
 		textPlateColor: textPlateColor,
-		rounded,
+		colorMargin,
 	};
 
 	const invoceRes = (await invoke(
@@ -479,7 +479,7 @@ export const copyProfileConfigs = async (
 	return invoceRes.res;
 };
 
-export const getTrucksInfoList = async (): Promise<TruckBrands | undefined> => {
+export const getTrucksInfoList = async (): Promise<TruckBrands> => {
 	const invoceRes = (await invoke(
 		"get_list_trucks_info"
 	)) as responseTrucksInfo;
