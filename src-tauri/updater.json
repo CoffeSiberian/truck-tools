@@ -1,11 +1,11 @@
 {
-	"version": "v0.3.5",
-	"notes": "- New drop-down menu with common profile selection and saving options\n\n- New feature to copy settings between profiles\n\n- New feature that allows to clone profiles with a new name\n\n- Fixed a bug when generating a backup that caused changes in the location of some files",
-	"pub_date": "2024-07-20T00:00:00-04:00",
+	"version": "v0.3.6",
+	"notes": "- New engines and transmissions to put on the trucks (thanks to @azzchan for his great work)\n\n- Added a color margin for the truck and trailer license plates\n\n- Internal change in API responses",
+	"pub_date": "2024-08-15T00:00:00-04:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlp0WjBRZnd3UzUyRTlxQ0Mzcll4OE5pbXpyNFJ4cU9tOHkrSmJDejNDRStYcVlwZURuYm9MU1R3cFA3RmJjcndRcTlSelJkMFFnVUwzaW5TQ0J2ZGdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzIxNDUyNTM1CWZpbGU6VHJ1Y2sgVG9vbHNfMC4zLjVfeDY0X2VuLVVTLm1zaS56aXAKRys2L0ZtR2JKNnVLR0xDQ2tVMEx6azJaQjlUV2N3Wk1Tc2RhQTlqTmJQM0Q1VzV4UUpqME9oMU0xTVdiY2lHMHMvUTZwdGNrZ0d4czl6ZDlYZUh6Q2c9PQo=",
-			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.3.5/Truck_Tools_0.3.5_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmZjNmtOaTAwQ2s0NllqcHBzMFcveU5sZnorL2dVWVdSMHIra1h3M1BYcDVWYm9ZSWRpd2h6RTgwMFhLVSt6VkNhalptdFJYRGRVcTRUTFY4VWpkR0FvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzIzNjk1NTg5CWZpbGU6VHJ1Y2sgVG9vbHNfMC4zLjZfeDY0X2VuLVVTLm1zaS56aXAKdFRsUENLcHVnN0daWUJvUXNjdjdBUnlHNTRiZExGeVF0aDduSHF6MzdQc0gzbGhjc1lLN29qejZWQ2tvL0UyenhRbnNGTStmd0tVd1ZlZUpaTGdsQVE9PQo=",
+			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.3.6/Truck_Tools_0.3.6_x64_en-US.msi.zip"
 		}
 	}
 }
