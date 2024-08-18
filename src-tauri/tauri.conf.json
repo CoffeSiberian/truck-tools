@@ -68,7 +68,8 @@
 			"pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEJERkMxNzRDRjFGM0ZDQTYKUldTbS9QUHhUQmY4dlV4eFoxS0VnUDVGUHJCcGI1SklzK2cwRm9VUS82NHVHNlAwMTBZaVd3bXcK"
 		},
 		"security": {
-			"csp": "default-src 'self'; img-src 'self' asset: https://asset.localhost"
+			"dangerousDisableAssetCspModification": ["style-src"],
+			"csp": "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' asset: https://asset.localhost"
 		},
 		"bundle": {
 			"active": true,
