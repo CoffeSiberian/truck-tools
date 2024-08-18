@@ -5,15 +5,10 @@ import { Select, SelectItem, Image } from "@nextui-org/react";
 import { IconUserCircle } from "@tabler/icons-react";
 
 // types
-import { ProfileWithoutSaves, Profile } from "../../types/SaveGameTypes";
+import { ProfileWithoutSaves } from "../../../types/SaveGameTypes";
+import { ProfileTypesContext } from "../../../types/ContexTypes";
 
-interface ListProfilesProps {
-	listProfiles: ProfileWithoutSaves[];
-	selectedProfile?: Profile;
-	setProfile: (profile: ProfileWithoutSaves) => void;
-}
-
-const SelectProfileObject: FC<ListProfilesProps> = ({
+const ListProfilesDropdown: FC<ProfileTypesContext> = ({
 	listProfiles,
 	selectedProfile,
 	setProfile,
@@ -76,4 +71,4 @@ const SelectProfileObject: FC<ListProfilesProps> = ({
 	);
 };
 
-export default SelectProfileObject;
+export default ListProfilesDropdown;

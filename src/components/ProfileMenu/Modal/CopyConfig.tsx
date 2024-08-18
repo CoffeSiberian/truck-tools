@@ -1,5 +1,5 @@
 import { useState, FC } from "react";
-import SelectProfileObject from "../SelectProfileObject";
+import ListProfilesDropdown from "../Dropdown/ListProfilesDropdown";
 import { useProfileContex } from "../../../hooks/useProfileContex";
 import {
 	Modal,
@@ -31,7 +31,8 @@ interface ModalProps {
 }
 
 const CopyConfig: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
-	const { selectedProfile, listProfiles } = useProfileContex();
+	const Contex = useProfileContex();
+	const { selectedProfile, listProfiles } = Contex;
 
 	const [ProfileInfo, setProfileInfo] = useState<Profile | undefined>(
 		undefined
@@ -94,8 +95,8 @@ const CopyConfig: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 								remember that your settings will be replaced, we recommend that
 								you <b>make a backup copy of your profile</b>.
 							</p>
-							<SelectProfileObject
-								listProfiles={listProfiles}
+							<ListProfilesDropdown
+								{...Contex}
 								selectedProfile={ProfileInfo}
 								setProfile={setProfile}
 							/>

@@ -6,14 +6,19 @@ import { ProfileContexInfo } from "./hooks/useProfileContex";
 import { NextUIProvider } from "@nextui-org/react";
 import "./styles.css";
 
+import { PrimeReactProvider } from "primereact/api";
+import "primereact/resources/themes/md-dark-indigo/theme.css";
+
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<React.StrictMode>
 		<NextUIProvider>
-			<DarkMode>
-				<ProfileContexInfo>
-					<App />
-				</ProfileContexInfo>
-			</DarkMode>
+			<PrimeReactProvider>
+				<DarkMode>
+					<ProfileContexInfo>
+						<App />
+					</ProfileContexInfo>
+				</DarkMode>
+			</PrimeReactProvider>
 		</NextUIProvider>
 	</React.StrictMode>
 );

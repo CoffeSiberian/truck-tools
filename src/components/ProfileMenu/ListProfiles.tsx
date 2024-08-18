@@ -1,16 +1,18 @@
 import { useProfileContex } from "../../hooks/useProfileContex";
+
+/* 
 import SelectProfileObject from "./SelectProfileObject";
 
-const ListProfiles = () => {
-	const { listProfiles, selectedProfile, setProfile } = useProfileContex();
+It will be temporarily disabled while the bug 
+https://github.com/nextui-org/nextui/issues/3510 is being fixed.
+*/
 
-	return (
-		<SelectProfileObject
-			listProfiles={listProfiles}
-			selectedProfile={selectedProfile}
-			setProfile={setProfile}
-		/>
-	);
+import ListProfilePrimeRe from "./Dropdown/ListProfilePrimeRe";
+
+const ListProfiles = () => {
+	const Contex = useProfileContex();
+
+	return <ListProfilePrimeRe {...Contex} />;
 };
 
 export default ListProfiles;
