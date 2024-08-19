@@ -11,9 +11,6 @@ import {
 	Avatar,
 } from "@nextui-org/react";
 
-// images
-import avatar from "../static/img/s-coffe.webp";
-
 // icons
 import { IconBrandGithub } from "@tabler/icons-react";
 import { IconBrandTwitch } from "@tabler/icons-react";
@@ -48,7 +45,7 @@ const AboutModal: FC<AboutModalProps> = ({ isOpen, onOpenChange }) => {
 								</p>
 								<div className="mt-2 flex flex-row gap-2">
 									<Avatar
-										src={avatar}
+										src="https://avatars.githubusercontent.com/u/61036343?v=4"
 										size="lg"
 										name="Fernando Garrido"
 										alt="Fernando Garrido"
