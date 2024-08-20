@@ -1,4 +1,5 @@
 import { createContext, useState, useContext, useEffect } from "react";
+import { getSystemTheme } from "../utils/fileEdit";
 import { DarkModeTypes, DarkModeContextTypes } from "../types/ContexTypes";
 
 const DarkModeContex = createContext<DarkModeContextTypes>(
@@ -50,12 +51,13 @@ export const DarkMode = ({ children }: any) => {
 	};
 
 	useEffect(() => {
-		const darkModeLocal = localStorage.getItem("darkMode");
-		if (darkModeLocal !== null) {
-			setDarkModeState(JSON.parse(darkModeLocal));
-		} else {
-			localStorage.setItem("darkMode", "true");
-		}
+		getSystemTheme().then((res) => {
+			if (res === "dark") {
+				setDarkModeState(true);
+			} else {
+				setDarkModeState(false);
+			}
+		});
 	}, []);
 
 	return (
