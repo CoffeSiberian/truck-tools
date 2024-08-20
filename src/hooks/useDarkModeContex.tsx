@@ -53,8 +53,10 @@ export const DarkMode = ({ children }: any) => {
 	useEffect(() => {
 		getSystemTheme().then((res) => {
 			if (res === "dark") {
+				import("primereact/resources/themes/md-dark-indigo/theme.css");
 				setDarkModeState(true);
 			} else {
+				import("primereact/resources/themes/md-light-indigo/theme.css");
 				setDarkModeState(false);
 			}
 		});
