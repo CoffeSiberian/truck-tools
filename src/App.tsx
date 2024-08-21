@@ -9,7 +9,6 @@ const App = () => {
 	const defaultClassNames = "scrollbar bg-background text-foreground";
 
 	useEffect(() => {
-		console.log(darkMode);
 		document.body.className = darkMode
 			? `${defaultClassNames} dark`
 			: `${defaultClassNames} light`;
