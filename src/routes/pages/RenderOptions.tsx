@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useDarkMode } from "../../hooks/useDarkModeContex";
 import { Tabs, Tab, useDisclosure } from "@nextui-org/react";
 
 // components
@@ -20,11 +19,8 @@ import {
 const RenderOptions = () => {
 	const [activeIndex, setActiveIndex] = useState<string | null>(null);
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
-	const { themeTatailwind } = useDarkMode();
 
-	const styleBox = `flex flex-col ${themeTatailwind.secondary.main} place-self-center max-w-xs w-full rounded-lg border-2 border-transparent ${themeTatailwind.primary.border_color} shadow-2xl gap-1 mt-4 p-4`;
-
-	const nexTime = <div className={styleBox}>Available soon</div>;
+	const nexTime = <div>Available soon</div>;
 
 	const items = [
 		{
