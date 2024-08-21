@@ -706,8 +706,8 @@ fn get_os_theme(window: Window) -> SystemThemeResponse {
         }
         _ => {
             return SystemThemeResponse {
-                res: false,
-                theme: "",
+                res: true,
+                theme: "dark",
             }
         }
     }
@@ -715,6 +715,7 @@ fn get_os_theme(window: Window) -> SystemThemeResponse {
 
 fn main() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_store::Builder::default().build())
         .invoke_handler(tauri::generate_handler![
             decrypt_to_save,
             set_cargo_mass_trailers_and_slave,

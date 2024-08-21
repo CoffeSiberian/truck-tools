@@ -1,5 +1,10 @@
 import { createContext, useState, useContext, useEffect } from "react";
-import { getSystemTheme } from "../utils/fileEdit";
+import {
+	getSystemTheme,
+	getStoredTheme,
+	storeSystemTheme,
+} from "../utils/fileEdit";
+import { themeTypesSystem } from "../types/fileEditTypes";
 import { DarkModeContextTypes } from "../types/ContexTypes";
 
 const DarkModeContex = createContext<DarkModeContextTypes>(
@@ -18,14 +23,28 @@ export const DarkMode = ({ children }: any) => {
 		setDarkModeState(darkModeBool);
 	};
 
+	const getThemeSet = async (): Promise<themeTypesSystem> => {
+		const theme = await getStoredTheme();
+
+		if (!theme) {
+			await storeSystemTheme("system");
+			return "system";
+		}
+		return theme;
+	};
+
 	useEffect(() => {
-		getSystemTheme().then((res) => {
-			if (res === "dark") {
-				import("primereact/resources/themes/md-dark-indigo/theme.css");
-				setDarkModeState(true);
+		getThemeSet().then((resThemeSet) => {
+			if (resThemeSet === "system") {
+				getSystemTheme().then((resSystemTheme) => {
+					if (resSystemTheme === "dark") {
+						setDarkMode(true);
+					} else {
+						setDarkMode(false);
+					}
+				});
 			} else {
-				import("primereact/resources/themes/md-light-indigo/theme.css");
-				setDarkModeState(false);
+				setDarkMode(resThemeSet === "dark");
 			}
 		});
 	}, []);

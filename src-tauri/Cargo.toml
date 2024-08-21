@@ -21,6 +21,7 @@ tauri = { version = "1", features = [
     "shell-execute",
     "fs-all",
 ] }
+tauri-plugin-store = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v1" }
 serde = { version = "1", features = ["derive"] }
 libloading = "0"
 hex = "0"

@@ -7,6 +7,7 @@ import {
 } from "./SaveGameTypes";
 
 export type themeTypes = "light" | "dark";
+export type themeTypesSystem = "system" | "light" | "dark";
 
 export interface responseRustTypes {
 	res: boolean;

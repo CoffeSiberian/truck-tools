@@ -5,6 +5,7 @@ import { join } from "@tauri-apps/api/path";
 import { Command } from "@tauri-apps/api/shell";
 import { convertFileSrc } from "@tauri-apps/api/tauri";
 import { invoke } from "@tauri-apps/api/tauri";
+import { Store } from "tauri-plugin-store-api";
 
 // types
 import {
@@ -22,7 +23,10 @@ import {
 	responseProfileDir,
 	responseSystemTheme,
 	themeTypes,
+	themeTypesSystem,
 } from "../types/fileEditTypes";
+
+const STORE = new Store(".settings.dat");
 
 const getProfileImage = async (path: string): Promise<string | undefined> => {
 	const imgPath = await join(path, "avatar.png");
@@ -491,4 +495,18 @@ export const getSystemTheme = async (): Promise<themeTypes> => {
 	const invoceRes = (await invoke("get_os_theme")) as responseSystemTheme;
 
 	return invoceRes.theme;
+};
+
+export const storeSystemTheme = async (theme: themeTypesSystem) => {
+	await STORE.set("theme", theme);
+	await STORE.save();
+};
+
+export const getStoredTheme = async (): Promise<themeTypesSystem | null> => {
+	const theme = await STORE.get("theme");
+	if (!theme) return null;
+
+	if (theme === "light" || theme === "dark" || theme === "system") return theme;
+
+	return null;
 };
