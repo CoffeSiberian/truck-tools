@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.rcp-root {
+.light .rcp-root {
 	--rcp-background-color: #f5f5f5;
 	--rcp-field-input-border-color: #242424;
 	--rcp-field-input-color: #383838;
 	--rcp-field-label-color: #383838;
+}
+
+.dark .rcp-root {
+	--rcp-background-color: #121212;
+	--rcp-field-input-border-color: #242424;
+	--rcp-field-input-color: #ffffff;
+	--rcp-field-label-color: #ffffff;
 }

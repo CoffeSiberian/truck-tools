@@ -96,23 +96,27 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 			<div className="flex h-auto justify-center gap-6">
 				<div className="space-y-2 text-center">
 					<p className="text-large font-bold">Background color</p>
-					<ColorPicker
-						height={100}
-						hideInput={["hsv", "hex"]}
-						hideAlpha={true}
-						color={bgColor}
-						onChange={BgColor}
-					/>
+					<div className="drop-shadow-lg">
+						<ColorPicker
+							height={100}
+							hideInput={["hsv", "hex"]}
+							hideAlpha={true}
+							color={bgColor}
+							onChange={BgColor}
+						/>
+					</div>
 				</div>
 				<div className="space-y-2 text-center">
 					<p className="text-large font-bold">Text color</p>
-					<ColorPicker
-						height={100}
-						hideInput={["hsv", "hex"]}
-						hideAlpha={true}
-						color={txColor}
-						onChange={TxColor}
-					/>
+					<div className="drop-shadow-lg">
+						<ColorPicker
+							height={100}
+							hideInput={["hsv", "hex"]}
+							hideAlpha={true}
+							color={txColor}
+							onChange={TxColor}
+						/>
+					</div>
 				</div>
 			</div>
 		</div>
