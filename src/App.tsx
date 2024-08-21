@@ -12,6 +12,12 @@ const App = () => {
 		document.body.className = darkMode
 			? `${defaultClassNames} dark`
 			: `${defaultClassNames} light`;
+
+		if (darkMode) {
+			import("primereact/resources/themes/md-dark-indigo/theme.css");
+		} else {
+			import("primereact/resources/themes/md-light-indigo/theme.css");
+		}
 	}, [darkMode]);
 
 	return (
