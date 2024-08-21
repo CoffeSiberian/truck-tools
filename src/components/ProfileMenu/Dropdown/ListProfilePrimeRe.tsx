@@ -58,30 +58,7 @@ const ListProfilePrimeRe: FC<ProfileTypesContext> = ({
 	const selectedProfileTemplate = (): JSX.Element => {
 		if (!selectedProfile) return <>Select profile</>;
 
-		return (
-			<div className="flex items-center gap-2">
-				<div className="w-[30px]">
-					{selectedProfile.avatar ? (
-						<Image
-							src={selectedProfile.avatar}
-							alt="profile avatar select"
-							radius="full"
-							loading="lazy"
-							style={{
-								zoom: 0.31,
-								objectFit: "none",
-								objectPosition: "0% 0%",
-							}}
-						/>
-					) : (
-						<IconUserCircle size={30} />
-					)}
-				</div>
-				<div className="flex flex-col">
-					<span className="text-small">{selectedProfile.name}</span>
-				</div>
-			</div>
-		);
+		return <>{selectedProfile.name}</>;
 	};
 
 	return (

@@ -121,11 +121,10 @@ const ProfileOptions = () => {
 			<Dropdown backdrop="opaque" closeOnSelect={false}>
 				<DropdownTrigger>
 					<Button
-						color="warning"
 						isDisabled={selectedProfile ? false : true}
 						endContent={<IconMenu />}
 						size="sm"
-						variant="bordered"
+						variant="faded"
 					>
 						Profile Options
 					</Button>

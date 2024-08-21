@@ -65,7 +65,7 @@ const AboutModal: FC<AboutModalProps> = ({ isOpen, onOpenChange }) => {
 									aria-label="github-link"
 								>
 									<IconBrandGithub size={30} />
-									<p className="font-bold">/CoffeSiberian</p>
+									<p className="font-bold">CoffeSiberian</p>
 								</Button>
 								<Button
 									onClick={() => open("https://www.twitch.tv/siberiancoffe")}
@@ -73,7 +73,7 @@ const AboutModal: FC<AboutModalProps> = ({ isOpen, onOpenChange }) => {
 									aria-label="github-link"
 								>
 									<IconBrandTwitch size={30} />
-									<p className="font-bold">/siberiancoffe</p>
+									<p className="font-bold">siberiancoffe</p>
 								</Button>
 							</ModalFooter>
 						</>
