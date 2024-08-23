@@ -7,7 +7,6 @@ import { NextUIProvider } from "@nextui-org/react";
 import "./styles.css";
 
 import { PrimeReactProvider } from "primereact/api";
-import "primereact/resources/themes/md-dark-indigo/theme.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<React.StrictMode>
