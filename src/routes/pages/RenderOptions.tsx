@@ -5,7 +5,8 @@ import { Tabs, Tab, useDisclosure } from "@nextui-org/react";
 import TrailersOptions from "./TrailersOptions/TrailersOptions";
 import TrucksOptions from "./TrucksOptions/TrucksOptions";
 import ProfilesOptions from "./ProfilesOptions/ProfilesOptions";
-import AboutModal from "../../components/AboutModal";
+import AboutModal from "../../components/Modals/AboutModal";
+import SettingsModal from "../../components/Modals/SettingsModal";
 
 // icons
 import {
@@ -18,9 +19,18 @@ import {
 
 const RenderOptions = () => {
 	const [activeIndex, setActiveIndex] = useState<string | null>(null);
-	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-	const nexTime = <div>Available soon</div>;
+	const {
+		isOpen: isOpenAbout,
+		onOpen: onOpenAbout,
+		onOpenChange: onOpenChangeAbout,
+	} = useDisclosure();
+
+	const {
+		isOpen: isOpenSettings,
+		onOpen: onOpenSettings,
+		onOpenChange: onOpenChangeSettings,
+	} = useDisclosure();
 
 	const items = [
 		{
@@ -43,8 +53,8 @@ const RenderOptions = () => {
 		},
 		{
 			label: "Settings",
-			jsx: nexTime,
-			modal: false,
+			jsx: <></>,
+			modal: true,
 			icon: <IconSettings />,
 		},
 		{ label: "About", jsx: <></>, modal: true, icon: <IconPaw /> },
@@ -81,11 +91,18 @@ const RenderOptions = () => {
 
 	return (
 		<div className="mb-28 mt-12 flex flex-col items-center p-3">
-			<AboutModal isOpen={isOpen} onOpenChange={onOpenChange} />
+			<AboutModal isOpen={isOpenAbout} onOpenChange={onOpenChangeAbout} />
+
+			<SettingsModal
+				isOpen={isOpenSettings}
+				onOpenChange={onOpenChangeSettings}
+			/>
+
 			<Tabs
 				className="fixed top-2 z-20 w-full justify-center"
 				onSelectionChange={(index) => {
-					if (index === "About") onOpen();
+					if (index === "About") onOpenAbout();
+					else if (index === "Settings") onOpenSettings();
 					else setActiveIndexOptions(index as string);
 				}}
 				selectedKey={activeIndex}
@@ -94,12 +111,8 @@ const RenderOptions = () => {
 				variant="solid"
 				color="primary"
 			>
-				{items.map((item, index) => {
-					return renderCart(
-						item.label,
-						item.icon,
-						!item.modal ? index > 2 : !item.modal
-					);
+				{items.map((item) => {
+					return renderCart(item.label, item.icon, false);
 				})}
 			</Tabs>
 			{items.map((item, index) => {

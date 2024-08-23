@@ -1,4 +1,5 @@
 import { Profile, SaveGame, ProfileWithoutSaves } from "./SaveGameTypes";
+import { themeTypesSystem } from "./fileEditTypes";
 
 export interface ProfileTypesContext {
 	selectedProfile?: Profile;
@@ -12,10 +13,6 @@ export interface ProfileTypesContext {
 
 export interface DarkModeContextTypes {
 	darkMode: boolean;
-	setDarkMode: (value: boolean) => void;
-}
-
-export interface DarkModeContextTypes {
-	darkMode: boolean;
-	setDarkMode: (value: boolean) => void;
+	userTheme: themeTypesSystem;
+	setUserTheme: (theme: themeTypesSystem) => void;
 }

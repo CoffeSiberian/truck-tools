@@ -26,8 +26,6 @@ import {
 	themeTypesSystem,
 } from "../types/fileEditTypes";
 
-const STORE = new Store(".settings.dat");
-
 const getProfileImage = async (path: string): Promise<string | undefined> => {
 	const imgPath = await join(path, "avatar.png");
 	const verifyExist = await exists(imgPath);
@@ -498,11 +496,13 @@ export const getSystemTheme = async (): Promise<themeTypes> => {
 };
 
 export const storeSystemTheme = async (theme: themeTypesSystem) => {
+	const STORE = new Store(".settings.dat");
 	await STORE.set("theme", theme);
 	await STORE.save();
 };
 
 export const getStoredTheme = async (): Promise<themeTypesSystem | null> => {
+	const STORE = new Store(".settings.dat");
 	const theme = await STORE.get("theme");
 	if (!theme) return null;
 
