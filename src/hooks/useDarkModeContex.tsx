@@ -37,17 +37,11 @@ export const DarkMode = ({ children }: any) => {
 		if (theme === "system") {
 			const systemTheme = await getSystemTheme();
 
-			if (systemTheme === "dark") {
-				setDarkModeState(true);
-			} else setDarkModeState(false);
-
+			setDarkModeState(systemTheme === "dark");
 			setTheme("system");
 			await storeSystemTheme(theme);
 		} else {
-			if (theme === "dark") {
-				setDarkModeState(true);
-			} else setDarkModeState(false);
-
+			setDarkModeState(theme === "dark");
 			setTheme(theme);
 			await storeSystemTheme(theme);
 		}
@@ -57,16 +51,10 @@ export const DarkMode = ({ children }: any) => {
 		if (theme === "system") {
 			const systemTheme = await getSystemTheme();
 
-			if (systemTheme === "dark") {
-				setDarkModeState(true);
-			} else setDarkModeState(false);
-
+			setDarkModeState(systemTheme === "dark");
 			setTheme("system");
 		} else {
-			if (theme === "dark") {
-				setDarkModeState(true);
-			} else setDarkModeState(false);
-
+			setDarkModeState(theme === "dark");
 			setTheme(theme);
 		}
 	};
@@ -74,7 +62,6 @@ export const DarkMode = ({ children }: any) => {
 	useEffect(() => {
 		if (!isLoaded.current) {
 			getCurrentTheme().then((resThemeSet) => {
-				console.log(resThemeSet);
 				setUserThemeWithoutSaving(resThemeSet);
 			});
 
