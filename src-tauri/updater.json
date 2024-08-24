@@ -1,11 +1,11 @@
 {
-	"version": "v0.3.7",
-	"notes": "- UI change when selecting a profile (temporary while the component selection issue is fixed)\n\n- Profile image linked from GitHub",
-	"pub_date": "2024-08-18T00:00:00-04:00",
+	"version": "v0.4.0",
+	"notes": "- Fixed a bug that prevented the loading of certain SVGs\n\n- New ability section for configurations (at the moment there is only one configuration for the theme)",
+	"pub_date": "2024-08-24T01:00:00-04:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlo2V2F6REFDdm5aYU03aHVUMFpRWVhFMzZPMTBwcFNldWF0QjFGM0g2Q2ZoT0haYytaeEVZeWJXcW4xbERHRW5BK2VNemRWQ0ZqQk1BWHAvTlVGZFEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzI0MDI5MjE2CWZpbGU6VHJ1Y2sgVG9vbHNfMC4zLjdfeDY0X2VuLVVTLm1zaS56aXAKSXY2cmVKNy84U3ZzTzljSGw1bzNTMFVuRkdCUVNhR1pkV1RxZUYxMGs5eEoyYmxOcnlXNDRieThXcWVIZFIwZXlpaG4va3FjeTA3WERqeFVVTElEQ3c9PQo=",
-			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.3.7/Truck_Tools_0.3.7_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dldlQlFpYW9qbkJ2WDViZGR1d0VNMlpMNW5WSEErdDUyaFdWeDhVeVFYWXJzelA1bHd2TURVMG1CNjFTL01OUzE4OU9jSmtRRkExODl5R05JdTJYRlFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzI0NDc5NDc1CWZpbGU6VHJ1Y2sgVG9vbHNfMC40LjBfeDY0X2VuLVVTLm1zaS56aXAKRUc0RTRreGp3b0RVWFR1UXd5Q09rcXo5UHh2RzA2NXVOeUFUQ2dZcm92VHN1OHh3MVRDdEhmanVmOHRVQkVpWEF0OEJkMDlBTVlTRzR1YUh2UHNoQlE9PQo=",
+			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.4.0/Truck_Tools_0.4.0_x64_en-US.msi.zip"
 		}
 	}
 }
