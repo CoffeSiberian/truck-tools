@@ -24,10 +24,13 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 ## Screenshot
 
 <p align="center">
-  <img src="https://i.imgur.com/8Enjyyq.jpeg">
-  <img src="https://i.imgur.com/K9guW2z.jpeg">
-  <img src="https://i.imgur.com/fc31u14.jpeg">
+  <img src="https://i.imgur.com/Kg4Qx63.png">
+  <img src="https://i.imgur.com/Z3xq0HU.png">
 </p>
+
+**Many thanks for your help ❤️**
+
+[![Contributors](https://contrib.rocks/image?repo=CoffeSiberian/truck-tools&max=500&columns=20)](https://github.com/CoffeSiberian/truck-tools/graphs/contributors)
 
 ### TO DO
 
@@ -65,7 +68,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 #### Settings
 
 - [ ] Documents Path
-- [ ] Dark Mode config
+- [x] Dark Mode config
 - [ ] Change language
 - [ ] Enable console and developer mode
 - [ ] Change save format
