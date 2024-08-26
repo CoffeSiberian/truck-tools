@@ -124,7 +124,8 @@ const ProfileOptions = () => {
 						isDisabled={selectedProfile ? false : true}
 						endContent={<IconMenu />}
 						size="sm"
-						variant="faded"
+						variant="solid"
+						color={selectedProfile ? "primary" : "default"}
 					>
 						Profile Options
 					</Button>
