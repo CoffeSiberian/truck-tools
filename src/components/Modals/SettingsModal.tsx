@@ -15,6 +15,7 @@ import {
 	Input,
 } from "@nextui-org/react";
 import { useDarkMode } from "../../hooks/useDarkModeContex";
+import { useProfileContex } from "../../hooks/useProfileContex";
 import { getStoredDocumentDir, storeDocumentDir } from "../../utils/fileEdit";
 
 // types
@@ -36,6 +37,7 @@ interface OptionsStateTypes {
 
 const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 	const { userTheme, setUserTheme } = useDarkMode();
+	const { reloadProfiles } = useProfileContex();
 
 	const [optionsState, setOptionsState] = useState<OptionsStateTypes>({
 		enableConsole: false,
@@ -63,6 +65,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 				...prev,
 				documentDir: res as string,
 			}));
+			reloadProfiles();
 		}
 	};
 
