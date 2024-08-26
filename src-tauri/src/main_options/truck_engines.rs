@@ -82,7 +82,7 @@ pub const SCANIA_S_ENGINES: [EngineStruct; 8] = [
     SCANIA_S_730,
 ];
 
-pub const SCANIA_R_2009_ENGINES: [EngineStruct; 14] = [
+pub const SCANIA_R_2009_ENGINES: [EngineStruct; 12] = [
     SCANIA_R_2009_360,
     SCANIA_R_2009_380,
     SCANIA_R_2009_400,
