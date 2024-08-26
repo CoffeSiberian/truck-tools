@@ -22,7 +22,11 @@ import { getStoredDocumentDir, storeDocumentDir } from "../../utils/fileEdit";
 import { themeTypesSystem } from "../../types/fileEditTypes";
 
 // icons
-import { IconFolderSearch, IconFolderPlus } from "@tabler/icons-react";
+import {
+	IconFolderSearch,
+	IconFolderPlus,
+	IconRefresh,
+} from "@tabler/icons-react";
 
 interface SettingsModalProps {
 	isOpen: boolean;
@@ -67,6 +71,21 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 			}));
 			reloadProfiles();
 		}
+	};
+
+	const resetConfigs = async () => {
+		const dirSetDefault = await documentDir();
+
+		onClickTheme("system");
+		await storeDocumentDir(dirSetDefault);
+		reloadProfiles();
+
+		setOptionsState((prev) => ({
+			...prev,
+			enableConsole: false,
+			enable128Convoy: false,
+			documentDir: dirSetDefault,
+		}));
 	};
 
 	useEffect(() => {
@@ -144,20 +163,33 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 										value={optionsState.documentDir || ""}
 										startContent={<IconFolderPlus />}
 										endContent={
-											<Button
-												color="primary"
-												startContent={<IconFolderSearch />}
-												disabled={true}
-												onPress={openSelectDir}
-											/>
+											<div className="flex">
+												<Button
+													color="primary"
+													startContent={<IconFolderSearch />}
+													onPress={openSelectDir}
+													size="sm"
+												/>
+											</div>
 										}
+										size="sm"
 										label="Document folder"
 										placeholder="Enter the document folder"
 									/>
 								</div>
 							</div>
 						</ModalBody>
-						<ModalFooter className="items-center justify-center gap-1"></ModalFooter>
+						<ModalFooter className="justify-center">
+							<Button
+								onPress={resetConfigs}
+								color="danger"
+								endContent={<IconRefresh />}
+								size="sm"
+								variant="bordered"
+							>
+								Reset Settings
+							</Button>
+						</ModalFooter>
 					</>
 				)}
 			</ModalContent>
