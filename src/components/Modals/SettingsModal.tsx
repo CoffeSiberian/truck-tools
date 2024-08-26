@@ -1,5 +1,6 @@
-import { FC } from "react";
-import { useDarkMode } from "../../hooks/useDarkModeContex";
+import { FC, useState, useEffect } from "react";
+import { open, OpenDialogOptions } from "@tauri-apps/api/dialog";
+import { documentDir } from "@tauri-apps/api/path";
 import {
 	Modal,
 	ModalContent,
@@ -13,24 +14,76 @@ import {
 	Switch,
 	Input,
 } from "@nextui-org/react";
+import { useDarkMode } from "../../hooks/useDarkModeContex";
+import { getStoredDocumentDir, storeDocumentDir } from "../../utils/fileEdit";
 
 // types
 import { themeTypesSystem } from "../../types/fileEditTypes";
 
 // icons
-import { IconFolderSearch, IconFileTypeZip } from "@tabler/icons-react";
+import { IconFolderSearch, IconFolderPlus } from "@tabler/icons-react";
 
 interface SettingsModalProps {
 	isOpen: boolean;
 	onOpenChange: () => void;
 }
 
+interface OptionsStateTypes {
+	enableConsole: boolean;
+	enable128Convoy: boolean;
+	documentDir: string | null;
+}
+
 const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 	const { userTheme, setUserTheme } = useDarkMode();
+
+	const [optionsState, setOptionsState] = useState<OptionsStateTypes>({
+		enableConsole: false,
+		enable128Convoy: false,
+		documentDir: null,
+	});
 
 	const onClickTheme = (theme: themeTypesSystem) => {
 		setUserTheme(theme);
 	};
+
+	const openSelectDir = async () => {
+		const options: OpenDialogOptions = {
+			title: "Select the folder where your progre is stored",
+			directory: true,
+			multiple: false,
+			defaultPath: await documentDir(),
+		};
+
+		const res = await open(options);
+
+		if (res) {
+			storeDocumentDir(res as string);
+			setOptionsState((prev) => ({
+				...prev,
+				documentDir: res as string,
+			}));
+		}
+	};
+
+	useEffect(() => {
+		const getOptions = async () => {
+			const getDocumentDirStore = await getStoredDocumentDir();
+
+			if (!getDocumentDirStore) {
+				storeDocumentDir(await documentDir());
+			}
+
+			setOptionsState((prev) => ({
+				...prev,
+				documentDir: getDocumentDirStore,
+			}));
+		};
+
+		if (isOpen) {
+			getOptions();
+		}
+	}, [isOpen]);
 
 	return (
 		<Modal
@@ -44,7 +97,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 					<>
 						<ModalHeader className="flex flex-col gap-1">Settings</ModalHeader>
 						<Divider />
-						<ModalBody className="flex gap-3 pb-1">
+						<ModalBody className="flex pb-1">
 							<div className="flex justify-center gap-1">
 								<Select
 									selectedKeys={[userTheme]}
@@ -55,7 +108,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 								>
 									<SelectItem key="system">System</SelectItem>
 									<SelectItem key="dark">Dark</SelectItem>
-									<SelectItem key="light">Light </SelectItem>
+									<SelectItem key="light">Light</SelectItem>
 								</Select>
 							</div>
 							<div className="relative">
@@ -70,7 +123,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 											placeholder="Select a language"
 											isDisabled
 										>
-											<SelectItem key="light ">English</SelectItem>
+											<SelectItem key="english">English</SelectItem>
 										</Select>
 									</div>
 									<div className="flex">
@@ -81,22 +134,23 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 									<div className="flex">
 										<Switch isDisabled>Enable 128 convoy mode slots</Switch>
 									</div>
-									<div className="flex">
-										<Input
-											disabled={true}
-											startContent={<IconFileTypeZip />}
-											endContent={
-												<Button
-													color="primary"
-													startContent={<IconFolderSearch />}
-													disabled={true}
-												/>
-											}
-											label="Document folder"
-											placeholder="Enter the document folder"
-											isDisabled
-										/>
-									</div>
+								</div>
+								<div className="mt-5 flex">
+									<Input
+										disabled={true}
+										value={optionsState.documentDir || ""}
+										startContent={<IconFolderPlus />}
+										endContent={
+											<Button
+												color="primary"
+												startContent={<IconFolderSearch />}
+												disabled={true}
+												onPress={openSelectDir}
+											/>
+										}
+										label="Document folder"
+										placeholder="Enter the document folder"
+									/>
 								</div>
 							</div>
 						</ModalBody>

@@ -12,6 +12,7 @@ tauri-build = { version = "1", features = [] }
 
 [dependencies]
 tauri = { version = "1", features = [
+    "dialog-open",
     "dialog-save",
     "process-relaunch",
     "updater",

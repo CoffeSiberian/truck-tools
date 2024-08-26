@@ -26,6 +26,8 @@ import {
 	themeTypesSystem,
 } from "../types/fileEditTypes";
 
+const STORE_FILE = ".settings.dat";
+
 const getProfileImage = async (path: string): Promise<string | undefined> => {
 	const imgPath = await join(path, "avatar.png");
 	const verifyExist = await exists(imgPath);
@@ -495,18 +497,36 @@ export const getSystemTheme = async (): Promise<themeTypes> => {
 	return invoceRes.theme;
 };
 
+// App Variables store
+
 export const storeSystemTheme = async (theme: themeTypesSystem) => {
-	const STORE = new Store(".settings.dat");
+	const STORE = new Store(STORE_FILE);
 	await STORE.set("theme", theme);
 	await STORE.save();
 };
 
 export const getStoredTheme = async (): Promise<themeTypesSystem | null> => {
-	const STORE = new Store(".settings.dat");
+	const STORE = new Store(STORE_FILE);
 	const theme = await STORE.get("theme");
-	if (!theme) return null;
 
+	if (!theme) return null;
 	if (theme === "light" || theme === "dark" || theme === "system") return theme;
+
+	return null;
+};
+
+export const storeDocumentDir = async (dir: string) => {
+	const STORE = new Store(STORE_FILE);
+	await STORE.set("document_dir", dir);
+	await STORE.save();
+};
+
+export const getStoredDocumentDir = async (): Promise<string | null> => {
+	const STORE = new Store(STORE_FILE);
+	const dir = await STORE.get("document_dir");
+
+	if (!dir) return null;
+	if (typeof dir === "string") return dir;
 
 	return null;
 };

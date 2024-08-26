@@ -42,7 +42,8 @@
 				"relaunch": true
 			},
 			"dialog": {
-				"save": true
+				"save": true,
+				"open": true
 			}
 		},
 		"windows": [
