@@ -95,8 +95,6 @@ pub const SCANIA_R_2009_ENGINES: [EngineStruct; 14] = [
     SCANIA_R_2009_560,
     SCANIA_R_2009_620,
     SCANIA_R_2009_730,
-    SCANIA_R_2009_730,
-    SCANIA_R_2009_730,
 ];
 
 pub const SCANIA_STREAMLINE_ENGINES: [EngineStruct; 19] = [
