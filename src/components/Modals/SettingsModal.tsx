@@ -42,6 +42,7 @@ interface SettingsModalProps {
 interface OptionsStateTypes {
 	enableConsole: boolean;
 	enable128Convoy: boolean;
+	language: string;
 	documentDir: string | null;
 }
 
@@ -52,6 +53,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 	const [optionsState, setOptionsState] = useState<OptionsStateTypes>({
 		enableConsole: false,
 		enable128Convoy: false,
+		language: "english",
 		documentDir: null,
 	});
 
@@ -128,6 +130,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 					getGameDeveloperStatusStore.console &&
 					getGameDeveloperStatusStore.developer,
 				enable128Convoy: getGameDeveloperStatusStore.active_max_convoy_mode,
+				language: "english",
 				documentDir: getDocumentDirStore,
 			});
 		};
@@ -167,6 +170,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 								<Select
 									label="Change language"
 									variant="bordered"
+									selectedKeys={[optionsState.language]}
 									placeholder="Select a language"
 									isDisabled
 								>
