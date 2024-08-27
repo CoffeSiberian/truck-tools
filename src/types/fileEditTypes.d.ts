@@ -32,3 +32,8 @@ export interface responseProfileDir extends responseRustTypes {
 export interface responseSystemTheme extends responseRustTypes {
 	theme: themeTypes;
 }
+
+export interface responseGetDeveloperValues extends responseRustTypes {
+	developer: boolean;
+	console: boolean;
+}

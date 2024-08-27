@@ -28,8 +28,8 @@ use std::path::Path;
 
 use structs::experience_skills::ExperienceSkills;
 use structs::responses::{
-    DefaultResponse, ListProfilesResponse, SaveGameCountResponse, SaveGameResponse,
-    SystemThemeResponse, TrucksResponse,
+    DefaultResponse, DeveloperValues, ListProfilesResponse, SaveGameCountResponse,
+    SaveGameResponse, SystemThemeResponse, TrucksResponse,
 };
 use structs::vec_save_games::VecSaveGames;
 
@@ -38,8 +38,8 @@ use tauri::{Theme, Window};
 use utils::compress_folder::compress_folder_files;
 use utils::decrypt_saves::decrypt_file_to_save;
 use utils::file_edit::{
-    copy_folder, get_list_save_count, get_list_save_game, get_list_save_game_dirs,
-    get_rgb_hex_to_game_format, read_file_text, save_file,
+    copy_folder, get_developer_value, get_list_save_count, get_list_save_game,
+    get_list_save_game_dirs, get_rgb_hex_to_game_format, read_file_text, save_file,
 };
 
 const IGNORED_FOLDERS: [&str; 1] = ["album"];
@@ -713,6 +713,26 @@ fn get_os_theme(window: Window) -> SystemThemeResponse {
     }
 }
 
+#[tauri::command]
+async fn get_developer_game_status(dir_docs_game_folder: &str) -> Result<DeveloperValues, ()> {
+    let (developer_status, console_status) = match get_developer_value(dir_docs_game_folder).await {
+        Some(res) => res,
+        None => {
+            return Ok(DeveloperValues {
+                res: false,
+                developer: false,
+                console: false,
+            })
+        }
+    };
+
+    return Ok(DeveloperValues {
+        res: true,
+        developer: developer_status,
+        console: console_status,
+    });
+}
+
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_store::Builder::default().build())
@@ -744,6 +764,7 @@ fn main() {
             copy_profile,
             copy_controls_config,
             get_os_theme,
+            get_developer_game_status,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

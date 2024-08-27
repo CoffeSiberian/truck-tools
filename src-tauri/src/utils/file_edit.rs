@@ -3,19 +3,33 @@ use crate::structs::file_path::FilePath;
 use crate::structs::vec_save_games::{VecProfileDir, VecSaveGames};
 use hex::decode;
 use std::fs::{read_dir, write, File};
+use std::io::Read;
 use std::path::Path;
 use uuid::Uuid;
 use walkdir::WalkDir;
 
-#[allow(dead_code)]
 async fn read_file(path: &str) -> Option<File> {
-    // currently not in use but will be used with future functionalities
     let file = File::open(path);
 
     match file {
         Ok(file) => return Some(file),
         Err(_) => return None,
     };
+}
+
+async fn file_split_space(path: &str) -> Option<Vec<String>> {
+    let mut file = match read_file(path).await {
+        Some(file) => file,
+        None => return None,
+    };
+
+    let mut buf_reader: String = String::new();
+    match file.read_to_string(&mut buf_reader) {
+        Ok(_) => (),
+        Err(_) => return None,
+    }
+
+    return Some(buf_reader.split("\r\n").map(|s| s.to_owned()).collect());
 }
 
 pub async fn copy_single_file(src_file: &Path, dest_file: &Path) -> bool {
@@ -260,4 +274,55 @@ pub async fn get_list_save_count(path: String, ignore_auto_saves: bool) -> usize
     }
 
     return dir_saves_content.len();
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////// Game Edit //////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/// Get the values of the console status and the developer mode of the game
+///
+/// # Returns
+///
+/// - First value: Developer mode status (bool)
+/// - Second value: Console status (bool)
+pub async fn get_developer_value(path: &str) -> Option<(bool, bool)> {
+    let file: Vec<String> = match file_split_space(format!("{}/config.cfg", path).as_str()).await {
+        Some(file) => file,
+        None => return None,
+    };
+
+    let mut developer_value: String = String::new();
+    let mut console_value: String = String::new();
+
+    for item in file.iter() {
+        let option_values: Vec<&str> = item.split_whitespace().collect();
+
+        if option_values.len() == 3 {
+            if option_values[1] == "g_developer" {
+                developer_value = option_values[2].to_string();
+                continue;
+            }
+
+            if option_values[1] == "g_console" {
+                console_value = option_values[2].to_string();
+                continue;
+            }
+        }
+    }
+
+    if console_value.is_empty() || developer_value.is_empty() {
+        return None;
+    }
+
+    let active_developer: bool = match developer_value.replace("\"", "").as_str() {
+        "1" => true,
+        _ => false,
+    };
+    let active_console: bool = match console_value.as_str().replace("\"", "").as_str() {
+        "1" => true,
+        _ => false,
+    };
+
+    return Some((active_developer, active_console));
 }

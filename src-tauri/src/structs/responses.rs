@@ -37,3 +37,10 @@ pub struct SystemThemeResponse {
     pub res: bool,
     pub theme: &'static str,
 }
+
+#[derive(Serialize)]
+pub struct DeveloperValues {
+    pub res: bool,
+    pub developer: bool,
+    pub console: bool,
+}

@@ -24,6 +24,7 @@ import {
 	responseSystemTheme,
 	themeTypes,
 	themeTypesSystem,
+	responseGetDeveloperValues,
 } from "../types/fileEditTypes";
 
 const STORE_FILE = ".settings.dat";
@@ -499,6 +500,20 @@ export const getSystemTheme = async (): Promise<themeTypes> => {
 
 	return invoceRes.theme;
 };
+
+export const getGameDeveloperStatus =
+	async (): Promise<responseGetDeveloperValues> => {
+		const rustParams = {
+			dirDocsGameFolder: (await documentDir()) + "/Euro Truck Simulator 2",
+		};
+
+		const invoceRes = (await invoke(
+			"get_developer_game_status",
+			rustParams
+		)) as responseGetDeveloperValues;
+
+		return invoceRes;
+	};
 
 // App Variables store
 
