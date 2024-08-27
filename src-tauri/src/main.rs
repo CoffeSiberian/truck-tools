@@ -747,9 +747,9 @@ async fn set_developer_game_status(
         None => return Ok(DefaultResponse { res: false }),
     };
 
-    save_file(dir_docs_game_folder.to_string(), file).await;
+    save_file(format!("{}/config.cfg", dir_docs_game_folder), file).await;
 
-    return Ok(DefaultResponse { res: false });
+    return Ok(DefaultResponse { res: true });
 }
 
 #[tauri::command]
@@ -762,7 +762,7 @@ async fn set_convoy_size(
         None => return Ok(DefaultResponse { res: false }),
     };
 
-    save_file(dir_docs_game_folder.to_string(), file).await;
+    save_file(format!("{}/config.cfg", dir_docs_game_folder), file).await;
 
     return Ok(DefaultResponse { res: true });
 }

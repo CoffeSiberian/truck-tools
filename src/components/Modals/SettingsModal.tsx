@@ -20,6 +20,8 @@ import {
 	getStoredDocumentDir,
 	storeDocumentDir,
 	getGameDeveloperStatus,
+	setGameDeveloperStatus,
+	setConvoySize,
 } from "../../utils/fileEdit";
 
 // types
@@ -55,6 +57,28 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 
 	const onClickTheme = (theme: themeTypesSystem) => {
 		setUserTheme(theme);
+	};
+
+	const onClickDeveloperStatus = async (status: boolean) => {
+		const res = await setGameDeveloperStatus(status);
+
+		if (res) {
+			setOptionsState((prev) => ({
+				...prev,
+				enableConsole: status,
+			}));
+		}
+	};
+
+	const onClickConvoySize = async (status: boolean) => {
+		const res = await setConvoySize(status);
+
+		if (res) {
+			setOptionsState((prev) => ({
+				...prev,
+				enable128Convoy: status,
+			}));
+		}
 	};
 
 	const openSelectDir = async () => {
@@ -150,12 +174,18 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 								</Select>
 							</div>
 							<div className="flex">
-								<Switch isSelected={optionsState.enableConsole} isDisabled>
+								<Switch
+									onValueChange={(e) => onClickDeveloperStatus(e)}
+									isSelected={optionsState.enableConsole}
+								>
 									Enable console and developer mode
 								</Switch>
 							</div>
 							<div className="flex">
-								<Switch isSelected={optionsState.enable128Convoy} isDisabled>
+								<Switch
+									onValueChange={(e) => onClickConvoySize(e)}
+									isSelected={optionsState.enable128Convoy}
+								>
 									Enable 128 convoy mode slots
 								</Switch>
 							</div>
