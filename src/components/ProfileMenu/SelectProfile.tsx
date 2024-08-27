@@ -7,13 +7,17 @@ import {
 	Skeleton,
 	Button,
 } from "@nextui-org/react";
-import { IconAlertTriangle } from "@tabler/icons-react";
+import classNames from "classnames";
 import ListProfiles from "./ListProfiles";
 import ListSaves from "./ListSaves";
 import ProfileOptions from "./ProfileOptions";
 
 // icons
-import { IconReload, IconUserCircle } from "@tabler/icons-react";
+import {
+	IconReload,
+	IconUserCircle,
+	IconAlertTriangle,
+} from "@tabler/icons-react";
 
 // types
 import { Profile } from "../../types/SaveGameTypes";
@@ -85,9 +89,10 @@ const SelectProfile = () => {
 
 	return (
 		<div
-			className={`fixed bottom-0 z-10 mb-2 mt-auto flex w-full flex-col items-center transition-opacity ${
+			className={classNames(
+				"fixed bottom-0 z-10 mb-2 mt-auto flex w-full flex-col items-center gap-1 transition-opacity hover:opacity-100",
 				selectedSave ? "opacity-70" : "opacity-100"
-			} gap-1 hover:opacity-100`}
+			)}
 		>
 			{!selectedSave && (
 				<Chip
