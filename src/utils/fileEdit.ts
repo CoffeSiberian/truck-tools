@@ -515,6 +515,38 @@ export const getGameDeveloperStatus =
 		return invoceRes;
 	};
 
+export const setGameDeveloperStatus = async (
+	statusDeveloper: boolean
+): Promise<boolean> => {
+	const rustParams = {
+		dirDocsGameFolder: (await documentDir()) + "/Euro Truck Simulator 2",
+		statusDeveloper,
+	};
+
+	const invoceRes = (await invoke(
+		"set_developer_game_status",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
+};
+
+export const setConvoySize = async (
+	convoyStatus: boolean
+): Promise<boolean> => {
+	const rustParams = {
+		dirDocsGameFolder: (await documentDir()) + "/Euro Truck Simulator 2",
+		convoyStatus,
+	};
+
+	const invoceRes = (await invoke(
+		"set_convoy_size",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
+};
+
 // App Variables store
 
 export const storeSystemTheme = async (theme: themeTypesSystem) => {

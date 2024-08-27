@@ -40,6 +40,7 @@ use utils::decrypt_saves::decrypt_file_to_save;
 use utils::file_edit::{
     copy_folder, get_developer_value, get_list_save_count, get_list_save_game,
     get_list_save_game_dirs, get_rgb_hex_to_game_format, read_file_text, save_file,
+    set_convoy_mode_status, set_developer_value,
 };
 
 const IGNORED_FOLDERS: [&str; 1] = ["album"];
@@ -736,6 +737,36 @@ async fn get_developer_game_status(dir_docs_game_folder: &str) -> Result<Develop
     });
 }
 
+#[tauri::command]
+async fn set_developer_game_status(
+    dir_docs_game_folder: &str,
+    status_developer: bool,
+) -> Result<DefaultResponse, ()> {
+    let file = match set_developer_value(dir_docs_game_folder, status_developer).await {
+        Some(res) => res,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    save_file(dir_docs_game_folder.to_string(), file).await;
+
+    return Ok(DefaultResponse { res: false });
+}
+
+#[tauri::command]
+async fn set_convoy_size(
+    dir_docs_game_folder: &str,
+    convoy_status: bool,
+) -> Result<DefaultResponse, ()> {
+    let file = match set_convoy_mode_status(dir_docs_game_folder, convoy_status).await {
+        Some(res) => res,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    save_file(dir_docs_game_folder.to_string(), file).await;
+
+    return Ok(DefaultResponse { res: true });
+}
+
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_store::Builder::default().build())
@@ -768,6 +799,8 @@ fn main() {
             copy_controls_config,
             get_os_theme,
             get_developer_game_status,
+            set_developer_game_status,
+            set_convoy_size,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

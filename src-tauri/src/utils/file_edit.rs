@@ -337,3 +337,54 @@ pub async fn get_developer_value(path: &str) -> Option<(bool, bool, bool)> {
 
     return Some((active_developer, active_console, active_max_convoy_mode));
 }
+
+pub async fn set_developer_value(path: &str, status: bool) -> Option<Vec<String>> {
+    let mut file: Vec<String> =
+        match file_split_space(format!("{}/config.cfg", path).as_str()).await {
+            Some(file) => file,
+            None => return None,
+        };
+
+    let active_value = if status { "1" } else { "0" };
+
+    for item in file.iter_mut().rev() {
+        let option_values: Vec<&str> = item.split_whitespace().collect();
+
+        if option_values.len() == 3 {
+            if option_values[1] == "g_developer" {
+                *item = format!("uset g_developer \"{}\"", active_value);
+                continue;
+            }
+
+            if option_values[1] == "g_console" {
+                *item = format!("uset g_console \"{}\"", active_value);
+                continue;
+            }
+        }
+    }
+
+    return Some(file);
+}
+
+pub async fn set_convoy_mode_status(path: &str, status: bool) -> Option<Vec<String>> {
+    let mut file: Vec<String> =
+        match file_split_space(format!("{}/config.cfg", path).as_str()).await {
+            Some(file) => file,
+            None => return None,
+        };
+
+    let active_value = if status { "128" } else { "0" };
+
+    for item in file.iter_mut().rev() {
+        let option_values: Vec<&str> = item.split_whitespace().collect();
+
+        if option_values.len() == 3 {
+            if option_values[1] == "g_max_convoy_size" {
+                *item = format!("uset g_max_convoy_size \"{}\"", active_value);
+                break;
+            }
+        }
+    }
+
+    return Some(file);
+}
