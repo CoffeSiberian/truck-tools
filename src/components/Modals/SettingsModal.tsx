@@ -16,7 +16,11 @@ import {
 } from "@nextui-org/react";
 import { useDarkMode } from "../../hooks/useDarkModeContex";
 import { useProfileContex } from "../../hooks/useProfileContex";
-import { getStoredDocumentDir, storeDocumentDir } from "../../utils/fileEdit";
+import {
+	getStoredDocumentDir,
+	storeDocumentDir,
+	getGameDeveloperStatus,
+} from "../../utils/fileEdit";
 
 // types
 import { themeTypesSystem } from "../../types/fileEditTypes";
@@ -82,8 +86,6 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 
 		setOptionsState((prev) => ({
 			...prev,
-			enableConsole: false,
-			enable128Convoy: false,
 			documentDir: dirSetDefault,
 		}));
 	};
@@ -91,15 +93,19 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 	useEffect(() => {
 		const getOptions = async () => {
 			const getDocumentDirStore = await getStoredDocumentDir();
+			const getGameDeveloperStatusStore = await getGameDeveloperStatus();
 
 			if (!getDocumentDirStore) {
 				storeDocumentDir(await documentDir());
 			}
 
-			setOptionsState((prev) => ({
-				...prev,
+			setOptionsState({
+				enableConsole:
+					getGameDeveloperStatusStore.console &&
+					getGameDeveloperStatusStore.developer,
+				enable128Convoy: getGameDeveloperStatusStore.active_max_convoy_mode,
 				documentDir: getDocumentDirStore,
-			}));
+			});
 		};
 
 		if (isOpen) {
@@ -133,50 +139,45 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 									<SelectItem key="light">Light</SelectItem>
 								</Select>
 							</div>
-							<div className="relative">
-								<div className="absolute inset-0 flex items-center justify-center">
-									<p className="font-bold">Soon ☕</p>
-								</div>
-								<div className="blur-md">
-									<div className="flex justify-center gap-1">
-										<Select
-											label="Change language"
-											variant="bordered"
-											placeholder="Select a language"
-											isDisabled
-										>
-											<SelectItem key="english">English</SelectItem>
-										</Select>
-									</div>
-									<div className="flex">
-										<Switch isDisabled>
-											Enable console and developer mode
-										</Switch>
-									</div>
-									<div className="flex">
-										<Switch isDisabled>Enable 128 convoy mode slots</Switch>
-									</div>
-								</div>
-								<div className="mt-5 flex">
-									<Input
-										disabled={true}
-										value={optionsState.documentDir || ""}
-										startContent={<IconFolderPlus />}
-										endContent={
-											<div className="flex">
-												<Button
-													color="primary"
-													startContent={<IconFolderSearch />}
-													onPress={openSelectDir}
-													size="sm"
-												/>
-											</div>
-										}
-										size="sm"
-										label="Document folder"
-										placeholder="Enter the document folder"
-									/>
-								</div>
+							<div className="flex justify-center gap-1">
+								<Select
+									label="Change language"
+									variant="bordered"
+									placeholder="Select a language"
+									isDisabled
+								>
+									<SelectItem key="english">English</SelectItem>
+								</Select>
+							</div>
+							<div className="flex">
+								<Switch isSelected={optionsState.enableConsole} isDisabled>
+									Enable console and developer mode
+								</Switch>
+							</div>
+							<div className="flex">
+								<Switch isSelected={optionsState.enable128Convoy} isDisabled>
+									Enable 128 convoy mode slots
+								</Switch>
+							</div>
+							<div className="flex">
+								<Input
+									disabled={true}
+									value={optionsState.documentDir || ""}
+									startContent={<IconFolderPlus />}
+									endContent={
+										<div className="flex">
+											<Button
+												color="primary"
+												startContent={<IconFolderSearch />}
+												onPress={openSelectDir}
+												size="sm"
+											/>
+										</div>
+									}
+									size="sm"
+									label="Document folder"
+									placeholder="Enter the document folder"
+								/>
 							</div>
 						</ModalBody>
 						<ModalFooter className="justify-center">
