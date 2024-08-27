@@ -43,4 +43,5 @@ pub struct DeveloperValues {
     pub res: bool,
     pub developer: bool,
     pub console: bool,
+    pub active_max_convoy_mode: bool,
 }

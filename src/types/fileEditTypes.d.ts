@@ -36,4 +36,5 @@ export interface responseSystemTheme extends responseRustTypes {
 export interface responseGetDeveloperValues extends responseRustTypes {
 	developer: boolean;
 	console: boolean;
+	active_max_convoy_mode: boolean;
 }

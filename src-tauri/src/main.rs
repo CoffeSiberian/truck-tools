@@ -715,21 +715,24 @@ fn get_os_theme(window: Window) -> SystemThemeResponse {
 
 #[tauri::command]
 async fn get_developer_game_status(dir_docs_game_folder: &str) -> Result<DeveloperValues, ()> {
-    let (developer_status, console_status) = match get_developer_value(dir_docs_game_folder).await {
-        Some(res) => res,
-        None => {
-            return Ok(DeveloperValues {
-                res: false,
-                developer: false,
-                console: false,
-            })
-        }
-    };
+    let (developer_status, console_status, active_max_convoy_mode) =
+        match get_developer_value(dir_docs_game_folder).await {
+            Some(res) => res,
+            None => {
+                return Ok(DeveloperValues {
+                    res: false,
+                    developer: false,
+                    console: false,
+                    active_max_convoy_mode: false,
+                })
+            }
+        };
 
     return Ok(DeveloperValues {
         res: true,
         developer: developer_status,
         console: console_status,
+        active_max_convoy_mode,
     });
 }
 

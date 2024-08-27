@@ -286,7 +286,8 @@ pub async fn get_list_save_count(path: String, ignore_auto_saves: bool) -> usize
 ///
 /// - First value: Developer mode status (bool)
 /// - Second value: Console status (bool)
-pub async fn get_developer_value(path: &str) -> Option<(bool, bool)> {
+/// - Third value: Max convoy mode status (bool)
+pub async fn get_developer_value(path: &str) -> Option<(bool, bool, bool)> {
     let file: Vec<String> = match file_split_space(format!("{}/config.cfg", path).as_str()).await {
         Some(file) => file,
         None => return None,
@@ -294,6 +295,7 @@ pub async fn get_developer_value(path: &str) -> Option<(bool, bool)> {
 
     let mut developer_value: String = String::new();
     let mut console_value: String = String::new();
+    let mut max_convoy_mode: String = String::new();
 
     for item in file.iter() {
         let option_values: Vec<&str> = item.split_whitespace().collect();
@@ -306,6 +308,11 @@ pub async fn get_developer_value(path: &str) -> Option<(bool, bool)> {
 
             if option_values[1] == "g_console" {
                 console_value = option_values[2].to_string();
+                continue;
+            }
+
+            if option_values[1] == "g_max_convoy_size" {
+                max_convoy_mode = option_values[2].to_string();
                 continue;
             }
         }
@@ -323,6 +330,10 @@ pub async fn get_developer_value(path: &str) -> Option<(bool, bool)> {
         "1" => true,
         _ => false,
     };
+    let active_max_convoy_mode: bool = match max_convoy_mode.as_str().replace("\"", "").as_str() {
+        "128" => true,
+        _ => false,
+    };
 
-    return Some((active_developer, active_console));
+    return Some((active_developer, active_console, active_max_convoy_mode));
 }
