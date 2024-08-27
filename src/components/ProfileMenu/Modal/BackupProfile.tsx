@@ -115,12 +115,16 @@ const BackupProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 								isInvalid={destDirZip.length === 0}
 								startContent={<IconFileTypeZip />}
 								endContent={
-									<Button
-										color="primary"
-										startContent={<IconFolderSearch />}
-										onPress={onClickFolder}
-									/>
+									<div className="flex">
+										<Button
+											color="primary"
+											startContent={<IconFolderSearch />}
+											onPress={onClickFolder}
+											size="sm"
+										/>
+									</div>
 								}
+								size="sm"
 								label="Choose the destination folder"
 								placeholder="Enter the destination folder"
 								value={destDirZip}

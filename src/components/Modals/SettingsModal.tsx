@@ -110,8 +110,13 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 		await storeDocumentDir(dirSetDefault);
 		reloadProfiles();
 
+		await setGameDeveloperStatus(false);
+		await setConvoySize(false);
+
 		setOptionsState((prev) => ({
 			...prev,
+			enableConsole: false,
+			enable128Convoy: false,
 			documentDir: dirSetDefault,
 		}));
 	};
