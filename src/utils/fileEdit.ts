@@ -503,8 +503,12 @@ export const getSystemTheme = async (): Promise<themeTypes> => {
 
 export const getGameDeveloperStatus =
 	async (): Promise<responseGetDeveloperValues> => {
+		const storeDocsDir = await getStoredDocumentDir();
+		const docsDirSystem = await documentDir();
+		const docsDir = storeDocsDir || docsDirSystem;
+
 		const rustParams = {
-			dirDocsGameFolder: (await documentDir()) + "/Euro Truck Simulator 2",
+			dirDocsGameFolder: docsDir + "/Euro Truck Simulator 2",
 		};
 
 		const invoceRes = (await invoke(
@@ -518,8 +522,12 @@ export const getGameDeveloperStatus =
 export const setGameDeveloperStatus = async (
 	statusDeveloper: boolean
 ): Promise<boolean> => {
+	const storeDocsDir = await getStoredDocumentDir();
+	const docsDirSystem = await documentDir();
+	const docsDir = storeDocsDir || docsDirSystem;
+
 	const rustParams = {
-		dirDocsGameFolder: (await documentDir()) + "/Euro Truck Simulator 2",
+		dirDocsGameFolder: docsDir + "/Euro Truck Simulator 2",
 		statusDeveloper,
 	};
 
@@ -534,8 +542,12 @@ export const setGameDeveloperStatus = async (
 export const setConvoySize = async (
 	convoyStatus: boolean
 ): Promise<boolean> => {
+	const storeDocsDir = await getStoredDocumentDir();
+	const docsDirSystem = await documentDir();
+	const docsDir = storeDocsDir || docsDirSystem;
+
 	const rustParams = {
-		dirDocsGameFolder: (await documentDir()) + "/Euro Truck Simulator 2",
+		dirDocsGameFolder: docsDir + "/Euro Truck Simulator 2",
 		convoyStatus,
 	};
 

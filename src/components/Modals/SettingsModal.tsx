@@ -94,11 +94,16 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 		const res = await open(options);
 
 		if (res) {
-			storeDocumentDir(res as string);
-			setOptionsState((prev) => ({
-				...prev,
+			await storeDocumentDir(res as string);
+			await setGameDeveloperStatus(false);
+			await setConvoySize(false);
+
+			setOptionsState({
+				enableConsole: false,
+				enable128Convoy: false,
+				language: "english",
 				documentDir: res as string,
-			}));
+			});
 			reloadProfiles();
 		}
 	};
