@@ -67,12 +67,13 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 
 #### Settings
 
-- [ ] Documents Path
+- [x] Documents Path
 - [x] Dark Mode config
 - [ ] Change language
-- [ ] Enable console and developer mode
-- [ ] Change save format
-- [ ] Change convoy mode slots to `128`
+- [x] Enable console and developer mode
+- [x] Change convoy mode slots to `128`
+
+❌ Change save format (unnecessary function)
 
 #### Possible features
 
