@@ -32,7 +32,7 @@ const AboutModal: FC<AboutModalProps> = ({ isOpen, onOpenChange }) => {
 				{(_onClose) => (
 					<>
 						<ModalHeader className="flex flex-col gap-1">
-							Truck Tools - Preview 0.4.1
+							Truck Tools - Preview 0.4.2
 						</ModalHeader>
 						<Divider />
 						<ModalBody className="flex items-center justify-center py-1">
