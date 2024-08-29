@@ -1,7 +1,10 @@
 import OptionCard from "../../../components/OptionCard";
 
 // images
-import testImage from "../../../static/img/testimg.webp";
+import img2 from "../../../static/img/OptionsImages/2.webp";
+import img3 from "../../../static/img/OptionsImages/3.webp";
+import img4 from "../../../static/img/OptionsImages/4.webp";
+import img5 from "../../../static/img/OptionsImages/5.webp";
 
 // modals
 import ModifyWeight from "./Modals/ModifyWeight";
@@ -15,28 +18,28 @@ const TrailersOptions = () => {
 			id: "1",
 			title: "Change trailer license plate",
 			description: "Change the license plate of the trailer",
-			image: testImage,
+			image: img2,
 			modal: <EditLicensePlate />,
 		},
 		{
 			id: "2",
 			title: "Modify job weight",
 			description: "Modify the weight of your current job",
-			image: testImage,
+			image: img4,
 			modal: <ModifyWeight />,
 		},
 		{
 			id: "3",
 			title: "Trailer unblocking by country",
 			description: "Unlock regional blocking of trailers",
-			image: testImage,
+			image: img3,
 			modal: <UnlockTrailers />,
 		},
 		{
 			id: "4",
 			title: "Change trailer weight",
 			description: "Modifies the trailer weight, applying it only once.",
-			image: testImage,
+			image: img5,
 			modal: <ModifyTrailerWeight />,
 		},
 	];

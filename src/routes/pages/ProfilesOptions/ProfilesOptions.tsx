@@ -1,7 +1,12 @@
 import OptionCard from "../../../components/OptionCard";
 
 // images
-import testImage from "../../../static/img/testimg.webp";
+import img11 from "../../../static/img/OptionsImages/11.webp";
+import img12 from "../../../static/img/OptionsImages/12.webp";
+import img13 from "../../../static/img/OptionsImages/13.webp";
+import img14 from "../../../static/img/OptionsImages/14.webp";
+import img15 from "../../../static/img/OptionsImages/15.webp";
+import img16 from "../../../static/img/OptionsImages/16.webp";
 
 // modals
 import SetMoney from "./Modal/SetMoney";
@@ -17,42 +22,42 @@ const ProfilesOptions = () => {
 			id: "1",
 			title: "Add money",
 			description: "Add money to your profile",
-			image: testImage,
+			image: img11,
 			modal: <SetMoney />,
 		},
 		{
 			id: "2",
 			title: "Add experience",
 			description: "Add experience to your profile",
-			image: testImage,
+			image: img12,
 			modal: <SetExperience />,
 		},
 		{
 			id: "3",
 			title: "Set any garages status",
 			description: "Set any garages status to your profile",
-			image: testImage,
+			image: img13,
 			modal: <SetGarageStatus />,
 		},
 		{
 			id: "4",
 			title: "Set any city visited status",
 			description: "Set any city visited status to your profile",
-			image: testImage,
+			image: img14,
 			modal: <SetAllCitiesStatus />,
 		},
 		{
 			id: "5",
 			title: "Set all dealer status",
 			description: "Set all dealer status to your profile",
-			image: testImage,
+			image: img15,
 			modal: <SetAllDealerStatus />,
 		},
 		{
 			id: "6",
 			title: "Set experience skills",
 			description: "Set experience skills to your profile",
-			image: testImage,
+			image: img16,
 			modal: <SetExperienceSkills />,
 		},
 	];

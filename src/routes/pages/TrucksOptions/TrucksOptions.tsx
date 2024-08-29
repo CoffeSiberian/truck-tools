@@ -1,7 +1,12 @@
 import OptionCard from "../../../components/OptionCard";
 
 // images
-import testImage from "../../../static/img/testimg.webp";
+import img1 from "../../../static/img/OptionsImages/1.webp";
+import img6 from "../../../static/img/OptionsImages/6.webp";
+import img7 from "../../../static/img/OptionsImages/7.webp";
+import img8 from "../../../static/img/OptionsImages/8.webp";
+import img9 from "../../../static/img/OptionsImages/9.webp";
+import img10 from "../../../static/img/OptionsImages/10.webp";
 
 // modals
 import RepairTruck from "./Modals/RepairTruck";
@@ -19,56 +24,56 @@ const TrucksOptions = () => {
 			id: "1",
 			title: "Change truck engine",
 			description: "Change the engine of the truck",
-			image: testImage,
+			image: img6,
 			modal: <SetTruckEngine />,
 		},
 		{
 			id: "2",
 			title: "Change truck transmission",
 			description: "Change the transmission of the truck",
-			image: testImage,
+			image: img7,
 			modal: <SetTruckTransmission />,
 		},
 		{
 			id: "3",
 			title: "Change truck license plate",
 			description: "Change the license plate of the truck",
-			image: testImage,
+			image: img1,
 			modal: <EditLicensePlate />,
 		},
 		{
 			id: "4",
 			title: "Repair truck",
 			description: "Repair your current truck",
-			image: testImage,
+			image: img8,
 			modal: <RepairTruck />,
 		},
 		{
 			id: "5",
 			title: "Repair all trucks",
 			description: "Repairs all fleet trucks",
-			image: testImage,
+			image: img8,
 			modal: <RepairAllTrucks />,
 		},
 		{
 			id: "6",
 			title: "Fill fuel",
 			description: "Fill fuel in current truck",
-			image: testImage,
+			image: img9,
 			modal: <FillTruckFuel />,
 		},
 		{
 			id: "7",
 			title: "Fill all trucks fuel",
 			description: "Refueling all fleet trucks",
-			image: testImage,
+			image: img9,
 			modal: <FillAllTrucksFuel />,
 		},
 		{
 			id: "8",
 			title: "Infinite fuel on current truck",
 			description: "Infinite fuel on current truck",
-			image: testImage,
+			image: img10,
 			modal: <SetInfiniteFuel />,
 		},
 	];
