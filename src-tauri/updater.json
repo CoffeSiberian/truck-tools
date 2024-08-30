@@ -1,11 +1,11 @@
 {
-	"version": "v0.4.2",
-	"notes": "- New reference images for the different options",
-	"pub_date": "2024-08-29T12:00:00-04:00",
+	"version": "v0.4.3",
+	"notes": "- Bug fix that prevented the corresponding save folder from opening",
+	"pub_date": "2024-08-29T20:00:00-04:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlRkT0ZWeSs3V1VJeVh4dm5SSGMzN1ZxcVlEVWlPZkM0OE9GRkpZSjJ6Yi9YRk5aZmVBWXFJYVBrUFJmeitGRnFSZTZRNGMyZVZKb3BSTTZvTGN6V3c4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzI0OTA4NzYxCWZpbGU6VHJ1Y2sgVG9vbHNfMC40LjJfeDY0X2VuLVVTLm1zaS56aXAKN0xKL2Q1dHpadXNCTldqR1NmWGxaekhsYTREWmhJYlZONjd5ZGJWSldEdDU5R3VTVy9zWkc0clozNTRkdEhEaHA0MmJZalJ0cWY5SEY2bUo3VjNEQnc9PQo=",
-			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.4.2/Truck_Tools_0.4.2_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlRZZThXQUlYcVFDbUZteU5qSzlmdEJCeExiVDVxMko4aUdIMWlhWmxuRWhkMC9PaHJwK3NjVDVoOXp6am1yd2daRG81SWVhUDhKU2R4RUlMc1RrY3cwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzI0OTgzMjY0CWZpbGU6VHJ1Y2sgVG9vbHNfMC40LjNfeDY0X2VuLVVTLm1zaS56aXAKYzQ3RUNGNHdKVXNWQzBOSmxQZVkrOHlFTEJVZWtpaGNmVDJEaVNXQUVMekloTmo0bU1WVnZCcnNIWitNTko1Z1kwVzZLeUhxR2R4WEhjL0ltNmZxQ0E9PQo=",
+			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.4.3/Truck_Tools_0.4.3_x64_en-US.msi.zip"
 		}
 	}
 }
