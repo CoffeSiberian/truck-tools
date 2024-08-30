@@ -103,7 +103,7 @@ export const getListDirProfiles = async (
 };
 
 export const readProfileNames = async (): Promise<ProfileWithoutSaves[]> => {
-	const reDirProfiles = "/Euro Truck Simulator 2/profiles";
+	const reDirProfiles = "Euro Truck Simulator 2/profiles";
 
 	const storeDocsDir = await getStoredDocumentDir();
 	const docsDirSystem = await documentDir();
