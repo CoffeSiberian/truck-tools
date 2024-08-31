@@ -109,7 +109,9 @@ export const readProfileNames = async (): Promise<ProfileWithoutSaves[]> => {
 	const docsDirSystem = await documentDir();
 	const docsDir = storeDocsDir || docsDirSystem;
 
-	const dirProfiles = await getListDirProfiles(docsDir + reDirProfiles);
+	const dirProfiles = await getListDirProfiles(
+		(await join(docsDir, reDirProfiles)).toString()
+	);
 	if (!dirProfiles) return [];
 
 	let profileNames: ProfileWithoutSaves[] = [];
@@ -508,7 +510,9 @@ export const getGameDeveloperStatus =
 		const docsDir = storeDocsDir || docsDirSystem;
 
 		const rustParams = {
-			dirDocsGameFolder: docsDir + "/Euro Truck Simulator 2",
+			dirDocsGameFolder: (
+				await join(docsDir, "Euro Truck Simulator 2")
+			).toString(),
 		};
 
 		const invoceRes = (await invoke(
@@ -527,7 +531,9 @@ export const setGameDeveloperStatus = async (
 	const docsDir = storeDocsDir || docsDirSystem;
 
 	const rustParams = {
-		dirDocsGameFolder: docsDir + "/Euro Truck Simulator 2",
+		dirDocsGameFolder: (
+			await join(docsDir, "Euro Truck Simulator 2")
+		).toString(),
 		statusDeveloper,
 	};
 
@@ -547,7 +553,9 @@ export const setConvoySize = async (
 	const docsDir = storeDocsDir || docsDirSystem;
 
 	const rustParams = {
-		dirDocsGameFolder: docsDir + "/Euro Truck Simulator 2",
+		dirDocsGameFolder: (
+			await join(docsDir, "Euro Truck Simulator 2")
+		).toString(),
 		convoyStatus,
 	};
 
