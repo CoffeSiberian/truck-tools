@@ -1,10 +1,3 @@
-import {
-	ScaniaModelsEngines,
-	ScaniaModelsTransmissions,
-	VolvoModelsEngines,
-	VolvoModelsTransmissions,
-} from "./TrucksTypes";
-
 /////////////////////////////////////////////////////////
 // PROFILE TYPES
 
