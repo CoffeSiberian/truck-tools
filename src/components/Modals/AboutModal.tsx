@@ -29,7 +29,7 @@ const AboutModal: FC<AboutModalProps> = ({ isOpen, onOpenChange }) => {
 			onOpenChange={() => onOpenChange()}
 		>
 			<ModalContent>
-				{(_onClose) => (
+				{() => (
 					<>
 						<ModalHeader className="flex flex-col gap-1">
 							Truck Tools - Preview 0.4.4

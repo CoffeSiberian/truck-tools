@@ -8,12 +8,13 @@ const App = () => {
 	const { darkMode } = useContext(DarkModeContex);
 
 	const defaultClassNames = "scrollbar bg-background text-foreground";
-	const darkStyleSheets = [
-		"/md-light-indigo/theme.css",
-		"/md-dark-indigo/theme.css",
-	];
 
 	useEffect(() => {
+		const darkStyleSheets = [
+			"/md-light-indigo/theme.css",
+			"/md-dark-indigo/theme.css",
+		];
+
 		document.body.className = darkMode
 			? `${defaultClassNames} dark`
 			: `${defaultClassNames} light`;

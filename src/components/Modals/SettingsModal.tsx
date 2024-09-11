@@ -158,7 +158,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 			onOpenChange={onOpenChange}
 		>
 			<ModalContent>
-				{(_onClose) => (
+				{() => (
 					<>
 						<ModalHeader className="flex flex-col gap-1">Settings</ModalHeader>
 						<Divider />
@@ -166,7 +166,9 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 							<div className="flex justify-center gap-1">
 								<Select
 									selectedKeys={[userTheme]}
-									onChange={(e) => onClickTheme(e.target.value as any)}
+									onChange={(e) =>
+										onClickTheme(e.target.value as "system" | "light" | "dark")
+									}
 									label="Change theme"
 									variant="bordered"
 									placeholder="Select a theme"

@@ -23,7 +23,7 @@ import {
 interface UpdateInfo {
 	body: string;
 	version: string;
-	date: String;
+	date: string;
 }
 
 const UpdaterModal = () => {
@@ -42,12 +42,14 @@ const UpdaterModal = () => {
 				const date = new Date(splitDate);
 
 				setUpdateInfo({
-					body: manifest?.body!,
-					version: manifest?.version!,
+					body: manifest?.body,
+					version: manifest?.version,
 					date: date.toLocaleDateString(),
 				});
 			}
-		} catch {}
+		} catch {
+			return;
+		}
 	};
 
 	const setIsOpen = (open: boolean) => {
@@ -86,7 +88,7 @@ const UpdaterModal = () => {
 				onOpenChange={setIsOpen}
 			>
 				<ModalContent>
-					{(_onClose) => (
+					{() => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
 								New version available

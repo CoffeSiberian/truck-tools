@@ -61,7 +61,7 @@ const CloneProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 				setProfileName(selectedProfile.name + " - Clone");
 			}
 		}
-	}, [isOpen]);
+	}, [isOpen, selectedProfile]);
 
 	return (
 		<Modal

@@ -33,6 +33,19 @@ interface DecryptResult {
 	success?: boolean;
 }
 
+interface DecryptStyles {
+	color:
+		| "success"
+		| "default"
+		| "danger"
+		| "primary"
+		| "secondary"
+		| "warning"
+		| undefined;
+	startContent: JSX.Element;
+	textColor: string;
+}
+
 const ProfileOptions = () => {
 	const { selectedProfile, selectedSave } = useContext(ProfileContex);
 
@@ -61,7 +74,7 @@ const ProfileOptions = () => {
 	const iconClasses =
 		"text-xl text-default-500 pointer-events-none flex-shrink-0";
 
-	const decryptStyles = {
+	const decryptStyles: DecryptStyles = {
 		color:
 			decryptResult.success === true
 				? "success"
@@ -152,7 +165,7 @@ const ProfileOptions = () => {
 							key="decrypt"
 							description="Decrypt selected save game"
 							className={decryptStyles.textColor}
-							color={decryptStyles.color as any}
+							color={decryptStyles.color}
 							startContent={
 								decryptResult.isLoading ? (
 									<Spinner size="sm" />
