@@ -1,4 +1,4 @@
-import { createContext, useState, useContext, useEffect, useRef } from "react";
+import { createContext, useState, useEffect, useRef } from "react";
 import {
 	getSystemTheme,
 	getStoredTheme,
@@ -6,18 +6,15 @@ import {
 } from "../utils/fileEdit";
 
 // types
+import { ProviderProps } from "../types/ReactTypes";
 import { themeTypesSystem } from "../types/fileEditTypes";
 import { DarkModeContextTypes } from "../types/ContexTypes";
 
-const DarkModeContex = createContext<DarkModeContextTypes>(
+export const DarkModeContex = createContext<DarkModeContextTypes>(
 	{} as DarkModeContextTypes
 );
 
-export const useDarkMode = (): DarkModeContextTypes => {
-	return useContext(DarkModeContex);
-};
-
-export const DarkMode = ({ children }: any) => {
+export const DarkMode = ({ children }: ProviderProps) => {
 	const [theme, setTheme] = useState<themeTypesSystem>("system");
 	const [darkMode, setDarkModeState] = useState<boolean>(true);
 	const isLoaded = useRef(false);

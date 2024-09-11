@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState, useContext, useEffect } from "react";
 import { open, OpenDialogOptions } from "@tauri-apps/api/dialog";
 import { documentDir } from "@tauri-apps/api/path";
 import {
@@ -14,8 +14,8 @@ import {
 	Switch,
 	Input,
 } from "@nextui-org/react";
-import { useDarkMode } from "../../hooks/useDarkModeContex";
-import { useProfileContex } from "../../hooks/useProfileContex";
+import { DarkModeContex } from "../../hooks/useDarkModeContex";
+import { ProfileContex } from "../../hooks/useProfileContex";
 import {
 	getStoredDocumentDir,
 	storeDocumentDir,
@@ -47,8 +47,8 @@ interface OptionsStateTypes {
 }
 
 const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
-	const { userTheme, setUserTheme } = useDarkMode();
-	const { reloadProfiles } = useProfileContex();
+	const { userTheme, setUserTheme } = useContext(DarkModeContex);
+	const { reloadProfiles } = useContext(ProfileContex);
 
 	const [optionsState, setOptionsState] = useState<OptionsStateTypes>({
 		enableConsole: false,

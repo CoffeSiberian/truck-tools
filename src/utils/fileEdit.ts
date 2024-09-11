@@ -114,7 +114,7 @@ export const readProfileNames = async (): Promise<ProfileWithoutSaves[]> => {
 	);
 	if (!dirProfiles) return [];
 
-	let profileNames: ProfileWithoutSaves[] = [];
+	const profileNames: ProfileWithoutSaves[] = [];
 	for (let i = 0; i < dirProfiles.length; i++) {
 		const profileImg = await getProfileImage(dirProfiles[i].dir);
 		const saves = await getProfileSavesCount(dirProfiles[i].dir);

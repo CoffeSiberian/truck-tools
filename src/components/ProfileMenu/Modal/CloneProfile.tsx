@@ -1,5 +1,5 @@
-import { useState, useEffect, FC } from "react";
-import { useProfileContex } from "../../../hooks/useProfileContex";
+import { useState, useEffect, useContext, FC } from "react";
+import { ProfileContex } from "../../../hooks/useProfileContex";
 import {
 	Modal,
 	ModalContent,
@@ -27,7 +27,7 @@ interface ModalProps {
 }
 
 const CloneProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
-	const { selectedProfile } = useProfileContex();
+	const { selectedProfile } = useContext(ProfileContex);
 
 	const [ProfileName, setProfileName] = useState<string>("");
 	const [isLoading, setIsLoading] = useState<boolean>(false);

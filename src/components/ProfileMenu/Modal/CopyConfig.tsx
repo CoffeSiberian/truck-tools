@@ -1,6 +1,6 @@
-import { useState, FC } from "react";
+import { useState, useContext, FC } from "react";
 import ListProfilesDropdown from "../Dropdown/ListProfilesDropdown";
-import { useProfileContex } from "../../../hooks/useProfileContex";
+import { ProfileContex } from "../../../hooks/useProfileContex";
 import {
 	Modal,
 	Image,
@@ -31,7 +31,7 @@ interface ModalProps {
 }
 
 const CopyConfig: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
-	const Contex = useProfileContex();
+	const Contex = useContext(ProfileContex);
 	const { selectedProfile, listProfiles } = Contex;
 
 	const [ProfileInfo, setProfileInfo] = useState<Profile | undefined>(

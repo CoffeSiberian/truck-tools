@@ -1,7 +1,7 @@
-import { useState, FC } from "react";
+import { useState, useContext, FC } from "react";
 import { save, SaveDialogOptions } from "@tauri-apps/api/dialog";
 import { documentDir } from "@tauri-apps/api/path";
-import { useProfileContex } from "../../../hooks/useProfileContex";
+import { ProfileContex } from "../../../hooks/useProfileContex";
 import {
 	Modal,
 	ModalContent,
@@ -33,7 +33,7 @@ interface ModalProps {
 }
 
 const BackupProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
-	const { selectedProfile } = useProfileContex();
+	const { selectedProfile } = useContext(ProfileContex);
 
 	const [destDirZip, setDestDirZip] = useState<string>("");
 	const [isLoading, setIsLoading] = useState<boolean>(false);

@@ -1,4 +1,5 @@
-import { useProfileContex } from "../../hooks/useProfileContex";
+import { useContext } from "react";
+import { ProfileContex } from "../../hooks/useProfileContex";
 
 /* 
 import ListSavesDropdown from "./Dropdown/ListSavesDropdown";
@@ -10,7 +11,7 @@ https://github.com/nextui-org/nextui/issues/3510 is being fixed.
 import ListSavePrimeRe from "./Dropdown/ListSavePrimeRe";
 
 const ListSaves = () => {
-	const Contex = useProfileContex();
+	const Contex = useContext(ProfileContex);
 
 	return <ListSavePrimeRe {...Contex} />;
 };

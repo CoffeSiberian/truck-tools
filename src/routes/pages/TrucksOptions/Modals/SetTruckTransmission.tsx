@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Select, SelectItem, Avatar } from "@nextui-org/react";
-import { useProfileContex } from "../../../../hooks/useProfileContex";
+import { ProfileContex } from "../../../../hooks/useProfileContex";
 import {
 	Modal,
 	ModalContent,
@@ -56,7 +56,7 @@ interface BrandType {
 }
 
 const SetTruckTransmission = () => {
-	const { selectedSave } = useProfileContex();
+	const { selectedSave } = useContext(ProfileContex);
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const BRANDS: BrandType[] = [

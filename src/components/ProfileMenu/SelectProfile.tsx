@@ -1,4 +1,5 @@
-import { useProfileContex } from "../../hooks/useProfileContex";
+import { useContext } from "react";
+import { ProfileContex } from "../../hooks/useProfileContex";
 import {
 	Card,
 	CardBody,
@@ -24,7 +25,7 @@ import { Profile } from "../../types/SaveGameTypes";
 
 const SelectProfile = () => {
 	const { selectedProfile, isSavesLoading, selectedSave, reloadProfiles } =
-		useProfileContex();
+		useContext(ProfileContex);
 
 	const renderProfile = (profileInfo: Profile | undefined) => {
 		return (

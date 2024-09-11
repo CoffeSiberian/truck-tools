@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useProfileContex } from "../../../../hooks/useProfileContex";
+import { useState, useContext } from "react";
+import { ProfileContex } from "../../../../hooks/useProfileContex";
 import {
 	Modal,
 	ModalContent,
@@ -35,7 +35,7 @@ interface completedProps {
 }
 
 const SetExperienceSkills = () => {
-	const { selectedSave } = useProfileContex();
+	const { selectedSave } = useContext(ProfileContex);
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [Skill, setSkill] = useState({

@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useColor } from "react-color-palette";
-import { useProfileContex } from "../../../../hooks/useProfileContex";
+import { ProfileContex } from "../../../../hooks/useProfileContex";
 import {
 	Modal,
 	ModalContent,
@@ -24,7 +24,7 @@ interface completedProps {
 }
 
 const EditLicensePlate = () => {
-	const { selectedSave } = useProfileContex();
+	const { selectedSave } = useContext(ProfileContex);
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [bgColor, setBGColor] = useColor("#bf2222");

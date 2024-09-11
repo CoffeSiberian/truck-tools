@@ -4,3 +4,7 @@ interface localStorage {
 	removeItem(key: string): void;
 	clear(): void;
 }
+
+export interface ProviderProps {
+	children: ReactNode;
+}

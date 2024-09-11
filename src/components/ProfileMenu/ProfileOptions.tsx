@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useProfileContex } from "../../hooks/useProfileContex";
+import { useState, useContext } from "react";
+import { ProfileContex } from "../../hooks/useProfileContex";
 import {
 	Button,
 	Dropdown,
@@ -34,7 +34,7 @@ interface DecryptResult {
 }
 
 const ProfileOptions = () => {
-	const { selectedProfile, selectedSave } = useProfileContex();
+	const { selectedProfile, selectedSave } = useContext(ProfileContex);
 
 	const {
 		isOpen: isOpenBackup,
@@ -97,7 +97,7 @@ const ProfileOptions = () => {
 	};
 
 	const disabledKeys = (): string[] => {
-		let keys: string[] = [];
+		const keys: string[] = [];
 
 		if (!selectedSave) {
 			keys.push("open");

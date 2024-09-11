@@ -1,20 +1,17 @@
-import { createContext, useState, useContext, useEffect, useRef } from "react";
+import { createContext, useState, useEffect, useRef } from "react";
 
 import { readProfileNames, getListSaves } from "../utils/fileEdit";
 
 // types
+import { ProviderProps } from "../types/ReactTypes";
 import { ProfileTypesContext } from "../types/ContexTypes";
 import { Profile, SaveGame, ProfileWithoutSaves } from "../types/SaveGameTypes";
 
-const ProfileContex = createContext<ProfileTypesContext>(
+export const ProfileContex = createContext<ProfileTypesContext>(
 	{} as ProfileTypesContext
 );
 
-export const useProfileContex = (): ProfileTypesContext => {
-	return useContext(ProfileContex);
-};
-
-export const ProfileContexInfo = ({ children }: any) => {
+export const ProfileContexInfo = ({ children }: ProviderProps) => {
 	const loaded = useRef(false);
 
 	const [ProfilesList, setProfilesList] = useState<Array<ProfileWithoutSaves>>(

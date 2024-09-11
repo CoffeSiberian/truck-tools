@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useProfileContex } from "../../../../hooks/useProfileContex";
+import { useState, useContext } from "react";
+import { ProfileContex } from "../../../../hooks/useProfileContex";
 import {
 	Modal,
 	ModalContent,
@@ -28,7 +28,7 @@ interface ModifyTrailerWeightProps {
 }
 
 const ModifyTrailerWeight = () => {
-	const { selectedSave } = useProfileContex();
+	const { selectedSave } = useContext(ProfileContex);
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [TrailerWeight, setTrailerWeight] = useState<ModifyTrailerWeightProps>({
