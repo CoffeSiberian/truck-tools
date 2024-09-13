@@ -1,11 +1,10 @@
 import { createContext, useState, useEffect, useRef } from "react";
-
-import { readProfileNames, getListSaves } from "../utils/fileEdit";
+import { readProfileNames, getListSaves } from "@/utils/fileEdit";
 
 // types
-import { ProviderProps } from "../types/ReactTypes";
-import { ProfileTypesContext } from "../types/ContexTypes";
-import { Profile, SaveGame, ProfileWithoutSaves } from "../types/SaveGameTypes";
+import { ProviderProps } from "@/types/ReactTypes";
+import { ProfileTypesContext } from "@/types/ContexTypes";
+import { Profile, SaveGame, ProfileWithoutSaves } from "@/types/SaveGameTypes";
 
 export const ProfileContex = createContext<ProfileTypesContext>(
 	{} as ProfileTypesContext

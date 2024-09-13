@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { useColor } from "react-color-palette";
-import { ProfileContex } from "../../../../hooks/useProfileContex";
+import { ProfileContex } from "@/hooks/useProfileContex";
 import {
 	Modal,
 	ModalContent,
@@ -11,9 +11,9 @@ import {
 	Button,
 	useDisclosure,
 } from "@nextui-org/react";
-import { setLicensePlateTruck } from "../../../../utils/fileEdit";
-import CustomLicensePlate from "../../../../components/CustomLicensePlate";
-import AlertSave from "../../../../components/AlertSave";
+import { setLicensePlateTruck } from "@/utils/fileEdit";
+import CustomLicensePlate from "@/components/CustomLicensePlate";
+import AlertSave from "@/components/AlertSave";
 
 // icons
 import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";

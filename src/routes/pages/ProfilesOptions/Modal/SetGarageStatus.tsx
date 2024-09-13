@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { ProfileContex } from "../../../../hooks/useProfileContex";
+import { ProfileContex } from "@/hooks/useProfileContex";
 import {
 	Modal,
 	ModalContent,
@@ -11,17 +11,17 @@ import {
 	useDisclosure,
 	RadioGroup,
 } from "@nextui-org/react";
-import CustomRadio from "../../../../components/CustomRadio";
-import { setProfileGarageStatus } from "../../../../utils/fileEdit";
-import AlertSave from "../../../../components/AlertSave";
+import CustomRadio from "@/components/CustomRadio";
+import { setProfileGarageStatus } from "@/utils/fileEdit";
+import AlertSave from "@/components/AlertSave";
 
 // icons
 import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";
 
 // images
-import smallGarage from "../../../../static/img/garages/small.webp";
-import mediumGarage from "../../../../static/img/garages/medium.webp";
-import largeGarage from "../../../../static/img/garages/large.webp";
+import smallGarage from "@/static/img/garages/small.webp";
+import mediumGarage from "@/static/img/garages/medium.webp";
+import largeGarage from "@/static/img/garages/large.webp";
 
 interface completedProps {
 	error: boolean;

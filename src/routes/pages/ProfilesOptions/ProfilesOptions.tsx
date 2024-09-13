@@ -1,20 +1,20 @@
-import OptionCard from "../../../components/OptionCard";
+import OptionCard from "@/components/OptionCard";
 
 // images
-import img11 from "../../../static/img/OptionsImages/11.webp";
-import img12 from "../../../static/img/OptionsImages/12.webp";
-import img13 from "../../../static/img/OptionsImages/13.webp";
-import img14 from "../../../static/img/OptionsImages/14.webp";
-import img15 from "../../../static/img/OptionsImages/15.webp";
-import img16 from "../../../static/img/OptionsImages/16.webp";
+import img11 from "@/static/img/OptionsImages/11.webp";
+import img12 from "@/static/img/OptionsImages/12.webp";
+import img13 from "@/static/img/OptionsImages/13.webp";
+import img14 from "@/static/img/OptionsImages/14.webp";
+import img15 from "@/static/img/OptionsImages/15.webp";
+import img16 from "@/static/img/OptionsImages/16.webp";
 
 // modals
-import SetMoney from "./Modal/SetMoney";
-import SetExperience from "./Modal/SetExperience";
-import SetGarageStatus from "./Modal/SetGarageStatus";
-import SetAllCitiesStatus from "./Modal/SetAllCitiesStatus";
-import SetAllDealerStatus from "./Modal/SetAllDealerStatus";
-import SetExperienceSkills from "./Modal/SetExperienceSkills";
+import SetMoney from "@/routes/pages/ProfilesOptions/Modal/SetMoney";
+import SetExperience from "@/routes/pages/ProfilesOptions/Modal/SetExperience";
+import SetGarageStatus from "@/routes/pages/ProfilesOptions/Modal/SetGarageStatus";
+import SetAllCitiesStatus from "@/routes/pages/ProfilesOptions/Modal/SetAllCitiesStatus";
+import SetAllDealerStatus from "@/routes/pages/ProfilesOptions/Modal/SetAllDealerStatus";
+import SetExperienceSkills from "@/routes/pages/ProfilesOptions/Modal/SetExperienceSkills";
 
 const ProfilesOptions = () => {
 	const items = [

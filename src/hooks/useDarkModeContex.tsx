@@ -3,12 +3,12 @@ import {
 	getSystemTheme,
 	getStoredTheme,
 	storeSystemTheme,
-} from "../utils/fileEdit";
+} from "@/utils/fileEdit";
 
 // types
-import { ProviderProps } from "../types/ReactTypes";
-import { themeTypesSystem } from "../types/fileEditTypes";
-import { DarkModeContextTypes } from "../types/ContexTypes";
+import { ProviderProps } from "@/types/ReactTypes";
+import { themeTypesSystem } from "@/types/fileEditTypes";
+import { DarkModeContextTypes } from "@/types/ContexTypes";
 
 export const DarkModeContex = createContext<DarkModeContextTypes>(
 	{} as DarkModeContextTypes

@@ -11,7 +11,7 @@ import {
 	Divider,
 	Chip,
 } from "@nextui-org/react";
-import AlertSave from "./AlertSave";
+import AlertSave from "@/components/AlertSave";
 
 // icons
 import {

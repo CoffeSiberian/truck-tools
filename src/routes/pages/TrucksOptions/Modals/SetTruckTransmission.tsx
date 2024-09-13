@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { Select, SelectItem, Avatar } from "@nextui-org/react";
-import { ProfileContex } from "../../../../hooks/useProfileContex";
+import { ProfileContex } from "@/hooks/useProfileContex";
 import {
 	Modal,
 	ModalContent,
@@ -12,11 +12,8 @@ import {
 	useDisclosure,
 	Image,
 } from "@nextui-org/react";
-import {
-	setTruckTransmission,
-	getTrucksInfoList,
-} from "../../../../utils/fileEdit";
-import AlertSave from "../../../../components/AlertSave";
+import { setTruckTransmission, getTrucksInfoList } from "@/utils/fileEdit";
+import AlertSave from "@/components/AlertSave";
 
 // icons
 import {
@@ -28,16 +25,16 @@ import {
 } from "@tabler/icons-react";
 
 // types
-import { TransmissionTypes } from "../../../../types/SaveGameTypes";
+import { TransmissionTypes } from "@/types/SaveGameTypes";
 
 // images
-import ScaniaIcon from "../../../../static/icons/brands/scania.svg";
-import VolvoIcon from "../../../../static/icons/brands/volvo.svg";
-import ManIcon from "../../../../static/icons/brands/man.svg";
-import DafIcon from "../../../../static/icons/brands/daf.svg";
-import MercedesIcon from "../../../../static/icons/brands/mercedes.svg";
-import RenaultIcon from "../../../../static/icons/brands/renault.svg";
-import IvecoIcon from "../../../../static/icons/brands/iveco.svg";
+import ScaniaIcon from "@/static/icons/brands/scania.svg";
+import VolvoIcon from "@/static/icons/brands/volvo.svg";
+import ManIcon from "@/static/icons/brands/man.svg";
+import DafIcon from "@/static/icons/brands/daf.svg";
+import MercedesIcon from "@/static/icons/brands/mercedes.svg";
+import RenaultIcon from "@/static/icons/brands/renault.svg";
+import IvecoIcon from "@/static/icons/brands/iveco.svg";
 
 interface completedProps {
 	error: boolean;

@@ -5,8 +5,8 @@ import { Select, SelectItem, Image } from "@nextui-org/react";
 import { IconUserCircle } from "@tabler/icons-react";
 
 // types
-import { ProfileWithoutSaves } from "../../../types/SaveGameTypes";
-import { ProfileTypesContext } from "../../../types/ContexTypes";
+import { ProfileWithoutSaves } from "@/types/SaveGameTypes";
+import { ProfileTypesContext } from "@/types/ContexTypes";
 
 const ListProfilesDropdown: FC<ProfileTypesContext> = ({
 	listProfiles,

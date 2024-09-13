@@ -7,8 +7,8 @@ import { Dropdown } from "primereact/dropdown";
 import { IconUserCircle } from "@tabler/icons-react";
 
 // types
-import { ProfileWithoutSaves } from "../../../types/SaveGameTypes";
-import { ProfileTypesContext } from "../../../types/ContexTypes";
+import { ProfileWithoutSaves } from "@/types/SaveGameTypes";
+import { ProfileTypesContext } from "@/types/ContexTypes";
 
 const ListProfilePrimeRe: FC<ProfileTypesContext> = ({
 	listProfiles,

@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { ProfileContex } from "../../../../hooks/useProfileContex";
+import { ProfileContex } from "@/hooks/useProfileContex";
 import {
 	Modal,
 	ModalContent,
@@ -14,20 +14,20 @@ import {
 	SelectItem,
 	Image,
 } from "@nextui-org/react";
-import { setProfileSkill } from "../../../../utils/fileEdit";
-import AlertSave from "../../../../components/AlertSave";
+import { setProfileSkill } from "@/utils/fileEdit";
+import AlertSave from "@/components/AlertSave";
 
 // icons
 import { IconPencil, IconArrowBigUpLine } from "@tabler/icons-react";
-import Explosives from "../../../../static/icons/trailers/Explosives.svg";
-import Gases from "../../../../static/icons/trailers/Gases.svg";
-import FlammableLiquids from "../../../../static/icons/trailers/FlammableLiquids.svg";
-import FlammableSolids from "../../../../static/icons/trailers/FlammableSolids.svg";
-import ToxicInfectiousSubstances from "../../../../static/icons/trailers/ToxicInfectiousSubstances.svg";
-import CorrosiveSubstances from "../../../../static/icons/trailers/CorrosiveSubstances.svg";
+import Explosives from "@/static/icons/trailers/Explosives.svg";
+import Gases from "@/static/icons/trailers/Gases.svg";
+import FlammableLiquids from "@/static/icons/trailers/FlammableLiquids.svg";
+import FlammableSolids from "@/static/icons/trailers/FlammableSolids.svg";
+import ToxicInfectiousSubstances from "@/static/icons/trailers/ToxicInfectiousSubstances.svg";
+import CorrosiveSubstances from "@/static/icons/trailers/CorrosiveSubstances.svg";
 
 // types
-import { ATR_Values } from "../../../../types/ConstTypes";
+import { ATR_Values } from "@/types/ConstTypes";
 
 interface completedProps {
 	error: boolean;

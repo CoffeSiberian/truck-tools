@@ -1,7 +1,7 @@
 import { useState, useContext, FC } from "react";
 import { save, SaveDialogOptions } from "@tauri-apps/api/dialog";
 import { documentDir } from "@tauri-apps/api/path";
-import { ProfileContex } from "../../../hooks/useProfileContex";
+import { ProfileContex } from "@/hooks/useProfileContex";
 import {
 	Modal,
 	ModalContent,
@@ -12,8 +12,8 @@ import {
 	Button,
 	Input,
 } from "@nextui-org/react";
-import { backupProfile, openExplorer } from "../../../utils/fileEdit";
-import AlertSave from "../../AlertSave";
+import { backupProfile, openExplorer } from "@/utils/fileEdit";
+import AlertSave from "@/components/AlertSave";
 
 // icons
 import {

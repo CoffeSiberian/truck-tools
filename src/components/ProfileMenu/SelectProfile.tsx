@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ProfileContex } from "../../hooks/useProfileContex";
+import { ProfileContex } from "@/hooks/useProfileContex";
 import {
 	Card,
 	CardBody,
@@ -9,9 +9,9 @@ import {
 	Button,
 } from "@nextui-org/react";
 import classNames from "classnames";
-import ListProfiles from "./ListProfiles";
-import ListSaves from "./ListSaves";
-import ProfileOptions from "./ProfileOptions";
+import ListProfiles from "@/components/ProfileMenu/ListProfiles";
+import ListSaves from "@/components/ProfileMenu/ListSaves";
+import ProfileOptions from "@/components/ProfileMenu/ProfileOptions";
 
 // icons
 import {
@@ -21,7 +21,7 @@ import {
 } from "@tabler/icons-react";
 
 // types
-import { Profile } from "../../types/SaveGameTypes";
+import { Profile } from "@/types/SaveGameTypes";
 
 const SelectProfile = () => {
 	const { selectedProfile, isSavesLoading, selectedSave, reloadProfiles } =

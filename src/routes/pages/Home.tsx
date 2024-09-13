@@ -1,4 +1,4 @@
-import RenderOptions from "../../routes/pages/RenderOptions";
+import RenderOptions from "@/routes/pages/RenderOptions";
 
 const Home = () => {
 	return (

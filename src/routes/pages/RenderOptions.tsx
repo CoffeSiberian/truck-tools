@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Tabs, Tab, useDisclosure } from "@nextui-org/react";
 
 // components
-import TrailersOptions from "./TrailersOptions/TrailersOptions";
-import TrucksOptions from "./TrucksOptions/TrucksOptions";
-import ProfilesOptions from "./ProfilesOptions/ProfilesOptions";
-import AboutModal from "../../components/Modals/AboutModal";
-import SettingsModal from "../../components/Modals/SettingsModal";
+import TrailersOptions from "@/routes/pages/TrailersOptions/TrailersOptions";
+import TrucksOptions from "@/routes/pages/TrucksOptions/TrucksOptions";
+import ProfilesOptions from "@/routes/pages/ProfilesOptions/ProfilesOptions";
+import AboutModal from "@/components/Modals/AboutModal";
+import SettingsModal from "@/components/Modals/SettingsModal";
 
 // icons
 import {

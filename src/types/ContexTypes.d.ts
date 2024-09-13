@@ -1,5 +1,5 @@
-import { Profile, SaveGame, ProfileWithoutSaves } from "./SaveGameTypes";
-import { themeTypesSystem } from "./fileEditTypes";
+import { Profile, SaveGame, ProfileWithoutSaves } from "@/types/SaveGameTypes";
+import { themeTypesSystem } from "@/types/fileEditTypes";
 
 export interface ProfileTypesContext {
 	selectedProfile?: Profile;

@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { ProfileContex } from "../../../../hooks/useProfileContex";
+import { ProfileContex } from "@/hooks/useProfileContex";
 import {
 	Modal,
 	ModalContent,
@@ -10,8 +10,8 @@ import {
 	Button,
 	useDisclosure,
 } from "@nextui-org/react";
-import { setUnlockCurrentTrailers } from "../../../../utils/fileEdit";
-import AlertSave from "../../../../components/AlertSave";
+import { setUnlockCurrentTrailers } from "@/utils/fileEdit";
+import AlertSave from "@/components/AlertSave";
 
 // icons
 import { IconPencil, IconLockOpen } from "@tabler/icons-react";

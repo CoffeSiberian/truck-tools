@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext, FC } from "react";
-import { ProfileContex } from "../../../hooks/useProfileContex";
+import { ProfileContex } from "@/hooks/useProfileContex";
 import {
 	Modal,
 	ModalContent,
@@ -10,8 +10,8 @@ import {
 	Button,
 	Input,
 } from "@nextui-org/react";
-import { copyProfile } from "../../../utils/fileEdit";
-import AlertSave from "../../AlertSave";
+import { copyProfile } from "@/utils/fileEdit";
+import AlertSave from "@/components/AlertSave";
 
 // icons
 import { IconUserEdit, IconCopy } from "@tabler/icons-react";

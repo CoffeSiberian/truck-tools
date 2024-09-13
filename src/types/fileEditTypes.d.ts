@@ -1,4 +1,4 @@
-import { SaveGame, ProfileDir, TruckBrands } from "./SaveGameTypes";
+import { SaveGame, ProfileDir, TruckBrands } from "@/types/SaveGameTypes";
 
 export type themeTypes = "light" | "dark";
 export type themeTypesSystem = "system" | "light" | "dark";

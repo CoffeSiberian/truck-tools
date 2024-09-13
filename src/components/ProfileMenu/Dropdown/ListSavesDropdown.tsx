@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Select, SelectItem } from "@nextui-org/react";
-import { ProfileTypesContext } from "../../../types/ContexTypes";
+import { ProfileTypesContext } from "@/types/ContexTypes";
 
 const ListSavesDropdown: FC<ProfileTypesContext> = ({
 	selectedProfile,

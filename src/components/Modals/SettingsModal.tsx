@@ -14,18 +14,18 @@ import {
 	Switch,
 	Input,
 } from "@nextui-org/react";
-import { DarkModeContex } from "../../hooks/useDarkModeContex";
-import { ProfileContex } from "../../hooks/useProfileContex";
+import { DarkModeContex } from "@/hooks/useDarkModeContex";
+import { ProfileContex } from "@/hooks/useProfileContex";
 import {
 	getStoredDocumentDir,
 	storeDocumentDir,
 	getGameDeveloperStatus,
 	setGameDeveloperStatus,
 	setConvoySize,
-} from "../../utils/fileEdit";
+} from "@/utils/fileEdit";
 
 // types
-import { themeTypesSystem } from "../../types/fileEditTypes";
+import { themeTypesSystem } from "@/types/fileEditTypes";
 
 // icons
 import {

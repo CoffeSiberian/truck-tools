@@ -1,16 +1,16 @@
-import OptionCard from "../../../components/OptionCard";
+import OptionCard from "@/components/OptionCard";
 
 // images
-import img2 from "../../../static/img/OptionsImages/2.webp";
-import img3 from "../../../static/img/OptionsImages/3.webp";
-import img4 from "../../../static/img/OptionsImages/4.webp";
-import img5 from "../../../static/img/OptionsImages/5.webp";
+import img2 from "@/static/img/OptionsImages/2.webp";
+import img3 from "@/static/img/OptionsImages/3.webp";
+import img4 from "@/static/img/OptionsImages/4.webp";
+import img5 from "@/static/img/OptionsImages/5.webp";
 
 // modals
-import ModifyWeight from "./Modals/ModifyWeight";
-import UnlockTrailers from "./Modals/UnlockTrailers";
-import ModifyTrailerWeight from "./Modals/ModifyTrailerWeight";
-import EditLicensePlate from "./Modals/EditLicensePlate";
+import ModifyWeight from "@/routes/pages/TrailersOptions/Modals/ModifyWeight";
+import UnlockTrailers from "@/routes/pages/TrailersOptions/Modals/UnlockTrailers";
+import ModifyTrailerWeight from "@/routes/pages/TrailersOptions/Modals/ModifyTrailerWeight";
+import EditLicensePlate from "@/routes/pages/TrailersOptions/Modals/EditLicensePlate";
 
 const TrailersOptions = () => {
 	const items = [

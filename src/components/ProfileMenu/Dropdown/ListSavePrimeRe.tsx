@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { classNames } from "primereact/utils";
 import { Dropdown } from "primereact/dropdown";
-import { ProfileTypesContext } from "../../../types/ContexTypes";
+import { ProfileTypesContext } from "@/types/ContexTypes";
 
 //types
-import { SaveGame } from "../../../types/SaveGameTypes";
+import { SaveGame } from "@/types/SaveGameTypes";
 
 const ListSavePrimeRe: FC<ProfileTypesContext> = ({
 	selectedProfile,

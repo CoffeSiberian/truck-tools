@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { ProfileContex } from "../../hooks/useProfileContex";
+import { ProfileContex } from "@/hooks/useProfileContex";
 import {
 	Button,
 	Dropdown,
@@ -10,12 +10,12 @@ import {
 	useDisclosure,
 	cn,
 } from "@nextui-org/react";
-import { descriptFiles, openExplorer } from "../../utils/fileEdit";
+import { descriptFiles, openExplorer } from "@/utils/fileEdit";
 
 // modals
-import BackupProfile from "./Modal/BackupProfile";
-import CloneProfile from "./Modal/CloneProfile";
-import CopyConfig from "./Modal/CopyConfig";
+import BackupProfile from "@/components/ProfileMenu/Modal/BackupProfile";
+import CloneProfile from "@/components/ProfileMenu/Modal/CloneProfile";
+import CopyConfig from "@/components/ProfileMenu/Modal/CopyConfig";
 
 // icons
 import {

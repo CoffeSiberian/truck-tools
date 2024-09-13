@@ -1,6 +1,6 @@
 import { useState, useContext, FC } from "react";
-import ListProfilesDropdown from "../Dropdown/ListProfilesDropdown";
-import { ProfileContex } from "../../../hooks/useProfileContex";
+import ListProfilesDropdown from "@/components/ProfileMenu/Dropdown/ListProfilesDropdown";
+import { ProfileContex } from "@/hooks/useProfileContex";
 import {
 	Modal,
 	Image,
@@ -11,14 +11,14 @@ import {
 	ModalFooter,
 	Button,
 } from "@nextui-org/react";
-import { copyProfileConfigs } from "../../../utils/fileEdit";
-import AlertSave from "../../AlertSave";
+import { copyProfileConfigs } from "@/utils/fileEdit";
+import AlertSave from "@/components/AlertSave";
 
 // icons
 import { IconCopy, IconUserCircle, IconArrowRight } from "@tabler/icons-react";
 
 // types
-import { ProfileWithoutSaves, Profile } from "../../../types/SaveGameTypes";
+import { ProfileWithoutSaves, Profile } from "@/types/SaveGameTypes";
 
 interface completedProps {
 	error: boolean;

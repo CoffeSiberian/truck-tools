@@ -1,22 +1,22 @@
-import OptionCard from "../../../components/OptionCard";
+import OptionCard from "@/components/OptionCard";
 
 // images
-import img1 from "../../../static/img/OptionsImages/1.webp";
-import img6 from "../../../static/img/OptionsImages/6.webp";
-import img7 from "../../../static/img/OptionsImages/7.webp";
-import img8 from "../../../static/img/OptionsImages/8.webp";
-import img9 from "../../../static/img/OptionsImages/9.webp";
-import img10 from "../../../static/img/OptionsImages/10.webp";
+import img1 from "@/static/img/OptionsImages/1.webp";
+import img6 from "@/static/img/OptionsImages/6.webp";
+import img7 from "@/static/img/OptionsImages/7.webp";
+import img8 from "@/static/img/OptionsImages/8.webp";
+import img9 from "@/static/img/OptionsImages/9.webp";
+import img10 from "@/static/img/OptionsImages/10.webp";
 
 // modals
-import RepairTruck from "./Modals/RepairTruck";
-import RepairAllTrucks from "./Modals/RepairAllTrucks";
-import FillTruckFuel from "./Modals/FillTruckFuel";
-import SetInfiniteFuel from "./Modals/SetInfiniteFuel";
-import FillAllTrucksFuel from "./Modals/FillAllTrucksFuel";
-import EditLicensePlate from "./Modals/EditLicensePlate";
-import SetTruckEngine from "./Modals/SetTruckEngine";
-import SetTruckTransmission from "./Modals/SetTruckTransmission";
+import RepairTruck from "@/routes/pages/TrucksOptions/Modals/RepairTruck";
+import RepairAllTrucks from "@/routes/pages/TrucksOptions/Modals/RepairAllTrucks";
+import FillTruckFuel from "@/routes/pages/TrucksOptions/Modals/FillTruckFuel";
+import SetInfiniteFuel from "@/routes/pages/TrucksOptions/Modals/SetInfiniteFuel";
+import FillAllTrucksFuel from "@/routes/pages/TrucksOptions/Modals/FillAllTrucksFuel";
+import EditLicensePlate from "@/routes/pages/TrucksOptions/Modals/EditLicensePlate";
+import SetTruckEngine from "@/routes/pages/TrucksOptions/Modals/SetTruckEngine";
+import SetTruckTransmission from "@/routes/pages/TrucksOptions/Modals/SetTruckTransmission";
 
 const TrucksOptions = () => {
 	const items = [

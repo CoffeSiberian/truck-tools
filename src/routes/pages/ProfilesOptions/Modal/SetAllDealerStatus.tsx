@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { ProfileContex } from "../../../../hooks/useProfileContex";
+import { ProfileContex } from "@/hooks/useProfileContex";
 import {
 	Modal,
 	ModalContent,
@@ -11,16 +11,16 @@ import {
 	useDisclosure,
 	RadioGroup,
 } from "@nextui-org/react";
-import CustomRadio from "../../../../components/CustomRadio";
-import { setProfileDealerDiscovered } from "../../../../utils/fileEdit";
-import AlertSave from "../../../../components/AlertSave";
+import CustomRadio from "@/components/CustomRadio";
+import { setProfileDealerDiscovered } from "@/utils/fileEdit";
+import AlertSave from "@/components/AlertSave";
 
 // icons
 import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";
 
 // images
-import discovered from "../../../../static/img/dealers/discovered.webp";
-import undiscovered from "../../../../static/img/dealers/undiscovered.webp";
+import discovered from "@/static/img/dealers/discovered.webp";
+import undiscovered from "@/static/img/dealers/undiscovered.webp";
 
 interface completedProps {
 	error: boolean;

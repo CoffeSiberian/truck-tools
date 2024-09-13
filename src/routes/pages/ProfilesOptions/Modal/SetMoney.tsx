@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { ProfileContex } from "../../../../hooks/useProfileContex";
+import { ProfileContex } from "@/hooks/useProfileContex";
 import {
 	Modal,
 	ModalContent,
@@ -11,8 +11,8 @@ import {
 	useDisclosure,
 	Input,
 } from "@nextui-org/react";
-import { setProfileMoney } from "../../../../utils/fileEdit";
-import AlertSave from "../../../../components/AlertSave";
+import { setProfileMoney } from "@/utils/fileEdit";
+import AlertSave from "@/components/AlertSave";
 
 // icons
 import {

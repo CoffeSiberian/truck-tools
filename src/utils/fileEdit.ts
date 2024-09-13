@@ -14,7 +14,7 @@ import {
 	ProfileDir,
 	ExperienceSkillsTypes,
 	TruckBrands,
-} from "../types/SaveGameTypes";
+} from "@/types/SaveGameTypes";
 import {
 	responseRustTypes,
 	responseProfileSaves,
@@ -25,7 +25,7 @@ import {
 	themeTypes,
 	themeTypesSystem,
 	responseGetDeveloperValues,
-} from "../types/fileEditTypes";
+} from "@/types/fileEditTypes";
 
 const STORE_FILE = ".settings.dat";
 
