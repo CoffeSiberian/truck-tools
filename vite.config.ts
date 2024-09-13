@@ -21,7 +21,23 @@ export default defineConfig(async () => ({
 	},
 	resolve: {
 		alias: {
-			"@": path.resolve(__dirname, "./src"), // Alias '@' para la carpeta 'src'
+			"@": path.resolve(__dirname, "./src"),
+		},
+	},
+	build: {
+		rollupOptions: {
+			output: {
+				manualChunks(id) {
+					if (id.includes("node_modules")) {
+						const modules = id.split("node_modules/")[1].split("/")[0];
+						return `vendor-${modules}`;
+					}
+					if (id.includes("src")) {
+						const parts = id.split("src/")[1].split("/");
+						return parts.length > 1 ? parts[0] : "main";
+					}
+				},
+			},
 		},
 	},
 }));
