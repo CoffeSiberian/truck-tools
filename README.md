@@ -41,7 +41,10 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 - [x] Modify load weight
 - [x] Modify load trailer
 - [x] Unlock trailers in restricted areas
+- [ ] Repair trailer
+- [ ] Repair all trailers
 - [x] Create customized color license plate
+- [ ] Save license plate data
 
 #### Trucks
 
@@ -51,6 +54,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 - [x] Fill fuel
 - [x] Fill all trucks fuel
 - [x] Create customized color license plate
+- [ ] Save license plate data
 - [x] Set custom engines and transmission
 
 #### Profiles
@@ -64,6 +68,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 - [x] Profile backup
 - [x] Clone profile
 - [x] Clone config
+- [ ] Rename profiles
 
 #### Settings
 
