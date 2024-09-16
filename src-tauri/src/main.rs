@@ -39,7 +39,7 @@ use utils::compress_folder::compress_folder_files;
 use utils::decrypt_saves::decrypt_file_to_save;
 use utils::file_edit::{
     copy_folder, get_developer_value, get_list_save_count, get_list_save_game,
-    get_list_save_game_dirs, get_rgb_hex_to_game_format, read_file_text, save_file,
+    get_list_save_game_dirs, get_rgb_hex_to_game_format, read_file_text, rename_folder, save_file,
     set_convoy_mode_status, set_developer_value,
 };
 
@@ -767,6 +767,43 @@ async fn set_convoy_size(
     return Ok(DefaultResponse { res: true });
 }
 
+#[tauri::command]
+async fn update_profile_name(
+    dir_profile: &str,
+    new_profile_name: &str,
+) -> Result<DefaultResponse, ()> {
+    if new_profile_name.chars().count() == 0 || new_profile_name.chars().count() > 20 {
+        return Ok(DefaultResponse { res: false });
+    }
+
+    let file: Vec<String> = match read_file_text(&format!("{}/profile.sii", &dir_profile)).await {
+        Some(file) => file,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let profile_name: Vec<String> = match set_profile_name(&file, new_profile_name) {
+        Some(profile_name) => profile_name,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let res_file = save_file(format!("{}/profile.sii", &dir_profile), profile_name).await;
+
+    if !res_file {
+        return Ok(DefaultResponse { res: false });
+    }
+
+    let dir_profile_path = Path::new(&dir_profile);
+    let profile_name_hex: String = encode_upper(new_profile_name);
+
+    let res_rename_folder = rename_folder(dir_profile_path, profile_name_hex).await;
+
+    if !res_rename_folder {
+        return Ok(DefaultResponse { res: false });
+    }
+
+    return Ok(DefaultResponse { res: true });
+}
+
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_store::Builder::default().build())
@@ -801,6 +838,7 @@ fn main() {
             get_developer_game_status,
             set_developer_game_status,
             set_convoy_size,
+            update_profile_name,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

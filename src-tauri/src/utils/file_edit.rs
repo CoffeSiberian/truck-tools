@@ -2,7 +2,7 @@ use super::decrypt_saves::decrypt_file;
 use crate::structs::file_path::FilePath;
 use crate::structs::vec_save_games::{VecProfileDir, VecSaveGames};
 use hex::decode;
-use std::fs::{read_dir, write, File};
+use std::fs::{read_dir, rename, write, File};
 use std::io::Read;
 use std::path::Path;
 use uuid::Uuid;
@@ -99,6 +99,18 @@ pub async fn copy_folder(src_dir: &Path, dest_dir: &Path, ignore_folders: Vec<&s
     }
 
     return true;
+}
+
+pub async fn rename_folder(src_dir: &Path, new_profile_name: String) -> bool {
+    let dest_dir = match src_dir.parent() {
+        Some(parent) => parent.join(new_profile_name),
+        None => return false,
+    };
+
+    match rename(src_dir, dest_dir) {
+        Ok(_) => return true,
+        Err(_) => return false,
+    }
 }
 
 async fn get_dir_content(path: String) -> Option<Vec<String>> {
