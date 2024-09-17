@@ -768,7 +768,7 @@ async fn set_convoy_size(
 }
 
 #[tauri::command]
-async fn update_profile_name(
+async fn set_new_profile_name(
     dir_profile: &str,
     new_profile_name: &str,
 ) -> Result<DefaultResponse, ()> {
@@ -838,7 +838,7 @@ fn main() {
             get_developer_game_status,
             set_developer_game_status,
             set_convoy_size,
-            update_profile_name,
+            set_new_profile_name,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

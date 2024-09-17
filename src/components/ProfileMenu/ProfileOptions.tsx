@@ -16,6 +16,7 @@ import { descriptFiles, openExplorer } from "@/utils/fileEdit";
 import BackupProfile from "@/components/ProfileMenu/Modal/BackupProfile";
 import CloneProfile from "@/components/ProfileMenu/Modal/CloneProfile";
 import CopyConfig from "@/components/ProfileMenu/Modal/CopyConfig";
+import RenameProfile from "@/components/ProfileMenu/Modal/RenameProfile";
 
 // icons
 import {
@@ -25,6 +26,7 @@ import {
 	IconFileTypeZip,
 	IconCopy,
 	IconSettingsShare,
+	IconUserEdit,
 } from "@tabler/icons-react";
 import { Spinner } from "@nextui-org/spinner";
 
@@ -65,6 +67,12 @@ const ProfileOptions = () => {
 		isOpen: isOpenCopyConfig,
 		onOpen: onOpenCopyConfig,
 		onOpenChange: onOpenChangeCopyConfig,
+	} = useDisclosure();
+
+	const {
+		isOpen: isOpenRenameProfile,
+		onOpen: onOpenRenameProfile,
+		onOpenChange: onOpenChangeRenameProfile,
 	} = useDisclosure();
 
 	const [decryptResult, setDecryptResult] = useState<DecryptResult>({
@@ -127,6 +135,10 @@ const ProfileOptions = () => {
 		<>
 			<BackupProfile isOpen={isOpenBackup} onOpenChange={onOpenChangeBackup} />
 			<CloneProfile isOpen={isOpenClone} onOpenChange={onOpenChangeClone} />
+			<RenameProfile
+				isOpen={isOpenRenameProfile}
+				onOpenChange={onOpenChangeRenameProfile}
+			/>
 			<CopyConfig
 				isOpen={isOpenCopyConfig}
 				onOpenChange={onOpenChangeCopyConfig}
@@ -191,6 +203,15 @@ const ProfileOptions = () => {
 							onPress={onOpenBackup}
 						>
 							Backup Profile
+						</DropdownItem>
+						<DropdownItem
+							key="rename-profile"
+							description="Rename your profile"
+							startContent={<IconUserEdit className={iconClasses} />}
+							closeOnSelect={true}
+							onPress={onOpenRenameProfile}
+						>
+							Rename Profile
 						</DropdownItem>
 						<DropdownItem
 							key="clone"

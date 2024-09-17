@@ -567,6 +567,23 @@ export const setConvoySize = async (
 	return invoceRes.res;
 };
 
+export const setNewProfileName = async (
+	dirProfile: string,
+	newProfileName: string
+): Promise<boolean> => {
+	const rustParams = {
+		dirProfile,
+		newProfileName,
+	};
+
+	const invoceRes = (await invoke(
+		"set_new_profile_name",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
+};
+
 // App Variables store
 
 export const storeSystemTheme = async (theme: themeTypesSystem) => {
