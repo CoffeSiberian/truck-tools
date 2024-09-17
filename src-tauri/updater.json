@@ -1,11 +1,11 @@
 {
-	"version": "v0.4.5",
-	"notes": "- Internal UI changes\n- UI loading optimizations\n- Dependencies update",
-	"pub_date": "2024-09-14T16:00:00-03:00",
+	"version": "v0.4.6",
+	"notes": "- New feature that allows renaming profiles",
+	"pub_date": "2024-09-17T16:00:00-03:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlk4Njd0RVR4eWkvS01nTTFQWnRCV0tFZ0lSUVhHY2NiamRlbVBmaURpNjNKcDdON3JKYytxQ2pTa1M5QTRya2NHOXFDTFdWeXZCU1lUdkpqcXYzMmdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzI2MzQ2OTQzCWZpbGU6VHJ1Y2sgVG9vbHNfMC40LjVfeDY0X2VuLVVTLm1zaS56aXAKYVdUbmZHQW11NmdLTHFSR0xETUc5Q0NOeS9RMm4rSVZvQnI0ZWdlVjNwMTVzL011ZWhhczd3bGd6R0VhUHpIZlEvTC9ZMnlPQTJ1Rloxanc2MHlLRGc9PQo=",
-			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.4.5/Truck_Tools_0.4.5_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlM4SndoSFRrQWNoSWdFaUZYVUVFZHNMZW1sOGk1N0NaU3IyNTRzVnVXMnBXLzQzQ3hLMWlQUFJuTnVjUjA2Z0t1L3V1dDluTE5MZjNkUWVDRUxqSEFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzI2NjA4NTIxCWZpbGU6VHJ1Y2sgVG9vbHNfMC40LjZfeDY0X2VuLVVTLm1zaS56aXAKck9uZjQrVkc0bkpYYVVNVFY3QUNmTlVydCtCSUc2N09qc2NGanZER1VKdGwva1hZNFdOMExIQXNaZ01qTnVPUkJXaGIwam4vbUljUGdhZUF1TmlXQnc9PQo=",
+			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.4.6/Truck_Tools_0.4.6_x64_en-US.msi.zip"
 		}
 	}
 }
