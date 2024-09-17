@@ -1,4 +1,4 @@
-import { useState, useContext, FC } from "react";
+import { useState, useContext, useEffect, FC } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
 import {
 	Modal,
@@ -55,6 +55,12 @@ const RenameProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 		setIsLoading(false);
 		reloadProfiles();
 	};
+
+	useEffect(() => {
+		if (selectedProfile) {
+			setProfileName(selectedProfile.name);
+		}
+	}, [selectedProfile]);
 
 	return (
 		<Modal
