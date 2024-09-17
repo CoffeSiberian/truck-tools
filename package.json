@@ -1,7 +1,7 @@
 {
 	"name": "trucktools",
 	"private": true,
-	"version": "0.4.5",
+	"version": "0.4.6",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
@@ -21,13 +21,13 @@
 		]
 	},
 	"dependencies": {
-		"@nextui-org/react": "2.4.7",
-		"@tabler/icons-react": "^3.16.0",
+		"@nextui-org/react": "2.4.8",
+		"@tabler/icons-react": "^3.17.0",
 		"@tauri-apps/api": "^1.6.0",
 		"buffer": "^6.0.3",
 		"classnames": "^2.5.1",
 		"framer-motion": "^11.5.4",
-		"primereact": "^10.8.2",
+		"primereact": "^10.8.3",
 		"react": "^18.3.1",
 		"react-color-palette": "^7.3.0",
 		"react-dom": "^18.3.1",
@@ -35,9 +35,9 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.10.0",
-		"@tauri-apps/cli": "^1.6.1",
+		"@tauri-apps/cli": "^1.6.2",
 		"@types/node": "^22.5.5",
-		"@types/react": "^18.3.5",
+		"@types/react": "^18.3.7",
 		"@types/react-dom": "^18.3.0",
 		"@vitejs/plugin-react": "^4.3.1",
 		"autoprefixer": "^10.4.20",
@@ -48,9 +48,9 @@
 		"postcss": "^8.4.47",
 		"prettier": "^3.3.3",
 		"prettier-plugin-tailwindcss": "^0.6.6",
-		"tailwindcss": "^3.4.11",
+		"tailwindcss": "^3.4.12",
 		"typescript": "^5.6.2",
-		"typescript-eslint": "^8.5.0",
-		"vite": "^5.4.5"
+		"typescript-eslint": "^8.6.0",
+		"vite": "^5.4.6"
 	}
 }

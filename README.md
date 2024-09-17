@@ -68,7 +68,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 - [x] Profile backup
 - [x] Clone profile
 - [x] Clone config
-- [ ] Rename profiles
+- [x] Rename profiles
 
 #### Settings
 
