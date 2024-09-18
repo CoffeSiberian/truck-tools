@@ -584,6 +584,36 @@ export const setNewProfileName = async (
 	return invoceRes.res;
 };
 
+export const setRepairTrailer = async (dirSave: string): Promise<boolean> => {
+	const rustParams = {
+		dirSave: dirSave + "/game.sii",
+		wear: "0",
+	};
+
+	const invoceRes = (await invoke(
+		"repair_trailer",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
+};
+
+export const setRepairAllTrailer = async (
+	dirSave: string
+): Promise<boolean> => {
+	const rustParams = {
+		dirSave: dirSave + "/game.sii",
+		wear: "0",
+	};
+
+	const invoceRes = (await invoke(
+		"repair_all_trailers",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
+};
+
 // App Variables store
 
 export const storeSystemTheme = async (theme: themeTypesSystem) => {

@@ -1,26 +1,37 @@
 use super::license_plate::get_license_plate_formated;
 
 use crate::structs::vec_items_find::VecItemsFind;
+use crate::structs::vec_trailers::VecTrailersId;
 
 const COUNTRY_VALIDITY: &str = " country_validity: 0";
 
-fn get_vec_trailers(arr_val: &Vec<String>) -> Option<Vec<VecItemsFind>> {
+fn get_vec_trailers(
+    arr_val: &Vec<String>,
+    trailer_index_base: Option<usize>,
+) -> Option<Vec<VecItemsFind>> {
     let max_counter: u16 = 20;
     let mut counter: u16 = 0;
     let mut result: Vec<VecItemsFind> = Vec::new();
-    let (trailer_id, index): (String, usize) = match get_my_trailer_id(&arr_val) {
-        Some((trailer_id, index)) => (trailer_id, index),
-        None => return None,
-    };
-    let mut current_slave_trailer_index: usize =
-        match get_trailer_index(arr_val, &trailer_id, &index) {
-            Some(current_slave_trailer_index) => current_slave_trailer_index,
-            None => return None,
-        };
-    result.push(VecItemsFind {
-        index: current_slave_trailer_index,
-        value: trailer_id,
-    });
+    let mut current_slave_trailer_index: usize;
+
+    match trailer_index_base {
+        Some(trailer_index_base) => current_slave_trailer_index = trailer_index_base,
+        None => {
+            let (trailer_id, index): (String, usize) = match get_my_trailer_id(&arr_val) {
+                Some((trailer_id, index)) => (trailer_id, index),
+                None => return None,
+            };
+
+            match get_trailer_index(arr_val, &trailer_id, &index) {
+                Some(index) => current_slave_trailer_index = index,
+                None => return None,
+            };
+            result.push(VecItemsFind {
+                index: current_slave_trailer_index,
+                value: trailer_id,
+            });
+        }
+    }
 
     loop {
         counter += 1;
@@ -47,7 +58,52 @@ fn get_vec_trailers(arr_val: &Vec<String>) -> Option<Vec<VecItemsFind>> {
         });
     }
 
-    return Some(result);
+    if !result.is_empty() {
+        return Some(result);
+    }
+    return None;
+}
+
+fn get_list_trailers_id(arr_val: &Vec<String>) -> Option<Vec<VecTrailersId>> {
+    let mut result: Vec<VecTrailersId> = Vec::new();
+    let mut trailer_enum: u16 = 0;
+    let mut trailer_string_find: String = format!(" trailers[{}]", trailer_enum);
+
+    for (i, item) in arr_val.iter().enumerate() {
+        if item.contains(&trailer_string_find) {
+            let option_values: Vec<&str> = item.split(':').collect();
+
+            let truck_index = match get_trailer_index(arr_val, &option_values[1].to_string(), &i) {
+                Some(truck_index) => truck_index,
+                None => continue,
+            };
+
+            let slave_trailers = get_vec_trailers(arr_val, Some(truck_index));
+
+            if slave_trailers.is_none() {
+                result.push(VecTrailersId { index: truck_index });
+            } else {
+                let unwrapped_slave_trailers = slave_trailers.unwrap();
+                result.push(VecTrailersId { index: truck_index });
+
+                for item in unwrapped_slave_trailers.iter() {
+                    result.push(VecTrailersId { index: item.index });
+                }
+            }
+
+            trailer_enum += 1;
+            trailer_string_find = format!(" trailers[{}]", trailer_enum);
+        }
+
+        if item == "}" && trailer_enum > 0 {
+            break;
+        }
+    }
+
+    if !result.is_empty() {
+        return Some(result);
+    }
+    return None;
 }
 
 fn get_vec_license_plate_edit(
@@ -90,13 +146,13 @@ fn get_trailer_wear(arr_val: &Vec<String>, wear: &str, index: usize) -> Option<V
 
         match option_values[0] {
             "}" => break,
-            "trailer_body_wear" => {
+            " trailer_body_wear" => {
                 result.push(VecItemsFind {
                     index: i,
                     value: format!(" trailer_body_wear: {}", wear),
                 });
             }
-            "trailer_body_wear_unfixable" => {
+            " trailer_body_wear_unfixable" => {
                 result.push(VecItemsFind {
                     index: i,
                     value: format!(" trailer_body_wear_unfixable: {}", wear),
@@ -338,7 +394,7 @@ pub fn set_trailer_license_plate(
     color_margin: bool,
 ) -> Option<Vec<String>> {
     let mut arr_val_clone: Vec<String> = arr_val.clone();
-    let get_trailers: Vec<VecItemsFind> = match get_vec_trailers(&arr_val) {
+    let get_trailers: Vec<VecItemsFind> = match get_vec_trailers(&arr_val, None) {
         Some(get_trailers) => get_trailers,
         None => return None,
     };
@@ -369,7 +425,7 @@ pub fn set_trailer_license_plate(
 pub fn set_trailer_wear(arr_val: &Vec<String>, wear: &str) -> Option<Vec<String>> {
     let mut arr_val_clone: Vec<String> = arr_val.clone();
 
-    let get_trailers: Vec<VecItemsFind> = match get_vec_trailers(&arr_val) {
+    let get_trailers: Vec<VecItemsFind> = match get_vec_trailers(&arr_val, None) {
         Some(get_trailers) => get_trailers,
         None => return None,
     };
@@ -380,6 +436,33 @@ pub fn set_trailer_wear(arr_val: &Vec<String>, wear: &str) -> Option<Vec<String>
             Some(wear_edit) => wear_to_edit.extend(wear_edit),
             None => break,
         };
+    }
+
+    for item in wear_to_edit.iter() {
+        arr_val_clone[item.index] = item.value.to_string();
+    }
+
+    return Some(arr_val_clone);
+}
+
+pub fn set_any_trailers_wear(arr_val: &Vec<String>, wear: &str) -> Option<Vec<String>> {
+    let mut arr_val_clone: Vec<String> = arr_val.clone();
+
+    let get_trailers: Vec<VecTrailersId> = match get_list_trailers_id(arr_val) {
+        Some(get_trailers) => get_trailers,
+        None => return None,
+    };
+    let mut wear_to_edit: Vec<VecItemsFind> = Vec::new();
+
+    for item in get_trailers.iter() {
+        match get_trailer_wear(&arr_val_clone, wear, item.index) {
+            Some(wear_edit) => wear_to_edit.extend(wear_edit),
+            None => break,
+        };
+    }
+
+    if wear_to_edit.is_empty() {
+        return None;
     }
 
     for item in wear_to_edit.iter() {
