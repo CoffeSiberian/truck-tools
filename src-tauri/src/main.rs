@@ -15,7 +15,7 @@ use main_options::trailers::{
     get_my_trailer_id, get_slave_trailers_id, get_trailer_def_id, get_trailer_def_index,
     get_trailer_index, set_any_slave_trailers_weight, set_cargo_mass_trailer,
     set_chassis_and_body_mass_def_trailers, set_remove_trailer_restricted_areas,
-    set_trailer_license_plate,
+    set_trailer_license_plate, set_trailer_wear,
 };
 use main_options::trucks::{
     get_truck_id, get_truck_vehicle_index, set_any_trucks_fuel, set_any_trucks_wear,
@@ -804,6 +804,22 @@ async fn set_new_profile_name(
     return Ok(DefaultResponse { res: true });
 }
 
+#[tauri::command]
+async fn repair_trailer(dir_save: &str, wear: &str) -> Result<DefaultResponse, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let trailer_wear: Vec<String> = match set_trailer_wear(&file, wear) {
+        Some(trailer_wear) => trailer_wear,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    save_file(dir_save.to_string(), trailer_wear).await;
+    return Ok(DefaultResponse { res: true });
+}
+
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_store::Builder::default().build())
@@ -839,6 +855,7 @@ fn main() {
             set_developer_game_status,
             set_convoy_size,
             set_new_profile_name,
+            repair_trailer,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

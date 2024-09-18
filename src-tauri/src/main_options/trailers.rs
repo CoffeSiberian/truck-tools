@@ -82,6 +82,36 @@ fn get_vec_license_plate_edit(
     return None;
 }
 
+fn get_trailer_wear(arr_val: &Vec<String>, wear: &str, index: usize) -> Option<Vec<VecItemsFind>> {
+    let mut result: Vec<VecItemsFind> = Vec::new();
+
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
+        let option_values: Vec<&str> = item.split(':').collect();
+
+        match option_values[0] {
+            "}" => break,
+            "trailer_body_wear" => {
+                result.push(VecItemsFind {
+                    index: i,
+                    value: format!(" trailer_body_wear: {}", wear),
+                });
+            }
+            "trailer_body_wear_unfixable" => {
+                result.push(VecItemsFind {
+                    index: i,
+                    value: format!(" trailer_body_wear_unfixable: {}", wear),
+                });
+            }
+            _ => (),
+        }
+    }
+
+    if result.len() > 0 {
+        return Some(result);
+    }
+    return None;
+}
+
 pub fn set_cargo_mass_trailer(
     arr_val: &Vec<String>,
     index: usize,
@@ -181,6 +211,7 @@ pub fn set_any_slave_trailers_weight(
     first_slave_index: usize,
     cargo_mass: String,
 ) -> Vec<String> {
+    // Neet Refactor. Replace to use get_vec_trailers
     let mut counter: u16 = 0;
     let mut next_slave_trailer: String = first_slave_id;
     let mut next_slave_trailer_index: usize = first_slave_index;
@@ -329,6 +360,29 @@ pub fn set_trailer_license_plate(
     }
 
     for item in license_plate_to_edit.iter() {
+        arr_val_clone[item.index] = item.value.to_string();
+    }
+
+    return Some(arr_val_clone);
+}
+
+pub fn set_trailer_wear(arr_val: &Vec<String>, wear: &str) -> Option<Vec<String>> {
+    let mut arr_val_clone: Vec<String> = arr_val.clone();
+
+    let get_trailers: Vec<VecItemsFind> = match get_vec_trailers(&arr_val) {
+        Some(get_trailers) => get_trailers,
+        None => return None,
+    };
+    let mut wear_to_edit: Vec<VecItemsFind> = Vec::new();
+
+    for item in get_trailers.iter() {
+        match get_trailer_wear(&arr_val_clone, wear, item.index) {
+            Some(wear_edit) => wear_to_edit.extend(wear_edit),
+            None => break,
+        };
+    }
+
+    for item in wear_to_edit.iter() {
         arr_val_clone[item.index] = item.value.to_string();
     }
 
