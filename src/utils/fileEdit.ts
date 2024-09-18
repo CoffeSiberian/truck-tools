@@ -25,6 +25,8 @@ import {
 	themeTypes,
 	themeTypesSystem,
 	responseGetDeveloperValues,
+	licensePlateSaved,
+	listLicensePlateSaved,
 } from "@/types/fileEditTypes";
 
 const STORE_FILE = ".settings.dat";
@@ -647,3 +649,48 @@ export const getStoredDocumentDir = async (): Promise<string | null> => {
 
 	return null;
 };
+
+const isLicensePlateObject = (
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	licensePlate: any
+): licensePlate is licensePlateSaved => {
+	return (
+		typeof licensePlate === "object" &&
+		typeof licensePlate.text === "string" &&
+		typeof licensePlate.text_color === "string" &&
+		typeof licensePlate.bg_color === "string"
+	);
+};
+
+const isListLicensePlateObject = (
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	licensePlate: any
+): licensePlate is listLicensePlateSaved => {
+	return (
+		typeof licensePlate === "object" &&
+		Array.isArray(licensePlate.license_plates) &&
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		licensePlate.license_plates.every((plate: any) =>
+			isLicensePlateObject(plate)
+		)
+	);
+};
+
+export const storeLicensePlate = async (
+	licensePlate: listLicensePlateSaved
+) => {
+	const STORE = new Store(STORE_FILE);
+	await STORE.set("license_plate", licensePlate);
+	await STORE.save();
+};
+
+export const getStoredLicensePlate =
+	async (): Promise<listLicensePlateSaved | null> => {
+		const STORE = new Store(STORE_FILE);
+		const licensePlate = await STORE.get("license_plate");
+
+		if (!licensePlate) return null;
+		if (isListLicensePlateObject(licensePlate)) return licensePlate;
+
+		return null;
+	};

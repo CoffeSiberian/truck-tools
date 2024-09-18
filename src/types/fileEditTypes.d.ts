@@ -32,3 +32,13 @@ export interface responseGetDeveloperValues extends responseRustTypes {
 	console: boolean;
 	active_max_convoy_mode: boolean;
 }
+
+export interface licensePlateSaved {
+	text: string;
+	text_color: string;
+	bg_color: string;
+}
+
+export interface listLicensePlateSaved {
+	license_plates: licensePlateSaved[];
+}
