@@ -5,12 +5,15 @@ import img2 from "@/static/img/OptionsImages/2.webp";
 import img3 from "@/static/img/OptionsImages/3.webp";
 import img4 from "@/static/img/OptionsImages/4.webp";
 import img5 from "@/static/img/OptionsImages/5.webp";
+import img17 from "@/static/img/OptionsImages/17.webp";
 
 // modals
 import ModifyWeight from "@/routes/pages/TrailersOptions/Modals/ModifyWeight";
 import UnlockTrailers from "@/routes/pages/TrailersOptions/Modals/UnlockTrailers";
 import ModifyTrailerWeight from "@/routes/pages/TrailersOptions/Modals/ModifyTrailerWeight";
 import EditLicensePlate from "@/routes/pages/TrailersOptions/Modals/EditLicensePlate";
+import RepairTrailers from "@/routes/pages/TrailersOptions/Modals/RepairTrailer";
+import RepairAllTrailers from "@/routes/pages/TrailersOptions/Modals/RepairAllTrailers";
 
 const TrailersOptions = () => {
 	const items = [
@@ -41,6 +44,20 @@ const TrailersOptions = () => {
 			description: "Modifies the trailer weight, applying it only once.",
 			image: img5,
 			modal: <ModifyTrailerWeight />,
+		},
+		{
+			id: "5",
+			title: "Repair trailer",
+			description: "Repair current trailer",
+			image: img17,
+			modal: <RepairTrailers />,
+		},
+		{
+			id: "6",
+			title: "Repair all trailer",
+			description: "Repair all the trailers you have",
+			image: img17,
+			modal: <RepairAllTrailers />,
 		},
 	];
 
