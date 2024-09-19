@@ -158,6 +158,60 @@ fn get_trailer_wear(arr_val: &Vec<String>, wear: &str, index: usize) -> Option<V
                     value: format!(" trailer_body_wear_unfixable: {}", wear),
                 });
             }
+            " chassis_wear" => {
+                result.push(VecItemsFind {
+                    index: i,
+                    value: format!(" chassis_wear: {}", wear),
+                });
+            }
+            " chassis_wear_unfixable" => {
+                result.push(VecItemsFind {
+                    index: i,
+                    value: format!(" chassis_wear_unfixable: {}", wear),
+                });
+            }
+            _ => (),
+        }
+    }
+
+    if result.len() > 0 {
+        return Some(result);
+    }
+    return None;
+}
+
+fn get_trailer_wear_wheels(
+    arr_val: &Vec<String>,
+    wear: &str,
+    index: usize,
+) -> Option<Vec<VecItemsFind>> {
+    let mut result: Vec<VecItemsFind> = Vec::new();
+
+    let mut wheel_wear_number: u16 = 0;
+    let mut wheel_wear_unfixable_number: u16 = 0;
+
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
+        let option_values: Vec<&str> = item.split('[').collect();
+
+        match option_values[0] {
+            "}" => break,
+            " wheels_wear" => {
+                result.push(VecItemsFind {
+                    index: i,
+                    value: format!(" wheels_wear[{}]: {}", wheel_wear_number, wear),
+                });
+                wheel_wear_number += 1;
+            }
+            " wheels_wear_unfixable" => {
+                result.push(VecItemsFind {
+                    index: i,
+                    value: format!(
+                        " wheels_wear_unfixable[{}]: {}",
+                        wheel_wear_unfixable_number, wear
+                    ),
+                });
+                wheel_wear_unfixable_number += 1;
+            }
             _ => (),
         }
     }
@@ -434,8 +488,17 @@ pub fn set_trailer_wear(arr_val: &Vec<String>, wear: &str) -> Option<Vec<String>
     for item in get_trailers.iter() {
         match get_trailer_wear(&arr_val_clone, wear, item.index) {
             Some(wear_edit) => wear_to_edit.extend(wear_edit),
-            None => break,
+            None => (),
         };
+
+        match get_trailer_wear_wheels(&arr_val_clone, wear, item.index) {
+            Some(wear_edit) => wear_to_edit.extend(wear_edit),
+            None => (),
+        };
+    }
+
+    if wear_to_edit.is_empty() {
+        return None;
     }
 
     for item in wear_to_edit.iter() {
@@ -457,7 +520,12 @@ pub fn set_any_trailers_wear(arr_val: &Vec<String>, wear: &str) -> Option<Vec<St
     for item in get_trailers.iter() {
         match get_trailer_wear(&arr_val_clone, wear, item.index) {
             Some(wear_edit) => wear_to_edit.extend(wear_edit),
-            None => break,
+            None => (),
+        };
+
+        match get_trailer_wear_wheels(&arr_val_clone, wear, item.index) {
+            Some(wear_edit) => wear_to_edit.extend(wear_edit),
+            None => (),
         };
     }
 
