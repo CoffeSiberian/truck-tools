@@ -72,7 +72,9 @@ const RepairTrailers = () => {
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="py-1">
-								<p>Repara el remolque que está enganchado actualmente</p>
+								<p>
+									Repairs the trailer that is currently attached to the trailer
+								</p>
 								<div className="flex justify-center">
 									<AlertSave
 										message={
