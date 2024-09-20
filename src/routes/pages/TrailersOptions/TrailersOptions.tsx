@@ -54,7 +54,7 @@ const TrailersOptions = () => {
 		},
 		{
 			id: "6",
-			title: "Repair all trailer",
+			title: "Repair all trailers",
 			description: "Repair all the trailers you have",
 			image: img17,
 			modal: <RepairAllTrailers />,

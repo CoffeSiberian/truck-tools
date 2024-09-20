@@ -131,8 +131,10 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 			const getDocumentDirStore = await getStoredDocumentDir();
 			const getGameDeveloperStatusStore = await getGameDeveloperStatus();
 
-			if (!getDocumentDirStore) {
-				storeDocumentDir(await documentDir());
+			let documentDirString = getDocumentDirStore;
+			if (!documentDirString) {
+				documentDirString = await documentDir();
+				storeDocumentDir(documentDirString);
 			}
 
 			setOptionsState({
@@ -141,7 +143,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 					getGameDeveloperStatusStore.developer,
 				enable128Convoy: getGameDeveloperStatusStore.active_max_convoy_mode,
 				language: "english",
-				documentDir: getDocumentDirStore,
+				documentDir: documentDirString,
 			});
 		};
 
