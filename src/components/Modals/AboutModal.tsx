@@ -12,8 +12,11 @@ import {
 } from "@nextui-org/react";
 
 // icons
-import { IconBrandGithub } from "@tabler/icons-react";
-import { IconBrandTwitch } from "@tabler/icons-react";
+import {
+	IconBrandGithub,
+	IconBrandTwitch,
+	IconBriefcase,
+} from "@tabler/icons-react";
 
 interface AboutModalProps {
 	isOpen: boolean;
@@ -57,23 +60,35 @@ const AboutModal: FC<AboutModalProps> = ({ isOpen, onOpenChange }) => {
 								</div>
 							</div>
 						</ModalBody>
-						<ModalFooter className="items-center justify-center gap-1">
-							<Button
-								onClick={() => open("https://github.com/CoffeSiberian")}
-								variant="light"
-								aria-label="github-link"
-							>
-								<IconBrandGithub size={30} />
-								<p className="font-bold">CoffeSiberian</p>
-							</Button>
-							<Button
-								onClick={() => open("https://www.twitch.tv/siberiancoffe")}
-								variant="light"
-								aria-label="github-link"
-							>
-								<IconBrandTwitch size={30} />
-								<p className="font-bold">siberiancoffe</p>
-							</Button>
+						<ModalFooter className="flex flex-col items-center justify-center">
+							<div className="flex gap-1">
+								<Button
+									onClick={() => open("https://github.com/CoffeSiberian")}
+									variant="light"
+									aria-label="github-link"
+								>
+									<IconBrandGithub size={30} />
+									<p className="font-bold">CoffeSiberian</p>
+								</Button>
+								<Button
+									onClick={() => open("https://www.twitch.tv/siberiancoffe")}
+									variant="light"
+									aria-label="github-link"
+								>
+									<IconBrandTwitch size={30} />
+									<p className="font-bold">siberiancoffe</p>
+								</Button>
+							</div>
+							<div className="flex gap-1">
+								<Button
+									onClick={() => open("https://siberiancoffe.dev")}
+									variant="light"
+									aria-label="github-link"
+								>
+									<IconBriefcase size={30} />
+									<p className="font-bold">siberiancoffe.dev</p>
+								</Button>
+							</div>
 						</ModalFooter>
 					</>
 				)}
