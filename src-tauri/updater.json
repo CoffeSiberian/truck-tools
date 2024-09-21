@@ -1,11 +1,11 @@
 {
-	"version": "v0.4.6",
-	"notes": "- New feature that allows renaming profiles",
-	"pub_date": "2024-09-17T16:00:00-03:00",
+	"version": "v0.4.7",
+	"notes": "- New feature that allows to repair trailers\n\n- Fixed a bug that prevented the “Documents” directory from loading correctly the first time",
+	"pub_date": "2024-09-21T03:00:00-03:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlM4SndoSFRrQWNoSWdFaUZYVUVFZHNMZW1sOGk1N0NaU3IyNTRzVnVXMnBXLzQzQ3hLMWlQUFJuTnVjUjA2Z0t1L3V1dDluTE5MZjNkUWVDRUxqSEFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzI2NjA4NTIxCWZpbGU6VHJ1Y2sgVG9vbHNfMC40LjZfeDY0X2VuLVVTLm1zaS56aXAKck9uZjQrVkc0bkpYYVVNVFY3QUNmTlVydCtCSUc2N09qc2NGanZER1VKdGwva1hZNFdOMExIQXNaZ01qTnVPUkJXaGIwam4vbUljUGdhZUF1TmlXQnc9PQo=",
-			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.4.6/Truck_Tools_0.4.6_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlNXdjROVGZEQmozOFEyOVFLb0d4cFdKMTl4d3lHK3l5M1R0RXQ2aUNucFVWT2ZwaTY2WlJOU1NnTUJIMm5UK2drK2RCTWltTlI3Z3lhTExJaFh0TFFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzI2ODk5NDMyCWZpbGU6VHJ1Y2sgVG9vbHNfMC40LjdfeDY0X2VuLVVTLm1zaS56aXAKc2dUMTI2VlRMWndqbEYwVHhNZzkzdFRhL1lSTUJIV0RVdU9DNkNYc2hhWEFpVEs4L3prMmlpSUJ0NWJSS0Q1cndOM25TWHEzSkwvMGdRNDJLNjRyQ1E9PQo=",
+			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.4.7/Truck_Tools_0.4.7_x64_en-US.msi.zip"
 		}
 	}
 }
