@@ -41,8 +41,8 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 - [x] Modify load weight
 - [x] Modify load trailer
 - [x] Unlock trailers in restricted areas
-- [ ] Repair trailer
-- [ ] Repair all trailers
+- [x] Repair trailer
+- [x] Repair all trailers
 - [x] Create customized color license plate
 - [ ] Save license plate data
 
