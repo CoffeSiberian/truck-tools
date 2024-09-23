@@ -29,7 +29,14 @@ async fn file_split_space(path: &str) -> Option<Vec<String>> {
         Err(_) => return None,
     }
 
-    return Some(buf_reader.split("\r\n").map(|s| s.to_owned()).collect());
+    if buf_reader.contains("\r\n") {
+        // CR LF
+        return Some(buf_reader.split("\r\n").map(|s| s.to_owned()).collect());
+    } else if buf_reader.contains("\n") {
+        // LF
+        return Some(buf_reader.split("\n").map(|s| s.to_owned()).collect());
+    }
+    return None;
 }
 
 pub async fn copy_single_file(src_file: &Path, dest_file: &Path) -> bool {
@@ -143,7 +150,14 @@ pub async fn read_file_text(path: &str) -> Option<Vec<String>> {
 
     match readed_file {
         Some(res) => {
-            return Some(res.split("\r\n").map(|s| s.to_owned()).collect());
+            if res.contains("\r\n") {
+                // CR LF
+                return Some(res.split("\r\n").map(|s| s.to_owned()).collect());
+            } else if res.contains("\n") {
+                // LF
+                return Some(res.split("\n").map(|s| s.to_owned()).collect());
+            }
+            return None;
         }
         None => return None,
     }
