@@ -15,7 +15,7 @@
 			"all": false,
 			"fs": {
 				"all": true,
-				"scope": ["$DOCUMENT/**"]
+				"scope": ["**"]
 			},
 			"path": {
 				"all": true
@@ -34,7 +34,7 @@
 			"protocol": {
 				"all": false,
 				"asset": true,
-				"assetScope": ["$DOCUMENT/**"]
+				"assetScope": ["**"]
 			},
 			"process": {
 				"all": false,
