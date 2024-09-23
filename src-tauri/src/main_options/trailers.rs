@@ -75,7 +75,11 @@ fn get_list_trailers_id(arr_val: &Vec<String>) -> Option<Vec<VecTrailersId>> {
 
             let truck_index = match get_trailer_index(arr_val, &option_values[1].to_string(), &i) {
                 Some(truck_index) => truck_index,
-                None => continue,
+                None => {
+                    trailer_enum += 1;
+                    trailer_string_find = format!(" trailers[{}]", trailer_enum);
+                    continue;
+                }
             };
 
             let slave_trailers = get_vec_trailers(arr_val, Some(truck_index));
@@ -95,7 +99,7 @@ fn get_list_trailers_id(arr_val: &Vec<String>) -> Option<Vec<VecTrailersId>> {
             trailer_string_find = format!(" trailers[{}]", trailer_enum);
         }
 
-        if item == "}" && trailer_enum > 0 {
+        if trailer_enum > 0 && item.contains("}") {
             break;
         }
     }
@@ -511,7 +515,7 @@ pub fn set_trailer_wear(arr_val: &Vec<String>, wear: &str) -> Option<Vec<String>
 pub fn set_any_trailers_wear(arr_val: &Vec<String>, wear: &str) -> Option<Vec<String>> {
     let mut arr_val_clone: Vec<String> = arr_val.clone();
 
-    let get_trailers: Vec<VecTrailersId> = match get_list_trailers_id(arr_val) {
+    let get_trailers: Vec<VecTrailersId> = match get_list_trailers_id(&arr_val_clone) {
         Some(get_trailers) => get_trailers,
         None => return None,
     };

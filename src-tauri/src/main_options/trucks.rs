@@ -159,7 +159,11 @@ fn get_list_trucks_id(arr_val: &Vec<String>) -> Option<Vec<VecTrucksId>> {
             let truck_index =
                 match get_truck_vehicle_index(arr_val, option_values[1].to_string(), i) {
                     Some(truck_index) => truck_index,
-                    None => continue,
+                    None => {
+                        truck_enum += 1;
+                        truck_string_find = format!(" trucks[{}]", truck_enum);
+                        continue;
+                    }
                 };
             result.push(VecTrucksId {
                 index: truck_index,
@@ -169,7 +173,7 @@ fn get_list_trucks_id(arr_val: &Vec<String>) -> Option<Vec<VecTrucksId>> {
             truck_string_find = format!(" trucks[{}]", truck_enum);
         }
 
-        if item == "}" && truck_enum > 0 {
+        if truck_enum > 0 && item.contains("}") {
             break;
         }
     }
