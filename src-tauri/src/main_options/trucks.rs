@@ -173,7 +173,7 @@ fn get_list_trucks_id(arr_val: &Vec<String>) -> Option<Vec<VecTrucksId>> {
             truck_string_find = format!(" trucks[{}]", truck_enum);
         }
 
-        if truck_enum > 0 && item.contains("}") {
+        if truck_enum > 0 && item == "}" {
             break;
         }
     }

@@ -99,7 +99,7 @@ fn get_list_trailers_id(arr_val: &Vec<String>) -> Option<Vec<VecTrailersId>> {
             trailer_string_find = format!(" trailers[{}]", trailer_enum);
         }
 
-        if trailer_enum > 0 && item.contains("}") {
+        if trailer_enum > 0 && item == "}" {
             break;
         }
     }
@@ -313,7 +313,7 @@ pub fn set_remove_trailer_restricted_areas(
             index_end = i;
         }
 
-        if item.contains("}") {
+        if item == "}" {
             break;
         }
     }
