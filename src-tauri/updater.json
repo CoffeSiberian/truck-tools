@@ -1,11 +1,11 @@
 {
-	"version": "v0.4.7",
-	"notes": "- New feature that allows to repair trailers\n\n- Fixed a bug that prevented the “Documents” directory from loading correctly the first time",
-	"pub_date": "2024-09-21T03:00:00-03:00",
+	"version": "v0.4.8",
+	"notes": "- Bug fix that prevented loading profiles located in directories external to the “Documents” folder\n\n- Fixed bug that prevented loading saves with LF line breaks\n\n- Now if a trailer or truck is not found in a search it is omitted when searching the complete set\n\n- Refactored the logic in which the trailer weight (cargo_mass) is modified",
+	"pub_date": "2024-09-24T10:00:00-03:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlNXdjROVGZEQmozOFEyOVFLb0d4cFdKMTl4d3lHK3l5M1R0RXQ2aUNucFVWT2ZwaTY2WlJOU1NnTUJIMm5UK2drK2RCTWltTlI3Z3lhTExJaFh0TFFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzI2ODk5NDMyCWZpbGU6VHJ1Y2sgVG9vbHNfMC40LjdfeDY0X2VuLVVTLm1zaS56aXAKc2dUMTI2VlRMWndqbEYwVHhNZzkzdFRhL1lSTUJIV0RVdU9DNkNYc2hhWEFpVEs4L3prMmlpSUJ0NWJSS0Q1cndOM25TWHEzSkwvMGdRNDJLNjRyQ1E9PQo=",
-			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.4.7/Truck_Tools_0.4.7_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmJxd0VNcWljUXZqVUltSHFzSU1JUlFLY0F6ZGVucjVJeXFzNElDdGZqY0FEUUlpaCtwdjVVTlN5cWNIVUN0NUJaMjBPUTVYL2NydkVmZ0RISldWb0E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzI3MTgzODg0CWZpbGU6VHJ1Y2sgVG9vbHNfMC40LjhfeDY0X2VuLVVTLm1zaS56aXAKQXVXMFJHWThjdS9XZ203NGt4cFp1Y0JjbDQwSTBzRmxUU3NyS3NqejhhNDEwYjI4aUlUckFUSDN5ekdSWVM2aFh5L3JYZytobHVTb3lEVGR0ajlrRHc9PQo=",
+			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.4.8/Truck_Tools_0.4.8_x64_en-US.msi.zip"
 		}
 	}
 }
