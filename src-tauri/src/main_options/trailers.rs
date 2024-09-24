@@ -230,18 +230,27 @@ pub fn set_cargo_mass_trailer(
     arr_val: &Vec<String>,
     index: usize,
     cargo_mass: &str,
-) -> Option<Vec<String>> {
+) -> Option<Vec<VecItemsFind>> {
     let value_find: String = format!(" cargo_mass: {}", cargo_mass);
-    let mut arr_val_clone: Vec<String> = arr_val.clone();
+    let mut result: Vec<VecItemsFind> = Vec::new();
 
-    for (i, item) in arr_val_clone.iter().enumerate().skip(index) {
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
         if item.contains(" cargo_mass:") {
-            arr_val_clone[i] = value_find;
+            result.push(VecItemsFind {
+                index: i,
+                value: value_find.to_string(),
+            });
+            break;
+        } else if item == "}" {
             break;
         }
     }
 
-    return Some(arr_val_clone);
+    if result.is_empty() {
+        return None;
+    }
+
+    return Some(result);
 }
 
 pub fn set_chassis_and_body_mass_def_trailers(
@@ -321,53 +330,32 @@ pub fn set_remove_trailer_restricted_areas(
 
 pub fn set_any_slave_trailers_weight(
     arr_val: &Vec<String>,
-    first_slave_id: String,
-    first_slave_index: usize,
-    cargo_mass: String,
-) -> Vec<String> {
-    // Neet Refactor. Replace to use get_vec_trailers
-    let mut counter: u16 = 0;
-    let mut next_slave_trailer: String = first_slave_id;
-    let mut next_slave_trailer_index: usize = first_slave_index;
-    let mut current_arr_val: Vec<String> = arr_val.to_vec();
-    let max_counter: u16 = 20;
+    cargo_mass: &str,
+) -> Option<Vec<String>> {
+    let mut arr_val_clone: Vec<String> = arr_val.clone();
 
-    loop {
-        counter += 1;
-        if counter >= max_counter {
-            break;
-        }
+    let list_trailes_id = match get_vec_trailers(&arr_val_clone, None) {
+        Some(list_trailes_id) => list_trailes_id,
+        None => return None,
+    };
 
-        let slave_index: usize = match get_trailer_index(
-            &current_arr_val,
-            &next_slave_trailer,
-            &next_slave_trailer_index,
-        ) {
-            Some(slave_index) => slave_index,
-            None => break,
+    let mut cargo_mass_to_edit: Vec<VecItemsFind> = Vec::new();
+    for item in list_trailes_id.iter() {
+        match set_cargo_mass_trailer(&arr_val_clone, item.index, cargo_mass) {
+            Some(cargo_mass_edit) => cargo_mass_to_edit.extend(cargo_mass_edit),
+            None => (),
         };
-        next_slave_trailer_index = slave_index;
-
-        let cargo_mass_save: Vec<String> = match set_cargo_mass_trailer(
-            &current_arr_val,
-            next_slave_trailer_index,
-            cargo_mass.as_str(),
-        ) {
-            Some(cargo_mass_save) => cargo_mass_save,
-            None => break,
-        };
-        current_arr_val = cargo_mass_save;
-
-        let (slave_trailer_id, index_slave): (String, usize) =
-            match get_slave_trailers_id(&current_arr_val, next_slave_trailer_index) {
-                Some((slave_trailer_id, index)) => (slave_trailer_id, index),
-                None => break,
-            };
-        next_slave_trailer = slave_trailer_id;
-        next_slave_trailer_index = index_slave;
     }
 
-    return current_arr_val;
+    if cargo_mass_to_edit.is_empty() {
+        return None;
+    }
+
+    for item in cargo_mass_to_edit.iter() {
+        arr_val_clone[item.index] = item.value.to_string();
+    }
+
+    return Some(arr_val_clone);
 }
 
 pub fn get_slave_trailers_id(arr_val: &Vec<String>, index: usize) -> Option<(String, usize)> {

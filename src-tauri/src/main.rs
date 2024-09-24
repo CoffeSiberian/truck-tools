@@ -12,9 +12,8 @@ use main_options::profiles::{
     set_experience, set_experience_skills, set_profile_name, set_visited_cities,
 };
 use main_options::trailers::{
-    get_my_trailer_id, get_slave_trailers_id, get_trailer_def_id, get_trailer_def_index,
-    get_trailer_index, set_any_slave_trailers_weight, set_any_trailers_wear,
-    set_cargo_mass_trailer, set_chassis_and_body_mass_def_trailers,
+    get_my_trailer_id, get_trailer_def_id, get_trailer_def_index, get_trailer_index,
+    set_any_slave_trailers_weight, set_any_trailers_wear, set_chassis_and_body_mass_def_trailers,
     set_remove_trailer_restricted_areas, set_trailer_license_plate, set_trailer_wear,
 };
 use main_options::trucks::{
@@ -66,37 +65,11 @@ async fn set_cargo_mass_trailers_and_slave(
         None => return Ok(DefaultResponse { res: false }),
     };
 
-    let (trailer_id, index): (String, usize) = match get_my_trailer_id(&file) {
-        Some((trailer_id, index)) => (trailer_id, index),
+    let cargo_mass_save_slave: Vec<String> = match set_any_slave_trailers_weight(&file, cargo_mass)
+    {
+        Some(cargo_mass_save_slave) => cargo_mass_save_slave,
         None => return Ok(DefaultResponse { res: false }),
     };
-
-    let trailer_index: usize = match get_trailer_index(&file, &trailer_id, &index) {
-        Some(trailer_index) => trailer_index,
-        None => return Ok(DefaultResponse { res: false }),
-    };
-
-    let cargo_mass_save: Vec<String> =
-        match set_cargo_mass_trailer(&file, trailer_index, cargo_mass) {
-            Some(cargo_mass_save) => cargo_mass_save,
-            None => return Ok(DefaultResponse { res: false }),
-        };
-
-    let (slave_trailer_id, index_slave): (String, usize) =
-        match get_slave_trailers_id(&file, trailer_index) {
-            Some((slave_trailer_id, index)) => (slave_trailer_id, index),
-            None => {
-                save_file(dir_save.to_string(), cargo_mass_save).await;
-                return Ok(DefaultResponse { res: true });
-            }
-        };
-
-    let cargo_mass_save_slave: Vec<String> = set_any_slave_trailers_weight(
-        &cargo_mass_save,
-        slave_trailer_id,
-        index_slave,
-        cargo_mass.to_string(),
-    );
 
     save_file(dir_save.to_string(), cargo_mass_save_slave).await;
     return Ok(DefaultResponse { res: true });
