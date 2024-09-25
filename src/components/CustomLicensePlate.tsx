@@ -5,7 +5,10 @@ import { getStoredLicensePlate, storeLicensePlate } from "@/utils/fileEdit";
 import "react-color-palette/css";
 
 //types
-import { listLicensePlateSaved } from "@/types/fileEditTypes";
+import {
+	listLicensePlateSaved,
+	licensePlateSaved,
+} from "@/types/fileEditTypes";
 
 interface CustomLicensePlateProps {
 	bgColor: IColor;
@@ -30,8 +33,10 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 	setIsColorMargin,
 	modalOpen,
 }) => {
-	const [licensePlates, setLicensePlates] =
+	const [ListLicensePlates, setListLicensePlates] =
 		useState<listLicensePlateSaved | null>(null);
+	const [isLoadingStore, setIsLoadingStore] = useState<boolean>(false);
+	const [selectedLicensePlate, setSelectedLicensePlate] = useState<string>();
 
 	const setUpperCase = (text: string) => {
 		setPlateText(text.toUpperCase());
@@ -61,11 +66,37 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 		});
 	};
 
+	const setStoredLicensePlate = async (data: licensePlateSaved) => {
+		setIsLoadingStore(true);
+
+		if (ListLicensePlates) {
+			const licensePlate = {
+				license_plates_ets2: [...ListLicensePlates.license_plates_ets2, data],
+			};
+
+			await storeLicensePlate(licensePlate);
+			setListLicensePlates(licensePlate);
+		} else {
+			const licensePlate = {
+				license_plates_ets2: [data],
+			};
+
+			await storeLicensePlate(licensePlate);
+			setListLicensePlates(licensePlate);
+		}
+
+		setIsLoadingStore(false);
+	};
+
 	useEffect(() => {
 		if (modalOpen) {
+			setIsLoadingStore(true);
+
 			getStoredLicensePlate().then((data) => {
-				setLicensePlates(data);
+				setListLicensePlates(data);
 			});
+
+			setIsLoadingStore(false);
 		}
 	}, [modalOpen]);
 
@@ -101,29 +132,61 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 						value={plateText}
 						onValueChange={setUpperCase}
 					/>
-					<Checkbox
-						isSelected={isColorMargin}
-						onValueChange={(value) => setIsColorMargin(value)}
-						size="md"
-					>
-						Colored margin
-					</Checkbox>
+					<div className="flex gap-3">
+						<Checkbox
+							isSelected={isColorMargin}
+							onValueChange={(value) => setIsColorMargin(value)}
+							size="sm"
+						>
+							Colored margin
+						</Checkbox>
+						<Button
+							onPress={() =>
+								setStoredLicensePlate({
+									text: plateText,
+									text_color: txColor.hex,
+									bg_color: bgColor.hex,
+								})
+							}
+							isLoading={isLoadingStore}
+							color="success"
+							size="sm"
+							variant="bordered"
+						>
+							Store
+						</Button>
+					</div>
 				</div>
 				<div className="flex w-full flex-col items-center gap-3">
 					<Select
-						items={licensePlates ? licensePlates.license_plates_ets2 : []}
-						isDisabled={licensePlates ? false : true}
+						items={
+							ListLicensePlates ? ListLicensePlates.license_plates_ets2 : []
+						}
+						isLoading={isLoadingStore}
+						isDisabled={ListLicensePlates ? false : true}
 						label="Select a stored plate"
 						placeholder="Select license plate"
+						selectedKeys={selectedLicensePlate ? [selectedLicensePlate] : []}
+						onChange={(e) => setSelectedLicensePlate(e.target.value)}
 					>
 						{(items) => <SelectItem key={items.text}>{items.text}</SelectItem>}
 					</Select>
 					<div className="flex justify-center gap-3">
-						<Button color="default" size="sm">
+						<Button
+							isDisabled={ListLicensePlates ? false : true}
+							color="primary"
+							size="sm"
+							variant="bordered"
+						>
 							Load
 						</Button>
-						<Button color="success" size="sm">
-							Save
+						<Button
+							isDisabled={ListLicensePlates ? false : true}
+							color="danger"
+							size="sm"
+							variant="bordered"
+						>
+							Delete
 						</Button>
 					</div>
 				</div>
