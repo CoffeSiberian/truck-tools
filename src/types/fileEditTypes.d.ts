@@ -40,5 +40,5 @@ export interface licensePlateSaved {
 }
 
 export interface listLicensePlateSaved {
-	license_plates: licensePlateSaved[];
+	license_plates_ets2: licensePlateSaved[];
 }

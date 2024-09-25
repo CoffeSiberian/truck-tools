@@ -618,6 +618,8 @@ export const setRepairAllTrailer = async (
 
 // App Variables store
 
+// theme store
+
 export const storeSystemTheme = async (theme: themeTypesSystem) => {
 	const STORE = new Store(STORE_FILE);
 	await STORE.set("theme", theme);
@@ -634,6 +636,8 @@ export const getStoredTheme = async (): Promise<themeTypesSystem | null> => {
 	return null;
 };
 
+// document dir store
+
 export const storeDocumentDir = async (dir: string) => {
 	const STORE = new Store(STORE_FILE);
 	await STORE.set("document_dir", dir);
@@ -649,6 +653,8 @@ export const getStoredDocumentDir = async (): Promise<string | null> => {
 
 	return null;
 };
+
+// license plate store
 
 const isLicensePlateObject = (
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -668,9 +674,9 @@ const isListLicensePlateObject = (
 ): licensePlate is listLicensePlateSaved => {
 	return (
 		typeof licensePlate === "object" &&
-		Array.isArray(licensePlate.license_plates) &&
+		Array.isArray(licensePlate.license_plates_ets2) &&
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		licensePlate.license_plates.every((plate: any) =>
+		licensePlate.license_plates_ets2.every((plate: any) =>
 			isLicensePlateObject(plate)
 		)
 	);
