@@ -99,6 +99,7 @@ const EditLicensePlate = () => {
 										setTxColor={setTxColor}
 										setPlateText={setPlateText}
 										setIsColorMargin={setIsColorMargin}
+										modalOpen={isOpen}
 									/>
 									<AlertSave
 										message={
