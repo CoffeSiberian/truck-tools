@@ -95,6 +95,7 @@ const EditLicensePlate = () => {
 										bgColor={bgColor}
 										plateText={plateText}
 										isColorMargin={isColorMargin}
+										setColorMargin={setIsColorMargin}
 										setBGColor={setBGColor}
 										setTxColor={setTxColor}
 										setPlateText={setPlateText}

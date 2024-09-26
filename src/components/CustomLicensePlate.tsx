@@ -13,6 +13,7 @@ interface CustomLicensePlateProps {
 	txColor: IColor;
 	plateText: string;
 	isColorMargin: boolean;
+	setColorMargin: (isRounded: boolean) => void;
 	setBGColor: (color: IColor) => void;
 	setTxColor: (color: IColor) => void;
 	setPlateText: (text: string) => void;
@@ -25,6 +26,7 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 	txColor,
 	plateText,
 	isColorMargin,
+	setColorMargin,
 	setBGColor,
 	setTxColor,
 	setPlateText,
@@ -97,6 +99,7 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 				setPlateText(selectedPlate.text);
 				setTxColor(selectedPlate.text_color);
 				setBGColor(selectedPlate.bg_color);
+				setColorMargin(selectedPlate.color_margin);
 			}
 		}
 	};
@@ -172,6 +175,7 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 								setStoredLicensePlate({
 									id: uuidv4(),
 									text: plateText,
+									color_margin: isColorMargin,
 									text_color: txColor,
 									bg_color: bgColor,
 								})

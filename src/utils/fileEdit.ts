@@ -701,6 +701,7 @@ const isLicensePlateObject = (
 	return (
 		typeof licensePlate.id === "string" &&
 		typeof licensePlate.text === "string" &&
+		typeof licensePlate.color_margin === "boolean" &&
 		typeof licensePlate.text_color === "object" &&
 		typeof licensePlate.bg_color === "object" &&
 		isColorObject(licensePlate.text_color)
