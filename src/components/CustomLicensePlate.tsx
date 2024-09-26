@@ -6,10 +6,7 @@ import { getStoredLicensePlate, storeLicensePlate } from "@/utils/fileEdit";
 import "react-color-palette/css";
 
 //types
-import {
-	listLicensePlateSaved,
-	licensePlateSaved,
-} from "@/types/fileEditTypes";
+import { licensePlateSaved } from "@/types/fileEditTypes";
 
 interface CustomLicensePlateProps {
 	bgColor: IColor;
@@ -34,8 +31,9 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 	setIsColorMargin,
 	modalOpen,
 }) => {
-	const [ListLicensePlates, setListLicensePlates] =
-		useState<listLicensePlateSaved | null>(null);
+	const [ListLicensePlates, setListLicensePlates] = useState<
+		licensePlateSaved[]
+	>([]);
 	const [isLoadingStore, setIsLoadingStore] = useState<boolean>(false);
 	const [selectedLicensePlate, setSelectedLicensePlate] = useState<string>();
 
@@ -71,22 +69,50 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 		setIsLoadingStore(true);
 
 		if (ListLicensePlates) {
-			const licensePlate = {
-				license_plates_ets2: [...ListLicensePlates.license_plates_ets2, data],
-			};
+			const licensePlate = [...ListLicensePlates, data];
 
-			await storeLicensePlate(licensePlate);
+			await storeLicensePlate({
+				license_plates_ets2: licensePlate,
+			});
 			setListLicensePlates(licensePlate);
 		} else {
-			const licensePlate = {
-				license_plates_ets2: [data],
-			};
+			const licensePlate = [data];
 
-			await storeLicensePlate(licensePlate);
+			await storeLicensePlate({
+				license_plates_ets2: licensePlate,
+			});
 			setListLicensePlates(licensePlate);
 		}
 
 		setIsLoadingStore(false);
+	};
+
+	const loadSelectedLicensePlate = () => {
+		if (selectedLicensePlate && ListLicensePlates) {
+			const selectedPlate = ListLicensePlates.find(
+				(plate) => plate.id === selectedLicensePlate
+			);
+
+			if (selectedPlate) {
+				setPlateText(selectedPlate.text);
+				setTxColor(selectedPlate.text_color);
+				setBGColor(selectedPlate.bg_color);
+			}
+		}
+	};
+
+	const deleteSelectedLicensePlate = async () => {
+		if (selectedLicensePlate && ListLicensePlates) {
+			const licensePlate = ListLicensePlates.filter(
+				(plate) => plate.id !== selectedLicensePlate
+			);
+
+			await storeLicensePlate({
+				license_plates_ets2: licensePlate,
+			});
+			setListLicensePlates(licensePlate);
+			setSelectedLicensePlate(undefined);
+		}
 	};
 
 	useEffect(() => {
@@ -94,7 +120,7 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 			setIsLoadingStore(true);
 
 			getStoredLicensePlate().then((data) => {
-				setListLicensePlates(data);
+				setListLicensePlates(data ? data.license_plates_ets2 : []);
 			});
 
 			setIsLoadingStore(false);
@@ -146,8 +172,8 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 								setStoredLicensePlate({
 									id: uuidv4(),
 									text: plateText,
-									text_color: txColor.hex,
-									bg_color: bgColor.hex,
+									text_color: txColor,
+									bg_color: bgColor,
 								})
 							}
 							isLoading={isLoadingStore}
@@ -161,11 +187,9 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 				</div>
 				<div className="flex w-full flex-col items-center gap-3">
 					<Select
-						items={
-							ListLicensePlates ? ListLicensePlates.license_plates_ets2 : []
-						}
+						items={ListLicensePlates}
 						isLoading={isLoadingStore}
-						isDisabled={ListLicensePlates ? false : true}
+						isDisabled={ListLicensePlates.length === 0}
 						label="Select a stored plate"
 						placeholder="Select license plate"
 						selectedKeys={selectedLicensePlate ? [selectedLicensePlate] : []}
@@ -177,6 +201,7 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 					<div className="flex justify-center gap-3">
 						<Button
 							isDisabled={selectedLicensePlate ? false : true}
+							onPress={loadSelectedLicensePlate}
 							color="primary"
 							size="sm"
 							variant="bordered"
@@ -185,6 +210,7 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 						</Button>
 						<Button
 							isDisabled={selectedLicensePlate ? false : true}
+							onPress={deleteSelectedLicensePlate}
 							color="danger"
 							size="sm"
 							variant="bordered"

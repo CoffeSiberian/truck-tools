@@ -1,4 +1,5 @@
 import { SaveGame, ProfileDir, TruckBrands } from "@/types/SaveGameTypes";
+import { IColor } from "react-color-palette";
 
 export type themeTypes = "light" | "dark";
 export type themeTypesSystem = "system" | "light" | "dark";
@@ -36,8 +37,8 @@ export interface responseGetDeveloperValues extends responseRustTypes {
 export interface licensePlateSaved {
 	id: string;
 	text: string;
-	text_color: string;
-	bg_color: string;
+	text_color: IColor;
+	bg_color: IColor;
 }
 
 export interface listLicensePlateSaved {

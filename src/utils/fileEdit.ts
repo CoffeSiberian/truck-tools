@@ -661,11 +661,10 @@ const isLicensePlateObject = (
 	licensePlate: any
 ): licensePlate is licensePlateSaved => {
 	return (
-		typeof licensePlate === "object" &&
 		typeof licensePlate.id === "string" &&
 		typeof licensePlate.text === "string" &&
-		typeof licensePlate.text_color === "string" &&
-		typeof licensePlate.bg_color === "string"
+		typeof licensePlate.text_color === "object" &&
+		typeof licensePlate.bg_color === "object"
 	);
 };
 
