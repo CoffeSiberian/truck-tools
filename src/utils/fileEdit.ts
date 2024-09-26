@@ -28,6 +28,11 @@ import {
 	licensePlateSaved,
 	listLicensePlateSaved,
 } from "@/types/fileEditTypes";
+import {
+	IColorRgbToValidate,
+	IColorHsvToValidate,
+} from "@/types/fileEditTypes";
+import { IColor } from "react-color-palette";
 
 const STORE_FILE = ".settings.dat";
 
@@ -656,6 +661,39 @@ export const getStoredDocumentDir = async (): Promise<string | null> => {
 
 // license plate store
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const isColorRgb = (rgb: any): rgb is IColorRgbToValidate => {
+	return (
+		typeof rgb.r === "number" &&
+		typeof rgb.g === "number" &&
+		typeof rgb.b === "number" &&
+		typeof rgb.a === "number"
+	);
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const isColorHsv = (hsv: any): hsv is IColorHsvToValidate => {
+	return (
+		typeof hsv.h === "number" &&
+		typeof hsv.s === "number" &&
+		typeof hsv.v === "number" &&
+		typeof hsv.a === "number"
+	);
+};
+
+const isColorObject = (
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	color: any
+): color is IColor => {
+	return (
+		typeof color.hex === "string" &&
+		typeof color.rgb === "object" &&
+		isColorRgb(color.rgb) &&
+		typeof color.hsv === "object" &&
+		isColorHsv(color.hsv)
+	);
+};
+
 const isLicensePlateObject = (
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	licensePlate: any
@@ -664,7 +702,8 @@ const isLicensePlateObject = (
 		typeof licensePlate.id === "string" &&
 		typeof licensePlate.text === "string" &&
 		typeof licensePlate.text_color === "object" &&
-		typeof licensePlate.bg_color === "object"
+		typeof licensePlate.bg_color === "object" &&
+		isColorObject(licensePlate.text_color)
 	);
 };
 

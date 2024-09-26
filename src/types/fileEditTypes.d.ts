@@ -44,3 +44,17 @@ export interface licensePlateSaved {
 export interface listLicensePlateSaved {
 	license_plates_ets2: licensePlateSaved[];
 }
+
+export interface IColorRgbToValidate {
+	readonly r: number;
+	readonly g: number;
+	readonly b: number;
+	readonly a: number;
+}
+
+export interface IColorHsvToValidate {
+	readonly h: number;
+	readonly s: number;
+	readonly v: number;
+	readonly a: number;
+}
