@@ -1,6 +1,7 @@
 import { FC, useState, useEffect } from "react";
 import { Button, Checkbox, Input, Select, SelectItem } from "@nextui-org/react";
 import { ColorPicker, IColor } from "react-color-palette";
+import { v4 as uuidv4 } from "uuid";
 import { getStoredLicensePlate, storeLicensePlate } from "@/utils/fileEdit";
 import "react-color-palette/css";
 
@@ -143,6 +144,7 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 						<Button
 							onPress={() =>
 								setStoredLicensePlate({
+									id: uuidv4(),
 									text: plateText,
 									text_color: txColor.hex,
 									bg_color: bgColor.hex,
@@ -168,12 +170,13 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 						placeholder="Select license plate"
 						selectedKeys={selectedLicensePlate ? [selectedLicensePlate] : []}
 						onChange={(e) => setSelectedLicensePlate(e.target.value)}
+						variant="bordered"
 					>
-						{(items) => <SelectItem key={items.text}>{items.text}</SelectItem>}
+						{(items) => <SelectItem key={items.id}>{items.text}</SelectItem>}
 					</Select>
 					<div className="flex justify-center gap-3">
 						<Button
-							isDisabled={ListLicensePlates ? false : true}
+							isDisabled={selectedLicensePlate ? false : true}
 							color="primary"
 							size="sm"
 							variant="bordered"
@@ -181,7 +184,7 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 							Load
 						</Button>
 						<Button
-							isDisabled={ListLicensePlates ? false : true}
+							isDisabled={selectedLicensePlate ? false : true}
 							color="danger"
 							size="sm"
 							variant="bordered"

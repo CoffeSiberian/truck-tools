@@ -34,6 +34,7 @@ export interface responseGetDeveloperValues extends responseRustTypes {
 }
 
 export interface licensePlateSaved {
+	id: string;
 	text: string;
 	text_color: string;
 	bg_color: string;
