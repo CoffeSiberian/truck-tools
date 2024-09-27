@@ -189,7 +189,7 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 						</Button>
 					</div>
 				</div>
-				<div className="flex w-full flex-col items-center gap-3">
+				<div className="flex w-full flex-col justify-center gap-3">
 					<Select
 						items={ListLicensePlates}
 						isLoading={isLoadingStore}
