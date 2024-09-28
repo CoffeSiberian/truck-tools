@@ -1,11 +1,11 @@
 {
-	"version": "v0.4.8",
-	"notes": "- Bug fix that prevented loading profiles located in directories external to the “Documents” folder\n\n- Fixed bug that prevented loading saves with LF line breaks\n\n- Now if a trailer or truck is not found in a search it is omitted when searching the complete set\n\n- Refactored the logic in which the trailer weight (cargo_mass) is modified",
-	"pub_date": "2024-09-24T10:00:00-03:00",
+	"version": "v0.4.9",
+	"notes": "- New functionality that allows you to save your truck and trailer license plates locally\n\n- A new button to reset the infinite fuel (located in the same place where this function is applied)\n\n- Warning message to disable “Realistic fuel consumption” in “Infinite fuel” functionality",
+	"pub_date": "2024-09-28T15:00:00-03:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmJxd0VNcWljUXZqVUltSHFzSU1JUlFLY0F6ZGVucjVJeXFzNElDdGZqY0FEUUlpaCtwdjVVTlN5cWNIVUN0NUJaMjBPUTVYL2NydkVmZ0RISldWb0E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzI3MTgzODg0CWZpbGU6VHJ1Y2sgVG9vbHNfMC40LjhfeDY0X2VuLVVTLm1zaS56aXAKQXVXMFJHWThjdS9XZ203NGt4cFp1Y0JjbDQwSTBzRmxUU3NyS3NqejhhNDEwYjI4aUlUckFUSDN5ekdSWVM2aFh5L3JYZytobHVTb3lEVGR0ajlrRHc9PQo=",
-			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.4.8/Truck_Tools_0.4.8_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmVHOSs3SENOdkdxQTlDdVo4SUh3Z05HVXhZSlpSV2FFWW1mODJHOEF2KzN4ZlNNSVhkUnAxSlhmUXV5UXJCaFEvaHNrZTF4L25WMWR5QXdvOUlSY1FjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzI3NTQ3Mzg1CWZpbGU6VHJ1Y2sgVG9vbHNfMC40LjlfeDY0X2VuLVVTLm1zaS56aXAKV0k0SEtvL0ZZd2I0SzRsbGhhZ3RKR3htVXZKRzJSTWwwY1JuNzYzRndaQi9KWWZreGxZek9LWW9rWXlQOUk1eVQ1ZzRhWUo4cEpodUs4RWxjbXVqQ3c9PQo=",
+			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.4.9/Truck_Tools_0.4.9_x64_en-US.msi.zip"
 		}
 	}
 }
