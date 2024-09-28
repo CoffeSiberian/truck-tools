@@ -12,6 +12,7 @@ import {
 } from "@nextui-org/react";
 import { setInfinitFuelTruck } from "@/utils/fileEdit";
 import AlertSave from "@/components/AlertSave";
+import Warning from "@/components/Warning";
 
 // icons
 import { IconPencil, IconGasStation } from "@tabler/icons-react";
@@ -76,6 +77,17 @@ const SetInfiniteFuel = () => {
 									Exactly the fuel is not infinite but it is for approximately
 									5.000.000 KM (depending on the truck)
 								</p>
+								<Warning
+									text={
+										<div className="flex flex-col gap-2">
+											<b>Remember</b>
+											<p>
+												<b>Disable “Realistic fuel consumption”</b> in your
+												“Gameplay” section for this function to take effect.
+											</p>
+										</div>
+									}
+								/>
 								<div className="flex justify-center">
 									<AlertSave
 										message={
