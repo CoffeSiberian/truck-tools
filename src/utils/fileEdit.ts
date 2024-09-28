@@ -220,10 +220,15 @@ export const setRepairAllTruck = async (dirSave: string): Promise<boolean> => {
 	return invoceRes.res;
 };
 
-export const setFuelTruck = async (dirSave: string): Promise<boolean> => {
+export const setFuelTruck = async (
+	dirSave: string,
+	fuelLevel: number
+): Promise<boolean> => {
+	if (fuelLevel < 0 || fuelLevel > 1) return false;
+
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
-		fuel: "1",
+		fuel: fuelLevel.toString(),
 	};
 
 	const invoceRes = (await invoke(

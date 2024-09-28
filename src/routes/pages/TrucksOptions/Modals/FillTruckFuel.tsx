@@ -37,7 +37,7 @@ const FillTruckFuel = () => {
 
 		if (selectedSave) {
 			setIsLoading(true);
-			const res = await setFuelTruck(selectedSave.dir);
+			const res = await setFuelTruck(selectedSave.dir, 1);
 			setCompleted({
 				error: !res,
 				completed: true,

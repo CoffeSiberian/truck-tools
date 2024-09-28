@@ -10,12 +10,12 @@ import {
 	Button,
 	useDisclosure,
 } from "@nextui-org/react";
-import { setInfinitFuelTruck } from "@/utils/fileEdit";
+import { setInfinitFuelTruck, setFuelTruck } from "@/utils/fileEdit";
 import AlertSave from "@/components/AlertSave";
 import Warning from "@/components/Warning";
 
 // icons
-import { IconPencil, IconGasStation } from "@tabler/icons-react";
+import { IconPencil, IconGasStation, IconRestore } from "@tabler/icons-react";
 
 interface completedProps {
 	error: boolean;
@@ -25,7 +25,8 @@ interface completedProps {
 const SetInfiniteFuel = () => {
 	const { selectedSave } = useContext(ProfileContex);
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
-	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [isLoadingRefuel, setIsLoadingRefuel] = useState<boolean>(false);
+	const [isLoadingRestore, setIsLoadingRestore] = useState<boolean>(false);
 	const [completed, setCompleted] = useState<completedProps>({
 		error: false,
 		completed: false,
@@ -37,14 +38,30 @@ const SetInfiniteFuel = () => {
 		}
 
 		if (selectedSave) {
-			setIsLoading(true);
+			setIsLoadingRefuel(true);
 			const res = await setInfinitFuelTruck(selectedSave.dir);
 			setCompleted({
 				error: !res,
 				completed: true,
 			});
 		}
-		setIsLoading(false);
+		setIsLoadingRefuel(false);
+	};
+
+	const onClickRestore = async () => {
+		if (completed.completed) {
+			setCompleted({ error: false, completed: false });
+		}
+
+		if (selectedSave) {
+			setIsLoadingRestore(true);
+			const res = await setFuelTruck(selectedSave.dir, 0.5);
+			setCompleted({
+				error: !res,
+				completed: true,
+			});
+		}
+		setIsLoadingRestore(false);
 	};
 
 	return (
@@ -60,7 +77,7 @@ const SetInfiniteFuel = () => {
 			</Button>
 			<Modal
 				hideCloseButton
-				size="sm"
+				size="md"
 				backdrop="blur"
 				isOpen={isOpen}
 				onOpenChange={onOpenChange}
@@ -105,8 +122,17 @@ const SetInfiniteFuel = () => {
 									Close
 								</Button>
 								<Button
+									endContent={<IconRestore />}
+									isLoading={isLoadingRestore}
+									color="warning"
+									variant="flat"
+									onPress={onClickRestore}
+								>
+									Restore fuel
+								</Button>
+								<Button
 									endContent={<IconGasStation />}
-									isLoading={isLoading}
+									isLoading={isLoadingRefuel}
 									color="success"
 									onPress={onClickApply}
 								>
