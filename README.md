@@ -24,8 +24,8 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 ## Screenshot
 
 <p align="center">
-  <img src="https://i.imgur.com/4b4ddeg.jpeg">
-  <img src="https://i.imgur.com/gX9r5LJ.jpeg">
+  <img src="https://i.imgur.com/p2QsDlb.jpeg">
+  <img src="https://i.imgur.com/XZo6yUC.jpeg">
 </p>
 
 **Many thanks for your help ❤️**
