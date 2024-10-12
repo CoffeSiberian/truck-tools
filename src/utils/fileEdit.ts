@@ -1,11 +1,11 @@
 // tauri
 import { documentDir } from "@tauri-apps/api/path";
-import { exists } from "@tauri-apps/api/fs";
+import { exists } from "@tauri-apps/plugin-fs";
 import { join } from "@tauri-apps/api/path";
-import { Command } from "@tauri-apps/api/shell";
-import { convertFileSrc } from "@tauri-apps/api/tauri";
-import { invoke } from "@tauri-apps/api/tauri";
-import { Store } from "tauri-plugin-store-api";
+import { Command } from "@tauri-apps/plugin-shell";
+import { convertFileSrc } from "@tauri-apps/api/core";
+import { invoke } from "@tauri-apps/api/core";
+import { createStore } from "@tauri-apps/plugin-store";
 
 // types
 import {
@@ -72,7 +72,7 @@ export const descriptFiles = async (path: string): Promise<boolean> => {
 };
 
 export const openExplorer = async (path: string) => {
-	const command = new Command("explorer", path);
+	const command = await Command.create("explorer", path);
 	await command.execute();
 };
 
@@ -631,13 +631,13 @@ export const setRepairAllTrailer = async (
 // theme store
 
 export const storeSystemTheme = async (theme: themeTypesSystem) => {
-	const STORE = new Store(STORE_FILE);
+	const STORE = await createStore(STORE_FILE);
 	await STORE.set("theme", theme);
 	await STORE.save();
 };
 
 export const getStoredTheme = async (): Promise<themeTypesSystem | null> => {
-	const STORE = new Store(STORE_FILE);
+	const STORE = await createStore(STORE_FILE);
 	const theme = await STORE.get("theme");
 
 	if (!theme) return null;
@@ -649,13 +649,13 @@ export const getStoredTheme = async (): Promise<themeTypesSystem | null> => {
 // document dir store
 
 export const storeDocumentDir = async (dir: string) => {
-	const STORE = new Store(STORE_FILE);
+	const STORE = await createStore(STORE_FILE);
 	await STORE.set("document_dir", dir);
 	await STORE.save();
 };
 
 export const getStoredDocumentDir = async (): Promise<string | null> => {
-	const STORE = new Store(STORE_FILE);
+	const STORE = await createStore(STORE_FILE);
 	const dir = await STORE.get("document_dir");
 
 	if (!dir) return null;
@@ -730,14 +730,14 @@ const isListLicensePlateObject = (
 export const storeLicensePlate = async (
 	licensePlate: listLicensePlateSaved
 ) => {
-	const STORE = new Store(STORE_FILE);
+	const STORE = await createStore(STORE_FILE);
 	await STORE.set("license_plate", licensePlate);
 	await STORE.save();
 };
 
 export const getStoredLicensePlate =
 	async (): Promise<listLicensePlateSaved | null> => {
-		const STORE = new Store(STORE_FILE);
+		const STORE = await createStore(STORE_FILE);
 		const licensePlate = await STORE.get("license_plate");
 
 		if (!licensePlate) return null;
