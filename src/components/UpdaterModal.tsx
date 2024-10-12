@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import { checkUpdate, installUpdate } from "@tauri-apps/api/updater";
-import { relaunch } from "@tauri-apps/api/process";
+import { check as checkUpdate, Update } from "@tauri-apps/plugin-updater";
+import { relaunch } from "@tauri-apps/plugin-process";
 import {
 	Modal,
 	ModalContent,
@@ -21,6 +21,7 @@ import {
 } from "@tabler/icons-react";
 
 interface UpdateInfo {
+	update: Update;
 	body: string;
 	version: string;
 	date: string;
@@ -34,16 +35,18 @@ const UpdaterModal = () => {
 
 	const checkUpdateState = async () => {
 		try {
-			const { shouldUpdate, manifest } = await checkUpdate();
-			if (shouldUpdate) {
-				const splitDate = manifest?.date!.split(" ")[0];
+			const update = await checkUpdate();
+
+			if (update) {
+				const splitDate = update.date;
 				if (!splitDate) return;
 
 				const date = new Date(splitDate);
 
 				setUpdateInfo({
-					body: manifest?.body,
-					version: manifest?.version,
+					update: update,
+					body: update.body!,
+					version: update.version,
 					date: date.toLocaleDateString(),
 				});
 			}
@@ -63,9 +66,32 @@ const UpdaterModal = () => {
 		setIsInstalling(true);
 
 		try {
-			await installUpdate();
-			setIsInstalling(false);
+			if (!updateInfo) return;
+			const update = updateInfo.update;
+
+			let downloaded = 0;
+			let contentLength = 0;
+
+			await update.downloadAndInstall((event) => {
+				switch (event.event) {
+					case "Started":
+						contentLength = event.data.contentLength!;
+						console.log(
+							`started downloading ${event.data.contentLength} bytes`
+						);
+						break;
+					case "Progress":
+						downloaded += event.data.chunkLength;
+						console.log(`downloaded ${downloaded} from ${contentLength}`);
+						break;
+					case "Finished":
+						console.log("download finished");
+						break;
+				}
+			});
+
 			await relaunch();
+			setIsInstalling(false);
 		} catch {
 			setIsInstalling(false);
 			setInstallError(true);
