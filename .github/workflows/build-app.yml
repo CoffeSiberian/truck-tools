@@ -12,7 +12,7 @@ permissions:
 
 env:
     APP_NAME: Truck Tools
-    APP_BUILD_TARGET: x64_en-US
+    APP_BUILD_TARGET: x64-setup
 
 jobs:
     build_windows:
@@ -45,23 +45,17 @@ jobs:
             - name: Build app
               run: npm run tauri build
 
-            - name: Upload artifact .msi
+            - name: Upload artifact NSIS
               uses: actions/upload-artifact@v4
               with:
-                  name: ${{ env.FILE_NAME }}.msi
-                  path: src-tauri/target/release/bundle/msi/${{ env.FILE_NAME }}.msi
+                  name: ${{ env.FILE_NAME }}.exe
+                  path: src-tauri/target/release/bundle/nsis/${{ env.FILE_NAME }}.exe
 
-            - name: Upload artifact .msi.zip
+            - name: Upload artifact NSIS SIG
               uses: actions/upload-artifact@v4
               with:
-                  name: ${{ env.FILE_NAME }}.msi.zip
-                  path: src-tauri/target/release/bundle/msi/${{ env.FILE_NAME }}.msi.zip
-
-            - name: Upload artifact .msi.zip.sig
-              uses: actions/upload-artifact@v4
-              with:
-                  name: ${{ env.FILE_NAME }}.msi.zip.sig
-                  path: src-tauri/target/release/bundle/msi/${{ env.FILE_NAME }}.msi.zip.sig
+                  name: ${{ env.FILE_NAME }}.exe.sig
+                  path: src-tauri/target/release/bundle/nsis/${{ env.FILE_NAME }}.exe.sig
 
     upload_release:
         runs-on: ubuntu-latest
@@ -83,32 +77,23 @@ jobs:
             - name: Set FILE_NAME_W_S
               run: echo "FILE_NAME_W_S=${{ env.APP_NAME_W_S }}_${{ env.APP_VERSION }}_${{ env.APP_BUILD_TARGET }}" >> $GITHUB_ENV
 
-            - name: Download artifact .msi
+            - name: Download artifact NSIS
               uses: actions/download-artifact@v4
               with:
-                  name: ${{ env.FILE_NAME }}.msi
+                  name: ${{ env.FILE_NAME }}.exe
 
-            - name: Rename artifact .msi
+            - name: Rename artifact NSIS
               run: |
-                  mv "${{ env.FILE_NAME }}.msi" "${{ env.FILE_NAME_W_S }}.msi"
+                  mv "${{ env.FILE_NAME }}.exe" "${{ env.FILE_NAME_W_S }}.exe"
 
-            - name: Download artifact .msi.zip
+            - name: Download artifact NSIS SIG
               uses: actions/download-artifact@v4
               with:
-                  name: ${{ env.FILE_NAME }}.msi.zip
+                  name: ${{ env.FILE_NAME }}.exe.sig
 
-            - name: Rename artifact .msi.zip
+            - name: Rename artifact NSIS SIG
               run: |
-                  mv "${{ env.FILE_NAME }}.msi.zip" "${{ env.FILE_NAME_W_S }}.msi.zip"
-
-            - name: Download artifact .msi.zip.sig
-              uses: actions/download-artifact@v4
-              with:
-                  name: ${{ env.FILE_NAME }}.msi.zip.sig
-
-            - name: Rename artifact .msi.zip.sig
-              run: |
-                  mv "${{ env.FILE_NAME }}.msi.zip.sig" "${{ env.FILE_NAME_W_S }}.msi.zip.sig"
+                  mv "${{ env.FILE_NAME }}.exe.sig" "${{ env.FILE_NAME_W_S }}.exe.sig"
 
             - name: Release
               uses: softprops/action-gh-release@v2
@@ -117,6 +102,5 @@ jobs:
                   tag_name: ${{ env.APP_VERSION }}
                   draft: true
                   files: |
-                      ${{ env.FILE_NAME_W_S }}.msi
-                      ${{ env.FILE_NAME_W_S }}.msi.zip
-                      ${{ env.FILE_NAME_W_S }}.msi.zip.sig
+                      ${{ env.FILE_NAME_W_S }}.exe
+                      ${{ env.FILE_NAME_W_S }}.exe.sig
