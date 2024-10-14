@@ -7,7 +7,7 @@
 	},
 	"bundle": {
 		"active": true,
-		"targets": "all",
+		"targets": "nsis",
 		"resources": ["resources/SII_Decrypt.dll"],
 		"publisher": "SiberianCoffe",
 		"copyright": "SiberianCoffe",
