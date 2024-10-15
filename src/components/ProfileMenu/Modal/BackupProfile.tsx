@@ -1,5 +1,5 @@
 import { useState, useContext, FC } from "react";
-import { save, SaveDialogOptions } from "@tauri-apps/api/dialog";
+import { save, SaveDialogOptions } from "@tauri-apps/plugin-dialog";
 import { documentDir } from "@tauri-apps/api/path";
 import { ProfileContex } from "@/hooks/useProfileContex";
 import {

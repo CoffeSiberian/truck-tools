@@ -1,5 +1,5 @@
 import { FC, useState, useContext, useEffect } from "react";
-import { open, OpenDialogOptions } from "@tauri-apps/api/dialog";
+import { open, OpenDialogOptions } from "@tauri-apps/plugin-dialog";
 import { documentDir } from "@tauri-apps/api/path";
 import {
 	Modal,

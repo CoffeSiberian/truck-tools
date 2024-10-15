@@ -1,0 +1,45 @@
+{
+	"identifier": "migrated",
+	"description": "permissions that were migrated from v1",
+	"local": true,
+	"windows": ["main"],
+	"permissions": [
+		"core:default",
+		"updater:default",
+		"fs:default",
+		"fs:allow-read-file",
+		"fs:allow-write-file",
+		"fs:allow-read-dir",
+		"fs:allow-copy-file",
+		"fs:allow-mkdir",
+		"fs:allow-remove",
+		"fs:allow-rename",
+		"fs:allow-exists",
+		{
+			"identifier": "fs:scope",
+			"allow": [
+				{
+					"path": "**"
+				}
+			]
+		},
+		"shell:default",
+		{
+			"identifier": "shell:allow-execute",
+			"allow": [
+				{
+					"args": true,
+					"cmd": "explorer",
+					"name": "explorer",
+					"sidecar": false
+				}
+			]
+		},
+		"shell:allow-open",
+		"dialog:allow-open",
+		"dialog:allow-save",
+		"process:allow-restart",
+		"dialog:default",
+		"store:default"
+	]
+}
