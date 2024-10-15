@@ -58,10 +58,7 @@ const UpdaterModal = () => {
 	};
 
 	const setIsOpen = (open: boolean) => {
-		if (
-			!open &&
-			(isDownloading === null || isDownloading === 100 || installError)
-		) {
+		if (!open && (isDownloading === null || installError)) {
 			setUpdateInfo(null);
 		}
 	};
