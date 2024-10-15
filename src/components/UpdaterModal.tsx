@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import classNames from "classnames";
 import { check as checkUpdate, Update } from "@tauri-apps/plugin-updater";
 import { relaunch } from "@tauri-apps/plugin-process";
 import {
@@ -10,6 +11,7 @@ import {
 	Button,
 	Divider,
 	Chip,
+	Progress,
 } from "@nextui-org/react";
 import AlertSave from "@/components/AlertSave";
 
@@ -29,8 +31,8 @@ interface UpdateInfo {
 
 const UpdaterModal = () => {
 	const [updateInfo, setUpdateInfo] = useState<UpdateInfo | null>(null);
-	const [isInstalling, setIsInstalling] = useState(false);
 	const [installError, setInstallError] = useState(false);
+	const [isDownloading, setIsDownloading] = useState<number | null>(null);
 	const updateChecked = useRef(false);
 
 	const checkUpdateState = async () => {
@@ -56,14 +58,26 @@ const UpdaterModal = () => {
 	};
 
 	const setIsOpen = (open: boolean) => {
-		if (!open && !isInstalling) {
+		if (
+			!open &&
+			(isDownloading === null || isDownloading === 100 || installError)
+		) {
 			setUpdateInfo(null);
 		}
 	};
 
+	const getDownloadPercentage = (
+		contentLength: number,
+		downloaded: number
+	): number => {
+		if (contentLength === 0) return 0;
+		const percentage = (downloaded / contentLength) * 100;
+
+		return Math.round(percentage);
+	};
+
 	const onClickUpdate = async () => {
 		if (installError) setInstallError(false);
-		setIsInstalling(true);
 
 		try {
 			if (!updateInfo) return;
@@ -71,29 +85,38 @@ const UpdaterModal = () => {
 
 			let downloaded = 0;
 			let contentLength = 0;
+			let persentageDownloaded = 0;
 
+			setIsDownloading(0);
 			await update.downloadAndInstall((event) => {
 				switch (event.event) {
 					case "Started":
 						contentLength = event.data.contentLength!;
-						console.log(
-							`started downloading ${event.data.contentLength} bytes`
-						);
 						break;
-					case "Progress":
+					case "Progress": {
 						downloaded += event.data.chunkLength;
-						console.log(`downloaded ${downloaded} from ${contentLength}`);
+						const persentageCal = getDownloadPercentage(
+							contentLength,
+							downloaded
+						);
+
+						if (persentageDownloaded === persentageCal) {
+							break;
+						}
+
+						persentageDownloaded = persentageCal;
+						setIsDownloading(persentageCal);
 						break;
+					}
 					case "Finished":
-						console.log("download finished");
+						setIsDownloading(null);
 						break;
 				}
 			});
 
 			await relaunch();
-			setIsInstalling(false);
 		} catch {
-			setIsInstalling(false);
+			setIsDownloading(null);
 			setInstallError(true);
 		}
 	};
@@ -152,10 +175,23 @@ const UpdaterModal = () => {
 									error={installError}
 									show={installError}
 								/>
+								<Progress
+									aria-label="Downloading..."
+									size="md"
+									value={isDownloading || 0}
+									color="success"
+									showValueLabel={true}
+									className={classNames(
+										"max-w-md",
+										isDownloading ? "" : "hidden"
+									)}
+								/>
 							</ModalBody>
 							<ModalFooter className="items-center justify-center gap-1">
 								<Button
-									isDisabled={isInstalling}
+									isDisabled={
+										isDownloading ? true : isDownloading === null ? false : true
+									}
 									color="danger"
 									variant="light"
 									onPress={() => setIsOpen(false)}
@@ -163,7 +199,10 @@ const UpdaterModal = () => {
 									Cancel
 								</Button>
 								<Button
-									isLoading={isInstalling}
+									isLoading={
+										isDownloading ? true : isDownloading === null ? false : true
+									}
+									isDisabled={installError}
 									endContent={<IconDownload />}
 									color="success"
 									variant="ghost"
