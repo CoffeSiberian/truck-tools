@@ -19,8 +19,8 @@ jobs:
         runs-on: windows-latest
 
         env:
-            TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
-            TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
+            TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+            TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
 
         steps:
             - uses: actions/checkout@v4
@@ -45,23 +45,17 @@ jobs:
             - name: Build app
               run: npm run tauri build
 
-            - name: Upload artifact .msi
+            - name: Upload artifact MSI
               uses: actions/upload-artifact@v4
               with:
                   name: ${{ env.FILE_NAME }}.msi
                   path: src-tauri/target/release/bundle/msi/${{ env.FILE_NAME }}.msi
 
-            - name: Upload artifact .msi.zip
+            - name: Upload artifact MSI SIG
               uses: actions/upload-artifact@v4
               with:
-                  name: ${{ env.FILE_NAME }}.msi.zip
-                  path: src-tauri/target/release/bundle/msi/${{ env.FILE_NAME }}.msi.zip
-
-            - name: Upload artifact .msi.zip.sig
-              uses: actions/upload-artifact@v4
-              with:
-                  name: ${{ env.FILE_NAME }}.msi.zip.sig
-                  path: src-tauri/target/release/bundle/msi/${{ env.FILE_NAME }}.msi.zip.sig
+                  name: ${{ env.FILE_NAME }}.msi.sig
+                  path: src-tauri/target/release/bundle/msi/${{ env.FILE_NAME }}.msi.sig
 
     upload_release:
         runs-on: ubuntu-latest
@@ -83,32 +77,23 @@ jobs:
             - name: Set FILE_NAME_W_S
               run: echo "FILE_NAME_W_S=${{ env.APP_NAME_W_S }}_${{ env.APP_VERSION }}_${{ env.APP_BUILD_TARGET }}" >> $GITHUB_ENV
 
-            - name: Download artifact .msi
+            - name: Download artifact MSI
               uses: actions/download-artifact@v4
               with:
                   name: ${{ env.FILE_NAME }}.msi
 
-            - name: Rename artifact .msi
+            - name: Rename artifact MSI
               run: |
                   mv "${{ env.FILE_NAME }}.msi" "${{ env.FILE_NAME_W_S }}.msi"
 
-            - name: Download artifact .msi.zip
+            - name: Download artifact MSI SIG
               uses: actions/download-artifact@v4
               with:
-                  name: ${{ env.FILE_NAME }}.msi.zip
+                  name: ${{ env.FILE_NAME }}.msi.sig
 
-            - name: Rename artifact .msi.zip
+            - name: Rename artifact MSI SIG
               run: |
-                  mv "${{ env.FILE_NAME }}.msi.zip" "${{ env.FILE_NAME_W_S }}.msi.zip"
-
-            - name: Download artifact .msi.zip.sig
-              uses: actions/download-artifact@v4
-              with:
-                  name: ${{ env.FILE_NAME }}.msi.zip.sig
-
-            - name: Rename artifact .msi.zip.sig
-              run: |
-                  mv "${{ env.FILE_NAME }}.msi.zip.sig" "${{ env.FILE_NAME_W_S }}.msi.zip.sig"
+                  mv "${{ env.FILE_NAME }}.msi.sig" "${{ env.FILE_NAME_W_S }}.msi.sig"
 
             - name: Release
               uses: softprops/action-gh-release@v2
@@ -118,5 +103,4 @@ jobs:
                   draft: true
                   files: |
                       ${{ env.FILE_NAME_W_S }}.msi
-                      ${{ env.FILE_NAME_W_S }}.msi.zip
-                      ${{ env.FILE_NAME_W_S }}.msi.zip.sig
+                      ${{ env.FILE_NAME_W_S }}.msi.sig

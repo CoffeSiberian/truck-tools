@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import { checkUpdate, installUpdate } from "@tauri-apps/api/updater";
-import { relaunch } from "@tauri-apps/api/process";
+import classNames from "classnames";
+import { check as checkUpdate, Update } from "@tauri-apps/plugin-updater";
+import { relaunch } from "@tauri-apps/plugin-process";
 import {
 	Modal,
 	ModalContent,
@@ -10,6 +11,7 @@ import {
 	Button,
 	Divider,
 	Chip,
+	Progress,
 } from "@nextui-org/react";
 import AlertSave from "@/components/AlertSave";
 
@@ -21,6 +23,7 @@ import {
 } from "@tabler/icons-react";
 
 interface UpdateInfo {
+	update: Update;
 	body: string;
 	version: string;
 	date: string;
@@ -28,22 +31,24 @@ interface UpdateInfo {
 
 const UpdaterModal = () => {
 	const [updateInfo, setUpdateInfo] = useState<UpdateInfo | null>(null);
-	const [isInstalling, setIsInstalling] = useState(false);
 	const [installError, setInstallError] = useState(false);
+	const [isDownloading, setIsDownloading] = useState<number | null>(null);
 	const updateChecked = useRef(false);
 
 	const checkUpdateState = async () => {
 		try {
-			const { shouldUpdate, manifest } = await checkUpdate();
-			if (shouldUpdate) {
-				const splitDate = manifest?.date!.split(" ")[0];
+			const update = await checkUpdate();
+
+			if (update) {
+				const splitDate = update.date;
 				if (!splitDate) return;
 
 				const date = new Date(splitDate);
 
 				setUpdateInfo({
-					body: manifest?.body,
-					version: manifest?.version,
+					update: update,
+					body: update.body!,
+					version: update.version,
 					date: date.toLocaleDateString(),
 				});
 			}
@@ -53,21 +58,62 @@ const UpdaterModal = () => {
 	};
 
 	const setIsOpen = (open: boolean) => {
-		if (!open && !isInstalling) {
+		if (!open && (isDownloading === null || installError)) {
 			setUpdateInfo(null);
 		}
 	};
 
+	const getDownloadPercentage = (
+		contentLength: number,
+		downloaded: number
+	): number => {
+		if (contentLength === 0) return 0;
+		const percentage = (downloaded / contentLength) * 100;
+
+		return Math.round(percentage);
+	};
+
 	const onClickUpdate = async () => {
 		if (installError) setInstallError(false);
-		setIsInstalling(true);
 
 		try {
-			await installUpdate();
-			setIsInstalling(false);
+			if (!updateInfo) return;
+			const update = updateInfo.update;
+
+			let downloaded = 0;
+			let contentLength = 0;
+			let persentageDownloaded = 0;
+
+			setIsDownloading(0);
+			await update.downloadAndInstall((event) => {
+				switch (event.event) {
+					case "Started":
+						contentLength = event.data.contentLength!;
+						break;
+					case "Progress": {
+						downloaded += event.data.chunkLength;
+						const persentageCal = getDownloadPercentage(
+							contentLength,
+							downloaded
+						);
+
+						if (persentageDownloaded === persentageCal) {
+							break;
+						}
+
+						persentageDownloaded = persentageCal;
+						setIsDownloading(persentageCal);
+						break;
+					}
+					case "Finished":
+						setIsDownloading(null);
+						break;
+				}
+			});
+
 			await relaunch();
 		} catch {
-			setIsInstalling(false);
+			setIsDownloading(null);
 			setInstallError(true);
 		}
 	};
@@ -126,10 +172,23 @@ const UpdaterModal = () => {
 									error={installError}
 									show={installError}
 								/>
+								<Progress
+									aria-label="Downloading..."
+									size="md"
+									value={isDownloading || 0}
+									color="success"
+									showValueLabel={true}
+									className={classNames(
+										"max-w-md",
+										isDownloading ? "" : "hidden"
+									)}
+								/>
 							</ModalBody>
 							<ModalFooter className="items-center justify-center gap-1">
 								<Button
-									isDisabled={isInstalling}
+									isDisabled={
+										isDownloading ? true : isDownloading === null ? false : true
+									}
 									color="danger"
 									variant="light"
 									onPress={() => setIsOpen(false)}
@@ -137,7 +196,10 @@ const UpdaterModal = () => {
 									Cancel
 								</Button>
 								<Button
-									isLoading={isInstalling}
+									isLoading={
+										isDownloading ? true : isDownloading === null ? false : true
+									}
+									isDisabled={installError}
 									endContent={<IconDownload />}
 									color="success"
 									variant="ghost"

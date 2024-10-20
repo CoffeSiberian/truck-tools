@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { open } from "@tauri-apps/api/shell";
+import { open } from "@tauri-apps/plugin-shell";
 import {
 	Modal,
 	ModalContent,
