@@ -12,7 +12,7 @@ permissions:
 
 env:
     APP_NAME: Truck Tools
-    APP_BUILD_TARGET: x64-setup
+    APP_BUILD_TARGET: x64_en-US
 
 jobs:
     build_windows:
