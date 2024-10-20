@@ -45,17 +45,17 @@ jobs:
             - name: Build app
               run: npm run tauri build
 
-            - name: Upload artifact NSIS
+            - name: Upload artifact MSI
               uses: actions/upload-artifact@v4
               with:
-                  name: ${{ env.FILE_NAME }}.exe
-                  path: src-tauri/target/release/bundle/nsis/${{ env.FILE_NAME }}.exe
+                  name: ${{ env.FILE_NAME }}.msi
+                  path: src-tauri/target/release/bundle/msi/${{ env.FILE_NAME }}.msi
 
-            - name: Upload artifact NSIS SIG
+            - name: Upload artifact MSI SIG
               uses: actions/upload-artifact@v4
               with:
-                  name: ${{ env.FILE_NAME }}.exe.sig
-                  path: src-tauri/target/release/bundle/nsis/${{ env.FILE_NAME }}.exe.sig
+                  name: ${{ env.FILE_NAME }}.msi.sig
+                  path: src-tauri/target/release/bundle/msi/${{ env.FILE_NAME }}.msi.sig
 
     upload_release:
         runs-on: ubuntu-latest
@@ -77,23 +77,23 @@ jobs:
             - name: Set FILE_NAME_W_S
               run: echo "FILE_NAME_W_S=${{ env.APP_NAME_W_S }}_${{ env.APP_VERSION }}_${{ env.APP_BUILD_TARGET }}" >> $GITHUB_ENV
 
-            - name: Download artifact NSIS
+            - name: Download artifact MSI
               uses: actions/download-artifact@v4
               with:
-                  name: ${{ env.FILE_NAME }}.exe
+                  name: ${{ env.FILE_NAME }}.msi
 
-            - name: Rename artifact NSIS
+            - name: Rename artifact MSI
               run: |
-                  mv "${{ env.FILE_NAME }}.exe" "${{ env.FILE_NAME_W_S }}.exe"
+                  mv "${{ env.FILE_NAME }}.msi" "${{ env.FILE_NAME_W_S }}.msi"
 
-            - name: Download artifact NSIS SIG
+            - name: Download artifact MSI SIG
               uses: actions/download-artifact@v4
               with:
-                  name: ${{ env.FILE_NAME }}.exe.sig
+                  name: ${{ env.FILE_NAME }}.msi.sig
 
-            - name: Rename artifact NSIS SIG
+            - name: Rename artifact MSI SIG
               run: |
-                  mv "${{ env.FILE_NAME }}.exe.sig" "${{ env.FILE_NAME_W_S }}.exe.sig"
+                  mv "${{ env.FILE_NAME }}.msi.sig" "${{ env.FILE_NAME_W_S }}.msi.sig"
 
             - name: Release
               uses: softprops/action-gh-release@v2
@@ -102,5 +102,5 @@ jobs:
                   tag_name: ${{ env.APP_VERSION }}
                   draft: true
                   files: |
-                      ${{ env.FILE_NAME_W_S }}.exe
-                      ${{ env.FILE_NAME_W_S }}.exe.sig
+                      ${{ env.FILE_NAME_W_S }}.msi
+                      ${{ env.FILE_NAME_W_S }}.msi.sig
