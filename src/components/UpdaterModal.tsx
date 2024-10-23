@@ -168,7 +168,7 @@ const UpdaterModal = () => {
 									</p>
 								</div>
 								<AlertSave
-									message="Installation failed. Retry Update"
+									message="Installation failed. Try again later"
 									error={installError}
 									show={installError}
 								/>

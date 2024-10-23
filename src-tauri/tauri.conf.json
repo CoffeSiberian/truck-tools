@@ -31,6 +31,7 @@
 				"installMode": "passive"
 			},
 			"endpoints": [
+				"https://updater.siberiancoffe.dev/",
 				"https://raw.githubusercontent.com/CoffeSiberian/truck-tools/main/src-tauri/updater.json"
 			]
 		}
