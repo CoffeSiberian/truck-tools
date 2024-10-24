@@ -74,6 +74,7 @@ const SetAllCitiesStatus = () => {
 				backdrop="blur"
 				isOpen={isOpen}
 				onOpenChange={onOpenChange}
+				shouldBlockScroll={false}
 			>
 				<ModalContent>
 					{(onClose) => (

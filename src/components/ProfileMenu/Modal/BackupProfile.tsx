@@ -99,6 +99,7 @@ const BackupProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 				if (isLoading) return;
 				onOpenChange();
 			}}
+			shouldBlockScroll={false}
 		>
 			<ModalContent>
 				{(onClose) => (

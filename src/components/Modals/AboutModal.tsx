@@ -30,6 +30,7 @@ const AboutModal: FC<AboutModalProps> = ({ isOpen, onOpenChange }) => {
 			backdrop="blur"
 			isOpen={isOpen}
 			onOpenChange={() => onOpenChange()}
+			shouldBlockScroll={false}
 		>
 			<ModalContent>
 				{() => (

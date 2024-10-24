@@ -74,6 +74,7 @@ const SetGarageStatus = () => {
 				backdrop="blur"
 				isOpen={isOpen}
 				onOpenChange={onOpenChange}
+				shouldBlockScroll={false}
 			>
 				<ModalContent>
 					{(onClose) => (

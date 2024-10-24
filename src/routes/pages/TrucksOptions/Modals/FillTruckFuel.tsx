@@ -63,6 +63,7 @@ const FillTruckFuel = () => {
 				backdrop="blur"
 				isOpen={isOpen}
 				onOpenChange={onOpenChange}
+				shouldBlockScroll={false}
 			>
 				<ModalContent>
 					{(onClose) => (
