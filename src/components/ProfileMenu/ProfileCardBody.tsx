@@ -12,7 +12,7 @@ const ProfileCardBody = () => {
 	const { reloadProfiles } = useContext(ProfileContex);
 
 	return (
-		<>
+		<div className="flex flex-row content-between items-center">
 			<RenderProfile />
 			<div className="flex w-full flex-nowrap items-center gap-2">
 				<ListProfiles />
@@ -21,7 +21,7 @@ const ProfileCardBody = () => {
 					<IconReload stroke={2} />
 				</Button>
 			</div>
-		</>
+		</div>
 	);
 };
 

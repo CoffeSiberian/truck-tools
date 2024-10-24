@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useRef } from "react";
+import { createContext, useState, useEffect, useCallback, useRef } from "react";
 import { readProfileNames, getListSaves } from "@/utils/fileEdit";
 
 // types
@@ -29,7 +29,7 @@ export const ProfileContexInfo = ({ children }: ProviderProps) => {
 	const [isProfilesLoading, setIsProfilesLoading] = useState<boolean>(false);
 	const [profilesNotFound, setProfilesNotFound] = useState<boolean>(false);
 
-	const loadDirectory = async () => {
+	const loadDirectory = useCallback(async () => {
 		setIsProfilesLoading(true);
 		const prof = await readProfileNames();
 		if (prof.length === 0) {
@@ -37,9 +37,11 @@ export const ProfileContexInfo = ({ children }: ProviderProps) => {
 			setIsProfilesLoading(false);
 			return;
 		}
+		if (profilesNotFound) setProfilesNotFound(false);
+
 		setIsProfilesLoading(false);
 		setProfilesList(prof);
-	};
+	}, [profilesNotFound]);
 
 	const reloadProfiles = async () => {
 		setSelectedSave(undefined);
@@ -77,7 +79,7 @@ export const ProfileContexInfo = ({ children }: ProviderProps) => {
 			loaded.current = true;
 			loadDirectory();
 		}
-	}, []);
+	}, [loadDirectory]);
 
 	return (
 		<ProfileContex.Provider

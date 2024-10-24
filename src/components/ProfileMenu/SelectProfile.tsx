@@ -3,12 +3,13 @@ import { ProfileContex } from "@/hooks/useProfileContex";
 import { Card, CardBody, Chip } from "@nextui-org/react";
 import classNames from "classnames";
 import ProfileCardBody from "@/components/ProfileMenu/ProfileCardBody";
+import ProfileError from "@/components/ProfileMenu/ProfileError";
 
 // icons
 import { IconAlertTriangle } from "@tabler/icons-react";
 
 const SelectProfile = () => {
-	const { selectedSave } = useContext(ProfileContex);
+	const { selectedSave, profilesNotFound } = useContext(ProfileContex);
 
 	return (
 		<div
@@ -17,7 +18,7 @@ const SelectProfile = () => {
 				selectedSave ? "opacity-70" : "opacity-100"
 			)}
 		>
-			{!selectedSave && (
+			{!selectedSave && !profilesNotFound && (
 				<Chip
 					className="opacity-100"
 					startContent={<IconAlertTriangle stroke={1.5} />}
@@ -26,8 +27,9 @@ const SelectProfile = () => {
 					<b>First select your profile and save</b>
 				</Chip>
 			)}
+			{profilesNotFound && <ProfileError />}
 			<Card className="flex w-full max-w-4xl">
-				<CardBody className="flex flex-row content-between items-center p-1">
+				<CardBody className="px-4 py-2">
 					<ProfileCardBody />
 				</CardBody>
 			</Card>
