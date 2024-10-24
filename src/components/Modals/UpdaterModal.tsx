@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback, useContext } from "react";
+import { DarkModeContex } from "@/hooks/useDarkModeContex";
 import classNames from "classnames";
 import { check as checkUpdate, Update } from "@tauri-apps/plugin-updater";
 import { relaunch } from "@tauri-apps/plugin-process";
@@ -13,6 +14,7 @@ import {
 	Chip,
 	Progress,
 } from "@nextui-org/react";
+import { format as formatDate } from "@formkit/tempo";
 import AlertSave from "@/components/AlertSave";
 
 // icons
@@ -30,32 +32,53 @@ interface UpdateInfo {
 }
 
 const UpdaterModal = () => {
+	const { darkMode } = useContext(DarkModeContex);
+
 	const [updateInfo, setUpdateInfo] = useState<UpdateInfo | null>(null);
 	const [installError, setInstallError] = useState(false);
 	const [isDownloading, setIsDownloading] = useState<number | null>(null);
 	const updateChecked = useRef(false);
 
-	const checkUpdateState = async () => {
+	const getDate = (date: string): string => {
+		try {
+			const dateSplit = date.split(" ");
+			const timeZoneSplit = dateSplit[2].split(":");
+
+			const dateC = dateSplit[0];
+			const time = dateSplit[1].replace(".0", "");
+			const timeZone = `${timeZoneSplit[0]}:${timeZoneSplit[1]}`;
+
+			const completeDate = `${dateC}T${time}${timeZone}`;
+
+			return formatDate(completeDate, {
+				date: "medium",
+				time: "short",
+			});
+		} catch {
+			return "";
+		}
+	};
+
+	const checkUpdateState = useCallback(async () => {
 		try {
 			const update = await checkUpdate();
 
 			if (update) {
-				const splitDate = update.date;
-				if (!splitDate) return;
+				if (!update.date) return;
 
-				const date = new Date(splitDate);
+				const date = getDate(update.date);
 
 				setUpdateInfo({
 					update: update,
 					body: update.body!,
 					version: update.version,
-					date: date.toLocaleDateString(),
+					date: date,
 				});
 			}
 		} catch {
 			return;
 		}
-	};
+	}, []);
 
 	const setIsOpen = (open: boolean) => {
 		if (!open && (isDownloading === null || installError)) {
@@ -123,7 +146,7 @@ const UpdaterModal = () => {
 			updateChecked.current = true;
 			checkUpdateState();
 		}
-	}, []);
+	}, [checkUpdateState]);
 
 	return (
 		<>
@@ -144,20 +167,23 @@ const UpdaterModal = () => {
 								<div className="mb-2 mt-2 flex w-full flex-col gap-2">
 									<div className="flex justify-center gap-5">
 										<Chip
-											color="primary"
+											color="secondary"
 											radius="sm"
-											startContent={<IconCalendarWeek />}
-											variant="bordered"
+											startContent={<IconCalendarWeek stroke={1.6} />}
+											variant="solid"
 										>
-											{updateInfo?.date}
+											<b>{updateInfo?.date}</b>
 										</Chip>
 										<Chip
-											color="success"
+											className={classNames(
+												"text-white",
+												darkMode ? "bg-fuchsia-600" : "bg-fuchsia-500"
+											)}
 											radius="sm"
-											startContent={<IconBrandWindows />}
-											variant="bordered"
+											startContent={<IconBrandWindows stroke={1.6} />}
+											variant="solid"
 										>
-											Version: {updateInfo?.version}
+											Version: <b>{updateInfo?.version}</b>
 										</Chip>
 									</div>
 									<h4>
