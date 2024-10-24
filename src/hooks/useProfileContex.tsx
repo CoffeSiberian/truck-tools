@@ -26,9 +26,18 @@ export const ProfileContexInfo = ({ children }: ProviderProps) => {
 	);
 
 	const [isSavesLoading, setIsSavesLoading] = useState<boolean>(false);
+	const [isProfilesLoading, setIsProfilesLoading] = useState<boolean>(false);
+	const [profilesNotFound, setProfilesNotFound] = useState<boolean>(false);
 
 	const loadDirectory = async () => {
+		setIsProfilesLoading(true);
 		const prof = await readProfileNames();
+		if (prof.length === 0) {
+			setProfilesNotFound(true);
+			setIsProfilesLoading(false);
+			return;
+		}
+		setIsProfilesLoading(false);
 		setProfilesList(prof);
 	};
 
@@ -77,6 +86,8 @@ export const ProfileContexInfo = ({ children }: ProviderProps) => {
 				selectedSave: selectedSave,
 				listProfiles: ProfilesList,
 				isSavesLoading: isSavesLoading,
+				isProfilesLoading: isProfilesLoading,
+				profilesNotFound: profilesNotFound,
 				setProfile: setSelectedProfile,
 				setSave: setSelectedSave,
 				reloadProfiles: reloadProfiles,

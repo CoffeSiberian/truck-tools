@@ -11,6 +11,7 @@ import { ProfileWithoutSaves } from "@/types/SaveGameTypes";
 import { ProfileTypesContext } from "@/types/ContexTypes";
 
 const ListProfilePrimeRe: FC<ProfileTypesContext> = ({
+	isProfilesLoading,
 	listProfiles,
 	selectedProfile,
 	setProfile,
@@ -66,7 +67,7 @@ const ListProfilePrimeRe: FC<ProfileTypesContext> = ({
 			value={selectedProfile}
 			onChange={(e) => onClickProfile(e.value.hex)}
 			options={listProfiles}
-			loading={listProfiles.length === 0}
+			loading={isProfilesLoading}
 			disabled={listProfiles.length === 0}
 			itemTemplate={profileListTemplate}
 			valueTemplate={selectedProfileTemplate}

@@ -1,16 +1,14 @@
 import { useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
-import { Card, CardBody, Chip, Button } from "@nextui-org/react";
+import { Card, CardBody, Chip } from "@nextui-org/react";
 import classNames from "classnames";
-import ListProfiles from "@/components/ProfileMenu/ListProfiles";
-import ListSaves from "@/components/ProfileMenu/ListSaves";
-import RenderProfile from "@/components/ProfileMenu/RenderProfile";
+import ProfileCardBody from "@/components/ProfileMenu/ProfileCardBody";
 
 // icons
-import { IconReload, IconAlertTriangle } from "@tabler/icons-react";
+import { IconAlertTriangle } from "@tabler/icons-react";
 
 const SelectProfile = () => {
-	const { selectedSave, reloadProfiles } = useContext(ProfileContex);
+	const { selectedSave } = useContext(ProfileContex);
 
 	return (
 		<div
@@ -30,14 +28,7 @@ const SelectProfile = () => {
 			)}
 			<Card className="flex w-full max-w-4xl">
 				<CardBody className="flex flex-row content-between items-center p-1">
-					<RenderProfile />
-					<div className="flex w-full flex-nowrap items-center gap-2">
-						<ListProfiles />
-						<ListSaves />
-						<Button onPress={() => reloadProfiles()} isIconOnly>
-							<IconReload stroke={2} />
-						</Button>
-					</div>
+					<ProfileCardBody />
 				</CardBody>
 			</Card>
 		</div>
