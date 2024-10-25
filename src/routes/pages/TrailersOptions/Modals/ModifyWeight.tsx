@@ -93,7 +93,7 @@ const ModifyWeight = () => {
 									className="mt-1"
 									startContent={<IconWeight />}
 									isInvalid={Weight === ""}
-									label="Weight"
+									label="Weight in kg"
 									placeholder="Enter weight in kg"
 									value={Weight}
 									onValueChange={setWeightOnlyNumbers}

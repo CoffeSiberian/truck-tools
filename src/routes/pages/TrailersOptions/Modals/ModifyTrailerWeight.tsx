@@ -120,14 +120,14 @@ const ModifyTrailerWeight = () => {
 									className="mt-1"
 									startContent={<IconWeight />}
 									isInvalid={TrailerWeight.chassisMass === ""}
-									label="Chassis Mass"
+									label="Chassis Mass in kg"
 									placeholder="Enter weight in kg"
 									value={TrailerWeight.chassisMass}
 									onValueChange={(value) => setchassisMassOnlyNumbers(value)}
 								/>
 								<Input
 									startContent={<IconWeight />}
-									label="Body Mass"
+									label="Body Mass in kg"
 									isInvalid={TrailerWeight.bodyMass === ""}
 									placeholder="Enter weight in kg"
 									value={TrailerWeight.bodyMass}

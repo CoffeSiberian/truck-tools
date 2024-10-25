@@ -39,7 +39,7 @@ const ProfileError = () => {
 					</p>
 					<div className="flex gap-5">
 						<Button
-							onPress={() => open("https://i.imgur.com/hntLIzH.png")}
+							onPress={() => open("https://imgur.com/lVbgbgH")}
 							size="sm"
 							color="success"
 							endContent={<IconHelp />}
@@ -47,7 +47,7 @@ const ProfileError = () => {
 							<b>How to disable Steam Cloud</b>
 						</Button>
 						<Button
-							onPress={() => open("https://youtu.be/uQWG16hTAX0")}
+							onPress={() => open("https://youtu.be/e2aYdREZX4M")}
 							size="sm"
 							color="default"
 							endContent={<IconBrandYoutube />}
