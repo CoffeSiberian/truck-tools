@@ -1,11 +1,11 @@
 {
-	"version": "v0.4.9",
-	"notes": "- New functionality that allows you to save your truck and trailer license plates locally\n\n- A new button to reset the infinite fuel (located in the same place where this function is applied)\n\n- Warning message to disable “Realistic fuel consumption” in “Infinite fuel” functionality",
-	"pub_date": "2024-09-28T15:00:00-03:00",
+	"version": "v0.5.0",
+	"notes": "- Fixed a bug that prevented to unlock trailers (some cases not all)\n\n- A warning message will now be displayed if no profiles are found along with information on how to fix this problem\n\n- Added some video tutorials to make it easier to use options that often cause confusion\n\n- Updated the framework to Tauri v2",
+	"pub_date": "2024-10-25T18:00:00-03:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmVHOSs3SENOdkdxQTlDdVo4SUh3Z05HVXhZSlpSV2FFWW1mODJHOEF2KzN4ZlNNSVhkUnAxSlhmUXV5UXJCaFEvaHNrZTF4L25WMWR5QXdvOUlSY1FjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzI3NTQ3Mzg1CWZpbGU6VHJ1Y2sgVG9vbHNfMC40LjlfeDY0X2VuLVVTLm1zaS56aXAKV0k0SEtvL0ZZd2I0SzRsbGhhZ3RKR3htVXZKRzJSTWwwY1JuNzYzRndaQi9KWWZreGxZek9LWW9rWXlQOUk1eVQ1ZzRhWUo4cEpodUs4RWxjbXVqQ3c9PQo=",
-			"url": "https://github.com/CoffeSiberian/truck-tools/releases/download/0.4.9/Truck_Tools_0.4.9_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlg2c3plSWdLeWR0SlJGRDAya05JanFhTXRCUWpuWXMvWHBnZ3lMK2J2ZFk4STlwYnlqaFhab1JaQnBEdnAvWnExUGM2UzZHT0xtNzN3MzYwWEJRSHdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzI5ODkyMzQ5CWZpbGU6VHJ1Y2sgVG9vbHNfMC41LjBfeDY0X2VuLVVTLm1zaQpVMm9EWHp2RlFwSUNiNGhSRlhqNVM0U0Q2M1ExaDJ4d2FhUVhSTzdVTVQ3R3lTV1g5UlI5VkdVbXYwbkpJb29OQXZyNmV5NjJndlBZRkFKNk5UV2dDZz09Cg==",
+			"url": "https://updater.siberiancoffe.dev/file"
 		}
 	}
 }
