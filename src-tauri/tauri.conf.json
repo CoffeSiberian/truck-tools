@@ -22,7 +22,7 @@
 	},
 	"productName": "Truck Tools",
 	"mainBinaryName": "Truck Tools",
-	"version": "0.4.9",
+	"version": "0.5.0",
 	"identifier": "com.trucktools.dev",
 	"plugins": {
 		"updater": {
