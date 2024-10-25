@@ -4,6 +4,7 @@ use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_trailers::VecTrailersId;
 
 const COUNTRY_VALIDITY: &str = " country_validity: 0";
+const COUNTRY_VALIDITY_NULL: &str = " source_name: null";
 
 fn get_vec_trailers(
     arr_val: &Vec<String>,
@@ -303,6 +304,7 @@ pub fn set_remove_trailer_restricted_areas(
 
     let mut index_start: usize = 0;
     let mut index_end: usize = 0;
+    let mut index_source_name: usize = 0;
 
     for (i, item) in arr_val_clone.iter().enumerate().skip(index) {
         if index_start == 0 && item.contains(" country_validity:") {
@@ -313,15 +315,20 @@ pub fn set_remove_trailer_restricted_areas(
             index_end = i;
         }
 
+        if item.contains(" source_name:") {
+            index_source_name = i;
+        }
+
         if item == "}" {
             break;
         }
     }
 
-    if index_start == 0 || index_end == 0 {
+    if index_start == 0 || index_end == 0 || index_source_name == 0 {
         return None;
     }
 
+    arr_val_clone[index_source_name] = COUNTRY_VALIDITY_NULL.to_string();
     arr_val_clone.drain(index_start..index_end + 1);
     arr_val_clone[index_start] = COUNTRY_VALIDITY.to_string();
 
