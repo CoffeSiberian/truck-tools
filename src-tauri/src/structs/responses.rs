@@ -1,6 +1,6 @@
 use super::vec_save_games::VecProfileDir;
 use super::vec_save_games::VecSaveGames;
-use super::vec_trucks::{Engine, Transmission};
+use super::vec_trucks::Models;
 use serde::Serialize;
 
 #[derive(Serialize)]
@@ -21,15 +21,9 @@ pub struct SaveGameCountResponse {
 }
 
 #[derive(Serialize)]
-pub struct TruckEnginesResponse {
+pub struct TruckBrandModelsResponse {
     pub res: bool,
-    pub engines: Vec<Engine>,
-}
-
-#[derive(Serialize)]
-pub struct TruckTransmissionResponse {
-    pub res: bool,
-    pub transmission: Vec<Transmission>,
+    pub models: Vec<Models>,
 }
 
 #[derive(Serialize)]
