@@ -1,0 +1,2322 @@
+{
+	"mercedes": [
+		{
+			"brand": "mercedes",
+			"model": "actros",
+			"engines": [
+				{
+					"name": "OM 541 V6 BlueTec5 235",
+					"cv": "320",
+					"nm": "1650",
+					"code": "/def/vehicle/truck/mercedes.actros/engine/1832ls.sii"
+				},
+				{
+					"name": "OM 541 V6 BlueTec5 265",
+					"cv": "360",
+					"nm": "1850",
+					"code": "/def/vehicle/truck/mercedes.actros/engine/1836ls.sii"
+				},
+				{
+					"name": "OM 541 V6 BlueTec5 300",
+					"cv": "408",
+					"nm": "2000",
+					"code": "/def/vehicle/truck/mercedes.actros/engine/1841ls.sii"
+				},
+				{
+					"name": "OM 541 V6 BlueTec5 320",
+					"cv": "435",
+					"nm": "2100",
+					"code": "/def/vehicle/truck/mercedes.actros/engine/1844ls.sii"
+				},
+				{
+					"name": "OM 541 V6 BlueTec5 335",
+					"cv": "456",
+					"nm": "2200",
+					"code": "/def/vehicle/truck/mercedes.actros/engine/1846ls.sii"
+				},
+				{
+					"name": "OM 541 V6 BlueTec5 350",
+					"cv": "476",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/mercedes.actros/engine/1848ls.sii"
+				},
+				{
+					"name": "OM 542 V8 BlueTec5 375",
+					"cv": "510",
+					"nm": "2400",
+					"code": "/def/vehicle/truck/mercedes.actros/engine/1851ls.sii"
+				},
+				{
+					"name": "OM 542 V8 BlueTec5 405",
+					"cv": "551",
+					"nm": "2600",
+					"code": "/def/vehicle/truck/mercedes.actros/engine/1855ls.sii"
+				},
+				{
+					"name": "OM 542 V8 BlueTec5 440",
+					"cv": "598",
+					"nm": "2800",
+					"code": "/def/vehicle/truck/mercedes.actros/engine/1860ls.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "PowerShift G281-12",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.93 - 1.0",
+					"code": "/def/vehicle/truck/mercedes.actros/transmission/12_speed.sii"
+				},
+				{
+					"name": "PowerShift G330-12",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.639 - 0.775",
+					"code": "/def/vehicle/truck/mercedes.actros/transmission/12_speed_over.sii"
+				},
+				{
+					"name": "PowerShift G281-12 R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "14.93 - 1.0",
+					"code": "/def/vehicle/truck/mercedes.actros/transmission/12_speed_ret.sii"
+				},
+				{
+					"name": "PowerShift G330-12 R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "11.639 - 0.775",
+					"code": "/def/vehicle/truck/mercedes.actros/transmission/12_speed_ret_over.sii"
+				},
+				{
+					"name": "Allison 4500",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/mercedes.actros/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/mercedes.actros/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "PowerShift G280-16",
+					"speeds": "16",
+					"retarder": false,
+					"ratio": "11.722 - 0.687",
+					"code": "/def/vehicle/truck/mercedes.actros/transmission/g280_16.sii"
+				},
+				{
+					"name": "PowerShift G280-16 R",
+					"speeds": "16",
+					"retarder": true,
+					"ratio": "11.722 - 0.687",
+					"code": "/def/vehicle/truck/mercedes.actros/transmission/g280_16_r.sii"
+				}
+			]
+		},
+		{
+			"brand": "mercedes",
+			"model": "actros2014",
+			"engines": [
+				{
+					"name": "OM 471 Euro VI 310",
+					"cv": "421",
+					"nm": "2100",
+					"code": "/def/vehicle/truck/mercedes.actros2014/engine/engine_1842.sii"
+				},
+				{
+					"name": "OM 471 Euro VI 330",
+					"cv": "449",
+					"nm": "2200",
+					"code": "/def/vehicle/truck/mercedes.actros2014/engine/engine_1845.sii"
+				},
+				{
+					"name": "OM 471 Euro VI 350",
+					"cv": "476",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/mercedes.actros2014/engine/engine_1848.sii"
+				},
+				{
+					"name": "OM 471 Euro VI 375",
+					"cv": "510",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/mercedes.actros2014/engine/engine_1851.sii"
+				},
+				{
+					"name": "OM 473 Euro VI 380",
+					"cv": "517",
+					"nm": "2600",
+					"code": "/def/vehicle/truck/mercedes.actros2014/engine/engine_1852.sii"
+				},
+				{
+					"name": "OM 473 Euro VI 425",
+					"cv": "578",
+					"nm": "2800",
+					"code": "/def/vehicle/truck/mercedes.actros2014/engine/engine_1858.sii"
+				},
+				{
+					"name": "OM 473 Euro VI 460",
+					"cv": "625",
+					"nm": "3000",
+					"code": "/def/vehicle/truck/mercedes.actros2014/engine/engine_1863.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "PowerShift G281-12",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.93 - 1.0",
+					"code": "/def/vehicle/truck/mercedes.actros2014/transmission/12_speed.sii"
+				},
+				{
+					"name": "PowerShift G330-12",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.639 - 0.775",
+					"code": "/def/vehicle/truck/mercedes.actros2014/transmission/12_speed_over.sii"
+				},
+				{
+					"name": "PowerShift G281-12 R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "14.93 - 1.0",
+					"code": "/def/vehicle/truck/mercedes.actros2014/transmission/12_speed_ret.sii"
+				},
+				{
+					"name": "PowerShift G330-12 R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "11.639 - 0.775",
+					"code": "/def/vehicle/truck/mercedes.actros2014/transmission/12_speed_ret_over.sii"
+				},
+				{
+					"name": "Allison 4500",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/mercedes.actros2014/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/mercedes.actros2014/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "PowerShift G280-16",
+					"speeds": "16",
+					"retarder": false,
+					"ratio": "11.722 - 0.687",
+					"code": "/def/vehicle/truck/mercedes.actros2014/transmission/g280_16.sii"
+				},
+				{
+					"name": "PowerShift G280-16 R",
+					"speeds": "16",
+					"retarder": true,
+					"ratio": "11.722 - 0.687",
+					"code": "/def/vehicle/truck/mercedes.actros2014/transmission/g280_16_r.sii"
+				}
+			]
+		}
+	],
+	"daf": [
+		{
+			"brand": "daf",
+			"model": "2021",
+			"engines": [
+				{
+					"name": "MX-11 270",
+					"cv": "367",
+					"nm": "1950",
+					"code": "/def/vehicle/truck/daf.2021/engine/mx11_270.sii"
+				},
+				{
+					"name": "MX-11 300",
+					"cv": "408",
+					"nm": "2150",
+					"code": "/def/vehicle/truck/daf.2021/engine/mx11_300.sii"
+				},
+				{
+					"name": "MX-11 330",
+					"cv": "449",
+					"nm": "2350",
+					"code": "/def/vehicle/truck/daf.2021/engine/mx11_330.sii"
+				},
+				{
+					"name": "MX-13 315",
+					"cv": "428",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/daf.2021/engine/mx13_315.sii"
+				},
+				{
+					"name": "MX-13 355",
+					"cv": "483",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/daf.2021/engine/mx13_355.sii"
+				},
+				{
+					"name": "MX-13 390",
+					"cv": "530",
+					"nm": "2700",
+					"code": "/def/vehicle/truck/daf.2021/engine/mx13_390.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "ZF 12TX2420TD",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "16.69 - 1.0",
+					"code": "/def/vehicle/truck/daf.2021/transmission/zf_12tx2420td.sii"
+				},
+				{
+					"name": "ZF 12TX2421TD R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "16.69 - 1.0",
+					"code": "/def/vehicle/truck/daf.2021/transmission/zf_12tx2421td.sii"
+				},
+				{
+					"name": "ZF 12TX2610TO",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "12.92 - 0.77",
+					"code": "/def/vehicle/truck/daf.2021/transmission/zf_12tx2610to.sii"
+				},
+				{
+					"name": "ZF 12TX2611TO R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "12.92 - 0.77",
+					"code": "/def/vehicle/truck/daf.2021/transmission/zf_12tx2611to.sii"
+				},
+				{
+					"name": "ZF 16TX2640TO",
+					"speeds": "16",
+					"retarder": false,
+					"ratio": "14.68 - 0.82",
+					"code": "/def/vehicle/truck/daf.2021/transmission/zf_16tx2640to.sii"
+				},
+				{
+					"name": "ZF 16TX2641TO R",
+					"speeds": "16",
+					"retarder": true,
+					"ratio": "14.68 - 0.82",
+					"code": "/def/vehicle/truck/daf.2021/transmission/zf_16tx2641to.sii"
+				}
+			]
+		},
+		{
+			"brand": "daf",
+			"model": "xd",
+			"engines": [
+				{
+					"name": "MX-11 220",
+					"cv": "299",
+					"nm": "1450",
+					"code": "/def/vehicle/truck/daf.xd/engine/mx11_220.sii"
+				},
+				{
+					"name": "MX-11 251",
+					"cv": "341",
+					"nm": "1650",
+					"code": "/def/vehicle/truck/daf.xd/engine/mx11_251.sii"
+				},
+				{
+					"name": "MX-11 270",
+					"cv": "367",
+					"nm": "1950",
+					"code": "/def/vehicle/truck/daf.xd/engine/mx11_270.sii"
+				},
+				{
+					"name": "MX-11 300",
+					"cv": "408",
+					"nm": "2150",
+					"code": "/def/vehicle/truck/daf.xd/engine/mx11_300.sii"
+				},
+				{
+					"name": "MX-11 330",
+					"cv": "449",
+					"nm": "2350",
+					"code": "/def/vehicle/truck/daf.xd/engine/mx11_330.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "ZF 12TX2210TD",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "16.69 - 1.0",
+					"code": "/def/vehicle/truck/daf.xd/transmission/zf_12tx2210td.sii"
+				},
+				{
+					"name": "ZF 12TX2211TD R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "16.69 - 1.0",
+					"code": "/def/vehicle/truck/daf.xd/transmission/zf_12tx2211td.sii"
+				},
+				{
+					"name": "ZF 12TX2610TO",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "12.92 - 0.77",
+					"code": "/def/vehicle/truck/daf.xd/transmission/zf_12tx2610to.sii"
+				},
+				{
+					"name": "ZF 12TX2611TO R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "12.92 - 0.77",
+					"code": "/def/vehicle/truck/daf.xd/transmission/zf_12tx2611to.sii"
+				}
+			]
+		},
+		{
+			"brand": "daf",
+			"model": "xf",
+			"engines": [
+				{
+					"name": "PACCAR MX265",
+					"cv": "360",
+					"nm": "1775",
+					"code": "/def/vehicle/truck/daf.xf/engine/mx265.sii"
+				},
+				{
+					"name": "PACCAR MX300",
+					"cv": "410",
+					"nm": "2000",
+					"code": "/def/vehicle/truck/daf.xf/engine/mx300.sii"
+				},
+				{
+					"name": "PACCAR MX340",
+					"cv": "460",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/daf.xf/engine/mx340.sii"
+				},
+				{
+					"name": "PACCAR MX375",
+					"cv": "510",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/daf.xf/engine/mx375.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "ZF 12AS2330TD",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "15.86 - 1.0",
+					"code": "/def/vehicle/truck/daf.xf/transmission/12_speed.sii"
+				},
+				{
+					"name": "ZF 12AS2530TO",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "12.33 - 0.78",
+					"code": "/def/vehicle/truck/daf.xf/transmission/12_speed_over.sii"
+				},
+				{
+					"name": "ZF 12AS2331TD R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "15.86 - 1.0",
+					"code": "/def/vehicle/truck/daf.xf/transmission/12_speed_ret.sii"
+				},
+				{
+					"name": "ZF 12AS2531TO R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "12.33 - 0.78",
+					"code": "/def/vehicle/truck/daf.xf/transmission/12_speed_ret_over.sii"
+				},
+				{
+					"name": "Allison 4500",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/daf.xf/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/daf.xf/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "ZF 16AS2630TO",
+					"speeds": "16",
+					"retarder": false,
+					"ratio": "14.12 - 0.83",
+					"code": "/def/vehicle/truck/daf.xf/transmission/zf_16as2630to.sii"
+				},
+				{
+					"name": "ZF 16AS2631TO R",
+					"speeds": "16",
+					"retarder": true,
+					"ratio": "14.12 - 0.83",
+					"code": "/def/vehicle/truck/daf.xf/transmission/zf_16as2631to.sii"
+				}
+			]
+		},
+		{
+			"brand": "daf",
+			"model": "xf_euro6",
+			"engines": [
+				{
+					"name": "MX-11 270 Euro 6, 2017",
+					"cv": "370",
+					"nm": "1900",
+					"code": "/def/vehicle/truck/daf.xf_euro6/engine/mx11_270.sii"
+				},
+				{
+					"name": "MX-11 320 Euro 6",
+					"cv": "435",
+					"nm": "2100",
+					"code": "/def/vehicle/truck/daf.xf_euro6/engine/mx11_320.sii"
+				},
+				{
+					"name": "MX-11 330 Euro 6, 2017",
+					"cv": "450",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/daf.xf_euro6/engine/mx11_330.sii"
+				},
+				{
+					"name": "MX-13 303 Euro 6",
+					"cv": "410",
+					"nm": "2000",
+					"code": "/def/vehicle/truck/daf.xf_euro6/engine/mx13_303.sii"
+				},
+				{
+					"name": "MX-13 340 Euro 6",
+					"cv": "460",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/daf.xf_euro6/engine/mx13_340.sii"
+				},
+				{
+					"name": "MX-13 355 Euro 6, 2017",
+					"cv": "480",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/daf.xf_euro6/engine/mx13_355.sii"
+				},
+				{
+					"name": "MX-13 375 Euro 6",
+					"cv": "510",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/daf.xf_euro6/engine/mx13_375.sii"
+				},
+				{
+					"name": "MX-13 390 Euro 6, 2017",
+					"cv": "530",
+					"nm": "2600",
+					"code": "/def/vehicle/truck/daf.xf_euro6/engine/mx13_390.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "ZF 12AS2330TD",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "15.86 - 1.0",
+					"code": "/def/vehicle/truck/daf.xf_euro6/transmission/12_speed.sii"
+				},
+				{
+					"name": "ZF 12AS2530TO",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "12.33 - 0.78",
+					"code": "/def/vehicle/truck/daf.xf_euro6/transmission/12_speed_over.sii"
+				},
+				{
+					"name": "ZF 12AS2331TD R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "15.86 - 1.0",
+					"code": "/def/vehicle/truck/daf.xf_euro6/transmission/12_speed_ret.sii"
+				},
+				{
+					"name": "ZF 12AS2531TO R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "12.33 - 0.78",
+					"code": "/def/vehicle/truck/daf.xf_euro6/transmission/12_speed_ret_over.sii"
+				},
+				{
+					"name": "Allison 4500",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/daf.xf_euro6/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/daf.xf_euro6/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "ZF 12TX2420TD",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "16.69 - 1.0",
+					"code": "/def/vehicle/truck/daf.xf_euro6/transmission/zf_12tx2420td.sii"
+				},
+				{
+					"name": "ZF 12TX2421TD R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "16.69 - 1.0",
+					"code": "/def/vehicle/truck/daf.xf_euro6/transmission/zf_12tx2421td.sii"
+				},
+				{
+					"name": "ZF 12TX2610TO",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "12.92 - 0.77",
+					"code": "/def/vehicle/truck/daf.xf_euro6/transmission/zf_12tx2610to.sii"
+				},
+				{
+					"name": "ZF 12TX2611TO R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "12.92 - 0.77",
+					"code": "/def/vehicle/truck/daf.xf_euro6/transmission/zf_12tx2611to.sii"
+				},
+				{
+					"name": "ZF 16AS2630TO",
+					"speeds": "16",
+					"retarder": false,
+					"ratio": "14.12 - 0.83",
+					"code": "/def/vehicle/truck/daf.xf_euro6/transmission/zf_16as2630to.sii"
+				},
+				{
+					"name": "ZF 16AS2631TO R",
+					"speeds": "16",
+					"retarder": true,
+					"ratio": "14.12 - 0.83",
+					"code": "/def/vehicle/truck/daf.xf_euro6/transmission/zf_16as2631to.sii"
+				},
+				{
+					"name": "ZF 16TX2640TO",
+					"speeds": "16",
+					"retarder": false,
+					"ratio": "14.68 - 0.82",
+					"code": "/def/vehicle/truck/daf.xf_euro6/transmission/zf_16tx2640to.sii"
+				},
+				{
+					"name": "ZF 16TX2641TO R",
+					"speeds": "16",
+					"retarder": true,
+					"ratio": "14.68 - 0.82",
+					"code": "/def/vehicle/truck/daf.xf_euro6/transmission/zf_16tx2641to.sii"
+				}
+			]
+		}
+	],
+	"man": [
+		{
+			"brand": "man",
+			"model": "tgx",
+			"engines": [
+				{
+					"name": "D2066 235",
+					"cv": "320",
+					"nm": "1600",
+					"code": "/def/vehicle/truck/man.tgx/engine/d2066_235.sii"
+				},
+				{
+					"name": "D2066 265",
+					"cv": "360",
+					"nm": "1800",
+					"code": "/def/vehicle/truck/man.tgx/engine/d2066_265.sii"
+				},
+				{
+					"name": "D2066 294",
+					"cv": "400",
+					"nm": "1900",
+					"code": "/def/vehicle/truck/man.tgx/engine/d2066_294.sii"
+				},
+				{
+					"name": "D2676 324",
+					"cv": "440",
+					"nm": "2100",
+					"code": "/def/vehicle/truck/man.tgx/engine/d2676_324.sii"
+				},
+				{
+					"name": "D2676 353",
+					"cv": "480",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/man.tgx/engine/d2676_353.sii"
+				},
+				{
+					"name": "D2676 397",
+					"cv": "540",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/man.tgx/engine/d2676_397.sii"
+				},
+				{
+					"name": "D2868 500",
+					"cv": "680",
+					"nm": "3000",
+					"code": "/def/vehicle/truck/man.tgx/engine/d2868_500.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "ZF 12AS2330TD",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "15.86 - 1.0",
+					"code": "/def/vehicle/truck/man.tgx/transmission/12_speed.sii"
+				},
+				{
+					"name": "ZF 12AS3140TO",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "12.29 - 0.78",
+					"code": "/def/vehicle/truck/man.tgx/transmission/12_speed_over.sii"
+				},
+				{
+					"name": "ZF 12AS2331TD R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "15.86 - 1.0",
+					"code": "/def/vehicle/truck/man.tgx/transmission/12_speed_ret.sii"
+				},
+				{
+					"name": "ZF 12AS3141TO R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "12.29 - 0.78",
+					"code": "/def/vehicle/truck/man.tgx/transmission/12_speed_ret_over.sii"
+				},
+				{
+					"name": "Allison 4500",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/man.tgx/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/man.tgx/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "ZF 16AS2630TO",
+					"speeds": "16",
+					"retarder": false,
+					"ratio": "14.12 - 0.83",
+					"code": "/def/vehicle/truck/man.tgx/transmission/zf_16as2630to.sii"
+				},
+				{
+					"name": "ZF 16AS2631TO R",
+					"speeds": "16",
+					"retarder": true,
+					"ratio": "14.12 - 0.83",
+					"code": "/def/vehicle/truck/man.tgx/transmission/zf_16as2631to.sii"
+				}
+			]
+		},
+		{
+			"brand": "man",
+			"model": "tgx_2020",
+			"engines": [
+				{
+					"name": "D1556 LF09 243 Euro 6d",
+					"cv": "330",
+					"nm": "1600",
+					"code": "/def/vehicle/truck/man.tgx_2020/engine/d1556_243.sii"
+				},
+				{
+					"name": "D1556 LF08 265 Euro 6d",
+					"cv": "360",
+					"nm": "1700",
+					"code": "/def/vehicle/truck/man.tgx_2020/engine/d1556_265.sii"
+				},
+				{
+					"name": "D1556 LF07 294 Euro 6d",
+					"cv": "400",
+					"nm": "1800",
+					"code": "/def/vehicle/truck/man.tgx_2020/engine/d1556_294.sii"
+				},
+				{
+					"name": "D2676 LF80 316 Euro 6d",
+					"cv": "430",
+					"nm": "2200",
+					"code": "/def/vehicle/truck/man.tgx_2020/engine/d2676_316.sii"
+				},
+				{
+					"name": "D2676 LF79 346 Euro 6d",
+					"cv": "470",
+					"nm": "2400",
+					"code": "/def/vehicle/truck/man.tgx_2020/engine/d2676_346.sii"
+				},
+				{
+					"name": "D2676 LF78 375 Euro 6d",
+					"cv": "510",
+					"nm": "2600",
+					"code": "/def/vehicle/truck/man.tgx_2020/engine/d2676_375.sii"
+				},
+				{
+					"name": "D3876 LF12 397 Euro 6d",
+					"cv": "540",
+					"nm": "2700",
+					"code": "/def/vehicle/truck/man.tgx_2020/engine/d3876_397.sii"
+				},
+				{
+					"name": "D3876 LF11 427 Euro 6d",
+					"cv": "580",
+					"nm": "2900",
+					"code": "/def/vehicle/truck/man.tgx_2020/engine/d3876_427.sii"
+				},
+				{
+					"name": "D3876 LF10 471 Euro 6d",
+					"cv": "640",
+					"nm": "3000",
+					"code": "/def/vehicle/truck/man.tgx_2020/engine/d3876_471.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Allison 4500",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/man.tgx_2020/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/man.tgx_2020/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "TipMatic 12 22 DD",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "16.69 - 1.0",
+					"code": "/def/vehicle/truck/man.tgx_2020/transmission/zf_12as2330td.sii"
+				},
+				{
+					"name": "TipMatic 12 22 DD R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "16.69 - 1.0",
+					"code": "/def/vehicle/truck/man.tgx_2020/transmission/zf_12as2331td.sii"
+				},
+				{
+					"name": "TipMatic 12 30 OD",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "12.92 - 0.77",
+					"code": "/def/vehicle/truck/man.tgx_2020/transmission/zf_12as3140to.sii"
+				},
+				{
+					"name": "TipMatic 12 30 OD R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "12.92 - 0.77",
+					"code": "/def/vehicle/truck/man.tgx_2020/transmission/zf_12as3141to.sii"
+				},
+				{
+					"name": "TipMatic 14 30 OD",
+					"speeds": "14",
+					"retarder": false,
+					"ratio": "13.28 - 0.8",
+					"code": "/def/vehicle/truck/man.tgx_2020/transmission/zf_16as2630to.sii"
+				},
+				{
+					"name": "TipMatic 14 30 OD R",
+					"speeds": "14",
+					"retarder": true,
+					"ratio": "13.28 - 0.8",
+					"code": "/def/vehicle/truck/man.tgx_2020/transmission/zf_16as2631to.sii"
+				}
+			]
+		},
+		{
+			"brand": "man",
+			"model": "tgx_euro6",
+			"engines": [
+				{
+					"name": "D1556 LF09 243 Euro 6d",
+					"cv": "330",
+					"nm": "1600",
+					"code": "/def/vehicle/truck/man.tgx_euro6/engine/d1556_243.sii"
+				},
+				{
+					"name": "D1556 LF08 265 Euro 6d",
+					"cv": "360",
+					"nm": "1700",
+					"code": "/def/vehicle/truck/man.tgx_euro6/engine/d1556_265.sii"
+				},
+				{
+					"name": "D1556 LF07 294 Euro 6d",
+					"cv": "400",
+					"nm": "1800",
+					"code": "/def/vehicle/truck/man.tgx_euro6/engine/d1556_294.sii"
+				},
+				{
+					"name": "D2066 LF67 265 Euro 6",
+					"cv": "360",
+					"nm": "1800",
+					"code": "/def/vehicle/truck/man.tgx_euro6/engine/d2066_265.sii"
+				},
+				{
+					"name": "D2066 LF61 294 Euro 6",
+					"cv": "400",
+					"nm": "1900",
+					"code": "/def/vehicle/truck/man.tgx_euro6/engine/d2066_294.sii"
+				},
+				{
+					"name": "D2676 LF53 309 Euro 6c",
+					"cv": "420",
+					"nm": "2100",
+					"code": "/def/vehicle/truck/man.tgx_euro6/engine/d2676_309.sii"
+				},
+				{
+					"name": "D2676 LF26 324 Euro 6",
+					"cv": "440",
+					"nm": "2100",
+					"code": "/def/vehicle/truck/man.tgx_euro6/engine/d2676_324.sii"
+				},
+				{
+					"name": "D2676 LF52 338 Euro 6c",
+					"cv": "460",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/man.tgx_euro6/engine/d2676_338.sii"
+				},
+				{
+					"name": "D2676 LF25 353 Euro 6",
+					"cv": "480",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/man.tgx_euro6/engine/d2676_353.sii"
+				},
+				{
+					"name": "D2676 LF51 368 Euro 6c",
+					"cv": "500",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/man.tgx_euro6/engine/d2676_368.sii"
+				},
+				{
+					"name": "D3876 LF02 382 Euro 6",
+					"cv": "520",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/man.tgx_euro6/engine/d3876_382.sii"
+				},
+				{
+					"name": "D3876 LF08 397 Euro 6d",
+					"cv": "540",
+					"nm": "2700",
+					"code": "/def/vehicle/truck/man.tgx_euro6/engine/d3876_397.sii"
+				},
+				{
+					"name": "D3876 LF01 412 Euro 6",
+					"cv": "560",
+					"nm": "2700",
+					"code": "/def/vehicle/truck/man.tgx_euro6/engine/d3876_412.sii"
+				},
+				{
+					"name": "D3876 LF07 427 Euro 6d",
+					"cv": "580",
+					"nm": "2900",
+					"code": "/def/vehicle/truck/man.tgx_euro6/engine/d3876_427.sii"
+				},
+				{
+					"name": "D3876 LF03 471 Euro 6",
+					"cv": "640",
+					"nm": "3000",
+					"code": "/def/vehicle/truck/man.tgx_euro6/engine/d3876_471.sii"
+				},
+				{
+					"name": "D3876 LF09 471 Euro 6d",
+					"cv": "640",
+					"nm": "3000",
+					"code": "/def/vehicle/truck/man.tgx_euro6/engine/d3876_471a.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Allison 4500",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/man.tgx_euro6/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/man.tgx_euro6/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "TipMatic 12AS2330 DD",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "15.86 - 1.0",
+					"code": "/def/vehicle/truck/man.tgx_euro6/transmission/zf_12as2330td.sii"
+				},
+				{
+					"name": "TipMatic 12AS2331 DD R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "15.86 - 1.0",
+					"code": "/def/vehicle/truck/man.tgx_euro6/transmission/zf_12as2331td.sii"
+				},
+				{
+					"name": "TipMatic 12AS3140 OD",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "12.29 - 0.78",
+					"code": "/def/vehicle/truck/man.tgx_euro6/transmission/zf_12as3140to.sii"
+				},
+				{
+					"name": "TipMatic 12AS3141 OD R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "12.29 - 0.78",
+					"code": "/def/vehicle/truck/man.tgx_euro6/transmission/zf_12as3141to.sii"
+				},
+				{
+					"name": "ZF 16AS2630TO",
+					"speeds": "16",
+					"retarder": false,
+					"ratio": "14.12 - 0.83",
+					"code": "/def/vehicle/truck/man.tgx_euro6/transmission/zf_16as2630to.sii"
+				},
+				{
+					"name": "ZF 16AS2631TO R",
+					"speeds": "16",
+					"retarder": true,
+					"ratio": "14.12 - 0.83",
+					"code": "/def/vehicle/truck/man.tgx_euro6/transmission/zf_16as2631to.sii"
+				}
+			]
+		}
+	],
+	"renault": [
+		{
+			"brand": "renault",
+			"model": "etech_t",
+			"engines": [
+				{
+					"name": "330 kw",
+					"cv": "450",
+					"nm": "2400",
+					"code": "/def/vehicle/truck/renault.etech_t/engine/330kw.sii"
+				},
+				{
+					"name": "490 kw",
+					"cv": "666",
+					"nm": "2400",
+					"code": "/def/vehicle/truck/renault.etech_t/engine/490kw.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Optidriver AT2412F",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.94 - 1.0",
+					"code": "/def/vehicle/truck/renault.etech_t/transmission/at2412f.sii"
+				}
+			]
+		},
+		{
+			"brand": "renault",
+			"model": "magnum",
+			"engines": [
+				{
+					"name": "440DXi Euro5",
+					"cv": "440",
+					"nm": "2200",
+					"code": "/def/vehicle/truck/renault.magnum/engine/dxi13_440.sii"
+				},
+				{
+					"name": "480DXi Euro5",
+					"cv": "480",
+					"nm": "2400",
+					"code": "/def/vehicle/truck/renault.magnum/engine/dxi13_480.sii"
+				},
+				{
+					"name": "520DXi Euro5",
+					"cv": "520",
+					"nm": "2550",
+					"code": "/def/vehicle/truck/renault.magnum/engine/dxi13_520.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Optidriver AT2412D",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.94 - 1.0",
+					"code": "/def/vehicle/truck/renault.magnum/transmission/12_speed.sii"
+				},
+				{
+					"name": "Optidriver ATO2612D",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.73 - 0.78",
+					"code": "/def/vehicle/truck/renault.magnum/transmission/12_speed_over.sii"
+				},
+				{
+					"name": "Optidriver AT2412D R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "14.94 - 1.0",
+					"code": "/def/vehicle/truck/renault.magnum/transmission/12_speed_ret.sii"
+				},
+				{
+					"name": "Optidriver ATO2612D R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "11.73 - 0.78",
+					"code": "/def/vehicle/truck/renault.magnum/transmission/12_speed_ret_over.sii"
+				},
+				{
+					"name": "Allison 4500",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/renault.magnum/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/renault.magnum/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "ZF 16AS2630TO",
+					"speeds": "16",
+					"retarder": false,
+					"ratio": "14.12 - 0.83",
+					"code": "/def/vehicle/truck/renault.magnum/transmission/zf_16as2630to.sii"
+				},
+				{
+					"name": "ZF 16AS2631TO R",
+					"speeds": "16",
+					"retarder": true,
+					"ratio": "14.12 - 0.83",
+					"code": "/def/vehicle/truck/renault.magnum/transmission/zf_16as2631to.sii"
+				}
+			]
+		},
+		{
+			"brand": "renault",
+			"model": "premium",
+			"engines": [
+				{
+					"name": "380DXi Euro5",
+					"cv": "380",
+					"nm": "1800",
+					"code": "/def/vehicle/truck/renault.premium/engine/dxi11_380.sii"
+				},
+				{
+					"name": "430DXi Euro5",
+					"cv": "430",
+					"nm": "2040",
+					"code": "/def/vehicle/truck/renault.premium/engine/dxi11_430.sii"
+				},
+				{
+					"name": "460DXi Euro5",
+					"cv": "460",
+					"nm": "2200",
+					"code": "/def/vehicle/truck/renault.premium/engine/dxi11_460.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Optidriver AT2412D",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.94 - 1.0",
+					"code": "/def/vehicle/truck/renault.premium/transmission/12_speed.sii"
+				},
+				{
+					"name": "Optidriver ATO2612D",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.73 - 0.78",
+					"code": "/def/vehicle/truck/renault.premium/transmission/12_speed_over.sii"
+				},
+				{
+					"name": "Optidriver AT2412D R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "14.94 - 1.0",
+					"code": "/def/vehicle/truck/renault.premium/transmission/12_speed_ret.sii"
+				},
+				{
+					"name": "Optidriver ATO2612D R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "11.73 - 0.78",
+					"code": "/def/vehicle/truck/renault.premium/transmission/12_speed_ret_over.sii"
+				},
+				{
+					"name": "Allison 4500",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/renault.premium/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/renault.premium/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "ZF 16AS2630TO",
+					"speeds": "16",
+					"retarder": false,
+					"ratio": "14.12 - 0.83",
+					"code": "/def/vehicle/truck/renault.premium/transmission/zf_16as2630to.sii"
+				},
+				{
+					"name": "ZF 16AS2631TO R",
+					"speeds": "16",
+					"retarder": true,
+					"ratio": "14.12 - 0.83",
+					"code": "/def/vehicle/truck/renault.premium/transmission/zf_16as2631to.sii"
+				}
+			]
+		},
+		{
+			"brand": "renault",
+			"model": "t",
+			"engines": [
+				{
+					"name": "DTI 11 380 Euro 6",
+					"cv": "380",
+					"nm": "1800",
+					"code": "/def/vehicle/truck/renault.t/engine/dti11_380.sii"
+				},
+				{
+					"name": "DTI 11 430 Euro 6",
+					"cv": "430",
+					"nm": "2050",
+					"code": "/def/vehicle/truck/renault.t/engine/dti11_430.sii"
+				},
+				{
+					"name": "DTI 11 460 Euro 6",
+					"cv": "460",
+					"nm": "2200",
+					"code": "/def/vehicle/truck/renault.t/engine/dti11_460.sii"
+				},
+				{
+					"name": "DTI 13 440 Euro 6",
+					"cv": "440",
+					"nm": "2200",
+					"code": "/def/vehicle/truck/renault.t/engine/dti13_440.sii"
+				},
+				{
+					"name": "DTI 13 480 Euro 6",
+					"cv": "480",
+					"nm": "2400",
+					"code": "/def/vehicle/truck/renault.t/engine/dti13_480.sii"
+				},
+				{
+					"name": "DTI 13 520 Euro 6",
+					"cv": "520",
+					"nm": "2550",
+					"code": "/def/vehicle/truck/renault.t/engine/dti13_520.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Allison 4500",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/renault.t/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/renault.t/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "Optidriver AT2612F",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.94 - 1.0",
+					"code": "/def/vehicle/truck/renault.t/transmission/at2612f.sii"
+				},
+				{
+					"name": "Optidriver AT2612F R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "14.94 - 1.0",
+					"code": "/def/vehicle/truck/renault.t/transmission/at2612fr.sii"
+				},
+				{
+					"name": "Optidriver ATO2612F",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.73 - 0.79",
+					"code": "/def/vehicle/truck/renault.t/transmission/ato2612f.sii"
+				},
+				{
+					"name": "Optidriver ATO2612F R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "11.73 - 0.79",
+					"code": "/def/vehicle/truck/renault.t/transmission/ato2612fr.sii"
+				},
+				{
+					"name": "Optidriver Xtended ATO2614F",
+					"speeds": "14",
+					"retarder": false,
+					"ratio": "32.04 - 0.79",
+					"code": "/def/vehicle/truck/renault.t/transmission/ato2614f.sii"
+				},
+				{
+					"name": "Optidriver Xtended ATO2614F R",
+					"speeds": "14",
+					"retarder": true,
+					"ratio": "32.04 - 0.79",
+					"code": "/def/vehicle/truck/renault.t/transmission/ato2614fr.sii"
+				}
+			]
+		}
+	],
+	"scania": [
+		{
+			"brand": "scania",
+			"model": "r",
+			"engines": [
+				{
+					"name": "DC12 18 380 Euro 5",
+					"cv": "380",
+					"nm": "1900",
+					"code": "/def/vehicle/truck/scania.r/engine/dc12_380.sii"
+				},
+				{
+					"name": "DC12 15 420 Euro 5",
+					"cv": "420",
+					"nm": "2100",
+					"code": "/def/vehicle/truck/scania.r/engine/dc12_420.sii"
+				},
+				{
+					"name": "DC13 06 360 Euro 5",
+					"cv": "360",
+					"nm": "1850",
+					"code": "/def/vehicle/truck/scania.r/engine/dc13_360.sii"
+				},
+				{
+					"name": "DC13 05 400 Euro 5",
+					"cv": "400",
+					"nm": "2100",
+					"code": "/def/vehicle/truck/scania.r/engine/dc13_400.sii"
+				},
+				{
+					"name": "DC13 10 440 Euro 5",
+					"cv": "440",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/scania.r/engine/dc13_440.sii"
+				},
+				{
+					"name": "DC13 109 440 Euro 6",
+					"cv": "440",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/scania.r/engine/dc13_440_2.sii"
+				},
+				{
+					"name": "DC13 07 480 Euro 5",
+					"cv": "480",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/scania.r/engine/dc13_480.sii"
+				},
+				{
+					"name": "DC13 110 480 Euro 6",
+					"cv": "480",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/scania.r/engine/dc13_480_2.sii"
+				},
+				{
+					"name": "DC16 19 500 Euro 5 V8",
+					"cv": "500",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/scania.r/engine/dc16_500.sii"
+				},
+				{
+					"name": "DC16 18 560 Euro 5  V8",
+					"cv": "560",
+					"nm": "2700",
+					"code": "/def/vehicle/truck/scania.r/engine/dc16_560.sii"
+				},
+				{
+					"name": "DC16 17 620 Euro 5  V8",
+					"cv": "620",
+					"nm": "3000",
+					"code": "/def/vehicle/truck/scania.r/engine/dc16_620.sii"
+				},
+				{
+					"name": "DC16 21 730 Euro 5 EEV  V8",
+					"cv": "730",
+					"nm": "3500",
+					"code": "/def/vehicle/truck/scania.r/engine/dc16_730.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Opticruise GRS 905",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.32 - 1.0",
+					"code": "/def/vehicle/truck/scania.r/transmission/12_speed.sii"
+				},
+				{
+					"name": "Opticruise GRSO 905",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "9.164 - 0.8",
+					"code": "/def/vehicle/truck/scania.r/transmission/12_speed_over.sii"
+				},
+				{
+					"name": "Opticruise GRS 905R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "11.32 - 1.0",
+					"code": "/def/vehicle/truck/scania.r/transmission/12_speed_ret.sii"
+				},
+				{
+					"name": "Opticruise GRSO 905R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "9.164 - 0.8",
+					"code": "/def/vehicle/truck/scania.r/transmission/12_speed_ret_over.sii"
+				},
+				{
+					"name": "Scania GA867",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/scania.r/transmission/allison.sii"
+				},
+				{
+					"name": "Scania GA867 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/scania.r/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "Opticruise GRSO 925",
+					"speeds": "14",
+					"retarder": false,
+					"ratio": "13.26 - 0.8",
+					"code": "/def/vehicle/truck/scania.r/transmission/grso925.sii"
+				},
+				{
+					"name": "Opticruise GRSO 925R",
+					"speeds": "14",
+					"retarder": true,
+					"ratio": "13.26 - 0.8",
+					"code": "/def/vehicle/truck/scania.r/transmission/grso925_r.sii"
+				}
+			]
+		},
+		{
+			"brand": "scania",
+			"model": "r_2016",
+			"engines": [
+				{
+					"name": "DC13 149 370 Euro 6",
+					"cv": "370",
+					"nm": "1900",
+					"code": "/def/vehicle/truck/scania.r_2016/engine/dc13_370.sii"
+				},
+				{
+					"name": "DC13 141 410 Euro 6",
+					"cv": "410",
+					"nm": "2150",
+					"code": "/def/vehicle/truck/scania.r_2016/engine/dc13_410.sii"
+				},
+				{
+					"name": "DC13 148 450 Euro 6",
+					"cv": "450",
+					"nm": "2350",
+					"code": "/def/vehicle/truck/scania.r_2016/engine/dc13_450.sii"
+				},
+				{
+					"name": "DC13 155 500 Euro 6",
+					"cv": "500",
+					"nm": "2550",
+					"code": "/def/vehicle/truck/scania.r_2016/engine/dc13_500.sii"
+				},
+				{
+					"name": "DC16 116 520 Euro 6 V8",
+					"cv": "520",
+					"nm": "2700",
+					"code": "/def/vehicle/truck/scania.r_2016/engine/dc16_520.sii"
+				},
+				{
+					"name": "DC16 117 580 Euro 6 V8",
+					"cv": "580",
+					"nm": "3000",
+					"code": "/def/vehicle/truck/scania.r_2016/engine/dc16_580.sii"
+				},
+				{
+					"name": "DC16 118 650 Euro 6 V8",
+					"cv": "650",
+					"nm": "3300",
+					"code": "/def/vehicle/truck/scania.r_2016/engine/dc16_650.sii"
+				},
+				{
+					"name": "DC16 107 730 Euro 6 V8",
+					"cv": "730",
+					"nm": "3500",
+					"code": "/def/vehicle/truck/scania.r_2016/engine/dc16_730.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Scania GA867",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/scania.r_2016/transmission/allison.sii"
+				},
+				{
+					"name": "Scania GA867 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/scania.r_2016/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "Opticruise GRS 905",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.32 - 1.0",
+					"code": "/def/vehicle/truck/scania.r_2016/transmission/grs905.sii"
+				},
+				{
+					"name": "Opticruise GRS 905R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "11.32 - 1.0",
+					"code": "/def/vehicle/truck/scania.r_2016/transmission/grs905_r.sii"
+				},
+				{
+					"name": "Opticruise GRSO 905",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "9.164 - 0.8",
+					"code": "/def/vehicle/truck/scania.r_2016/transmission/grso905.sii"
+				},
+				{
+					"name": "Opticruise GRSO 905R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "9.164 - 0.8",
+					"code": "/def/vehicle/truck/scania.r_2016/transmission/grso905_r.sii"
+				},
+				{
+					"name": "Opticruise GRSO 925",
+					"speeds": "14",
+					"retarder": false,
+					"ratio": "13.26 - 0.8",
+					"code": "/def/vehicle/truck/scania.r_2016/transmission/grso925.sii"
+				},
+				{
+					"name": "Opticruise GRSO 925R",
+					"speeds": "14",
+					"retarder": true,
+					"ratio": "13.26 - 0.8",
+					"code": "/def/vehicle/truck/scania.r_2016/transmission/grso925_r.sii"
+				}
+			]
+		},
+		{
+			"brand": "scania",
+			"model": "streamline",
+			"engines": [
+				{
+					"name": "DC12 18 380 Euro 5",
+					"cv": "380",
+					"nm": "1900",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc12_380.sii"
+				},
+				{
+					"name": "DC12 15 420 Euro 5",
+					"cv": "420",
+					"nm": "2100",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc12_420.sii"
+				},
+				{
+					"name": "DC13 114 360 Euro 5",
+					"cv": "360",
+					"nm": "1850",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc13_360.sii"
+				},
+				{
+					"name": "DC13 116 370 Euro 6",
+					"cv": "370",
+					"nm": "1900",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc13_370.sii"
+				},
+				{
+					"name": "DC13 113 400 Euro 5",
+					"cv": "400",
+					"nm": "2100",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc13_400.sii"
+				},
+				{
+					"name": "DC13 115 410 Euro 6",
+					"cv": "410",
+					"nm": "2150",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc13_410.sii"
+				},
+				{
+					"name": "DC13 112 440 Euro 5",
+					"cv": "440",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc13_440.sii"
+				},
+				{
+					"name": "DC13 109 440 Euro 6",
+					"cv": "440",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc13_440_2.sii"
+				},
+				{
+					"name": "DC13 124 450 Euro 6",
+					"cv": "450",
+					"nm": "2350",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc13_450.sii"
+				},
+				{
+					"name": "DC13 111 480 Euro 5",
+					"cv": "480",
+					"nm": "2400",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc13_480.sii"
+				},
+				{
+					"name": "DC13 110 480 Euro 6",
+					"cv": "480",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc13_480_2.sii"
+				},
+				{
+					"name": "DC13 125 490 Euro 6",
+					"cv": "490",
+					"nm": "2550",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc13_490.sii"
+				},
+				{
+					"name": "DC16 19 500 Euro 5 V8",
+					"cv": "500",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc16_500.sii"
+				},
+				{
+					"name": "DC16 101 520 Euro 6 V8",
+					"cv": "520",
+					"nm": "2700",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc16_520.sii"
+				},
+				{
+					"name": "DC16 18 560 Euro 5 V8",
+					"cv": "560",
+					"nm": "2700",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc16_560.sii"
+				},
+				{
+					"name": "DC16 102 580 Euro 6 V8",
+					"cv": "580",
+					"nm": "2950",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc16_580.sii"
+				},
+				{
+					"name": "DC16 17 620 Euro 5 V8",
+					"cv": "620",
+					"nm": "3000",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc16_620.sii"
+				},
+				{
+					"name": "DC16 21 730 Euro 5 EEV V8",
+					"cv": "730",
+					"nm": "3500",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc16_730.sii"
+				},
+				{
+					"name": "DC16 103 730 Euro 6 V8",
+					"cv": "730",
+					"nm": "3500",
+					"code": "/def/vehicle/truck/scania.streamline/engine/dc16_730_2.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Opticruise GRS 905",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.32 - 1.0",
+					"code": "/def/vehicle/truck/scania.streamline/transmission/12_speed.sii"
+				},
+				{
+					"name": "Opticruise GRSO 905",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "9.164 - 0.8",
+					"code": "/def/vehicle/truck/scania.streamline/transmission/12_speed_over.sii"
+				},
+				{
+					"name": "Opticruise GRS 905R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "11.32 - 1.0",
+					"code": "/def/vehicle/truck/scania.streamline/transmission/12_speed_ret.sii"
+				},
+				{
+					"name": "Opticruise GRSO 905R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "9.164 - 0.8",
+					"code": "/def/vehicle/truck/scania.streamline/transmission/12_speed_ret_over.sii"
+				},
+				{
+					"name": "Scania GA867",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/scania.streamline/transmission/allison.sii"
+				},
+				{
+					"name": "Scania GA867 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/scania.streamline/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "Opticruise GRSO 925",
+					"speeds": "14",
+					"retarder": false,
+					"ratio": "13.26 - 0.8",
+					"code": "/def/vehicle/truck/scania.streamline/transmission/grso925.sii"
+				},
+				{
+					"name": "Opticruise GRSO 925R",
+					"speeds": "14",
+					"retarder": true,
+					"ratio": "13.26 - 0.8",
+					"code": "/def/vehicle/truck/scania.streamline/transmission/grso925_r.sii"
+				}
+			]
+		},
+		{
+			"brand": "scania",
+			"model": "s_2016",
+			"engines": [
+				{
+					"name": "DC13 149 370 Euro 6",
+					"cv": "370",
+					"nm": "1900",
+					"code": "/def/vehicle/truck/scania.s_2016/engine/dc13_370.sii"
+				},
+				{
+					"name": "DC13 141 410 Euro 6",
+					"cv": "410",
+					"nm": "2150",
+					"code": "/def/vehicle/truck/scania.s_2016/engine/dc13_410.sii"
+				},
+				{
+					"name": "DC13 148 450 Euro 6",
+					"cv": "450",
+					"nm": "2350",
+					"code": "/def/vehicle/truck/scania.s_2016/engine/dc13_450.sii"
+				},
+				{
+					"name": "DC13 155 500 Euro 6",
+					"cv": "500",
+					"nm": "2550",
+					"code": "/def/vehicle/truck/scania.s_2016/engine/dc13_500.sii"
+				},
+				{
+					"name": "DC16 116 520 Euro 6 V8",
+					"cv": "520",
+					"nm": "2700",
+					"code": "/def/vehicle/truck/scania.s_2016/engine/dc16_520.sii"
+				},
+				{
+					"name": "DC16 117 580 Euro 6 V8",
+					"cv": "580",
+					"nm": "3000",
+					"code": "/def/vehicle/truck/scania.s_2016/engine/dc16_580.sii"
+				},
+				{
+					"name": "DC16 118 650 Euro 6 V8",
+					"cv": "650",
+					"nm": "3300",
+					"code": "/def/vehicle/truck/scania.s_2016/engine/dc16_650.sii"
+				},
+				{
+					"name": "DC16 107 730 Euro 6 V8",
+					"cv": "730",
+					"nm": "3500",
+					"code": "/def/vehicle/truck/scania.s_2016/engine/dc16_730.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Scania GA867",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/scania.s_2016/transmission/allison.sii"
+				},
+				{
+					"name": "Scania GA867 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/scania.s_2016/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "Opticruise GRS 905",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.32 - 1.0",
+					"code": "/def/vehicle/truck/scania.s_2016/transmission/grs905.sii"
+				},
+				{
+					"name": "Opticruise GRS 905R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "11.32 - 1.0",
+					"code": "/def/vehicle/truck/scania.s_2016/transmission/grs905_r.sii"
+				},
+				{
+					"name": "Opticruise GRSO 905",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "9.164 - 0.8",
+					"code": "/def/vehicle/truck/scania.s_2016/transmission/grso905.sii"
+				},
+				{
+					"name": "Opticruise GRSO 905R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "9.164 - 0.8",
+					"code": "/def/vehicle/truck/scania.s_2016/transmission/grso905_r.sii"
+				},
+				{
+					"name": "Opticruise GRSO 925",
+					"speeds": "14",
+					"retarder": false,
+					"ratio": "13.26 - 0.8",
+					"code": "/def/vehicle/truck/scania.s_2016/transmission/grso925.sii"
+				},
+				{
+					"name": "Opticruise GRSO 925R",
+					"speeds": "14",
+					"retarder": true,
+					"ratio": "13.26 - 0.8",
+					"code": "/def/vehicle/truck/scania.s_2016/transmission/grso925_r.sii"
+				}
+			]
+		},
+		{
+			"brand": "scania",
+			"model": "s_2024e",
+			"engines": [
+				{
+					"name": "EM C3-6, 400 kw",
+					"cv": "540",
+					"nm": "2800",
+					"code": "/def/vehicle/truck/scania.s_2024e/engine/400kw.sii"
+				},
+				{
+					"name": "EM C3-6, 450 kw",
+					"cv": "610",
+					"nm": "3500",
+					"code": "/def/vehicle/truck/scania.s_2024e/engine/450kw.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "EM C3-6",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.17 - 0.73",
+					"code": "/def/vehicle/truck/scania.s_2024e/transmission/6_speed.sii"
+				}
+			]
+		}
+	],
+	"volvo": [
+		{
+			"brand": "volvo",
+			"model": "fh16",
+			"engines": [
+				{
+					"name": "D13C420 Euro 5 EEV",
+					"cv": "420",
+					"nm": "2100",
+					"code": "/def/vehicle/truck/volvo.fh16/engine/d13c420.sii"
+				},
+				{
+					"name": "D13C460 Euro 5 EEV",
+					"cv": "460",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/volvo.fh16/engine/d13c460.sii"
+				},
+				{
+					"name": "D13C500 Euro 5 EEV",
+					"cv": "500",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/volvo.fh16/engine/d13c500.sii"
+				},
+				{
+					"name": "D13C540 Euro 5 EEV",
+					"cv": "540",
+					"nm": "2600",
+					"code": "/def/vehicle/truck/volvo.fh16/engine/d13c540.sii"
+				},
+				{
+					"name": "D16G540 Euro 5 EEV",
+					"cv": "540",
+					"nm": "2650",
+					"code": "/def/vehicle/truck/volvo.fh16/engine/d16g540.sii"
+				},
+				{
+					"name": "D16G600 Euro 5 EEV",
+					"cv": "600",
+					"nm": "2800",
+					"code": "/def/vehicle/truck/volvo.fh16/engine/d16g600.sii"
+				},
+				{
+					"name": "D16G700 Euro 5 EEV",
+					"cv": "700",
+					"nm": "3150",
+					"code": "/def/vehicle/truck/volvo.fh16/engine/d16g700.sii"
+				},
+				{
+					"name": "D16G750 Euro 5 EEV",
+					"cv": "750",
+					"nm": "3550",
+					"code": "/def/vehicle/truck/volvo.fh16/engine/d16g750.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "I-Shift AT2812D",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.94 - 1.00",
+					"code": "/def/vehicle/truck/volvo.fh16/transmission/12_speed.sii"
+				},
+				{
+					"name": "I-Shift ATO3512D",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.73 - 0.78",
+					"code": "/def/vehicle/truck/volvo.fh16/transmission/12_speed_over.sii"
+				},
+				{
+					"name": "I-Shift AT2812D R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "14.94 - 1.00",
+					"code": "/def/vehicle/truck/volvo.fh16/transmission/12_speed_ret.sii"
+				},
+				{
+					"name": "I-Shift ATO3512D R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "11.73 - 0.78",
+					"code": "/def/vehicle/truck/volvo.fh16/transmission/12_speed_ret_over.sii"
+				},
+				{
+					"name": "Allison 4500",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/volvo.fh16/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/volvo.fh16/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "I-Shift ATO3512F + ASO-ULC",
+					"speeds": "14",
+					"retarder": false,
+					"ratio": "32.04 - 0.78",
+					"code": "/def/vehicle/truck/volvo.fh16/transmission/ato3512f_aso.sii"
+				},
+				{
+					"name": "I-Shift ATO3512F R + ASO-ULC",
+					"speeds": "14",
+					"retarder": true,
+					"ratio": "32.04 - 0.78",
+					"code": "/def/vehicle/truck/volvo.fh16/transmission/ato3512f_r_aso.sii"
+				}
+			]
+		},
+		{
+			"brand": "volvo",
+			"model": "fh16_2012",
+			"engines": [
+				{
+					"name": "D13C420 Euro 5 EEV",
+					"cv": "420",
+					"nm": "2100",
+					"code": "/def/vehicle/truck/volvo.fh16_2012/engine/d13c420.sii"
+				},
+				{
+					"name": "D13C460 Euro 5 EEV",
+					"cv": "460",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/volvo.fh16_2012/engine/d13c460.sii"
+				},
+				{
+					"name": "D13C500 Euro 5 EEV",
+					"cv": "500",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/volvo.fh16_2012/engine/d13c500.sii"
+				},
+				{
+					"name": "D13C540 Euro 5 EEV",
+					"cv": "540",
+					"nm": "2600",
+					"code": "/def/vehicle/truck/volvo.fh16_2012/engine/d13c540.sii"
+				},
+				{
+					"name": "D13K460 Euro 6",
+					"cv": "460",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/volvo.fh16_2012/engine/d13k460.sii"
+				},
+				{
+					"name": "D16G540 Euro 5 EEV",
+					"cv": "540",
+					"nm": "2650",
+					"code": "/def/vehicle/truck/volvo.fh16_2012/engine/d16g540.sii"
+				},
+				{
+					"name": "D16G600 Euro 5 EEV",
+					"cv": "600",
+					"nm": "2800",
+					"code": "/def/vehicle/truck/volvo.fh16_2012/engine/d16g600.sii"
+				},
+				{
+					"name": "D16G700 Euro 5 EEV",
+					"cv": "700",
+					"nm": "3150",
+					"code": "/def/vehicle/truck/volvo.fh16_2012/engine/d16g700.sii"
+				},
+				{
+					"name": "D16G750 Euro 5 EEV",
+					"cv": "750",
+					"nm": "3550",
+					"code": "/def/vehicle/truck/volvo.fh16_2012/engine/d16g750.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "I-Shift AT2812D",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.94 - 1.00",
+					"code": "/def/vehicle/truck/volvo.fh16_2012/transmission/12_speed.sii"
+				},
+				{
+					"name": "I-Shift ATO3512D",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.73 - 0.78",
+					"code": "/def/vehicle/truck/volvo.fh16_2012/transmission/12_speed_over.sii"
+				},
+				{
+					"name": "I-Shift AT2812D R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "14.94 - 1.00",
+					"code": "/def/vehicle/truck/volvo.fh16_2012/transmission/12_speed_ret.sii"
+				},
+				{
+					"name": "I-Shift ATO3512D R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "11.73 - 0.78",
+					"code": "/def/vehicle/truck/volvo.fh16_2012/transmission/12_speed_ret_over.sii"
+				},
+				{
+					"name": "Allison 4500",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/volvo.fh16_2012/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/volvo.fh16_2012/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "I-Shift ATO3512F + ASO-ULC",
+					"speeds": "14",
+					"retarder": false,
+					"ratio": "32.04 - 0.78",
+					"code": "/def/vehicle/truck/volvo.fh16_2012/transmission/ato3512f_aso.sii"
+				},
+				{
+					"name": "I-Shift ATO3512F R + ASO-ULC",
+					"speeds": "14",
+					"retarder": true,
+					"ratio": "32.04 - 0.78",
+					"code": "/def/vehicle/truck/volvo.fh16_2012/transmission/ato3512f_r_aso.sii"
+				}
+			]
+		}
+	],
+	"iveco": [
+		{
+			"brand": "iveco",
+			"model": "hiway",
+			"engines": [
+				{
+					"name": "Cursor 11 420",
+					"cv": "420",
+					"nm": "1900",
+					"code": "/def/vehicle/truck/iveco.hiway/engine/cursor11_420hp.sii"
+				},
+				{
+					"name": "Cursor 11 460",
+					"cv": "460",
+					"nm": "2150",
+					"code": "/def/vehicle/truck/iveco.hiway/engine/cursor11_460hp.sii"
+				},
+				{
+					"name": "Cursor 13 500",
+					"cv": "500",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/iveco.hiway/engine/cursor13_500hp.sii"
+				},
+				{
+					"name": "Cursor 13 560",
+					"cv": "560",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/iveco.hiway/engine/cursor13_560hp.sii"
+				},
+				{
+					"name": "Cursor 9 310",
+					"cv": "310",
+					"nm": "1300",
+					"code": "/def/vehicle/truck/iveco.hiway/engine/cursor9_310hp.sii"
+				},
+				{
+					"name": "Cursor 9 330",
+					"cv": "330",
+					"nm": "1400",
+					"code": "/def/vehicle/truck/iveco.hiway/engine/cursor9_330hp.sii"
+				},
+				{
+					"name": "Cursor 9 360",
+					"cv": "360",
+					"nm": "1650",
+					"code": "/def/vehicle/truck/iveco.hiway/engine/cursor9_360hp.sii"
+				},
+				{
+					"name": "Cursor 9 400",
+					"cv": "400",
+					"nm": "1700",
+					"code": "/def/vehicle/truck/iveco.hiway/engine/cursor9_400hp.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "ZF 12AS2330TD",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "15.86 - 1.0",
+					"code": "/def/vehicle/truck/iveco.hiway/transmission/12_speed.sii"
+				},
+				{
+					"name": "ZF 12AS2530TO",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "12.33 - 0.78",
+					"code": "/def/vehicle/truck/iveco.hiway/transmission/12_speed_over.sii"
+				},
+				{
+					"name": "ZF 12AS2331TD R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "15.86 - 1.0",
+					"code": "/def/vehicle/truck/iveco.hiway/transmission/12_speed_r.sii"
+				},
+				{
+					"name": "ZF 12AS2531TO R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "12.33 - 0.78",
+					"code": "/def/vehicle/truck/iveco.hiway/transmission/12_speed_ret_over.sii"
+				},
+				{
+					"name": "Allison 4500",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/iveco.hiway/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/iveco.hiway/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "ZF 16AS2630TO",
+					"speeds": "16",
+					"retarder": false,
+					"ratio": "14.12 - 0.83",
+					"code": "/def/vehicle/truck/iveco.hiway/transmission/zf_16as2630to.sii"
+				},
+				{
+					"name": "ZF 16AS2631TO R",
+					"speeds": "16",
+					"retarder": true,
+					"ratio": "14.12 - 0.83",
+					"code": "/def/vehicle/truck/iveco.hiway/transmission/zf_16as2631to.sii"
+				}
+			]
+		},
+		{
+			"brand": "iveco",
+			"model": "stralis",
+			"engines": [
+				{
+					"name": "Cursor 10 420",
+					"cv": "420",
+					"nm": "1900",
+					"code": "/def/vehicle/truck/iveco.stralis/engine/cursor10_420hp.sii"
+				},
+				{
+					"name": "Cursor 10 450",
+					"cv": "450",
+					"nm": "2100",
+					"code": "/def/vehicle/truck/iveco.stralis/engine/cursor10_450hp.sii"
+				},
+				{
+					"name": "Cursor 13 500",
+					"cv": "500",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/iveco.stralis/engine/cursor13_500hp.sii"
+				},
+				{
+					"name": "Cursor 13 560",
+					"cv": "560",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/iveco.stralis/engine/cursor13_560hp.sii"
+				},
+				{
+					"name": "Cursor 8 310",
+					"cv": "310",
+					"nm": "1300",
+					"code": "/def/vehicle/truck/iveco.stralis/engine/cursor8_310hp.sii"
+				},
+				{
+					"name": "Cursor 8 330",
+					"cv": "330",
+					"nm": "1400",
+					"code": "/def/vehicle/truck/iveco.stralis/engine/cursor8_330hp.sii"
+				},
+				{
+					"name": "Cursor 8 360",
+					"cv": "360",
+					"nm": "1500",
+					"code": "/def/vehicle/truck/iveco.stralis/engine/cursor8_360hp.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "ZF 12AS2330TD",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "15.86 - 1.0",
+					"code": "/def/vehicle/truck/iveco.stralis/transmission/12_speed.sii"
+				},
+				{
+					"name": "ZF 12AS2530TO",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "12.33 - 0.78",
+					"code": "/def/vehicle/truck/iveco.stralis/transmission/12_speed_over.sii"
+				},
+				{
+					"name": "ZF 12AS2331TD R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "15.86 - 1.0",
+					"code": "/def/vehicle/truck/iveco.stralis/transmission/12_speed_ret.sii"
+				},
+				{
+					"name": "ZF 12AS2531TO R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "12.33 - 0.78",
+					"code": "/def/vehicle/truck/iveco.stralis/transmission/12_speed_ret_over.sii"
+				},
+				{
+					"name": "Allison 4500",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/iveco.stralis/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/iveco.stralis/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "ZF 16AS2630TO",
+					"speeds": "16",
+					"retarder": false,
+					"ratio": "14.12 - 0.83",
+					"code": "/def/vehicle/truck/iveco.stralis/transmission/zf_16as2630to.sii"
+				},
+				{
+					"name": "ZF 16AS2631TO R",
+					"speeds": "16",
+					"retarder": true,
+					"ratio": "14.12 - 0.83",
+					"code": "/def/vehicle/truck/iveco.stralis/transmission/zf_16as2631to.sii"
+				}
+			]
+		}
+	]
+}

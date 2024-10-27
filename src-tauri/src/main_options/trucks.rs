@@ -1,7 +1,19 @@
 use super::license_plate::get_license_plate_formated;
 
 use crate::structs::vec_items_find::VecItemsFind;
-use crate::structs::vec_trucks::VecTrucksId;
+use crate::structs::vec_trucks::{Engine, Transmission, TruckBrands, VecTrucksId};
+use serde_json::from_str;
+
+const ETS2_TRUCK_BRANDS: &str = include_str!("../embeds/trucks_data_ets2.json");
+
+fn get_trucks_data_ets2() -> Option<TruckBrands> {
+    let truck_brands: TruckBrands = match from_str(ETS2_TRUCK_BRANDS) {
+        Ok(truck_brands) => truck_brands,
+        Err(_) => return None,
+    };
+
+    return Some(truck_brands);
+}
 
 fn get_vec_truck_wear(
     arr_val: &Vec<String>,
@@ -494,4 +506,40 @@ pub fn set_truck_transmissions(
     }
 
     return None;
+}
+
+pub fn get_truck_engines_ets2(brand: &str) -> Option<Vec<Engine>> {
+    let truck_brands: TruckBrands = match get_trucks_data_ets2() {
+        Some(truck_brands) => truck_brands,
+        None => return None,
+    };
+
+    match brand {
+        "mercedes" => return Some(truck_brands.mercedes[0].engines.clone()),
+        "daf" => return Some(truck_brands.daf[0].engines.clone()),
+        "man" => return Some(truck_brands.man[0].engines.clone()),
+        "renault" => return Some(truck_brands.renault[0].engines.clone()),
+        "scania" => return Some(truck_brands.scania[0].engines.clone()),
+        "volvo" => return Some(truck_brands.volvo[0].engines.clone()),
+        "iveco" => return Some(truck_brands.iveco[0].engines.clone()),
+        _ => return None,
+    }
+}
+
+pub fn get_truck_transmissions_ets2(brand: &str) -> Option<Vec<Transmission>> {
+    let truck_brands: TruckBrands = match get_trucks_data_ets2() {
+        Some(truck_brands) => truck_brands,
+        None => return None,
+    };
+
+    match brand {
+        "mercedes" => return Some(truck_brands.mercedes[0].transmissions.clone()),
+        "daf" => return Some(truck_brands.daf[0].transmissions.clone()),
+        "man" => return Some(truck_brands.man[0].transmissions.clone()),
+        "renault" => return Some(truck_brands.renault[0].transmissions.clone()),
+        "scania" => return Some(truck_brands.scania[0].transmissions.clone()),
+        "volvo" => return Some(truck_brands.volvo[0].transmissions.clone()),
+        "iveco" => return Some(truck_brands.iveco[0].transmissions.clone()),
+        _ => return None,
+    }
 }

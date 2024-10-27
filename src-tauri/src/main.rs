@@ -17,18 +17,17 @@ use main_options::trailers::{
     set_remove_trailer_restricted_areas, set_trailer_license_plate, set_trailer_wear,
 };
 use main_options::trucks::{
-    get_truck_id, get_truck_vehicle_index, set_any_trucks_fuel, set_any_trucks_wear,
-    set_infinite_fuel_truck, set_truck_engine, set_truck_fuel, set_truck_license_plate,
-    set_truck_transmissions, set_truck_wear,
+    get_truck_engines_ets2, get_truck_id, get_truck_transmissions_ets2, get_truck_vehicle_index,
+    set_any_trucks_fuel, set_any_trucks_wear, set_infinite_fuel_truck, set_truck_engine,
+    set_truck_fuel, set_truck_license_plate, set_truck_transmissions, set_truck_wear,
 };
-use main_options::trucks_data_export::get_trucks_values;
 
 use std::path::Path;
 
 use structs::experience_skills::ExperienceSkills;
 use structs::responses::{
     DefaultResponse, DeveloperValues, ListProfilesResponse, SaveGameCountResponse,
-    SaveGameResponse, SystemThemeResponse, TrucksResponse,
+    SaveGameResponse, SystemThemeResponse, TruckEnginesResponse, TruckTransmissionResponse,
 };
 use structs::vec_save_games::VecSaveGames;
 
@@ -195,13 +194,34 @@ async fn get_save_game_count(
 }
 
 #[tauri::command]
-async fn get_list_trucks_info() -> Result<TrucksResponse, ()> {
-    let response = get_trucks_values();
+async fn get_brand_engines_ets2(brand: &str) -> Result<TruckEnginesResponse, ()> {
+    match get_truck_engines_ets2(brand) {
+        Some(engines) => return Ok(TruckEnginesResponse { res: true, engines }),
+        None => {
+            return Ok(TruckEnginesResponse {
+                res: false,
+                engines: vec![],
+            })
+        }
+    };
+}
 
-    return Ok(TrucksResponse {
-        res: true,
-        trucks: response,
-    });
+#[tauri::command]
+async fn get_brand_transmission_ets2(brand: &str) -> Result<TruckTransmissionResponse, ()> {
+    match get_truck_transmissions_ets2(brand) {
+        Some(transmission) => {
+            return Ok(TruckTransmissionResponse {
+                res: true,
+                transmission,
+            })
+        }
+        None => {
+            return Ok(TruckTransmissionResponse {
+                res: false,
+                transmission: vec![],
+            })
+        }
+    };
 }
 
 #[tauri::command]
@@ -825,7 +845,8 @@ fn main() {
             set_cargo_mass_def_trailers,
             get_save_game_name,
             get_save_game_count,
-            get_list_trucks_info,
+            get_brand_engines_ets2,
+            get_brand_transmission_ets2,
             get_list_dir_profile,
             repait_truck,
             repait_all_trucks,
