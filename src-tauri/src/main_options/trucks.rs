@@ -2,10 +2,12 @@ use super::license_plate::get_license_plate_formated;
 
 use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_trucks::{Models, TruckBrands, VecTrucksId};
+use cached::proc_macro::cached;
 use serde_json::from_str;
 
 const ETS2_TRUCK_BRANDS: &str = include_str!("../embeds/trucks_data_ets2.json");
 
+#[cached]
 fn get_trucks_data_ets2() -> Option<TruckBrands> {
     let truck_brands: TruckBrands = match from_str(ETS2_TRUCK_BRANDS) {
         Ok(truck_brands) => truck_brands,
