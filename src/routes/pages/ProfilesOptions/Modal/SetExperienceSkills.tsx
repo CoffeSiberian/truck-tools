@@ -127,7 +127,6 @@ const SetExperienceSkills = () => {
 				backdrop="blur"
 				isOpen={isOpen}
 				onOpenChange={onOpenChange}
-				shouldBlockScroll={false}
 			>
 				<ModalContent>
 					{(onClose) => (
