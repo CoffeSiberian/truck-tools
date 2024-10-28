@@ -3,14 +3,17 @@ import { themeTypesSystem } from "@/types/fileEditTypes";
 
 export type GamesNames = "ets2" | "ats";
 
-export interface ProfileTypesContext {
+export interface ProfileObjectType {
 	selectedProfile?: Profile;
 	selectedSave?: SaveGame;
 	listProfiles: Array<ProfileWithoutSaves>;
+	game: GamesNames;
+}
+
+export interface ProfileTypesContext extends ProfileObjectType {
+	profilesNotFound: boolean;
 	isSavesLoading: boolean;
 	isProfilesLoading: boolean;
-	profilesNotFound: boolean;
-	game: GamesNames;
 	setGame: (game: GamesNames) => void;
 	setProfile: (profile: ProfileWithoutSaves) => void;
 	reloadProfiles: () => void;

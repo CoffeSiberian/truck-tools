@@ -16,7 +16,7 @@ import ets2 from "@/static/icons/games/ets2.webp";
 import ats from "@/static/icons/games/ats.webp";
 
 const SelectProfile = () => {
-	const { selectedSave, profilesNotFound, game, setGame, reloadProfiles } =
+	const { selectedSave, profilesNotFound, game, setGame } =
 		useContext(ProfileContex);
 
 	const renderCart = (
@@ -39,18 +39,11 @@ const SelectProfile = () => {
 		);
 	};
 
-	const selectGame = (index: GamesNames) => {
-		setGame(index);
-		reloadProfiles();
-	};
-
 	return (
 		<div className="fixed bottom-0 z-10 mb-2 mt-auto flex w-full justify-center">
 			<div className="mr-2 flex flex-col justify-end gap-2">
 				<Tabs
-					onSelectionChange={(index) => {
-						selectGame(index as GamesNames);
-					}}
+					onSelectionChange={(index) => setGame(index as GamesNames)}
 					selectedKey={game}
 					size="lg"
 					aria-label="options"

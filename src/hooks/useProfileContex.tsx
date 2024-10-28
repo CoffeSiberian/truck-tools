@@ -3,8 +3,12 @@ import { readProfileNames, getListSaves } from "@/utils/fileEdit";
 
 // types
 import { ProviderProps } from "@/types/ReactTypes";
-import { ProfileTypesContext, GamesNames } from "@/types/ContexTypes";
-import { Profile, SaveGame, ProfileWithoutSaves } from "@/types/SaveGameTypes";
+import {
+	ProfileTypesContext,
+	ProfileObjectType,
+	GamesNames,
+} from "@/types/ContexTypes";
+import { ProfileWithoutSaves } from "@/types/SaveGameTypes";
 
 export const ProfileContex = createContext<ProfileTypesContext>(
 	{} as ProfileTypesContext
@@ -13,27 +17,21 @@ export const ProfileContex = createContext<ProfileTypesContext>(
 export const ProfileContexInfo = ({ children }: ProviderProps) => {
 	const loaded = useRef(false);
 
-	const [ProfilesList, setProfilesList] = useState<Array<ProfileWithoutSaves>>(
-		[]
-	);
-
-	const [selectedProfileState, setSelectedProfileState] = useState<
-		Profile | undefined
-	>(undefined);
-
-	const [selectedSave, setSelectedSave] = useState<SaveGame | undefined>(
-		undefined
-	);
-
-	const [selectedGame, setSelectedGame] = useState<GamesNames>("ets2");
+	const [profile, setProfile] = useState<ProfileObjectType>({
+		selectedProfile: undefined,
+		selectedSave: undefined,
+		listProfiles: [],
+		game: "ets2",
+	});
 
 	const [isSavesLoading, setIsSavesLoading] = useState<boolean>(false);
 	const [isProfilesLoading, setIsProfilesLoading] = useState<boolean>(false);
 	const [profilesNotFound, setProfilesNotFound] = useState<boolean>(false);
 
 	const loadDirectory = useCallback(async () => {
+		// only used on first load or complete reload
 		setIsProfilesLoading(true);
-		const prof = await readProfileNames(selectedGame);
+		const prof = await readProfileNames(profile.game);
 		if (prof.length === 0) {
 			setProfilesNotFound(true);
 			setIsProfilesLoading(false);
@@ -42,37 +40,62 @@ export const ProfileContexInfo = ({ children }: ProviderProps) => {
 		if (profilesNotFound) setProfilesNotFound(false);
 
 		setIsProfilesLoading(false);
-		setProfilesList(prof);
-	}, [profilesNotFound, selectedGame]);
+		setProfile({
+			game: profile.game,
+			selectedProfile: undefined,
+			selectedSave: undefined,
+			listProfiles: prof,
+		});
+	}, [profile, profilesNotFound]);
 
-	const reloadProfiles = async () => {
-		setSelectedSave(undefined);
-		setSelectedProfileState(undefined);
-		setProfilesList([]);
-		loadDirectory();
+	const loadDirectoryGame = async (game: GamesNames) => {
+		setIsProfilesLoading(true);
+		const prof = await readProfileNames(game);
+		if (prof.length === 0) {
+			setProfilesNotFound(true);
+			setIsProfilesLoading(false);
+			return;
+		}
+		if (profilesNotFound) setProfilesNotFound(false);
+
+		setIsProfilesLoading(false);
+		setProfile({
+			game: game,
+			selectedProfile: undefined,
+			selectedSave: undefined,
+			listProfiles: prof,
+		});
 	};
 
 	const setSelectedProfile = async (
-		profile: ProfileWithoutSaves | undefined
+		profile_info: ProfileWithoutSaves | undefined
 	) => {
-		if (selectedSave) setSelectedSave(undefined);
-		if (!profile) {
-			setSelectedProfileState(undefined);
+		if (!profile_info) {
+			setProfile({
+				...profile,
+				selectedProfile: undefined,
+				selectedSave: undefined,
+			});
 			return;
 		}
 
 		setIsSavesLoading(true);
-		const saveList = await getListSaves(profile.dir);
+		const saveList = await getListSaves(profile_info.dir);
 		setIsSavesLoading(false);
 
 		if (!saveList) return;
 
-		setSelectedProfileState({
-			name: profile.name,
-			hex: profile.hex,
+		const profile_to_save = {
+			name: profile_info.name,
+			hex: profile_info.hex,
 			saves: saveList,
-			avatar: profile.avatar,
-			dir: profile.dir,
+			avatar: profile_info.avatar,
+			dir: profile_info.dir,
+		};
+
+		setProfile({
+			...profile,
+			selectedProfile: profile_to_save,
 		});
 	};
 
@@ -86,17 +109,17 @@ export const ProfileContexInfo = ({ children }: ProviderProps) => {
 	return (
 		<ProfileContex.Provider
 			value={{
-				selectedProfile: selectedProfileState,
-				selectedSave: selectedSave,
-				listProfiles: ProfilesList,
+				selectedProfile: profile.selectedProfile,
+				selectedSave: profile.selectedSave,
+				listProfiles: profile.listProfiles,
 				isSavesLoading: isSavesLoading,
 				isProfilesLoading: isProfilesLoading,
 				profilesNotFound: profilesNotFound,
-				game: selectedGame,
-				setGame: setSelectedGame,
+				game: profile.game,
+				setGame: (game) => loadDirectoryGame(game),
 				setProfile: setSelectedProfile,
-				setSave: setSelectedSave,
-				reloadProfiles: reloadProfiles,
+				setSave: (save) => setProfile({ ...profile, selectedSave: save }),
+				reloadProfiles: loadDirectory,
 			}}
 		>
 			{children}
