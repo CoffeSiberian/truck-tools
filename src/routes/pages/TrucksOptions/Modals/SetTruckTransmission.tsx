@@ -12,8 +12,9 @@ import {
 	useDisclosure,
 	Image,
 } from "@nextui-org/react";
-import { setTruckTransmission, getTrucksInfoList } from "@/utils/fileEdit";
+import { setTruckTransmission, get_brand_models_ets2 } from "@/utils/fileEdit";
 import AlertSave from "@/components/AlertSave";
+import { BRANDS_ETS2 } from "@/utils/Brands";
 
 // icons
 import {
@@ -25,108 +26,26 @@ import {
 } from "@tabler/icons-react";
 
 // types
-import { TransmissionTypes } from "@/types/SaveGameTypes";
-
-// images
-import ScaniaIcon from "@/static/icons/brands/scania.svg";
-import VolvoIcon from "@/static/icons/brands/volvo.svg";
-import ManIcon from "@/static/icons/brands/man.svg";
-import DafIcon from "@/static/icons/brands/daf.svg";
-import MercedesIcon from "@/static/icons/brands/mercedes.svg";
-import RenaultIcon from "@/static/icons/brands/renault.svg";
-import IvecoIcon from "@/static/icons/brands/iveco.svg";
+import { TransmissionType } from "@/types/SaveGameTypes";
+import { BrandModelTypes, BrandType } from "@/types/ConstTypes";
 
 interface completedProps {
 	error: boolean;
 	completed: boolean;
 }
 
-interface BrandModelTypes {
-	key: string;
-	name: string;
-}
-
-interface BrandType {
-	name: string;
-	models: BrandModelTypes[];
-	icon: string;
-}
-
 const SetTruckTransmission = () => {
 	const { selectedSave } = useContext(ProfileContex);
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-	const BRANDS: BrandType[] = [
-		{
-			name: "Scania",
-			models: [
-				{ key: "scania_r", name: "Scania R" },
-				{ key: "scania_s", name: "Scania S" },
-				{ key: "scania_r_2009", name: "Scania R 2009" },
-				{ key: "scania_streamline", name: "Scania Streamline" },
-			],
-			icon: ScaniaIcon,
-		},
-		{
-			name: "Volvo",
-			models: [
-				{ key: "volvo_fh_classic", name: "Volvo FH Classic" },
-				{ key: "volvo_fh", name: "Volvo FH" },
-			],
-			icon: VolvoIcon,
-		},
-		{
-			name: "MAN",
-			models: [
-				{ key: "man_tgx", name: "MAN TGX" },
-				{ key: "man_tgx_eu6", name: "MAN TGX Euro 6" },
-			],
-			icon: ManIcon,
-		},
-		{
-			name: "DAF",
-			models: [
-				{ key: "daf_xf", name: "DAF XF" },
-				{ key: "daf_xf_euro6", name: "DAF XF EURO6" },
-				{ key: "daf_2021", name: "DAF 2021" },
-			],
-			icon: DafIcon,
-		},
-		{
-			name: "Mercedes-Benz",
-			models: [
-				{ key: "mercedes_actros", name: "Mercedes-Benz Actros" },
-				{ key: "mercedes_new_actros", name: "Mercedes-Benz New Actros" },
-			],
-			icon: MercedesIcon,
-		},
-		{
-			name: "Renault",
-			models: [
-				{ key: "renault_t", name: "Renault T" },
-				{ key: "renault_magnum", name: "Renault Magnum" },
-				{ key: "renault_premium", name: "Renault Premium" },
-			],
-			icon: RenaultIcon,
-		},
-		{
-			name: "Iveco",
-			models: [
-				{ key: "iveco_stralis", name: "Iveco Stralis" },
-				{ key: "iveco_hiway", name: "Iveco Hi-Way" },
-			],
-			icon: IvecoIcon,
-		},
-	];
-
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 
 	const [transmissions, setTransmissions] = useState<
-		TransmissionTypes[] | undefined
+		TransmissionType[] | undefined
 	>(undefined);
 
 	const [selectedTransmission, setSelectedTransmission] = useState<
-		TransmissionTypes | undefined
+		TransmissionType | undefined
 	>(undefined);
 
 	const [selectedBrand, setSelectedBrand] = useState<BrandType | undefined>(
@@ -165,13 +84,13 @@ const SetTruckTransmission = () => {
 	const onClickBrand = async (branName: string) => {
 		if (!branName) return;
 
-		const brandFind = BRANDS.find((p) => p.name === branName) as BrandType;
+		const brandFind = BRANDS_ETS2.find((p) => p.name === branName) as BrandType;
 		setSelectedBrand(brandFind);
 		setSelectedModel(undefined);
 		setSelectedTransmission(undefined);
 	};
 
-	const onClickBrandModel = async (modelKey: string) => {
+	const onClickBrandModel = async (modelKey: string, brand: string) => {
 		if (!selectedBrand) return;
 
 		const modelFind = selectedBrand.models.find((p) => p.key === modelKey);
@@ -179,77 +98,18 @@ const SetTruckTransmission = () => {
 		setSelectedTransmission(undefined);
 
 		if (!modelFind) return;
-		const resTransmissions = await getTrucksInfoList();
+		const resTransmissions = await get_brand_models_ets2(
+			brand.toLocaleLowerCase()
+		);
 
-		if (resTransmissions) {
-			switch (modelFind.key) {
-				case "scania_r":
-					setTransmissions(resTransmissions.scania.scania_r.transmissions);
-					break;
-				case "scania_s":
-					setTransmissions(resTransmissions.scania.scania_s.transmissions);
-					break;
-				case "scania_r_2009":
-					setTransmissions(resTransmissions.scania.scania_r_2009.transmissions);
-					break;
-				case "scania_streamline":
-					setTransmissions(
-						resTransmissions.scania.scania_streamline.transmissions
-					);
-					break;
-				case "volvo_fh_classic":
-					setTransmissions(
-						resTransmissions.volvo.volvo_fh_classic.transmissions
-					);
-					break;
-				case "volvo_fh":
-					setTransmissions(resTransmissions.volvo.volvo_fh.transmissions);
-					break;
-				case "man_tgx":
-					setTransmissions(resTransmissions.man.man_tgx.transmissions);
-					break;
-				case "man_tgx_eu6":
-					setTransmissions(resTransmissions.man.man_tgx_eu6.transmissions);
-					break;
-				case "daf_xf":
-					setTransmissions(resTransmissions.daf.daf_xf.transmissions);
-					break;
-				case "daf_xf_euro6":
-					setTransmissions(resTransmissions.daf.daf_xf_euro6.transmissions);
-					break;
-				case "daf_2021":
-					setTransmissions(resTransmissions.daf.daf_2021.transmissions);
-					break;
-				case "mercedes_actros":
-					setTransmissions(
-						resTransmissions.mercedes.mercedes_actros.transmissions
-					);
-					break;
-				case "mercedes_new_actros":
-					setTransmissions(
-						resTransmissions.mercedes.mercedes_new_actros.transmissions
-					);
-					break;
-				case "renault_t":
-					setTransmissions(resTransmissions.renault.renault_t.transmissions);
-					break;
-				case "renault_magnum":
-					setTransmissions(
-						resTransmissions.renault.renault_magnum.transmissions
-					);
-					break;
-				case "renault_premium":
-					setTransmissions(
-						resTransmissions.renault.renault_premium.transmissions
-					);
-					break;
-				case "iveco_stralis":
-					setTransmissions(resTransmissions.iveco.iveco_stralis.transmissions);
-					break;
-				case "iveco_hiway":
-					setTransmissions(resTransmissions.iveco.iveco_hiway.transmissions);
-					break;
-			}
+		if (resTransmissions.res) {
+			const models = resTransmissions.models;
+
+			const modelFind = models.find((p) => p.model === modelKey);
+
+			if (modelFind) {
+				setTransmissions(modelFind.transmissions);
+			} else setTransmissions(undefined);
 		}
 	};
 
@@ -257,7 +117,7 @@ const SetTruckTransmission = () => {
 		if (!transmissions) return;
 
 		const transmissionFind = transmissions.find(
-			(p) => p.name_id === transmissionId
+			(p) => p.name === transmissionId
 		);
 		setSelectedTransmission(transmissionFind);
 	};
@@ -306,7 +166,7 @@ const SetTruckTransmission = () => {
 									choice
 								</p>
 								<Select
-									items={BRANDS}
+									items={BRANDS_ETS2}
 									selectedKeys={selectedBrand ? [selectedBrand.name] : []}
 									onChange={(e) => onClickBrand(e.target.value)}
 									label="Brands"
@@ -347,7 +207,9 @@ const SetTruckTransmission = () => {
 									isInvalid={errorModelEmpty}
 									items={selectedBrand ? selectedBrand.models : []}
 									selectedKeys={selectedModel ? [selectedModel.key] : []}
-									onChange={(e) => onClickBrandModel(e.target.value)}
+									onChange={(e) =>
+										onClickBrandModel(e.target.value, selectedBrand!.name)
+									}
 									label="Models"
 									placeholder="Select truck model"
 									labelPlacement="inside"
@@ -369,7 +231,7 @@ const SetTruckTransmission = () => {
 									isInvalid={errorTransmissionEmpty}
 									items={transmissions ? transmissions : []}
 									selectedKeys={
-										selectedTransmission ? [selectedTransmission.name_id] : []
+										selectedTransmission ? [selectedTransmission.name] : []
 									}
 									onChange={(e) => onClickTransmission(e.target.value)}
 									label="Transmissions"
@@ -380,7 +242,7 @@ const SetTruckTransmission = () => {
 								>
 									{(transmissionObj) => (
 										<SelectItem
-											key={transmissionObj.name_id}
+											key={transmissionObj.name}
 											textValue={transmissionObj.name}
 										>
 											<div className="flex items-center gap-2">

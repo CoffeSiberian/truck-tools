@@ -13,7 +13,6 @@ import {
 	SaveGame,
 	ProfileDir,
 	ExperienceSkillsTypes,
-	TruckBrands,
 } from "@/types/SaveGameTypes";
 import {
 	responseRustTypes,
@@ -501,12 +500,19 @@ export const copyProfileConfigs = async (
 	return invoceRes.res;
 };
 
-export const getTrucksInfoList = async (): Promise<TruckBrands> => {
+export const get_brand_models_ets2 = async (
+	brand: string
+): Promise<responseTrucksInfo> => {
+	const rustParams = {
+		brand,
+	};
+
 	const invoceRes = (await invoke(
-		"get_list_trucks_info"
+		"get_brand_models_ets2",
+		rustParams
 	)) as responseTrucksInfo;
 
-	return invoceRes.trucks;
+	return invoceRes;
 };
 
 export const getSystemTheme = async (): Promise<themeTypes> => {

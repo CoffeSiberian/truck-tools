@@ -1,4 +1,4 @@
-import { SaveGame, ProfileDir, TruckBrands } from "@/types/SaveGameTypes";
+import { SaveGame, ProfileDir, Model } from "@/types/SaveGameTypes";
 import { IColor } from "react-color-palette";
 
 export type themeTypes = "light" | "dark";
@@ -17,7 +17,7 @@ export interface responseProfileSavesCount extends responseRustTypes {
 }
 
 export interface responseTrucksInfo extends responseRustTypes {
-	trucks: TruckBrands;
+	models: Model[];
 }
 
 export interface responseProfileDir extends responseRustTypes {

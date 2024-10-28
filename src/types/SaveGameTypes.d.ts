@@ -41,75 +41,36 @@ export interface ExperienceSkillsTypes {
 /////////////////////////////////////////////////////////
 // TRUCKS TYPES
 
-export interface EngineTypes {
-	name_id: string;
+export interface TruckBrands {
+	mercedes: Model[];
+	daf: Model[];
+	man: Model[];
+	renault: Model[];
+	scania: Model[];
+	volvo: Model[];
+	iveco: Model[];
+}
+
+export interface Model {
+	brand: string;
+	model: string;
+	engines: EngineType[];
+	transmissions: TransmissionType[];
+}
+
+export interface EngineType {
 	name: string;
 	cv: string;
 	nm: string;
 	code: string;
 }
 
-export interface TransmissionTypes {
-	name_id: string;
+export interface TransmissionType {
 	name: string;
 	speeds: string;
 	retarder: boolean;
 	ratio: string;
 	code: string;
-}
-
-export interface TruckValues {
-	engines: EngineTypes[];
-	transmissions: TransmissionTypes[];
-}
-
-export interface BrandScania {
-	scania_r: TruckValues;
-	scania_s: TruckValues;
-	scania_streamline: TruckValues;
-	scania_r_2009: TruckValues;
-}
-
-export interface BrandVolvo {
-	volvo_fh: TruckValues;
-	volvo_fh_classic: TruckValues;
-}
-
-export interface BrandMan {
-	man_tgx: TruckValues;
-	man_tgx_eu6: TruckValues;
-}
-
-export interface BrandDaf {
-	daf_xf: TruckValues;
-	daf_xf_euro6: TruckValues;
-	daf_2021: TruckValues;
-}
-
-export interface BrandIveco {
-	iveco_hiway: TruckValues;
-	iveco_stralis: TruckValues;
-}
-
-export interface BrandRenault {
-	renault_magnum: TruckValues;
-	renault_premium: TruckValues;
-	renault_t: TruckValues;
-}
-
-export interface BrandMercedes {
-	mercedes_actros: TruckValues;
-	mercedes_new_actros: TruckValues;
-}
-
-export interface TruckBrands {
-	scania: BrandScania;
-	volvo: BrandVolvo;
-	man: BrandMan;
-	daf: BrandDaf;
-	iveco: BranIveco;
-	renault: BrandRenault;
-	mercedes: BrandMercedes;
 }
 
 /////////////////////////////////////////////////////////

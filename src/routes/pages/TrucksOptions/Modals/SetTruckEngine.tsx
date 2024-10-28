@@ -12,7 +12,7 @@ import {
 	useDisclosure,
 	Image,
 } from "@nextui-org/react";
-import { setTruckEngine, getTrucksInfoList } from "@/utils/fileEdit";
+import { setTruckEngine, get_brand_models_ets2 } from "@/utils/fileEdit";
 import AlertSave from "@/components/AlertSave";
 
 // icons
@@ -25,105 +25,24 @@ import {
 } from "@tabler/icons-react";
 
 // types
-import { EngineTypes } from "@/types/SaveGameTypes";
-
-// images
-import ScaniaIcon from "@/static/icons/brands/scania.svg";
-import VolvoIcon from "@/static/icons/brands/volvo.svg";
-import ManIcon from "@/static/icons/brands/man.svg";
-import DafIcon from "@/static/icons/brands/daf.svg";
-import MercedesIcon from "@/static/icons/brands/mercedes.svg";
-import RenaultIcon from "@/static/icons/brands/renault.svg";
-import IvecoIcon from "@/static/icons/brands/iveco.svg";
+import { EngineType } from "@/types/SaveGameTypes";
+import { BrandModelTypes, BrandType } from "@/types/ConstTypes";
+import { BRANDS_ETS2 } from "@/utils/Brands";
 
 interface completedProps {
 	error: boolean;
 	completed: boolean;
 }
 
-interface BrandModelTypes {
-	key: string;
-	name: string;
-}
-
-interface BrandType {
-	name: string;
-	models: BrandModelTypes[];
-	icon: string;
-}
-
 const SetTruckEngine = () => {
 	const { selectedSave } = useContext(ProfileContex);
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-	const BRANDS: BrandType[] = [
-		{
-			name: "Scania",
-			models: [
-				{ key: "scania_r", name: "Scania R" },
-				{ key: "scania_s", name: "Scania S" },
-				{ key: "scania_r_2009", name: "Scania R 2009" },
-				{ key: "scania_streamline", name: "Scania Streamline" },
-			],
-			icon: ScaniaIcon,
-		},
-		{
-			name: "Volvo",
-			models: [
-				{ key: "volvo_fh_classic", name: "Volvo FH Classic" },
-				{ key: "volvo_fh", name: "Volvo FH" },
-			],
-			icon: VolvoIcon,
-		},
-		{
-			name: "MAN",
-			models: [
-				{ key: "man_tgx", name: "MAN TGX" },
-				{ key: "man_tgx_euro6", name: "MAN TGX Euro 6" },
-			],
-			icon: ManIcon,
-		},
-		{
-			name: "DAF",
-			models: [
-				{ key: "daf_xf", name: "DAF XF" },
-				{ key: "daf_xf_euro6", name: "DAF XF EURO6" },
-				{ key: "daf_2021", name: "DAF 2021" },
-			],
-			icon: DafIcon,
-		},
-		{
-			name: "Mercedes-Benz",
-			models: [
-				{ key: "mercedes_actros", name: "Mercedes-Benz Actros" },
-				{ key: "mercedes_new_actros", name: "Mercedes-Benz New Actros" },
-			],
-			icon: MercedesIcon,
-		},
-		{
-			name: "Renault",
-			models: [
-				{ key: "renault_t", name: "Renault T" },
-				{ key: "renault_magnum", name: "Renault Magnum" },
-				{ key: "renault_premium", name: "Renault Premium" },
-			],
-			icon: RenaultIcon,
-		},
-		{
-			name: "Iveco",
-			models: [
-				{ key: "iveco_stralis", name: "Iveco Stralis" },
-				{ key: "iveco_hiway", name: "Iveco Hi-Way" },
-			],
-			icon: IvecoIcon,
-		},
-	];
-
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 
-	const [Engines, setEngines] = useState<EngineTypes[] | undefined>(undefined);
+	const [Engines, setEngines] = useState<EngineType[] | undefined>(undefined);
 
-	const [SelectedEngine, setSelectedEngine] = useState<EngineTypes | undefined>(
+	const [SelectedEngine, setSelectedEngine] = useState<EngineType | undefined>(
 		undefined
 	);
 
@@ -160,13 +79,13 @@ const SetTruckEngine = () => {
 	const onClickBrand = async (branName: string) => {
 		if (!branName) return;
 
-		const brandFind = BRANDS.find((p) => p.name === branName) as BrandType;
+		const brandFind = BRANDS_ETS2.find((p) => p.name === branName) as BrandType;
 		setSelectedBrand(brandFind);
 		setSelectedModel(undefined);
 		setSelectedEngine(undefined);
 	};
 
-	const onClickBrandModel = async (modelKey: string) => {
+	const onClickBrandModel = async (modelKey: string, brand: string) => {
 		if (!selectedBrand) return;
 
 		const modelFind = selectedBrand.models.find((p) => p.key === modelKey);
@@ -174,72 +93,23 @@ const SetTruckEngine = () => {
 		setSelectedEngine(undefined);
 
 		if (!modelFind) return;
-		const resEngines = await getTrucksInfoList();
+		const resEngines = await get_brand_models_ets2(brand.toLocaleLowerCase());
 
-		if (resEngines) {
-			switch (modelFind.key) {
-				case "scania_r":
-					setEngines(resEngines.scania.scania_r.engines);
-					break;
-				case "scania_s":
-					setEngines(resEngines.scania.scania_s.engines);
-					break;
-				case "scania_r_2009":
-					setEngines(resEngines.scania.scania_r_2009.engines);
-					break;
-				case "scania_streamline":
-					setEngines(resEngines.scania.scania_streamline.engines);
-					break;
-				case "volvo_fh_classic":
-					setEngines(resEngines.volvo.volvo_fh_classic.engines);
-					break;
-				case "volvo_fh":
-					setEngines(resEngines.volvo.volvo_fh.engines);
-					break;
-				case "man_tgx":
-					setEngines(resEngines.man.man_tgx.engines);
-					break;
-				case "man_tgx_euro6":
-					setEngines(resEngines.man.man_tgx_eu6.engines);
-					break;
-				case "daf_xf":
-					setEngines(resEngines.daf.daf_xf.engines);
-					break;
-				case "daf_xf_euro6":
-					setEngines(resEngines.daf.daf_xf_euro6.engines);
-					break;
-				case "daf_2021":
-					setEngines(resEngines.daf.daf_2021.engines);
-					break;
-				case "mercedes_actros":
-					setEngines(resEngines.mercedes.mercedes_actros.engines);
-					break;
-				case "mercedes_new_actros":
-					setEngines(resEngines.mercedes.mercedes_new_actros.engines);
-					break;
-				case "renault_t":
-					setEngines(resEngines.renault.renault_t.engines);
-					break;
-				case "renault_magnum":
-					setEngines(resEngines.renault.renault_magnum.engines);
-					break;
-				case "renault_premium":
-					setEngines(resEngines.renault.renault_premium.engines);
-					break;
-				case "iveco_stralis":
-					setEngines(resEngines.iveco.iveco_stralis.engines);
-					break;
-				case "iveco_hiway":
-					setEngines(resEngines.iveco.iveco_hiway.engines);
-					break;
-			}
+		if (resEngines.res) {
+			const models = resEngines.models;
+
+			const modelFind = models.find((p) => p.model === modelKey);
+
+			if (modelFind) {
+				setEngines(modelFind.engines);
+			} else setEngines(undefined);
 		}
 	};
 
-	const onClickEngine = (engineId: string) => {
+	const onClickEngine = (engineName: string) => {
 		if (!Engines) return;
 
-		const engineFind = Engines.find((p) => p.name_id === engineId);
+		const engineFind = Engines.find((p) => p.name === engineName);
 		setSelectedEngine(engineFind);
 	};
 
@@ -284,7 +154,7 @@ const SetTruckEngine = () => {
 							<ModalBody className="py-1">
 								<p>Change the engine of your truck to the one of your choice</p>
 								<Select
-									items={BRANDS}
+									items={BRANDS_ETS2}
 									selectedKeys={selectedBrand ? [selectedBrand.name] : []}
 									onChange={(e) => onClickBrand(e.target.value)}
 									label="Brands"
@@ -325,7 +195,9 @@ const SetTruckEngine = () => {
 									isInvalid={errorModelEmpty}
 									items={selectedBrand ? selectedBrand.models : []}
 									selectedKeys={selectedModel ? [selectedModel.key] : []}
-									onChange={(e) => onClickBrandModel(e.target.value)}
+									onChange={(e) =>
+										onClickBrandModel(e.target.value, selectedBrand!.name)
+									}
 									label="Models"
 									placeholder="Select truck model"
 									labelPlacement="inside"
@@ -346,7 +218,7 @@ const SetTruckEngine = () => {
 									isDisabled={!selectedModel}
 									isInvalid={errorEngineEmpty}
 									items={Engines ? Engines : []}
-									selectedKeys={SelectedEngine ? [SelectedEngine.name_id] : []}
+									selectedKeys={SelectedEngine ? [SelectedEngine.name] : []}
 									onChange={(e) => onClickEngine(e.target.value)}
 									label="Engines"
 									placeholder="Select truck engine"
@@ -355,10 +227,7 @@ const SetTruckEngine = () => {
 									startContent={<IconEngine stroke={2} />}
 								>
 									{(engineObj) => (
-										<SelectItem
-											key={engineObj.name_id}
-											textValue={engineObj.name}
-										>
+										<SelectItem key={engineObj.name} textValue={engineObj.name}>
 											<div className="flex items-center gap-2">
 												<div className="flex flex-col">
 													<span className="text-small font-medium">
