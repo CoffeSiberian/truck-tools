@@ -3,7 +3,7 @@ import { readProfileNames, getListSaves } from "@/utils/fileEdit";
 
 // types
 import { ProviderProps } from "@/types/ReactTypes";
-import { ProfileTypesContext } from "@/types/ContexTypes";
+import { ProfileTypesContext, GamesNames } from "@/types/ContexTypes";
 import { Profile, SaveGame, ProfileWithoutSaves } from "@/types/SaveGameTypes";
 
 export const ProfileContex = createContext<ProfileTypesContext>(
@@ -25,13 +25,15 @@ export const ProfileContexInfo = ({ children }: ProviderProps) => {
 		undefined
 	);
 
+	const [selectedGame, setSelectedGame] = useState<GamesNames>("ets2");
+
 	const [isSavesLoading, setIsSavesLoading] = useState<boolean>(false);
 	const [isProfilesLoading, setIsProfilesLoading] = useState<boolean>(false);
 	const [profilesNotFound, setProfilesNotFound] = useState<boolean>(false);
 
 	const loadDirectory = useCallback(async () => {
 		setIsProfilesLoading(true);
-		const prof = await readProfileNames();
+		const prof = await readProfileNames(selectedGame);
 		if (prof.length === 0) {
 			setProfilesNotFound(true);
 			setIsProfilesLoading(false);
@@ -41,7 +43,7 @@ export const ProfileContexInfo = ({ children }: ProviderProps) => {
 
 		setIsProfilesLoading(false);
 		setProfilesList(prof);
-	}, [profilesNotFound]);
+	}, [profilesNotFound, selectedGame]);
 
 	const reloadProfiles = async () => {
 		setSelectedSave(undefined);
@@ -90,6 +92,8 @@ export const ProfileContexInfo = ({ children }: ProviderProps) => {
 				isSavesLoading: isSavesLoading,
 				isProfilesLoading: isProfilesLoading,
 				profilesNotFound: profilesNotFound,
+				game: selectedGame,
+				setGame: setSelectedGame,
 				setProfile: setSelectedProfile,
 				setSave: setSelectedSave,
 				reloadProfiles: reloadProfiles,

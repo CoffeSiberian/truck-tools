@@ -31,9 +31,12 @@ import {
 	IColorRgbToValidate,
 	IColorHsvToValidate,
 } from "@/types/fileEditTypes";
+import { GamesNames } from "@/types/ContexTypes";
 import { IColor } from "react-color-palette";
 
 const STORE_FILE = ".settings.dat";
+const ATS_DIR = "American Truck Simulator";
+const ETS2_DIR = "Euro Truck Simulator 2";
 
 const getProfileImage = async (path: string): Promise<string | undefined> => {
 	const imgPath = await join(path, "avatar.png");
@@ -108,15 +111,17 @@ export const getListDirProfiles = async (
 	return invoceRes.profiles;
 };
 
-export const readProfileNames = async (): Promise<ProfileWithoutSaves[]> => {
-	const reDirProfiles = "Euro Truck Simulator 2/profiles";
+export const readProfileNames = async (
+	game: GamesNames
+): Promise<ProfileWithoutSaves[]> => {
+	const readDirProfiles = (game === "ets2" ? ETS2_DIR : ATS_DIR) + "/profiles";
 
 	const storeDocsDir = await getStoredDocumentDir();
 	const docsDirSystem = await documentDir();
 	const docsDir = storeDocsDir || docsDirSystem;
 
 	const dirProfiles = await getListDirProfiles(
-		(await join(docsDir, reDirProfiles)).toString()
+		(await join(docsDir, readDirProfiles)).toString()
 	);
 	if (!dirProfiles) return [];
 
