@@ -41,13 +41,14 @@ const SelectProfile = () => {
 
 	return (
 		<div className="fixed bottom-0 z-10 mb-2 mt-auto flex w-full justify-center">
-			<div className="mr-2 flex flex-col justify-end gap-2">
+			<div className="mb-1 mr-2 flex flex-col justify-end gap-2">
 				<Tabs
 					onSelectionChange={(index) => setGame(index as GamesNames)}
 					selectedKey={game}
 					size="lg"
 					aria-label="options"
 					variant="solid"
+					isVertical
 					color="warning"
 				>
 					{renderCart(

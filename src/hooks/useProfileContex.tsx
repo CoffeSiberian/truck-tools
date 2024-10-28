@@ -54,6 +54,12 @@ export const ProfileContexInfo = ({ children }: ProviderProps) => {
 		if (prof.length === 0) {
 			setProfilesNotFound(true);
 			setIsProfilesLoading(false);
+			setProfile({
+				game: game,
+				selectedProfile: undefined,
+				selectedSave: undefined,
+				listProfiles: [],
+			});
 			return;
 		}
 		if (profilesNotFound) setProfilesNotFound(false);
