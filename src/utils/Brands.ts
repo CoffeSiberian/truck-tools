@@ -76,3 +76,65 @@ export const BRANDS_ETS2: BrandType[] = [
 		icon: IvecoIcon,
 	},
 ];
+
+export const BRANDS_ATS: BrandType[] = [
+	{
+		name: "Kenworth",
+		models: [
+			{ key: "t680", name: "Kenworth T680" },
+			{ key: "t680_2022", name: "Kenworth T680 2022" },
+			{ key: "w900", name: "Kenworth W900" },
+		],
+		icon: "",
+	},
+	{
+		name: "Freightliner",
+		models: [
+			{ key: "cascadia2019", name: "Freightliner Cascadia 2019" },
+			{ key: "cascadia2024", name: "Freightliner Cascadia 2024" },
+		],
+		icon: "",
+	},
+	{
+		name: "Volvo",
+		models: [
+			{ key: "vnl", name: "Volvo VNL" },
+			{ key: "vnl2018", name: "Volvo VNL 2018" },
+		],
+		icon: VolvoIcon,
+	},
+	{
+		name: "WesternStar",
+		models: [
+			{ key: "49x", name: "Western Star 49X" },
+			{ key: "5700xe", name: "Western Star 5700XE" },
+			{ key: "57x", name: "Western Star 57X" },
+		],
+		icon: "",
+	},
+	{
+		name: "Peterbilt",
+		models: [
+			{ key: "389", name: "Peterbilt 389" },
+			{ key: "579", name: "Peterbilt 579" },
+		],
+		icon: "",
+	},
+	{
+		name: "International",
+		models: [
+			{ key: "9900i", name: "International 9900i" },
+			{ key: "lonestar", name: "International LoneStar" },
+			{ key: "lt", name: "International LT" },
+		],
+		icon: "",
+	},
+	{
+		name: "Mack",
+		models: [
+			{ key: "anthem", name: "Mack Anthem" },
+			{ key: "pinnacle", name: "Mack Pinnacle" },
+		],
+		icon: "",
+	},
+];

@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Select, SelectItem, Avatar } from "@nextui-org/react";
 import { ProfileContex } from "@/hooks/useProfileContex";
 import {
@@ -12,7 +12,11 @@ import {
 	useDisclosure,
 	Image,
 } from "@nextui-org/react";
-import { setTruckEngine, get_brand_models_ets2 } from "@/utils/fileEdit";
+import {
+	setTruckEngine,
+	get_brand_models_ets2,
+	get_brand_models_ats,
+} from "@/utils/fileEdit";
 import AlertSave from "@/components/AlertSave";
 
 // icons
@@ -27,7 +31,7 @@ import {
 // types
 import { EngineType } from "@/types/SaveGameTypes";
 import { BrandModelTypes, BrandType } from "@/types/ConstTypes";
-import { BRANDS_ETS2 } from "@/utils/Brands";
+import { BRANDS_ETS2, BRANDS_ATS } from "@/utils/Brands";
 
 interface completedProps {
 	error: boolean;
@@ -35,7 +39,7 @@ interface completedProps {
 }
 
 const SetTruckEngine = () => {
-	const { selectedSave } = useContext(ProfileContex);
+	const { selectedSave, game } = useContext(ProfileContex);
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -77,9 +81,12 @@ const SetTruckEngine = () => {
 	};
 
 	const onClickBrand = async (branName: string) => {
+		const brandFindData = game === "ets2" ? BRANDS_ETS2 : BRANDS_ATS;
 		if (!branName) return;
 
-		const brandFind = BRANDS_ETS2.find((p) => p.name === branName) as BrandType;
+		const brandFind = brandFindData.find(
+			(p) => p.name === branName
+		) as BrandType;
 		setSelectedBrand(brandFind);
 		setSelectedModel(undefined);
 		setSelectedEngine(undefined);
@@ -93,7 +100,10 @@ const SetTruckEngine = () => {
 		setSelectedEngine(undefined);
 
 		if (!modelFind) return;
-		const resEngines = await get_brand_models_ets2(brand.toLocaleLowerCase());
+		const resEngines =
+			game === "ets2"
+				? await get_brand_models_ets2(brand.toLocaleLowerCase())
+				: await get_brand_models_ats(brand.toLocaleLowerCase());
 
 		if (resEngines.res) {
 			const models = resEngines.models;
@@ -125,6 +135,16 @@ const SetTruckEngine = () => {
 			: true
 		: false;
 
+	useEffect(() => {
+		if (!isOpen) {
+			// need refactor to use one useState
+			setSelectedBrand(undefined);
+			setSelectedModel(undefined);
+			setEngines(undefined);
+			setSelectedEngine(undefined);
+		}
+	}, [isOpen]);
+
 	return (
 		<>
 			<Button
@@ -153,7 +173,7 @@ const SetTruckEngine = () => {
 							<ModalBody className="py-1">
 								<p>Change the engine of your truck to the one of your choice</p>
 								<Select
-									items={BRANDS_ETS2}
+									items={game === "ets2" ? BRANDS_ETS2 : BRANDS_ATS}
 									selectedKeys={selectedBrand ? [selectedBrand.name] : []}
 									onChange={(e) => onClickBrand(e.target.value)}
 									label="Brands"

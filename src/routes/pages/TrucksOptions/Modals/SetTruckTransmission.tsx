@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Select, SelectItem, Avatar } from "@nextui-org/react";
 import { ProfileContex } from "@/hooks/useProfileContex";
 import {
@@ -12,9 +12,13 @@ import {
 	useDisclosure,
 	Image,
 } from "@nextui-org/react";
-import { setTruckTransmission, get_brand_models_ets2 } from "@/utils/fileEdit";
+import {
+	setTruckTransmission,
+	get_brand_models_ets2,
+	get_brand_models_ats,
+} from "@/utils/fileEdit";
 import AlertSave from "@/components/AlertSave";
-import { BRANDS_ETS2 } from "@/utils/Brands";
+import { BRANDS_ETS2, BRANDS_ATS } from "@/utils/Brands";
 
 // icons
 import {
@@ -35,7 +39,7 @@ interface completedProps {
 }
 
 const SetTruckTransmission = () => {
-	const { selectedSave } = useContext(ProfileContex);
+	const { selectedSave, game } = useContext(ProfileContex);
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -82,9 +86,12 @@ const SetTruckTransmission = () => {
 	};
 
 	const onClickBrand = async (branName: string) => {
+		const brandFindData = game === "ets2" ? BRANDS_ETS2 : BRANDS_ATS;
 		if (!branName) return;
 
-		const brandFind = BRANDS_ETS2.find((p) => p.name === branName) as BrandType;
+		const brandFind = brandFindData.find(
+			(p) => p.name === branName
+		) as BrandType;
 		setSelectedBrand(brandFind);
 		setSelectedModel(undefined);
 		setSelectedTransmission(undefined);
@@ -98,9 +105,10 @@ const SetTruckTransmission = () => {
 		setSelectedTransmission(undefined);
 
 		if (!modelFind) return;
-		const resTransmissions = await get_brand_models_ets2(
-			brand.toLocaleLowerCase()
-		);
+		const resTransmissions =
+			game === "ets2"
+				? await get_brand_models_ets2(brand.toLocaleLowerCase())
+				: await get_brand_models_ats(brand.toLocaleLowerCase());
 
 		if (resTransmissions.res) {
 			const models = resTransmissions.models;
@@ -134,6 +142,16 @@ const SetTruckTransmission = () => {
 			: true
 		: false;
 
+	useEffect(() => {
+		if (!isOpen) {
+			// need refactor to use one useState
+			setSelectedBrand(undefined);
+			setSelectedModel(undefined);
+			setTransmissions(undefined);
+			setSelectedTransmission(undefined);
+		}
+	}, [isOpen]);
+
 	return (
 		<>
 			<Button
@@ -165,7 +183,7 @@ const SetTruckTransmission = () => {
 									choice
 								</p>
 								<Select
-									items={BRANDS_ETS2}
+									items={game === "ets2" ? BRANDS_ETS2 : BRANDS_ATS}
 									selectedKeys={selectedBrand ? [selectedBrand.name] : []}
 									onChange={(e) => onClickBrand(e.target.value)}
 									label="Brands"

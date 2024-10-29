@@ -520,6 +520,21 @@ export const get_brand_models_ets2 = async (
 	return invoceRes;
 };
 
+export const get_brand_models_ats = async (
+	brand: string
+): Promise<responseTrucksInfo> => {
+	const rustParams = {
+		brand,
+	};
+
+	const invoceRes = (await invoke(
+		"get_brand_models_ats",
+		rustParams
+	)) as responseTrucksInfo;
+
+	return invoceRes;
+};
+
 export const getSystemTheme = async (): Promise<themeTypes> => {
 	const invoceRes = (await invoke("get_os_theme")) as responseSystemTheme;
 
