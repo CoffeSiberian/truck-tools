@@ -87,6 +87,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 - User account
 - Create custom routes
 - Reset infractions
+- Mods management
 
 ### Related projects
 
@@ -98,3 +99,7 @@ To decrypt the .sii files, we used as a basis the code from https://github.com/C
 
 This repository makes use of SII Decrypt. A library that allows access to ATS and ETS 2 save games.
 https://github.com/TheLazyTomcat/SII_Decrypt
+
+#### FindTruckInfo
+
+Script to automate the search for engines and transmissions in the game https://github.com/CoffeSiberian/FindTruckInfo
