@@ -102,6 +102,7 @@ export const ProfileContexInfo = ({ children }: ProviderProps) => {
 		setProfile({
 			...profile,
 			selectedProfile: profile_to_save,
+			selectedSave: undefined,
 		});
 	};
 
