@@ -38,25 +38,24 @@ interface completedProps {
 	completed: boolean;
 }
 
+interface TruckEngineState {
+	selectedBrand?: BrandType;
+	selectedModel?: BrandModelTypes;
+	selectedEngine?: EngineType;
+	engines?: EngineType[];
+}
+
 const SetTruckEngine = () => {
 	const { selectedSave, game } = useContext(ProfileContex);
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [isLoading, setIsLoading] = useState<boolean>(false);
-
-	const [Engines, setEngines] = useState<EngineType[] | undefined>(undefined);
-
-	const [SelectedEngine, setSelectedEngine] = useState<EngineType | undefined>(
-		undefined
-	);
-
-	const [selectedBrand, setSelectedBrand] = useState<BrandType | undefined>(
-		undefined
-	);
-
-	const [selectedModel, setSelectedModel] = useState<
-		BrandModelTypes | undefined
-	>(undefined);
+	const [stateEngine, setStateEngine] = useState<TruckEngineState>({
+		selectedBrand: undefined,
+		selectedModel: undefined,
+		selectedEngine: undefined,
+		engines: undefined,
+	});
 
 	const [completed, setCompleted] = useState<completedProps>({
 		error: false,
@@ -67,11 +66,14 @@ const SetTruckEngine = () => {
 		if (completed.completed) {
 			setCompleted({ error: false, completed: false });
 		}
+		if (!stateEngine.selectedEngine) return;
 
-		if (!SelectedEngine) return;
 		if (selectedSave) {
 			setIsLoading(true);
-			const res = await setTruckEngine(selectedSave.dir, SelectedEngine.code);
+			const res = await setTruckEngine(
+				selectedSave.dir,
+				stateEngine.selectedEngine.code
+			);
 			setCompleted({
 				error: !res,
 				completed: true,
@@ -86,19 +88,23 @@ const SetTruckEngine = () => {
 		const brandFind = brandFindData.find(
 			(p) => p.key === branName
 		) as BrandType;
-		setSelectedBrand(brandFind);
-		setSelectedModel(undefined);
-		setSelectedEngine(undefined);
+
+		setStateEngine({
+			selectedBrand: brandFind,
+			selectedModel: undefined,
+			selectedEngine: undefined,
+			engines: undefined,
+		});
 	};
 
 	const onClickBrandModel = async (modelKey: string, brand: string) => {
-		if (!selectedBrand) return;
+		if (!stateEngine.selectedBrand) return;
 
-		const modelFind = selectedBrand.models.find((p) => p.key === modelKey);
-		setSelectedModel(modelFind);
-		setSelectedEngine(undefined);
-
+		const modelFind = stateEngine.selectedBrand.models.find(
+			(p) => p.key === modelKey
+		);
 		if (!modelFind) return;
+
 		const resEngines =
 			game === "ets2"
 				? await get_brand_models_ets2(brand)
@@ -106,41 +112,57 @@ const SetTruckEngine = () => {
 
 		if (resEngines.res) {
 			const models = resEngines.models;
+			const modelFindApi = models.find((p) => p.model === modelKey);
 
-			const modelFind = models.find((p) => p.model === modelKey);
-
-			if (modelFind) {
-				setEngines(modelFind.engines);
-			} else setEngines(undefined);
+			if (modelFindApi) {
+				setStateEngine({
+					...stateEngine,
+					selectedModel: modelFind,
+					engines: modelFindApi.engines,
+					selectedBrand: stateEngine.selectedBrand,
+					selectedEngine: undefined,
+				});
+			} else {
+				setStateEngine({
+					...stateEngine,
+					selectedModel: modelFind,
+					engines: undefined,
+				});
+			}
 		}
 	};
 
 	const onClickEngine = (engineName: string) => {
-		if (!Engines) return;
+		if (!stateEngine.engines) return;
+		const engineFind = stateEngine.engines.find((p) => p.name === engineName);
 
-		const engineFind = Engines.find((p) => p.name === engineName);
-		setSelectedEngine(engineFind);
+		setStateEngine({
+			...stateEngine,
+			selectedEngine: engineFind,
+		});
 	};
 
-	const errorModelEmpty = selectedBrand
-		? selectedModel
+	const errorModelEmpty = stateEngine.selectedBrand
+		? stateEngine.selectedModel
 			? false
 			: true
 		: false;
 
-	const errorEngineEmpty = selectedModel
-		? SelectedEngine
+	const errorEngineEmpty = stateEngine.selectedModel
+		? stateEngine.selectedEngine
 			? false
 			: true
 		: false;
 
 	useEffect(() => {
 		if (!isOpen) {
-			// need refactor to use one useState
-			setSelectedBrand(undefined);
-			setSelectedModel(undefined);
-			setEngines(undefined);
-			setSelectedEngine(undefined);
+			setStateEngine({
+				selectedBrand: undefined,
+				selectedModel: undefined,
+				selectedEngine: undefined,
+				engines: undefined,
+			});
+			setCompleted({ error: false, completed: false });
 		}
 	}, [isOpen]);
 
@@ -173,17 +195,21 @@ const SetTruckEngine = () => {
 								<p>Change the engine of your truck to the one of your choice</p>
 								<Select
 									items={game === "ets2" ? BRANDS_ETS2 : BRANDS_ATS}
-									selectedKeys={selectedBrand ? [selectedBrand.key] : []}
+									selectedKeys={
+										stateEngine.selectedBrand
+											? [stateEngine.selectedBrand.key]
+											: []
+									}
 									onChange={(e) => onClickBrand(e.target.value)}
 									label="Brands"
 									placeholder="Select truck brand"
 									labelPlacement="inside"
 									variant="bordered"
 									startContent={
-										selectedBrand ? (
+										stateEngine.selectedBrand ? (
 											<Image
-												alt={selectedBrand.icon}
-												src={selectedBrand.icon}
+												alt={stateEngine.selectedBrand.icon}
+												src={stateEngine.selectedBrand.icon}
 												width={30}
 											/>
 										) : (
@@ -209,12 +235,23 @@ const SetTruckEngine = () => {
 									)}
 								</Select>
 								<Select
-									isDisabled={selectedBrand ? false : true}
+									isDisabled={stateEngine.selectedBrand ? false : true}
 									isInvalid={errorModelEmpty}
-									items={selectedBrand ? selectedBrand.models : []}
-									selectedKeys={selectedModel ? [selectedModel.key] : []}
+									items={
+										stateEngine.selectedBrand
+											? stateEngine.selectedBrand.models
+											: []
+									}
+									selectedKeys={
+										stateEngine.selectedModel
+											? [stateEngine.selectedModel.key]
+											: []
+									}
 									onChange={(e) =>
-										onClickBrandModel(e.target.value, selectedBrand!.key)
+										onClickBrandModel(
+											e.target.value,
+											stateEngine.selectedBrand!.key
+										)
 									}
 									label="Models"
 									placeholder="Select truck model"
@@ -233,10 +270,14 @@ const SetTruckEngine = () => {
 									)}
 								</Select>
 								<Select
-									isDisabled={!selectedModel}
+									isDisabled={!stateEngine.selectedModel}
 									isInvalid={errorEngineEmpty}
-									items={Engines ? Engines : []}
-									selectedKeys={SelectedEngine ? [SelectedEngine.name] : []}
+									items={stateEngine.engines ? stateEngine.engines : []}
+									selectedKeys={
+										stateEngine.selectedEngine
+											? [stateEngine.selectedEngine.name]
+											: []
+									}
 									onChange={(e) => onClickEngine(e.target.value)}
 									label="Engines"
 									placeholder="Select truck engine"

@@ -38,27 +38,26 @@ interface completedProps {
 	completed: boolean;
 }
 
+interface TruckTransmissionState {
+	selectedBrand?: BrandType;
+	selectedModel?: BrandModelTypes;
+	selectedTransmission?: TransmissionType;
+	transmissions?: TransmissionType[];
+}
+
 const SetTruckTransmission = () => {
 	const { selectedSave, game } = useContext(ProfileContex);
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 
-	const [transmissions, setTransmissions] = useState<
-		TransmissionType[] | undefined
-	>(undefined);
-
-	const [selectedTransmission, setSelectedTransmission] = useState<
-		TransmissionType | undefined
-	>(undefined);
-
-	const [selectedBrand, setSelectedBrand] = useState<BrandType | undefined>(
-		undefined
-	);
-
-	const [selectedModel, setSelectedModel] = useState<
-		BrandModelTypes | undefined
-	>(undefined);
+	const [transmissionState, setTransmissionState] =
+		useState<TruckTransmissionState>({
+			selectedBrand: undefined,
+			selectedModel: undefined,
+			selectedTransmission: undefined,
+			transmissions: undefined,
+		});
 
 	const [completed, setCompleted] = useState<completedProps>({
 		error: false,
@@ -70,12 +69,12 @@ const SetTruckTransmission = () => {
 			setCompleted({ error: false, completed: false });
 		}
 
-		if (!selectedTransmission) return;
+		if (!transmissionState.selectedTransmission) return;
 		if (selectedSave) {
 			setIsLoading(true);
 			const res = await setTruckTransmission(
 				selectedSave.dir,
-				selectedTransmission.code
+				transmissionState.selectedTransmission.code
 			);
 			setCompleted({
 				error: !res,
@@ -91,19 +90,23 @@ const SetTruckTransmission = () => {
 		const brandFind = brandFindData.find(
 			(p) => p.key === branName
 		) as BrandType;
-		setSelectedBrand(brandFind);
-		setSelectedModel(undefined);
-		setSelectedTransmission(undefined);
+
+		setTransmissionState({
+			selectedBrand: brandFind,
+			selectedModel: undefined,
+			selectedTransmission: undefined,
+			transmissions: undefined,
+		});
 	};
 
 	const onClickBrandModel = async (modelKey: string, brand: string) => {
-		if (!selectedBrand) return;
+		if (!transmissionState.selectedBrand) return;
 
-		const modelFind = selectedBrand.models.find((p) => p.key === modelKey);
-		setSelectedModel(modelFind);
-		setSelectedTransmission(undefined);
-
+		const modelFind = transmissionState.selectedBrand.models.find(
+			(p) => p.key === modelKey
+		);
 		if (!modelFind) return;
+
 		const resTransmissions =
 			game === "ets2"
 				? await get_brand_models_ets2(brand)
@@ -111,43 +114,58 @@ const SetTruckTransmission = () => {
 
 		if (resTransmissions.res) {
 			const models = resTransmissions.models;
+			const modelFindApi = models.find((p) => p.model === modelKey);
 
-			const modelFind = models.find((p) => p.model === modelKey);
-
-			if (modelFind) {
-				setTransmissions(modelFind.transmissions);
-			} else setTransmissions(undefined);
+			if (modelFindApi) {
+				setTransmissionState({
+					...transmissionState,
+					selectedModel: modelFind,
+					transmissions: modelFindApi.transmissions,
+					selectedTransmission: undefined,
+				});
+			} else {
+				setTransmissionState({
+					...transmissionState,
+					selectedModel: modelFind,
+					transmissions: undefined,
+				});
+			}
 		}
 	};
 
 	const onClickTransmission = (transmissionId: string) => {
-		if (!transmissions) return;
-
-		const transmissionFind = transmissions.find(
+		if (!transmissionState.transmissions) return;
+		const transmissionFind = transmissionState.transmissions.find(
 			(p) => p.name === transmissionId
 		);
-		setSelectedTransmission(transmissionFind);
+
+		setTransmissionState({
+			...transmissionState,
+			selectedTransmission: transmissionFind,
+		});
 	};
 
-	const errorModelEmpty = selectedBrand
-		? selectedModel
+	const errorModelEmpty = transmissionState.selectedBrand
+		? transmissionState.selectedModel
 			? false
 			: true
 		: false;
 
-	const errorTransmissionEmpty = selectedModel
-		? selectedTransmission
+	const errorTransmissionEmpty = transmissionState.selectedModel
+		? transmissionState.selectedTransmission
 			? false
 			: true
 		: false;
 
 	useEffect(() => {
 		if (!isOpen) {
-			// need refactor to use one useState
-			setSelectedBrand(undefined);
-			setSelectedModel(undefined);
-			setTransmissions(undefined);
-			setSelectedTransmission(undefined);
+			setTransmissionState({
+				selectedBrand: undefined,
+				selectedModel: undefined,
+				selectedTransmission: undefined,
+				transmissions: undefined,
+			});
+			setCompleted({ error: false, completed: false });
 		}
 	}, [isOpen]);
 
@@ -183,17 +201,21 @@ const SetTruckTransmission = () => {
 								</p>
 								<Select
 									items={game === "ets2" ? BRANDS_ETS2 : BRANDS_ATS}
-									selectedKeys={selectedBrand ? [selectedBrand.key] : []}
+									selectedKeys={
+										transmissionState.selectedBrand
+											? [transmissionState.selectedBrand.key]
+											: []
+									}
 									onChange={(e) => onClickBrand(e.target.value)}
 									label="Brands"
 									placeholder="Select truck brand"
 									labelPlacement="inside"
 									variant="bordered"
 									startContent={
-										selectedBrand ? (
+										transmissionState.selectedBrand ? (
 											<Image
-												alt={selectedBrand.icon}
-												src={selectedBrand.icon}
+												alt={transmissionState.selectedBrand.icon}
+												src={transmissionState.selectedBrand.icon}
 												width={30}
 											/>
 										) : (
@@ -219,12 +241,23 @@ const SetTruckTransmission = () => {
 									)}
 								</Select>
 								<Select
-									isDisabled={selectedBrand ? false : true}
+									isDisabled={transmissionState.selectedBrand ? false : true}
 									isInvalid={errorModelEmpty}
-									items={selectedBrand ? selectedBrand.models : []}
-									selectedKeys={selectedModel ? [selectedModel.key] : []}
+									items={
+										transmissionState.selectedBrand
+											? transmissionState.selectedBrand.models
+											: []
+									}
+									selectedKeys={
+										transmissionState.selectedModel
+											? [transmissionState.selectedModel.key]
+											: []
+									}
 									onChange={(e) =>
-										onClickBrandModel(e.target.value, selectedBrand!.key)
+										onClickBrandModel(
+											e.target.value,
+											transmissionState.selectedBrand!.key
+										)
 									}
 									label="Models"
 									placeholder="Select truck model"
@@ -243,11 +276,17 @@ const SetTruckTransmission = () => {
 									)}
 								</Select>
 								<Select
-									isDisabled={!selectedModel}
+									isDisabled={!transmissionState.selectedModel}
 									isInvalid={errorTransmissionEmpty}
-									items={transmissions ? transmissions : []}
+									items={
+										transmissionState.transmissions
+											? transmissionState.transmissions
+											: []
+									}
 									selectedKeys={
-										selectedTransmission ? [selectedTransmission.name] : []
+										transmissionState.selectedTransmission
+											? [transmissionState.selectedTransmission.name]
+											: []
 									}
 									onChange={(e) => onClickTransmission(e.target.value)}
 									label="Transmissions"
