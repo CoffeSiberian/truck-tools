@@ -17,9 +17,10 @@ use main_options::trailers::{
     set_remove_trailer_restricted_areas, set_trailer_license_plate, set_trailer_wear,
 };
 use main_options::trucks::{
-    get_truck_brand_models_ets2, get_truck_id, get_truck_vehicle_index, set_any_trucks_fuel,
-    set_any_trucks_wear, set_infinite_fuel_truck, set_truck_engine, set_truck_fuel,
-    set_truck_license_plate, set_truck_transmissions, set_truck_wear,
+    get_truck_brand_models_ets2, get_truck_brands_models_ats, get_truck_id,
+    get_truck_vehicle_index, set_any_trucks_fuel, set_any_trucks_wear, set_infinite_fuel_truck,
+    set_truck_engine, set_truck_fuel, set_truck_license_plate, set_truck_transmissions,
+    set_truck_wear,
 };
 
 use std::path::Path;
@@ -196,6 +197,19 @@ async fn get_save_game_count(
 #[tauri::command]
 async fn get_brand_models_ets2(brand: &str) -> Result<TruckBrandModelsResponse, ()> {
     match get_truck_brand_models_ets2(brand) {
+        Some(models) => return Ok(TruckBrandModelsResponse { res: true, models }),
+        None => {
+            return Ok(TruckBrandModelsResponse {
+                res: false,
+                models: vec![],
+            })
+        }
+    };
+}
+
+#[tauri::command]
+async fn get_brand_models_ats(brand: &str) -> Result<TruckBrandModelsResponse, ()> {
+    match get_truck_brands_models_ats(brand) {
         Some(models) => return Ok(TruckBrandModelsResponse { res: true, models }),
         None => {
             return Ok(TruckBrandModelsResponse {
@@ -828,6 +842,7 @@ fn main() {
             get_save_game_name,
             get_save_game_count,
             get_brand_models_ets2,
+            get_brand_models_ats,
             get_list_dir_profile,
             repait_truck,
             repait_all_trucks,

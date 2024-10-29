@@ -1,15 +1,26 @@
 use super::license_plate::get_license_plate_formated;
 
 use crate::structs::vec_items_find::VecItemsFind;
-use crate::structs::vec_trucks::{Models, TruckBrands, VecTrucksId};
+use crate::structs::vec_trucks::{Models, TruckBrandsATS, TruckBrandsETS2, VecTrucksId};
 use cached::proc_macro::cached;
 use serde_json::from_str;
 
 const ETS2_TRUCK_BRANDS: &str = include_str!("../embeds/trucks_data_ets2.json");
+const ATS_TRUCK_BRANDS: &str = include_str!("../embeds/trucks_data_ats.json");
 
 #[cached]
-fn get_trucks_data_ets2() -> Option<TruckBrands> {
-    let truck_brands: TruckBrands = match from_str(ETS2_TRUCK_BRANDS) {
+fn get_trucks_data_ets2() -> Option<TruckBrandsETS2> {
+    let truck_brands: TruckBrandsETS2 = match from_str(ETS2_TRUCK_BRANDS) {
+        Ok(truck_brands) => truck_brands,
+        Err(_) => return None,
+    };
+
+    return Some(truck_brands);
+}
+
+#[cached]
+fn get_trucks_data_ats() -> Option<TruckBrandsATS> {
+    let truck_brands: TruckBrandsATS = match from_str(ATS_TRUCK_BRANDS) {
         Ok(truck_brands) => truck_brands,
         Err(_) => return None,
     };
@@ -511,7 +522,7 @@ pub fn set_truck_transmissions(
 }
 
 pub fn get_truck_brand_models_ets2(brand: &str) -> Option<Vec<Models>> {
-    let truck_brands: TruckBrands = match get_trucks_data_ets2() {
+    let truck_brands: TruckBrandsETS2 = match get_trucks_data_ets2() {
         Some(truck_brands) => truck_brands,
         None => return None,
     };
@@ -524,6 +535,24 @@ pub fn get_truck_brand_models_ets2(brand: &str) -> Option<Vec<Models>> {
         "scania" => return Some(truck_brands.scania.clone()),
         "volvo" => return Some(truck_brands.volvo.clone()),
         "iveco" => return Some(truck_brands.iveco.clone()),
+        _ => return None,
+    }
+}
+
+pub fn get_truck_brands_models_ats(brand: &str) -> Option<Vec<Models>> {
+    let truck_brands: TruckBrandsATS = match get_trucks_data_ats() {
+        Some(truck_brands) => truck_brands,
+        None => return None,
+    };
+
+    match brand {
+        "kenworth" => return Some(truck_brands.kenworth.clone()),
+        "freightliner" => return Some(truck_brands.freightliner.clone()),
+        "volvo" => return Some(truck_brands.volvo.clone()),
+        "westernstar" => return Some(truck_brands.westernstar.clone()),
+        "peterbilt" => return Some(truck_brands.peterbilt.clone()),
+        "intnational" => return Some(truck_brands.intnational.clone()),
+        "mack" => return Some(truck_brands.mack.clone()),
         _ => return None,
     }
 }

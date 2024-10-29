@@ -6,7 +6,18 @@ pub struct VecTrucksId {
 }
 
 #[derive(Clone, Serialize, Deserialize)]
-pub struct TruckBrands {
+pub struct TruckBrandsATS {
+    pub kenworth: Vec<Models>,
+    pub freightliner: Vec<Models>,
+    pub volvo: Vec<Models>,
+    pub westernstar: Vec<Models>,
+    pub peterbilt: Vec<Models>,
+    pub intnational: Vec<Models>,
+    pub mack: Vec<Models>,
+}
+
+#[derive(Clone, Serialize, Deserialize)]
+pub struct TruckBrandsETS2 {
     pub mercedes: Vec<Models>,
     pub daf: Vec<Models>,
     pub man: Vec<Models>,
