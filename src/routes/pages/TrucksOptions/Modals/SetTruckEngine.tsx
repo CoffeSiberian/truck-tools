@@ -82,10 +82,9 @@ const SetTruckEngine = () => {
 
 	const onClickBrand = async (branName: string) => {
 		const brandFindData = game === "ets2" ? BRANDS_ETS2 : BRANDS_ATS;
-		if (!branName) return;
 
 		const brandFind = brandFindData.find(
-			(p) => p.name === branName
+			(p) => p.key === branName
 		) as BrandType;
 		setSelectedBrand(brandFind);
 		setSelectedModel(undefined);
@@ -102,8 +101,8 @@ const SetTruckEngine = () => {
 		if (!modelFind) return;
 		const resEngines =
 			game === "ets2"
-				? await get_brand_models_ets2(brand.toLocaleLowerCase())
-				: await get_brand_models_ats(brand.toLocaleLowerCase());
+				? await get_brand_models_ets2(brand)
+				: await get_brand_models_ats(brand);
 
 		if (resEngines.res) {
 			const models = resEngines.models;
@@ -174,7 +173,7 @@ const SetTruckEngine = () => {
 								<p>Change the engine of your truck to the one of your choice</p>
 								<Select
 									items={game === "ets2" ? BRANDS_ETS2 : BRANDS_ATS}
-									selectedKeys={selectedBrand ? [selectedBrand.name] : []}
+									selectedKeys={selectedBrand ? [selectedBrand.key] : []}
 									onChange={(e) => onClickBrand(e.target.value)}
 									label="Brands"
 									placeholder="Select truck brand"
@@ -193,7 +192,7 @@ const SetTruckEngine = () => {
 									}
 								>
 									{(BrandObj) => (
-										<SelectItem key={BrandObj.name} textValue={BrandObj.name}>
+										<SelectItem key={BrandObj.key} textValue={BrandObj.name}>
 											<div className="flex items-center gap-2">
 												<Avatar
 													alt={BrandObj.icon}
@@ -215,7 +214,7 @@ const SetTruckEngine = () => {
 									items={selectedBrand ? selectedBrand.models : []}
 									selectedKeys={selectedModel ? [selectedModel.key] : []}
 									onChange={(e) =>
-										onClickBrandModel(e.target.value, selectedBrand!.name)
+										onClickBrandModel(e.target.value, selectedBrand!.key)
 									}
 									label="Models"
 									placeholder="Select truck model"

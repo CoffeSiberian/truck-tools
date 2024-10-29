@@ -12,6 +12,7 @@ import { BrandType } from "@/types/ConstTypes";
 
 export const BRANDS_ETS2: BrandType[] = [
 	{
+		key: "scania",
 		name: "Scania",
 		models: [
 			{ key: "s_2024e", name: "Scania S BEV" },
@@ -23,6 +24,7 @@ export const BRANDS_ETS2: BrandType[] = [
 		icon: ScaniaIcon,
 	},
 	{
+		key: "volvo",
 		name: "Volvo",
 		models: [
 			{ key: "fh16", name: "Volvo FH" },
@@ -31,6 +33,7 @@ export const BRANDS_ETS2: BrandType[] = [
 		icon: VolvoIcon,
 	},
 	{
+		key: "man",
 		name: "MAN",
 		models: [
 			{ key: "tgx_2020", name: "MAN TGX 2020" },
@@ -40,6 +43,7 @@ export const BRANDS_ETS2: BrandType[] = [
 		icon: ManIcon,
 	},
 	{
+		key: "daf",
 		name: "DAF",
 		models: [
 			{ key: "xd", name: "DAF XD" },
@@ -50,6 +54,7 @@ export const BRANDS_ETS2: BrandType[] = [
 		icon: DafIcon,
 	},
 	{
+		key: "mercedes",
 		name: "Mercedes-Benz",
 		models: [
 			{ key: "actros", name: "Mercedes-Benz Actros" },
@@ -58,6 +63,7 @@ export const BRANDS_ETS2: BrandType[] = [
 		icon: MercedesIcon,
 	},
 	{
+		key: "renault",
 		name: "Renault",
 		models: [
 			{ key: "etech_t", name: "Renault E-Tech" },
@@ -68,6 +74,7 @@ export const BRANDS_ETS2: BrandType[] = [
 		icon: RenaultIcon,
 	},
 	{
+		key: "iveco",
 		name: "Iveco",
 		models: [
 			{ key: "hiway", name: "Iveco Hi-Way" },
@@ -79,6 +86,7 @@ export const BRANDS_ETS2: BrandType[] = [
 
 export const BRANDS_ATS: BrandType[] = [
 	{
+		key: "kenworth",
 		name: "Kenworth",
 		models: [
 			{ key: "t680", name: "Kenworth T680" },
@@ -88,6 +96,7 @@ export const BRANDS_ATS: BrandType[] = [
 		icon: "",
 	},
 	{
+		key: "freightliner",
 		name: "Freightliner",
 		models: [
 			{ key: "cascadia2019", name: "Freightliner Cascadia 2019" },
@@ -96,6 +105,7 @@ export const BRANDS_ATS: BrandType[] = [
 		icon: "",
 	},
 	{
+		key: "volvo",
 		name: "Volvo",
 		models: [
 			{ key: "vnl", name: "Volvo VNL" },
@@ -104,7 +114,8 @@ export const BRANDS_ATS: BrandType[] = [
 		icon: VolvoIcon,
 	},
 	{
-		name: "WesternStar",
+		key: "westernstar",
+		name: "Western Star",
 		models: [
 			{ key: "49x", name: "Western Star 49X" },
 			{ key: "5700xe", name: "Western Star 5700XE" },
@@ -113,6 +124,7 @@ export const BRANDS_ATS: BrandType[] = [
 		icon: "",
 	},
 	{
+		key: "peterbilt",
 		name: "Peterbilt",
 		models: [
 			{ key: "389", name: "Peterbilt 389" },
@@ -121,6 +133,7 @@ export const BRANDS_ATS: BrandType[] = [
 		icon: "",
 	},
 	{
+		key: "intnational",
 		name: "International",
 		models: [
 			{ key: "9900i", name: "International 9900i" },
@@ -130,6 +143,7 @@ export const BRANDS_ATS: BrandType[] = [
 		icon: "",
 	},
 	{
+		key: "mack",
 		name: "Mack",
 		models: [
 			{ key: "anthem", name: "Mack Anthem" },

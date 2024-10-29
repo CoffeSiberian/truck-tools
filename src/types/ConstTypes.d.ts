@@ -9,6 +9,7 @@ export interface BrandModelTypes {
 }
 
 export interface BrandType {
+	key: string;
 	name: string;
 	models: BrandModelTypes[];
 	icon: string;
