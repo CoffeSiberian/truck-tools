@@ -34,7 +34,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 
 ### TO DO
 
-- [ ] ATS compatibility
+- [x] ATS compatibility
 
 #### Trailers
 
@@ -86,6 +86,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 - Compatibility with DLC's when sharing trailers
 - User account
 - Create custom routes
+- Reset infractions
 
 ### Related projects
 
