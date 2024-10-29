@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { ProfileContex } from "@/hooks/useProfileContex";
 import OptionCard from "@/components/OptionCard";
 
 // images
@@ -16,6 +18,8 @@ import RepairTrailers from "@/routes/pages/TrailersOptions/Modals/RepairTrailer"
 import RepairAllTrailers from "@/routes/pages/TrailersOptions/Modals/RepairAllTrailers";
 
 const TrailersOptions = () => {
+	const { game } = useContext(ProfileContex);
+
 	const items = [
 		{
 			id: "1",
@@ -23,6 +27,7 @@ const TrailersOptions = () => {
 			description: "Change the license plate of the trailer",
 			image: img2,
 			modal: <EditLicensePlate />,
+			disable: game === "ets2" ? false : true,
 		},
 		{
 			id: "2",
@@ -30,6 +35,7 @@ const TrailersOptions = () => {
 			description: "Modify the weight of your current job",
 			image: img4,
 			modal: <ModifyWeight />,
+			disable: false,
 		},
 		{
 			id: "3",
@@ -37,6 +43,7 @@ const TrailersOptions = () => {
 			description: "Unlock regional blocking of trailers",
 			image: img3,
 			modal: <UnlockTrailers />,
+			disable: false,
 		},
 		{
 			id: "4",
@@ -44,6 +51,7 @@ const TrailersOptions = () => {
 			description: "Modifies the trailer weight, applying it only once.",
 			image: img5,
 			modal: <ModifyTrailerWeight />,
+			disable: false,
 		},
 		{
 			id: "5",
@@ -51,6 +59,7 @@ const TrailersOptions = () => {
 			description: "Repair current trailer",
 			image: img17,
 			modal: <RepairTrailers />,
+			disable: false,
 		},
 		{
 			id: "6",
@@ -58,6 +67,7 @@ const TrailersOptions = () => {
 			description: "Repair all the trailers you have",
 			image: img17,
 			modal: <RepairAllTrailers />,
+			disable: false,
 		},
 	];
 
@@ -65,6 +75,8 @@ const TrailersOptions = () => {
 		<div className="flex flex-col gap-4">
 			<div className="my-4 grid grid-cols-3 gap-4">
 				{items.map((item) => {
+					if (item.disable) return;
+
 					return (
 						<OptionCard
 							key={item.id}
