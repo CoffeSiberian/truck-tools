@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from "react";
-import { Select, SelectItem, Avatar } from "@nextui-org/react";
+import { Select, SelectItem } from "@nextui-org/react";
 import { ProfileContex } from "@/hooks/useProfileContex";
 import {
 	Modal,
@@ -22,7 +22,6 @@ import AlertSave from "@/components/AlertSave";
 // icons
 import {
 	IconPencil,
-	IconSteeringWheel,
 	IconEngine,
 	IconLayersSubtract,
 	IconReplace,
@@ -220,12 +219,10 @@ const SetTruckEngine = () => {
 									{(BrandObj) => (
 										<SelectItem key={BrandObj.key} textValue={BrandObj.name}>
 											<div className="flex items-center gap-2">
-												<Avatar
+												<Image
 													alt={BrandObj.icon}
 													src={BrandObj.icon}
-													size="lg"
-													showFallback
-													fallback={<IconSteeringWheel />}
+													className="w-12 rounded-lg object-contain"
 												/>
 												<div className="flex flex-col">
 													<span className="text-small">{BrandObj.name}</span>

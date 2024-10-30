@@ -1,11 +1,19 @@
-// images
-import ScaniaIcon from "@/static/icons/brands/scania.svg";
-import VolvoIcon from "@/static/icons/brands/volvo.svg";
-import ManIcon from "@/static/icons/brands/man.svg";
-import DafIcon from "@/static/icons/brands/daf.svg";
-import MercedesIcon from "@/static/icons/brands/mercedes.svg";
-import RenaultIcon from "@/static/icons/brands/renault.svg";
-import IvecoIcon from "@/static/icons/brands/iveco.svg";
+// images ets2
+import ScaniaIcon from "@/static/icons/brands/ets2/scania.webp";
+import VolvoIcon from "@/static/icons/brands/ets2/volvo.webp";
+import ManIcon from "@/static/icons/brands/ets2/man.webp";
+import DafIcon from "@/static/icons/brands/ets2/daf.webp";
+import MercedesIcon from "@/static/icons/brands/ets2/mercedes.webp";
+import RenaultIcon from "@/static/icons/brands/ets2/renault.webp";
+import IvecoIcon from "@/static/icons/brands/ets2/iveco.webp";
+
+// images ats
+import KenworthIcon from "@/static/icons/brands/ats/kenworth.webp";
+import InternationalIcon from "@/static/icons/brands/ats/international.webp";
+import PeterbiltIcon from "@/static/icons/brands/ats/peterbilt.webp";
+import MackIcon from "@/static/icons/brands/ats/mack.webp";
+import Westernstar from "@/static/icons/brands/ats/westernstar.webp";
+import Freightliner from "@/static/icons/brands/ats/freightliner.webp";
 
 // types
 import { BrandType } from "@/types/ConstTypes";
@@ -93,7 +101,7 @@ export const BRANDS_ATS: BrandType[] = [
 			{ key: "t680_2022", name: "Kenworth T680 2022" },
 			{ key: "w900", name: "Kenworth W900" },
 		],
-		icon: "",
+		icon: KenworthIcon,
 	},
 	{
 		key: "freightliner",
@@ -102,7 +110,7 @@ export const BRANDS_ATS: BrandType[] = [
 			{ key: "cascadia2019", name: "Freightliner Cascadia 2019" },
 			{ key: "cascadia2024", name: "Freightliner Cascadia 2024" },
 		],
-		icon: "",
+		icon: Freightliner,
 	},
 	{
 		key: "volvo",
@@ -121,7 +129,7 @@ export const BRANDS_ATS: BrandType[] = [
 			{ key: "5700xe", name: "Western Star 5700XE" },
 			{ key: "57x", name: "Western Star 57X" },
 		],
-		icon: "",
+		icon: Westernstar,
 	},
 	{
 		key: "peterbilt",
@@ -130,7 +138,7 @@ export const BRANDS_ATS: BrandType[] = [
 			{ key: "389", name: "Peterbilt 389" },
 			{ key: "579", name: "Peterbilt 579" },
 		],
-		icon: "",
+		icon: PeterbiltIcon,
 	},
 	{
 		key: "intnational",
@@ -140,7 +148,7 @@ export const BRANDS_ATS: BrandType[] = [
 			{ key: "lonestar", name: "International LoneStar" },
 			{ key: "lt", name: "International LT" },
 		],
-		icon: "",
+		icon: InternationalIcon,
 	},
 	{
 		key: "mack",
@@ -149,6 +157,6 @@ export const BRANDS_ATS: BrandType[] = [
 			{ key: "anthem", name: "Mack Anthem" },
 			{ key: "pinnacle", name: "Mack Pinnacle" },
 		],
-		icon: "",
+		icon: MackIcon,
 	},
 ];
