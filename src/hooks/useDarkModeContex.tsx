@@ -10,6 +10,7 @@ import { ProviderProps } from "@/types/ReactTypes";
 import { themeTypesSystem } from "@/types/fileEditTypes";
 import { DarkModeContextTypes } from "@/types/ContexTypes";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const DarkModeContex = createContext<DarkModeContextTypes>(
 	{} as DarkModeContextTypes
 );

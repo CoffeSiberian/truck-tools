@@ -10,6 +10,7 @@ import {
 } from "@/types/ContexTypes";
 import { ProfileWithoutSaves } from "@/types/SaveGameTypes";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const ProfileContex = createContext<ProfileTypesContext>(
 	{} as ProfileTypesContext
 );
