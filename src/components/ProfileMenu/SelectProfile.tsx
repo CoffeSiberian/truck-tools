@@ -40,10 +40,10 @@ const SelectProfile = () => {
 	};
 
 	return (
-		<div className="fixed bottom-0 z-10 mb-2 mt-auto flex w-full justify-center">
+		<div className="fixed bottom-0 z-10 mb-2 mt-auto flex w-full justify-center gap-2">
 			<div
 				className={classNames(
-					"mb-1 mr-2 flex flex-col justify-end gap-2 transition-opacity hover:opacity-100",
+					"transition-opacity hover:opacity-100",
 					selectedSave ? "opacity-70" : "opacity-100"
 				)}
 			>
@@ -70,19 +70,10 @@ const SelectProfile = () => {
 			</div>
 			<div
 				className={classNames(
-					"flex w-full max-w-4xl flex-col items-center gap-1 transition-opacity hover:opacity-100",
+					"flex w-full max-w-4xl items-center gap-1 transition-opacity hover:opacity-100",
 					selectedSave ? "opacity-70" : "opacity-100"
 				)}
 			>
-				{!selectedSave && !profilesNotFound && (
-					<Chip
-						className="fixed bottom-0 z-10 mb-[105px] opacity-100"
-						startContent={<IconAlertTriangle stroke={1.5} />}
-						color="warning"
-					>
-						<b>First select your profile and save</b>
-					</Chip>
-				)}
 				{profilesNotFound && <ProfileError />}
 				<Card className="flex w-full">
 					<CardBody className="px-4 py-2">
