@@ -1,15 +1,12 @@
 import { useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
-import { Card, CardBody, Chip, Tabs, Tab } from "@nextui-org/react";
+import { Card, CardBody, Tabs, Tab } from "@nextui-org/react";
 import classNames from "classnames";
 import ProfileCardBody from "@/components/ProfileMenu/ProfileCardBody";
 import ProfileError from "@/components/ProfileMenu/ProfileError";
 
 // types
 import { GamesNames } from "@/types/ContexTypes";
-
-// icons
-import { IconAlertTriangle } from "@tabler/icons-react";
 
 // images
 import ets2 from "@/static/icons/games/ets2.webp";
