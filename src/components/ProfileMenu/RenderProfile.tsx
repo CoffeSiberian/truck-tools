@@ -10,15 +10,15 @@ const RenderProfile = () => {
 	const { isSavesLoading, selectedProfile } = useContext(ProfileContex);
 
 	return (
-		<div className="flex w-full max-w-72 flex-col items-center gap-1 pr-2">
+		<div className="flex h-[75px] flex-col justify-center">
 			{isSavesLoading ? (
-				<div className="flex w-full items-center gap-3">
-					<div>
-						<Skeleton className="flex h-14 w-14 rounded-full" />
+				<div className="flex w-full items-center gap-2 align-middle">
+					<div className="w-[77px]">
+						<Skeleton className="flex h-[50px] w-[50px] rounded-full" />
 					</div>
 					<div className="flex w-full flex-col gap-2">
-						<Skeleton className="h-3 w-3/5 rounded-lg" />
-						<Skeleton className="h-3 w-4/5 rounded-lg" />
+						<Skeleton className="h-[15px] w-3/5 rounded-lg" />
+						<Skeleton className="h-[10px] w-1/3 rounded-lg" />
 					</div>
 				</div>
 			) : (
@@ -29,7 +29,7 @@ const RenderProfile = () => {
 								<Image
 									src={selectedProfile.avatar}
 									alt="profile avatar"
-									radius="full"
+									radius="lg"
 									loading="lazy"
 									style={{
 										zoom: 0.62,
@@ -38,10 +38,10 @@ const RenderProfile = () => {
 									}}
 								/>
 							) : (
-								<IconUserCircle size={60} />
+								<IconUserCircle size={55} />
 							)
 						) : (
-							<IconUserCircle size={60} />
+							<IconUserCircle size={55} />
 						)}
 					</div>
 					<div className="flex w-full flex-col gap-0">

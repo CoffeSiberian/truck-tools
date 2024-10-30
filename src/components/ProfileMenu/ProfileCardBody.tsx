@@ -12,9 +12,11 @@ const ProfileCardBody = () => {
 	const { reloadProfiles } = useContext(ProfileContex);
 
 	return (
-		<div className="flex flex-row content-between items-center">
-			<RenderProfile />
-			<div className="flex w-full flex-nowrap items-center gap-2">
+		<div className="flex flex-row items-center">
+			<div className="w-full max-w-72">
+				<RenderProfile />
+			</div>
+			<div className="flex w-full items-center gap-2">
 				<ListProfiles />
 				<ListSaves />
 				<Button onPress={() => reloadProfiles()} isIconOnly>

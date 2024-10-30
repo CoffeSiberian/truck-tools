@@ -28,7 +28,7 @@ const OptionCard: FC<OptionCardProps> = ({
 				<h4 className="text-large font-bold">{title}</h4>
 				<small className="text-default-500">{description}</small>
 			</CardHeader>
-			<CardBody className="flex flex-row items-center py-2">
+			<CardBody className="flex aspect-[16/9] h-[220px] flex-row items-center py-2">
 				<Image alt="Card background" src={image} />
 			</CardBody>
 			<Divider />
