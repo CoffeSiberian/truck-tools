@@ -88,6 +88,8 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 - Create custom routes
 - Reset infractions
 - Mods management
+- Modify kilometers traveled by the truck
+- Changing the truck (no need to go to the garage)
 
 ### Related projects
 
