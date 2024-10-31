@@ -1,12 +1,20 @@
+import { useContext } from "react";
+import { ProfileContex } from "@/hooks/useProfileContex";
+
 import OptionCard from "@/components/OptionCard";
 
 // images
+// ets2
 import img11 from "@/static/img/ets2/OptionsImages/11.webp";
 import img12 from "@/static/img/ets2/OptionsImages/12.webp";
 import img13 from "@/static/img/ets2/OptionsImages/13.webp";
 import img14 from "@/static/img/ets2/OptionsImages/14.webp";
 import img15 from "@/static/img/ets2/OptionsImages/15.webp";
 import img16 from "@/static/img/ets2/OptionsImages/16.webp";
+
+// ats
+import img14_ats from "@/static/img/ats/OptionsImages/14.webp";
+import img15_ats from "@/static/img/ats/OptionsImages/15.webp";
 
 // modals
 import SetMoney from "@/routes/pages/ProfilesOptions/Modal/SetMoney";
@@ -17,6 +25,8 @@ import SetAllDealerStatus from "@/routes/pages/ProfilesOptions/Modal/SetAllDeale
 import SetExperienceSkills from "@/routes/pages/ProfilesOptions/Modal/SetExperienceSkills";
 
 const ProfilesOptions = () => {
+	const { game } = useContext(ProfileContex);
+
 	const items = [
 		{
 			id: "1",
@@ -43,14 +53,14 @@ const ProfilesOptions = () => {
 			id: "4",
 			title: "Set any city visited status",
 			description: "Set any city visited status to your profile",
-			image: img14,
+			image: game === "ets2" ? img14 : img14_ats,
 			modal: <SetAllCitiesStatus />,
 		},
 		{
 			id: "5",
 			title: "Set all dealer status",
 			description: "Set all dealer status to your profile",
-			image: img15,
+			image: game === "ets2" ? img15 : img15_ats,
 			modal: <SetAllDealerStatus />,
 		},
 		{

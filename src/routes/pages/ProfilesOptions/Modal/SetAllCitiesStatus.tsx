@@ -19,8 +19,13 @@ import AlertSave from "@/components/AlertSave";
 import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";
 
 // images
+//ets2
 import unvisited from "@/static/img/ets2/cities/unvisited.webp";
 import visited from "@/static/img/ets2/cities/visited.webp";
+
+// ats
+import unvisited_ats from "@/static/img/ats/cities/unvisited.webp";
+import visited_ats from "@/static/img/ats/cities/visited.webp";
 
 interface completedProps {
 	error: boolean;
@@ -28,7 +33,7 @@ interface completedProps {
 }
 
 const SetAllCitiesStatus = () => {
-	const { selectedSave } = useContext(ProfileContex);
+	const { selectedSave, game } = useContext(ProfileContex);
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [GarageStatus, setGarageStatus] = useState<string>("1");
@@ -94,13 +99,13 @@ const SetAllCitiesStatus = () => {
 								>
 									<CustomRadio
 										selectedGarage={GarageStatus}
-										image={visited}
+										image={game === "ets2" ? visited : visited_ats}
 										text="Visited all cities"
 										value="1"
 									/>
 									<CustomRadio
 										selectedGarage={GarageStatus}
-										image={unvisited}
+										image={game === "ets2" ? unvisited : unvisited_ats}
 										text="Unvisited all cities"
 										value="0"
 									/>

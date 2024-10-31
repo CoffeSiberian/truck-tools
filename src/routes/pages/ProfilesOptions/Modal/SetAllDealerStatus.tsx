@@ -19,8 +19,13 @@ import AlertSave from "@/components/AlertSave";
 import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";
 
 // images
+// ets2
 import discovered from "@/static/img/ets2/dealers/discovered.webp";
 import undiscovered from "@/static/img/ets2/dealers/undiscovered.webp";
+
+// ats
+import discovered_ats from "@/static/img/ats/dealers/discovered.webp";
+import undiscovered_ats from "@/static/img/ats/dealers/undiscovered.webp";
 
 interface completedProps {
 	error: boolean;
@@ -28,7 +33,7 @@ interface completedProps {
 }
 
 const SetAllDealerStatus = () => {
-	const { selectedSave } = useContext(ProfileContex);
+	const { selectedSave, game } = useContext(ProfileContex);
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [GarageStatus, setGarageStatus] = useState<string>("1");
@@ -94,13 +99,13 @@ const SetAllDealerStatus = () => {
 								>
 									<CustomRadio
 										selectedGarage={GarageStatus}
-										image={discovered}
+										image={game === "ets2" ? discovered : discovered_ats}
 										text="Discovered all dealers"
 										value="1"
 									/>
 									<CustomRadio
 										selectedGarage={GarageStatus}
-										image={undiscovered}
+										image={game === "ets2" ? undiscovered : undiscovered_ats}
 										text="Undiscover all dealers"
 										value="0"
 									/>

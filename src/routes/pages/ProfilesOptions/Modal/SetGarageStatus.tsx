@@ -19,9 +19,15 @@ import AlertSave from "@/components/AlertSave";
 import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";
 
 // images
+// ets2
 import smallGarage from "@/static/img/ets2/garages/small.webp";
 import mediumGarage from "@/static/img/ets2/garages/medium.webp";
 import largeGarage from "@/static/img/ets2/garages/large.webp";
+
+// ats
+import smallGarage_ats from "@/static/img/ats/garages/small.webp";
+import mediumGarage_ats from "@/static/img/ats/garages/medium.webp";
+import largeGarage_ats from "@/static/img/ats/garages/large.webp";
 
 interface completedProps {
 	error: boolean;
@@ -29,7 +35,7 @@ interface completedProps {
 }
 
 const SetGarageStatus = () => {
-	const { selectedSave } = useContext(ProfileContex);
+	const { selectedSave, game } = useContext(ProfileContex);
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [GarageStatus, setGarageStatus] = useState<string>("3");
@@ -102,19 +108,19 @@ const SetGarageStatus = () => {
 									/>
 									<CustomRadio
 										selectedGarage={GarageStatus}
-										image={smallGarage}
+										image={game === "ets2" ? smallGarage : smallGarage_ats}
 										text="Small Garage"
 										value="6"
 									/>
 									<CustomRadio
 										selectedGarage={GarageStatus}
-										image={mediumGarage}
+										image={game === "ets2" ? mediumGarage : mediumGarage_ats}
 										text="Medium Garage"
 										value="2"
 									/>
 									<CustomRadio
 										selectedGarage={GarageStatus}
-										image={largeGarage}
+										image={game === "ets2" ? largeGarage : largeGarage_ats}
 										text="Large Garage"
 										value="3"
 									/>

@@ -3,12 +3,20 @@ import { ProfileContex } from "@/hooks/useProfileContex";
 import OptionCard from "@/components/OptionCard";
 
 // images
+// ets2
 import img1 from "@/static/img/ets2/OptionsImages/1.webp";
 import img6 from "@/static/img/ets2/OptionsImages/6.webp";
 import img7 from "@/static/img/ets2/OptionsImages/7.webp";
 import img8 from "@/static/img/ets2/OptionsImages/8.webp";
 import img9 from "@/static/img/ets2/OptionsImages/9.webp";
 import img10 from "@/static/img/ets2/OptionsImages/10.webp";
+
+// ats
+import img6_ats from "@/static/img/ats/OptionsImages/6.webp";
+import img7_ats from "@/static/img/ats/OptionsImages/7.webp";
+import img8_ats from "@/static/img/ats/OptionsImages/8.webp";
+import img9_ats from "@/static/img/ats/OptionsImages/9.webp";
+import img10_ats from "@/static/img/ats/OptionsImages/10.webp";
 
 // modals
 import RepairTruck from "@/routes/pages/TrucksOptions/Modals/RepairTruck";
@@ -28,7 +36,7 @@ const TrucksOptions = () => {
 			id: "1",
 			title: "Change truck engine",
 			description: "Change the engine of the truck",
-			image: img6,
+			image: game === "ets2" ? img6 : img6_ats,
 			modal: <SetTruckEngine />,
 			disable: false,
 		},
@@ -36,7 +44,7 @@ const TrucksOptions = () => {
 			id: "2",
 			title: "Change truck transmission",
 			description: "Change the transmission of the truck",
-			image: img7,
+			image: game === "ets2" ? img7 : img7_ats,
 			modal: <SetTruckTransmission />,
 			disable: false,
 		},
@@ -52,7 +60,7 @@ const TrucksOptions = () => {
 			id: "4",
 			title: "Repair truck",
 			description: "Repair your current truck",
-			image: img8,
+			image: game === "ets2" ? img8 : img8_ats,
 			modal: <RepairTruck />,
 			disable: false,
 		},
@@ -60,7 +68,7 @@ const TrucksOptions = () => {
 			id: "5",
 			title: "Repair all trucks",
 			description: "Repairs all fleet trucks",
-			image: img8,
+			image: game === "ets2" ? img8 : img8_ats,
 			modal: <RepairAllTrucks />,
 			disable: false,
 		},
@@ -68,7 +76,7 @@ const TrucksOptions = () => {
 			id: "6",
 			title: "Fill fuel",
 			description: "Fill fuel in current truck",
-			image: img9,
+			image: game === "ets2" ? img9 : img9_ats,
 			modal: <FillTruckFuel />,
 			disable: false,
 		},
@@ -76,7 +84,7 @@ const TrucksOptions = () => {
 			id: "7",
 			title: "Fill all trucks fuel",
 			description: "Refueling all fleet trucks",
-			image: img9,
+			image: game === "ets2" ? img9 : img9_ats,
 			modal: <FillAllTrucksFuel />,
 			disable: false,
 		},
@@ -84,7 +92,7 @@ const TrucksOptions = () => {
 			id: "8",
 			title: "Infinite fuel on current truck",
 			description: "Infinite fuel on current truck",
-			image: img10,
+			image: game === "ets2" ? img10 : img10_ats,
 			modal: <SetInfiniteFuel />,
 			disable: false,
 		},

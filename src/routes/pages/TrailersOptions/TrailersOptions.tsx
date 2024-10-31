@@ -3,11 +3,17 @@ import { ProfileContex } from "@/hooks/useProfileContex";
 import OptionCard from "@/components/OptionCard";
 
 // images
+// ets2
 import img2 from "@/static/img/ets2/OptionsImages/2.webp";
 import img3 from "@/static/img/ets2/OptionsImages/3.webp";
 import img4 from "@/static/img/ets2/OptionsImages/4.webp";
 import img5 from "@/static/img/ets2/OptionsImages/5.webp";
 import img17 from "@/static/img/ets2/OptionsImages/17.webp";
+
+// ats
+import img4_ats from "@/static/img/ats/OptionsImages/4.webp";
+import img5_ats from "@/static/img/ats/OptionsImages/5.webp";
+import img17_ats from "@/static/img/ats/OptionsImages/17.webp";
 
 // modals
 import ModifyWeight from "@/routes/pages/TrailersOptions/Modals/ModifyWeight";
@@ -33,7 +39,7 @@ const TrailersOptions = () => {
 			id: "2",
 			title: "Modify job weight",
 			description: "Modify the weight of your current job",
-			image: img4,
+			image: game === "ets2" ? img4 : img4_ats,
 			modal: <ModifyWeight />,
 			disable: false,
 		},
@@ -49,7 +55,7 @@ const TrailersOptions = () => {
 			id: "4",
 			title: "Change trailer weight",
 			description: "Modifies the trailer weight, applying it only once.",
-			image: img5,
+			image: game === "ets2" ? img5 : img5_ats,
 			modal: <ModifyTrailerWeight />,
 			disable: false,
 		},
@@ -57,7 +63,7 @@ const TrailersOptions = () => {
 			id: "5",
 			title: "Repair trailer",
 			description: "Repair current trailer",
-			image: img17,
+			image: game === "ets2" ? img17 : img17_ats,
 			modal: <RepairTrailers />,
 			disable: false,
 		},
@@ -65,7 +71,7 @@ const TrailersOptions = () => {
 			id: "6",
 			title: "Repair all trailers",
 			description: "Repair all the trailers you have",
-			image: img17,
+			image: game === "ets2" ? img17 : img17_ats,
 			modal: <RepairAllTrailers />,
 			disable: false,
 		},
