@@ -18,6 +18,14 @@ const SelectProfile = () => {
 		useContext(ProfileContex);
 	const { opasityStatus } = useContext(DarkModeContex);
 
+	const setGameAndScroll = (game: GamesNames) => {
+		setGame(game);
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
+	};
+
 	const renderCart = (
 		key: string,
 		name: string,
@@ -47,7 +55,7 @@ const SelectProfile = () => {
 				)}
 			>
 				<Tabs
-					onSelectionChange={(index) => setGame(index as GamesNames)}
+					onSelectionChange={(index) => setGameAndScroll(index as GamesNames)}
 					selectedKey={game}
 					size="lg"
 					aria-label="options"
