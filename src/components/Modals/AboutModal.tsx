@@ -46,7 +46,7 @@ const AboutModal: FC<AboutModalProps> = ({ isOpen, onOpenChange }) => {
 								and easy way for those who do not want to edit these codes
 								manually.
 							</p>
-							<div className="mt-2 flex flex-row gap-2">
+							<div className="mt-2 flex flex-row items-center gap-2">
 								<Avatar
 									src="https://avatars.githubusercontent.com/u/61036343?v=4"
 									size="lg"
@@ -54,9 +54,11 @@ const AboutModal: FC<AboutModalProps> = ({ isOpen, onOpenChange }) => {
 									alt="Fernando Garrido"
 								></Avatar>
 								<div>
-									<h4 className="text-large font-bold">Fernando Garrido</h4>
+									<div className="flex justify-center">
+										<h4 className="text-large font-bold">Fernando Garrido</h4>
+									</div>
 									<small className="text-default-500">
-										Full Stack Developer
+										SiberianCoffe - Full Stack Developer
 									</small>
 								</div>
 							</div>

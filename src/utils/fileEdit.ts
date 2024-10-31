@@ -784,7 +784,6 @@ export const getStoredOpasityStatus = async (): Promise<boolean> => {
 	const STORE = new LazyStore(STORE_FILE);
 	const status = await STORE.get("opasity_profile");
 
-	console.log(status);
 	if (typeof status === "boolean") return status;
 	return true;
 };
