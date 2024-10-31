@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { DarkModeContex } from "@/hooks/useDarkModeContex";
 import { Card, CardBody, Tabs, Tab } from "@nextui-org/react";
 import classNames from "classnames";
 import ProfileCardBody from "@/components/ProfileMenu/ProfileCardBody";
@@ -15,6 +16,7 @@ import ats from "@/static/icons/games/ats.webp";
 const SelectProfile = () => {
 	const { selectedSave, profilesNotFound, game, setGame } =
 		useContext(ProfileContex);
+	const { opasityStatus } = useContext(DarkModeContex);
 
 	const renderCart = (
 		key: string,
@@ -41,7 +43,7 @@ const SelectProfile = () => {
 			<div
 				className={classNames(
 					"transition-opacity hover:opacity-100",
-					selectedSave ? "opacity-70" : "opacity-100"
+					selectedSave && opasityStatus ? "opacity-70" : "opacity-100"
 				)}
 			>
 				<Tabs
@@ -68,7 +70,7 @@ const SelectProfile = () => {
 			<div
 				className={classNames(
 					"flex w-full max-w-4xl items-center gap-1 transition-opacity hover:opacity-100",
-					selectedSave ? "opacity-70" : "opacity-100"
+					selectedSave && opasityStatus ? "opacity-70" : "opacity-100"
 				)}
 			>
 				{profilesNotFound && <ProfileError />}

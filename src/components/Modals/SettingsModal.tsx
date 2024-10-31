@@ -22,6 +22,8 @@ import {
 	getGameDeveloperStatus,
 	setGameDeveloperStatus,
 	setConvoySize,
+	getStoredOpasityStatus,
+	storeOpasityStatus,
 } from "@/utils/fileEdit";
 
 // types
@@ -40,20 +42,23 @@ interface SettingsModalProps {
 }
 
 interface OptionsStateTypes {
+	language: string;
 	enableConsole: boolean;
 	enable128Convoy: boolean;
-	language: string;
+	opasityProfile: boolean;
 	documentDir: string | null;
 }
 
 const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
-	const { userTheme, setUserTheme } = useContext(DarkModeContex);
+	const { userTheme, setUserTheme, setOpasityStatus } =
+		useContext(DarkModeContex);
 	const { reloadProfiles } = useContext(ProfileContex);
 
 	const [optionsState, setOptionsState] = useState<OptionsStateTypes>({
+		language: "english",
 		enableConsole: false,
 		enable128Convoy: false,
-		language: "english",
+		opasityProfile: false,
 		documentDir: null,
 	});
 
@@ -83,6 +88,16 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 		}
 	};
 
+	const onClickOpacityStatus = async (status: boolean) => {
+		await storeOpasityStatus(status);
+
+		setOpasityStatus(status);
+		setOptionsState((prev) => ({
+			...prev,
+			opasityProfile: status,
+		}));
+	};
+
 	const openSelectDir = async () => {
 		const options: OpenDialogOptions = {
 			title: "Select the folder where your progre is stored",
@@ -99,9 +114,10 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 			await setConvoySize(false);
 
 			setOptionsState({
+				language: "english",
 				enableConsole: false,
 				enable128Convoy: false,
-				language: "english",
+				opasityProfile: false,
 				documentDir: res as string,
 			});
 			reloadProfiles();
@@ -130,6 +146,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 		const getOptions = async () => {
 			const getDocumentDirStore = await getStoredDocumentDir();
 			const getGameDeveloperStatusStore = await getGameDeveloperStatus();
+			const getOpasityStatusStore = await getStoredOpasityStatus();
 
 			let documentDirString = getDocumentDirStore;
 			if (!documentDirString) {
@@ -138,11 +155,12 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 			}
 
 			setOptionsState({
+				language: "english",
 				enableConsole:
 					getGameDeveloperStatusStore.console &&
 					getGameDeveloperStatusStore.developer,
 				enable128Convoy: getGameDeveloperStatusStore.active_max_convoy_mode,
-				language: "english",
+				opasityProfile: getOpasityStatusStore,
 				documentDir: documentDirString,
 			});
 		};
@@ -158,7 +176,6 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 			backdrop="blur"
 			isOpen={isOpen}
 			onOpenChange={onOpenChange}
-			shouldBlockScroll={false}
 		>
 			<ModalContent>
 				{() => (
@@ -206,6 +223,14 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 									isSelected={optionsState.enable128Convoy}
 								>
 									Enable 128 convoy mode slots
+								</Switch>
+							</div>
+							<div className="flex">
+								<Switch
+									onValueChange={(e) => onClickOpacityStatus(e)}
+									isSelected={optionsState.opasityProfile}
+								>
+									Opacity on select profile
 								</Switch>
 							</div>
 							<div className="flex">

@@ -23,5 +23,7 @@ export interface ProfileTypesContext extends ProfileObjectType {
 export interface DarkModeContextTypes {
 	darkMode: boolean;
 	userTheme: themeTypesSystem;
+	opasityStatus: boolean;
+	setOpasityStatus: (status: boolean) => void;
 	setUserTheme: (theme: themeTypesSystem) => void;
 }

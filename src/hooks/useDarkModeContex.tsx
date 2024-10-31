@@ -3,6 +3,7 @@ import {
 	getSystemTheme,
 	getStoredTheme,
 	storeSystemTheme,
+	getStoredOpasityStatus,
 } from "@/utils/fileEdit";
 
 // types
@@ -18,6 +19,7 @@ export const DarkModeContex = createContext<DarkModeContextTypes>(
 export const DarkMode = ({ children }: ProviderProps) => {
 	const [theme, setTheme] = useState<themeTypesSystem>("system");
 	const [darkMode, setDarkModeState] = useState<boolean>(true);
+	const [opasityStatus, setOpasityStatus] = useState<boolean>(false);
 	const isLoaded = useRef(false);
 
 	const getCurrentTheme = async (): Promise<themeTypesSystem> => {
@@ -62,6 +64,7 @@ export const DarkMode = ({ children }: ProviderProps) => {
 			getCurrentTheme().then((resThemeSet) => {
 				setUserThemeWithoutSaving(resThemeSet);
 			});
+			getStoredOpasityStatus().then((res) => setOpasityStatus(res));
 
 			isLoaded.current = true;
 		}
@@ -69,7 +72,13 @@ export const DarkMode = ({ children }: ProviderProps) => {
 
 	return (
 		<DarkModeContex.Provider
-			value={{ darkMode, userTheme: theme, setUserTheme }}
+			value={{
+				darkMode,
+				userTheme: theme,
+				opasityStatus,
+				setOpasityStatus,
+				setUserTheme,
+			}}
 		>
 			{children}
 		</DarkModeContex.Provider>
