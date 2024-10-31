@@ -19,9 +19,9 @@ import AlertSave from "@/components/AlertSave";
 import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";
 
 // images
-import smallGarage from "@/static/img/garages/small.webp";
-import mediumGarage from "@/static/img/garages/medium.webp";
-import largeGarage from "@/static/img/garages/large.webp";
+import smallGarage from "@/static/img/ets2/garages/small.webp";
+import mediumGarage from "@/static/img/ets2/garages/medium.webp";
+import largeGarage from "@/static/img/ets2/garages/large.webp";
 
 interface completedProps {
 	error: boolean;

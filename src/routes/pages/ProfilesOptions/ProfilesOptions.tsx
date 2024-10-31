@@ -1,12 +1,12 @@
 import OptionCard from "@/components/OptionCard";
 
 // images
-import img11 from "@/static/img/OptionsImages/11.webp";
-import img12 from "@/static/img/OptionsImages/12.webp";
-import img13 from "@/static/img/OptionsImages/13.webp";
-import img14 from "@/static/img/OptionsImages/14.webp";
-import img15 from "@/static/img/OptionsImages/15.webp";
-import img16 from "@/static/img/OptionsImages/16.webp";
+import img11 from "@/static/img/ets2/OptionsImages/11.webp";
+import img12 from "@/static/img/ets2/OptionsImages/12.webp";
+import img13 from "@/static/img/ets2/OptionsImages/13.webp";
+import img14 from "@/static/img/ets2/OptionsImages/14.webp";
+import img15 from "@/static/img/ets2/OptionsImages/15.webp";
+import img16 from "@/static/img/ets2/OptionsImages/16.webp";
 
 // modals
 import SetMoney from "@/routes/pages/ProfilesOptions/Modal/SetMoney";

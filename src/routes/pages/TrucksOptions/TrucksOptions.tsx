@@ -3,12 +3,12 @@ import { ProfileContex } from "@/hooks/useProfileContex";
 import OptionCard from "@/components/OptionCard";
 
 // images
-import img1 from "@/static/img/OptionsImages/1.webp";
-import img6 from "@/static/img/OptionsImages/6.webp";
-import img7 from "@/static/img/OptionsImages/7.webp";
-import img8 from "@/static/img/OptionsImages/8.webp";
-import img9 from "@/static/img/OptionsImages/9.webp";
-import img10 from "@/static/img/OptionsImages/10.webp";
+import img1 from "@/static/img/ets2/OptionsImages/1.webp";
+import img6 from "@/static/img/ets2/OptionsImages/6.webp";
+import img7 from "@/static/img/ets2/OptionsImages/7.webp";
+import img8 from "@/static/img/ets2/OptionsImages/8.webp";
+import img9 from "@/static/img/ets2/OptionsImages/9.webp";
+import img10 from "@/static/img/ets2/OptionsImages/10.webp";
 
 // modals
 import RepairTruck from "@/routes/pages/TrucksOptions/Modals/RepairTruck";

@@ -19,8 +19,8 @@ import AlertSave from "@/components/AlertSave";
 import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";
 
 // images
-import unvisited from "@/static/img/cities/unvisited.webp";
-import visited from "@/static/img/cities/visited.webp";
+import unvisited from "@/static/img/ets2/cities/unvisited.webp";
+import visited from "@/static/img/ets2/cities/visited.webp";
 
 interface completedProps {
 	error: boolean;

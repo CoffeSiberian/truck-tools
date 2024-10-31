@@ -3,11 +3,11 @@ import { ProfileContex } from "@/hooks/useProfileContex";
 import OptionCard from "@/components/OptionCard";
 
 // images
-import img2 from "@/static/img/OptionsImages/2.webp";
-import img3 from "@/static/img/OptionsImages/3.webp";
-import img4 from "@/static/img/OptionsImages/4.webp";
-import img5 from "@/static/img/OptionsImages/5.webp";
-import img17 from "@/static/img/OptionsImages/17.webp";
+import img2 from "@/static/img/ets2/OptionsImages/2.webp";
+import img3 from "@/static/img/ets2/OptionsImages/3.webp";
+import img4 from "@/static/img/ets2/OptionsImages/4.webp";
+import img5 from "@/static/img/ets2/OptionsImages/5.webp";
+import img17 from "@/static/img/ets2/OptionsImages/17.webp";
 
 // modals
 import ModifyWeight from "@/routes/pages/TrailersOptions/Modals/ModifyWeight";
