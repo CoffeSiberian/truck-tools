@@ -17,7 +17,7 @@ const ProfileError = () => {
 	return (
 		<div
 			className={classNames(
-				"max-w-3xl rounded-3xl shadow-lg",
+				"fixed bottom-[105px] max-w-3xl rounded-3xl shadow-lg",
 				darkMode ? "bg-[#c81260]" : "bg-[#f51260]"
 			)}
 		>

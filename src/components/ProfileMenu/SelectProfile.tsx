@@ -48,6 +48,7 @@ const SelectProfile = () => {
 
 	return (
 		<div className="fixed bottom-0 z-10 mb-2 mt-auto flex w-full justify-center gap-2">
+			{profilesNotFound && <ProfileError />}
 			<div
 				className={classNames(
 					"transition-opacity hover:opacity-100",
@@ -81,7 +82,6 @@ const SelectProfile = () => {
 					selectedSave && opasityStatus ? "opacity-70" : "opacity-100"
 				)}
 			>
-				{profilesNotFound && <ProfileError />}
 				<Card className="flex w-full">
 					<CardBody className="px-4 py-2">
 						<ProfileCardBody />
