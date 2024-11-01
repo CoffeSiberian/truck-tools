@@ -113,13 +113,13 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 			await setGameDeveloperStatus(false, game);
 			await setConvoySize(false, game);
 
-			setOptionsState({
+			setOptionsState((prev) => ({
+				...prev,
 				language: "english",
 				enableConsole: false,
 				enable128Convoy: false,
-				opasityProfile: false,
 				documentDir: res as string,
-			});
+			}));
 			reloadProfiles();
 		}
 	};
@@ -133,13 +133,16 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 
 		await setGameDeveloperStatus(false, game);
 		await setConvoySize(false, game);
+		await storeOpasityStatus(true);
+		setOpasityStatus(true);
 
-		setOptionsState((prev) => ({
-			...prev,
+		setOptionsState({
+			language: "english",
 			enableConsole: false,
 			enable128Convoy: false,
+			opasityProfile: true,
 			documentDir: dirSetDefault,
-		}));
+		});
 	};
 
 	useEffect(() => {
