@@ -541,28 +541,30 @@ export const getSystemTheme = async (): Promise<themeTypes> => {
 	return invoceRes.theme;
 };
 
-export const getGameDeveloperStatus =
-	async (): Promise<responseGetDeveloperValues> => {
-		const storeDocsDir = await getStoredDocumentDir();
-		const docsDirSystem = await documentDir();
-		const docsDir = storeDocsDir || docsDirSystem;
+export const getGameDeveloperStatus = async (
+	game: GamesNames
+): Promise<responseGetDeveloperValues> => {
+	const storeDocsDir = await getStoredDocumentDir();
+	const docsDirSystem = await documentDir();
+	const docsDir = storeDocsDir || docsDirSystem;
 
-		const rustParams = {
-			dirDocsGameFolder: (
-				await join(docsDir, "Euro Truck Simulator 2")
-			).toString(),
-		};
-
-		const invoceRes = (await invoke(
-			"get_developer_game_status",
-			rustParams
-		)) as responseGetDeveloperValues;
-
-		return invoceRes;
+	const rustParams = {
+		dirDocsGameFolder: (
+			await join(docsDir, game === "ets2" ? ETS2_DIR : ATS_DIR)
+		).toString(),
 	};
 
+	const invoceRes = (await invoke(
+		"get_developer_game_status",
+		rustParams
+	)) as responseGetDeveloperValues;
+
+	return invoceRes;
+};
+
 export const setGameDeveloperStatus = async (
-	statusDeveloper: boolean
+	statusDeveloper: boolean,
+	game: GamesNames
 ): Promise<boolean> => {
 	const storeDocsDir = await getStoredDocumentDir();
 	const docsDirSystem = await documentDir();
@@ -570,7 +572,7 @@ export const setGameDeveloperStatus = async (
 
 	const rustParams = {
 		dirDocsGameFolder: (
-			await join(docsDir, "Euro Truck Simulator 2")
+			await join(docsDir, game === "ets2" ? ETS2_DIR : ATS_DIR)
 		).toString(),
 		statusDeveloper,
 	};
@@ -584,7 +586,8 @@ export const setGameDeveloperStatus = async (
 };
 
 export const setConvoySize = async (
-	convoyStatus: boolean
+	convoyStatus: boolean,
+	game: GamesNames
 ): Promise<boolean> => {
 	const storeDocsDir = await getStoredDocumentDir();
 	const docsDirSystem = await documentDir();
@@ -592,7 +595,7 @@ export const setConvoySize = async (
 
 	const rustParams = {
 		dirDocsGameFolder: (
-			await join(docsDir, "Euro Truck Simulator 2")
+			await join(docsDir, game === "ets2" ? ETS2_DIR : ATS_DIR)
 		).toString(),
 		convoyStatus,
 	};

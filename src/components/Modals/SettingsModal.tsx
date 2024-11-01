@@ -52,7 +52,7 @@ interface OptionsStateTypes {
 const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 	const { userTheme, setUserTheme, setOpasityStatus } =
 		useContext(DarkModeContex);
-	const { reloadProfiles } = useContext(ProfileContex);
+	const { reloadProfiles, game } = useContext(ProfileContex);
 
 	const [optionsState, setOptionsState] = useState<OptionsStateTypes>({
 		language: "english",
@@ -67,7 +67,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 	};
 
 	const onClickDeveloperStatus = async (status: boolean) => {
-		const res = await setGameDeveloperStatus(status);
+		const res = await setGameDeveloperStatus(status, game);
 
 		if (res) {
 			setOptionsState((prev) => ({
@@ -78,7 +78,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 	};
 
 	const onClickConvoySize = async (status: boolean) => {
-		const res = await setConvoySize(status);
+		const res = await setConvoySize(status, game);
 
 		if (res) {
 			setOptionsState((prev) => ({
@@ -110,8 +110,8 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 
 		if (res) {
 			await storeDocumentDir(res as string);
-			await setGameDeveloperStatus(false);
-			await setConvoySize(false);
+			await setGameDeveloperStatus(false, game);
+			await setConvoySize(false, game);
 
 			setOptionsState({
 				language: "english",
@@ -131,8 +131,8 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 		await storeDocumentDir(dirSetDefault);
 		reloadProfiles();
 
-		await setGameDeveloperStatus(false);
-		await setConvoySize(false);
+		await setGameDeveloperStatus(false, game);
+		await setConvoySize(false, game);
 
 		setOptionsState((prev) => ({
 			...prev,
@@ -143,9 +143,10 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 	};
 
 	useEffect(() => {
+		// cambiar el target dinamicamente segun el tipo de juego (actualmente solo con ETS2)
 		const getOptions = async () => {
 			const getDocumentDirStore = await getStoredDocumentDir();
-			const getGameDeveloperStatusStore = await getGameDeveloperStatus();
+			const getGameDeveloperStatusStore = await getGameDeveloperStatus(game);
 			const getOpasityStatusStore = await getStoredOpasityStatus();
 
 			let documentDirString = getDocumentDirStore;
@@ -168,7 +169,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 		if (isOpen) {
 			getOptions();
 		}
-	}, [isOpen]);
+	}, [game, isOpen]);
 
 	return (
 		<Modal
