@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { Tabs, Tab, useDisclosure } from "@nextui-org/react";
+import { open } from "@tauri-apps/plugin-shell";
+import { Tabs, Tab, useDisclosure, Image } from "@nextui-org/react";
+import classNames from "classnames";
 
 // components
 import TrailersOptions from "@/routes/pages/TrailersOptions/TrailersOptions";
@@ -16,6 +18,9 @@ import {
 	IconPackages,
 	IconPaw,
 } from "@tabler/icons-react";
+
+// image
+import kofi from "@/static/icons/kofi/kofi.webp";
 
 const RenderOptions = () => {
 	const [activeIndex, setActiveIndex] = useState<string | null>(null);
@@ -90,7 +95,7 @@ const RenderOptions = () => {
 	};
 
 	return (
-		<div className="mb-28 mt-12 flex flex-col items-center p-3">
+		<div className="mb-28 mt-12 flex flex-col items-center p-5">
 			<AboutModal isOpen={isOpenAbout} onOpenChange={onOpenChangeAbout} />
 
 			<SettingsModal
@@ -98,8 +103,20 @@ const RenderOptions = () => {
 				onOpenChange={onOpenChangeSettings}
 			/>
 
+			<Image
+				className={classNames(
+					"fixed left-44 top-2 z-20 cursor-pointer",
+					"transition duration-100 ease-in hover:scale-110",
+					"drop-shadow-lg"
+				)}
+				alt="KoFi Card link"
+				width={120}
+				src={kofi}
+				onClick={() => open("https://ko-fi.com/siberiancoffe")}
+			/>
+
 			<Tabs
-				className="fixed top-2 z-20 w-full justify-center"
+				className="fixed top-2 z-20 justify-center"
 				onSelectionChange={(index) => {
 					if (index === "About") onOpenAbout();
 					else if (index === "Settings") onOpenSettings();
