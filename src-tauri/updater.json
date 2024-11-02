@@ -1,7 +1,7 @@
 {
 	"version": "v0.6.0",
 	"notes": "- ATS is now compatbile on Truck Tools\n\n- New engines and transmissions for ETS 2\n\n- Multiple UI performance improvements\n\n- Fixed a bug that generated visual jumps in options when loading\n\n- Improved profile selection section\n\n- New configuration that will allow to have no opasity when selecting profiles",
-	"pub_date": "2024-11-02T00:00:00-03:00",
+	"pub_date": "2024-11-01T11:00:00-03:00",
 	"platforms": {
 		"windows-x86_64": {
 			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlhkU3RSM2FrazEyZXk1U2Q5YnhlRU5ZTHpUdmtZUnBlcVE4eVB5Y3IvQnRPUDY4R2VXSVRUN09sMlJta0l6dDN0aXBua0FKNmxOeGU1L3JwNlUwT3dzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzMwNTE4MzkzCWZpbGU6VHJ1Y2sgVG9vbHNfMC42LjBfeDY0X2VuLVVTLm1zaS56aXAKeXYycjk2WTJLc3d0YTJid3R0eXhyUWlXVENqL1BacGkvTmNQTXlBS0ZLUXJicDRSaW9HaWsrZk40dXVoL1RHZ25pTkFDS0RIaU93dmJ0Yzc5SE5sQ2c9PQo=",
