@@ -3,6 +3,7 @@ import { DarkModeContex } from "@/hooks/useDarkModeContex";
 import classNames from "classnames";
 import { check as checkUpdate, Update } from "@tauri-apps/plugin-updater";
 import { relaunch } from "@tauri-apps/plugin-process";
+import { open } from "@tauri-apps/plugin-shell";
 import {
 	Modal,
 	ModalContent,
@@ -22,6 +23,7 @@ import {
 	IconCalendarWeek,
 	IconBrandWindows,
 	IconDownload,
+	IconExternalLink,
 } from "@tabler/icons-react";
 
 interface UpdateInfo {
@@ -233,6 +235,19 @@ const UpdaterModal = () => {
 									onPress={onClickUpdate}
 								>
 									Update Now
+								</Button>
+								<Button
+									className={classNames(installError ? "" : "hidden")}
+									endContent={<IconExternalLink />}
+									color="danger"
+									variant="solid"
+									onPress={() =>
+										open(
+											"https://github.com/CoffeSiberian/truck-tools/releases/latest"
+										)
+									}
+								>
+									<b>Manual Update</b>
 								</Button>
 							</ModalFooter>
 						</>

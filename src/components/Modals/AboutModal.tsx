@@ -66,7 +66,7 @@ const AboutModal: FC<AboutModalProps> = ({ isOpen, onOpenChange }) => {
 						<ModalFooter className="flex flex-col items-center justify-center">
 							<div className="flex gap-1">
 								<Button
-									onClick={() => open("https://github.com/CoffeSiberian")}
+									onPress={() => open("https://github.com/CoffeSiberian")}
 									variant="light"
 									aria-label="github-link"
 								>
@@ -74,7 +74,7 @@ const AboutModal: FC<AboutModalProps> = ({ isOpen, onOpenChange }) => {
 									<p className="font-bold">CoffeSiberian</p>
 								</Button>
 								<Button
-									onClick={() => open("https://www.twitch.tv/siberiancoffe")}
+									onPress={() => open("https://www.twitch.tv/siberiancoffe")}
 									variant="light"
 									aria-label="github-link"
 								>
@@ -84,7 +84,7 @@ const AboutModal: FC<AboutModalProps> = ({ isOpen, onOpenChange }) => {
 							</div>
 							<div className="flex gap-1">
 								<Button
-									onClick={() => open("https://siberiancoffe.dev")}
+									onPress={() => open("https://siberiancoffe.dev")}
 									variant="light"
 									aria-label="github-link"
 								>
