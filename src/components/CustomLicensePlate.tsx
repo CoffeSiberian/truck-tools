@@ -135,10 +135,10 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 			<div className="flex">
 				<div className="flex w-full flex-col items-center gap-3">
 					<div
-						className="flex h-12 items-center rounded-lg p-2"
+						className="flex h-12 items-center rounded-lg p-1"
 						style={{
-							minWidth: "165px",
-							maxWidth: "165px",
+							minWidth: "170px",
+							maxWidth: "170px",
 							backgroundColor: `${bgColor.hex}`,
 							borderStyle: "solid",
 							borderColor: `${isColorMargin ? txColor.hex : "transparent"}`,
