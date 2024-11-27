@@ -55,7 +55,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 - [x] Fill all trucks fuel
 - [x] Create customized color license plate
 - [x] Save license plate data
-- [x] Set custom engines and transmission
+- [x] Set custom engines and transmission (Problem needs to be solved where some brand logo is floating)
 
 #### Profiles
 
@@ -90,6 +90,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 - Mods management
 - Modify kilometers traveled by the truck
 - Changing the truck (no need to go to the garage)
+- Allow cities to be unlocked and grages to be purchased in a specific way and not in a general
 
 ### Related projects
 
