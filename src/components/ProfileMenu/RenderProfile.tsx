@@ -23,7 +23,7 @@ const RenderProfile = () => {
 				</div>
 			) : (
 				<div className="flex w-full items-center gap-2">
-					<div className="w-[77px]">
+					<div className="w-[100px]">
 						{selectedProfile ? (
 							selectedProfile.avatar ? (
 								<Image
@@ -31,11 +31,6 @@ const RenderProfile = () => {
 									alt="profile avatar"
 									radius="lg"
 									loading="lazy"
-									style={{
-										zoom: 0.62,
-										objectFit: "none",
-										objectPosition: "0% 0%",
-									}}
 								/>
 							) : (
 								<IconUserCircle size={55} />

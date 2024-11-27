@@ -29,21 +29,16 @@ const ListProfilePrimeRe: FC<ProfileTypesContext> = ({
 	const profileListTemplate = (option: ProfileWithoutSaves): JSX.Element => {
 		return (
 			<div className="flex items-center gap-2">
-				<div className="w-[30px]">
+				<div className="w-[40px]">
 					{option.avatar ? (
 						<Image
 							src={option.avatar}
 							alt="profile avatar select"
 							radius="full"
 							loading="lazy"
-							style={{
-								zoom: 0.31,
-								objectFit: "none",
-								objectPosition: "0% 0%",
-							}}
 						/>
 					) : (
-						<IconUserCircle size={30} />
+						<IconUserCircle size={40} />
 					)}
 				</div>
 				<div className="flex flex-col">

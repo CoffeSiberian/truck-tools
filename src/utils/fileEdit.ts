@@ -39,7 +39,7 @@ const ATS_DIR = "American Truck Simulator";
 const ETS2_DIR = "Euro Truck Simulator 2";
 
 const getProfileImage = async (path: string): Promise<string | undefined> => {
-	const imgPath = await join(path, "avatar.png");
+	const imgPath = await join(path, "online_avatar.png");
 	const verifyExist = await exists(imgPath);
 
 	if (!verifyExist) return undefined;
