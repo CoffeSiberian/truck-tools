@@ -1,11 +1,11 @@
 {
-	"version": "v0.6.0",
-	"notes": "- ATS is now compatbile on Truck Tools\n\n- New engines and transmissions for ETS 2\n\n- Multiple UI performance improvements\n\n- Fixed a bug that generated visual jumps in options when loading\n\n- Improved profile selection section\n\n- New configuration that will allow to have no opasity when selecting profiles",
-	"pub_date": "2024-11-01T11:00:00-03:00",
+	"version": "v0.6.1",
+	"notes": "- Compatibility with the new 1.53 profile pictures in ATS and ETS 2\n\n- Manual update button in case of failed installation of any update\n\n- Minor fixes in custom plate previews",
+	"pub_date": "2024-11-28T15:00:00-03:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlhkU3RSM2FrazEyZXk1U2Q5YnhlRU5ZTHpUdmtZUnBlcVE4eVB5Y3IvQnRPUDY4R2VXSVRUN09sMlJta0l6dDN0aXBua0FKNmxOeGU1L3JwNlUwT3dzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzMwNTE4MzkzCWZpbGU6VHJ1Y2sgVG9vbHNfMC42LjBfeDY0X2VuLVVTLm1zaS56aXAKeXYycjk2WTJLc3d0YTJid3R0eXhyUWlXVENqL1BacGkvTmNQTXlBS0ZLUXJicDRSaW9HaWsrZk40dXVoL1RHZ25pTkFDS0RIaU93dmJ0Yzc5SE5sQ2c9PQo=",
-			"url": "https://updater.siberiancoffe.dev/releases/tauri-v1-update/Truck_Tools_0.6.0_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlNwRUs2ZGlPeUJLYzdMcWNrNHZ0SlQxblRxbWJGaExId1A4S0VKWEp3QWtQUTNtK1dxU2VORk5hOVlwdjFReWlOREYwb3lreVdIWVZNR1I3QUJqSGdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzMyODE3MTI2CWZpbGU6VHJ1Y2sgVG9vbHNfMC42LjFfeDY0X2VuLVVTLm1zaS56aXAKUWM4WnIwSWNyd05ZYmJEalhwTExBUkdGNjZwL1kzTlU2dTl4TVhIR2ZhLzNqblcrUnFJcGNyZk5FWnRpd3lEUENGbHZGb2tvS2o5S3k4bEIwdDlUQ2c9PQo=",
+			"url": "https://updater.siberiancoffe.dev/releases/tauri-v1-update/Truck_Tools_0.6.1_x64_en-US.msi.zip"
 		}
 	}
 }
