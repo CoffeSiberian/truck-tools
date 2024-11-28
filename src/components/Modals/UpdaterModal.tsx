@@ -157,7 +157,7 @@ const UpdaterModal = () => {
 				backdrop="blur"
 				isOpen={updateInfo ? true : false}
 				onOpenChange={setIsOpen}
-				shouldBlockScroll={false}
+				shouldBlockScroll={true}
 			>
 				<ModalContent>
 					{() => (
