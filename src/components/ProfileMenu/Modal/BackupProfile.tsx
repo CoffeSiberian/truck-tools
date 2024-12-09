@@ -25,6 +25,7 @@ import {
 interface completedProps {
 	error: boolean;
 	completed: boolean;
+	showFolder: boolean;
 }
 
 interface ModalProps {
@@ -40,12 +41,13 @@ const BackupProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 	const [completed, setCompleted] = useState<completedProps>({
 		error: false,
 		completed: false,
+		showFolder: false,
 	});
 
 	const onClickApply = async () => {
 		if (destDirZip.length === 0) return;
 		if (completed.completed) {
-			setCompleted({ error: false, completed: false });
+			setCompleted({ error: false, completed: false, showFolder: false });
 		}
 
 		if (!selectedProfile) return;
@@ -57,6 +59,7 @@ const BackupProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 		setCompleted({
 			error: !res,
 			completed: true,
+			showFolder: true,
 		});
 		setIsLoading(false);
 	};
@@ -132,7 +135,7 @@ const BackupProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 								onValueChange={(value) => setDestDirZip(value)}
 							/>
 							<div className="flex justify-end">
-								{completed.completed ? (
+								{completed.showFolder ? (
 									<Button
 										size="sm"
 										variant="bordered"
@@ -154,7 +157,11 @@ const BackupProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 								error={completed.error}
 								show={completed.completed}
 								setShowFalse={() =>
-									setCompleted({ error: completed.error, completed: false })
+									setCompleted({
+										error: completed.error,
+										completed: false,
+										showFolder: completed.showFolder,
+									})
 								}
 							/>
 						</ModalBody>

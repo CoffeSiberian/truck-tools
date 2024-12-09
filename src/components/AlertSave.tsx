@@ -31,7 +31,7 @@ const AlertSave: FC<props> = ({ message, error, show, setShowFalse }) => {
 				color={error ? "danger" : "success"}
 				description={message}
 				isVisible={true}
-				title={"test"}
+				title={error ? "Error" : "Success"}
 			/>
 		</div>
 	);
