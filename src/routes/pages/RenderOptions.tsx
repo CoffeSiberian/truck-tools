@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { JSX, useState } from "react";
 import { open } from "@tauri-apps/plugin-shell";
 import { Tabs, Tab, useDisclosure, Image } from "@nextui-org/react";
 import classNames from "classnames";

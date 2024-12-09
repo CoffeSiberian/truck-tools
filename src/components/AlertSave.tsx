@@ -1,31 +1,39 @@
-import { FC } from "react";
-import { Chip } from "@nextui-org/react";
-
-// icons
-import { IconDeviceFloppy, IconAlertTriangle } from "@tabler/icons-react";
+import { FC, useEffect } from "react";
+import classNames from "classnames";
+import { Alert } from "@nextui-org/react";
 
 interface props {
 	message: string;
 	error: boolean;
 	show: boolean;
+	setShowFalse: () => void;
 }
 
-const AlertSave: FC<props> = ({ message, error, show }) => {
+const AlertSave: FC<props> = ({ message, error, show, setShowFalse }) => {
+	useEffect(() => {
+		if (show) {
+			const timer = setTimeout(() => {
+				setShowFalse();
+			}, 2300);
+			return () => clearTimeout(timer);
+		}
+	}, [setShowFalse, show]);
+
 	return (
-		<Chip
-			className={show ? "" : "hidden"}
-			startContent={
-				error ? (
-					<IconAlertTriangle stroke={1.5} />
-				) : (
-					<IconDeviceFloppy stroke={1.5} />
-				)
-			}
-			variant="faded"
-			color={error ? "warning" : "success"}
+		<div
+			className={classNames(
+				"fixed right-8 top-10 w-full max-w-80",
+				"transition-opacity duration-700",
+				show ? "opacity-100" : "opacity-0"
+			)}
 		>
-			{message}
-		</Chip>
+			<Alert
+				color={error ? "danger" : "success"}
+				description={message}
+				isVisible={true}
+				title={"test"}
+			/>
+		</div>
 	);
 };
 

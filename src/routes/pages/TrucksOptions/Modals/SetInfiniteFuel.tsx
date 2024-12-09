@@ -106,17 +106,18 @@ const SetInfiniteFuel = () => {
 										</div>
 									}
 								/>
-								<div className="flex justify-center">
-									<AlertSave
-										message={
-											completed.error
-												? "An error occurred in the process"
-												: "Saved successfully"
-										}
-										error={completed.error}
-										show={completed.completed}
-									/>
-								</div>
+								<AlertSave
+									message={
+										completed.error
+											? "An error occurred in the process"
+											: "Saved successfully"
+									}
+									error={completed.error}
+									show={completed.completed}
+									setShowFalse={() =>
+										setCompleted({ error: completed.error, completed: false })
+									}
+								/>
 							</ModalBody>
 							<ModalFooter>
 								<Button color="danger" variant="light" onPress={onClose}>

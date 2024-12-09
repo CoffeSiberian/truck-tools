@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { JSX, useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
 import { DarkModeContex } from "@/hooks/useDarkModeContex";
 import { Card, CardBody, Tabs, Tab } from "@nextui-org/react";

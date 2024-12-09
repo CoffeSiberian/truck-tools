@@ -1,4 +1,4 @@
-import { useContext, FC } from "react";
+import { useContext, FC, JSX } from "react";
 import classNames from "classnames";
 import { DarkModeContex } from "@/hooks/useDarkModeContex";
 

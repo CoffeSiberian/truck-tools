@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, JSX } from "react";
 import { classNames } from "primereact/utils";
 import { Image } from "@nextui-org/react";
 import { Dropdown } from "primereact/dropdown";

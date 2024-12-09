@@ -101,6 +101,9 @@ const UnlockTrailers = () => {
 									}
 									error={completed.error}
 									show={completed.completed}
+									setShowFalse={() =>
+										setCompleted({ error: completed.error, completed: false })
+									}
 								/>
 							</ModalBody>
 							<ModalFooter>

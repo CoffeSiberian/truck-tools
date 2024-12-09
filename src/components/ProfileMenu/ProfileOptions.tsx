@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, JSX } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
 import {
 	Button,

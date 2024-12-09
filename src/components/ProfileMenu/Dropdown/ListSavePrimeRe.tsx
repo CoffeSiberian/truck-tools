@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, JSX } from "react";
 import { classNames } from "primereact/utils";
 import { Dropdown } from "primereact/dropdown";
 import { ProfileTypesContext } from "@/types/ContexTypes";
