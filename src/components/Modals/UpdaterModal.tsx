@@ -16,7 +16,7 @@ import {
 	Progress,
 } from "@nextui-org/react";
 import { format as formatDate } from "@formkit/tempo";
-import AlertSave from "@/components/AlertSave";
+import AlertSaveChip from "@/components/AlertSaveChip";
 
 // icons
 import {
@@ -196,7 +196,7 @@ const UpdaterModal = () => {
 										{updateInfo?.body}
 									</p>
 								</div>
-								<AlertSave
+								<AlertSaveChip
 									message="Installation failed. Try again later"
 									error={installError}
 									show={installError}
