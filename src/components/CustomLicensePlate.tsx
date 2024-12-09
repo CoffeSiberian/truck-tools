@@ -161,6 +161,7 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 						placeholder="Enter license plate text"
 						value={plateText}
 						onValueChange={setUpperCase}
+						variant="bordered"
 					/>
 					<div className="flex gap-3">
 						<Checkbox

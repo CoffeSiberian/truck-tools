@@ -95,6 +95,7 @@ const RenameProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 								value={ProfileName}
 								isDisabled={selectedProfile ? false : true}
 								onValueChange={(value) => setProfileName(value)}
+								variant="bordered"
 							/>
 							<AlertSave
 								message={

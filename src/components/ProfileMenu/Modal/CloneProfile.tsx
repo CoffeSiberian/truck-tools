@@ -96,6 +96,7 @@ const CloneProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 								placeholder="Enter the name of the profile"
 								value={ProfileName}
 								onValueChange={(value) => setProfileName(value)}
+								variant="bordered"
 							/>
 							<AlertSave
 								message={

@@ -97,6 +97,7 @@ const ModifyWeight = () => {
 									placeholder="Enter weight in kg"
 									value={Weight}
 									onValueChange={setWeightOnlyNumbers}
+									variant="bordered"
 								/>
 								<AlertSave
 									message={

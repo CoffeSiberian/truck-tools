@@ -124,6 +124,7 @@ const ModifyTrailerWeight = () => {
 									placeholder="Enter weight in kg"
 									value={TrailerWeight.chassisMass}
 									onValueChange={(value) => setchassisMassOnlyNumbers(value)}
+									variant="bordered"
 								/>
 								<Input
 									startContent={<IconWeight />}
@@ -132,6 +133,7 @@ const ModifyTrailerWeight = () => {
 									placeholder="Enter weight in kg"
 									value={TrailerWeight.bodyMass}
 									onValueChange={(value) => setbodyMassOnlyNumbers(value)}
+									variant="bordered"
 								/>
 								<AlertSave
 									message={

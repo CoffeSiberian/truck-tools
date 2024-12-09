@@ -255,6 +255,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 									size="sm"
 									label="Document folder"
 									placeholder="Enter the document folder"
+									variant="bordered"
 								/>
 							</div>
 						</ModalBody>

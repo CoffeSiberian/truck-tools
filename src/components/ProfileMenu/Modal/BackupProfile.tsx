@@ -133,6 +133,7 @@ const BackupProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 								placeholder="Enter the destination folder"
 								value={destDirZip}
 								onValueChange={(value) => setDestDirZip(value)}
+								variant="bordered"
 							/>
 							<div className="flex justify-end">
 								{completed.showFolder ? (

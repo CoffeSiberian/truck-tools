@@ -96,6 +96,7 @@ const SetExperience = () => {
 									placeholder="Enter the amount of experience in numbers"
 									value={Experience}
 									onValueChange={(value) => setExperienceNumbers(value)}
+									variant="bordered"
 								/>
 								<AlertSave
 									message={

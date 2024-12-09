@@ -98,6 +98,7 @@ const SetMoney = () => {
 									placeholder="Enter the amount of money in EUR"
 									value={money}
 									onValueChange={(value) => setMoneyNumbers(value)}
+									variant="bordered"
 								/>
 								<AlertSave
 									message={
