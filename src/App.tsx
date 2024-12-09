@@ -1,6 +1,7 @@
 import { useEffect, useContext } from "react";
 import { DarkModeContex } from "@/hooks/useDarkModeContex";
 import Home from "@/routes/pages/Home";
+import Snowfall from "react-snowfall";
 import UpdaterModal from "@/components/Modals/UpdaterModal";
 import SelectProfile from "@/components/ProfileMenu/SelectProfile";
 
@@ -33,9 +34,10 @@ const App = () => {
 	}, [darkMode]);
 
 	return (
-		<div className="flex min-h-screen flex-col">
+		<div className="relative flex flex-col">
 			<Home />
 			<SelectProfile />
+			<Snowfall color={!darkMode ? "#99d5e6" : undefined} />
 			<UpdaterModal />
 		</div>
 	);

@@ -29,7 +29,7 @@ const OptionCard: FC<OptionCardProps> = ({
 				<small className="text-default-500">{description}</small>
 			</CardHeader>
 			<CardBody className="flex aspect-[16/9] h-[220px] flex-row items-center py-2">
-				<Image alt="Card background" src={image} />
+				<Image className="z-0" alt="Card background" src={image} />
 			</CardBody>
 			<Divider />
 			<CardFooter className="flex justify-center">{footerJsx}</CardFooter>
