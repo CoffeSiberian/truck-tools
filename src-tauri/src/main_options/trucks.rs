@@ -1,3 +1,6 @@
+use super::accessories::{
+    get_accessories_data_path, get_list_trucks_accessories_id, remove_accessorie,
+};
 use super::license_plate::get_license_plate_formated;
 
 use crate::structs::vec_items_find::VecItemsFind;
@@ -156,22 +159,6 @@ fn get_truck_fuel(arr_val: &Vec<String>, fuel: &str, index: usize) -> Option<Vec
     return None;
 }
 
-fn get_truck_accessorie_index(
-    arr_val: &Vec<String>,
-    accessory_id: &str,
-    index: usize,
-) -> Option<usize> {
-    let value_find: String = format!("{} {}", accessory_id, "{");
-
-    for (i, item) in arr_val.iter().enumerate().skip(index) {
-        if item.contains(&value_find) {
-            return Some(i);
-        }
-    }
-
-    return None;
-}
-
 fn get_list_trucks_id(arr_val: &Vec<String>) -> Option<Vec<VecTrucksId>> {
     let mut result: Vec<VecTrucksId> = Vec::new();
     let mut truck_enum: u16 = 0;
@@ -209,64 +196,6 @@ fn get_list_trucks_id(arr_val: &Vec<String>) -> Option<Vec<VecTrucksId>> {
     return None;
 }
 
-fn get_list_trucks_accessories_id(
-    arr_val: &Vec<String>,
-    index: usize,
-) -> Option<Vec<VecItemsFind>> {
-    let mut result: Vec<VecItemsFind> = Vec::new();
-    let mut accessories_enum: u16 = 0;
-    let mut truck_accessories_find: String = format!(" accessories[{}]", accessories_enum);
-
-    for (i, item) in arr_val.iter().enumerate().skip(index) {
-        if item.contains(&truck_accessories_find) {
-            let option_values: Vec<&str> = item.split(':').collect();
-
-            let truck_accessories_index =
-                match get_truck_accessorie_index(arr_val, option_values[1], i) {
-                    Some(truck_accessories_index) => truck_accessories_index,
-                    None => continue,
-                };
-
-            result.push(VecItemsFind {
-                index: truck_accessories_index,
-                value: option_values[1].to_string(),
-            });
-
-            accessories_enum += 1;
-            truck_accessories_find = format!(" accessories[{}]", accessories_enum);
-        }
-
-        if item == "}" && accessories_enum > 0 {
-            break;
-        }
-    }
-
-    if !result.is_empty() {
-        return Some(result);
-    }
-
-    return None;
-}
-
-fn get_accessories_data_path(arr_val: &Vec<String>, index: usize) -> Option<VecItemsFind> {
-    for (i, item) in arr_val.iter().enumerate().skip(index) {
-        let option_values: Vec<&str> = item.split(':').collect();
-
-        if option_values[0] == " data_path" {
-            return Some(VecItemsFind {
-                index: i,
-                value: option_values[1].to_string(),
-            });
-        }
-
-        if option_values[0] == "}" {
-            return None;
-        }
-    }
-
-    return None;
-}
-
 fn is_engine(value_split: &String) -> bool {
     let value_split: Vec<&str> = value_split.split('/').collect();
 
@@ -283,6 +212,17 @@ fn is_transmissions(value_split: &String) -> bool {
 
     for item in value_split.iter() {
         if item == &"transmission" {
+            return true;
+        }
+    }
+    return false;
+}
+
+fn is_badge(value_split: &String) -> bool {
+    let value_split: Vec<&str> = value_split.split('/').collect();
+
+    for item in value_split.iter() {
+        if item == &"badge" {
             return true;
         }
     }
@@ -465,11 +405,10 @@ pub fn set_truck_license_plate(
 
 pub fn set_truck_engine(
     arr_val: &Vec<String>,
-    index: usize,
+    index_end_block: usize,
     engine_code: &str,
 ) -> Option<Vec<String>> {
-    let truck_accessories: Vec<VecItemsFind> = match get_list_trucks_accessories_id(&arr_val, index)
-    {
+    let truck_accessories = match get_list_trucks_accessories_id(&arr_val, index_end_block) {
         Some(truck_accessories) => truck_accessories,
         None => return None,
     };
@@ -494,11 +433,10 @@ pub fn set_truck_engine(
 
 pub fn set_truck_transmissions(
     arr_val: &Vec<String>,
-    index: usize,
+    index_end_block: usize,
     transmissions_code: &str,
 ) -> Option<Vec<String>> {
-    let truck_accessories: Vec<VecItemsFind> = match get_list_trucks_accessories_id(&arr_val, index)
-    {
+    let truck_accessories = match get_list_trucks_accessories_id(&arr_val, index_end_block) {
         Some(truck_accessories) => truck_accessories,
         None => return None,
     };
@@ -515,6 +453,34 @@ pub fn set_truck_transmissions(
         if is_transmissions {
             arr_val_clone[data_path.index] = value_transmissions;
             return Some(arr_val_clone);
+        }
+    }
+
+    return None;
+}
+
+pub fn remove_truck_badge(arr_val: &Vec<String>, index_end_block: usize) -> Option<Vec<String>> {
+    let truck_accessories = match get_list_trucks_accessories_id(&arr_val, index_end_block) {
+        Some(truck_accessories) => truck_accessories,
+        None => return None,
+    };
+
+    for item in truck_accessories.iter() {
+        let data_path: VecItemsFind = match get_accessories_data_path(&arr_val, item.index) {
+            Some(data_path) => data_path,
+            None => continue,
+        };
+
+        let is_badge = is_badge(&data_path.value);
+
+        if is_badge {
+            let removed_accessorie =
+                match remove_accessorie(&arr_val, &item.id, &truck_accessories, index_end_block) {
+                    Some(removed_accessorie) => removed_accessorie,
+                    None => continue,
+                };
+
+            return Some(removed_accessorie);
         }
     }
 

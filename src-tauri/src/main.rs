@@ -18,9 +18,9 @@ use main_options::trailers::{
 };
 use main_options::trucks::{
     get_truck_brand_models_ets2, get_truck_brands_models_ats, get_truck_id,
-    get_truck_vehicle_index, set_any_trucks_fuel, set_any_trucks_wear, set_infinite_fuel_truck,
-    set_truck_engine, set_truck_fuel, set_truck_license_plate, set_truck_transmissions,
-    set_truck_wear,
+    get_truck_vehicle_index, remove_truck_badge, set_any_trucks_fuel, set_any_trucks_wear,
+    set_infinite_fuel_truck, set_truck_engine, set_truck_fuel, set_truck_license_plate,
+    set_truck_transmissions, set_truck_wear,
 };
 
 use std::path::Path;
@@ -825,6 +825,32 @@ async fn repair_all_trailers(dir_save: &str, wear: &str) -> Result<DefaultRespon
     return Ok(DefaultResponse { res: true });
 }
 
+#[tauri::command]
+async fn set_remove_truck_badge(dir_save: &str) -> Result<DefaultResponse, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let truck_find = match get_truck_id(&file) {
+        Some(truck_find) => truck_find,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let truck_index: usize = match get_truck_vehicle_index(&file, truck_find.id, truck_find.index) {
+        Some(truck_index) => truck_index,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let no_truck_badge: Vec<String> = match remove_truck_badge(&file, truck_index) {
+        Some(no_truck_badge) => no_truck_badge,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    save_file(dir_save.to_string(), no_truck_badge).await;
+    return Ok(DefaultResponse { res: true });
+}
+
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_process::init())
@@ -869,6 +895,7 @@ fn main() {
             set_new_profile_name,
             repair_trailer,
             repair_all_trailers,
+            set_remove_truck_badge,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

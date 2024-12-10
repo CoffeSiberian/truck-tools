@@ -655,6 +655,21 @@ export const setRepairAllTrailer = async (
 	return invoceRes.res;
 };
 
+export const setRemoveTruckBadge = async (
+	dirSave: string
+): Promise<boolean> => {
+	const rustParams = {
+		dirSave: dirSave + "/game.sii",
+	};
+
+	const invoceRes = (await invoke(
+		"set_remove_truck_badge",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
+};
+
 // App Variables store
 
 // theme store
