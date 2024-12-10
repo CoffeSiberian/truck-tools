@@ -55,7 +55,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 - [x] Fill all trucks fuel
 - [x] Create customized color license plate
 - [x] Save license plate data
-- [x] Set custom engines and transmission (Problem needs to be solved where some brand logo is floating)
+- [x] Set custom engines and transmission
 
 #### Profiles
 
