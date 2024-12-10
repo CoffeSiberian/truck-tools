@@ -1,7 +1,7 @@
 {
 	"name": "trucktools",
 	"private": true,
-	"version": "0.6.1",
+	"version": "0.6.2",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
@@ -22,7 +22,7 @@
 	},
 	"dependencies": {
 		"@formkit/tempo": "^0.1.2",
-		"@nextui-org/react": "2.6.5",
+		"@nextui-org/react": "2.6.7",
 		"@tabler/icons-react": "^3.24.0",
 		"@tauri-apps/api": "^2.1.1",
 		"@tauri-apps/plugin-dialog": "^2.2.0",
@@ -30,10 +30,10 @@
 		"@tauri-apps/plugin-process": "^2.2.0",
 		"@tauri-apps/plugin-shell": "^2.2.0",
 		"@tauri-apps/plugin-store": "^2.2.0",
-		"@tauri-apps/plugin-updater": "^2.2.0",
+		"@tauri-apps/plugin-updater": "^2.3.0",
 		"buffer": "^6.0.3",
 		"classnames": "^2.5.1",
-		"framer-motion": "^11.13.3",
+		"framer-motion": "^11.13.5",
 		"primereact": "^10.8.5",
 		"react": "^18.3.1",
 		"react-color-palette": "^7.3.0",
