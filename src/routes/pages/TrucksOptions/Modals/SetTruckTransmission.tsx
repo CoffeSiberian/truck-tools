@@ -16,8 +16,10 @@ import {
 	setTruckTransmission,
 	get_brand_models_ets2,
 	get_brand_models_ats,
+	setRemoveTruckBadge,
 } from "@/utils/fileEdit";
 import AlertSave from "@/components/AlertSave";
+import Warning from "@/components/Warning";
 import { BRANDS_ETS2, BRANDS_ATS } from "@/utils/Brands";
 
 // icons
@@ -26,6 +28,7 @@ import {
 	IconManualGearbox,
 	IconLayersSubtract,
 	IconReplace,
+	IconBadgeOff,
 } from "@tabler/icons-react";
 
 // types
@@ -49,6 +52,8 @@ const SetTruckTransmission = () => {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [isLoadingRemoveBadge, setIsLoadingRemoveBadge] =
+		useState<boolean>(false);
 
 	const [transmissionState, setTransmissionState] =
 		useState<TruckTransmissionState>({
@@ -144,6 +149,18 @@ const SetTruckTransmission = () => {
 		});
 	};
 
+	const onClickRemoveBadge = async () => {
+		if (selectedSave) {
+			setIsLoadingRemoveBadge(true);
+			const res = await setRemoveTruckBadge(selectedSave.dir);
+			setCompleted({
+				error: !res,
+				completed: true,
+			});
+		}
+		setIsLoadingRemoveBadge(false);
+	};
+
 	const errorModelEmpty = transmissionState.selectedBrand
 		? transmissionState.selectedModel
 			? false
@@ -181,7 +198,7 @@ const SetTruckTransmission = () => {
 			</Button>
 			<Modal
 				hideCloseButton
-				size="sm"
+				size="md"
 				backdrop="blur"
 				isOpen={isOpen}
 				onOpenChange={onOpenChange}
@@ -331,10 +348,30 @@ const SetTruckTransmission = () => {
 										setCompleted({ error: completed.error, completed: false })
 									}
 								/>
+								<Warning
+									text={
+										<div className="flex flex-col gap-2">
+											<b>Remember</b>
+											<p>
+												If you see any <b>logo floating or badly positioned</b>{" "}
+												on the truck you can remove it with the button below.
+											</p>
+										</div>
+									}
+								/>
 							</ModalBody>
 							<ModalFooter>
 								<Button color="danger" variant="light" onPress={onClose}>
 									Close
+								</Button>
+								<Button
+									endContent={<IconBadgeOff />}
+									isLoading={isLoadingRemoveBadge}
+									color="warning"
+									variant="bordered"
+									onPress={onClickRemoveBadge}
+								>
+									Remove badge
 								</Button>
 								<Button
 									endContent={<IconReplace />}
