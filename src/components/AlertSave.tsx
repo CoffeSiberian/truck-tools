@@ -23,7 +23,7 @@ const AlertSave: FC<props> = ({ message, error, show, setShowFalse }) => {
 		<div
 			className={classNames(
 				"fixed right-8 top-10 w-full max-w-80",
-				"transition-opacity duration-700",
+				"transition-opacity duration-300",
 				show ? "opacity-100" : "opacity-0"
 			)}
 		>
