@@ -87,6 +87,7 @@ export const BRANDS_ETS2: BrandType[] = [
 		models: [
 			{ key: "hiway", name: "Iveco Hi-Way" },
 			{ key: "stralis", name: "Iveco Stralis" },
+			{ key: "sway", name: "Iveco S-Way" },
 		],
 		icon: IvecoIcon,
 	},

@@ -1,359 +1,4 @@
 {
-	"kenworth": [
-		{
-			"brand": "kenworth",
-			"model": "t680",
-			"engines": [
-				{
-					"name": "Cummins ISX12 370",
-					"cv": "370",
-					"nm": "1830",
-					"code": "/def/vehicle/truck/kenworth.t680/engine/isx12.sii"
-				},
-				{
-					"name": "Cummins ISX12 425",
-					"cv": "425",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/kenworth.t680/engine/isx12_425.sii"
-				},
-				{
-					"name": "Cummins ISX15 500",
-					"cv": "500",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/kenworth.t680/engine/isx15.sii"
-				},
-				{
-					"name": "Cummins ISX15 450",
-					"cv": "450",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/kenworth.t680/engine/isx15_450.sii"
-				},
-				{
-					"name": "Cummins ISX15 550",
-					"cv": "550",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/kenworth.t680/engine/isx15_550.sii"
-				},
-				{
-					"name": "Cummins ISX15 600",
-					"cv": "600",
-					"nm": "2779",
-					"code": "/def/vehicle/truck/kenworth.t680/engine/isx15_600.sii"
-				},
-				{
-					"name": "Paccar MX-13 455",
-					"cv": "455",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/kenworth.t680/engine/mx.sii"
-				},
-				{
-					"name": "Paccar MX-13 405",
-					"cv": "405",
-					"nm": "1966",
-					"code": "/def/vehicle/truck/kenworth.t680/engine/mx13_405.sii"
-				},
-				{
-					"name": "Paccar MX-13 430",
-					"cv": "430",
-					"nm": "2102",
-					"code": "/def/vehicle/truck/kenworth.t680/engine/mx13_430.sii"
-				},
-				{
-					"name": "Paccar MX-13 510",
-					"cv": "510",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/kenworth.t680/engine/mx_500.sii"
-				}
-			],
-			"transmissions": [
-				{
-					"name": "Eaton UltraShift FM-15E310B-LAS",
-					"speeds": "10",
-					"retarder": false,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/kenworth.t680/transmission/10_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FM-15E310B-LAS R",
-					"speeds": "10",
-					"retarder": true,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/kenworth.t680/transmission/10_speed_retarder.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-20E313A-MHP",
-					"speeds": "13",
-					"retarder": false,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/kenworth.t680/transmission/13_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-20E313A-MHP R",
-					"speeds": "13",
-					"retarder": true,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/kenworth.t680/transmission/13_speed_retarder.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP",
-					"speeds": "18",
-					"retarder": false,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/kenworth.t680/transmission/18_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP R",
-					"speeds": "18",
-					"retarder": true,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/kenworth.t680/transmission/18_speed_retarder.sii"
-				},
-				{
-					"name": "Allison 4500 RDS",
-					"speeds": "6",
-					"retarder": false,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/kenworth.t680/transmission/allison.sii"
-				},
-				{
-					"name": "Allison 4700 RDS",
-					"speeds": "7",
-					"retarder": false,
-					"ratio": "7.63 - 0.64",
-					"code": "/def/vehicle/truck/kenworth.t680/transmission/allison4700.sii"
-				},
-				{
-					"name": "Allison 4700 RDS R",
-					"speeds": "7",
-					"retarder": true,
-					"ratio": "7.63 - 0.64",
-					"code": "/def/vehicle/truck/kenworth.t680/transmission/allison4700_retarder.sii"
-				},
-				{
-					"name": "Allison 4500 RDS R",
-					"speeds": "6",
-					"retarder": true,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/kenworth.t680/transmission/allison_retarder.sii"
-				},
-				{
-					"name": "Allison TC10",
-					"speeds": "10",
-					"retarder": false,
-					"ratio": "7.4 - 0.86",
-					"code": "/def/vehicle/truck/kenworth.t680/transmission/allison_tc10.sii"
-				}
-			]
-		},
-		{
-			"brand": "kenworth",
-			"model": "t680_2022",
-			"engines": [
-				{
-					"name": "Paccar MX-13 430",
-					"cv": "430",
-					"nm": "2102",
-					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/mx13_430.sii"
-				},
-				{
-					"name": "Paccar MX-13 455",
-					"cv": "455",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/mx13_455.sii"
-				},
-				{
-					"name": "Paccar MX-13 485",
-					"cv": "485",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/mx13_485.sii"
-				},
-				{
-					"name": "Paccar MX-13 510",
-					"cv": "510",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/mx13_510.sii"
-				}
-			],
-			"transmissions": [
-				{
-					"name": "PACCAR TX-12",
-					"speeds": "12",
-					"retarder": false,
-					"ratio": "14.43 - 0.77",
-					"code": "/def/vehicle/truck/kenworth.t680_2022/transmission/tx12.sii"
-				}
-			]
-		},
-		{
-			"brand": "kenworth",
-			"model": "w900",
-			"engines": [
-				{
-					"name": "Caterpillar C15 625, King of the hill",
-					"cv": "625",
-					"nm": "2779",
-					"code": "/def/vehicle/truck/kenworth.w900/engine/catc15.sii"
-				},
-				{
-					"name": "Caterpillar C15 435",
-					"cv": "435",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/kenworth.w900/engine/catc15_435.sii"
-				},
-				{
-					"name": "Caterpillar C15 500",
-					"cv": "500",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/kenworth.w900/engine/catc15_500.sii"
-				},
-				{
-					"name": "Caterpillar C15 550",
-					"cv": "550",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/kenworth.w900/engine/catc15_550.sii"
-				},
-				{
-					"name": "Cummins ISX12 370",
-					"cv": "370",
-					"nm": "1830",
-					"code": "/def/vehicle/truck/kenworth.w900/engine/isx12.sii"
-				},
-				{
-					"name": "Cummins ISX12 425",
-					"cv": "425",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/kenworth.w900/engine/isx12_425.sii"
-				},
-				{
-					"name": "Cummins ISX15 500",
-					"cv": "500",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/kenworth.w900/engine/isx15.sii"
-				},
-				{
-					"name": "Cummins ISX15 450",
-					"cv": "450",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/kenworth.w900/engine/isx15_450.sii"
-				},
-				{
-					"name": "Cummins ISX15 550",
-					"cv": "550",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/kenworth.w900/engine/isx15_550.sii"
-				},
-				{
-					"name": "Cummins ISX15 600",
-					"cv": "600",
-					"nm": "2779",
-					"code": "/def/vehicle/truck/kenworth.w900/engine/isx15_600.sii"
-				},
-				{
-					"name": "Paccar MX-13 455",
-					"cv": "455",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/kenworth.w900/engine/mx.sii"
-				},
-				{
-					"name": "Paccar MX-13 405",
-					"cv": "405",
-					"nm": "1966",
-					"code": "/def/vehicle/truck/kenworth.w900/engine/mx13_405.sii"
-				},
-				{
-					"name": "Paccar MX-13 430",
-					"cv": "430",
-					"nm": "2102",
-					"code": "/def/vehicle/truck/kenworth.w900/engine/mx13_430.sii"
-				},
-				{
-					"name": "Paccar MX-13 510",
-					"cv": "510",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/kenworth.w900/engine/mx_500.sii"
-				}
-			],
-			"transmissions": [
-				{
-					"name": "Eaton UltraShift FM-15E310B-LAS",
-					"speeds": "10",
-					"retarder": false,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/kenworth.w900/transmission/10_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FM-15E310B-LAS R",
-					"speeds": "10",
-					"retarder": true,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/kenworth.w900/transmission/10_speed_retarder.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-20E313A-MHP",
-					"speeds": "13",
-					"retarder": false,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/kenworth.w900/transmission/13_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-20E313A-MHP R",
-					"speeds": "13",
-					"retarder": true,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/kenworth.w900/transmission/13_speed_retarder.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP",
-					"speeds": "18",
-					"retarder": false,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/kenworth.w900/transmission/18_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP R",
-					"speeds": "18",
-					"retarder": true,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/kenworth.w900/transmission/18_speed_retarder.sii"
-				},
-				{
-					"name": "Allison 4500 RDS",
-					"speeds": "6",
-					"retarder": false,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/kenworth.w900/transmission/allison.sii"
-				},
-				{
-					"name": "Allison 4700 RDS",
-					"speeds": "7",
-					"retarder": false,
-					"ratio": "7.63 - 0.64",
-					"code": "/def/vehicle/truck/kenworth.w900/transmission/allison4700.sii"
-				},
-				{
-					"name": "Allison 4700 RDS R",
-					"speeds": "7",
-					"retarder": true,
-					"ratio": "7.63 - 0.64",
-					"code": "/def/vehicle/truck/kenworth.w900/transmission/allison4700_retarder.sii"
-				},
-				{
-					"name": "Allison 4500 RDS R",
-					"speeds": "6",
-					"retarder": true,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/kenworth.w900/transmission/allison_retarder.sii"
-				},
-				{
-					"name": "Allison TC10",
-					"speeds": "10",
-					"retarder": false,
-					"ratio": "7.4 - 0.86",
-					"code": "/def/vehicle/truck/kenworth.w900/transmission/allison_tc10.sii"
-				}
-			]
-		}
-	],
 	"freightliner": [
 		{
 			"brand": "freightliner",
@@ -372,40 +17,10 @@
 					"code": "/def/vehicle/truck/freightliner.cascadia2019/engine/dd13_400_idp.sii"
 				},
 				{
-					"name": "Detroit DD13 410",
-					"cv": "410",
-					"nm": "1966",
-					"code": "/def/vehicle/truck/freightliner.cascadia2019/engine/dd13_410.sii"
-				},
-				{
 					"name": "Integrated Detroit Powertrain DD15 400",
 					"cv": "400",
 					"nm": "2373",
 					"code": "/def/vehicle/truck/freightliner.cascadia2019/engine/dd15_400_idp.sii"
-				},
-				{
-					"name": "Detroit DD15 455",
-					"cv": "455",
-					"nm": "2102",
-					"code": "/def/vehicle/truck/freightliner.cascadia2019/engine/dd15_455.sii"
-				},
-				{
-					"name": "Detroit DD15 505",
-					"cv": "505",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/freightliner.cascadia2019/engine/dd15_505.sii"
-				},
-				{
-					"name": "Detroit DD16 560",
-					"cv": "560",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/freightliner.cascadia2019/engine/dd16_560.sii"
-				},
-				{
-					"name": "Detroit DD16 600",
-					"cv": "600",
-					"nm": "2779",
-					"code": "/def/vehicle/truck/freightliner.cascadia2019/engine/dd16_600.sii"
 				},
 				{
 					"name": "Cummins X15 Efficiency 400",
@@ -414,10 +29,22 @@
 					"code": "/def/vehicle/truck/freightliner.cascadia2019/engine/x15_400.sii"
 				},
 				{
+					"name": "Detroit DD13 410",
+					"cv": "410",
+					"nm": "1966",
+					"code": "/def/vehicle/truck/freightliner.cascadia2019/engine/dd13_410.sii"
+				},
+				{
 					"name": "Cummins X15 Efficiency 450",
 					"cv": "450",
 					"nm": "2237",
 					"code": "/def/vehicle/truck/freightliner.cascadia2019/engine/x15_450.sii"
+				},
+				{
+					"name": "Detroit DD15 455",
+					"cv": "455",
+					"nm": "2102",
+					"code": "/def/vehicle/truck/freightliner.cascadia2019/engine/dd15_455.sii"
 				},
 				{
 					"name": "Cummins X15 Efficiency 500",
@@ -426,16 +53,34 @@
 					"code": "/def/vehicle/truck/freightliner.cascadia2019/engine/x15_500.sii"
 				},
 				{
+					"name": "Detroit DD15 505",
+					"cv": "505",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/freightliner.cascadia2019/engine/dd15_505.sii"
+				},
+				{
 					"name": "Cummins X15 Performance 525",
 					"cv": "525",
 					"nm": "2508",
 					"code": "/def/vehicle/truck/freightliner.cascadia2019/engine/x15_525.sii"
 				},
 				{
+					"name": "Detroit DD16 560",
+					"cv": "560",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/freightliner.cascadia2019/engine/dd16_560.sii"
+				},
+				{
 					"name": "Cummins X15 Performance 565",
 					"cv": "565",
 					"nm": "2508",
 					"code": "/def/vehicle/truck/freightliner.cascadia2019/engine/x15_565.sii"
+				},
+				{
+					"name": "Detroit DD16 600",
+					"cv": "600",
+					"nm": "2779",
+					"code": "/def/vehicle/truck/freightliner.cascadia2019/engine/dd16_600.sii"
 				},
 				{
 					"name": "Cummins X15 Performance 605",
@@ -445,6 +90,34 @@
 				}
 			],
 			"transmissions": [
+				{
+					"name": "Allison 4500 RDS",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/freightliner.cascadia2019/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 RDS R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/freightliner.cascadia2019/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "Allison 4700 RDS",
+					"speeds": "7",
+					"retarder": false,
+					"ratio": "7.63 - 0.64",
+					"code": "/def/vehicle/truck/freightliner.cascadia2019/transmission/allison4700.sii"
+				},
+				{
+					"name": "Allison 4700 RDS R",
+					"speeds": "7",
+					"retarder": true,
+					"ratio": "7.63 - 0.64",
+					"code": "/def/vehicle/truck/freightliner.cascadia2019/transmission/allison4700_retarder.sii"
+				},
 				{
 					"name": "Eaton UltraShift FM-15E310B-LAS",
 					"speeds": "10",
@@ -458,6 +131,27 @@
 					"retarder": true,
 					"ratio": "15.42 - 1.0",
 					"code": "/def/vehicle/truck/freightliner.cascadia2019/transmission/10_speed_retarder.sii"
+				},
+				{
+					"name": "Detroit DT12-DA",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.93 - 1.0",
+					"code": "/def/vehicle/truck/freightliner.cascadia2019/transmission/dt12_da.sii"
+				},
+				{
+					"name": "Detroit DT12-OA",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.64 - 0.78",
+					"code": "/def/vehicle/truck/freightliner.cascadia2019/transmission/dt12_oa.sii"
+				},
+				{
+					"name": "Eaton Endurant EEO-18F112C",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.43 - 0.77",
+					"code": "/def/vehicle/truck/freightliner.cascadia2019/transmission/eaton_eeo18f112c.sii"
 				},
 				{
 					"name": "Eaton UltraShift FO-20E313A-MHP",
@@ -486,55 +180,6 @@
 					"retarder": true,
 					"ratio": "14.40 - 0.73",
 					"code": "/def/vehicle/truck/freightliner.cascadia2019/transmission/18_speed_retarder.sii"
-				},
-				{
-					"name": "Allison 4500 RDS",
-					"speeds": "6",
-					"retarder": false,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/freightliner.cascadia2019/transmission/allison.sii"
-				},
-				{
-					"name": "Allison 4700 RDS",
-					"speeds": "7",
-					"retarder": false,
-					"ratio": "7.63 - 0.64",
-					"code": "/def/vehicle/truck/freightliner.cascadia2019/transmission/allison4700.sii"
-				},
-				{
-					"name": "Allison 4700 RDS R",
-					"speeds": "7",
-					"retarder": true,
-					"ratio": "7.63 - 0.64",
-					"code": "/def/vehicle/truck/freightliner.cascadia2019/transmission/allison4700_retarder.sii"
-				},
-				{
-					"name": "Allison 4500 RDS R",
-					"speeds": "6",
-					"retarder": true,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/freightliner.cascadia2019/transmission/allison_retarder.sii"
-				},
-				{
-					"name": "Detroit DT12-DA",
-					"speeds": "12",
-					"retarder": false,
-					"ratio": "14.93 - 1.0",
-					"code": "/def/vehicle/truck/freightliner.cascadia2019/transmission/dt12_da.sii"
-				},
-				{
-					"name": "Detroit DT12-OA",
-					"speeds": "12",
-					"retarder": false,
-					"ratio": "11.64 - 0.78",
-					"code": "/def/vehicle/truck/freightliner.cascadia2019/transmission/dt12_oa.sii"
-				},
-				{
-					"name": "Eaton Endurant EEO-18F112C",
-					"speeds": "12",
-					"retarder": false,
-					"ratio": "14.43 - 0.77",
-					"code": "/def/vehicle/truck/freightliner.cascadia2019/transmission/eaton_eeo18f112c.sii"
 				}
 			]
 		},
@@ -561,12 +206,6 @@
 					"code": "/def/vehicle/truck/freightliner.cascadia2024/engine/dd13_425_idp.sii"
 				},
 				{
-					"name": "Detroit DD13 525",
-					"cv": "525",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/freightliner.cascadia2024/engine/dd13_525.sii"
-				},
-				{
 					"name": "Detroit DD15 455",
 					"cv": "455",
 					"nm": "2237",
@@ -583,16 +222,15 @@
 					"cv": "505",
 					"nm": "2508",
 					"code": "/def/vehicle/truck/freightliner.cascadia2024/engine/dd15_505.sii"
+				},
+				{
+					"name": "Detroit DD13 525",
+					"cv": "525",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/freightliner.cascadia2024/engine/dd13_525.sii"
 				}
 			],
 			"transmissions": [
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP",
-					"speeds": "18",
-					"retarder": false,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/freightliner.cascadia2024/transmission/18_speed.sii"
-				},
 				{
 					"name": "Allison 4500 RDS",
 					"speeds": "6",
@@ -627,340 +265,13 @@
 					"retarder": false,
 					"ratio": "14.56 - 0.78",
 					"code": "/def/vehicle/truck/freightliner.cascadia2024/transmission/dt12_ohe.sii"
-				}
-			]
-		}
-	],
-	"volvo": [
-		{
-			"brand": "volvo",
-			"model": "vnl",
-			"engines": [
-				{
-					"name": "Volvo D11 355",
-					"cv": "355",
-					"nm": "1695",
-					"code": "/def/vehicle/truck/volvo.vnl/engine/d11_355.sii"
-				},
-				{
-					"name": "Volvo D11 365",
-					"cv": "365",
-					"nm": "1830",
-					"code": "/def/vehicle/truck/volvo.vnl/engine/d11_365.sii"
-				},
-				{
-					"name": "Volvo D11 385",
-					"cv": "385",
-					"nm": "1966",
-					"code": "/def/vehicle/truck/volvo.vnl/engine/d11_385.sii"
-				},
-				{
-					"name": "Volvo D13 405",
-					"cv": "405",
-					"nm": "1966",
-					"code": "/def/vehicle/truck/volvo.vnl/engine/d13_405.sii"
-				},
-				{
-					"name": "Volvo D13 425",
-					"cv": "425",
-					"nm": "2102",
-					"code": "/def/vehicle/truck/volvo.vnl/engine/d13_425.sii"
-				},
-				{
-					"name": "Volvo D13 435",
-					"cv": "435",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/volvo.vnl/engine/d13_435.sii"
-				},
-				{
-					"name": "Volvo D13 475",
-					"cv": "475",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/volvo.vnl/engine/d13_475.sii"
-				},
-				{
-					"name": "Volvo D16 500",
-					"cv": "500",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/volvo.vnl/engine/d16_500.sii"
-				},
-				{
-					"name": "Volvo D16 550",
-					"cv": "550",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/volvo.vnl/engine/d16_550.sii"
-				},
-				{
-					"name": "Volvo D16 600",
-					"cv": "600",
-					"nm": "2779",
-					"code": "/def/vehicle/truck/volvo.vnl/engine/d16_600.sii"
-				},
-				{
-					"name": "Cummins ISX15 450",
-					"cv": "450",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/volvo.vnl/engine/isx15_450.sii"
-				},
-				{
-					"name": "Cummins ISX15 500",
-					"cv": "500",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/volvo.vnl/engine/isx15_500.sii"
-				},
-				{
-					"name": "Cummins ISX15 550",
-					"cv": "550",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/volvo.vnl/engine/isx15_550.sii"
-				},
-				{
-					"name": "Cummins ISX15 600",
-					"cv": "600",
-					"nm": "2779",
-					"code": "/def/vehicle/truck/volvo.vnl/engine/isx15_600.sii"
-				}
-			],
-			"transmissions": [
-				{
-					"name": "Eaton UltraShift FM-15E310B-LAS",
-					"speeds": "10",
-					"retarder": false,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/volvo.vnl/transmission/10_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FM-15E310B-LAS R",
-					"speeds": "10",
-					"retarder": true,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/volvo.vnl/transmission/10_speed_retarder.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-20E313A-MHP",
-					"speeds": "13",
-					"retarder": false,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/volvo.vnl/transmission/13_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-20E313A-MHP R",
-					"speeds": "13",
-					"retarder": true,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/volvo.vnl/transmission/13_speed_retarder.sii"
 				},
 				{
 					"name": "Eaton UltraShift FO-22E318B-VXP",
 					"speeds": "18",
 					"retarder": false,
 					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/volvo.vnl/transmission/18_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP R",
-					"speeds": "18",
-					"retarder": true,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/volvo.vnl/transmission/18_speed_retarder.sii"
-				},
-				{
-					"name": "Allison 4500 RDS",
-					"speeds": "6",
-					"retarder": false,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/volvo.vnl/transmission/allison.sii"
-				},
-				{
-					"name": "Allison 4500 RDS R",
-					"speeds": "6",
-					"retarder": true,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/volvo.vnl/transmission/allison_retarder.sii"
-				},
-				{
-					"name": "I-Shift AT2812D",
-					"speeds": "12",
-					"retarder": false,
-					"ratio": "14.94 - 1.0",
-					"code": "/def/vehicle/truck/volvo.vnl/transmission/ishift_at2812d.sii"
-				},
-				{
-					"name": "I-Shift AT2812D R",
-					"speeds": "12",
-					"retarder": true,
-					"ratio": "14.94 - 1.0",
-					"code": "/def/vehicle/truck/volvo.vnl/transmission/ishift_at2812d_retarder.sii"
-				},
-				{
-					"name": "I-Shift ATO3112D",
-					"speeds": "12",
-					"retarder": false,
-					"ratio": "11.73 - 0.78",
-					"code": "/def/vehicle/truck/volvo.vnl/transmission/ishift_ato3112d.sii"
-				},
-				{
-					"name": "I-Shift ATO3112D R",
-					"speeds": "12",
-					"retarder": true,
-					"ratio": "11.73 - 0.78",
-					"code": "/def/vehicle/truck/volvo.vnl/transmission/ishift_ato3112d_retarder.sii"
-				}
-			]
-		},
-		{
-			"brand": "volvo",
-			"model": "vnl2018",
-			"engines": [
-				{
-					"name": "Volvo D13 405",
-					"cv": "405",
-					"nm": "1966",
-					"code": "/def/vehicle/truck/volvo.vnl2018/engine/d13_405.sii"
-				},
-				{
-					"name": "Volvo D13 405 TC",
-					"cv": "405",
-					"nm": "2373",
-					"code": "/def/vehicle/truck/volvo.vnl2018/engine/d13_405tc.sii"
-				},
-				{
-					"name": "Volvo D13 425",
-					"cv": "425",
-					"nm": "2102",
-					"code": "/def/vehicle/truck/volvo.vnl2018/engine/d13_425.sii"
-				},
-				{
-					"name": "Volvo D13 425 TC",
-					"cv": "425",
-					"nm": "2373",
-					"code": "/def/vehicle/truck/volvo.vnl2018/engine/d13_425tc.sii"
-				},
-				{
-					"name": "Volvo D13 435",
-					"cv": "435",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/volvo.vnl2018/engine/d13_435.sii"
-				},
-				{
-					"name": "Volvo D13 455 TC",
-					"cv": "455",
-					"nm": "2521.8",
-					"code": "/def/vehicle/truck/volvo.vnl2018/engine/d13_455tc.sii"
-				},
-				{
-					"name": "Volvo D13 475",
-					"cv": "475",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/volvo.vnl2018/engine/d13_475.sii"
-				},
-				{
-					"name": "Volvo D13 500",
-					"cv": "500",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/volvo.vnl2018/engine/d13_500.sii"
-				},
-				{
-					"name": "Cummins X15 Efficiency 400",
-					"cv": "400",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/volvo.vnl2018/engine/x15_400.sii"
-				},
-				{
-					"name": "Cummins X15 Efficiency 450",
-					"cv": "450",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/volvo.vnl2018/engine/x15_450.sii"
-				},
-				{
-					"name": "Cummins X15 Efficiency 500",
-					"cv": "500",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/volvo.vnl2018/engine/x15_500.sii"
-				},
-				{
-					"name": "Cummins X15 Performance 525",
-					"cv": "525",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/volvo.vnl2018/engine/x15_525.sii"
-				},
-				{
-					"name": "Cummins X15 Performance 565",
-					"cv": "565",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/volvo.vnl2018/engine/x15_565.sii"
-				}
-			],
-			"transmissions": [
-				{
-					"name": "Eaton UltraShift FM-15E310B-LAS",
-					"speeds": "10",
-					"retarder": false,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/10_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FM-15E310B-LAS R",
-					"speeds": "10",
-					"retarder": true,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/10_speed_retarder.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-20E313A-MHP",
-					"speeds": "13",
-					"retarder": false,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/13_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-20E313A-MHP R",
-					"speeds": "13",
-					"retarder": true,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/13_speed_retarder.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP",
-					"speeds": "18",
-					"retarder": false,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/18_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP R",
-					"speeds": "18",
-					"retarder": true,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/18_speed_retarder.sii"
-				},
-				{
-					"name": "Allison 4500 RDS",
-					"speeds": "6",
-					"retarder": false,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/allison.sii"
-				},
-				{
-					"name": "Allison 4500 RDS R",
-					"speeds": "6",
-					"retarder": true,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/allison_retarder.sii"
-				},
-				{
-					"name": "I-Shift AT2612G",
-					"speeds": "12",
-					"retarder": false,
-					"ratio": "14.94 - 1.0",
-					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/ishift_at2612g.sii"
-				},
-				{
-					"name": "I-Shift ATO2612G",
-					"speeds": "12",
-					"retarder": false,
-					"ratio": "11.73 - 0.79",
-					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/ishift_ato2612g.sii"
+					"code": "/def/vehicle/truck/freightliner.cascadia2024/transmission/18_speed.sii"
 				}
 			]
 		}
@@ -1045,40 +356,28 @@
 			"model": "lonestar",
 			"engines": [
 				{
-					"name": "Cummins ISX15 450",
-					"cv": "450",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/intnational.lonestar/engine/isx15_450.sii"
-				},
-				{
-					"name": "Cummins ISX15 500",
-					"cv": "500",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/intnational.lonestar/engine/isx15_500.sii"
-				},
-				{
-					"name": "Cummins ISX15 550",
-					"cv": "550",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/intnational.lonestar/engine/isx15_550.sii"
-				},
-				{
-					"name": "Cummins ISX15 600",
-					"cv": "600",
-					"nm": "2779",
-					"code": "/def/vehicle/truck/intnational.lonestar/engine/isx15_600.sii"
-				},
-				{
 					"name": "Cummins X15 Efficiency 400",
 					"cv": "400",
 					"nm": "2237",
 					"code": "/def/vehicle/truck/intnational.lonestar/engine/x15_400.sii"
 				},
 				{
+					"name": "Cummins ISX15 450",
+					"cv": "450",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/intnational.lonestar/engine/isx15_450.sii"
+				},
+				{
 					"name": "Cummins X15 Efficiency 450",
 					"cv": "450",
 					"nm": "2237",
 					"code": "/def/vehicle/truck/intnational.lonestar/engine/x15_450.sii"
+				},
+				{
+					"name": "Cummins ISX15 500",
+					"cv": "500",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/intnational.lonestar/engine/isx15_500.sii"
 				},
 				{
 					"name": "Cummins X15 Efficiency 500",
@@ -1093,10 +392,22 @@
 					"code": "/def/vehicle/truck/intnational.lonestar/engine/x15_525.sii"
 				},
 				{
+					"name": "Cummins ISX15 550",
+					"cv": "550",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/intnational.lonestar/engine/isx15_550.sii"
+				},
+				{
 					"name": "Cummins X15 Performance 565",
 					"cv": "565",
 					"nm": "2508",
 					"code": "/def/vehicle/truck/intnational.lonestar/engine/x15_565.sii"
+				},
+				{
+					"name": "Cummins ISX15 600",
+					"cv": "600",
+					"nm": "2779",
+					"code": "/def/vehicle/truck/intnational.lonestar/engine/isx15_600.sii"
 				},
 				{
 					"name": "Cummins X15 Performance 605",
@@ -1106,6 +417,34 @@
 				}
 			],
 			"transmissions": [
+				{
+					"name": "Allison 4500 RDS",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/intnational.lonestar/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 RDS R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/intnational.lonestar/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "Allison 4700 RDS",
+					"speeds": "7",
+					"retarder": false,
+					"ratio": "7.63 - 0.64",
+					"code": "/def/vehicle/truck/intnational.lonestar/transmission/allison4700.sii"
+				},
+				{
+					"name": "Allison 4700 RDS R",
+					"speeds": "7",
+					"retarder": true,
+					"ratio": "7.63 - 0.64",
+					"code": "/def/vehicle/truck/intnational.lonestar/transmission/allison4700_retarder.sii"
+				},
 				{
 					"name": "Eaton UltraShift FM-15E310B-LAS",
 					"speeds": "10",
@@ -1119,6 +458,20 @@
 					"retarder": true,
 					"ratio": "15.42 - 1.0",
 					"code": "/def/vehicle/truck/intnational.lonestar/transmission/10_speed_retarder.sii"
+				},
+				{
+					"name": "Allison TC10",
+					"speeds": "10",
+					"retarder": false,
+					"ratio": "7.4 - 0.86",
+					"code": "/def/vehicle/truck/intnational.lonestar/transmission/allison_tc10.sii"
+				},
+				{
+					"name": "Eaton Endurant EEO-18F112C",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.43 - 0.77",
+					"code": "/def/vehicle/truck/intnational.lonestar/transmission/eaton_eeo18f112c.sii"
 				},
 				{
 					"name": "Eaton UltraShift FO-20E313A-MHP",
@@ -1147,48 +500,6 @@
 					"retarder": true,
 					"ratio": "14.40 - 0.73",
 					"code": "/def/vehicle/truck/intnational.lonestar/transmission/18_speed_retarder.sii"
-				},
-				{
-					"name": "Allison 4500 RDS",
-					"speeds": "6",
-					"retarder": false,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/intnational.lonestar/transmission/allison.sii"
-				},
-				{
-					"name": "Allison 4700 RDS",
-					"speeds": "7",
-					"retarder": false,
-					"ratio": "7.63 - 0.64",
-					"code": "/def/vehicle/truck/intnational.lonestar/transmission/allison4700.sii"
-				},
-				{
-					"name": "Allison 4700 RDS R",
-					"speeds": "7",
-					"retarder": true,
-					"ratio": "7.63 - 0.64",
-					"code": "/def/vehicle/truck/intnational.lonestar/transmission/allison4700_retarder.sii"
-				},
-				{
-					"name": "Allison 4500 RDS R",
-					"speeds": "6",
-					"retarder": true,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/intnational.lonestar/transmission/allison_retarder.sii"
-				},
-				{
-					"name": "Allison TC10",
-					"speeds": "10",
-					"retarder": false,
-					"ratio": "7.4 - 0.86",
-					"code": "/def/vehicle/truck/intnational.lonestar/transmission/allison_tc10.sii"
-				},
-				{
-					"name": "Eaton Endurant EEO-18F112C",
-					"speeds": "12",
-					"retarder": false,
-					"ratio": "14.43 - 0.77",
-					"code": "/def/vehicle/truck/intnational.lonestar/transmission/eaton_eeo18f112c.sii"
 				}
 			]
 		},
@@ -1196,6 +507,18 @@
 			"brand": "intnational",
 			"model": "lt",
 			"engines": [
+				{
+					"name": "S13 Integrated Powertrain 400",
+					"cv": "400",
+					"nm": "1966",
+					"code": "/def/vehicle/truck/intnational.lt/engine/s13_400.sii"
+				},
+				{
+					"name": "Cummins X15 Efficiency 400",
+					"cv": "400",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/intnational.lt/engine/x15_400.sii"
+				},
 				{
 					"name": "International A26 410",
 					"cv": "410",
@@ -1209,28 +532,16 @@
 					"code": "/def/vehicle/truck/intnational.lt/engine/a26_430.sii"
 				},
 				{
-					"name": "International A26 450",
-					"cv": "450",
-					"nm": "2305",
-					"code": "/def/vehicle/truck/intnational.lt/engine/a26_450.sii"
-				},
-				{
-					"name": "International A26 475",
-					"cv": "475",
-					"nm": "2305",
-					"code": "/def/vehicle/truck/intnational.lt/engine/a26_475.sii"
-				},
-				{
-					"name": "S13 Integrated Powertrain 400",
-					"cv": "400",
-					"nm": "1966",
-					"code": "/def/vehicle/truck/intnational.lt/engine/s13_400.sii"
-				},
-				{
 					"name": "S13 Integrated Powertrain 430",
 					"cv": "430",
 					"nm": "2106",
 					"code": "/def/vehicle/truck/intnational.lt/engine/s13_430.sii"
+				},
+				{
+					"name": "International A26 450",
+					"cv": "450",
+					"nm": "2305",
+					"code": "/def/vehicle/truck/intnational.lt/engine/a26_450.sii"
 				},
 				{
 					"name": "S13 Integrated Powertrain 450",
@@ -1239,34 +550,34 @@
 					"code": "/def/vehicle/truck/intnational.lt/engine/s13_450.sii"
 				},
 				{
-					"name": "S13 Integrated Powertrain 475",
-					"cv": "475",
-					"nm": "2373",
-					"code": "/def/vehicle/truck/intnational.lt/engine/s13_475.sii"
-				},
-				{
-					"name": "S13 Integrated Powertrain 515",
-					"cv": "515",
-					"nm": "2440",
-					"code": "/def/vehicle/truck/intnational.lt/engine/s13_515.sii"
-				},
-				{
-					"name": "Cummins X15 Efficiency 400",
-					"cv": "400",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/intnational.lt/engine/x15_400.sii"
-				},
-				{
 					"name": "Cummins X15 Efficiency 450",
 					"cv": "450",
 					"nm": "2237",
 					"code": "/def/vehicle/truck/intnational.lt/engine/x15_450.sii"
 				},
 				{
+					"name": "International A26 475",
+					"cv": "475",
+					"nm": "2305",
+					"code": "/def/vehicle/truck/intnational.lt/engine/a26_475.sii"
+				},
+				{
+					"name": "S13 Integrated Powertrain 475",
+					"cv": "475",
+					"nm": "2373",
+					"code": "/def/vehicle/truck/intnational.lt/engine/s13_475.sii"
+				},
+				{
 					"name": "Cummins X15 Efficiency 500",
 					"cv": "500",
 					"nm": "2508",
 					"code": "/def/vehicle/truck/intnational.lt/engine/x15_500.sii"
+				},
+				{
+					"name": "S13 Integrated Powertrain 515",
+					"cv": "515",
+					"nm": "2440",
+					"code": "/def/vehicle/truck/intnational.lt/engine/s13_515.sii"
 				},
 				{
 					"name": "Cummins X15 Performance 525",
@@ -1283,32 +594,18 @@
 			],
 			"transmissions": [
 				{
-					"name": "Eaton UltraShift FO-20E313A-MHP",
-					"speeds": "13",
+					"name": "Eaton Advantage FAM-15810B",
+					"speeds": "10",
 					"retarder": false,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/intnational.lt/transmission/13_speed.sii"
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/intnational.lt/transmission/eaton_fam15810b.sii"
 				},
 				{
-					"name": "Eaton UltraShift FO-20E313A-MHP R",
-					"speeds": "13",
-					"retarder": true,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/intnational.lt/transmission/13_speed_retarder.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP",
-					"speeds": "18",
+					"name": "Eaton Advantage FAO-16810C",
+					"speeds": "10",
 					"retarder": false,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/intnational.lt/transmission/18_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP R",
-					"speeds": "18",
-					"retarder": true,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/intnational.lt/transmission/18_speed_retarder.sii"
+					"ratio": "12.80 - 0.73",
+					"code": "/def/vehicle/truck/intnational.lt/transmission/eaton_fao16810c.sii"
 				},
 				{
 					"name": "Eaton Endurant EE-17F111B",
@@ -1325,18 +622,18 @@
 					"code": "/def/vehicle/truck/intnational.lt/transmission/eaton_eeo18f112c.sii"
 				},
 				{
-					"name": "Eaton Advantage FAM-15810B",
-					"speeds": "10",
+					"name": "Eaton UltraShift FO-20E313A-MHP",
+					"speeds": "13",
 					"retarder": false,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/intnational.lt/transmission/eaton_fam15810b.sii"
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/intnational.lt/transmission/13_speed.sii"
 				},
 				{
-					"name": "Eaton Advantage FAO-16810C",
-					"speeds": "10",
-					"retarder": false,
-					"ratio": "12.80 - 0.73",
-					"code": "/def/vehicle/truck/intnational.lt/transmission/eaton_fao16810c.sii"
+					"name": "Eaton UltraShift FO-20E313A-MHP R",
+					"speeds": "13",
+					"retarder": true,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/intnational.lt/transmission/13_speed_retarder.sii"
 				},
 				{
 					"name": "T14",
@@ -1344,6 +641,1300 @@
 					"retarder": false,
 					"ratio": "20.81 - 0.78",
 					"code": "/def/vehicle/truck/intnational.lt/transmission/t14.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP",
+					"speeds": "18",
+					"retarder": false,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/intnational.lt/transmission/18_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP R",
+					"speeds": "18",
+					"retarder": true,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/intnational.lt/transmission/18_speed_retarder.sii"
+				}
+			]
+		}
+	],
+	"kenworth": [
+		{
+			"brand": "kenworth",
+			"model": "t680",
+			"engines": [
+				{
+					"name": "Cummins ISX12 370",
+					"cv": "370",
+					"nm": "1830",
+					"code": "/def/vehicle/truck/kenworth.t680/engine/isx12.sii"
+				},
+				{
+					"name": "Paccar MX-13 405",
+					"cv": "405",
+					"nm": "1966",
+					"code": "/def/vehicle/truck/kenworth.t680/engine/mx13_405.sii"
+				},
+				{
+					"name": "Cummins ISX12 425",
+					"cv": "425",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/kenworth.t680/engine/isx12_425.sii"
+				},
+				{
+					"name": "Paccar MX-13 430",
+					"cv": "430",
+					"nm": "2102",
+					"code": "/def/vehicle/truck/kenworth.t680/engine/mx13_430.sii"
+				},
+				{
+					"name": "Cummins ISX15 450",
+					"cv": "450",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/kenworth.t680/engine/isx15_450.sii"
+				},
+				{
+					"name": "Paccar MX-13 455",
+					"cv": "455",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/kenworth.t680/engine/mx.sii"
+				},
+				{
+					"name": "Cummins ISX15 500",
+					"cv": "500",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/kenworth.t680/engine/isx15.sii"
+				},
+				{
+					"name": "Paccar MX-13 510",
+					"cv": "510",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/kenworth.t680/engine/mx_500.sii"
+				},
+				{
+					"name": "Cummins ISX15 550",
+					"cv": "550",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/kenworth.t680/engine/isx15_550.sii"
+				},
+				{
+					"name": "Cummins ISX15 600",
+					"cv": "600",
+					"nm": "2779",
+					"code": "/def/vehicle/truck/kenworth.t680/engine/isx15_600.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Allison 4500 RDS",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/kenworth.t680/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 RDS R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/kenworth.t680/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "Allison 4700 RDS",
+					"speeds": "7",
+					"retarder": false,
+					"ratio": "7.63 - 0.64",
+					"code": "/def/vehicle/truck/kenworth.t680/transmission/allison4700.sii"
+				},
+				{
+					"name": "Allison 4700 RDS R",
+					"speeds": "7",
+					"retarder": true,
+					"ratio": "7.63 - 0.64",
+					"code": "/def/vehicle/truck/kenworth.t680/transmission/allison4700_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FM-15E310B-LAS",
+					"speeds": "10",
+					"retarder": false,
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/kenworth.t680/transmission/10_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FM-15E310B-LAS R",
+					"speeds": "10",
+					"retarder": true,
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/kenworth.t680/transmission/10_speed_retarder.sii"
+				},
+				{
+					"name": "Allison TC10",
+					"speeds": "10",
+					"retarder": false,
+					"ratio": "7.4 - 0.86",
+					"code": "/def/vehicle/truck/kenworth.t680/transmission/allison_tc10.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP",
+					"speeds": "13",
+					"retarder": false,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/kenworth.t680/transmission/13_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP R",
+					"speeds": "13",
+					"retarder": true,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/kenworth.t680/transmission/13_speed_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP",
+					"speeds": "18",
+					"retarder": false,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/kenworth.t680/transmission/18_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP R",
+					"speeds": "18",
+					"retarder": true,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/kenworth.t680/transmission/18_speed_retarder.sii"
+				}
+			]
+		},
+		{
+			"brand": "kenworth",
+			"model": "t680_2022",
+			"engines": [
+				{
+					"name": "Paccar MX-13 430",
+					"cv": "430",
+					"nm": "2102",
+					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/mx13_430.sii"
+				},
+				{
+					"name": "Paccar MX-13 455",
+					"cv": "455",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/mx13_455.sii"
+				},
+				{
+					"name": "Paccar MX-13 485",
+					"cv": "485",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/mx13_485.sii"
+				},
+				{
+					"name": "Paccar MX-13 510",
+					"cv": "510",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/mx13_510.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "PACCAR TX-12",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.43 - 0.77",
+					"code": "/def/vehicle/truck/kenworth.t680_2022/transmission/tx12.sii"
+				}
+			]
+		},
+		{
+			"brand": "kenworth",
+			"model": "w900",
+			"engines": [
+				{
+					"name": "Cummins ISX12 370",
+					"cv": "370",
+					"nm": "1830",
+					"code": "/def/vehicle/truck/kenworth.w900/engine/isx12.sii"
+				},
+				{
+					"name": "Paccar MX-13 405",
+					"cv": "405",
+					"nm": "1966",
+					"code": "/def/vehicle/truck/kenworth.w900/engine/mx13_405.sii"
+				},
+				{
+					"name": "Cummins ISX12 425",
+					"cv": "425",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/kenworth.w900/engine/isx12_425.sii"
+				},
+				{
+					"name": "Paccar MX-13 430",
+					"cv": "430",
+					"nm": "2102",
+					"code": "/def/vehicle/truck/kenworth.w900/engine/mx13_430.sii"
+				},
+				{
+					"name": "Caterpillar C15 435",
+					"cv": "435",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/kenworth.w900/engine/catc15_435.sii"
+				},
+				{
+					"name": "Cummins ISX15 450",
+					"cv": "450",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/kenworth.w900/engine/isx15_450.sii"
+				},
+				{
+					"name": "Paccar MX-13 455",
+					"cv": "455",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/kenworth.w900/engine/mx.sii"
+				},
+				{
+					"name": "Caterpillar C15 500",
+					"cv": "500",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/kenworth.w900/engine/catc15_500.sii"
+				},
+				{
+					"name": "Cummins ISX15 500",
+					"cv": "500",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/kenworth.w900/engine/isx15.sii"
+				},
+				{
+					"name": "Paccar MX-13 510",
+					"cv": "510",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/kenworth.w900/engine/mx_500.sii"
+				},
+				{
+					"name": "Caterpillar C15 550",
+					"cv": "550",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/kenworth.w900/engine/catc15_550.sii"
+				},
+				{
+					"name": "Cummins ISX15 550",
+					"cv": "550",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/kenworth.w900/engine/isx15_550.sii"
+				},
+				{
+					"name": "Cummins ISX15 600",
+					"cv": "600",
+					"nm": "2779",
+					"code": "/def/vehicle/truck/kenworth.w900/engine/isx15_600.sii"
+				},
+				{
+					"name": "Caterpillar C15 625, King of the hill",
+					"cv": "625",
+					"nm": "2779",
+					"code": "/def/vehicle/truck/kenworth.w900/engine/catc15.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Allison 4500 RDS",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/kenworth.w900/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 RDS R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/kenworth.w900/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "Allison 4700 RDS",
+					"speeds": "7",
+					"retarder": false,
+					"ratio": "7.63 - 0.64",
+					"code": "/def/vehicle/truck/kenworth.w900/transmission/allison4700.sii"
+				},
+				{
+					"name": "Allison 4700 RDS R",
+					"speeds": "7",
+					"retarder": true,
+					"ratio": "7.63 - 0.64",
+					"code": "/def/vehicle/truck/kenworth.w900/transmission/allison4700_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FM-15E310B-LAS",
+					"speeds": "10",
+					"retarder": false,
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/kenworth.w900/transmission/10_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FM-15E310B-LAS R",
+					"speeds": "10",
+					"retarder": true,
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/kenworth.w900/transmission/10_speed_retarder.sii"
+				},
+				{
+					"name": "Allison TC10",
+					"speeds": "10",
+					"retarder": false,
+					"ratio": "7.4 - 0.86",
+					"code": "/def/vehicle/truck/kenworth.w900/transmission/allison_tc10.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP",
+					"speeds": "13",
+					"retarder": false,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/kenworth.w900/transmission/13_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP R",
+					"speeds": "13",
+					"retarder": true,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/kenworth.w900/transmission/13_speed_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP",
+					"speeds": "18",
+					"retarder": false,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/kenworth.w900/transmission/18_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP R",
+					"speeds": "18",
+					"retarder": true,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/kenworth.w900/transmission/18_speed_retarder.sii"
+				}
+			]
+		}
+	],
+	"mack": [
+		{
+			"brand": "mack",
+			"model": "anthem",
+			"engines": [
+				{
+					"name": "Mack MP7 345C",
+					"cv": "345",
+					"nm": "1845",
+					"code": "/def/vehicle/truck/mack.anthem/engine/mp7_345.sii"
+				},
+				{
+					"name": "Mack MP7 365C",
+					"cv": "365",
+					"nm": "1979",
+					"code": "/def/vehicle/truck/mack.anthem/engine/mp7_365.sii"
+				},
+				{
+					"name": "Mack MP7 395C",
+					"cv": "395",
+					"nm": "2115",
+					"code": "/def/vehicle/truck/mack.anthem/engine/mp7_395.sii"
+				},
+				{
+					"name": "Mack MP8 415C",
+					"cv": "415",
+					"nm": "2251",
+					"code": "/def/vehicle/truck/mack.anthem/engine/mp8_415.sii"
+				},
+				{
+					"name": "Mack MP8 445C",
+					"cv": "445",
+					"nm": "2522",
+					"code": "/def/vehicle/truck/mack.anthem/engine/mp8_445.sii"
+				},
+				{
+					"name": "Mack MP8 505C",
+					"cv": "505",
+					"nm": "2522",
+					"code": "/def/vehicle/truck/mack.anthem/engine/mp8_505.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Allison 4500 RDS",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/mack.anthem/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 RDS R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/mack.anthem/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "Allison 4700 RDS",
+					"speeds": "7",
+					"retarder": false,
+					"ratio": "7.63 - 0.64",
+					"code": "/def/vehicle/truck/mack.anthem/transmission/allison4700.sii"
+				},
+				{
+					"name": "Allison 4700 RDS R",
+					"speeds": "7",
+					"retarder": true,
+					"ratio": "7.63 - 0.64",
+					"code": "/def/vehicle/truck/mack.anthem/transmission/allison4700_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FM-15E310B-LAS",
+					"speeds": "10",
+					"retarder": false,
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/mack.anthem/transmission/10_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FM-15E310B-LAS R",
+					"speeds": "10",
+					"retarder": true,
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/mack.anthem/transmission/10_speed_retarder.sii"
+				},
+				{
+					"name": "mDRIVE AT2612F",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.94 - 1.0",
+					"code": "/def/vehicle/truck/mack.anthem/transmission/mdrive_at2612f.sii"
+				},
+				{
+					"name": "mDRIVE AT2612F R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "14.94 - 1.0",
+					"code": "/def/vehicle/truck/mack.anthem/transmission/mdrive_at2612f_retarder.sii"
+				},
+				{
+					"name": "mDRIVE ATO2612F",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.73 - 0.78",
+					"code": "/def/vehicle/truck/mack.anthem/transmission/mdrive_ato2612f.sii"
+				},
+				{
+					"name": "mDRIVE ATO2612F R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "11.73 - 0.78",
+					"code": "/def/vehicle/truck/mack.anthem/transmission/mdrive_ato2612f_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP",
+					"speeds": "13",
+					"retarder": false,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/mack.anthem/transmission/13_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP R",
+					"speeds": "13",
+					"retarder": true,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/mack.anthem/transmission/13_speed_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP",
+					"speeds": "18",
+					"retarder": false,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/mack.anthem/transmission/18_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP R",
+					"speeds": "18",
+					"retarder": true,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/mack.anthem/transmission/18_speed_retarder.sii"
+				}
+			]
+		},
+		{
+			"brand": "mack",
+			"model": "pinnacle",
+			"engines": [
+				{
+					"name": "Mack MP8 415C",
+					"cv": "415",
+					"nm": "2251",
+					"code": "/def/vehicle/truck/mack.pinnacle/engine/mp8_415.sii"
+				},
+				{
+					"name": "Mack MP8 445C",
+					"cv": "445",
+					"nm": "2522",
+					"code": "/def/vehicle/truck/mack.pinnacle/engine/mp8_445.sii"
+				},
+				{
+					"name": "Mack MP8 505C",
+					"cv": "505",
+					"nm": "2522",
+					"code": "/def/vehicle/truck/mack.pinnacle/engine/mp8_505.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Allison 4500 RDS",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/mack.pinnacle/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 RDS R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/mack.pinnacle/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "Allison 4700 RDS",
+					"speeds": "7",
+					"retarder": false,
+					"ratio": "7.63 - 0.64",
+					"code": "/def/vehicle/truck/mack.pinnacle/transmission/allison4700.sii"
+				},
+				{
+					"name": "Allison 4700 RDS R",
+					"speeds": "7",
+					"retarder": true,
+					"ratio": "7.63 - 0.64",
+					"code": "/def/vehicle/truck/mack.pinnacle/transmission/allison4700_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FM-15E310B-LAS",
+					"speeds": "10",
+					"retarder": false,
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/mack.pinnacle/transmission/10_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FM-15E310B-LAS R",
+					"speeds": "10",
+					"retarder": true,
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/mack.pinnacle/transmission/10_speed_retarder.sii"
+				},
+				{
+					"name": "mDRIVE AT2612F",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.94 - 1.0",
+					"code": "/def/vehicle/truck/mack.pinnacle/transmission/mdrive_at2612f.sii"
+				},
+				{
+					"name": "mDRIVE AT2612F R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "14.94 - 1.0",
+					"code": "/def/vehicle/truck/mack.pinnacle/transmission/mdrive_at2612f_retarder.sii"
+				},
+				{
+					"name": "mDRIVE ATO2612F",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.73 - 0.78",
+					"code": "/def/vehicle/truck/mack.pinnacle/transmission/mdrive_ato2612f.sii"
+				},
+				{
+					"name": "mDRIVE ATO2612F R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "11.73 - 0.78",
+					"code": "/def/vehicle/truck/mack.pinnacle/transmission/mdrive_ato2612f_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP",
+					"speeds": "13",
+					"retarder": false,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/mack.pinnacle/transmission/13_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP R",
+					"speeds": "13",
+					"retarder": true,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/mack.pinnacle/transmission/13_speed_retarder.sii"
+				},
+				{
+					"name": "mDRIVE HD TMD14AO",
+					"speeds": "14",
+					"retarder": false,
+					"ratio": "32.04 - 0.78",
+					"code": "/def/vehicle/truck/mack.pinnacle/transmission/mdrive_tmd14ao.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP",
+					"speeds": "18",
+					"retarder": false,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/mack.pinnacle/transmission/18_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP R",
+					"speeds": "18",
+					"retarder": true,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/mack.pinnacle/transmission/18_speed_retarder.sii"
+				}
+			]
+		}
+	],
+	"peterbilt": [
+		{
+			"brand": "peterbilt",
+			"model": "389",
+			"engines": [
+				{
+					"name": "Cummins ISX12 370",
+					"cv": "370",
+					"nm": "1830",
+					"code": "/def/vehicle/truck/peterbilt.389/engine/isx12.sii"
+				},
+				{
+					"name": "Paccar MX-13 405",
+					"cv": "405",
+					"nm": "1966",
+					"code": "/def/vehicle/truck/peterbilt.389/engine/mx13_405.sii"
+				},
+				{
+					"name": "Cummins ISX12 425",
+					"cv": "425",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/peterbilt.389/engine/isx12_425.sii"
+				},
+				{
+					"name": "Paccar MX-13 430",
+					"cv": "430",
+					"nm": "2102",
+					"code": "/def/vehicle/truck/peterbilt.389/engine/mx13_430.sii"
+				},
+				{
+					"name": "Caterpillar C15 435",
+					"cv": "435",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/peterbilt.389/engine/catc15_435.sii"
+				},
+				{
+					"name": "Cummins ISX15 450",
+					"cv": "450",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/peterbilt.389/engine/isx15_450.sii"
+				},
+				{
+					"name": "Paccar MX-13 455",
+					"cv": "455",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/peterbilt.389/engine/mx.sii"
+				},
+				{
+					"name": "Caterpillar C15 500",
+					"cv": "500",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/peterbilt.389/engine/catc15_500.sii"
+				},
+				{
+					"name": "Cummins ISX15 500",
+					"cv": "500",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/peterbilt.389/engine/isx15.sii"
+				},
+				{
+					"name": "Paccar MX-13 510",
+					"cv": "510",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/peterbilt.389/engine/mx_500.sii"
+				},
+				{
+					"name": "Caterpillar C15 550",
+					"cv": "550",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/peterbilt.389/engine/catc15_550.sii"
+				},
+				{
+					"name": "Cummins ISX15 550",
+					"cv": "550",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/peterbilt.389/engine/isx15_550.sii"
+				},
+				{
+					"name": "Cummins ISX15 600",
+					"cv": "600",
+					"nm": "2779",
+					"code": "/def/vehicle/truck/peterbilt.389/engine/isx15_600.sii"
+				},
+				{
+					"name": "Caterpillar C15 625, King of the hill",
+					"cv": "625",
+					"nm": "2779",
+					"code": "/def/vehicle/truck/peterbilt.389/engine/catc15.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Allison 4500 RDS",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/peterbilt.389/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 RDS R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/peterbilt.389/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "Allison 4700 RDS",
+					"speeds": "7",
+					"retarder": false,
+					"ratio": "7.63 - 0.64",
+					"code": "/def/vehicle/truck/peterbilt.389/transmission/allison4700.sii"
+				},
+				{
+					"name": "Allison 4700 RDS R",
+					"speeds": "7",
+					"retarder": true,
+					"ratio": "7.63 - 0.64",
+					"code": "/def/vehicle/truck/peterbilt.389/transmission/allison4700_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FM-15E310B-LAS",
+					"speeds": "10",
+					"retarder": false,
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/peterbilt.389/transmission/10_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FM-15E310B-LAS R",
+					"speeds": "10",
+					"retarder": true,
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/peterbilt.389/transmission/10_speed_retarder.sii"
+				},
+				{
+					"name": "Allison TC10",
+					"speeds": "10",
+					"retarder": false,
+					"ratio": "7.4 - 0.86",
+					"code": "/def/vehicle/truck/peterbilt.389/transmission/allison_tc10.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP",
+					"speeds": "13",
+					"retarder": false,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/peterbilt.389/transmission/13_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP R",
+					"speeds": "13",
+					"retarder": true,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/peterbilt.389/transmission/13_speed_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP",
+					"speeds": "18",
+					"retarder": false,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/peterbilt.389/transmission/18_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP R",
+					"speeds": "18",
+					"retarder": true,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/peterbilt.389/transmission/18_speed_retarder.sii"
+				}
+			]
+		},
+		{
+			"brand": "peterbilt",
+			"model": "579",
+			"engines": [
+				{
+					"name": "Cummins ISX12 370",
+					"cv": "370",
+					"nm": "1830",
+					"code": "/def/vehicle/truck/peterbilt.579/engine/isx12.sii"
+				},
+				{
+					"name": "Paccar MX-13 405",
+					"cv": "405",
+					"nm": "1966",
+					"code": "/def/vehicle/truck/peterbilt.579/engine/mx13_405.sii"
+				},
+				{
+					"name": "Cummins ISX12 425",
+					"cv": "425",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/peterbilt.579/engine/isx12_425.sii"
+				},
+				{
+					"name": "Paccar MX-13 430",
+					"cv": "430",
+					"nm": "2102",
+					"code": "/def/vehicle/truck/peterbilt.579/engine/mx13_430.sii"
+				},
+				{
+					"name": "Cummins ISX15 450",
+					"cv": "450",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/peterbilt.579/engine/isx15_450.sii"
+				},
+				{
+					"name": "Paccar MX-13 455",
+					"cv": "455",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/peterbilt.579/engine/mx.sii"
+				},
+				{
+					"name": "Cummins ISX15 500",
+					"cv": "500",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/peterbilt.579/engine/isx15.sii"
+				},
+				{
+					"name": "Paccar MX-13 510",
+					"cv": "510",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/peterbilt.579/engine/mx_500.sii"
+				},
+				{
+					"name": "Cummins ISX15 550",
+					"cv": "550",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/peterbilt.579/engine/isx15_550.sii"
+				},
+				{
+					"name": "Cummins ISX15 600",
+					"cv": "600",
+					"nm": "2779",
+					"code": "/def/vehicle/truck/peterbilt.579/engine/isx15_600.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Allison 4500 RDS",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/peterbilt.579/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 RDS R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/peterbilt.579/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "Allison 4700 RDS",
+					"speeds": "7",
+					"retarder": false,
+					"ratio": "7.63 - 0.64",
+					"code": "/def/vehicle/truck/peterbilt.579/transmission/allison4700.sii"
+				},
+				{
+					"name": "Allison 4700 RDS R",
+					"speeds": "7",
+					"retarder": true,
+					"ratio": "7.63 - 0.64",
+					"code": "/def/vehicle/truck/peterbilt.579/transmission/allison4700_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FM-15E310B-LAS",
+					"speeds": "10",
+					"retarder": false,
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/peterbilt.579/transmission/10_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FM-15E310B-LAS R",
+					"speeds": "10",
+					"retarder": true,
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/peterbilt.579/transmission/10_speed_retarder.sii"
+				},
+				{
+					"name": "Allison TC10",
+					"speeds": "10",
+					"retarder": false,
+					"ratio": "7.4 - 0.86",
+					"code": "/def/vehicle/truck/peterbilt.579/transmission/allison_tc10.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP",
+					"speeds": "13",
+					"retarder": false,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/peterbilt.579/transmission/13_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP R",
+					"speeds": "13",
+					"retarder": true,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/peterbilt.579/transmission/13_speed_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP",
+					"speeds": "18",
+					"retarder": false,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/peterbilt.579/transmission/18_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP R",
+					"speeds": "18",
+					"retarder": true,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/peterbilt.579/transmission/18_speed_retarder.sii"
+				}
+			]
+		}
+	],
+	"volvo": [
+		{
+			"brand": "volvo",
+			"model": "vnl",
+			"engines": [
+				{
+					"name": "Volvo D11 355",
+					"cv": "355",
+					"nm": "1695",
+					"code": "/def/vehicle/truck/volvo.vnl/engine/d11_355.sii"
+				},
+				{
+					"name": "Volvo D11 365",
+					"cv": "365",
+					"nm": "1830",
+					"code": "/def/vehicle/truck/volvo.vnl/engine/d11_365.sii"
+				},
+				{
+					"name": "Volvo D11 385",
+					"cv": "385",
+					"nm": "1966",
+					"code": "/def/vehicle/truck/volvo.vnl/engine/d11_385.sii"
+				},
+				{
+					"name": "Volvo D13 405",
+					"cv": "405",
+					"nm": "1966",
+					"code": "/def/vehicle/truck/volvo.vnl/engine/d13_405.sii"
+				},
+				{
+					"name": "Volvo D13 425",
+					"cv": "425",
+					"nm": "2102",
+					"code": "/def/vehicle/truck/volvo.vnl/engine/d13_425.sii"
+				},
+				{
+					"name": "Volvo D13 435",
+					"cv": "435",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/volvo.vnl/engine/d13_435.sii"
+				},
+				{
+					"name": "Cummins ISX15 450",
+					"cv": "450",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/volvo.vnl/engine/isx15_450.sii"
+				},
+				{
+					"name": "Volvo D13 475",
+					"cv": "475",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/volvo.vnl/engine/d13_475.sii"
+				},
+				{
+					"name": "Volvo D16 500",
+					"cv": "500",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/volvo.vnl/engine/d16_500.sii"
+				},
+				{
+					"name": "Cummins ISX15 500",
+					"cv": "500",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/volvo.vnl/engine/isx15_500.sii"
+				},
+				{
+					"name": "Volvo D16 550",
+					"cv": "550",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/volvo.vnl/engine/d16_550.sii"
+				},
+				{
+					"name": "Cummins ISX15 550",
+					"cv": "550",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/volvo.vnl/engine/isx15_550.sii"
+				},
+				{
+					"name": "Volvo D16 600",
+					"cv": "600",
+					"nm": "2779",
+					"code": "/def/vehicle/truck/volvo.vnl/engine/d16_600.sii"
+				},
+				{
+					"name": "Cummins ISX15 600",
+					"cv": "600",
+					"nm": "2779",
+					"code": "/def/vehicle/truck/volvo.vnl/engine/isx15_600.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Allison 4500 RDS",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/volvo.vnl/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 RDS R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/volvo.vnl/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FM-15E310B-LAS",
+					"speeds": "10",
+					"retarder": false,
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/volvo.vnl/transmission/10_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FM-15E310B-LAS R",
+					"speeds": "10",
+					"retarder": true,
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/volvo.vnl/transmission/10_speed_retarder.sii"
+				},
+				{
+					"name": "I-Shift AT2812D",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.94 - 1.0",
+					"code": "/def/vehicle/truck/volvo.vnl/transmission/ishift_at2812d.sii"
+				},
+				{
+					"name": "I-Shift AT2812D R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "14.94 - 1.0",
+					"code": "/def/vehicle/truck/volvo.vnl/transmission/ishift_at2812d_retarder.sii"
+				},
+				{
+					"name": "I-Shift ATO3112D",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.73 - 0.78",
+					"code": "/def/vehicle/truck/volvo.vnl/transmission/ishift_ato3112d.sii"
+				},
+				{
+					"name": "I-Shift ATO3112D R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "11.73 - 0.78",
+					"code": "/def/vehicle/truck/volvo.vnl/transmission/ishift_ato3112d_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP",
+					"speeds": "13",
+					"retarder": false,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/volvo.vnl/transmission/13_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP R",
+					"speeds": "13",
+					"retarder": true,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/volvo.vnl/transmission/13_speed_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP",
+					"speeds": "18",
+					"retarder": false,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/volvo.vnl/transmission/18_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP R",
+					"speeds": "18",
+					"retarder": true,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/volvo.vnl/transmission/18_speed_retarder.sii"
+				}
+			]
+		},
+		{
+			"brand": "volvo",
+			"model": "vnl2018",
+			"engines": [
+				{
+					"name": "Cummins X15 Efficiency 400",
+					"cv": "400",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/volvo.vnl2018/engine/x15_400.sii"
+				},
+				{
+					"name": "Volvo D13 405",
+					"cv": "405",
+					"nm": "1966",
+					"code": "/def/vehicle/truck/volvo.vnl2018/engine/d13_405.sii"
+				},
+				{
+					"name": "Volvo D13 405 TC",
+					"cv": "405",
+					"nm": "2373",
+					"code": "/def/vehicle/truck/volvo.vnl2018/engine/d13_405tc.sii"
+				},
+				{
+					"name": "Volvo D13 425",
+					"cv": "425",
+					"nm": "2102",
+					"code": "/def/vehicle/truck/volvo.vnl2018/engine/d13_425.sii"
+				},
+				{
+					"name": "Volvo D13 425 TC",
+					"cv": "425",
+					"nm": "2373",
+					"code": "/def/vehicle/truck/volvo.vnl2018/engine/d13_425tc.sii"
+				},
+				{
+					"name": "Volvo D13 435",
+					"cv": "435",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/volvo.vnl2018/engine/d13_435.sii"
+				},
+				{
+					"name": "Cummins X15 Efficiency 450",
+					"cv": "450",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/volvo.vnl2018/engine/x15_450.sii"
+				},
+				{
+					"name": "Volvo D13 455 TC",
+					"cv": "455",
+					"nm": "2521.8",
+					"code": "/def/vehicle/truck/volvo.vnl2018/engine/d13_455tc.sii"
+				},
+				{
+					"name": "Volvo D13 475",
+					"cv": "475",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/volvo.vnl2018/engine/d13_475.sii"
+				},
+				{
+					"name": "Volvo D13 500",
+					"cv": "500",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/volvo.vnl2018/engine/d13_500.sii"
+				},
+				{
+					"name": "Cummins X15 Efficiency 500",
+					"cv": "500",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/volvo.vnl2018/engine/x15_500.sii"
+				},
+				{
+					"name": "Cummins X15 Performance 525",
+					"cv": "525",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/volvo.vnl2018/engine/x15_525.sii"
+				},
+				{
+					"name": "Cummins X15 Performance 565",
+					"cv": "565",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/volvo.vnl2018/engine/x15_565.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Allison 4500 RDS",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 RDS R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FM-15E310B-LAS",
+					"speeds": "10",
+					"retarder": false,
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/10_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FM-15E310B-LAS R",
+					"speeds": "10",
+					"retarder": true,
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/10_speed_retarder.sii"
+				},
+				{
+					"name": "I-Shift AT2612G",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.94 - 1.0",
+					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/ishift_at2612g.sii"
+				},
+				{
+					"name": "I-Shift ATO2612G",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.73 - 0.79",
+					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/ishift_ato2612g.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP",
+					"speeds": "13",
+					"retarder": false,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/13_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP R",
+					"speeds": "13",
+					"retarder": true,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/13_speed_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP",
+					"speeds": "18",
+					"retarder": false,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/18_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP R",
+					"speeds": "18",
+					"retarder": true,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/volvo.vnl2018/transmission/18_speed_retarder.sii"
 				}
 			]
 		}
@@ -1360,40 +1951,16 @@
 					"code": "/def/vehicle/truck/westernstar.49x/engine/dd13_370.sii"
 				},
 				{
-					"name": "Detroit DD13 410",
-					"cv": "410",
-					"nm": "1966",
-					"code": "/def/vehicle/truck/westernstar.49x/engine/dd13_410.sii"
-				},
-				{
-					"name": "Detroit DD15 455",
-					"cv": "455",
-					"nm": "2102",
-					"code": "/def/vehicle/truck/westernstar.49x/engine/dd15_455.sii"
-				},
-				{
-					"name": "Detroit DD15 505",
-					"cv": "505",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/westernstar.49x/engine/dd15_505.sii"
-				},
-				{
-					"name": "Detroit DD16 560",
-					"cv": "560",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/westernstar.49x/engine/dd16_560.sii"
-				},
-				{
-					"name": "Detroit DD16 600",
-					"cv": "600",
-					"nm": "2779",
-					"code": "/def/vehicle/truck/westernstar.49x/engine/dd16_600.sii"
-				},
-				{
 					"name": "Cummins X15 Efficiency 400",
 					"cv": "400",
 					"nm": "2237",
 					"code": "/def/vehicle/truck/westernstar.49x/engine/x15_400.sii"
+				},
+				{
+					"name": "Detroit DD13 410",
+					"cv": "410",
+					"nm": "1966",
+					"code": "/def/vehicle/truck/westernstar.49x/engine/dd13_410.sii"
 				},
 				{
 					"name": "Cummins X15 Efficiency 450",
@@ -1402,10 +1969,22 @@
 					"code": "/def/vehicle/truck/westernstar.49x/engine/x15_450.sii"
 				},
 				{
+					"name": "Detroit DD15 455",
+					"cv": "455",
+					"nm": "2102",
+					"code": "/def/vehicle/truck/westernstar.49x/engine/dd15_455.sii"
+				},
+				{
 					"name": "Cummins X15 Efficiency 500",
 					"cv": "500",
 					"nm": "2508",
 					"code": "/def/vehicle/truck/westernstar.49x/engine/x15_500.sii"
+				},
+				{
+					"name": "Detroit DD15 505",
+					"cv": "505",
+					"nm": "2237",
+					"code": "/def/vehicle/truck/westernstar.49x/engine/dd15_505.sii"
 				},
 				{
 					"name": "Cummins X15 Performance 525",
@@ -1414,10 +1993,22 @@
 					"code": "/def/vehicle/truck/westernstar.49x/engine/x15_525.sii"
 				},
 				{
+					"name": "Detroit DD16 560",
+					"cv": "560",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/westernstar.49x/engine/dd16_560.sii"
+				},
+				{
 					"name": "Cummins X15 Performance 565",
 					"cv": "565",
 					"nm": "2508",
 					"code": "/def/vehicle/truck/westernstar.49x/engine/x15_565.sii"
+				},
+				{
+					"name": "Detroit DD16 600",
+					"cv": "600",
+					"nm": "2779",
+					"code": "/def/vehicle/truck/westernstar.49x/engine/dd16_600.sii"
 				},
 				{
 					"name": "Cummins X15 Performance 605",
@@ -1428,53 +2019,18 @@
 			],
 			"transmissions": [
 				{
-					"name": "Eaton UltraShift FM-15E310B-LAS",
-					"speeds": "10",
-					"retarder": false,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/westernstar.49x/transmission/10_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FM-15E310B-LAS R",
-					"speeds": "10",
-					"retarder": true,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/westernstar.49x/transmission/10_speed_retarder.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-20E313A-MHP",
-					"speeds": "13",
-					"retarder": false,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/westernstar.49x/transmission/13_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-20E313A-MHP R",
-					"speeds": "13",
-					"retarder": true,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/westernstar.49x/transmission/13_speed_retarder.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP",
-					"speeds": "18",
-					"retarder": false,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/westernstar.49x/transmission/18_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP R",
-					"speeds": "18",
-					"retarder": true,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/westernstar.49x/transmission/18_speed_retarder.sii"
-				},
-				{
 					"name": "Allison 4500 RDS",
 					"speeds": "6",
 					"retarder": false,
 					"ratio": "4.7 - 0.67",
 					"code": "/def/vehicle/truck/westernstar.49x/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 RDS R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/westernstar.49x/transmission/allison_retarder.sii"
 				},
 				{
 					"name": "Allison 4700 RDS",
@@ -1491,11 +2047,18 @@
 					"code": "/def/vehicle/truck/westernstar.49x/transmission/allison4700_retarder.sii"
 				},
 				{
-					"name": "Allison 4500 RDS R",
-					"speeds": "6",
+					"name": "Eaton UltraShift FM-15E310B-LAS",
+					"speeds": "10",
+					"retarder": false,
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/westernstar.49x/transmission/10_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FM-15E310B-LAS R",
+					"speeds": "10",
 					"retarder": true,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/westernstar.49x/transmission/allison_retarder.sii"
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/westernstar.49x/transmission/10_speed_retarder.sii"
 				},
 				{
 					"name": "Detroit DT12-DV",
@@ -1531,6 +2094,34 @@
 					"retarder": false,
 					"ratio": "12.79 - 0.78",
 					"code": "/def/vehicle/truck/westernstar.49x/transmission/dt12_od.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP",
+					"speeds": "13",
+					"retarder": false,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/westernstar.49x/transmission/13_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP R",
+					"speeds": "13",
+					"retarder": true,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/westernstar.49x/transmission/13_speed_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP",
+					"speeds": "18",
+					"retarder": false,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/westernstar.49x/transmission/18_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP R",
+					"speeds": "18",
+					"retarder": true,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/westernstar.49x/transmission/18_speed_retarder.sii"
 				}
 			]
 		},
@@ -1551,16 +2142,16 @@
 					"code": "/def/vehicle/truck/westernstar.5700xe/engine/dd13_400_idp.sii"
 				},
 				{
-					"name": "Detroit DD13 410",
-					"cv": "410",
-					"nm": "1966",
-					"code": "/def/vehicle/truck/westernstar.5700xe/engine/dd13_410.sii"
-				},
-				{
 					"name": "Integrated Detroit Powertrain DD15 400",
 					"cv": "400",
 					"nm": "2373",
 					"code": "/def/vehicle/truck/westernstar.5700xe/engine/dd15_400_idp.sii"
+				},
+				{
+					"name": "Detroit DD13 410",
+					"cv": "410",
+					"nm": "1966",
+					"code": "/def/vehicle/truck/westernstar.5700xe/engine/dd13_410.sii"
 				},
 				{
 					"name": "Detroit DD15 455",
@@ -1603,6 +2194,20 @@
 					"code": "/def/vehicle/truck/westernstar.5700xe/transmission/10_speed_retarder.sii"
 				},
 				{
+					"name": "Detroit DT12-DA",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.93 - 1.0",
+					"code": "/def/vehicle/truck/westernstar.5700xe/transmission/dt12_da.sii"
+				},
+				{
+					"name": "Detroit DT12-OA",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.64 - 0.78",
+					"code": "/def/vehicle/truck/westernstar.5700xe/transmission/dt12_oa.sii"
+				},
+				{
 					"name": "Eaton UltraShift FO-20E313A-MHP",
 					"speeds": "13",
 					"retarder": false,
@@ -1629,20 +2234,6 @@
 					"retarder": true,
 					"ratio": "14.40 - 0.73",
 					"code": "/def/vehicle/truck/westernstar.5700xe/transmission/18_speed_retarder.sii"
-				},
-				{
-					"name": "Detroit DT12-DA",
-					"speeds": "12",
-					"retarder": false,
-					"ratio": "14.93 - 1.0",
-					"code": "/def/vehicle/truck/westernstar.5700xe/transmission/dt12_da.sii"
-				},
-				{
-					"name": "Detroit DT12-OA",
-					"speeds": "12",
-					"retarder": false,
-					"ratio": "11.64 - 0.78",
-					"code": "/def/vehicle/truck/westernstar.5700xe/transmission/dt12_oa.sii"
 				}
 			]
 		},
@@ -1663,16 +2254,16 @@
 					"code": "/def/vehicle/truck/westernstar.57x/engine/dd13_400_idp.sii"
 				},
 				{
-					"name": "Detroit DD13 410",
-					"cv": "410",
-					"nm": "1966",
-					"code": "/def/vehicle/truck/westernstar.57x/engine/dd13_410.sii"
-				},
-				{
 					"name": "Integrated Detroit Powertrain DD15 400",
 					"cv": "400",
 					"nm": "2373",
 					"code": "/def/vehicle/truck/westernstar.57x/engine/dd15_400_idp.sii"
+				},
+				{
+					"name": "Detroit DD13 410",
+					"cv": "410",
+					"nm": "1966",
+					"code": "/def/vehicle/truck/westernstar.57x/engine/dd13_410.sii"
 				},
 				{
 					"name": "Detroit DD15 455",
@@ -1741,597 +2332,6 @@
 					"retarder": false,
 					"ratio": "14.56 - 0.78",
 					"code": "/def/vehicle/truck/westernstar.57x/transmission/dt12_oc_ohe.sii"
-				}
-			]
-		}
-	],
-	"peterbilt": [
-		{
-			"brand": "peterbilt",
-			"model": "389",
-			"engines": [
-				{
-					"name": "Caterpillar C15 625, King of the hill",
-					"cv": "625",
-					"nm": "2779",
-					"code": "/def/vehicle/truck/peterbilt.389/engine/catc15.sii"
-				},
-				{
-					"name": "Caterpillar C15 435",
-					"cv": "435",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/peterbilt.389/engine/catc15_435.sii"
-				},
-				{
-					"name": "Caterpillar C15 500",
-					"cv": "500",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/peterbilt.389/engine/catc15_500.sii"
-				},
-				{
-					"name": "Caterpillar C15 550",
-					"cv": "550",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/peterbilt.389/engine/catc15_550.sii"
-				},
-				{
-					"name": "Cummins ISX12 370",
-					"cv": "370",
-					"nm": "1830",
-					"code": "/def/vehicle/truck/peterbilt.389/engine/isx12.sii"
-				},
-				{
-					"name": "Cummins ISX12 425",
-					"cv": "425",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/peterbilt.389/engine/isx12_425.sii"
-				},
-				{
-					"name": "Cummins ISX15 500",
-					"cv": "500",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/peterbilt.389/engine/isx15.sii"
-				},
-				{
-					"name": "Cummins ISX15 450",
-					"cv": "450",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/peterbilt.389/engine/isx15_450.sii"
-				},
-				{
-					"name": "Cummins ISX15 550",
-					"cv": "550",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/peterbilt.389/engine/isx15_550.sii"
-				},
-				{
-					"name": "Cummins ISX15 600",
-					"cv": "600",
-					"nm": "2779",
-					"code": "/def/vehicle/truck/peterbilt.389/engine/isx15_600.sii"
-				},
-				{
-					"name": "Paccar MX-13 455",
-					"cv": "455",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/peterbilt.389/engine/mx.sii"
-				},
-				{
-					"name": "Paccar MX-13 405",
-					"cv": "405",
-					"nm": "1966",
-					"code": "/def/vehicle/truck/peterbilt.389/engine/mx13_405.sii"
-				},
-				{
-					"name": "Paccar MX-13 430",
-					"cv": "430",
-					"nm": "2102",
-					"code": "/def/vehicle/truck/peterbilt.389/engine/mx13_430.sii"
-				},
-				{
-					"name": "Paccar MX-13 510",
-					"cv": "510",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/peterbilt.389/engine/mx_500.sii"
-				}
-			],
-			"transmissions": [
-				{
-					"name": "Eaton UltraShift FM-15E310B-LAS",
-					"speeds": "10",
-					"retarder": false,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/peterbilt.389/transmission/10_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FM-15E310B-LAS R",
-					"speeds": "10",
-					"retarder": true,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/peterbilt.389/transmission/10_speed_retarder.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-20E313A-MHP",
-					"speeds": "13",
-					"retarder": false,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/peterbilt.389/transmission/13_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-20E313A-MHP R",
-					"speeds": "13",
-					"retarder": true,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/peterbilt.389/transmission/13_speed_retarder.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP",
-					"speeds": "18",
-					"retarder": false,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/peterbilt.389/transmission/18_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP R",
-					"speeds": "18",
-					"retarder": true,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/peterbilt.389/transmission/18_speed_retarder.sii"
-				},
-				{
-					"name": "Allison 4500 RDS",
-					"speeds": "6",
-					"retarder": false,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/peterbilt.389/transmission/allison.sii"
-				},
-				{
-					"name": "Allison 4700 RDS",
-					"speeds": "7",
-					"retarder": false,
-					"ratio": "7.63 - 0.64",
-					"code": "/def/vehicle/truck/peterbilt.389/transmission/allison4700.sii"
-				},
-				{
-					"name": "Allison 4700 RDS R",
-					"speeds": "7",
-					"retarder": true,
-					"ratio": "7.63 - 0.64",
-					"code": "/def/vehicle/truck/peterbilt.389/transmission/allison4700_retarder.sii"
-				},
-				{
-					"name": "Allison 4500 RDS R",
-					"speeds": "6",
-					"retarder": true,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/peterbilt.389/transmission/allison_retarder.sii"
-				},
-				{
-					"name": "Allison TC10",
-					"speeds": "10",
-					"retarder": false,
-					"ratio": "7.4 - 0.86",
-					"code": "/def/vehicle/truck/peterbilt.389/transmission/allison_tc10.sii"
-				}
-			]
-		},
-		{
-			"brand": "peterbilt",
-			"model": "579",
-			"engines": [
-				{
-					"name": "Cummins ISX12 370",
-					"cv": "370",
-					"nm": "1830",
-					"code": "/def/vehicle/truck/peterbilt.579/engine/isx12.sii"
-				},
-				{
-					"name": "Cummins ISX12 425",
-					"cv": "425",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/peterbilt.579/engine/isx12_425.sii"
-				},
-				{
-					"name": "Cummins ISX15 500",
-					"cv": "500",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/peterbilt.579/engine/isx15.sii"
-				},
-				{
-					"name": "Cummins ISX15 450",
-					"cv": "450",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/peterbilt.579/engine/isx15_450.sii"
-				},
-				{
-					"name": "Cummins ISX15 550",
-					"cv": "550",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/peterbilt.579/engine/isx15_550.sii"
-				},
-				{
-					"name": "Cummins ISX15 600",
-					"cv": "600",
-					"nm": "2779",
-					"code": "/def/vehicle/truck/peterbilt.579/engine/isx15_600.sii"
-				},
-				{
-					"name": "Paccar MX-13 455",
-					"cv": "455",
-					"nm": "2237",
-					"code": "/def/vehicle/truck/peterbilt.579/engine/mx.sii"
-				},
-				{
-					"name": "Paccar MX-13 405",
-					"cv": "405",
-					"nm": "1966",
-					"code": "/def/vehicle/truck/peterbilt.579/engine/mx13_405.sii"
-				},
-				{
-					"name": "Paccar MX-13 430",
-					"cv": "430",
-					"nm": "2102",
-					"code": "/def/vehicle/truck/peterbilt.579/engine/mx13_430.sii"
-				},
-				{
-					"name": "Paccar MX-13 510",
-					"cv": "510",
-					"nm": "2508",
-					"code": "/def/vehicle/truck/peterbilt.579/engine/mx_500.sii"
-				}
-			],
-			"transmissions": [
-				{
-					"name": "Eaton UltraShift FM-15E310B-LAS",
-					"speeds": "10",
-					"retarder": false,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/peterbilt.579/transmission/10_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FM-15E310B-LAS R",
-					"speeds": "10",
-					"retarder": true,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/peterbilt.579/transmission/10_speed_retarder.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-20E313A-MHP",
-					"speeds": "13",
-					"retarder": false,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/peterbilt.579/transmission/13_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-20E313A-MHP R",
-					"speeds": "13",
-					"retarder": true,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/peterbilt.579/transmission/13_speed_retarder.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP",
-					"speeds": "18",
-					"retarder": false,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/peterbilt.579/transmission/18_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP R",
-					"speeds": "18",
-					"retarder": true,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/peterbilt.579/transmission/18_speed_retarder.sii"
-				},
-				{
-					"name": "Allison 4500 RDS",
-					"speeds": "6",
-					"retarder": false,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/peterbilt.579/transmission/allison.sii"
-				},
-				{
-					"name": "Allison 4700 RDS",
-					"speeds": "7",
-					"retarder": false,
-					"ratio": "7.63 - 0.64",
-					"code": "/def/vehicle/truck/peterbilt.579/transmission/allison4700.sii"
-				},
-				{
-					"name": "Allison 4700 RDS R",
-					"speeds": "7",
-					"retarder": true,
-					"ratio": "7.63 - 0.64",
-					"code": "/def/vehicle/truck/peterbilt.579/transmission/allison4700_retarder.sii"
-				},
-				{
-					"name": "Allison 4500 RDS R",
-					"speeds": "6",
-					"retarder": true,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/peterbilt.579/transmission/allison_retarder.sii"
-				},
-				{
-					"name": "Allison TC10",
-					"speeds": "10",
-					"retarder": false,
-					"ratio": "7.4 - 0.86",
-					"code": "/def/vehicle/truck/peterbilt.579/transmission/allison_tc10.sii"
-				}
-			]
-		}
-	],
-	"mack": [
-		{
-			"brand": "mack",
-			"model": "anthem",
-			"engines": [
-				{
-					"name": "Mack MP7 345C",
-					"cv": "345",
-					"nm": "1845",
-					"code": "/def/vehicle/truck/mack.anthem/engine/mp7_345.sii"
-				},
-				{
-					"name": "Mack MP7 365C",
-					"cv": "365",
-					"nm": "1979",
-					"code": "/def/vehicle/truck/mack.anthem/engine/mp7_365.sii"
-				},
-				{
-					"name": "Mack MP7 395C",
-					"cv": "395",
-					"nm": "2115",
-					"code": "/def/vehicle/truck/mack.anthem/engine/mp7_395.sii"
-				},
-				{
-					"name": "Mack MP8 415C",
-					"cv": "415",
-					"nm": "2251",
-					"code": "/def/vehicle/truck/mack.anthem/engine/mp8_415.sii"
-				},
-				{
-					"name": "Mack MP8 445C",
-					"cv": "445",
-					"nm": "2522",
-					"code": "/def/vehicle/truck/mack.anthem/engine/mp8_445.sii"
-				},
-				{
-					"name": "Mack MP8 505C",
-					"cv": "505",
-					"nm": "2522",
-					"code": "/def/vehicle/truck/mack.anthem/engine/mp8_505.sii"
-				}
-			],
-			"transmissions": [
-				{
-					"name": "Eaton UltraShift FM-15E310B-LAS",
-					"speeds": "10",
-					"retarder": false,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/mack.anthem/transmission/10_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FM-15E310B-LAS R",
-					"speeds": "10",
-					"retarder": true,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/mack.anthem/transmission/10_speed_retarder.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-20E313A-MHP",
-					"speeds": "13",
-					"retarder": false,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/mack.anthem/transmission/13_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-20E313A-MHP R",
-					"speeds": "13",
-					"retarder": true,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/mack.anthem/transmission/13_speed_retarder.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP",
-					"speeds": "18",
-					"retarder": false,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/mack.anthem/transmission/18_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP R",
-					"speeds": "18",
-					"retarder": true,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/mack.anthem/transmission/18_speed_retarder.sii"
-				},
-				{
-					"name": "Allison 4500 RDS",
-					"speeds": "6",
-					"retarder": false,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/mack.anthem/transmission/allison.sii"
-				},
-				{
-					"name": "Allison 4700 RDS",
-					"speeds": "7",
-					"retarder": false,
-					"ratio": "7.63 - 0.64",
-					"code": "/def/vehicle/truck/mack.anthem/transmission/allison4700.sii"
-				},
-				{
-					"name": "Allison 4700 RDS R",
-					"speeds": "7",
-					"retarder": true,
-					"ratio": "7.63 - 0.64",
-					"code": "/def/vehicle/truck/mack.anthem/transmission/allison4700_retarder.sii"
-				},
-				{
-					"name": "Allison 4500 RDS R",
-					"speeds": "6",
-					"retarder": true,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/mack.anthem/transmission/allison_retarder.sii"
-				},
-				{
-					"name": "mDRIVE AT2612F",
-					"speeds": "12",
-					"retarder": false,
-					"ratio": "14.94 - 1.0",
-					"code": "/def/vehicle/truck/mack.anthem/transmission/mdrive_at2612f.sii"
-				},
-				{
-					"name": "mDRIVE AT2612F R",
-					"speeds": "12",
-					"retarder": true,
-					"ratio": "14.94 - 1.0",
-					"code": "/def/vehicle/truck/mack.anthem/transmission/mdrive_at2612f_retarder.sii"
-				},
-				{
-					"name": "mDRIVE ATO2612F",
-					"speeds": "12",
-					"retarder": false,
-					"ratio": "11.73 - 0.78",
-					"code": "/def/vehicle/truck/mack.anthem/transmission/mdrive_ato2612f.sii"
-				},
-				{
-					"name": "mDRIVE ATO2612F R",
-					"speeds": "12",
-					"retarder": true,
-					"ratio": "11.73 - 0.78",
-					"code": "/def/vehicle/truck/mack.anthem/transmission/mdrive_ato2612f_retarder.sii"
-				}
-			]
-		},
-		{
-			"brand": "mack",
-			"model": "pinnacle",
-			"engines": [
-				{
-					"name": "Mack MP8 415C",
-					"cv": "415",
-					"nm": "2251",
-					"code": "/def/vehicle/truck/mack.pinnacle/engine/mp8_415.sii"
-				},
-				{
-					"name": "Mack MP8 445C",
-					"cv": "445",
-					"nm": "2522",
-					"code": "/def/vehicle/truck/mack.pinnacle/engine/mp8_445.sii"
-				},
-				{
-					"name": "Mack MP8 505C",
-					"cv": "505",
-					"nm": "2522",
-					"code": "/def/vehicle/truck/mack.pinnacle/engine/mp8_505.sii"
-				}
-			],
-			"transmissions": [
-				{
-					"name": "Eaton UltraShift FM-15E310B-LAS",
-					"speeds": "10",
-					"retarder": false,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/mack.pinnacle/transmission/10_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FM-15E310B-LAS R",
-					"speeds": "10",
-					"retarder": true,
-					"ratio": "15.42 - 1.0",
-					"code": "/def/vehicle/truck/mack.pinnacle/transmission/10_speed_retarder.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-20E313A-MHP",
-					"speeds": "13",
-					"retarder": false,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/mack.pinnacle/transmission/13_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-20E313A-MHP R",
-					"speeds": "13",
-					"retarder": true,
-					"ratio": "12.29 - 0.73",
-					"code": "/def/vehicle/truck/mack.pinnacle/transmission/13_speed_retarder.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP",
-					"speeds": "18",
-					"retarder": false,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/mack.pinnacle/transmission/18_speed.sii"
-				},
-				{
-					"name": "Eaton UltraShift FO-22E318B-VXP R",
-					"speeds": "18",
-					"retarder": true,
-					"ratio": "14.40 - 0.73",
-					"code": "/def/vehicle/truck/mack.pinnacle/transmission/18_speed_retarder.sii"
-				},
-				{
-					"name": "Allison 4500 RDS",
-					"speeds": "6",
-					"retarder": false,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/mack.pinnacle/transmission/allison.sii"
-				},
-				{
-					"name": "Allison 4700 RDS",
-					"speeds": "7",
-					"retarder": false,
-					"ratio": "7.63 - 0.64",
-					"code": "/def/vehicle/truck/mack.pinnacle/transmission/allison4700.sii"
-				},
-				{
-					"name": "Allison 4700 RDS R",
-					"speeds": "7",
-					"retarder": true,
-					"ratio": "7.63 - 0.64",
-					"code": "/def/vehicle/truck/mack.pinnacle/transmission/allison4700_retarder.sii"
-				},
-				{
-					"name": "Allison 4500 RDS R",
-					"speeds": "6",
-					"retarder": true,
-					"ratio": "4.7 - 0.67",
-					"code": "/def/vehicle/truck/mack.pinnacle/transmission/allison_retarder.sii"
-				},
-				{
-					"name": "mDRIVE AT2612F",
-					"speeds": "12",
-					"retarder": false,
-					"ratio": "14.94 - 1.0",
-					"code": "/def/vehicle/truck/mack.pinnacle/transmission/mdrive_at2612f.sii"
-				},
-				{
-					"name": "mDRIVE AT2612F R",
-					"speeds": "12",
-					"retarder": true,
-					"ratio": "14.94 - 1.0",
-					"code": "/def/vehicle/truck/mack.pinnacle/transmission/mdrive_at2612f_retarder.sii"
-				},
-				{
-					"name": "mDRIVE ATO2612F",
-					"speeds": "12",
-					"retarder": false,
-					"ratio": "11.73 - 0.78",
-					"code": "/def/vehicle/truck/mack.pinnacle/transmission/mdrive_ato2612f.sii"
-				},
-				{
-					"name": "mDRIVE ATO2612F R",
-					"speeds": "12",
-					"retarder": true,
-					"ratio": "11.73 - 0.78",
-					"code": "/def/vehicle/truck/mack.pinnacle/transmission/mdrive_ato2612f_retarder.sii"
-				},
-				{
-					"name": "mDRIVE HD TMD14AO",
-					"speeds": "14",
-					"retarder": false,
-					"ratio": "32.04 - 0.78",
-					"code": "/def/vehicle/truck/mack.pinnacle/transmission/mdrive_tmd14ao.sii"
 				}
 			]
 		}
