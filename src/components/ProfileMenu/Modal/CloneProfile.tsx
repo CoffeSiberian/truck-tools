@@ -27,7 +27,7 @@ interface ModalProps {
 }
 
 const CloneProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
-	const { selectedProfile } = useContext(ProfileContex);
+	const { selectedProfile, reloadProfiles } = useContext(ProfileContex);
 
 	const [ProfileName, setProfileName] = useState<string>("");
 	const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -53,6 +53,7 @@ const CloneProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 			completed: true,
 		});
 		setIsLoading(false);
+		reloadProfiles();
 	};
 
 	useEffect(() => {
