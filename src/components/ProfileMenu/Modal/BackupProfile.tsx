@@ -128,7 +128,6 @@ const BackupProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 										/>
 									</div>
 								}
-								size="sm"
 								label="Choose the destination folder"
 								placeholder="Enter the destination folder"
 								value={destDirZip}
