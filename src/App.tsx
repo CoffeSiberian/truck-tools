@@ -46,7 +46,10 @@ const App = () => {
 			<Home />
 			<SelectProfile />
 			{isHolidaysMonth && (
-				<Snowfall color={!darkMode ? "#99d5e6" : undefined} />
+				<Snowfall
+					snowflakeCount={80}
+					color={!darkMode ? "#99d5e6" : undefined}
+				/>
 			)}
 			<UpdaterModal />
 		</div>
