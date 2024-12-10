@@ -1,11 +1,11 @@
 {
-	"version": "v0.6.1",
-	"notes": "- Compatibility with the new 1.53 profile pictures in ATS and ETS 2\n\n- Manual update button in case of failed installation of any update\n\n- Minor fixes in custom plate previews",
-	"pub_date": "2024-11-28T15:00:00-03:00",
+	"version": "v0.6.2",
+	"notes": "- Compatibility with the new Iveco S-Way and Volvo FH Series 4\n\n- New alerts when editing a save\n\n- Now if there are any badges floating around after changing the engine on your truck you can remove them\n\n- Now when cloning a profile the list is reloaded automatically\n\n- Holiday snowflakes (Happy Holidays from SiberianCoffe ❤️)",
+	"pub_date": "2024-12-10T116:00:00-03:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlNwRUs2ZGlPeUJLYzdMcWNrNHZ0SlQxblRxbWJGaExId1A4S0VKWEp3QWtQUTNtK1dxU2VORk5hOVlwdjFReWlOREYwb3lreVdIWVZNR1I3QUJqSGdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzMyODE3MTI2CWZpbGU6VHJ1Y2sgVG9vbHNfMC42LjFfeDY0X2VuLVVTLm1zaS56aXAKUWM4WnIwSWNyd05ZYmJEalhwTExBUkdGNjZwL1kzTlU2dTl4TVhIR2ZhLzNqblcrUnFJcGNyZk5FWnRpd3lEUENGbHZGb2tvS2o5S3k4bEIwdDlUQ2c9PQo=",
-			"url": "https://updater.siberiancoffe.dev/releases/tauri-v1-update/Truck_Tools_0.6.1_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlFDdVArTHptVTJpdjUrSVY5dU9IR29lc2ZuMTRQL3NGdmt0QkNSOS80MExhekp1cW5kVDZmZGpuWHdMbGRrdnkxYU1xOFNEdVFJZ0hXK0c1MlNEZEFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzMzODYyODY4CWZpbGU6VHJ1Y2sgVG9vbHNfMC42LjJfeDY0X2VuLVVTLm1zaS56aXAKT2E0MUt3WjlNNzZUNzRuZXdhU1pFU3VOVXpOaTNMcDhwbVQ4VE54QStSZE9qWXBucTZFYklYR3IrNzFkT2k4c1dxUGVLSkxRbEswUEJpcURDanFlQ2c9PQo=",
+			"url": "https://cdn.siberiancoffe.dev/truck-tools/tauri-v1/Truck_Tools_0.6.2_x64_en-US.msi.zip"
 		}
 	}
 }
