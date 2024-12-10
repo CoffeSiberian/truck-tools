@@ -1,7 +1,7 @@
 {
 	"version": "v0.6.2",
 	"notes": "- Compatibility with the new Iveco S-Way and Volvo FH Series 4\n\n- New alerts when editing a save\n\n- Now if there are any badges floating around after changing the engine on your truck you can remove them\n\n- Now when cloning a profile the list is reloaded automatically\n\n- Holiday snowflakes (Happy Holidays from SiberianCoffe ❤️)",
-	"pub_date": "2024-12-10T116:00:00-03:00",
+	"pub_date": "2024-12-10T16:00:00-03:00",
 	"platforms": {
 		"windows-x86_64": {
 			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlFDdVArTHptVTJpdjUrSVY5dU9IR29lc2ZuMTRQL3NGdmt0QkNSOS80MExhekp1cW5kVDZmZGpuWHdMbGRrdnkxYU1xOFNEdVFJZ0hXK0c1MlNEZEFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzMzODYyODY4CWZpbGU6VHJ1Y2sgVG9vbHNfMC42LjJfeDY0X2VuLVVTLm1zaS56aXAKT2E0MUt3WjlNNzZUNzRuZXdhU1pFU3VOVXpOaTNMcDhwbVQ4VE54QStSZE9qWXBucTZFYklYR3IrNzFkT2k4c1dxUGVLSkxRbEswUEJpcURDanFlQ2c9PQo=",
