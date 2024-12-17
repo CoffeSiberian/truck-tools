@@ -35,8 +35,10 @@ export const BRANDS_ETS2: BrandType[] = [
 		key: "volvo",
 		name: "Volvo",
 		models: [
-			{ key: "fh16", name: "Volvo FH" },
-			{ key: "fh16_2012", name: "Volvo FH Classic" },
+			{ key: "fh16", name: "Volvo FH3" },
+			{ key: "fh16_2012", name: "Volvo FH4" },
+			{ key: "fh_2021", name: "Volvo FH5" },
+			{ key: "fh_2024", name: "Volvo FH6" },
 		],
 		icon: VolvoIcon,
 	},

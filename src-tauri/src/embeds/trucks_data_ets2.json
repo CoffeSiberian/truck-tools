@@ -2371,6 +2371,236 @@
 					"code": "/def/vehicle/truck/volvo.fh16_2012/transmission/ato3512f_r_aso.sii"
 				}
 			]
+		},
+		{
+			"brand": "volvo",
+			"model": "fh_2021",
+			"engines": [
+				{
+					"name": "D13K420 Euro 6D",
+					"cv": "420",
+					"nm": "2100",
+					"code": "/def/vehicle/truck/volvo.fh_2021/engine/d13k420.sii"
+				},
+				{
+					"name": "D13K460 Euro 6D",
+					"cv": "460",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/volvo.fh_2021/engine/d13k460.sii"
+				},
+				{
+					"name": "D13K500 Euro 6D",
+					"cv": "500",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/volvo.fh_2021/engine/d13k500.sii"
+				},
+				{
+					"name": "D13K540 Euro 6D",
+					"cv": "540",
+					"nm": "2600",
+					"code": "/def/vehicle/truck/volvo.fh_2021/engine/d13k540.sii"
+				},
+				{
+					"name": "D16K550 Euro 6D",
+					"cv": "550",
+					"nm": "2900",
+					"code": "/def/vehicle/truck/volvo.fh_2021/engine/d16k550.sii"
+				},
+				{
+					"name": "D16K650 Euro 6D",
+					"cv": "650",
+					"nm": "3150",
+					"code": "/def/vehicle/truck/volvo.fh_2021/engine/d16k650.sii"
+				},
+				{
+					"name": "D16K750 Euro 6D",
+					"cv": "750",
+					"nm": "3550",
+					"code": "/def/vehicle/truck/volvo.fh_2021/engine/d16k750.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Allison 4500",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/volvo.fh_2021/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/volvo.fh_2021/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "I-Shift AT2612F",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.94 - 1.00",
+					"code": "/def/vehicle/truck/volvo.fh_2021/transmission/at2612f.sii"
+				},
+				{
+					"name": "I-Shift AT2612F R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "14.94 - 1.00",
+					"code": "/def/vehicle/truck/volvo.fh_2021/transmission/at2612f_r.sii"
+				},
+				{
+					"name": "I-Shift ATO3512F",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.73 - 0.78",
+					"code": "/def/vehicle/truck/volvo.fh_2021/transmission/ato3512f.sii"
+				},
+				{
+					"name": "I-Shift ATO3512F R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "11.73 - 0.78",
+					"code": "/def/vehicle/truck/volvo.fh_2021/transmission/ato3512f_r.sii"
+				},
+				{
+					"name": "I-Shift ATO3512F + ASO-ULC",
+					"speeds": "14",
+					"retarder": false,
+					"ratio": "32.04 - 0.78",
+					"code": "/def/vehicle/truck/volvo.fh_2021/transmission/ato3512f_aso.sii"
+				},
+				{
+					"name": "I-Shift ATO3512F R + ASO-ULC",
+					"speeds": "14",
+					"retarder": true,
+					"ratio": "32.04 - 0.78",
+					"code": "/def/vehicle/truck/volvo.fh_2021/transmission/ato3512f_r_aso.sii"
+				}
+			]
+		},
+		{
+			"brand": "volvo",
+			"model": "fh_2024",
+			"engines": [
+				{
+					"name": "D13S420A Euro 6E",
+					"cv": "420",
+					"nm": "2100",
+					"code": "/def/vehicle/truck/volvo.fh_2024/engine/d13k420.sii"
+				},
+				{
+					"name": "D13T420A-TC Euro 6E",
+					"cv": "420",
+					"nm": "2400",
+					"code": "/def/vehicle/truck/volvo.fh_2024/engine/d13t420a.sii"
+				},
+				{
+					"name": "D13S460A Euro 6E",
+					"cv": "460",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/volvo.fh_2024/engine/d13k460.sii"
+				},
+				{
+					"name": "D13T460A-TC Euro 6E",
+					"cv": "460",
+					"nm": "2600",
+					"code": "/def/vehicle/truck/volvo.fh_2024/engine/d13t460a.sii"
+				},
+				{
+					"name": "D13S500A Euro 6E",
+					"cv": "500",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/volvo.fh_2024/engine/d13k500.sii"
+				},
+				{
+					"name": "D13T500A-TC Euro 6E",
+					"cv": "500",
+					"nm": "2800",
+					"code": "/def/vehicle/truck/volvo.fh_2024/engine/d13t500a.sii"
+				},
+				{
+					"name": "D13S540A Euro 6E",
+					"cv": "540",
+					"nm": "2600",
+					"code": "/def/vehicle/truck/volvo.fh_2024/engine/d13k540.sii"
+				},
+				{
+					"name": "D17A600 Euro 6E",
+					"cv": "600",
+					"nm": "3000",
+					"code": "/def/vehicle/truck/volvo.fh_2024/engine/d17a600.sii"
+				},
+				{
+					"name": "D17A700 Euro 6E",
+					"cv": "700",
+					"nm": "3400",
+					"code": "/def/vehicle/truck/volvo.fh_2024/engine/d17a700.sii"
+				},
+				{
+					"name": "D17A780 Euro 6E",
+					"cv": "780",
+					"nm": "3800",
+					"code": "/def/vehicle/truck/volvo.fh_2024/engine/d17a780.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Allison 4500",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/volvo.fh_2024/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/volvo.fh_2024/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "I-Shift AT2812G",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "14.94 - 1.00",
+					"code": "/def/vehicle/truck/volvo.fh_2024/transmission/at2812g.sii"
+				},
+				{
+					"name": "I-Shift AT2812G R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "14.94 - 1.00",
+					"code": "/def/vehicle/truck/volvo.fh_2024/transmission/at2812g_r.sii"
+				},
+				{
+					"name": "I-Shift ATO3812G",
+					"speeds": "12",
+					"retarder": false,
+					"ratio": "11.73 - 0.78",
+					"code": "/def/vehicle/truck/volvo.fh_2024/transmission/ato3812g.sii"
+				},
+				{
+					"name": "I-Shift ATO3812G R",
+					"speeds": "12",
+					"retarder": true,
+					"ratio": "11.73 - 0.78",
+					"code": "/def/vehicle/truck/volvo.fh_2024/transmission/ato3812g_r.sii"
+				},
+				{
+					"name": "I-Shift ATO3812G + ASO-ULC",
+					"speeds": "14",
+					"retarder": false,
+					"ratio": "32.04 - 0.78",
+					"code": "/def/vehicle/truck/volvo.fh_2024/transmission/ato3812g_aso.sii"
+				},
+				{
+					"name": "I-Shift ATO3812G R + ASO-ULC",
+					"speeds": "14",
+					"retarder": true,
+					"ratio": "32.04 - 0.78",
+					"code": "/def/vehicle/truck/volvo.fh_2024/transmission/ato3812g_r_aso.sii"
+				}
+			]
 		}
 	]
 }
