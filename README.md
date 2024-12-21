@@ -35,7 +35,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 ### TO DO
 
 - [x] ATS compatibility
-- [ ] Logo for the app (desktop icon and the main image of the application)
+- [ ] Logo for the app (desktop icon and the main image of the app)
 
 #### Trailers
 
@@ -92,6 +92,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 - Modify kilometers traveled by the truck
 - Changing the truck (no need to go to the garage)
 - Allow cities to be unlocked and grages to be purchased in a specific way and not in a general
+- Flexible editor for truck and trailer accessories
 
 ### Related projects
 
