@@ -35,6 +35,7 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 ### TO DO
 
 - [x] ATS compatibility
+- [ ] Logo for the app (desktop icon and the main image of the application)
 
 #### Trailers
 
