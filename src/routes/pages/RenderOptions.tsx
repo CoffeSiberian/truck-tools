@@ -1,6 +1,6 @@
 import { JSX, useState } from "react";
 import { open } from "@tauri-apps/plugin-shell";
-import { Tabs, Tab, useDisclosure, Image } from "@nextui-org/react";
+import { Tabs, Tab, useDisclosure, Image, Button } from "@nextui-org/react";
 import classNames from "classnames";
 
 // components
@@ -17,6 +17,7 @@ import {
 	IconSettings,
 	IconPackages,
 	IconPaw,
+	IconBrandGithub,
 } from "@tabler/icons-react";
 
 // image
@@ -114,7 +115,21 @@ const RenderOptions = () => {
 				src={kofi}
 				onClick={() => open("https://ko-fi.com/siberiancoffe")}
 			/>
-
+			<div
+				className={classNames(
+					"fixed right-32 top-4 z-20 cursor-pointer",
+					"drop-shadow-lg"
+				)}
+			>
+				<Button
+					onPress={() => open("https://github.com/CoffeSiberian/truck-tools")}
+					variant="bordered"
+					startContent={<IconBrandGithub />}
+					size="sm"
+				>
+					Star on GitHub ❤️
+				</Button>
+			</div>
 			<Tabs
 				className="fixed top-2 z-20 justify-center"
 				onSelectionChange={(index) => {
