@@ -1,5 +1,4 @@
 export interface PlayerProfile {
-	lang: string;
 	no_selected_profile: string;
 	total_saves: string;
 	input_select_profile: InputSelectProfile;

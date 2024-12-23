@@ -1,5 +1,4 @@
 export interface Settings {
-	lang: string;
 	title: string;
 	input_chnage_theme: InputChnageTheme;
 	input_change_language: Input;

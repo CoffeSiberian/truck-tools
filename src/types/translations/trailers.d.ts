@@ -1,5 +1,4 @@
 export interface Trailers {
-	lang: string;
 	trailers: TrailersClass;
 }
 

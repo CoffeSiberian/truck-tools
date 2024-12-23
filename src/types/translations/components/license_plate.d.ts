@@ -1,5 +1,4 @@
-export interface ProfileError {
-	lang: string;
+export interface LicensePlate {
 	input_license_plate: InputLicensePlate;
 	input_colored_margin: string;
 	input_license_plate_list_store: InputLicensePlate;

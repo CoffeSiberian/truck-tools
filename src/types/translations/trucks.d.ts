@@ -1,5 +1,4 @@
 export interface Trucks {
-	lang: string;
 	trucks: TrucksClass;
 }
 

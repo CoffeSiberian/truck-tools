@@ -1,5 +1,4 @@
 export interface Settings {
-	lang: string;
 	profile: Profile;
 }
 
