@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect, useRef } from "react";
 
 // types
 import { LocaleContextTypes } from "@/types/ContexTypes";
@@ -59,20 +59,31 @@ export const LocaleContext = createContext<LocaleContextTypes>(
 
 interface LangeState {
 	lang: LangsTypes;
-	translations?: TranslationsObject;
+	translations: TranslationsObject;
 }
 
 export const Locale = ({ children }: ProviderProps) => {
+	const isLoaded = useRef(false);
 	const [Lang, setLang] = useState<LangeState>({
 		lang: "en-US",
+		translations: {} as TranslationsObject,
 	});
 
 	const changeLang = async (lang: LangsTypes) => {
+		const translations = await getLang(lang);
+
 		setLang({
 			lang: lang,
-			translations: await getLang(lang),
+			translations: translations,
 		});
 	};
+
+	useEffect(() => {
+		if (!isLoaded.current) {
+			changeLang(Lang.lang);
+			isLoaded.current = true;
+		}
+	}, [Lang.lang]);
 
 	return (
 		<LocaleContext.Provider
