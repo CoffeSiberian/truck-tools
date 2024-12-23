@@ -1,0 +1,25 @@
+{
+	"lang": "en-US",
+	"title": "Settings",
+	"input_chnage_theme": {
+		"label": "Change theme",
+		"placeholder": "Select theme",
+		"options": {
+			"system": "System",
+			"light": "Light",
+			"dark": "Dark"
+		}
+	},
+	"input_change_language": {
+		"label": "Change language",
+		"placeholder": "Select language"
+	},
+	"input_enable_console": "Enable console and developer mode",
+	"input_enable_128_slots": "Enable 128 convoy mode slots",
+	"input_opacity_profile": "Opacity on select profile",
+	"input_document_folder": {
+		"label": "Document folder",
+		"placeholder": "Enter the document folder"
+	},
+	"btn_reset": "Reset Settings"
+}

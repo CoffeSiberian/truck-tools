@@ -9,7 +9,7 @@
 				"title": "Add money",
 				"description": "Add the amount of money you want in your profile",
 				"input_money": {
-					"title": "Money",
+					"label": "Money",
 					"placeholder": "Enter the amount of money in EUR"
 				},
 				"btn_close": "Close",
@@ -23,7 +23,7 @@
 				"title": "Add experience",
 				"description": "Enter the amount of experience you want to add to your profile",
 				"input_experience": {
-					"title": "Experience",
+					"label": "Experience",
 					"placeholder": "Enter the amount of experience in numbers"
 				},
 				"btn_close": "Close",
@@ -37,11 +37,13 @@
 				"title": "Set Garage Status",
 				"description": "Select the status of the garage you want to apply to your profile",
 				"input_garage_status": {
-					"title": "Garage status",
-					"option1": "Sell Garage",
-					"option2": "Small Garage",
-					"option3": "Medium Garage",
-					"option4": "Large Garage"
+					"label": "Garage status",
+					"options": {
+						"sell_garage": "Sell Garage",
+						"small_garage": "Small Garage",
+						"medium_garage": "Medium Garage",
+						"large_garage": "Large Garage"
+					}
 				},
 				"btn_close": "Close",
 				"btn_apply": "Apply"
@@ -54,9 +56,11 @@
 				"title": "Set all cities visited status",
 				"description": "Select the status of all cities visited",
 				"input_city_status": {
-					"title": "Visited cities",
-					"option1": "Visited all cities",
-					"option2": "Unvisited all cities"
+					"label": "Visited cities",
+					"options": {
+						"visit_all": "Visited all cities",
+						"unvisit_all": "Unvisited all cities"
+					}
 				},
 				"btn_close": "Close",
 				"btn_apply": "Apply"
@@ -69,9 +73,11 @@
 				"title": "Set all dealer status",
 				"description": "Select the status of all the dealers in your profile",
 				"input_dealer_status": {
-					"title": "Visited cities",
-					"option1": "Visited all dealers",
-					"option2": "Unvisited all dealers"
+					"label": "Visited cities",
+					"options": {
+						"visit_all": "Visited all dealers",
+						"unvisit_all": "Unvisited all dealers"
+					}
 				}
 			}
 		},
@@ -82,7 +88,7 @@
 				"title": "Set Experience Skills",
 				"description": "Enter the amount of experience you need",
 				"input_skills_points": {
-					"title": "ADR",
+					"label": "ADR",
 					"placeholder": "Select ADR",
 					"explosives": "Explosives",
 					"gases": "Gases",

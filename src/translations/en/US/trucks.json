@@ -13,15 +13,15 @@
 					"message": "If you see any logo floating or badly positioned on the truck you can remove it with the button below."
 				},
 				"input_brands": {
-					"title": "Brands",
+					"label": "Brands",
 					"placeholder": "Select truck brand"
 				},
 				"input_models": {
-					"title": "Models",
+					"label": "Models",
 					"placeholder": "Select truck model"
 				},
 				"input_engines": {
-					"title": "Engines",
+					"label": "Engines",
 					"placeholder": "Select truck engine"
 				},
 				"btn_close": "Close",
@@ -40,15 +40,15 @@
 					"message": "If you see any <b>logo floating or badly positioned</b> on the truck you can remove it with the button below."
 				},
 				"input_brands": {
-					"title": "Brands",
+					"label": "Brands",
 					"placeholder": "Select truck brand"
 				},
 				"input_models": {
-					"title": "Models",
+					"label": "Models",
 					"placeholder": "Select truck model"
 				},
 				"input_transmissions": {
-					"title": "Transmissions",
+					"label": "Transmissions",
 					"placeholder": "Select truck transmission"
 				},
 				"btn_close": "Close",

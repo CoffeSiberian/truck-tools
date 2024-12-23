@@ -9,12 +9,12 @@
 				"title": "Change trailer license plate",
 				"description": "Enter the new license plate of the trailer",
 				"input_license_plate": {
-					"title": "License plate text",
+					"label": "License plate text",
 					"placeholder": "Enter license plate text"
 				},
 				"input_colored_margin": "Colored margin",
 				"input_license_plate_list_store": {
-					"title": "Select a stored plate",
+					"label": "Select a stored plate",
 					"placeholder": "Select license plate"
 				},
 				"title_select_bg_color": "Background color",
@@ -33,7 +33,7 @@
 				"title": "Change load weight",
 				"description": "This will modify the weight of your current job to the one you define here. Remember that you will need to have an active job anchored to your truck",
 				"input_weight": {
-					"title": "Weight in kg",
+					"label": "Weight in kg",
 					"placeholder": "Enter weight in kg"
 				},
 				"btn_close": "Close",
@@ -62,7 +62,7 @@
 				"title": "Change trailer weight",
 				"description": "This modifies the weight of your trailer in 2 parameters. Usually the chassis_mass is used but you can also edit the body_mass (default body_mass is 0)",
 				"input_chassis_weight": {
-					"title": "Chassis Mass in kg",
+					"label": "Chassis Mass in kg",
 					"placeholder": "Enter the chassis mass in kg"
 				},
 				"input_mass_weight": {
