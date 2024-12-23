@@ -1,0 +1,97 @@
+{
+	"lang": "en-US",
+	"trailers": {
+		"tab_title": "Trailers",
+		"license_plate": {
+			"label_card": "Change trailer license plate",
+			"description_card": "Change the license plate of the trailer",
+			"modal": {
+				"title": "Change trailer license plate",
+				"description": "Enter the new license plate of the trailer",
+				"input_license_plate": {
+					"title": "License plate text",
+					"placeholder": "Enter license plate text"
+				},
+				"input_colored_margin": "Colored margin",
+				"input_license_plate_list_store": {
+					"title": "Select a stored plate",
+					"placeholder": "Select license plate"
+				},
+				"title_select_bg_color": "Background color",
+				"title_select_text_color": "Text color",
+				"btn_store": "Store",
+				"btn_load": "Load",
+				"btn_delete": "Delete",
+				"btn_close": "Close",
+				"btn_apply": "Apply"
+			}
+		},
+		"modify_job_weight": {
+			"label_card": "Modify job weight",
+			"description_card": "Modify the weight of the job",
+			"modal": {
+				"title": "Change load weight",
+				"description": "This will modify the weight of your current job to the one you define here. Remember that you will need to have an active job anchored to your truck",
+				"input_weight": {
+					"title": "Weight in kg",
+					"placeholder": "Enter weight in kg"
+				},
+				"btn_close": "Close",
+				"btn_apply": "Apply"
+			}
+		},
+		"unlock_trailer_country": {
+			"label_card": "Trailer unblocking by country",
+			"description_card": "Unlock regional blocking of trailers",
+			"modal": {
+				"title": "Unlock Current Trailer",
+				"description": "Unlock your trailer in all countries if it is blocked by the game",
+				"warning_message": {
+					"title": "Remember",
+					"message": "You must have the trailer hitched to the truck for the changes to take effect."
+				},
+				"btn_close": "Close",
+				"btn_apply": "Unlock",
+				"btn_how_to_use": "How to use"
+			}
+		},
+		"modify_trailer_weight": {
+			"label_card": "Change trailer weight",
+			"description_card": "Modifies the trailer weight, applying it only once",
+			"modal": {
+				"title": "Change trailer weight",
+				"description": "This modifies the weight of your trailer in 2 parameters. Usually the chassis_mass is used but you can also edit the body_mass (default body_mass is 0)",
+				"input_chassis_weight": {
+					"title": "Chassis Mass in kg",
+					"placeholder": "Enter the chassis mass in kg"
+				},
+				"input_mass_weight": {
+					"title": "Body Mass in kg",
+					"placeholder": "Enter the body mass in kg"
+				},
+				"btn_close": "Close",
+				"btn_apply": "Apply"
+			}
+		},
+		"repair_trailer": {
+			"label_card": "Repair trailer",
+			"description_card": "Repair current trailer",
+			"modal": {
+				"title": "Repair trailers",
+				"description": "Repairs the trailer that is currently attached to the trailer",
+				"btn_close": "Close",
+				"btn_apply": "Repair"
+			}
+		},
+		"repair_all_trailer": {
+			"label_card": "Repair all trailers",
+			"description_card": "Repair all the trailers you have",
+			"modal": {
+				"title": "Repair all trailers",
+				"description": "Repairs all the trailers you own",
+				"btn_close": "Close",
+				"btn_apply": "Repair"
+			}
+		}
+	}
+}

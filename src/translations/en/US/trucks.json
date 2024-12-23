@@ -1,0 +1,115 @@
+{
+	"lang": "en-US",
+	"trucks": {
+		"tab_title": "Truck",
+		"change_truck_engine": {
+			"label_card": "Change truck engine",
+			"description_card": "Change the engine of the truck",
+			"modal": {
+				"title": "Change truck engine",
+				"description": "Change the engine of your truck to the one of your choice",
+				"warning_message": {
+					"title": "Remember",
+					"message": "If you see any logo floating or badly positioned on the truck you can remove it with the button below."
+				},
+				"input_brands": {
+					"title": "Brands",
+					"placeholder": "Select truck brand"
+				},
+				"input_models": {
+					"title": "Models",
+					"placeholder": "Select truck model"
+				},
+				"input_engines": {
+					"title": "Engines",
+					"placeholder": "Select truck engine"
+				},
+				"btn_close": "Close",
+				"btn_remove_badge": "Remove badge",
+				"btn_apply": "Change"
+			}
+		},
+		"change_truck_transmission": {
+			"label_card": "Change truck transmission",
+			"description_card": "Change the transmission of the truck",
+			"modal": {
+				"title": "Change truck transmission",
+				"description": "Change the transmission of your truck to the one of your choice",
+				"warning_message": {
+					"title": "Remember",
+					"message": "If you see any <b>logo floating or badly positioned</b> on the truck you can remove it with the button below."
+				},
+				"input_brands": {
+					"title": "Brands",
+					"placeholder": "Select truck brand"
+				},
+				"input_models": {
+					"title": "Models",
+					"placeholder": "Select truck model"
+				},
+				"input_transmissions": {
+					"title": "Transmissions",
+					"placeholder": "Select truck transmission"
+				},
+				"btn_close": "Close",
+				"btn_remove_badge": "Remove badge",
+				"btn_apply": "Change"
+			}
+		},
+		"repair_truck": {
+			"label_card": "Repair truck",
+			"description_card": "Repair your current truck",
+			"modal": {
+				"title": "Repair truck",
+				"description": "Repair your truck to the maximum for continued use",
+				"btn_close": "Close",
+				"btn_apply": "Repair"
+			}
+		},
+		"repair_all_trucks": {
+			"label_card": "Repair all trucks",
+			"description_card": "Repairs all fleet trucks",
+			"modal": {
+				"title": "Repair all trucks",
+				"description": "Repair all the trucks you have in your company",
+				"btn_close": "Close",
+				"btn_apply": "Repair"
+			}
+		},
+		"fill_fuel": {
+			"label_card": "Fill fuel",
+			"description_card": "Fill fuel in current truck",
+			"modal": {
+				"title": "Fill fuel",
+				"description": "Refuels your truck completely",
+				"btn_close": "Close",
+				"btn_apply": "Refuel"
+			}
+		},
+		"fill_all_trucks_fuel": {
+			"label_card": "Fill all trucks fuel",
+			"description_card": "Refueling all fleet trucks",
+			"modal": {
+				"title": "Fill all trucks fuel",
+				"description": "This option will allow you to refuel all your purchased trucks",
+				"btn_close": "Close",
+				"btn_apply": "Refuel"
+			}
+		},
+		"infinite_fuel": {
+			"label_card": "Infinite fuel on current truck",
+			"description_card": "Infinite fuel on current truck",
+			"modal": {
+				"title": "Infinite fuel on current truck",
+				"description": "Exactly the fuel is not infinite but it is for approximately 5.000.000 KM (depending on the truck)",
+				"warning_message": {
+					"title": "Remember",
+					"message": "<b>Disable “Realistic fuel consumption”</b> in your “Gameplay” section for this function to take effect."
+				},
+				"btn_close": "Close",
+				"btn_restore_fuel": "Restore fuel",
+				"btn_apply": "Refuel"
+			}
+		}
+	}
+}
