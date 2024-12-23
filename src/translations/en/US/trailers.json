@@ -8,20 +8,7 @@
 			"modal": {
 				"title": "Change trailer license plate",
 				"description": "Enter the new license plate of the trailer",
-				"input_license_plate": {
-					"label": "License plate text",
-					"placeholder": "Enter license plate text"
-				},
-				"input_colored_margin": "Colored margin",
-				"input_license_plate_list_store": {
-					"label": "Select a stored plate",
-					"placeholder": "Select license plate"
-				},
-				"title_select_bg_color": "Background color",
-				"title_select_text_color": "Text color",
-				"btn_store": "Store",
-				"btn_load": "Load",
-				"btn_delete": "Delete",
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_apply": "Apply"
 			}
@@ -36,6 +23,7 @@
 					"label": "Weight in kg",
 					"placeholder": "Enter weight in kg"
 				},
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_apply": "Apply"
 			}
@@ -50,6 +38,7 @@
 					"title": "Remember",
 					"message": "You must have the trailer hitched to the truck for the changes to take effect."
 				},
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_apply": "Unlock",
 				"btn_how_to_use": "How to use"
@@ -69,6 +58,7 @@
 					"title": "Body Mass in kg",
 					"placeholder": "Enter the body mass in kg"
 				},
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_apply": "Apply"
 			}
@@ -79,6 +69,7 @@
 			"modal": {
 				"title": "Repair trailers",
 				"description": "Repairs the trailer that is currently attached to the trailer",
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_apply": "Repair"
 			}
@@ -89,6 +80,7 @@
 			"modal": {
 				"title": "Repair all trailers",
 				"description": "Repairs all the trailers you own",
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_apply": "Repair"
 			}

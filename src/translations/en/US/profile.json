@@ -12,6 +12,7 @@
 					"label": "Money",
 					"placeholder": "Enter the amount of money in EUR"
 				},
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_apply": "Apply"
 			}
@@ -26,6 +27,7 @@
 					"label": "Experience",
 					"placeholder": "Enter the amount of experience in numbers"
 				},
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_apply": "Apply"
 			}
@@ -45,6 +47,7 @@
 						"large_garage": "Large Garage"
 					}
 				},
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_apply": "Apply"
 			}
@@ -62,6 +65,7 @@
 						"unvisit_all": "Unvisited all cities"
 					}
 				},
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_apply": "Apply"
 			}
@@ -78,7 +82,10 @@
 						"visit_all": "Visited all dealers",
 						"unvisit_all": "Unvisited all dealers"
 					}
-				}
+				},
+				"btn_open": "Open",
+				"btn_close": "Close",
+				"btn_apply": "Apply"
 			}
 		},
 		"skills_points": {
@@ -102,6 +109,7 @@
 				"fragile_cargo": "Fragile cargo",
 				"just_in_time_delivery": "Just in time delivery",
 				"eco_driving": "Eco driving",
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_apply": "Apply"
 			}

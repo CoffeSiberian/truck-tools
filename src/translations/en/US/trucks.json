@@ -56,6 +56,16 @@
 				"btn_apply": "Change"
 			}
 		},
+		"license_plate": {
+			"label_card": "Change truck license plate",
+			"description_card": "Change the license plate of the truck",
+			"modal": {
+				"title": "Change truck license plate",
+				"description": "Enter the new truck license plate. Remember to remove your license plate from Word of Trucks",
+				"btn_close": "Close",
+				"btn_apply": "Apply"
+			}
+		},
 		"repair_truck": {
 			"label_card": "Repair truck",
 			"description_card": "Repair your current truck",
