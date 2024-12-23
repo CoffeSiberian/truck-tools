@@ -3,7 +3,7 @@ import { themeTypesSystem } from "@/types/fileEditTypes";
 
 export type GamesNames = "ets2" | "ats";
 
-export type Langs = "en";
+export type Langs = "en-US";
 
 export interface ProfileObjectType {
 	selectedProfile?: Profile;
