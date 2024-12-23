@@ -1,0 +1,95 @@
+{
+	"lang": "en-US",
+	"no_selected_profile": "No profile selected",
+	"total_saves": "saves",
+	"input_select_profile": {
+		"label": "Select profile",
+		"placeholder": "Select a profile",
+		"options": {
+			"save_load": "Saves"
+		}
+	},
+	"input_select_save": {
+		"label": "Select save",
+		"placeholder": "Select a save"
+	},
+	"btn_profile": "Profile Options",
+	"dropdown": {
+		"save_game_options": {
+			"title": "Save Game Options",
+			"btn_open_folder": {
+				"label": "Open Save folder",
+				"description": "Open selected save game folder"
+			},
+			"btn_decrypt_save": {
+				"label": "Decrypt Save",
+				"description": "Decrypt selected save game"
+			}
+		},
+		"profile_options": {
+			"title": "Profile Options",
+			"btn_backup_profile": {
+				"label": "Backup Profile",
+				"description": "Create a backup copy of your profile",
+				"modal": {
+					"title": "Backup Profile",
+					"description": "Create a backup copy, remember to enter the destination",
+					"input_backup_destination": {
+						"label": "Select destination folder",
+						"placeholder": "Select the destination folder"
+					},
+					"save_folder_dialog": {
+						"title": "Select destination folder",
+						"filters_name": {
+							"zip": "Zip files"
+						}
+					},
+					"btn_close": "Close",
+					"btn_apply": "Backup"
+				}
+			},
+			"btn_rename_profile": {
+				"label": "Rename Profile",
+				"description": "Rename your profile",
+				"modal": {
+					"title": "Rename profile",
+					"description": "You can rename the profile, but it must be less than 20 characters.",
+					"input_new_name": {
+						"label": "Profile name",
+						"placeholder": "Enter the new name for your profile"
+					},
+					"btn_close": "Close",
+					"btn_apply": "Rename"
+				}
+			},
+			"btn_clone_profile": {
+				"label": "Clone Profile",
+				"description": "Clone your profile to a new one",
+				"modal": {
+					"title": "Clone Profile",
+					"description": "Enter the name of the profile you want to clone. This will create a new profile with the same settings as the selected profile.",
+					"input_new_name": {
+						"label": "New Profile Name",
+						"placeholder": "Enter the new name for your profile"
+					},
+					"btn_close": "Close",
+					"btn_apply": "Clone"
+				}
+			},
+			"btn_copy_config": {
+				"label": "Copy Config",
+				"description": "Copy settings from other profiles",
+				"modal": {
+					"title": "Copy Config",
+					"description": "Select the profile to which you want to copy the settings, remember that your settings will be replaced, we recommend that you <b>make a backup copy of your profile</b>.",
+					"input_select_profile": {
+						"label": "Profiles",
+						"placeholder": "Select a profile"
+					},
+					"btn_close": "Close",
+					"btn_apply": "Copy Config"
+				}
+			}
+		}
+	}
+}
