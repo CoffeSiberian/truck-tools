@@ -13,6 +13,7 @@ import { Trailers } from "@/types/translations/trailers";
 import { Trucks } from "@/types/translations/trucks";
 import { LicensePlate } from "@/types/translations/components/license_plate";
 import { ProfileError } from "@/types/translations/components/profile_error";
+import { Updater } from "@/types/translations/components/updater";
 
 const getLang = async (lang: LangsTypes): Promise<TranslationsObject> => {
 	const splitLang = lang.split("-");
@@ -38,6 +39,9 @@ const getLang = async (lang: LangsTypes): Promise<TranslationsObject> => {
 	const profile_error: ProfileError = await import(
 		`@/translations/${splitLang[0]}/${splitLang[1]}/components/profile_error.json`
 	);
+	const updater: Updater = await import(
+		`@/translations/${splitLang[0]}/${splitLang[1]}/components/updater.json`
+	);
 
 	return {
 		about: about,
@@ -48,6 +52,7 @@ const getLang = async (lang: LangsTypes): Promise<TranslationsObject> => {
 		components: {
 			license_plate: license_plate,
 			profile_error: profile_error,
+			updater: updater,
 		},
 	};
 };

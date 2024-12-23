@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback, useContext } from "react";
 import { DarkModeContex } from "@/hooks/useDarkModeContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import classNames from "classnames";
 import { check as checkUpdate, Update } from "@tauri-apps/plugin-updater";
 import { relaunch } from "@tauri-apps/plugin-process";
@@ -35,6 +36,8 @@ interface UpdateInfo {
 
 const UpdaterModal = () => {
 	const { darkMode } = useContext(DarkModeContex);
+	const { translations } = useContext(LocaleContext);
+	const { updater } = translations.components;
 
 	const [updateInfo, setUpdateInfo] = useState<UpdateInfo | null>(null);
 	const [installError, setInstallError] = useState(false);
@@ -163,7 +166,7 @@ const UpdaterModal = () => {
 					{() => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								New version available
+								{updater.title}
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="flex items-center justify-center py-1">
@@ -186,23 +189,23 @@ const UpdaterModal = () => {
 											startContent={<IconBrandWindows stroke={1.6} />}
 											variant="solid"
 										>
-											Version: <b>{updateInfo?.version}</b>
+											{updater.version} <b>{updateInfo?.version}</b>
 										</Chip>
 									</div>
 									<h4>
-										<b>Release notes</b>
+										<b>{updater.release_notes}</b>
 									</h4>
 									<p className="truncate whitespace-break-spaces">
 										{updateInfo?.body}
 									</p>
 								</div>
 								<AlertSaveChip
-									message="Installation failed. Try again later"
+									message={updater.alert_message}
 									error={installError}
 									show={installError}
 								/>
 								<Progress
-									aria-label="Downloading..."
+									aria-label={updater.downloading}
 									size="md"
 									value={isDownloading || 0}
 									color="success"
@@ -222,7 +225,7 @@ const UpdaterModal = () => {
 									variant="light"
 									onPress={() => setIsOpen(false)}
 								>
-									Cancel
+									{updater.btn_cancel}
 								</Button>
 								<Button
 									isLoading={
@@ -234,7 +237,7 @@ const UpdaterModal = () => {
 									variant="ghost"
 									onPress={onClickUpdate}
 								>
-									Update Now
+									{updater.btn_update_now}
 								</Button>
 								<Button
 									className={classNames(installError ? "" : "hidden")}
@@ -247,7 +250,7 @@ const UpdaterModal = () => {
 										)
 									}
 								>
-									<b>Manual Update</b>
+									<b>{updater.btn_manual_update}</b>
 								</Button>
 							</ModalFooter>
 						</>

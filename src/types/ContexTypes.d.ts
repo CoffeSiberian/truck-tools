@@ -9,6 +9,7 @@ import { Trailers } from "@/types/translations/trailers";
 import { Trucks } from "@/types/translations/trucks";
 import { LicensePlate } from "@/types/translations/components/license_plate";
 import { ProfileError } from "@/types/translations/components/profile_error";
+import { Updater } from "@/types/translations/components/updater";
 
 export type GamesNames = "ets2" | "ats";
 
@@ -48,6 +49,7 @@ export interface TranslationsObject {
 	components: {
 		license_plate: LicensePlate;
 		profile_error: ProfileError;
+		updater: Updater;
 	};
 }
 
