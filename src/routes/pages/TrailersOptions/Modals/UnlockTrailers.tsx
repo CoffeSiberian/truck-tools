@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { open } from "@tauri-apps/plugin-shell";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
 	Modal,
 	ModalContent,
@@ -29,7 +30,11 @@ interface completedProps {
 
 const UnlockTrailers = () => {
 	const { selectedSave } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { unlock_trailer_country } = translations.trailers.trailers;
+
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [completed, setCompleted] = useState<completedProps>({
 		error: false,
@@ -61,7 +66,7 @@ const UnlockTrailers = () => {
 				color="primary"
 				variant="shadow"
 			>
-				Open
+				{unlock_trailer_country.modal.btn_open}
 			</Button>
 			<Modal
 				hideCloseButton
@@ -74,21 +79,19 @@ const UnlockTrailers = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								Unlock Current Trailer
+								{unlock_trailer_country.modal.title}
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="items-center py-1">
-								<p>
-									Unlock your trailer in all countries if it is blocked by the
-									game
-								</p>
+								<p>{unlock_trailer_country.modal.description}</p>
 								<Warning
 									text={
 										<div className="flex flex-col gap-2">
-											<b>Remember</b>
+											<b>
+												{unlock_trailer_country.modal.warning_message.title}
+											</b>
 											<p>
-												You must have the trailer hitched to the truck for the
-												changes to take effect.
+												{unlock_trailer_country.modal.warning_message.message}
 											</p>
 										</div>
 									}
@@ -108,7 +111,7 @@ const UnlockTrailers = () => {
 							</ModalBody>
 							<ModalFooter>
 								<Button color="danger" variant="light" onPress={onClose}>
-									Close
+									{unlock_trailer_country.modal.btn_close}
 								</Button>
 								<Button
 									endContent={<IconBrandYoutube />}
@@ -116,7 +119,7 @@ const UnlockTrailers = () => {
 									variant="flat"
 									onPress={() => open("https://youtu.be/7vXIQUm4RDM")}
 								>
-									How to use
+									{unlock_trailer_country.modal.btn_how_to_use}
 								</Button>
 								<Button
 									endContent={<IconLockOpen />}
@@ -124,7 +127,7 @@ const UnlockTrailers = () => {
 									color="success"
 									onPress={onClickApply}
 								>
-									Unlock
+									{unlock_trailer_country.modal.btn_apply}
 								</Button>
 							</ModalFooter>
 						</>

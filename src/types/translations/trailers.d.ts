@@ -24,7 +24,7 @@ export interface LicensePlateModal {
 	btn_open: string;
 	btn_close: string;
 	btn_apply: string;
-	input_weight?: InputWeight;
+	input_weight: InputWeight;
 }
 
 export interface InputWeight {
@@ -41,16 +41,11 @@ export interface ModifyTrailerWeight {
 export interface ModifyTrailerWeightModal {
 	title: string;
 	description: string;
-	input_chassis_weight: InputWeight;
-	input_mass_weight: InputMassWeight;
+	input_chassis_mass: InputWeight;
+	input_body_mass: InputWeight;
 	btn_open: string;
 	btn_close: string;
 	btn_apply: string;
-}
-
-export interface InputMassWeight {
-	title: string;
-	placeholder: string;
 }
 
 export interface UnlockTrailerCountry {

@@ -80,8 +80,8 @@ export const Locale = ({ children }: ProviderProps) => {
 
 	useEffect(() => {
 		if (!isLoaded.current) {
-			changeLang(Lang.lang);
 			isLoaded.current = true;
+			changeLang(Lang.lang);
 		}
 	}, [Lang.lang]);
 
@@ -89,7 +89,7 @@ export const Locale = ({ children }: ProviderProps) => {
 		<LocaleContext.Provider
 			value={{ lang: Lang.lang, translations: Lang.translations, changeLang }}
 		>
-			{children}
+			{isLoaded.current && children}
 		</LocaleContext.Provider>
 	);
 };

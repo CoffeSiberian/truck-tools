@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { useColor } from "react-color-palette";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
 	Modal,
 	ModalContent,
@@ -25,6 +26,9 @@ interface completedProps {
 
 const EditLicensePlate = () => {
 	const { selectedSave } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { license_plate } = translations.trailers.trailers;
+
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [bgColor, setBGColor] = useColor("#bf2222");
@@ -68,7 +72,7 @@ const EditLicensePlate = () => {
 				color="primary"
 				variant="shadow"
 			>
-				Open
+				{license_plate.modal.btn_open}
 			</Button>
 			<Modal
 				size="lg"
@@ -81,11 +85,11 @@ const EditLicensePlate = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								Change trailer license plate
+								{license_plate.modal.title}
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="py-1">
-								<p>Enter the new license plate of the trailer</p>
+								<p>{license_plate.modal.description}</p>
 								<div className="flex flex-col items-center gap-2">
 									<CustomLicensePlate
 										txColor={txColor}
@@ -120,7 +124,7 @@ const EditLicensePlate = () => {
 									variant="light"
 									onPress={onClose}
 								>
-									Close
+									{license_plate.modal.btn_close}
 								</Button>
 								<Button
 									endContent={<IconDeviceFloppy />}
@@ -128,7 +132,7 @@ const EditLicensePlate = () => {
 									color="success"
 									onPress={onClickApply}
 								>
-									Apply
+									{license_plate.modal.btn_apply}
 								</Button>
 							</ModalFooter>
 						</>

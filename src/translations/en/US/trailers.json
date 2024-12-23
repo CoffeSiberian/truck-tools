@@ -49,12 +49,12 @@
 			"modal": {
 				"title": "Change trailer weight",
 				"description": "This modifies the weight of your trailer in 2 parameters. Usually the chassis_mass is used but you can also edit the body_mass (default body_mass is 0)",
-				"input_chassis_weight": {
+				"input_chassis_mass": {
 					"label": "Chassis Mass in kg",
 					"placeholder": "Enter the chassis mass in kg"
 				},
-				"input_mass_weight": {
-					"title": "Body Mass in kg",
+				"input_body_mass": {
+					"label": "Body Mass in kg",
 					"placeholder": "Enter the body mass in kg"
 				},
 				"btn_open": "Open",

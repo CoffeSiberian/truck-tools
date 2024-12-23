@@ -53,6 +53,6 @@ export interface TranslationsObject {
 
 export interface LocaleContextTypes {
 	lang: Langs;
-	translations?: TranslationsObject;
+	translations: TranslationsObject;
 	changeLang: (lang: Langs) => void;
 }
