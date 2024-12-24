@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
 	Modal,
 	ModalContent,
@@ -29,6 +30,9 @@ interface ModifyTrailerWeightProps {
 
 const ModifyTrailerWeight = () => {
 	const { selectedSave } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { modify_trailer_weight } = translations.trailers.trailers;
+
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [TrailerWeight, setTrailerWeight] = useState<ModifyTrailerWeightProps>({
@@ -94,7 +98,7 @@ const ModifyTrailerWeight = () => {
 				color="primary"
 				variant="shadow"
 			>
-				Open
+				{modify_trailer_weight.modal.btn_open}
 			</Button>
 			<Modal
 				hideCloseButton
@@ -107,30 +111,30 @@ const ModifyTrailerWeight = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								Change trailer weight
+								{modify_trailer_weight.modal.title}
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="items-center py-1">
-								<p>
-									This modifies the weight of your trailer in 2 parameters.
-									Usually the chassis_mass is used but you can also edit the
-									body_mass (default body_mass is 0)
-								</p>
+								<p>{modify_trailer_weight.modal.description}</p>
 								<Input
 									className="mt-1"
 									startContent={<IconWeight />}
 									isInvalid={TrailerWeight.chassisMass === ""}
-									label="Chassis Mass in kg"
-									placeholder="Enter weight in kg"
+									label={modify_trailer_weight.modal.input_chassis_mass.label}
+									placeholder={
+										modify_trailer_weight.modal.input_chassis_mass.placeholder
+									}
 									value={TrailerWeight.chassisMass}
 									onValueChange={(value) => setchassisMassOnlyNumbers(value)}
 									variant="bordered"
 								/>
 								<Input
 									startContent={<IconWeight />}
-									label="Body Mass in kg"
 									isInvalid={TrailerWeight.bodyMass === ""}
-									placeholder="Enter weight in kg"
+									label={modify_trailer_weight.modal.input_body_mass.label}
+									placeholder={
+										modify_trailer_weight.modal.input_body_mass.placeholder
+									}
 									value={TrailerWeight.bodyMass}
 									onValueChange={(value) => setbodyMassOnlyNumbers(value)}
 									variant="bordered"
@@ -155,7 +159,7 @@ const ModifyTrailerWeight = () => {
 									variant="light"
 									onPress={onClose}
 								>
-									Close
+									{modify_trailer_weight.modal.btn_close}
 								</Button>
 								<Button
 									endContent={<IconDeviceFloppy />}
@@ -163,7 +167,7 @@ const ModifyTrailerWeight = () => {
 									color="success"
 									onPress={onClickApply}
 								>
-									Apply
+									{modify_trailer_weight.modal.btn_apply}
 								</Button>
 							</ModalFooter>
 						</>

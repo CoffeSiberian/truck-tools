@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
 	Modal,
 	ModalContent,
@@ -23,6 +24,9 @@ interface completedProps {
 
 const FillAllTrucksFuel = () => {
 	const { selectedSave } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { trucks } = translations.trucks;
+
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [completed, setCompleted] = useState<completedProps>({
@@ -55,7 +59,7 @@ const FillAllTrucksFuel = () => {
 				color="primary"
 				variant="shadow"
 			>
-				Open
+				{trucks.fill_all_trucks_fuel.modal.btn_open}
 			</Button>
 			<Modal
 				hideCloseButton
@@ -69,13 +73,11 @@ const FillAllTrucksFuel = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								Fill all trucks fuel
+								{trucks.fill_all_trucks_fuel.modal.title}
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="py-1">
-								<p>
-									This option will allow you to refuel all your purchased trucks
-								</p>
+								<p>{trucks.fill_all_trucks_fuel.modal.description}</p>
 								<AlertSave
 									message={
 										completed.error
@@ -91,7 +93,7 @@ const FillAllTrucksFuel = () => {
 							</ModalBody>
 							<ModalFooter>
 								<Button color="danger" variant="light" onPress={onClose}>
-									Close
+									{trucks.fill_all_trucks_fuel.modal.btn_close}
 								</Button>
 								<Button
 									endContent={<IconGasStation />}
@@ -99,7 +101,7 @@ const FillAllTrucksFuel = () => {
 									color="success"
 									onPress={onClickApply}
 								>
-									Refuel
+									{trucks.fill_all_trucks_fuel.modal.btn_apply}
 								</Button>
 							</ModalFooter>
 						</>

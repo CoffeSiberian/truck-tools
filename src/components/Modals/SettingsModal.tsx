@@ -16,6 +16,7 @@ import {
 } from "@nextui-org/react";
 import { DarkModeContex } from "@/hooks/useDarkModeContex";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
 	getStoredDocumentDir,
 	storeDocumentDir,
@@ -53,6 +54,8 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 	const { userTheme, setUserTheme, setOpasityStatus } =
 		useContext(DarkModeContex);
 	const { reloadProfiles, game } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { settings } = translations;
 
 	const [optionsState, setOptionsState] = useState<OptionsStateTypes>({
 		language: "english",
@@ -100,7 +103,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 
 	const openSelectDir = async () => {
 		const options: OpenDialogOptions = {
-			title: "Select the folder where your progre is stored",
+			title: settings.document_dialog_title,
 			directory: true,
 			multiple: false,
 			defaultPath: await documentDir(),
@@ -146,7 +149,6 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 	};
 
 	useEffect(() => {
-		// cambiar el target dinamicamente segun el tipo de juego (actualmente solo con ETS2)
 		const getOptions = async () => {
 			const getDocumentDirStore = await getStoredDocumentDir();
 			const getGameDeveloperStatusStore = await getGameDeveloperStatus(game);
@@ -184,7 +186,9 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 			<ModalContent>
 				{() => (
 					<>
-						<ModalHeader className="flex flex-col gap-1">Settings</ModalHeader>
+						<ModalHeader className="flex flex-col gap-1">
+							{settings.title}
+						</ModalHeader>
 						<Divider />
 						<ModalBody className="flex pb-1">
 							<div className="flex justify-center gap-1">
@@ -193,21 +197,27 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 									onChange={(e) =>
 										onClickTheme(e.target.value as "system" | "light" | "dark")
 									}
-									label="Change theme"
+									label={settings.input_change_theme.label}
+									placeholder={settings.input_change_theme.placeholder}
 									variant="bordered"
-									placeholder="Select a theme"
 								>
-									<SelectItem key="system">System</SelectItem>
-									<SelectItem key="dark">Dark</SelectItem>
-									<SelectItem key="light">Light</SelectItem>
+									<SelectItem key="system">
+										{settings.input_change_theme.options.system}
+									</SelectItem>
+									<SelectItem key="dark">
+										{settings.input_change_theme.options.dark}
+									</SelectItem>
+									<SelectItem key="light">
+										{settings.input_change_theme.options.light}
+									</SelectItem>
 								</Select>
 							</div>
 							<div className="flex justify-center gap-1">
 								<Select
-									label="Change language"
+									label={settings.input_change_theme.label}
+									placeholder={settings.input_change_theme.placeholder}
 									variant="bordered"
 									selectedKeys={[optionsState.language]}
-									placeholder="Select a language"
 									isDisabled
 								>
 									<SelectItem key="english">English</SelectItem>
@@ -218,7 +228,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 									onValueChange={(e) => onClickDeveloperStatus(e)}
 									isSelected={optionsState.enableConsole}
 								>
-									Enable console and developer mode
+									{settings.input_enable_console}
 								</Switch>
 							</div>
 							<div className="flex">
@@ -226,7 +236,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 									onValueChange={(e) => onClickConvoySize(e)}
 									isSelected={optionsState.enable128Convoy}
 								>
-									Enable 128 convoy mode slots
+									{settings.input_enable_128_slots}
 								</Switch>
 							</div>
 							<div className="flex">
@@ -234,7 +244,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 									onValueChange={(e) => onClickOpacityStatus(e)}
 									isSelected={optionsState.opasityProfile}
 								>
-									Opacity on select profile
+									{settings.input_opacity_profile}
 								</Switch>
 							</div>
 							<div className="flex">
@@ -253,8 +263,8 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 										</div>
 									}
 									size="sm"
-									label="Document folder"
-									placeholder="Enter the document folder"
+									label={settings.input_document_folder.label}
+									placeholder={settings.input_document_folder.placeholder}
 									variant="bordered"
 								/>
 							</div>
@@ -267,7 +277,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 								size="sm"
 								variant="bordered"
 							>
-								Reset Settings
+								{settings.btn_reset}
 							</Button>
 						</ModalFooter>
 					</>

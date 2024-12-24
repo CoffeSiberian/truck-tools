@@ -1,4 +1,5 @@
-import { FC, JSX } from "react";
+import { FC, JSX, useContext } from "react";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import { classNames } from "primereact/utils";
 import { Image } from "@nextui-org/react";
 import { Dropdown } from "primereact/dropdown";
@@ -16,6 +17,9 @@ const ListProfilePrimeRe: FC<ProfileTypesContext> = ({
 	selectedProfile,
 	setProfile,
 }) => {
+	const { translations } = useContext(LocaleContext);
+	const { player_profile } = translations;
+
 	const onClickProfile = (profileHex: string) => {
 		if (!profileHex) return;
 
@@ -44,7 +48,7 @@ const ListProfilePrimeRe: FC<ProfileTypesContext> = ({
 				<div className="flex flex-col">
 					<span className="text-small">{option.name}</span>
 					<span className="text-tiny text-default-500">
-						{option.savesCount} saves
+						{option.savesCount} {player_profile.total_saves}
 					</span>
 				</div>
 			</div>
@@ -52,7 +56,8 @@ const ListProfilePrimeRe: FC<ProfileTypesContext> = ({
 	};
 
 	const selectedProfileTemplate = (): JSX.Element => {
-		if (!selectedProfile) return <>Select profile</>;
+		if (!selectedProfile)
+			return <>{player_profile.input_select_profile.label}</>;
 
 		return <>{selectedProfile.name}</>;
 	};
@@ -66,8 +71,8 @@ const ListProfilePrimeRe: FC<ProfileTypesContext> = ({
 			disabled={listProfiles.length === 0}
 			itemTemplate={profileListTemplate}
 			valueTemplate={selectedProfileTemplate}
-			optionLabel="name"
-			placeholder="Select a profile"
+			optionLabel={player_profile.input_select_profile.label}
+			placeholder={player_profile.input_select_profile.placeholder}
 			className={classNames(
 				"md:w-14rem w-full rounded-xl",
 				selectedProfile ? "" : "border-2 border-red-500"

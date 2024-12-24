@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
 	Modal,
 	ModalContent,
@@ -24,6 +25,9 @@ interface completedProps {
 
 const ModifyWeight = () => {
 	const { selectedSave } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { modify_job_weight } = translations.trailers.trailers;
+
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [Weight, setWeight] = useState("0");
@@ -67,7 +71,7 @@ const ModifyWeight = () => {
 				color="primary"
 				variant="shadow"
 			>
-				Open
+				{modify_job_weight.modal.btn_open}
 			</Button>
 			<Modal
 				hideCloseButton
@@ -80,21 +84,17 @@ const ModifyWeight = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								Change load weight
+								{modify_job_weight.modal.title}
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="items-center py-1">
-								<p>
-									This will modify the weight of your current job to the one you
-									define here. Remember that you will need to have an active job
-									anchored to your truck
-								</p>
+								<p>{modify_job_weight.modal.description}</p>
 								<Input
 									className="mt-1"
 									startContent={<IconWeight />}
 									isInvalid={Weight === ""}
-									label="Weight in kg"
-									placeholder="Enter weight in kg"
+									label={modify_job_weight.modal.input_weight.label}
+									placeholder={modify_job_weight.modal.input_weight.placeholder}
 									value={Weight}
 									onValueChange={setWeightOnlyNumbers}
 									variant="bordered"
@@ -119,7 +119,7 @@ const ModifyWeight = () => {
 									variant="light"
 									onPress={onClose}
 								>
-									Close
+									{modify_job_weight.modal.btn_close}
 								</Button>
 								<Button
 									endContent={<IconDeviceFloppy />}
@@ -127,7 +127,7 @@ const ModifyWeight = () => {
 									color="success"
 									onPress={onClickApply}
 								>
-									Apply
+									{modify_job_weight.modal.btn_apply}
 								</Button>
 							</ModalFooter>
 						</>

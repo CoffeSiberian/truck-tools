@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
 	Modal,
 	ModalContent,
@@ -23,7 +24,11 @@ interface completedProps {
 
 const RepairTruck = () => {
 	const { selectedSave } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { trucks } = translations.trucks;
+
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [completed, setCompleted] = useState<completedProps>({
 		error: false,
@@ -55,7 +60,7 @@ const RepairTruck = () => {
 				color="primary"
 				variant="shadow"
 			>
-				Open
+				{trucks.repair_truck.modal.btn_open}
 			</Button>
 			<Modal
 				hideCloseButton
@@ -69,11 +74,11 @@ const RepairTruck = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								Repair truck
+								{trucks.repair_truck.modal.title}
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="py-1">
-								<p>Repair your truck to the maximum for continued use</p>
+								<p>{trucks.repair_truck.modal.description}</p>
 								<AlertSave
 									message={
 										completed.error
@@ -89,7 +94,7 @@ const RepairTruck = () => {
 							</ModalBody>
 							<ModalFooter>
 								<Button color="danger" variant="light" onPress={onClose}>
-									Close
+									{trucks.repair_truck.modal.btn_close}
 								</Button>
 								<Button
 									endContent={<IconTool />}
@@ -97,7 +102,7 @@ const RepairTruck = () => {
 									color="success"
 									onPress={onClickApply}
 								>
-									Repair
+									{trucks.repair_truck.modal.btn_apply}
 								</Button>
 							</ModalFooter>
 						</>
