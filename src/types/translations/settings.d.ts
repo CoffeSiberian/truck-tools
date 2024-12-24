@@ -1,6 +1,7 @@
 export interface Settings {
 	title: string;
-	input_chnage_theme: InputChnageTheme;
+	document_dialog_title: string;
+	input_change_theme: InputChnageTheme;
 	input_change_language: Input;
 	input_enable_console: string;
 	input_enable_128_slots: string;

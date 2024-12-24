@@ -4,11 +4,13 @@ export interface Profile {
 
 export interface ProfileClass {
 	tab_title: string;
+	// Need refactor
 	add_money: AddExperience;
 	add_experience: AddExperience;
 	garage_status: AddExperience;
 	visited_cities: AddExperience;
 	dealer_visited: AddExperience;
+	//////////////////////////////
 	skills_points: SkillsPoints;
 }
 

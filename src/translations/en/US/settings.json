@@ -1,6 +1,7 @@
 {
 	"title": "Settings",
-	"input_chnage_theme": {
+	"document_dialog_title": "Select the folder where your progre is stored",
+	"input_change_theme": {
 		"label": "Change theme",
 		"placeholder": "Select theme",
 		"options": {
