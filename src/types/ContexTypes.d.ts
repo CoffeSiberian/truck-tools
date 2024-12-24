@@ -4,9 +4,10 @@ import { themeTypesSystem } from "@/types/fileEditTypes";
 // translations types
 import { About } from "@/types/translations/about";
 import { PlayerProfile } from "@/types/translations/player_profile";
-import { Settings } from "@/types/translations/settings";
 import { Trailers } from "@/types/translations/trailers";
 import { Trucks } from "@/types/translations/trucks";
+import { Profile as ProfileTR } from "@/types/translations/profile";
+import { Settings } from "@/types/translations/settings";
 import { LicensePlate } from "@/types/translations/components/license_plate";
 import { ProfileError } from "@/types/translations/components/profile_error";
 import { Updater } from "@/types/translations/components/updater";
@@ -43,9 +44,10 @@ export interface DarkModeContextTypes {
 export interface TranslationsObject {
 	about: About;
 	player_profile: PlayerProfile;
-	settings: Settings;
 	trailers: Trailers;
 	trucks: Trucks;
+	profile: ProfileTR;
+	settings: Settings;
 	components: {
 		license_plate: LicensePlate;
 		profile_error: ProfileError;

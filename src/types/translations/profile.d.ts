@@ -1,8 +1,8 @@
-export interface Settings {
-	profile: Profile;
+export interface Profile {
+	profile: ProfileClass;
 }
 
-export interface Profile {
+export interface ProfileClass {
 	tab_title: string;
 	add_money: AddExperience;
 	add_experience: AddExperience;
@@ -21,14 +21,14 @@ export interface AddExperience {
 export interface AddExperienceModal {
 	title: string;
 	description: string;
-	input_experience?: Input;
 	btn_open: string;
 	btn_close: string;
 	btn_apply: string;
-	input_money?: Input;
-	input_dealer_status?: InputStatus;
-	input_garage_status?: InputGarageStatus;
-	input_city_status?: InputStatus;
+	input_money: Input;
+	input_experience: Input;
+	input_dealer_status: InputStatus;
+	input_garage_status: InputGarageStatus;
+	input_city_status: InputStatus;
 }
 
 export interface InputStatus {

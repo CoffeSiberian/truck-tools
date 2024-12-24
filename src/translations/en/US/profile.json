@@ -2,10 +2,10 @@
 	"profile": {
 		"tab_title": "Profile",
 		"add_money": {
-			"label_card": "Change name",
+			"label_card": "Change money",
 			"description_card": "Add money to your profile",
 			"modal": {
-				"title": "Add money",
+				"title": "Change money",
 				"description": "Add the amount of money you want in your profile",
 				"input_money": {
 					"label": "Money",

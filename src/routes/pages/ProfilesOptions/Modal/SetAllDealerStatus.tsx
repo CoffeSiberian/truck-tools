@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
 	Modal,
 	ModalContent,
@@ -34,6 +35,9 @@ interface completedProps {
 
 const SetAllDealerStatus = () => {
 	const { selectedSave, game } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { dealer_visited } = translations.profile.profile;
+
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [GarageStatus, setGarageStatus] = useState<string>("1");
@@ -71,7 +75,7 @@ const SetAllDealerStatus = () => {
 				color="primary"
 				variant="shadow"
 			>
-				Open
+				{dealer_visited.modal.btn_open}
 			</Button>
 			<Modal
 				hideCloseButton
@@ -85,28 +89,33 @@ const SetAllDealerStatus = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								Set all dealer status
+								{dealer_visited.modal.title}
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="py-1">
-								<p>Select the status of all the dealers in your profile</p>
+								<p> {dealer_visited.modal.description}</p>
 								<RadioGroup
 									className="items-center"
 									value={GarageStatus}
 									onValueChange={(value) => setGarageStatus(value)}
 									orientation="horizontal"
-									label="Visited cities"
+									label={dealer_visited.modal.input_dealer_status.label}
 								>
 									<CustomRadio
 										selectedGarage={GarageStatus}
 										image={game === "ets2" ? discovered : discovered_ats}
-										text="Discovered all dealers"
+										text={
+											dealer_visited.modal.input_dealer_status.options.visit_all
+										}
 										value="1"
 									/>
 									<CustomRadio
 										selectedGarage={GarageStatus}
 										image={game === "ets2" ? undiscovered : undiscovered_ats}
-										text="Undiscover all dealers"
+										text={
+											dealer_visited.modal.input_dealer_status.options
+												.unvisit_all
+										}
 										value="0"
 									/>
 								</RadioGroup>
@@ -125,7 +134,7 @@ const SetAllDealerStatus = () => {
 							</ModalBody>
 							<ModalFooter>
 								<Button color="danger" variant="light" onPress={onClose}>
-									Close
+									{dealer_visited.modal.btn_close}
 								</Button>
 								<Button
 									endContent={<IconDeviceFloppy />}
@@ -133,7 +142,7 @@ const SetAllDealerStatus = () => {
 									color="success"
 									onPress={onClickApply}
 								>
-									Apply
+									{dealer_visited.modal.btn_apply}
 								</Button>
 							</ModalFooter>
 						</>
