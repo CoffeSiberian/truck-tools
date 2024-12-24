@@ -26,11 +26,12 @@ export interface ChangeTruckEngineModal {
 	warning_message: WarningMessage;
 	input_brands: Input;
 	input_models: Input;
-	input_engines?: Input;
+	input_engines: Input;
+	btn_open: string;
 	btn_close: string;
 	btn_remove_badge: string;
 	btn_apply: string;
-	input_transmissions?: Input;
+	input_transmissions: Input;
 }
 
 export interface Input {
@@ -52,6 +53,7 @@ export interface FillAllTrucksFuel {
 export interface FillAllTrucksFuelModal {
 	title: string;
 	description: string;
+	btn_open: string;
 	btn_close: string;
 	btn_apply: string;
 }
@@ -66,6 +68,7 @@ export interface InfiniteFuelModal {
 	title: string;
 	description: string;
 	warning_message: WarningMessage;
+	btn_open: string;
 	btn_close: string;
 	btn_restore_fuel: string;
 	btn_apply: string;

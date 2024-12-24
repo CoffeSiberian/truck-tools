@@ -9,7 +9,7 @@
 				"description": "Change the engine of your truck to the one of your choice",
 				"warning_message": {
 					"title": "Remember",
-					"message": "If you see any logo floating or badly positioned on the truck you can remove it with the button below."
+					"message": "If you see any <b>logo floating or badly positioned</b> on the truck you can remove it with the button below."
 				},
 				"input_brands": {
 					"label": "Brands",
@@ -23,6 +23,7 @@
 					"label": "Engines",
 					"placeholder": "Select truck engine"
 				},
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_remove_badge": "Remove badge",
 				"btn_apply": "Change"
@@ -50,6 +51,7 @@
 					"label": "Transmissions",
 					"placeholder": "Select truck transmission"
 				},
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_remove_badge": "Remove badge",
 				"btn_apply": "Change"
@@ -61,6 +63,7 @@
 			"modal": {
 				"title": "Change truck license plate",
 				"description": "Enter the new truck license plate. Remember to remove your license plate from Word of Trucks",
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_apply": "Apply"
 			}
@@ -71,6 +74,7 @@
 			"modal": {
 				"title": "Repair truck",
 				"description": "Repair your truck to the maximum for continued use",
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_apply": "Repair"
 			}
@@ -81,6 +85,7 @@
 			"modal": {
 				"title": "Repair all trucks",
 				"description": "Repair all the trucks you have in your company",
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_apply": "Repair"
 			}
@@ -91,6 +96,7 @@
 			"modal": {
 				"title": "Fill fuel",
 				"description": "Refuels your truck completely",
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_apply": "Refuel"
 			}
@@ -101,6 +107,7 @@
 			"modal": {
 				"title": "Fill all trucks fuel",
 				"description": "This option will allow you to refuel all your purchased trucks",
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_apply": "Refuel"
 			}
@@ -115,6 +122,7 @@
 					"title": "Remember",
 					"message": "<b>Disable “Realistic fuel consumption”</b> in your “Gameplay” section for this function to take effect."
 				},
+				"btn_open": "Open",
 				"btn_close": "Close",
 				"btn_restore_fuel": "Restore fuel",
 				"btn_apply": "Refuel"
