@@ -1,5 +1,6 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { open } from "@tauri-apps/plugin-shell";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
 	Modal,
 	ModalContent,
@@ -24,6 +25,9 @@ interface AboutModalProps {
 }
 
 const AboutModal: FC<AboutModalProps> = ({ isOpen, onOpenChange }) => {
+	const { translations } = useContext(LocaleContext);
+	const { about } = translations;
+
 	return (
 		<Modal
 			size="md"
@@ -40,12 +44,7 @@ const AboutModal: FC<AboutModalProps> = ({ isOpen, onOpenChange }) => {
 						</ModalHeader>
 						<Divider />
 						<ModalBody className="flex items-center justify-center py-1">
-							<p>
-								This is an open source application created in order to help Euro
-								Truck Simulator 2 players to edit their Game Save in a simple
-								and easy way for those who do not want to edit these codes
-								manually.
-							</p>
+							<p>{about.description}</p>
 							<div className="mt-2 flex flex-row items-center gap-2">
 								<Avatar
 									src="https://avatars.githubusercontent.com/u/61036343?v=4"

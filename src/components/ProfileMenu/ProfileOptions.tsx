@@ -1,5 +1,6 @@
 import { useState, useContext, JSX } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
 	Button,
 	Dropdown,
@@ -50,6 +51,8 @@ interface DecryptStyles {
 
 const ProfileOptions = () => {
 	const { selectedProfile, selectedSave } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { player_profile } = translations;
 
 	const {
 		isOpen: isOpenBackup,
@@ -152,7 +155,7 @@ const ProfileOptions = () => {
 						variant="solid"
 						color={selectedProfile ? "primary" : "default"}
 					>
-						Profile Options
+						{player_profile.btn_profile}
 					</Button>
 				</DropdownTrigger>
 				<DropdownMenu
@@ -160,10 +163,16 @@ const ProfileOptions = () => {
 					aria-label="Dropdown menu with description"
 					disabledKeys={disabledKeys()}
 				>
-					<DropdownSection title="Save Game Options" showDivider>
+					<DropdownSection
+						title={player_profile.dropdown.save_game_options.title}
+						showDivider
+					>
 						<DropdownItem
 							key="open"
-							description="Open selected save game folder"
+							description={
+								player_profile.dropdown.save_game_options.btn_open_folder
+									.description
+							}
 							startContent={<IconFolderShare className={iconClasses} />}
 							onPress={
 								selectedSave
@@ -171,11 +180,14 @@ const ProfileOptions = () => {
 									: undefined
 							}
 						>
-							Open Save Folder
+							{player_profile.dropdown.save_game_options.btn_open_folder.label}
 						</DropdownItem>
 						<DropdownItem
 							key="decrypt"
-							description="Decrypt selected save game"
+							description={
+								player_profile.dropdown.save_game_options.btn_decrypt_save
+									.description
+							}
 							className={decryptStyles.textColor}
 							color={decryptStyles.color}
 							startContent={
@@ -191,45 +203,59 @@ const ProfileOptions = () => {
 									: undefined
 							}
 						>
-							Decrypt Save
+							{player_profile.dropdown.save_game_options.btn_decrypt_save.label}
 						</DropdownItem>
 					</DropdownSection>
-					<DropdownSection title="Profile Options">
+					<DropdownSection
+						title={player_profile.dropdown.profile_options.title}
+					>
 						<DropdownItem
 							key="backup"
-							description="Create a backup copy of your profile"
+							description={
+								player_profile.dropdown.profile_options.btn_backup_profile
+									.description
+							}
 							startContent={<IconFileTypeZip className={iconClasses} />}
 							closeOnSelect={true}
 							onPress={onOpenBackup}
 						>
-							Backup Profile
+							{player_profile.dropdown.profile_options.btn_backup_profile.label}
 						</DropdownItem>
 						<DropdownItem
 							key="rename-profile"
-							description="Rename your profile"
+							description={
+								player_profile.dropdown.profile_options.btn_rename_profile
+									.description
+							}
 							startContent={<IconUserEdit className={iconClasses} />}
 							closeOnSelect={true}
 							onPress={onOpenRenameProfile}
 						>
-							Rename Profile
+							{player_profile.dropdown.profile_options.btn_rename_profile.label}
 						</DropdownItem>
 						<DropdownItem
 							key="clone"
-							description="Clone your profile to a new one"
+							description={
+								player_profile.dropdown.profile_options.btn_clone_profile
+									.description
+							}
 							startContent={<IconCopy className={iconClasses} />}
 							closeOnSelect={true}
 							onPress={onOpenClone}
 						>
-							Clone Profile
+							{player_profile.dropdown.profile_options.btn_clone_profile.label}
 						</DropdownItem>
 						<DropdownItem
 							key="copy-config"
-							description="Copy settings from other profiles"
+							description={
+								player_profile.dropdown.profile_options.btn_copy_config
+									.description
+							}
 							startContent={<IconSettingsShare className={iconClasses} />}
 							closeOnSelect={true}
 							onPress={onOpenCopyConfig}
 						>
-							Copy Config
+							{player_profile.dropdown.profile_options.btn_copy_config.label}
 						</DropdownItem>
 					</DropdownSection>
 				</DropdownMenu>

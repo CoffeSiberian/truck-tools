@@ -1,5 +1,6 @@
 {
 	"no_selected_profile": "No profile selected",
+	"no_selected_save": "No save selected",
 	"total_saves": "saves",
 	"input_select_profile": {
 		"label": "Select profile",
@@ -43,6 +44,7 @@
 							"zip": "Zip files"
 						}
 					},
+					"btn_open_folder": "Open folder",
 					"btn_close": "Close",
 					"btn_apply": "Backup"
 				}

@@ -1,4 +1,5 @@
-import { FC, JSX } from "react";
+import { FC, JSX, useContext } from "react";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import { classNames } from "primereact/utils";
 import { Dropdown } from "primereact/dropdown";
 import { ProfileTypesContext } from "@/types/ContexTypes";
@@ -12,6 +13,9 @@ const ListSavePrimeRe: FC<ProfileTypesContext> = ({
 	isSavesLoading,
 	setSave,
 }) => {
+	const { translations } = useContext(LocaleContext);
+	const { player_profile } = translations;
+
 	const onClickSave = (saveId: string) => {
 		selectedProfile?.saves.map((save) => {
 			if (save.id === saveId) {
@@ -29,7 +33,7 @@ const ListSavePrimeRe: FC<ProfileTypesContext> = ({
 	};
 
 	const selectedSaveTemplate = (): JSX.Element => {
-		if (!selectedSave) return <>Select save</>;
+		if (!selectedSave) return <>{player_profile.input_select_save.label}</>;
 
 		return <>{selectedSave.name}</>;
 	};
@@ -45,8 +49,8 @@ const ListSavePrimeRe: FC<ProfileTypesContext> = ({
 				disabled={selectedProfile && !isSavesLoading ? false : true}
 				itemTemplate={saveListTemplate}
 				valueTemplate={selectedSaveTemplate}
-				optionLabel="Saves"
-				placeholder="Select a save"
+				optionLabel={player_profile.input_select_save.label}
+				placeholder={player_profile.input_select_save.placeholder}
 				className={classNames(
 					"md:w-14rem w-full rounded-xl",
 					!isInvalidad ? "" : "border-2 border-red-500"

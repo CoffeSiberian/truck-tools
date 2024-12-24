@@ -1,5 +1,6 @@
 export interface PlayerProfile {
 	no_selected_profile: string;
+	no_selected_save: string;
 	total_saves: string;
 	input_select_profile: InputSelectProfile;
 	input_select_save: Input;
@@ -31,6 +32,7 @@ export interface BtnBackupProfileModal {
 	description: string;
 	input_backup_destination: Input;
 	save_folder_dialog: SaveFolderDialog;
+	btn_open_folder: string;
 	btn_close: string;
 	btn_apply: string;
 }
