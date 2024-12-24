@@ -60,10 +60,10 @@ export interface BtnCloneProfileClass {
 export interface BtnCloneProfileModal {
 	title: string;
 	description: string;
-	input_new_name?: Input;
+	input_new_name: Input;
 	btn_close: string;
 	btn_apply: string;
-	input_select_profile?: Input;
+	input_select_profile: Input;
 }
 
 export interface SaveGameOptions {

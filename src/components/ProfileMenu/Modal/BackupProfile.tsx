@@ -2,6 +2,7 @@ import { useState, useContext, FC } from "react";
 import { save, SaveDialogOptions } from "@tauri-apps/plugin-dialog";
 import { documentDir } from "@tauri-apps/api/path";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
 	Modal,
 	ModalContent,
@@ -35,6 +36,9 @@ interface ModalProps {
 
 const BackupProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 	const { selectedProfile } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { btn_backup_profile } =
+		translations.player_profile.dropdown.profile_options;
 
 	const [destDirZip, setDestDirZip] = useState<string>("");
 	const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -68,10 +72,10 @@ const BackupProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 		if (!selectedProfile) return;
 
 		const options: SaveDialogOptions = {
-			title: "Choose the destination folder",
+			title: btn_backup_profile.modal.save_folder_dialog.title,
 			filters: [
 				{
-					name: "zip files",
+					name: btn_backup_profile.modal.save_folder_dialog.filters_name.zip,
 					extensions: ["zip"],
 				},
 			],
@@ -108,11 +112,11 @@ const BackupProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 				{(onClose) => (
 					<>
 						<ModalHeader className="flex flex-col gap-1">
-							Backup Profile
+							{btn_backup_profile.modal.title}
 						</ModalHeader>
 						<Divider />
 						<ModalBody className="py-1">
-							<p>Create a backup copy, remember to enter the destination</p>
+							<p>{btn_backup_profile.modal.description}</p>
 							<Input
 								className="mt-1"
 								disabled={true}
@@ -128,8 +132,10 @@ const BackupProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 										/>
 									</div>
 								}
-								label="Choose the destination folder"
-								placeholder="Enter the destination folder"
+								label={btn_backup_profile.modal.input_backup_destination.label}
+								placeholder={
+									btn_backup_profile.modal.input_backup_destination.placeholder
+								}
 								value={destDirZip}
 								onValueChange={(value) => setDestDirZip(value)}
 								variant="bordered"
@@ -144,7 +150,7 @@ const BackupProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 										endContent={<IconFolderShare stroke={2} />}
 										color={destDirZip.length === 0 ? "default" : "success"}
 									>
-										Open Folder
+										{btn_backup_profile.modal.btn_open_folder}
 									</Button>
 								) : null}
 							</div>
@@ -167,7 +173,7 @@ const BackupProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 						</ModalBody>
 						<ModalFooter>
 							<Button color="danger" variant="light" onPress={onClose}>
-								Close
+								{btn_backup_profile.modal.btn_close}
 							</Button>
 							<Button
 								endContent={<IconFileTypeZip />}
@@ -175,7 +181,7 @@ const BackupProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 								color="success"
 								onPress={onClickApply}
 							>
-								Backup
+								{btn_backup_profile.modal.btn_apply}
 							</Button>
 						</ModalFooter>
 					</>

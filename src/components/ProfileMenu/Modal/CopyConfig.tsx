@@ -1,6 +1,7 @@
 import { useState, useContext, FC } from "react";
 import ListProfilesDropdown from "@/components/ProfileMenu/Dropdown/ListProfilesDropdown";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
 	Modal,
 	Image,
@@ -33,6 +34,10 @@ interface ModalProps {
 const CopyConfig: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 	const Contex = useContext(ProfileContex);
 	const { selectedProfile, listProfiles } = Contex;
+
+	const { translations } = useContext(LocaleContext);
+	const { btn_copy_config } =
+		translations.player_profile.dropdown.profile_options;
 
 	const [ProfileInfo, setProfileInfo] = useState<Profile | undefined>(
 		undefined
@@ -86,15 +91,15 @@ const CopyConfig: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 				{(onClose) => (
 					<>
 						<ModalHeader className="flex flex-col gap-1">
-							Copy Config
+							{btn_copy_config.modal.title}
 						</ModalHeader>
 						<Divider />
 						<ModalBody className="py-1">
-							<p>
-								Select the profile to which you want to copy the settings,
-								remember that your settings will be replaced, we recommend that
-								you <b>make a backup copy of your profile</b>.
-							</p>
+							<p
+								dangerouslySetInnerHTML={{
+									__html: btn_copy_config.modal.description,
+								}}
+							/>
 							<ListProfilesDropdown
 								{...Contex}
 								selectedProfile={ProfileInfo}
@@ -166,7 +171,7 @@ const CopyConfig: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 						</ModalBody>
 						<ModalFooter>
 							<Button color="danger" variant="light" onPress={onClose}>
-								Close
+								{btn_copy_config.modal.btn_close}
 							</Button>
 							<Button
 								endContent={<IconCopy />}
@@ -174,7 +179,7 @@ const CopyConfig: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 								color="success"
 								onPress={onClickApply}
 							>
-								Copy Config
+								{btn_copy_config.modal.btn_apply}
 							</Button>
 						</ModalFooter>
 					</>
