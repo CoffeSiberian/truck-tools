@@ -4,14 +4,18 @@ export interface Profile {
 
 export interface ProfileClass {
 	tab_title: string;
-	// Need refactor
-	add_money: AddExperience;
+	add_money: AddMoney;
 	add_experience: AddExperience;
-	garage_status: AddExperience;
-	visited_cities: AddExperience;
-	dealer_visited: AddExperience;
-	//////////////////////////////
+	garage_status: GarageStatus;
+	visited_cities: VisitedCities;
+	dealer_visited: DealerVisited;
 	skills_points: SkillsPoints;
+}
+
+export interface AddMoney {
+	label_card: string;
+	description_card: string;
+	modal: AddMoneyModal;
 }
 
 export interface AddExperience {
@@ -20,17 +24,67 @@ export interface AddExperience {
 	modal: AddExperienceModal;
 }
 
+export interface GarageStatus {
+	label_card: string;
+	description_card: string;
+	modal: GarageStatusModal;
+}
+
+export interface VisitedCities {
+	label_card: string;
+	description_card: string;
+	modal: VisitedCitiesModal;
+}
+
+export interface DealerVisited {
+	label_card: string;
+	description_card: string;
+	modal: DealerVisitedModal;
+}
+
 export interface AddExperienceModal {
 	title: string;
 	description: string;
 	btn_open: string;
 	btn_close: string;
 	btn_apply: string;
-	input_money: Input;
 	input_experience: Input;
-	input_dealer_status: InputStatus;
+}
+
+export interface GarageStatusModal {
+	title: string;
+	description: string;
+	btn_open: string;
+	btn_close: string;
+	btn_apply: string;
 	input_garage_status: InputGarageStatus;
+}
+
+export interface VisitedCitiesModal {
+	title: string;
+	description: string;
+	btn_open: string;
+	btn_close: string;
+	btn_apply: string;
 	input_city_status: InputStatus;
+}
+
+export interface DealerVisitedModal {
+	title: string;
+	description: string;
+	btn_open: string;
+	btn_close: string;
+	btn_apply: string;
+	input_dealer_status: InputStatus;
+}
+
+export interface AddMoneyModal {
+	title: string;
+	description: string;
+	btn_open: string;
+	btn_close: string;
+	btn_apply: string;
+	input_money: Input;
 }
 
 export interface InputStatus {
