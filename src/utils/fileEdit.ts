@@ -32,6 +32,7 @@ import {
 	IColorHsvToValidate,
 } from "@/types/fileEditTypes";
 import { GamesNames } from "@/types/ContexTypes";
+import { Langs } from "@/types/ContexTypes";
 import { IColor } from "react-color-palette";
 
 const STORE_FILE = ".settings.dat";
@@ -804,4 +805,45 @@ export const getStoredOpasityStatus = async (): Promise<boolean> => {
 
 	if (typeof status === "boolean") return status;
 	return true;
+};
+
+// os locale value
+
+/**
+ * ## Compliance with BCP-47 is strictly required
+ * @param lang Language string `language`-`region`
+ * @returns The exact language or the closest available language
+ */
+export const mostSimilarLang = (lang: string): Langs => {
+	switch (lang) {
+		case "en-US":
+			return "en-US";
+	}
+
+	const splitLang = lang.split("-");
+	switch (splitLang[0]) {
+		case "en":
+			return "en-US";
+		default:
+			return "en-US";
+	}
+};
+
+export const storeOsLocale = async (lang: Langs) => {
+	const STORE = new LazyStore(STORE_FILE);
+	await STORE.set("lang", lang);
+	await STORE.save();
+};
+
+export const getStoredOsLocale = async (): Promise<Langs | null> => {
+	const STORE = new LazyStore(STORE_FILE);
+	const lang = await STORE.get("lang");
+
+	if (!lang) return null;
+
+	if (typeof lang === "string") {
+		return mostSimilarLang(lang);
+	}
+
+	return null;
 };

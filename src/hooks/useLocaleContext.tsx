@@ -1,4 +1,10 @@
 import { createContext, useState, useEffect, useRef } from "react";
+import { locale } from "@tauri-apps/plugin-os";
+import {
+	getStoredOsLocale,
+	mostSimilarLang,
+	storeOsLocale,
+} from "@/utils/fileEdit";
 
 // types
 import { LocaleContextTypes } from "@/types/ContexTypes";
@@ -62,6 +68,24 @@ const getLang = async (lang: LangsTypes): Promise<TranslationsObject> => {
 	};
 };
 
+const getCurrentLocale = async (): Promise<LangsTypes> => {
+	const locale_store = await getStoredOsLocale();
+
+	if (!locale_store) {
+		const lang_locale = await locale();
+
+		if (lang_locale) {
+			const lang_similar = mostSimilarLang(lang_locale);
+			await storeOsLocale(lang_similar);
+			return lang_similar;
+		}
+
+		return "en-US";
+	}
+
+	return locale_store;
+};
+
 // eslint-disable-next-line react-refresh/only-export-components
 export const LocaleContext = createContext<LocaleContextTypes>(
 	{} as LocaleContextTypes
@@ -86,14 +110,18 @@ export const Locale = ({ children }: ProviderProps) => {
 			lang: lang,
 			translations: translations,
 		});
+
+		await storeOsLocale(lang);
 	};
 
 	useEffect(() => {
 		if (!isLoaded.current) {
 			isLoaded.current = true;
-			changeLang(Lang.lang);
+			getCurrentLocale()
+				.then((res) => changeLang(res))
+				.catch(() => changeLang("en-US"));
 		}
-	}, [Lang.lang]);
+	}, []);
 
 	return (
 		<LocaleContext.Provider
