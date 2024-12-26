@@ -1,4 +1,5 @@
 export interface Settings {
+	tab_title: string;
 	title: string;
 	document_dialog_title: string;
 	input_change_theme: InputChnageTheme;

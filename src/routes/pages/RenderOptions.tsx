@@ -1,4 +1,5 @@
-import { JSX, useState } from "react";
+import { JSX, useState, useContext } from "react";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import { open } from "@tauri-apps/plugin-shell";
 import { Tabs, Tab, useDisclosure, Image, Button } from "@nextui-org/react";
 import classNames from "classnames";
@@ -24,6 +25,7 @@ import {
 import kofi from "@/static/icons/kofi/kofi.webp";
 
 const RenderOptions = () => {
+	const { translations } = useContext(LocaleContext);
 	const [activeIndex, setActiveIndex] = useState<string | null>(null);
 
 	const {
@@ -40,30 +42,35 @@ const RenderOptions = () => {
 
 	const items = [
 		{
-			label: "Trailers",
+			label: translations.trailers.trailers.tab_title,
 			jsx: <TrailersOptions />,
 			modal: false,
 			icon: <IconPackages />,
 		},
 		{
-			label: "Truck",
+			label: translations.trucks.trucks.tab_title,
 			jsx: <TrucksOptions />,
 			modal: false,
 			icon: <IconTruck />,
 		},
 		{
-			label: "Profile",
+			label: translations.profile.profile.tab_title,
 			jsx: <ProfilesOptions />,
 			modal: false,
 			icon: <IconUserCircle />,
 		},
 		{
-			label: "Settings",
+			label: translations.settings.tab_title,
 			jsx: <></>,
 			modal: true,
 			icon: <IconSettings />,
 		},
-		{ label: "About", jsx: <></>, modal: true, icon: <IconPaw /> },
+		{
+			label: translations.about.tab_title,
+			jsx: <></>,
+			modal: true,
+			icon: <IconPaw />,
+		},
 	];
 
 	const setActiveIndexOptions = (index: string) => {
