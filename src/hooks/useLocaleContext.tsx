@@ -23,34 +23,26 @@ import { ProfileError } from "@/types/translations/components/profile_error";
 import { Updater } from "@/types/translations/components/updater";
 
 const getLang = async (lang: LangsTypes): Promise<TranslationsObject> => {
-	const splitLang = lang.split("-");
-
-	const about: About = await import(
-		`@/translations/${splitLang[0]}/${splitLang[1]}/about.json`
-	);
+	const about: About = await import(`@/translations/${lang}/about.json`);
 	const player_profile: PlayerProfile = await import(
-		`@/translations/${splitLang[0]}/${splitLang[1]}/player_profile.json`
+		`@/translations/${lang}/player_profile.json`
 	);
 	const trailers: Trailers = await import(
-		`@/translations/${splitLang[0]}/${splitLang[1]}/trailers.json`
+		`@/translations/${lang}/trailers.json`
 	);
-	const trucks: Trucks = await import(
-		`@/translations/${splitLang[0]}/${splitLang[1]}/trucks.json`
-	);
-	const profile: Profile = await import(
-		`@/translations/${splitLang[0]}/${splitLang[1]}/profile.json`
-	);
+	const trucks: Trucks = await import(`@/translations/${lang}/trucks.json`);
+	const profile: Profile = await import(`@/translations/${lang}/profile.json`);
 	const settings: Settings = await import(
-		`@/translations/${splitLang[0]}/${splitLang[1]}/settings.json`
+		`@/translations/${lang}/settings.json`
 	);
 	const license_plate: LicensePlate = await import(
-		`@/translations/${splitLang[0]}/${splitLang[1]}/components/license_plate.json`
+		`@/translations/${lang}/components/license_plate.json`
 	);
 	const profile_error: ProfileError = await import(
-		`@/translations/${splitLang[0]}/${splitLang[1]}/components/profile_error.json`
+		`@/translations/${lang}/components/profile_error.json`
 	);
 	const updater: Updater = await import(
-		`@/translations/${splitLang[0]}/${splitLang[1]}/components/updater.json`
+		`@/translations/${lang}/components/updater.json`
 	);
 
 	return {
