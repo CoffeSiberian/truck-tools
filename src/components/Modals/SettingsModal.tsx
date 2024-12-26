@@ -28,6 +28,7 @@ import {
 } from "@/utils/fileEdit";
 
 // types
+import { Langs } from "@/types/ContexTypes";
 import { themeTypesSystem } from "@/types/fileEditTypes";
 
 // icons
@@ -213,9 +214,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 									placeholder={settings.input_change_language.placeholder}
 									variant="bordered"
 									selectedKeys={[lang]}
-									onChange={(e) =>
-										changeLang(e.target.value as "en-US" | "es-CL")
-									}
+									onChange={(e) => changeLang(e.target.value as Langs)}
 								>
 									<SelectItem key="en-US">English</SelectItem>
 								</Select>
