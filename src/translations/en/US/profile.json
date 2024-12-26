@@ -17,10 +17,10 @@
 			}
 		},
 		"add_experience": {
-			"label_card": "Add experience",
-			"description_card": "Add experience to your profile",
+			"label_card": "Change experience",
+			"description_card": "Change experience to your profile",
 			"modal": {
-				"title": "Add experience",
+				"title": "Change experience",
 				"description": "Enter the amount of experience you want to add to your profile",
 				"input_experience": {
 					"label": "Experience",
@@ -32,10 +32,10 @@
 			}
 		},
 		"garage_status": {
-			"label_card": "Set any garages status",
+			"label_card": "Buy all garages",
 			"description_card": "Set any garages status to your profile",
 			"modal": {
-				"title": "Set Garage Status",
+				"title": "Buy all garages",
 				"description": "Select the status of the garage you want to apply to your profile",
 				"input_garage_status": {
 					"label": "Garage status",
@@ -52,10 +52,10 @@
 			}
 		},
 		"visited_cities": {
-			"label_card": "Set any city visited status",
+			"label_card": "Discover all cities",
 			"description_card": "Set any city visited status to your profile",
 			"modal": {
-				"title": "Set all cities visited status",
+				"title": "Discover all cities",
 				"description": "Select the status of all cities visited",
 				"input_city_status": {
 					"label": "Visited cities",
@@ -70,10 +70,10 @@
 			}
 		},
 		"dealer_visited": {
-			"label_card": "Set all dealer status",
+			"label_card": "Discover all dealers",
 			"description_card": "Set all dealer status to your profile",
 			"modal": {
-				"title": "Set all dealer status",
+				"title": "Discover all dealers",
 				"description": "Select the status of all the dealers in your profile",
 				"input_dealer_status": {
 					"label": "Visited cities",
