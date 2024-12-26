@@ -43,7 +43,6 @@ interface SettingsModalProps {
 }
 
 interface OptionsStateTypes {
-	language: string;
 	enableConsole: boolean;
 	enable128Convoy: boolean;
 	opasityProfile: boolean;
@@ -54,11 +53,10 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 	const { userTheme, setUserTheme, setOpasityStatus } =
 		useContext(DarkModeContex);
 	const { reloadProfiles, game } = useContext(ProfileContex);
-	const { translations } = useContext(LocaleContext);
+	const { translations, lang, changeLang } = useContext(LocaleContext);
 	const { settings } = translations;
 
 	const [optionsState, setOptionsState] = useState<OptionsStateTypes>({
-		language: "english",
 		enableConsole: false,
 		enable128Convoy: false,
 		opasityProfile: false,
@@ -118,7 +116,6 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 
 			setOptionsState((prev) => ({
 				...prev,
-				language: "english",
 				enableConsole: false,
 				enable128Convoy: false,
 				documentDir: res as string,
@@ -140,7 +137,6 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 		setOpasityStatus(true);
 
 		setOptionsState({
-			language: "english",
 			enableConsole: false,
 			enable128Convoy: false,
 			opasityProfile: true,
@@ -161,7 +157,6 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 			}
 
 			setOptionsState({
-				language: "english",
 				enableConsole:
 					getGameDeveloperStatusStore.console &&
 					getGameDeveloperStatusStore.developer,
@@ -214,13 +209,15 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 							</div>
 							<div className="flex justify-center gap-1">
 								<Select
-									label={settings.input_change_theme.label}
-									placeholder={settings.input_change_theme.placeholder}
+									label={settings.input_change_language.label}
+									placeholder={settings.input_change_language.placeholder}
 									variant="bordered"
-									selectedKeys={[optionsState.language]}
-									isDisabled
+									selectedKeys={[lang]}
+									onChange={(e) =>
+										changeLang(e.target.value as "en-US" | "es-CL")
+									}
 								>
-									<SelectItem key="english">English</SelectItem>
+									<SelectItem key="en-US">English</SelectItem>
 								</Select>
 							</div>
 							<div className="flex">

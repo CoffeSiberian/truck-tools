@@ -82,7 +82,7 @@ const SetInfiniteFuel = () => {
 			</Button>
 			<Modal
 				hideCloseButton
-				size="md"
+				size="lg"
 				backdrop="blur"
 				isOpen={isOpen}
 				onOpenChange={onOpenChange}

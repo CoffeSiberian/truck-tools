@@ -63,7 +63,7 @@ const FillAllTrucksFuel = () => {
 			</Button>
 			<Modal
 				hideCloseButton
-				size="sm"
+				size="md"
 				backdrop="blur"
 				isOpen={isOpen}
 				onOpenChange={onOpenChange}

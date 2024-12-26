@@ -156,7 +156,7 @@ const UpdaterModal = () => {
 	return (
 		<>
 			<Modal
-				size="md"
+				size="lg"
 				backdrop="blur"
 				isOpen={updateInfo ? true : false}
 				onOpenChange={setIsOpen}
