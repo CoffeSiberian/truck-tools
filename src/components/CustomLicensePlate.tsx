@@ -161,8 +161,8 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 					<Input
 						className="w-fit"
 						size="sm"
-						label="License plate text"
-						placeholder="Enter license plate text"
+						label={license_plate.input_license_plate.label}
+						placeholder={license_plate.input_license_plate.placeholder}
 						value={plateText}
 						onValueChange={setUpperCase}
 						variant="bordered"
