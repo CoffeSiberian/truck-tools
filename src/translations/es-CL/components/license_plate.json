@@ -1,0 +1,16 @@
+{
+    "input_license_plate": {
+        "label": "",
+        "placeholder": ""
+    },
+    "input_colored_margin": "",
+    "input_license_plate_list_store": {
+        "label": "",
+        "placeholder": ""
+    },
+    "title_select_bg_color": "",
+    "title_select_text_color": "",
+    "btn_store": "",
+    "btn_load": "",
+    "btn_delete": ""
+}
