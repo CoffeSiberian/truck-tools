@@ -1,0 +1,96 @@
+{
+    "no_selected_profile": "",
+    "no_selected_save": "",
+    "total_saves": "",
+    "input_select_profile": {
+        "label": "",
+        "placeholder": "",
+        "options": {
+            "save_load": ""
+        }
+    },
+    "input_select_save": {
+        "label": "",
+        "placeholder": ""
+    },
+    "btn_profile": "",
+    "dropdown": {
+        "save_game_options": {
+            "title": "",
+            "btn_open_folder": {
+                "label": "",
+                "description": ""
+            },
+            "btn_decrypt_save": {
+                "label": "",
+                "description": ""
+            }
+        },
+        "profile_options": {
+            "title": "",
+            "btn_backup_profile": {
+                "label": "",
+                "description": "",
+                "modal": {
+                    "title": "",
+                    "description": "",
+                    "input_backup_destination": {
+                        "label": "",
+                        "placeholder": ""
+                    },
+                    "save_folder_dialog": {
+                        "title": "",
+                        "filters_name": {
+                            "zip": ""
+                        }
+                    },
+                    "btn_open_folder": "",
+                    "btn_close": "",
+                    "btn_apply": ""
+                }
+            },
+            "btn_rename_profile": {
+                "label": "",
+                "description": "",
+                "modal": {
+                    "title": "",
+                    "description": "",
+                    "input_new_name": {
+                        "label": "",
+                        "placeholder": ""
+                    },
+                    "btn_close": "",
+                    "btn_apply": ""
+                }
+            },
+            "btn_clone_profile": {
+                "label": "",
+                "description": "",
+                "modal": {
+                    "title": "",
+                    "description": "",
+                    "input_new_name": {
+                        "label": "",
+                        "placeholder": ""
+                    },
+                    "btn_close": "",
+                    "btn_apply": ""
+                }
+            },
+            "btn_copy_config": {
+                "label": "",
+                "description": "",
+                "modal": {
+                    "title": "",
+                    "description": "",
+                    "input_select_profile": {
+                        "label": "",
+                        "placeholder": ""
+                    },
+                    "btn_close": "",
+                    "btn_apply": ""
+                }
+            }
+        }
+    }
+}
