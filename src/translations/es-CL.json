@@ -127,6 +127,10 @@
             "release_notes": "Notas de la versión",
             "title": "Nueva versión disponible",
             "version": "Versión:"
+        },
+        "alert_on_save_default": {
+            "error": "Se ha producido un error en el proceso",
+            "succes": "Guardado con éxito"
         }
     },
     "menu_options": {
