@@ -214,7 +214,10 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 									placeholder={settings.input_change_language.placeholder}
 									variant="bordered"
 									selectedKeys={[lang]}
-									onChange={(e) => changeLang(e.target.value as Langs)}
+									onChange={(e) => {
+										if (!e.target.value) return;
+										changeLang(e.target.value as Langs);
+									}}
 								>
 									<SelectItem key="en-US">English</SelectItem>
 								</Select>
