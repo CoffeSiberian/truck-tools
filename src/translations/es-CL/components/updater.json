@@ -1,10 +1,10 @@
 {
-    "title": "",
-    "version": "",
-    "release_notes": "",
-    "downloading": "",
-    "alert_message": "",
-    "btn_cancel": "",
-    "btn_update_now": "",
-    "btn_manual_update": ""
+    "title": "Nueva versión disponible",
+    "version": "Versión:",
+    "release_notes": "Notas de la versión",
+    "downloading": "Descargando...",
+    "alert_message": "La instalación falló. Inténtalo de nuevo más tarde",
+    "btn_cancel": "Cancelar",
+    "btn_update_now": "Actualizar",
+    "btn_manual_update": "Actualización manual"
 }
