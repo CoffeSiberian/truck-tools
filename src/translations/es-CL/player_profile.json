@@ -1,94 +1,94 @@
 {
-    "no_selected_profile": "",
-    "no_selected_save": "",
-    "total_saves": "",
+    "no_selected_profile": "Ningún perfil seleccionado",
+    "no_selected_save": "Ningún guardado seleccionado",
+    "total_saves": "Guardados",
     "input_select_profile": {
-        "label": "",
-        "placeholder": "",
+        "label": "Seleccionar perfil",
+        "placeholder": "Selecciona un perfil",
         "options": {
-            "save_load": ""
+            "save_load": "Guardado"
         }
     },
     "input_select_save": {
-        "label": "",
-        "placeholder": ""
+        "label": "Seleccionar guardado",
+        "placeholder": "Selecciona un guardado"
     },
-    "btn_profile": "",
+    "btn_profile": "Opciones",
     "dropdown": {
         "save_game_options": {
-            "title": "",
+            "title": "Opciones de guardado",
             "btn_open_folder": {
-                "label": "",
-                "description": ""
+                "label": "Abrir carpeta del guardado",
+                "description": "Abrir la carpeta del guardado seleccionado"
             },
             "btn_decrypt_save": {
-                "label": "",
-                "description": ""
+                "label": "Descifrar guardado",
+                "description": "Descifrar el guardado seleccionada"
             }
         },
         "profile_options": {
-            "title": "",
+            "title": "Opciones de Perfil",
             "btn_backup_profile": {
-                "label": "",
-                "description": "",
+                "label": "Respaldar Perfil",
+                "description": "Crear una copia de respaldo de tu perfil",
                 "modal": {
-                    "title": "",
-                    "description": "",
+                    "title": "Respaldar Perfil",
+                    "description": "Crea una copia de respaldo, recuerda ingresar el destino",
                     "input_backup_destination": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Seleccionar carpeta de destino",
+                        "placeholder": "Selecciona la carpeta de destino"
                     },
                     "save_folder_dialog": {
-                        "title": "",
+                        "title": "Seleccionar carpeta de destino",
                         "filters_name": {
-                            "zip": ""
+                            "zip": "Archivos Zip"
                         }
                     },
-                    "btn_open_folder": "",
-                    "btn_close": "",
-                    "btn_apply": ""
+                    "btn_open_folder": "Abrir carpeta",
+                    "btn_close": "Cerrar",
+                    "btn_apply": "Respaldar"
                 }
             },
             "btn_rename_profile": {
-                "label": "",
-                "description": "",
+                "label": "Renombrar Perfil",
+                "description": "Renombrar tu perfil",
                 "modal": {
-                    "title": "",
-                    "description": "",
+                    "title": "Renombrar perfil",
+                    "description": "Puedes renombrar el perfil, pero debe tener igual o menos de 20 caracteres.",
                     "input_new_name": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Nombre del perfil",
+                        "placeholder": "Ingresa el nuevo nombre para tu perfil"
                     },
-                    "btn_close": "",
-                    "btn_apply": ""
+                    "btn_close": "Cerrar",
+                    "btn_apply": "Renombrar"
                 }
             },
             "btn_clone_profile": {
-                "label": "",
-                "description": "",
+                "label": "Clonar Perfil",
+                "description": "Clonar tu perfil a uno nuevo",
                 "modal": {
-                    "title": "",
-                    "description": "",
+                    "title": "Clonar Perfil",
+                    "description": "Ingresa el nombre del perfil que deseas clonar. Esto creará un nuevo perfil con las mismas configuraciones que el perfil seleccionado.",
                     "input_new_name": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Nuevo Nombre de Perfil",
+                        "placeholder": "Ingresa el nuevo nombre para tu perfil"
                     },
-                    "btn_close": "",
-                    "btn_apply": ""
+                    "btn_close": "Cerrar",
+                    "btn_apply": "Clonar"
                 }
             },
             "btn_copy_config": {
-                "label": "",
-                "description": "",
+                "label": "Copiar Configuración",
+                "description": "Copiar configuraciones de otros perfiles",
                 "modal": {
-                    "title": "",
-                    "description": "",
+                    "title": "Copiar Configuración",
+                    "description": "Selecciona el perfil al cual deseas copiar las configuraciones, recuerda que tus configuraciones serán reemplazadas. Te recomendamos que <b>hagas una copia de respaldo de tu perfil</b>.",
                     "input_select_profile": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Perfiles",
+                        "placeholder": "Selecciona un perfil"
                     },
-                    "btn_close": "",
-                    "btn_apply": ""
+                    "btn_close": "Cerrar",
+                    "btn_apply": "Copiar Configuración"
                 }
             }
         }
