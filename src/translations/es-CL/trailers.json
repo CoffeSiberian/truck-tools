@@ -1,0 +1,88 @@
+{
+    "trailers": {
+        "tab_title": "",
+        "license_plate": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "btn_open": "",
+                "btn_close": "",
+                "btn_apply": ""
+            }
+        },
+        "modify_job_weight": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "input_weight": {
+                    "label": "",
+                    "placeholder": ""
+                },
+                "btn_open": "",
+                "btn_close": "",
+                "btn_apply": ""
+            }
+        },
+        "unlock_trailer_country": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "warning_message": {
+                    "title": "",
+                    "message": ""
+                },
+                "btn_open": "",
+                "btn_close": "",
+                "btn_apply": "",
+                "btn_how_to_use": ""
+            }
+        },
+        "modify_trailer_weight": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "input_chassis_mass": {
+                    "label": "",
+                    "placeholder": ""
+                },
+                "input_body_mass": {
+                    "label": "",
+                    "placeholder": ""
+                },
+                "btn_open": "",
+                "btn_close": "",
+                "btn_apply": ""
+            }
+        },
+        "repair_trailer": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "btn_open": "",
+                "btn_close": "",
+                "btn_apply": ""
+            }
+        },
+        "repair_all_trailer": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "btn_open": "",
+                "btn_close": "",
+                "btn_apply": ""
+            }
+        }
+    }
+}
