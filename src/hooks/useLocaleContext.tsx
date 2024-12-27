@@ -8,56 +8,18 @@ import {
 
 // types
 import { LocaleContextTypes } from "@/types/ContexTypes";
-import { Langs as LangsTypes, TranslationsObject } from "@/types/ContexTypes";
 import { ProviderProps } from "@/types/ReactTypes";
 
 // translations types
-import { About } from "@/types/translations/about";
-import { PlayerProfile } from "@/types/translations/player_profile";
-import { Trailers } from "@/types/translations/trailers";
-import { Trucks } from "@/types/translations/trucks";
-import { Profile } from "@/types/translations/profile";
-import { Settings } from "@/types/translations/settings";
-import { LicensePlate } from "@/types/translations/components/license_plate";
-import { ProfileError } from "@/types/translations/components/profile_error";
-import { Updater } from "@/types/translations/components/updater";
+import {
+	TranslationsTypes,
+	Langs as LangsTypes,
+} from "@/types/TranslationsTypes";
 
-const getLang = async (lang: LangsTypes): Promise<TranslationsObject> => {
-	const about: About = await import(`@/translations/${lang}/about.json`);
-	const player_profile: PlayerProfile = await import(
-		`@/translations/${lang}/player_profile.json`
-	);
-	const trailers: Trailers = await import(
-		`@/translations/${lang}/trailers.json`
-	);
-	const trucks: Trucks = await import(`@/translations/${lang}/trucks.json`);
-	const profile: Profile = await import(`@/translations/${lang}/profile.json`);
-	const settings: Settings = await import(
-		`@/translations/${lang}/settings.json`
-	);
-	const license_plate: LicensePlate = await import(
-		`@/translations/${lang}/components/license_plate.json`
-	);
-	const profile_error: ProfileError = await import(
-		`@/translations/${lang}/components/profile_error.json`
-	);
-	const updater: Updater = await import(
-		`@/translations/${lang}/components/updater.json`
-	);
+const getLang = async (lang: LangsTypes): Promise<TranslationsTypes> => {
+	const res_lags = await import(`@/translations/${lang}.json`);
 
-	return {
-		about: about,
-		player_profile: player_profile,
-		trailers: trailers,
-		trucks: trucks,
-		profile: profile,
-		settings: settings,
-		components: {
-			license_plate: license_plate,
-			profile_error: profile_error,
-			updater: updater,
-		},
-	};
+	return res_lags as TranslationsTypes;
 };
 
 const getCurrentLocale = async (): Promise<LangsTypes> => {
@@ -85,14 +47,14 @@ export const LocaleContext = createContext<LocaleContextTypes>(
 
 interface LangeState {
 	lang: LangsTypes;
-	translations: TranslationsObject;
+	translations: TranslationsTypes;
 }
 
 export const Locale = ({ children }: ProviderProps) => {
 	const isLoaded = useRef(false);
 	const [Lang, setLang] = useState<LangeState>({
 		lang: "en-US",
-		translations: {} as TranslationsObject,
+		translations: {} as TranslationsTypes,
 	});
 
 	const changeLang = async (lang: LangsTypes) => {

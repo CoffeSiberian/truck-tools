@@ -1,0 +1,495 @@
+{
+	"components": {
+		"license_plate": {
+			"btn_delete": "Delete",
+			"btn_load": "Load",
+			"btn_store": "Store",
+			"input_colored_margin": "Colored margin",
+			"input_license_plate": {
+				"label": "License plate text",
+				"placeholder": "Enter license plate text"
+			},
+			"input_license_plate_list_store": {
+				"label": "Select a stored plate",
+				"placeholder": "Select license plate"
+			},
+			"title_select_bg_color": "Background color",
+			"title_select_text_color": "Text color"
+		},
+		"player_profile": {
+			"btn_profile": "Profile Options",
+			"dropdown": {
+				"profile_options": {
+					"btn_backup_profile": {
+						"description": "Create a backup copy of your profile",
+						"label": "Backup Profile",
+						"modal": {
+							"btn_apply": "Backup",
+							"btn_close": "Close",
+							"btn_open_folder": "Open folder",
+							"description": "Create a backup copy, remember to enter the destination",
+							"input_backup_destination": {
+								"label": "Select destination folder",
+								"placeholder": "Select the destination folder"
+							},
+							"save_folder_dialog": {
+								"filters_name": {
+									"zip": "Zip files"
+								},
+								"title": "Select destination folder"
+							},
+							"title": "Backup Profile"
+						}
+					},
+					"btn_clone_profile": {
+						"description": "Clone your profile to a new one",
+						"label": "Clone Profile",
+						"modal": {
+							"btn_apply": "Clone",
+							"btn_close": "Close",
+							"description": "Enter the name of the profile you want to clone. This will create a new profile with the same settings as the selected profile.",
+							"input_new_name": {
+								"label": "New Profile Name",
+								"placeholder": "Enter the new name for your profile"
+							},
+							"title": "Clone Profile"
+						}
+					},
+					"btn_copy_config": {
+						"description": "Copy settings from other profiles",
+						"label": "Copy Config",
+						"modal": {
+							"btn_apply": "Copy Config",
+							"btn_close": "Close",
+							"description": "Select the profile to which you want to copy the settings, remember that your settings will be replaced, we recommend that you <b>make a backup copy of your profile</b>.",
+							"input_select_profile": {
+								"label": "Profiles",
+								"placeholder": "Select a profile"
+							},
+							"title": "Copy Config"
+						}
+					},
+					"btn_rename_profile": {
+						"description": "Rename your profile",
+						"label": "Rename Profile",
+						"modal": {
+							"btn_apply": "Rename",
+							"btn_close": "Close",
+							"description": "You can rename the profile, but it must be less than 20 characters.",
+							"input_new_name": {
+								"label": "Profile name",
+								"placeholder": "Enter the new name for your profile"
+							},
+							"title": "Rename profile"
+						}
+					},
+					"title": "Profile Options"
+				},
+				"save_game_options": {
+					"btn_decrypt_save": {
+						"description": "Decrypt selected save game",
+						"label": "Decrypt Save"
+					},
+					"btn_open_folder": {
+						"description": "Open selected save game folder",
+						"label": "Open Save folder"
+					},
+					"title": "Save Game Options"
+				}
+			},
+			"input_select_profile": {
+				"label": "Select profile",
+				"options": {
+					"save_load": "Saves"
+				},
+				"placeholder": "Select a profile"
+			},
+			"input_select_save": {
+				"label": "Select save",
+				"placeholder": "Select a save"
+			},
+			"no_selected_profile": "No profile selected",
+			"no_selected_save": "No save selected",
+			"total_saves": "Saves"
+		},
+		"profile_error": {
+			"btn_how_to": "Tutorial video",
+			"btn_how_to_disable": "How to disable Steam Cloud",
+			"description": "Remember to <b> disable Steam Cloud</b> from your profile or verify the location of your \"Documents\" folder",
+			"title": "Profiles not found"
+		},
+		"updater": {
+			"alert_message": "Installation failed. Try again later",
+			"btn_cancel": "Cancel",
+			"btn_manual_update": "Manual Update",
+			"btn_update_now": "Update Now",
+			"downloading": "Downloading...",
+			"release_notes": "Release notes",
+			"title": "New version available",
+			"version": "Version:"
+		}
+	},
+	"menu_options": {
+		"about": {
+			"description": "This is an open source application created in order to help ETS 2 & ATS players to edit their Game Save in a simple and easy way for those who do not want to edit these codes manually.",
+			"tab_title": "About"
+		},
+		"profile": {
+			"add_experience": {
+				"description_card": "Change experience to your profile",
+				"label_card": "Change experience",
+				"modal": {
+					"btn_apply": "Apply",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Enter the amount of experience you want to add to your profile",
+					"input_experience": {
+						"label": "Experience",
+						"placeholder": "Enter the amount of experience in numbers"
+					},
+					"title": "Change experience"
+				}
+			},
+			"add_money": {
+				"description_card": "Add money to your profile",
+				"label_card": "Change money",
+				"modal": {
+					"btn_apply": "Apply",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Add the amount of money you want in your profile",
+					"input_money": {
+						"label": "Money",
+						"placeholder": "Enter the amount of money in EUR"
+					},
+					"title": "Change money"
+				}
+			},
+			"dealer_visited": {
+				"description_card": "Set all dealer status to your profile",
+				"label_card": "Discover all dealers",
+				"modal": {
+					"btn_apply": "Apply",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Select the status of all the dealers in your profile",
+					"input_dealer_status": {
+						"label": "Visited cities",
+						"options": {
+							"unvisit_all": "Unvisited all dealers",
+							"visit_all": "Visited all dealers"
+						}
+					},
+					"title": "Discover all dealers"
+				}
+			},
+			"garage_status": {
+				"description_card": "Set any garages status to your profile",
+				"label_card": "Buy all garages",
+				"modal": {
+					"btn_apply": "Apply",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Select the status of the garage you want to apply to your profile",
+					"input_garage_status": {
+						"label": "Garage status",
+						"options": {
+							"large_garage": "Large Garage",
+							"medium_garage": "Medium Garage",
+							"sell_garage": "Sell Garage",
+							"small_garage": "Small Garage"
+						}
+					},
+					"title": "Buy all garages"
+				}
+			},
+			"skills_points": {
+				"description_card": "Set experience skills to your profile",
+				"label_card": "Set experience skills",
+				"modal": {
+					"btn_apply": "Apply",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Enter the amount of experience you need",
+					"eco_driving": "Eco driving",
+					"fragile_cargo": "Fragile cargo",
+					"high_value_cargo": "High value cargo",
+					"input_skills_points": {
+						"corrosive": "Corrosive",
+						"explosives": "Explosives",
+						"flammable_liquids": "Flammable liquids",
+						"flammable_solids": "Flammable solids",
+						"gases": "Gases",
+						"label": "ADR",
+						"placeholder": "Select ADR",
+						"toxic_and_infectious": "Toxic and infectious"
+					},
+					"just_in_time_delivery": "Just in time delivery",
+					"long_distance": "Long distance",
+					"title": "Set Experience Skills"
+				}
+			},
+			"tab_title": "Profile",
+			"visited_cities": {
+				"description_card": "Set any city visited status to your profile",
+				"label_card": "Discover all cities",
+				"modal": {
+					"btn_apply": "Apply",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Select the status of all cities visited",
+					"input_city_status": {
+						"label": "Visited cities",
+						"options": {
+							"unvisit_all": "Unvisited all cities",
+							"visit_all": "Visited all cities"
+						}
+					},
+					"title": "Discover all cities"
+				}
+			}
+		},
+		"settings": {
+			"btn_reset": "Reset Settings",
+			"document_dialog_title": "Select the folder where your progre is stored",
+			"input_change_language": {
+				"label": "Change language",
+				"placeholder": "Select language"
+			},
+			"input_change_theme": {
+				"label": "Change theme",
+				"options": {
+					"dark": "Dark",
+					"light": "Light",
+					"system": "System"
+				},
+				"placeholder": "Select theme"
+			},
+			"input_document_folder": {
+				"label": "Document folder",
+				"placeholder": "Enter the document folder"
+			},
+			"input_enable_128_slots": "Enable 128 convoy mode slots",
+			"input_enable_console": "Enable console and developer mode",
+			"input_opacity_profile": "Opacity on select profile",
+			"tab_title": "Settings",
+			"title": "Settings"
+		},
+		"trailers": {
+			"license_plate": {
+				"description_card": "Change the license plate of the trailer",
+				"label_card": "Change trailer license plate",
+				"modal": {
+					"btn_apply": "Apply",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Enter the new license plate of the trailer",
+					"title": "Change trailer license plate"
+				}
+			},
+			"modify_job_weight": {
+				"description_card": "Modify the weight of the job",
+				"label_card": "Modify job weight",
+				"modal": {
+					"btn_apply": "Apply",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "This will modify the weight of your current job to the one you define here. Remember that you will need to have an active job anchored to your truck",
+					"input_weight": {
+						"label": "Weight in kg",
+						"placeholder": "Enter weight in kg"
+					},
+					"title": "Change load weight"
+				}
+			},
+			"modify_trailer_weight": {
+				"description_card": "Modifies the trailer weight, applying it only once",
+				"label_card": "Change trailer weight",
+				"modal": {
+					"btn_apply": "Apply",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "This modifies the weight of your trailer in 2 parameters. Usually the chassis_mass is used but you can also edit the body_mass (default body_mass is 0)",
+					"input_body_mass": {
+						"label": "Body Mass in kg",
+						"placeholder": "Enter the body mass in kg"
+					},
+					"input_chassis_mass": {
+						"label": "Chassis Mass in kg",
+						"placeholder": "Enter the chassis mass in kg"
+					},
+					"title": "Change trailer weight"
+				}
+			},
+			"repair_all_trailer": {
+				"description_card": "Repair all the trailers you have",
+				"label_card": "Repair all trailers",
+				"modal": {
+					"btn_apply": "Repair",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Repairs all the trailers you own",
+					"title": "Repair all trailers"
+				}
+			},
+			"repair_trailer": {
+				"description_card": "Repair current trailer",
+				"label_card": "Repair trailer",
+				"modal": {
+					"btn_apply": "Repair",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Repairs the trailer that is currently attached to the trailer",
+					"title": "Repair trailers"
+				}
+			},
+			"tab_title": "Trailer",
+			"unlock_trailer_country": {
+				"description_card": "Unlock regional blocking of trailers",
+				"label_card": "Trailer unblocking by country",
+				"modal": {
+					"btn_apply": "Unlock",
+					"btn_close": "Close",
+					"btn_how_to_use": "How to use",
+					"btn_open": "Open",
+					"description": "Unlock your trailer in all countries if it is blocked by the game",
+					"title": "Unlock Current Trailer",
+					"warning_message": {
+						"message": "You must have the trailer hitched to the truck for the changes to take effect.",
+						"title": "Remember"
+					}
+				}
+			}
+		},
+		"trucks": {
+			"change_truck_engine": {
+				"description_card": "Change the engine of the truck",
+				"label_card": "Change truck engine",
+				"modal": {
+					"btn_apply": "Change",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"btn_remove_badge": "Remove badge",
+					"description": "Change the engine of your truck to the one of your choice",
+					"input_brands": {
+						"label": "Brands",
+						"placeholder": "Select truck brand"
+					},
+					"input_engines": {
+						"label": "Engines",
+						"placeholder": "Select truck engine"
+					},
+					"input_models": {
+						"label": "Models",
+						"placeholder": "Select truck model"
+					},
+					"title": "Change truck engine",
+					"warning_message": {
+						"message": "If you see any <b>logo floating or badly positioned</b> on the truck you can remove it with the button below.",
+						"title": "Remember"
+					}
+				}
+			},
+			"change_truck_transmission": {
+				"description_card": "Change the transmission of the truck",
+				"label_card": "Change truck transmission",
+				"modal": {
+					"btn_apply": "Change",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"btn_remove_badge": "Remove badge",
+					"description": "Change the transmission of your truck to the one of your choice",
+					"input_brands": {
+						"label": "Brands",
+						"placeholder": "Select truck brand"
+					},
+					"input_models": {
+						"label": "Models",
+						"placeholder": "Select truck model"
+					},
+					"input_transmissions": {
+						"label": "Transmissions",
+						"placeholder": "Select truck transmission"
+					},
+					"title": "Change truck transmission",
+					"warning_message": {
+						"message": "If you see any <b>logo floating or badly positioned</b> on the truck you can remove it with the button below.",
+						"title": "Remember"
+					}
+				}
+			},
+			"fill_all_trucks_fuel": {
+				"description_card": "Refueling all fleet trucks",
+				"label_card": "Fill all trucks fuel",
+				"modal": {
+					"btn_apply": "Refuel",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "This option will allow you to refuel all your purchased trucks",
+					"title": "Fill all trucks fuel"
+				}
+			},
+			"fill_fuel": {
+				"description_card": "Fill fuel in current truck",
+				"label_card": "Fill fuel",
+				"modal": {
+					"btn_apply": "Refuel",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Refuels your truck completely",
+					"title": "Fill fuel"
+				}
+			},
+			"infinite_fuel": {
+				"description_card": "Infinite fuel on current truck",
+				"label_card": "Infinite fuel on current truck",
+				"modal": {
+					"btn_apply": "Refuel",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"btn_restore_fuel": "Restore fuel",
+					"description": "Exactly the fuel is not infinite but it is for approximately 5.000.000 KM (depending on the truck)",
+					"title": "Infinite fuel on current truck",
+					"warning_message": {
+						"message": "<b>Disable “Realistic fuel consumption”</b> in your “Gameplay” section for this function to take effect.",
+						"title": "Remember"
+					}
+				}
+			},
+			"license_plate": {
+				"description_card": "Change the license plate of the truck",
+				"label_card": "Change truck license plate",
+				"modal": {
+					"btn_apply": "Apply",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Enter the new truck license plate. Remember to remove your license plate from Word of Trucks",
+					"title": "Change truck license plate"
+				}
+			},
+			"repair_all_trucks": {
+				"description_card": "Repairs all fleet trucks",
+				"label_card": "Repair all trucks",
+				"modal": {
+					"btn_apply": "Repair",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Repair all the trucks you have in your company",
+					"title": "Repair all trucks"
+				}
+			},
+			"repair_truck": {
+				"description_card": "Repair your current truck",
+				"label_card": "Repair truck",
+				"modal": {
+					"btn_apply": "Repair",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Repair your truck to the maximum for continued use",
+					"title": "Repair truck"
+				}
+			},
+			"tab_title": "Truck"
+		}
+	}
+}
