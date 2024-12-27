@@ -1,0 +1,26 @@
+{
+    "tab_title": "",
+    "title": "",
+    "document_dialog_title": "",
+    "input_change_theme": {
+        "label": "",
+        "placeholder": "",
+        "options": {
+            "system": "",
+            "light": "",
+            "dark": ""
+        }
+    },
+    "input_change_language": {
+        "label": "",
+        "placeholder": ""
+    },
+    "input_enable_console": "",
+    "input_enable_128_slots": "",
+    "input_opacity_profile": "",
+    "input_document_folder": {
+        "label": "",
+        "placeholder": ""
+    },
+    "btn_reset": ""
+}
