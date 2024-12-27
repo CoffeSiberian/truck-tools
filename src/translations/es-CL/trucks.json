@@ -1,0 +1,132 @@
+{
+    "trucks": {
+        "tab_title": "",
+        "change_truck_engine": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "warning_message": {
+                    "title": "",
+                    "message": ""
+                },
+                "input_brands": {
+                    "label": "",
+                    "placeholder": ""
+                },
+                "input_models": {
+                    "label": "",
+                    "placeholder": ""
+                },
+                "input_engines": {
+                    "label": "",
+                    "placeholder": ""
+                },
+                "btn_open": "",
+                "btn_close": "",
+                "btn_remove_badge": "",
+                "btn_apply": ""
+            }
+        },
+        "change_truck_transmission": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "warning_message": {
+                    "title": "",
+                    "message": ""
+                },
+                "input_brands": {
+                    "label": "",
+                    "placeholder": ""
+                },
+                "input_models": {
+                    "label": "",
+                    "placeholder": ""
+                },
+                "input_transmissions": {
+                    "label": "",
+                    "placeholder": ""
+                },
+                "btn_open": "",
+                "btn_close": "",
+                "btn_remove_badge": "",
+                "btn_apply": ""
+            }
+        },
+        "license_plate": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "btn_open": "",
+                "btn_close": "",
+                "btn_apply": ""
+            }
+        },
+        "repair_truck": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "btn_open": "",
+                "btn_close": "",
+                "btn_apply": ""
+            }
+        },
+        "repair_all_trucks": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "btn_open": "",
+                "btn_close": "",
+                "btn_apply": ""
+            }
+        },
+        "fill_fuel": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "btn_open": "",
+                "btn_close": "",
+                "btn_apply": ""
+            }
+        },
+        "fill_all_trucks_fuel": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "btn_open": "",
+                "btn_close": "",
+                "btn_apply": ""
+            }
+        },
+        "infinite_fuel": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "warning_message": {
+                    "title": "",
+                    "message": ""
+                },
+                "btn_open": "",
+                "btn_close": "",
+                "btn_restore_fuel": "",
+                "btn_apply": ""
+            }
+        }
+    }
+}
