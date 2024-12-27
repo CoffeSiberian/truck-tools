@@ -817,13 +817,16 @@ export const getStoredOpasityStatus = async (): Promise<boolean> => {
 export const mostSimilarLang = (lang: string): Langs => {
 	switch (lang) {
 		case "en-US":
-			return "en-US";
+		case "en-CL":
+			return lang as Langs;
 	}
 
 	const splitLang = lang.split("-");
 	switch (splitLang[0]) {
 		case "en":
 			return "en-US";
+		case "es":
+			return "es-CL";
 		default:
 			return "en-US";
 	}
