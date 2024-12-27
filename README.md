@@ -32,6 +32,13 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 
 [![Contributors](https://contrib.rocks/image?repo=CoffeSiberian/truck-tools&max=500&columns=20)](https://github.com/CoffeSiberian/truck-tools/graphs/contributors)
 
+### Contribute Translations
+
+Would you like to see Truck Tools in your language? We are using [Weblate][weblate], an easy-to-use platform that allows anyone to translate this project through a convenient web interface.
+Create an account and start proposing text strings that could be added to the application in the future.
+
+Remember, contributing translations makes you a collaborator of the project!
+
 ### TO DO
 
 - [x] ATS compatibility
@@ -108,3 +115,5 @@ https://github.com/TheLazyTomcat/SII_Decrypt
 #### FindTruckInfo
 
 Script to automate the search for engines and transmissions in the game https://github.com/CoffeSiberian/FindTruckInfo
+
+[weblate]: https://hosted.weblate.org/projects/truck-tools/
