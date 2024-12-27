@@ -1,0 +1,495 @@
+{
+    "components": {
+        "license_plate": {
+            "btn_delete": "",
+            "btn_load": "",
+            "btn_store": "",
+            "input_colored_margin": "",
+            "input_license_plate": {
+                "label": "",
+                "placeholder": ""
+            },
+            "input_license_plate_list_store": {
+                "label": "",
+                "placeholder": ""
+            },
+            "title_select_bg_color": "",
+            "title_select_text_color": ""
+        },
+        "player_profile": {
+            "btn_profile": "",
+            "dropdown": {
+                "profile_options": {
+                    "btn_backup_profile": {
+                        "description": "",
+                        "label": "",
+                        "modal": {
+                            "btn_apply": "",
+                            "btn_close": "",
+                            "btn_open_folder": "",
+                            "description": "",
+                            "input_backup_destination": {
+                                "label": "",
+                                "placeholder": ""
+                            },
+                            "save_folder_dialog": {
+                                "filters_name": {
+                                    "zip": ""
+                                },
+                                "title": ""
+                            },
+                            "title": ""
+                        }
+                    },
+                    "btn_clone_profile": {
+                        "description": "",
+                        "label": "",
+                        "modal": {
+                            "btn_apply": "",
+                            "btn_close": "",
+                            "description": "",
+                            "input_new_name": {
+                                "label": "",
+                                "placeholder": ""
+                            },
+                            "title": ""
+                        }
+                    },
+                    "btn_copy_config": {
+                        "description": "",
+                        "label": "",
+                        "modal": {
+                            "btn_apply": "",
+                            "btn_close": "",
+                            "description": "",
+                            "input_select_profile": {
+                                "label": "",
+                                "placeholder": ""
+                            },
+                            "title": ""
+                        }
+                    },
+                    "btn_rename_profile": {
+                        "description": "",
+                        "label": "",
+                        "modal": {
+                            "btn_apply": "",
+                            "btn_close": "",
+                            "description": "",
+                            "input_new_name": {
+                                "label": "",
+                                "placeholder": ""
+                            },
+                            "title": ""
+                        }
+                    },
+                    "title": ""
+                },
+                "save_game_options": {
+                    "btn_decrypt_save": {
+                        "description": "",
+                        "label": ""
+                    },
+                    "btn_open_folder": {
+                        "description": "",
+                        "label": ""
+                    },
+                    "title": ""
+                }
+            },
+            "input_select_profile": {
+                "label": "",
+                "options": {
+                    "save_load": ""
+                },
+                "placeholder": ""
+            },
+            "input_select_save": {
+                "label": "",
+                "placeholder": ""
+            },
+            "no_selected_profile": "",
+            "no_selected_save": "",
+            "total_saves": ""
+        },
+        "profile_error": {
+            "btn_how_to": "",
+            "btn_how_to_disable": "",
+            "description": "",
+            "title": ""
+        },
+        "updater": {
+            "alert_message": "",
+            "btn_cancel": "",
+            "btn_manual_update": "",
+            "btn_update_now": "",
+            "downloading": "",
+            "release_notes": "",
+            "title": "",
+            "version": ""
+        }
+    },
+    "menu_options": {
+        "about": {
+            "description": "",
+            "tab_title": ""
+        },
+        "profile": {
+            "add_experience": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "description": "",
+                    "input_experience": {
+                        "label": "",
+                        "placeholder": ""
+                    },
+                    "title": ""
+                }
+            },
+            "add_money": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "description": "",
+                    "input_money": {
+                        "label": "",
+                        "placeholder": ""
+                    },
+                    "title": ""
+                }
+            },
+            "dealer_visited": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "description": "",
+                    "input_dealer_status": {
+                        "label": "",
+                        "options": {
+                            "unvisit_all": "",
+                            "visit_all": ""
+                        }
+                    },
+                    "title": ""
+                }
+            },
+            "garage_status": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "description": "",
+                    "input_garage_status": {
+                        "label": "",
+                        "options": {
+                            "large_garage": "",
+                            "medium_garage": "",
+                            "sell_garage": "",
+                            "small_garage": ""
+                        }
+                    },
+                    "title": ""
+                }
+            },
+            "skills_points": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "description": "",
+                    "eco_driving": "",
+                    "fragile_cargo": "",
+                    "high_value_cargo": "",
+                    "input_skills_points": {
+                        "corrosive": "",
+                        "explosives": "",
+                        "flammable_liquids": "",
+                        "flammable_solids": "",
+                        "gases": "",
+                        "label": "",
+                        "placeholder": "",
+                        "toxic_and_infectious": ""
+                    },
+                    "just_in_time_delivery": "",
+                    "long_distance": "",
+                    "title": ""
+                }
+            },
+            "tab_title": "",
+            "visited_cities": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "description": "",
+                    "input_city_status": {
+                        "label": "",
+                        "options": {
+                            "unvisit_all": "",
+                            "visit_all": ""
+                        }
+                    },
+                    "title": ""
+                }
+            }
+        },
+        "settings": {
+            "btn_reset": "",
+            "document_dialog_title": "",
+            "input_change_language": {
+                "label": "",
+                "placeholder": ""
+            },
+            "input_change_theme": {
+                "label": "",
+                "options": {
+                    "dark": "",
+                    "light": "",
+                    "system": ""
+                },
+                "placeholder": ""
+            },
+            "input_document_folder": {
+                "label": "",
+                "placeholder": ""
+            },
+            "input_enable_128_slots": "",
+            "input_enable_console": "",
+            "input_opacity_profile": "",
+            "tab_title": "",
+            "title": ""
+        },
+        "trailers": {
+            "license_plate": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "description": "",
+                    "title": ""
+                }
+            },
+            "modify_job_weight": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "description": "",
+                    "input_weight": {
+                        "label": "",
+                        "placeholder": ""
+                    },
+                    "title": ""
+                }
+            },
+            "modify_trailer_weight": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "description": "",
+                    "input_body_mass": {
+                        "label": "",
+                        "placeholder": ""
+                    },
+                    "input_chassis_mass": {
+                        "label": "",
+                        "placeholder": ""
+                    },
+                    "title": ""
+                }
+            },
+            "repair_all_trailer": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "description": "",
+                    "title": ""
+                }
+            },
+            "repair_trailer": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "description": "",
+                    "title": ""
+                }
+            },
+            "tab_title": "",
+            "unlock_trailer_country": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_how_to_use": "",
+                    "btn_open": "",
+                    "description": "",
+                    "title": "",
+                    "warning_message": {
+                        "message": "",
+                        "title": ""
+                    }
+                }
+            }
+        },
+        "trucks": {
+            "change_truck_engine": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "btn_remove_badge": "",
+                    "description": "",
+                    "input_brands": {
+                        "label": "",
+                        "placeholder": ""
+                    },
+                    "input_engines": {
+                        "label": "",
+                        "placeholder": ""
+                    },
+                    "input_models": {
+                        "label": "",
+                        "placeholder": ""
+                    },
+                    "title": "",
+                    "warning_message": {
+                        "message": "",
+                        "title": ""
+                    }
+                }
+            },
+            "change_truck_transmission": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "btn_remove_badge": "",
+                    "description": "",
+                    "input_brands": {
+                        "label": "",
+                        "placeholder": ""
+                    },
+                    "input_models": {
+                        "label": "",
+                        "placeholder": ""
+                    },
+                    "input_transmissions": {
+                        "label": "",
+                        "placeholder": ""
+                    },
+                    "title": "",
+                    "warning_message": {
+                        "message": "",
+                        "title": ""
+                    }
+                }
+            },
+            "fill_all_trucks_fuel": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "description": "",
+                    "title": ""
+                }
+            },
+            "fill_fuel": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "description": "",
+                    "title": ""
+                }
+            },
+            "infinite_fuel": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "btn_restore_fuel": "",
+                    "description": "",
+                    "title": "",
+                    "warning_message": {
+                        "message": "",
+                        "title": ""
+                    }
+                }
+            },
+            "license_plate": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "description": "",
+                    "title": ""
+                }
+            },
+            "repair_all_trucks": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "description": "",
+                    "title": ""
+                }
+            },
+            "repair_truck": {
+                "description_card": "",
+                "label_card": "",
+                "modal": {
+                    "btn_apply": "",
+                    "btn_close": "",
+                    "btn_open": "",
+                    "description": "",
+                    "title": ""
+                }
+            },
+            "tab_title": ""
+        }
+    }
+}
