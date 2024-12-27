@@ -1,6 +1,6 @@
 {
-    "title": "",
-    "description": "",
-    "btn_how_to_disable": "",
-    "btn_how_to": ""
+    "title": "Perfiles no encontrados",
+    "description": "Recuerda <b>desactivar Steam Cloud</b> desde tu perfil o verificar la ubicación de tu carpeta \\\"Documentos\\\"",
+    "btn_how_to_disable": "Cómo desactivar Steam Cloud",
+    "btn_how_to": "Video tutorial"
 }
