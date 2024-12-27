@@ -36,7 +36,7 @@ interface completedProps {
 const SetAllCitiesStatus = () => {
 	const { selectedSave, game } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { visited_cities } = translations.profile.profile;
+	const { visited_cities } = translations.menu_options.profile;
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 

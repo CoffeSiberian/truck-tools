@@ -27,7 +27,7 @@ import RepairAllTrailers from "@/routes/pages/TrailersOptions/Modals/RepairAllTr
 const TrailersOptions = () => {
 	const { game } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { trailers } = translations.trailers;
+	const { trailers } = translations.menu_options;
 
 	const items = [
 		{

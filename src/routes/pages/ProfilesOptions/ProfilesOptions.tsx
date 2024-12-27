@@ -28,7 +28,7 @@ import SetExperienceSkills from "@/routes/pages/ProfilesOptions/Modal/SetExperie
 const ProfilesOptions = () => {
 	const { game } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { profile } = translations.profile;
+	const { profile } = translations.menu_options;
 
 	const items = [
 		{

@@ -38,7 +38,7 @@ interface completedProps {
 const SetExperienceSkills = () => {
 	const { selectedSave } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { skills_points } = translations.profile.profile;
+	const { skills_points } = translations.menu_options.profile;
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 

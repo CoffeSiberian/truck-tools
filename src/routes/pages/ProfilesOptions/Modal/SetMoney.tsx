@@ -30,7 +30,7 @@ interface completedProps {
 const SetMoney = () => {
 	const { selectedSave } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { add_money } = translations.profile.profile;
+	const { add_money } = translations.menu_options.profile;
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 

@@ -26,7 +26,7 @@ interface completedProps {
 const ModifyWeight = () => {
 	const { selectedSave } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { modify_job_weight } = translations.trailers.trailers;
+	const { modify_job_weight } = translations.menu_options.trailers;
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 

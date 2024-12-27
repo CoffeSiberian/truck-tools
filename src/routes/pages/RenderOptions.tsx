@@ -37,6 +37,8 @@ interface ItemsTypes {
 const RenderOptions = () => {
 	const { translations } = useContext(LocaleContext);
 	const [activeIndex, setActiveIndex] = useState<ItemId>("trailer");
+	const { trailers, trucks, profile, settings, about } =
+		translations.menu_options;
 
 	const {
 		isOpen: isOpenAbout,
@@ -53,35 +55,35 @@ const RenderOptions = () => {
 	const items: ItemsTypes[] = [
 		{
 			id: "trailer",
-			label: translations.trailers.trailers.tab_title,
+			label: trailers.tab_title,
 			jsx: <TrailersOptions />,
 			modal: false,
 			icon: <IconPackages />,
 		},
 		{
 			id: "truck",
-			label: translations.trucks.trucks.tab_title,
+			label: trucks.tab_title,
 			jsx: <TrucksOptions />,
 			modal: false,
 			icon: <IconTruck />,
 		},
 		{
 			id: "profile",
-			label: translations.profile.profile.tab_title,
+			label: profile.tab_title,
 			jsx: <ProfilesOptions />,
 			modal: false,
 			icon: <IconUserCircle />,
 		},
 		{
 			id: "settings",
-			label: translations.settings.tab_title,
+			label: settings.tab_title,
 			jsx: <></>,
 			modal: true,
 			icon: <IconSettings />,
 		},
 		{
 			id: "about",
-			label: translations.about.tab_title,
+			label: about.tab_title,
 			jsx: <></>,
 			modal: true,
 			icon: <IconPaw />,

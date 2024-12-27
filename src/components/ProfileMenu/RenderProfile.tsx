@@ -10,7 +10,7 @@ import { IconUserCircle } from "@tabler/icons-react";
 const RenderProfile = () => {
 	const { isSavesLoading, selectedProfile } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { player_profile } = translations;
+	const { player_profile } = translations.components;
 
 	return (
 		<div className="flex h-[75px] flex-col justify-center">

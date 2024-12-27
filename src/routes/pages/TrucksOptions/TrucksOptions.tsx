@@ -32,7 +32,7 @@ import SetTruckTransmission from "@/routes/pages/TrucksOptions/Modals/SetTruckTr
 const TrucksOptions = () => {
 	const { game } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { trucks } = translations.trucks;
+	const { trucks } = translations.menu_options;
 
 	const items = [
 		{

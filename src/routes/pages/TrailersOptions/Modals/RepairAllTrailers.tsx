@@ -25,7 +25,7 @@ interface completedProps {
 const RepairAllTrailers = () => {
 	const { selectedSave } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { repair_all_trailer } = translations.trailers.trailers;
+	const { repair_all_trailer } = translations.menu_options.trailers;
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 

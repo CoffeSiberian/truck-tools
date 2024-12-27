@@ -37,7 +37,7 @@ const CopyConfig: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 
 	const { translations } = useContext(LocaleContext);
 	const { btn_copy_config } =
-		translations.player_profile.dropdown.profile_options;
+		translations.components.player_profile.dropdown.profile_options;
 
 	const [ProfileInfo, setProfileInfo] = useState<Profile | undefined>(
 		undefined

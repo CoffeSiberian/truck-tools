@@ -26,7 +26,7 @@ interface completedProps {
 const SetExperience = () => {
 	const { selectedSave } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { add_experience } = translations.profile.profile;
+	const { add_experience } = translations.menu_options.profile;
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 

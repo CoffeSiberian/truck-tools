@@ -36,7 +36,7 @@ interface completedProps {
 const SetAllDealerStatus = () => {
 	const { selectedSave, game } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { dealer_visited } = translations.profile.profile;
+	const { dealer_visited } = translations.menu_options.profile;
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 

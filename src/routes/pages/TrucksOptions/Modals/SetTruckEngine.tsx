@@ -51,7 +51,7 @@ interface TruckEngineState {
 const SetTruckEngine = () => {
 	const { selectedSave, game } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { change_truck_engine } = translations.trucks.trucks;
+	const { change_truck_engine } = translations.menu_options.trucks;
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 

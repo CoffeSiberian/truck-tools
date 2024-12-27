@@ -27,7 +27,7 @@ interface completedProps {
 const EditLicensePlate = () => {
 	const { selectedSave } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { license_plate } = translations.trailers.trailers;
+	const { license_plate } = translations.menu_options.trailers;
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 

@@ -31,7 +31,7 @@ const CloneProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 	const { selectedProfile, reloadProfiles } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
 	const { btn_clone_profile } =
-		translations.player_profile.dropdown.profile_options;
+		translations.components.player_profile.dropdown.profile_options;
 
 	const [ProfileName, setProfileName] = useState<string>("");
 	const [isLoading, setIsLoading] = useState<boolean>(false);

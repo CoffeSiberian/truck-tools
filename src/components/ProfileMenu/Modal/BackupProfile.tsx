@@ -38,7 +38,7 @@ const BackupProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 	const { selectedProfile } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
 	const { btn_backup_profile } =
-		translations.player_profile.dropdown.profile_options;
+		translations.components.player_profile.dropdown.profile_options;
 
 	const [destDirZip, setDestDirZip] = useState<string>("");
 	const [isLoading, setIsLoading] = useState<boolean>(false);

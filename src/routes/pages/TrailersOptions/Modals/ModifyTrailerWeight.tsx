@@ -31,7 +31,7 @@ interface ModifyTrailerWeightProps {
 const ModifyTrailerWeight = () => {
 	const { selectedSave } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { modify_trailer_weight } = translations.trailers.trailers;
+	const { modify_trailer_weight } = translations.menu_options.trailers;
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 

@@ -15,7 +15,7 @@ const ListProfilesDropdown: FC<ProfileTypesContext> = ({
 	setProfile,
 }) => {
 	const { translations } = useContext(LocaleContext);
-	const { player_profile } = translations;
+	const { player_profile } = translations.components;
 
 	const onClickProfile = (profileHex: string) => {
 		if (!profileHex) return;

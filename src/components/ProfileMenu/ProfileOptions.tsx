@@ -52,7 +52,7 @@ interface DecryptStyles {
 const ProfileOptions = () => {
 	const { selectedProfile, selectedSave } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { player_profile } = translations;
+	const { player_profile } = translations.components;
 
 	const {
 		isOpen: isOpenBackup,

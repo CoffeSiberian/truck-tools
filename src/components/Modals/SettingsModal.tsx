@@ -28,7 +28,7 @@ import {
 } from "@/utils/fileEdit";
 
 // types
-import { Langs } from "@/types/ContexTypes";
+import { Langs } from "@/types/TranslationsTypes";
 import { themeTypesSystem } from "@/types/fileEditTypes";
 
 // icons
@@ -55,7 +55,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 		useContext(DarkModeContex);
 	const { reloadProfiles, game } = useContext(ProfileContex);
 	const { translations, lang, changeLang } = useContext(LocaleContext);
-	const { settings } = translations;
+	const { settings } = translations.menu_options;
 
 	const [optionsState, setOptionsState] = useState<OptionsStateTypes>({
 		enableConsole: false,

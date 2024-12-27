@@ -26,7 +26,7 @@ interface completedProps {
 const SetInfiniteFuel = () => {
 	const { selectedSave } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { trucks } = translations.trucks;
+	const { trucks } = translations.menu_options;
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 

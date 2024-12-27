@@ -26,7 +26,7 @@ interface AboutModalProps {
 
 const AboutModal: FC<AboutModalProps> = ({ isOpen, onOpenChange }) => {
 	const { translations } = useContext(LocaleContext);
-	const { about } = translations;
+	const { about } = translations.menu_options;
 
 	return (
 		<Modal

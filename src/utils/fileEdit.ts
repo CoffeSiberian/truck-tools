@@ -32,7 +32,7 @@ import {
 	IColorHsvToValidate,
 } from "@/types/fileEditTypes";
 import { GamesNames } from "@/types/ContexTypes";
-import { Langs } from "@/types/ContexTypes";
+import { Langs } from "@/types/TranslationsTypes";
 import { IColor } from "react-color-palette";
 
 const STORE_FILE = ".settings.dat";

@@ -38,7 +38,7 @@ interface completedProps {
 const SetGarageStatus = () => {
 	const { selectedSave, game } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { garage_status } = translations.profile.profile;
+	const { garage_status } = translations.menu_options.profile;
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 

@@ -31,7 +31,7 @@ interface completedProps {
 const UnlockTrailers = () => {
 	const { selectedSave } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { unlock_trailer_country } = translations.trailers.trailers;
+	const { unlock_trailer_country } = translations.menu_options.trailers;
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 

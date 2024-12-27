@@ -10,7 +10,7 @@ const ListSavesDropdown: FC<ProfileTypesContext> = ({
 	setSave,
 }) => {
 	const { translations } = useContext(LocaleContext);
-	const { player_profile } = translations;
+	const { player_profile } = translations.components;
 
 	const onClickSave = (saveHex: string) => {
 		selectedProfile?.saves.map((save) => {
