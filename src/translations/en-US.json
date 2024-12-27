@@ -1,5 +1,9 @@
 {
 	"components": {
+		"alert_on_save_default": {
+			"error": "An error occurred in the process",
+			"succes": "Saved successfully"
+		},
 		"license_plate": {
 			"btn_delete": "Delete",
 			"btn_load": "Load",
@@ -485,7 +489,7 @@
 					"btn_apply": "Repair",
 					"btn_close": "Close",
 					"btn_open": "Open",
-					"description": "Repair your truck to the maximum for continued use",
+					"description": "Repair damage to your truck",
 					"title": "Repair truck"
 				}
 			},

@@ -12,10 +12,16 @@ export interface TranslationsTypes {
 }
 
 export interface Components {
+	alert_on_save_default: AlertOnSaveDefault;
 	license_plate: ComponentsLicensePlate;
 	player_profile: PlayerProfile;
 	profile_error: ProfileError;
 	updater: Updater;
+}
+
+export interface AlertOnSaveDefault {
+	error: string;
+	succes: string;
 }
 
 export interface ComponentsLicensePlate {
