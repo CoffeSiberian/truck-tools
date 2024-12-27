@@ -1,16 +1,16 @@
 {
     "input_license_plate": {
-        "label": "",
-        "placeholder": ""
+        "label": "Texto de la matricula",
+        "placeholder": "Ingresa un texto"
     },
-    "input_colored_margin": "",
+    "input_colored_margin": "Margen de color",
     "input_license_plate_list_store": {
-        "label": "",
-        "placeholder": ""
+        "label": "Matrículas guardadas",
+        "placeholder": "Selecciona la matrícula"
     },
-    "title_select_bg_color": "",
-    "title_select_text_color": "",
-    "btn_store": "",
-    "btn_load": "",
-    "btn_delete": ""
+    "title_select_bg_color": "Color de fondo",
+    "title_select_text_color": "Color del texto",
+    "btn_store": "Guardar",
+    "btn_load": "Cargar",
+    "btn_delete": "Eliminar"
 }
