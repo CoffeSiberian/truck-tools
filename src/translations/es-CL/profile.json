@@ -1,0 +1,117 @@
+{
+    "profile": {
+        "tab_title": "",
+        "add_money": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "input_money": {
+                    "label": "",
+                    "placeholder": ""
+                },
+                "btn_open": "",
+                "btn_close": "",
+                "btn_apply": ""
+            }
+        },
+        "add_experience": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "input_experience": {
+                    "label": "",
+                    "placeholder": ""
+                },
+                "btn_open": "",
+                "btn_close": "",
+                "btn_apply": ""
+            }
+        },
+        "garage_status": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "input_garage_status": {
+                    "label": "",
+                    "options": {
+                        "sell_garage": "",
+                        "small_garage": "",
+                        "medium_garage": "",
+                        "large_garage": ""
+                    }
+                },
+                "btn_open": "",
+                "btn_close": "",
+                "btn_apply": ""
+            }
+        },
+        "visited_cities": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "input_city_status": {
+                    "label": "",
+                    "options": {
+                        "visit_all": "",
+                        "unvisit_all": ""
+                    }
+                },
+                "btn_open": "",
+                "btn_close": "",
+                "btn_apply": ""
+            }
+        },
+        "dealer_visited": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "input_dealer_status": {
+                    "label": "",
+                    "options": {
+                        "visit_all": "",
+                        "unvisit_all": ""
+                    }
+                },
+                "btn_open": "",
+                "btn_close": "",
+                "btn_apply": ""
+            }
+        },
+        "skills_points": {
+            "label_card": "",
+            "description_card": "",
+            "modal": {
+                "title": "",
+                "description": "",
+                "input_skills_points": {
+                    "label": "",
+                    "placeholder": "",
+                    "explosives": "",
+                    "gases": "",
+                    "flammable_liquids": "",
+                    "flammable_solids": "",
+                    "toxic_and_infectious": "",
+                    "corrosive": ""
+                },
+                "long_distance": "",
+                "high_value_cargo": "",
+                "fragile_cargo": "",
+                "just_in_time_delivery": "",
+                "eco_driving": "",
+                "btn_open": "",
+                "btn_close": "",
+                "btn_apply": ""
+            }
+        }
+    }
+}
