@@ -68,12 +68,21 @@ export const Locale = ({ children }: ProviderProps) => {
 		await storeOsLocale(lang);
 	};
 
+	const changeLangWithoutSaving = async (lang: LangsTypes) => {
+		const translations = await getLang(lang);
+
+		setLang({
+			lang: lang,
+			translations: translations,
+		});
+	};
+
 	useEffect(() => {
 		if (!isLoaded.current) {
 			isLoaded.current = true;
 			getCurrentLocale()
-				.then((res) => changeLang(res))
-				.catch(() => changeLang("en-US"));
+				.then((res) => changeLangWithoutSaving(res))
+				.catch(() => changeLangWithoutSaving("en-US"));
 		}
 	}, []);
 

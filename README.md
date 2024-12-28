@@ -82,7 +82,7 @@ Remember, contributing translations makes you a collaborator of the project!
 
 - [x] Documents Path
 - [x] Dark Mode config
-- [ ] Change language
+- [x] Change language
 - [x] Enable console and developer mode
 - [x] Change convoy mode slots to `128`
 
