@@ -6,6 +6,7 @@ import { Command } from "@tauri-apps/plugin-shell";
 import { convertFileSrc } from "@tauri-apps/api/core";
 import { invoke } from "@tauri-apps/api/core";
 import { LazyStore } from "@tauri-apps/plugin-store";
+import { locale } from "@tauri-apps/plugin-os";
 
 // types
 import {
@@ -814,7 +815,9 @@ export const getStoredOpasityStatus = async (): Promise<boolean> => {
  * @param lang Language string `language`-`region`
  * @returns The exact language or the closest available language
  */
-export const mostSimilarLang = (lang: string): Langs => {
+export const mostSimilarLang = (lang: string | null): Langs => {
+	if (!lang) return "en-US";
+
 	switch (lang) {
 		case "en-US":
 		case "en-CL":
@@ -852,4 +855,22 @@ export const getStoredOsLocale = async (): Promise<Langs | null> => {
 	}
 
 	return null;
+};
+
+export const getCurrentLocale = async (): Promise<Langs> => {
+	const locale_store = await getStoredOsLocale();
+
+	if (!locale_store) {
+		const lang_locale = await locale();
+
+		if (lang_locale) {
+			const lang_similar = mostSimilarLang(lang_locale);
+			await storeOsLocale(lang_similar);
+			return lang_similar;
+		}
+
+		return "en-US";
+	}
+
+	return locale_store;
 };

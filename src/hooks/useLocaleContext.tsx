@@ -1,10 +1,5 @@
 import { createContext, useState, useEffect, useRef } from "react";
-import { locale } from "@tauri-apps/plugin-os";
-import {
-	getStoredOsLocale,
-	mostSimilarLang,
-	storeOsLocale,
-} from "@/utils/fileEdit";
+import { getCurrentLocale, storeOsLocale } from "@/utils/fileEdit";
 
 // types
 import { LocaleContextTypes } from "@/types/ContexTypes";
@@ -20,24 +15,6 @@ const getLang = async (lang: LangsTypes): Promise<TranslationsTypes> => {
 	const res_lags = await import(`@/translations/${lang}.json`);
 
 	return res_lags as TranslationsTypes;
-};
-
-const getCurrentLocale = async (): Promise<LangsTypes> => {
-	const locale_store = await getStoredOsLocale();
-
-	if (!locale_store) {
-		const lang_locale = await locale();
-
-		if (lang_locale) {
-			const lang_similar = mostSimilarLang(lang_locale);
-			await storeOsLocale(lang_similar);
-			return lang_similar;
-		}
-
-		return "en-US";
-	}
-
-	return locale_store;
 };
 
 // eslint-disable-next-line react-refresh/only-export-components
