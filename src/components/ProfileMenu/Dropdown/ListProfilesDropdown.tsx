@@ -1,4 +1,5 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import { Select, SelectItem, Image } from "@nextui-org/react";
 
 // icons
@@ -13,6 +14,9 @@ const ListProfilesDropdown: FC<ProfileTypesContext> = ({
 	selectedProfile,
 	setProfile,
 }) => {
+	const { translations } = useContext(LocaleContext);
+	const { player_profile } = translations.components;
+
 	const onClickProfile = (profileHex: string) => {
 		if (!profileHex) return;
 
@@ -26,14 +30,16 @@ const ListProfilesDropdown: FC<ProfileTypesContext> = ({
 	return (
 		<Select
 			isDisabled={listProfiles.length === 0}
-			errorMessage={listProfiles.length > 0 ? undefined : "No profiles found"}
+			errorMessage={
+				listProfiles.length > 0 ? undefined : player_profile.no_selected_profile
+			}
 			isLoading={listProfiles.length === 0}
 			isInvalid={selectedProfile ? false : true}
 			items={listProfiles}
 			selectedKeys={selectedProfile ? [selectedProfile.hex] : []}
 			onChange={(e) => onClickProfile(e.target.value)}
-			label="Profiles"
-			placeholder="Select a profile"
+			label={player_profile.input_select_profile.label}
+			placeholder={player_profile.input_select_profile.placeholder}
 			labelPlacement="inside"
 			variant="bordered"
 			size="md"
@@ -61,7 +67,7 @@ const ListProfilesDropdown: FC<ProfileTypesContext> = ({
 						<div className="flex flex-col">
 							<span className="text-small">{profile.name}</span>
 							<span className="text-tiny text-default-400">
-								{profile.savesCount} saves
+								{profile.savesCount} {player_profile.total_saves}
 							</span>
 						</div>
 					</div>

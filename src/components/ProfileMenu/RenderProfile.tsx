@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import { Image, Skeleton } from "@nextui-org/react";
 import ProfileOptions from "@/components/ProfileMenu/ProfileOptions";
 
@@ -8,6 +9,8 @@ import { IconUserCircle } from "@tabler/icons-react";
 
 const RenderProfile = () => {
 	const { isSavesLoading, selectedProfile } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { player_profile } = translations.components;
 
 	return (
 		<div className="flex h-[75px] flex-col justify-center">
@@ -44,13 +47,17 @@ const RenderProfile = () => {
 							<>
 								<p className="text-pretty">{selectedProfile.name}</p>
 								<small className="text-default-500">
-									{selectedProfile.saves.length} saves
+									{selectedProfile.saves.length} {player_profile.total_saves}
 								</small>
 							</>
 						) : (
 							<>
-								<p className="text-pretty">No profile selected</p>
-								<small className="text-default-500">0 saves</small>
+								<p className="text-pretty">
+									{player_profile.no_selected_profile}
+								</p>
+								<small className="text-default-500">
+									0 {player_profile.total_saves}
+								</small>
 							</>
 						)}
 

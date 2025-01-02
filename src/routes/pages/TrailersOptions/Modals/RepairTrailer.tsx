@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
 	Modal,
 	ModalContent,
@@ -23,7 +24,11 @@ interface completedProps {
 
 const RepairTrailers = () => {
 	const { selectedSave } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { repair_trailer } = translations.menu_options.trailers;
+
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [completed, setCompleted] = useState<completedProps>({
 		error: false,
@@ -55,7 +60,7 @@ const RepairTrailers = () => {
 				color="primary"
 				variant="shadow"
 			>
-				Open
+				{repair_trailer.modal.btn_open}
 			</Button>
 			<Modal
 				hideCloseButton
@@ -69,18 +74,16 @@ const RepairTrailers = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								<h4>Repair trailers</h4>
+								<h4>{repair_trailer.modal.title}</h4>
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="py-1">
-								<p>
-									Repairs the trailer that is currently attached to the trailer
-								</p>
+								<p>{repair_trailer.modal.description}</p>
 								<AlertSave
 									message={
 										completed.error
-											? "An error occurred in the process"
-											: "Saved successfully"
+											? translations.components.alert_on_save_default.error
+											: translations.components.alert_on_save_default.succes
 									}
 									error={completed.error}
 									show={completed.completed}
@@ -91,7 +94,7 @@ const RepairTrailers = () => {
 							</ModalBody>
 							<ModalFooter>
 								<Button color="danger" variant="light" onPress={onClose}>
-									Close
+									{repair_trailer.modal.btn_close}
 								</Button>
 								<Button
 									endContent={<IconTool />}
@@ -99,7 +102,7 @@ const RepairTrailers = () => {
 									color="success"
 									onPress={onClickApply}
 								>
-									Repair
+									{repair_trailer.modal.btn_apply}
 								</Button>
 							</ModalFooter>
 						</>

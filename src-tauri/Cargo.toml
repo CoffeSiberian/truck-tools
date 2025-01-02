@@ -25,6 +25,7 @@ hex = "0.4.3"
 uuid = "1.11.0"
 walkdir = "2.5.0"
 zip = "2.2.2"
+tauri-plugin-os = "2.2.0"
 
 [features]
 # This feature is used for production builds or when a dev server is not specified, DO NOT REMOVE!!

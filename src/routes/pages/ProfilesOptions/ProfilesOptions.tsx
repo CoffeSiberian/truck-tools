@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 
 import OptionCard from "@/components/OptionCard";
 
@@ -26,47 +27,49 @@ import SetExperienceSkills from "@/routes/pages/ProfilesOptions/Modal/SetExperie
 
 const ProfilesOptions = () => {
 	const { game } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { profile } = translations.menu_options;
 
 	const items = [
 		{
 			id: "1",
-			title: "Add money",
-			description: "Add money to your profile",
+			title: profile.add_money.label_card,
+			description: profile.add_money.description_card,
 			image: img11,
 			modal: <SetMoney />,
 		},
 		{
 			id: "2",
-			title: "Add experience",
-			description: "Add experience to your profile",
+			title: profile.add_experience.label_card,
+			description: profile.add_experience.description_card,
 			image: img12,
 			modal: <SetExperience />,
 		},
 		{
 			id: "3",
-			title: "Set any garages status",
-			description: "Set any garages status to your profile",
+			title: profile.garage_status.label_card,
+			description: profile.garage_status.description_card,
 			image: img13,
 			modal: <SetGarageStatus />,
 		},
 		{
 			id: "4",
-			title: "Set any city visited status",
-			description: "Set any city visited status to your profile",
+			title: profile.visited_cities.label_card,
+			description: profile.visited_cities.description_card,
 			image: game === "ets2" ? img14 : img14_ats,
 			modal: <SetAllCitiesStatus />,
 		},
 		{
 			id: "5",
-			title: "Set all dealer status",
-			description: "Set all dealer status to your profile",
+			title: profile.dealer_visited.label_card,
+			description: profile.dealer_visited.description_card,
 			image: game === "ets2" ? img15 : img15_ats,
 			modal: <SetAllDealerStatus />,
 		},
 		{
 			id: "6",
-			title: "Set experience skills",
-			description: "Set experience skills to your profile",
+			title: profile.skills_points.label_card,
+			description: profile.skills_points.description_card,
 			image: img16,
 			modal: <SetExperienceSkills />,
 		},

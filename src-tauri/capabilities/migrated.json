@@ -15,6 +15,7 @@
 		"fs:allow-remove",
 		"fs:allow-rename",
 		"fs:allow-exists",
+		"os:allow-locale",
 		{
 			"identifier": "fs:scope",
 			"allow": [

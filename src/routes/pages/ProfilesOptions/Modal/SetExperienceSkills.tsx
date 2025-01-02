@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
 	Modal,
 	ModalContent,
@@ -36,6 +37,9 @@ interface completedProps {
 
 const SetExperienceSkills = () => {
 	const { selectedSave } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { skills_points } = translations.menu_options.profile;
+
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [Skill, setSkill] = useState({
@@ -54,27 +58,27 @@ const SetExperienceSkills = () => {
 
 	const ATR_LIST: ATR_Values[] = [
 		{
-			name: "Explosives",
+			name: skills_points.modal.input_skills_points.explosives,
 			img: Explosives,
 		},
 		{
-			name: "Gases",
+			name: skills_points.modal.input_skills_points.gases,
 			img: Gases,
 		},
 		{
-			name: "Flammable liquids",
+			name: skills_points.modal.input_skills_points.flammable_liquids,
 			img: FlammableLiquids,
 		},
 		{
-			name: "Flammable solids",
+			name: skills_points.modal.input_skills_points.flammable_solids,
 			img: FlammableSolids,
 		},
 		{
-			name: "Toxic and infectious substances",
+			name: skills_points.modal.input_skills_points.toxic_and_infectious,
 			img: ToxicInfectiousSubstances,
 		},
 		{
-			name: "Corrosive substances",
+			name: skills_points.modal.input_skills_points.corrosive,
 			img: CorrosiveSubstances,
 		},
 	];
@@ -119,7 +123,7 @@ const SetExperienceSkills = () => {
 				color="primary"
 				variant="shadow"
 			>
-				Open
+				{skills_points.modal.btn_open}
 			</Button>
 			<Modal
 				hideCloseButton
@@ -132,11 +136,11 @@ const SetExperienceSkills = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								Set Experience Skills
+								{skills_points.modal.title}
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="py-1">
-								<p>Enter the amount of experience you need</p>
+								<p>{skills_points.modal.description}</p>
 								<Select
 									isInvalid={Skill.fragile.length === 0}
 									selectionMode="multiple"
@@ -145,8 +149,10 @@ const SetExperienceSkills = () => {
 									onSelectionChange={(keys) =>
 										setSelectedAdr(keys as Set<string>)
 									}
-									label="ADR"
-									placeholder="Select a ADR"
+									label={skills_points.modal.input_skills_points.label}
+									placeholder={
+										skills_points.modal.input_skills_points.placeholder
+									}
 									labelPlacement="inside"
 									variant="bordered"
 									size="md"
@@ -179,7 +185,7 @@ const SetExperienceSkills = () => {
 									}
 									step={1}
 									color="warning"
-									label="Long distance"
+									label={skills_points.modal.long_distance}
 									showSteps={true}
 									maxValue={6}
 									minValue={0}
@@ -192,7 +198,7 @@ const SetExperienceSkills = () => {
 									onChange={(e) => setSkill({ ...Skill, heavy: e.toString() })}
 									step={1}
 									color="warning"
-									label="High value merchandise"
+									label={skills_points.modal.high_value_cargo}
 									showSteps={true}
 									maxValue={6}
 									minValue={0}
@@ -207,7 +213,7 @@ const SetExperienceSkills = () => {
 									}
 									step={1}
 									color="warning"
-									label="Fragile merchandise"
+									label={skills_points.modal.fragile_cargo}
 									showSteps={true}
 									maxValue={6}
 									minValue={0}
@@ -220,7 +226,7 @@ const SetExperienceSkills = () => {
 									onChange={(e) => setSkill({ ...Skill, urgent: e.toString() })}
 									step={1}
 									color="warning"
-									label="Just in time delivery"
+									label={skills_points.modal.just_in_time_delivery}
 									showSteps={true}
 									maxValue={6}
 									minValue={0}
@@ -235,7 +241,7 @@ const SetExperienceSkills = () => {
 									}
 									step={1}
 									color="warning"
-									label="Fuel efficiency"
+									label={skills_points.modal.eco_driving}
 									showSteps={true}
 									maxValue={6}
 									minValue={0}
@@ -245,8 +251,8 @@ const SetExperienceSkills = () => {
 								<AlertSave
 									message={
 										completed.error
-											? "An error occurred in the process"
-											: "Saved successfully"
+											? translations.components.alert_on_save_default.error
+											: translations.components.alert_on_save_default.succes
 									}
 									error={completed.error}
 									show={completed.completed}
@@ -257,7 +263,7 @@ const SetExperienceSkills = () => {
 							</ModalBody>
 							<ModalFooter>
 								<Button color="danger" variant="light" onPress={onClose}>
-									Close
+									{skills_points.modal.btn_close}
 								</Button>
 								<Button
 									endContent={<IconArrowBigUpLine />}
@@ -265,7 +271,7 @@ const SetExperienceSkills = () => {
 									color="success"
 									onPress={onClickApply}
 								>
-									Add Experience
+									{skills_points.modal.btn_apply}
 								</Button>
 							</ModalFooter>
 						</>

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import OptionCard from "@/components/OptionCard";
 
 // images
@@ -30,68 +31,70 @@ import SetTruckTransmission from "@/routes/pages/TrucksOptions/Modals/SetTruckTr
 
 const TrucksOptions = () => {
 	const { game } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { trucks } = translations.menu_options;
 
 	const items = [
 		{
 			id: "1",
-			title: "Change truck engine",
-			description: "Change the engine of the truck",
+			title: trucks.change_truck_engine.label_card,
+			description: trucks.change_truck_engine.description_card,
 			image: game === "ets2" ? img6 : img6_ats,
 			modal: <SetTruckEngine />,
 			disable: false,
 		},
 		{
 			id: "2",
-			title: "Change truck transmission",
-			description: "Change the transmission of the truck",
+			title: trucks.change_truck_transmission.label_card,
+			description: trucks.change_truck_transmission.description_card,
 			image: game === "ets2" ? img7 : img7_ats,
 			modal: <SetTruckTransmission />,
 			disable: false,
 		},
 		{
 			id: "3",
-			title: "Change truck license plate",
-			description: "Change the license plate of the truck",
+			title: trucks.license_plate.label_card,
+			description: trucks.license_plate.description_card,
 			image: img1,
 			modal: <EditLicensePlate />,
 			disable: game === "ets2" ? false : true,
 		},
 		{
 			id: "4",
-			title: "Repair truck",
-			description: "Repair your current truck",
+			title: trucks.repair_truck.label_card,
+			description: trucks.repair_truck.description_card,
 			image: game === "ets2" ? img8 : img8_ats,
 			modal: <RepairTruck />,
 			disable: false,
 		},
 		{
 			id: "5",
-			title: "Repair all trucks",
-			description: "Repairs all fleet trucks",
+			title: trucks.repair_all_trucks.label_card,
+			description: trucks.repair_all_trucks.description_card,
 			image: game === "ets2" ? img8 : img8_ats,
 			modal: <RepairAllTrucks />,
 			disable: false,
 		},
 		{
 			id: "6",
-			title: "Fill fuel",
-			description: "Fill fuel in current truck",
+			title: trucks.fill_fuel.label_card,
+			description: trucks.fill_fuel.description_card,
 			image: game === "ets2" ? img9 : img9_ats,
 			modal: <FillTruckFuel />,
 			disable: false,
 		},
 		{
 			id: "7",
-			title: "Fill all trucks fuel",
-			description: "Refueling all fleet trucks",
+			title: trucks.fill_all_trucks_fuel.label_card,
+			description: trucks.fill_all_trucks_fuel.description_card,
 			image: game === "ets2" ? img9 : img9_ats,
 			modal: <FillAllTrucksFuel />,
 			disable: false,
 		},
 		{
 			id: "8",
-			title: "Infinite fuel on current truck",
-			description: "Infinite fuel on current truck",
+			title: trucks.infinite_fuel.label_card,
+			description: trucks.infinite_fuel.description_card,
 			image: game === "ets2" ? img10 : img10_ats,
 			modal: <SetInfiniteFuel />,
 			disable: false,

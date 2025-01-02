@@ -1,0 +1,499 @@
+{
+    "components": {
+        "license_plate": {
+            "btn_delete": "Eliminar",
+            "btn_load": "Cargar",
+            "btn_store": "Guardar",
+            "input_colored_margin": "Margen de color",
+            "input_license_plate": {
+                "label": "Texto",
+                "placeholder": "Texto de la matrícula"
+            },
+            "input_license_plate_list_store": {
+                "label": "Matrículas guardadas",
+                "placeholder": "Selecciona la matrícula"
+            },
+            "title_select_bg_color": "Color de fondo",
+            "title_select_text_color": "Color del texto"
+        },
+        "player_profile": {
+            "btn_profile": "Opciones",
+            "dropdown": {
+                "profile_options": {
+                    "btn_backup_profile": {
+                        "description": "Crear una copia de respaldo de tu perfil",
+                        "label": "Respaldar Perfil",
+                        "modal": {
+                            "btn_apply": "Respaldar",
+                            "btn_close": "Cerrar",
+                            "btn_open_folder": "Abrir carpeta",
+                            "description": "Crea una copia de respaldo, recuerda ingresar el destino",
+                            "input_backup_destination": {
+                                "label": "Seleccionar carpeta de destino",
+                                "placeholder": "Selecciona la carpeta de destino"
+                            },
+                            "save_folder_dialog": {
+                                "filters_name": {
+                                    "zip": "Archivos Zip"
+                                },
+                                "title": "Seleccionar carpeta de destino"
+                            },
+                            "title": "Respaldar Perfil"
+                        }
+                    },
+                    "btn_clone_profile": {
+                        "description": "Clonar tu perfil a uno nuevo",
+                        "label": "Clonar Perfil",
+                        "modal": {
+                            "btn_apply": "Clonar",
+                            "btn_close": "Cerrar",
+                            "description": "Ingresa el nombre del perfil que deseas clonar. Esto creará un nuevo perfil con las mismas configuraciones que el perfil seleccionado.",
+                            "input_new_name": {
+                                "label": "Nuevo Nombre de Perfil",
+                                "placeholder": "Ingresa el nuevo nombre para tu perfil"
+                            },
+                            "title": "Clonar Perfil"
+                        }
+                    },
+                    "btn_copy_config": {
+                        "description": "Copiar configuraciones de otros perfiles",
+                        "label": "Copiar Configuración",
+                        "modal": {
+                            "btn_apply": "Copiar Configuración",
+                            "btn_close": "Cerrar",
+                            "description": "Selecciona el perfil al cual deseas copiar las configuraciones, recuerda que tus configuraciones serán reemplazadas. Te recomendamos que <b>hagas una copia de respaldo de tu perfil</b>.",
+                            "input_select_profile": {
+                                "label": "Perfiles",
+                                "placeholder": "Selecciona un perfil"
+                            },
+                            "title": "Copiar Configuración"
+                        }
+                    },
+                    "btn_rename_profile": {
+                        "description": "Renombrar tu perfil",
+                        "label": "Renombrar Perfil",
+                        "modal": {
+                            "btn_apply": "Renombrar",
+                            "btn_close": "Cerrar",
+                            "description": "Puedes renombrar el perfil, pero debe tener igual o menos de 20 caracteres.",
+                            "input_new_name": {
+                                "label": "Nombre del perfil",
+                                "placeholder": "Ingresa el nuevo nombre para tu perfil"
+                            },
+                            "title": "Renombrar perfil"
+                        }
+                    },
+                    "title": "Opciones de Perfil"
+                },
+                "save_game_options": {
+                    "btn_decrypt_save": {
+                        "description": "Descifrar el guardado seleccionada",
+                        "label": "Descifrar guardado"
+                    },
+                    "btn_open_folder": {
+                        "description": "Abrir la carpeta del guardado seleccionado",
+                        "label": "Abrir carpeta del guardado"
+                    },
+                    "title": "Opciones de guardado"
+                }
+            },
+            "input_select_profile": {
+                "label": "Seleccionar perfil",
+                "options": {
+                    "save_load": "Guardado"
+                },
+                "placeholder": "Selecciona un perfil"
+            },
+            "input_select_save": {
+                "label": "Seleccionar guardado",
+                "placeholder": "Selecciona un guardado"
+            },
+            "no_selected_profile": "Ningún perfil seleccionado",
+            "no_selected_save": "Ningún guardado seleccionado",
+            "total_saves": "Guardados"
+        },
+        "profile_error": {
+            "btn_how_to": "Video tutorial",
+            "btn_how_to_disable": "Cómo desactivar Steam Cloud",
+            "description": "Recuerda <b>desactivar Steam Cloud</b> desde tu perfil o verificar la ubicación de tu carpeta \"Documentos\"",
+            "title": "Perfiles no encontrados"
+        },
+        "updater": {
+            "alert_message": "La instalación falló. Inténtalo de nuevo más tarde",
+            "btn_cancel": "Cancelar",
+            "btn_manual_update": "Actualización manual",
+            "btn_update_now": "Actualizar",
+            "downloading": "Descargando...",
+            "release_notes": "Notas de la versión",
+            "title": "Nueva versión disponible",
+            "version": "Versión:"
+        },
+        "alert_on_save_default": {
+            "error": "Se ha producido un error en el proceso",
+            "succes": "Guardado con éxito"
+        }
+    },
+    "menu_options": {
+        "about": {
+            "description": "Esta es una aplicación de código abierto creada con el fin de ayudar a los jugadores de ETS 2 y ATS a editar su Game Save de una manera simple y fácil para aquellos que no quieren editar estos códigos manualmente.",
+            "tab_title": "Acerca de"
+        },
+        "profile": {
+            "add_experience": {
+                "description_card": "Cambiar experiencia a tu perfil",
+                "label_card": "Cambiar experiencia",
+                "modal": {
+                    "btn_apply": "Aplicar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Introduce la cantidad de experiencia que deseas cambiar a tu perfil",
+                    "input_experience": {
+                        "label": "Experiencia",
+                        "placeholder": "Introduce la cantidad de experiencia"
+                    },
+                    "title": "Cambiar experiencia"
+                }
+            },
+            "add_money": {
+                "description_card": "Añadir dinero a tu perfil",
+                "label_card": "Cambiar dinero",
+                "modal": {
+                    "btn_apply": "Aplicar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Añade la cantidad de dinero que deseas en tu perfil",
+                    "input_money": {
+                        "label": "Dinero",
+                        "placeholder": "Introduce la cantidad de dinero en EUR"
+                    },
+                    "title": "Cambiar dinero"
+                }
+            },
+            "dealer_visited": {
+                "description_card": "Establecer el estado de todos los concesionarios en tu perfil",
+                "label_card": "Descubrir todos los concesionarios",
+                "modal": {
+                    "btn_apply": "Aplicar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Selecciona el estado de todos los concesionarios en tu perfil",
+                    "input_dealer_status": {
+                        "label": "Ciudades visitadas",
+                        "options": {
+                            "unvisit_all": "Ningún concesionario visitado",
+                            "visit_all": "Todos los concesionarios visitados"
+                        }
+                    },
+                    "title": "Descubrir todos los concesionarios"
+                }
+            },
+            "garage_status": {
+                "description_card": "Establecer el estado de cualquier garaje en tu perfil",
+                "label_card": "Comprar todos los garajes",
+                "modal": {
+                    "btn_apply": "Aplicar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Selecciona el estado de todos los garajes en tu perfil",
+                    "input_garage_status": {
+                        "label": "Estado del garaje",
+                        "options": {
+                            "large_garage": "Garaje grande",
+                            "medium_garage": "Garaje mediano",
+                            "sell_garage": "Vender garaje",
+                            "small_garage": "Garaje pequeño"
+                        }
+                    },
+                    "title": "Comprar todos los garajes"
+                }
+            },
+            "skills_points": {
+                "description_card": "Establecer habilidades de experiencia en tu perfil",
+                "label_card": "Establecer habilidades de experiencia",
+                "modal": {
+                    "btn_apply": "Aplicar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Introduce la cantidad de experiencia que necesitas",
+                    "eco_driving": "Conducción económica",
+                    "fragile_cargo": "Carga frágil",
+                    "high_value_cargo": "Carga de alto valor",
+                    "input_skills_points": {
+                        "corrosive": "Corrosivos",
+                        "explosives": "Explosivos",
+                        "flammable_liquids": "Líquidos inflamables",
+                        "flammable_solids": "Sólidos inflamables",
+                        "gases": "Gases",
+                        "label": "ADR",
+                        "placeholder": "Selecciona ADR",
+                        "toxic_and_infectious": "Tóxicos e infecciosos"
+                    },
+                    "just_in_time_delivery": "Entrega justo a tiempo",
+                    "long_distance": "Larga distancia",
+                    "title": "Establecer habilidades de experiencia"
+                }
+            },
+            "tab_title": "Perfil",
+            "visited_cities": {
+                "description_card": "Establecer el estado de cualquier ciudad visitada en tu perfil",
+                "label_card": "Descubrir todas las ciudades",
+                "modal": {
+                    "btn_apply": "Aplicar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Selecciona el estado de todas las ciudades visitadas",
+                    "input_city_status": {
+                        "label": "Ciudades visitadas",
+                        "options": {
+                            "unvisit_all": "Ninguna ciudad visitada",
+                            "visit_all": "Todas las ciudades visitadas"
+                        }
+                    },
+                    "title": "Descubrir todas las ciudades"
+                }
+            }
+        },
+        "settings": {
+            "btn_reset": "Restablecer configuración",
+            "document_dialog_title": "Selecciona la carpeta donde se guarda tu progreso",
+            "input_change_language": {
+                "label": "Cambiar idioma",
+                "placeholder": "Seleccionar idioma"
+            },
+            "input_change_theme": {
+                "label": "Cambiar tema",
+                "options": {
+                    "dark": "Oscuro",
+                    "light": "Claro",
+                    "system": "Del Sistema"
+                },
+                "placeholder": "Seleccionar tema"
+            },
+            "input_document_folder": {
+                "label": "Carpeta de documentos",
+                "placeholder": "Introduce la carpeta de documentos"
+            },
+            "input_enable_128_slots": "Habilitar 128 slots en modo convoy",
+            "input_enable_console": "Habilitar consola y modo desarrollador",
+            "input_opacity_profile": "Opacidad al seleccionar perfil",
+            "tab_title": "Ajustes",
+            "title": "Ajustes"
+        },
+        "trailers": {
+            "license_plate": {
+                "description_card": "Cambiar la matrícula del remolque",
+                "label_card": "Cambiar matrícula",
+                "modal": {
+                    "btn_apply": "Aplicar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Introduce la nueva matrícula del remolque",
+                    "title": "Cambiar matrícula"
+                }
+            },
+            "modify_job_weight": {
+                "description_card": "Modificar el peso del trabajo que estás realizando",
+                "label_card": "Cambiar peso de la carga",
+                "modal": {
+                    "btn_apply": "Aplicar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Esto modificará el peso de tu trabajo actual al que definas aquí. Recuerda que necesitarás tener un trabajo activo y el remolque anclado a tu camión",
+                    "input_weight": {
+                        "label": "Peso en kg",
+                        "placeholder": "Introduce el peso en kg"
+                    },
+                    "title": "Cambiar peso de la carga"
+                }
+            },
+            "modify_trailer_weight": {
+                "description_card": "Modifica el peso del remolque, aplicándolo solo una vez",
+                "label_card": "Cambiar peso del remolque",
+                "modal": {
+                    "btn_apply": "Aplicar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Esto modifica el peso de tu remolque en 2 parámetros. Generalmente se usa el chassis_mass pero también puedes editar el body_mass (el body_mass predeterminado es 0)",
+                    "input_body_mass": {
+                        "label": "Masa del cuerpo en kg",
+                        "placeholder": "Introduce la masa del cuerpo en kg"
+                    },
+                    "input_chassis_mass": {
+                        "label": "Masa del chasis en kg",
+                        "placeholder": "Introduce la masa del chasis en kg"
+                    },
+                    "title": "Cambiar peso del remolque"
+                }
+            },
+            "repair_all_trailer": {
+                "description_card": "Reparar todos los remolques que tienes comprados",
+                "label_card": "Reparar todos los remolques",
+                "modal": {
+                    "btn_apply": "Reparar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Repara todos los remolques que posees",
+                    "title": "Reparar todos los remolques"
+                }
+            },
+            "repair_trailer": {
+                "description_card": "Reparar remolque actual",
+                "label_card": "Reparar remolque",
+                "modal": {
+                    "btn_apply": "Reparar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Repara el remolque que está actualmente enganchado al camión",
+                    "title": "Reparar remolques"
+                }
+            },
+            "tab_title": "Remolque",
+            "unlock_trailer_country": {
+                "description_card": "Desbloquear el bloqueo regional de remolques",
+                "label_card": "Desbloqueo de remolque por país",
+                "modal": {
+                    "btn_apply": "Desbloquear",
+                    "btn_close": "Cerrar",
+                    "btn_how_to_use": "Cómo usar",
+                    "btn_open": "Abrir",
+                    "description": "Desbloquea tu remolque en todos los países si está bloqueado por el juego y no te puedes teletransportar con el",
+                    "title": "Desbloqueo de remolque por país",
+                    "warning_message": {
+                        "message": "Debes tener el remolque enganchado al camión para que los cambios surtan efecto.",
+                        "title": "Recuerda"
+                    }
+                }
+            }
+        },
+        "trucks": {
+            "change_truck_engine": {
+                "description_card": "Cambiar el motor de tu camión",
+                "label_card": "Cambiar motor del camión",
+                "modal": {
+                    "btn_apply": "Cambiar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "btn_remove_badge": "Eliminar logo",
+                    "description": "Cambia el motor de tu camión por el de tu elección",
+                    "input_brands": {
+                        "label": "Marcas",
+                        "placeholder": "Seleccionar marca del camión"
+                    },
+                    "input_engines": {
+                        "label": "Motores",
+                        "placeholder": "Seleccionar motor del camión"
+                    },
+                    "input_models": {
+                        "label": "Modelos",
+                        "placeholder": "Seleccionar modelo del camión"
+                    },
+                    "title": "Cambiar motor del camión",
+                    "warning_message": {
+                        "message": "Si ves algún <b>logo flotante o mal posicionado</b> en el camión, puedes eliminarlo con el botón de abajo.",
+                        "title": "Recuerda"
+                    }
+                }
+            },
+            "change_truck_transmission": {
+                "description_card": "Cambiar la transmisión de tu camión",
+                "label_card": "Cambiar transmisión del camión",
+                "modal": {
+                    "btn_apply": "Cambiar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "btn_remove_badge": "Eliminar logo",
+                    "description": "Cambia la transmisión de tu camión por la de tu elección",
+                    "input_brands": {
+                        "label": "Marcas",
+                        "placeholder": "Seleccionar marca del camión"
+                    },
+                    "input_models": {
+                        "label": "Modelos",
+                        "placeholder": "Seleccionar modelo del camión"
+                    },
+                    "input_transmissions": {
+                        "label": "Transmisiones",
+                        "placeholder": "Seleccionar transmisión del camión"
+                    },
+                    "title": "Cambiar transmisión del camión",
+                    "warning_message": {
+                        "message": "Si ves algún <b>logo flotante o mal posicionado</b> en el camión, puedes eliminarlo con el botón de abajo.",
+                        "title": "Recuerda"
+                    }
+                }
+            },
+            "fill_all_trucks_fuel": {
+                "description_card": "Reabastecer de combustible todos los camiones de la flota",
+                "label_card": "Llenar combustible de todos los camiones",
+                "modal": {
+                    "btn_apply": "Reabastecer",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Esta opción te permitirá reabastecer de combustible todos tus camiones de la flota",
+                    "title": "Llenar combustible de todos los camiones"
+                }
+            },
+            "fill_fuel": {
+                "description_card": "Llenar combustible en el camión actual",
+                "label_card": "Llenar combustible",
+                "modal": {
+                    "btn_apply": "Reabastecer",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Reabastece completamente tu camión",
+                    "title": "Llenar combustible"
+                }
+            },
+            "infinite_fuel": {
+                "description_card": "Combustible infinito en el camión actual",
+                "label_card": "Combustible infinito en el camión actual",
+                "modal": {
+                    "btn_apply": "Reabastecer",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "btn_restore_fuel": "Restaurar combustible",
+                    "description": "Exactamente el combustible no es infinito pero lo es por aproximadamente 5.000.000 KM (dependiendo del camión)",
+                    "title": "Combustible infinito en el camión actual",
+                    "warning_message": {
+                        "message": "<b>Desactiva “Consumo de combustible realista”</b> en tu sección de “Jugabilidad” para que esta función surta efecto.",
+                        "title": "Recuerda"
+                    }
+                }
+            },
+            "license_plate": {
+                "description_card": "Cambiar la matrícula del camión",
+                "label_card": "Cambiar matrícula",
+                "modal": {
+                    "btn_apply": "Aplicar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Introduce la nueva matrícula del camión. Recuerda quitar tu matrícula de Word of Trucks",
+                    "title": "Cambiar matrícula del camión"
+                }
+            },
+            "repair_all_trucks": {
+                "description_card": "Reparar todos los camiones de la flota",
+                "label_card": "Reparar todos los camiones",
+                "modal": {
+                    "btn_apply": "Reparar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Repara todos los camiones que tienes en tu empresa",
+                    "title": "Reparar todos los camiones"
+                }
+            },
+            "repair_truck": {
+                "description_card": "Reparar tu camión actual",
+                "label_card": "Reparar camión",
+                "modal": {
+                    "btn_apply": "Reparar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Repara los daños que tenga tu camión",
+                    "title": "Reparar camión"
+                }
+            },
+            "tab_title": "Camión"
+        }
+    }
+}

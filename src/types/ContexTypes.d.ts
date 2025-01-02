@@ -1,6 +1,9 @@
 import { Profile, SaveGame, ProfileWithoutSaves } from "@/types/SaveGameTypes";
 import { themeTypesSystem } from "@/types/fileEditTypes";
 
+// translations types
+import { TranslationsTypes } from "./TranslationsTypes";
+
 export type GamesNames = "ets2" | "ats";
 
 export interface ProfileObjectType {
@@ -26,4 +29,10 @@ export interface DarkModeContextTypes {
 	opasityStatus: boolean;
 	setOpasityStatus: (status: boolean) => void;
 	setUserTheme: (theme: themeTypesSystem) => void;
+}
+
+export interface LocaleContextTypes {
+	lang: Langs;
+	translations: TranslationsTypes;
+	changeLang: (lang: Langs) => void;
 }

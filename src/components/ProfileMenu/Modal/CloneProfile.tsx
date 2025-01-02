@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext, FC } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
 	Modal,
 	ModalContent,
@@ -28,6 +29,9 @@ interface ModalProps {
 
 const CloneProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 	const { selectedProfile, reloadProfiles } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { btn_clone_profile } =
+		translations.components.player_profile.dropdown.profile_options;
 
 	const [ProfileName, setProfileName] = useState<string>("");
 	const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -80,21 +84,17 @@ const CloneProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 				{(onClose) => (
 					<>
 						<ModalHeader className="flex flex-col gap-1">
-							Clone Profile
+							{btn_clone_profile.modal.title}
 						</ModalHeader>
 						<Divider />
 						<ModalBody className="py-1">
-							<p>
-								Enter the name of the profile you want to clone. This will
-								create a new profile with the same settings as the selected
-								profile.
-							</p>
+							<p>{btn_clone_profile.modal.description}</p>
 							<Input
 								className="mt-1"
 								startContent={<IconUserEdit />}
 								isInvalid={ProfileName.length === 0 || ProfileName.length > 20}
-								label="New Profile Name"
-								placeholder="Enter the name of the profile"
+								label={btn_clone_profile.modal.input_new_name.label}
+								placeholder={btn_clone_profile.modal.input_new_name.placeholder}
 								value={ProfileName}
 								onValueChange={(value) => setProfileName(value)}
 								variant="bordered"
@@ -102,8 +102,8 @@ const CloneProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 							<AlertSave
 								message={
 									completed.error
-										? "An error occurred in the process"
-										: "Saved successfully"
+										? translations.components.alert_on_save_default.error
+										: translations.components.alert_on_save_default.succes
 								}
 								error={completed.error}
 								show={completed.completed}
@@ -114,7 +114,7 @@ const CloneProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 						</ModalBody>
 						<ModalFooter>
 							<Button color="danger" variant="light" onPress={onClose}>
-								Close
+								{btn_clone_profile.modal.btn_close}
 							</Button>
 							<Button
 								endContent={<IconCopy />}
@@ -122,7 +122,7 @@ const CloneProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 								color="success"
 								onPress={onClickApply}
 							>
-								Clone
+								{btn_clone_profile.modal.btn_apply}
 							</Button>
 						</ModalFooter>
 					</>

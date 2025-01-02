@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
 	Modal,
 	ModalContent,
@@ -24,6 +25,9 @@ interface completedProps {
 
 const SetExperience = () => {
 	const { selectedSave } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { add_experience } = translations.menu_options.profile;
+
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [Experience, setExperience] = useState<string>("575700");
@@ -67,7 +71,7 @@ const SetExperience = () => {
 				color="primary"
 				variant="shadow"
 			>
-				Open
+				{add_experience.modal.btn_open}
 			</Button>
 			<Modal
 				hideCloseButton
@@ -81,19 +85,19 @@ const SetExperience = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								Add experience
+								{add_experience.modal.title}
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="py-1">
-								<p>
-									Enter the amount of experience you want to add to your profile
-								</p>
+								<p>{add_experience.modal.description}</p>
 								<Input
 									className="mt-1"
 									startContent={<IconArrowBigUpLine />}
 									isInvalid={Experience === ""}
-									label="Experience"
-									placeholder="Enter the amount of experience in numbers"
+									label={add_experience.modal.input_experience.label}
+									placeholder={
+										add_experience.modal.input_experience.placeholder
+									}
 									value={Experience}
 									onValueChange={(value) => setExperienceNumbers(value)}
 									variant="bordered"
@@ -101,8 +105,8 @@ const SetExperience = () => {
 								<AlertSave
 									message={
 										completed.error
-											? "An error occurred in the process"
-											: "Saved successfully"
+											? translations.components.alert_on_save_default.error
+											: translations.components.alert_on_save_default.succes
 									}
 									error={completed.error}
 									show={completed.completed}
@@ -113,7 +117,7 @@ const SetExperience = () => {
 							</ModalBody>
 							<ModalFooter>
 								<Button color="danger" variant="light" onPress={onClose}>
-									Close
+									{add_experience.modal.btn_close}
 								</Button>
 								<Button
 									endContent={<IconArrowBigUpLine />}
@@ -121,7 +125,7 @@ const SetExperience = () => {
 									color="success"
 									onPress={onClickApply}
 								>
-									Add
+									{add_experience.modal.btn_apply}
 								</Button>
 							</ModalFooter>
 						</>

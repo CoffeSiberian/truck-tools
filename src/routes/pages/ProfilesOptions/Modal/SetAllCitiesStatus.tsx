@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
 	Modal,
 	ModalContent,
@@ -34,6 +35,9 @@ interface completedProps {
 
 const SetAllCitiesStatus = () => {
 	const { selectedSave, game } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { visited_cities } = translations.menu_options.profile;
+
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [GarageStatus, setGarageStatus] = useState<string>("1");
@@ -71,7 +75,7 @@ const SetAllCitiesStatus = () => {
 				color="primary"
 				variant="shadow"
 			>
-				Open
+				{visited_cities.modal.btn_open}
 			</Button>
 			<Modal
 				hideCloseButton
@@ -85,36 +89,40 @@ const SetAllCitiesStatus = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								Set all cities visited status
+								{visited_cities.modal.title}
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="py-1">
-								<p>Select the status of all cities visited</p>
+								<p> {visited_cities.modal.description}</p>
 								<RadioGroup
 									className="items-center"
 									value={GarageStatus}
 									onValueChange={(value) => setGarageStatus(value)}
 									orientation="horizontal"
-									label="Visited cities"
+									label={visited_cities.modal.input_city_status.label}
 								>
 									<CustomRadio
 										selectedGarage={GarageStatus}
 										image={game === "ets2" ? visited : visited_ats}
-										text="Visited all cities"
+										text={
+											visited_cities.modal.input_city_status.options.visit_all
+										}
 										value="1"
 									/>
 									<CustomRadio
 										selectedGarage={GarageStatus}
 										image={game === "ets2" ? unvisited : unvisited_ats}
-										text="Unvisited all cities"
+										text={
+											visited_cities.modal.input_city_status.options.unvisit_all
+										}
 										value="0"
 									/>
 								</RadioGroup>
 								<AlertSave
 									message={
 										completed.error
-											? "An error occurred in the process"
-											: "Saved successfully"
+											? translations.components.alert_on_save_default.error
+											: translations.components.alert_on_save_default.succes
 									}
 									error={completed.error}
 									show={completed.completed}
@@ -125,7 +133,7 @@ const SetAllCitiesStatus = () => {
 							</ModalBody>
 							<ModalFooter>
 								<Button color="danger" variant="light" onPress={onClose}>
-									Close
+									{visited_cities.modal.btn_close}
 								</Button>
 								<Button
 									endContent={<IconDeviceFloppy />}
@@ -133,7 +141,7 @@ const SetAllCitiesStatus = () => {
 									color="success"
 									onPress={onClickApply}
 								>
-									Apply
+									{visited_cities.modal.btn_apply}
 								</Button>
 							</ModalFooter>
 						</>

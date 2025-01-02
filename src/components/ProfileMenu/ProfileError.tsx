@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { DarkModeContex } from "@/hooks/useDarkModeContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import { Button } from "@nextui-org/react";
 import { open } from "@tauri-apps/plugin-shell";
 import classNames from "classnames";
@@ -13,6 +14,8 @@ import {
 
 const ProfileError = () => {
 	const { darkMode } = useContext(DarkModeContex);
+	const { translations } = useContext(LocaleContext);
+	const { profile_error } = translations.components;
 
 	return (
 		<div
@@ -29,14 +32,16 @@ const ProfileError = () => {
 						stroke={2}
 					/>
 					<h2 className="text-balance text-lg font-semibold tracking-wide text-white">
-						Profiles not found
+						{profile_error.title}
 					</h2>
 				</div>
 				<div className="flex flex-col items-center gap-1">
-					<p className="text-red-100">
-						Remember to <b> disable Steam Cloud</b> from your profile or verify
-						the location of your "Documents" folder
-					</p>
+					<p
+						className="text-red-100"
+						dangerouslySetInnerHTML={{
+							__html: profile_error.description,
+						}}
+					/>
 					<div className="flex gap-5">
 						<Button
 							onPress={() => open("https://imgur.com/lVbgbgH")}
@@ -44,7 +49,7 @@ const ProfileError = () => {
 							color="success"
 							endContent={<IconHelp />}
 						>
-							<b>How to disable Steam Cloud</b>
+							<b>{profile_error.btn_how_to_disable}</b>
 						</Button>
 						<Button
 							onPress={() => open("https://youtu.be/e2aYdREZX4M")}
@@ -52,7 +57,7 @@ const ProfileError = () => {
 							color="default"
 							endContent={<IconBrandYoutube />}
 						>
-							<b>Tutorial video</b>
+							<b>{profile_error.btn_how_to}</b>
 						</Button>
 					</div>
 				</div>

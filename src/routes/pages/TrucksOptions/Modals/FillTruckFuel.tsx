@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
 	Modal,
 	ModalContent,
@@ -23,7 +24,11 @@ interface completedProps {
 
 const FillTruckFuel = () => {
 	const { selectedSave } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { trucks } = translations.menu_options;
+
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [completed, setCompleted] = useState<completedProps>({
 		error: false,
@@ -55,7 +60,7 @@ const FillTruckFuel = () => {
 				color="primary"
 				variant="shadow"
 			>
-				Open
+				{trucks.fill_fuel.modal.btn_open}
 			</Button>
 			<Modal
 				hideCloseButton
@@ -69,16 +74,16 @@ const FillTruckFuel = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								Fill fuel
+								{trucks.fill_fuel.modal.title}
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="py-1">
-								<p>Refuels your truck completely</p>
+								<p>{trucks.fill_fuel.modal.description}</p>
 								<AlertSave
 									message={
 										completed.error
-											? "An error occurred in the process"
-											: "Saved successfully"
+											? translations.components.alert_on_save_default.error
+											: translations.components.alert_on_save_default.succes
 									}
 									error={completed.error}
 									show={completed.completed}
@@ -89,7 +94,7 @@ const FillTruckFuel = () => {
 							</ModalBody>
 							<ModalFooter>
 								<Button color="danger" variant="light" onPress={onClose}>
-									Close
+									{trucks.fill_fuel.modal.btn_close}
 								</Button>
 								<Button
 									endContent={<IconGasStation />}
@@ -97,7 +102,7 @@ const FillTruckFuel = () => {
 									color="success"
 									onPress={onClickApply}
 								>
-									Refuel
+									{trucks.fill_fuel.modal.btn_apply}
 								</Button>
 							</ModalFooter>
 						</>

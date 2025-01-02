@@ -1,4 +1,5 @@
-import { JSX, useState } from "react";
+import { JSX, useState, useContext } from "react";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import { open } from "@tauri-apps/plugin-shell";
 import { Tabs, Tab, useDisclosure, Image, Button } from "@nextui-org/react";
 import classNames from "classnames";
@@ -23,8 +24,21 @@ import {
 // image
 import kofi from "@/static/icons/kofi/kofi.webp";
 
+type ItemId = "trailer" | "truck" | "profile" | "settings" | "about";
+
+interface ItemsTypes {
+	id: ItemId;
+	label: string;
+	jsx: JSX.Element;
+	modal: boolean;
+	icon: JSX.Element;
+}
+
 const RenderOptions = () => {
-	const [activeIndex, setActiveIndex] = useState<string | null>(null);
+	const { translations } = useContext(LocaleContext);
+	const [activeIndex, setActiveIndex] = useState<ItemId>("trailer");
+	const { trailers, trucks, profile, settings, about } =
+		translations.menu_options;
 
 	const {
 		isOpen: isOpenAbout,
@@ -38,35 +52,45 @@ const RenderOptions = () => {
 		onOpenChange: onOpenChangeSettings,
 	} = useDisclosure();
 
-	const items = [
+	const items: ItemsTypes[] = [
 		{
-			label: "Trailers",
+			id: "trailer",
+			label: trailers.tab_title,
 			jsx: <TrailersOptions />,
 			modal: false,
 			icon: <IconPackages />,
 		},
 		{
-			label: "Truck",
+			id: "truck",
+			label: trucks.tab_title,
 			jsx: <TrucksOptions />,
 			modal: false,
 			icon: <IconTruck />,
 		},
 		{
-			label: "Profile",
+			id: "profile",
+			label: profile.tab_title,
 			jsx: <ProfilesOptions />,
 			modal: false,
 			icon: <IconUserCircle />,
 		},
 		{
-			label: "Settings",
+			id: "settings",
+			label: settings.tab_title,
 			jsx: <></>,
 			modal: true,
 			icon: <IconSettings />,
 		},
-		{ label: "About", jsx: <></>, modal: true, icon: <IconPaw /> },
+		{
+			id: "about",
+			label: about.tab_title,
+			jsx: <></>,
+			modal: true,
+			icon: <IconPaw />,
+		},
 	];
 
-	const setActiveIndexOptions = (index: string) => {
+	const setActiveIndexOptions = (index: ItemId) => {
 		setActiveIndex(index);
 		window.scrollTo({
 			top: 0,
@@ -75,6 +99,7 @@ const RenderOptions = () => {
 	};
 
 	const renderCart = (
+		id: string,
 		name: string,
 		icon: JSX.Element,
 		disable: boolean
@@ -89,7 +114,7 @@ const RenderOptions = () => {
 						</span>
 					</div>
 				}
-				key={name}
+				key={id}
 				isDisabled={disable}
 			/>
 		);
@@ -133,9 +158,9 @@ const RenderOptions = () => {
 			<Tabs
 				className="fixed top-2 z-20 justify-center"
 				onSelectionChange={(index) => {
-					if (index === "About") onOpenAbout();
-					else if (index === "Settings") onOpenSettings();
-					else setActiveIndexOptions(index as string);
+					if (index === "about") onOpenAbout();
+					else if (index === "settings") onOpenSettings();
+					else setActiveIndexOptions(index as ItemId);
 				}}
 				selectedKey={activeIndex}
 				size="lg"
@@ -144,13 +169,13 @@ const RenderOptions = () => {
 				color="primary"
 			>
 				{items.map((item) => {
-					return renderCart(item.label, item.icon, false);
+					return renderCart(item.id, item.label, item.icon, false);
 				})}
 			</Tabs>
 			{items.map((item, index) => {
 				return (
 					<div key={"cardOptionNumber" + index}>
-						{activeIndex === item.label && item.jsx}
+						{activeIndex === item.id && item.jsx}
 					</div>
 				);
 			})}

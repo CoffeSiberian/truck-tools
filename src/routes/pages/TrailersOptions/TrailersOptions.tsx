@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
 import OptionCard from "@/components/OptionCard";
 
 // images
@@ -25,52 +26,54 @@ import RepairAllTrailers from "@/routes/pages/TrailersOptions/Modals/RepairAllTr
 
 const TrailersOptions = () => {
 	const { game } = useContext(ProfileContex);
+	const { translations } = useContext(LocaleContext);
+	const { trailers } = translations.menu_options;
 
 	const items = [
 		{
 			id: "1",
-			title: "Change trailer license plate",
-			description: "Change the license plate of the trailer",
+			title: trailers.license_plate.label_card,
+			description: trailers.license_plate.description_card,
 			image: img2,
 			modal: <EditLicensePlate />,
 			disable: game === "ets2" ? false : true,
 		},
 		{
 			id: "2",
-			title: "Modify job weight",
-			description: "Modify the weight of your current job",
+			title: trailers.modify_job_weight.label_card,
+			description: trailers.modify_job_weight.description_card,
 			image: game === "ets2" ? img4 : img4_ats,
 			modal: <ModifyWeight />,
 			disable: false,
 		},
 		{
 			id: "3",
-			title: "Trailer unblocking by country",
-			description: "Unlock regional blocking of trailers",
+			title: trailers.unlock_trailer_country.label_card,
+			description: trailers.unlock_trailer_country.description_card,
 			image: img3,
 			modal: <UnlockTrailers />,
 			disable: false,
 		},
 		{
 			id: "4",
-			title: "Change trailer weight",
-			description: "Modifies the trailer weight, applying it only once.",
+			title: trailers.modify_trailer_weight.label_card,
+			description: trailers.modify_trailer_weight.description_card,
 			image: game === "ets2" ? img5 : img5_ats,
 			modal: <ModifyTrailerWeight />,
 			disable: false,
 		},
 		{
 			id: "5",
-			title: "Repair trailer",
-			description: "Repair current trailer",
+			title: trailers.repair_trailer.label_card,
+			description: trailers.repair_trailer.description_card,
 			image: game === "ets2" ? img17 : img17_ats,
 			modal: <RepairTrailers />,
 			disable: false,
 		},
 		{
 			id: "6",
-			title: "Repair all trailers",
-			description: "Repair all the trailers you have",
+			title: trailers.repair_all_trailer.label_card,
+			description: trailers.repair_all_trailer.description_card,
 			image: game === "ets2" ? img17 : img17_ats,
 			modal: <RepairAllTrailers />,
 			disable: false,
