@@ -1,0 +1,499 @@
+{
+    "components": {
+        "alert_on_save_default": {
+            "error": "在处理过程中发生错误",
+            "succes": "保存成功"
+        },
+        "license_plate": {
+            "btn_delete": "删除",
+            "btn_load": "加载",
+            "btn_store": "存储",
+            "input_colored_margin": "彩色边框",
+            "input_license_plate": {
+                "label": "车牌文字",
+                "placeholder": "输入车牌文字"
+            },
+            "input_license_plate_list_store": {
+                "label": "选择已存储的车牌",
+                "placeholder": "选择车牌"
+            },
+            "title_select_bg_color": "背景颜色",
+            "title_select_text_color": "文本颜色"
+        },
+        "player_profile": {
+            "btn_profile": "配置文件选项",
+            "dropdown": {
+                "profile_options": {
+                    "btn_backup_profile": {
+                        "description": "创建配置文件的备份副本",
+                        "label": "备份配置文件",
+                        "modal": {
+                            "btn_apply": "备份",
+                            "btn_close": "关闭",
+                            "btn_open_folder": "打开文件夹",
+                            "description": "创建备份副本，请记得输入目标位置",
+                            "input_backup_destination": {
+                                "label": "选择目标文件夹",
+                                "placeholder": "选择目标文件夹"
+                            },
+                            "save_folder_dialog": {
+                                "filters_name": {
+                                    "zip": "压缩文件"
+                                },
+                                "title": "选择目标文件夹"
+                            },
+                            "title": "备份配置文件"
+                        }
+                    },
+                    "btn_clone_profile": {
+                        "description": "克隆您的配置文件到一个新配置文件",
+                        "label": "克隆配置文件",
+                        "modal": {
+                            "btn_apply": "克隆",
+                            "btn_close": "关闭",
+                            "description": "输入您想克隆的配置文件名称，这样将创建一个具有与所选配置文件相同设置的新配置文件。",
+                            "input_new_name": {
+                                "label": "新配置文件名称",
+                                "placeholder": "输入您的配置文件的新名称"
+                            },
+                            "title": "克隆配置文件"
+                        }
+                    },
+                    "btn_copy_config": {
+                        "description": "从其他配置文件复制设置",
+                        "label": "复制配置",
+                        "modal": {
+                            "btn_apply": "复制配置",
+                            "btn_close": "关闭",
+                            "description": "选择要复制设置的配置文件，请记住您的设置将被替换，建议您先<b>创建配置文件的备份副本</b>。",
+                            "input_select_profile": {
+                                "label": "配置文件",
+                                "placeholder": "选择一个配置文件"
+                            },
+                            "title": "复制配置"
+                        }
+                    },
+                    "btn_rename_profile": {
+                        "description": "重命名您的配置文件",
+                        "label": "重命名配置文件",
+                        "modal": {
+                            "btn_apply": "重命名",
+                            "btn_close": "关闭",
+                            "description": "您可以重命名配置文件，但必须少于20个字符。",
+                            "input_new_name": {
+                                "label": "配置文件名称",
+                                "placeholder": "输入您的配置文件的新名称"
+                            },
+                            "title": "重命名配置文件"
+                        }
+                    },
+                    "title": "配置文件选项"
+                },
+                "save_game_options": {
+                    "btn_decrypt_save": {
+                        "description": "解密选定的存档",
+                        "label": "解密存档"
+                    },
+                    "btn_open_folder": {
+                        "description": "打开选定的存档文件夹",
+                        "label": "打开存档文件夹"
+                    },
+                    "title": "存档选项"
+                }
+            },
+            "input_select_profile": {
+                "label": "选择配置文件",
+                "options": {
+                    "save_load": "存档"
+                },
+                "placeholder": "选择一个配置文件"
+            },
+            "input_select_save": {
+                "label": "选择存档",
+                "placeholder": "选择一个存档"
+            },
+            "no_selected_profile": "未选择配置文件",
+            "no_selected_save": "未选择存档",
+            "total_saves": "保存"
+        },
+        "profile_error": {
+            "btn_how_to": "教程视频",
+            "btn_how_to_disable": "如何禁用 Steam 云存储",
+            "description": "请记得从您的配置文件中<b>禁用 Steam 云存储</b>，或验证您的 \"文档(Documents)\" 文件夹的位置。",
+            "title": "未找到配置文件"
+        },
+        "updater": {
+            "alert_message": "安装失败，请稍后再试",
+            "btn_cancel": "取消",
+            "btn_manual_update": "手动更新",
+            "btn_update_now": "立即更新",
+            "downloading": "下载中...",
+            "release_notes": "更新日志",
+            "title": "有新版本可用",
+            "version": "版本:"
+        }
+    },
+    "menu_options": {
+        "about": {
+            "description": "这是一个开源应用程序，旨在帮助《欧洲卡车模拟2》和《美国卡车模拟》的玩家以简单便捷的方式编辑游戏存档，适合不想手动编辑代码的玩家。",
+            "tab_title": "关于"
+        },
+        "profile": {
+            "add_experience": {
+                "description_card": "修改配置文件的经验值",
+                "label_card": "修改经验值",
+                "modal": {
+                    "btn_apply": "应用",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "输入要添加到配置文件的经验值数量",
+                    "input_experience": {
+                        "label": "经验值",
+                        "placeholder": "输入经验值的数值"
+                    },
+                    "title": "修改经验值"
+                }
+            },
+            "add_money": {
+                "description_card": "向配置文件添加金钱",
+                "label_card": "修改金钱",
+                "modal": {
+                    "btn_apply": "应用",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "添加您希望在配置文件中的金钱数量",
+                    "input_money": {
+                        "label": "金钱",
+                        "placeholder": "输入金额(以欧元为单位)"
+                    },
+                    "title": "修改金钱"
+                }
+            },
+            "dealer_visited": {
+                "description_card": "将所有经销商状态设置到您的配置文件",
+                "label_card": "发现所有经销商",
+                "modal": {
+                    "btn_apply": "应用",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "选择配置文件中所有经销商的状态",
+                    "input_dealer_status": {
+                        "label": "已访问的城市",
+                        "options": {
+                            "unvisit_all": "未访问的所有经销商",
+                            "visit_all": "已访问的所有经销商"
+                        }
+                    },
+                    "title": "发现所有经销商"
+                }
+            },
+            "garage_status": {
+                "description_card": "设置车库状态到您的配置文件",
+                "label_card": "购买所有车库",
+                "modal": {
+                    "btn_apply": "应用",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "选择您要应用到配置文件的车库状态",
+                    "input_garage_status": {
+                        "label": "车库状态",
+                        "options": {
+                            "large_garage": "大型车库",
+                            "medium_garage": "中型车库",
+                            "sell_garage": "卖出车库",
+                            "small_garage": "小型车库"
+                        }
+                    },
+                    "title": "购买所有车库"
+                }
+            },
+            "skills_points": {
+                "description_card": "设置经验技能到您的配置文件",
+                "label_card": "设置经验技能",
+                "modal": {
+                    "btn_apply": "应用",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "输入您需要的经验值",
+                    "eco_driving": "节能驾驶",
+                    "fragile_cargo": "易碎货物",
+                    "high_value_cargo": "高价值货物",
+                    "input_skills_points": {
+                        "corrosive": "腐蚀性物品",
+                        "explosives": "爆炸物",
+                        "flammable_liquids": "易燃液体",
+                        "flammable_solids": "易燃固体",
+                        "gases": "气体",
+                        "label": "危险品运输资格 (ADR)",
+                        "placeholder": "选择危险品运输类别",
+                        "toxic_and_infectious": "有毒和传染性物质"
+                    },
+                    "just_in_time_delivery": "准时交货",
+                    "long_distance": "长途运输",
+                    "title": "设置经验技能"
+                }
+            },
+            "tab_title": "配置文件",
+            "visited_cities": {
+                "description_card": "将任意已访问城市的状态设置到您的档案",
+                "label_card": "解锁所有城市",
+                "modal": {
+                    "btn_apply": "应用",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "选择所有已访问城市的状态",
+                    "input_city_status": {
+                        "label": "已访问的城市",
+                        "options": {
+                            "unvisit_all": "未访问的所有城市",
+                            "visit_all": "已访问所有城市"
+                        }
+                    },
+                    "title": "解锁所有城市"
+                }
+            }
+        },
+        "settings": {
+            "btn_reset": "重置设置",
+            "document_dialog_title": "选择存储您进度的文件夹",
+            "input_change_language": {
+                "label": "更改语言",
+                "placeholder": "选择语言"
+            },
+            "input_change_theme": {
+                "label": "更改主题",
+                "options": {
+                    "dark": "深色",
+                    "light": "浅色",
+                    "system": "跟随系统"
+                },
+                "placeholder": "选择主题"
+            },
+            "input_document_folder": {
+                "label": "文档文件夹",
+                "placeholder": "输入文档文件夹"
+            },
+            "input_enable_128_slots": "启用128人联机模式",
+            "input_enable_console": "启用控制台和开发者模式",
+            "input_opacity_profile": "选中档案的透明度",
+            "tab_title": "设置",
+            "title": "更改拖车的车牌"
+        },
+        "trailers": {
+            "license_plate": {
+                "description_card": "更改拖车车牌",
+                "label_card": "应用",
+                "modal": {
+                    "btn_apply": "应用",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "输入拖车的新车牌",
+                    "title": "更改拖车车牌"
+                }
+            },
+            "modify_job_weight": {
+                "description_card": "修改任务重量",
+                "label_card": "修改工作重量",
+                "modal": {
+                    "btn_apply": "应用",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "这将把您当前任务的重量修改为您在此处定义的重量。请记住，您需要有一个与卡车关联的活动任务",
+                    "input_weight": {
+                        "label": "重量(KG)",
+                        "placeholder": "输入重量(KG)"
+                    },
+                    "title": "更改货物重量"
+                }
+            },
+            "modify_trailer_weight": {
+                "description_card": "修改拖车重量，仅应用一次",
+                "label_card": "更改拖车重量",
+                "modal": {
+                    "btn_apply": "应用",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "这会通过两个参数修改拖车的重量。通常使用底盘质量(chassis_mass)，但您也可以编辑车身质量(body_mass默认值为0）",
+                    "input_body_mass": {
+                        "label": "车身质量(KG)",
+                        "placeholder": "输入车身质量(KG)"
+                    },
+                    "input_chassis_mass": {
+                        "label": "底盘质量(KG)",
+                        "placeholder": "输入底盘质量(KG)"
+                    },
+                    "title": "更改拖车重量"
+                }
+            },
+            "repair_all_trailer": {
+                "description_card": "修复您拥有的所有拖车",
+                "label_card": "修复所有拖车",
+                "modal": {
+                    "btn_apply": "修复",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "修复您拥有的所有拖车",
+                    "title": "修复所有拖车"
+                }
+            },
+            "repair_trailer": {
+                "description_card": "修复当前拖车",
+                "label_card": "修复拖车",
+                "modal": {
+                    "btn_apply": "修复",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "修复当前连接的拖车",
+                    "title": "修复拖车"
+                }
+            },
+            "tab_title": "拖车",
+            "unlock_trailer_country": {
+                "description_card": "解锁拖车的区域限制",
+                "label_card": "按国家解锁拖车",
+                "modal": {
+                    "btn_apply": "解锁",
+                    "btn_close": "关闭",
+                    "btn_how_to_use": "使用方法",
+                    "btn_open": "打开",
+                    "description": "如果拖车被游戏阻止，请在所有国家解锁",
+                    "title": "解锁当前拖车",
+                    "warning_message": {
+                        "message": "您必须将拖车挂接到卡车上，修改才能生效。",
+                        "title": "记住"
+                    }
+                }
+            }
+        },
+        "trucks": {
+            "change_truck_engine": {
+                "description_card": "更换卡车的发动机",
+                "label_card": "更换卡车发动机",
+                "modal": {
+                    "btn_apply": "更改",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "btn_remove_badge": "移除徽标",
+                    "description": "将卡车发动机更换为您选择的型号",
+                    "input_brands": {
+                        "label": "品牌",
+                        "placeholder": "选择卡车品牌"
+                    },
+                    "input_engines": {
+                        "label": "发动机",
+                        "placeholder": "选择卡车发动机"
+                    },
+                    "input_models": {
+                        "label": "型号",
+                        "placeholder": "选择卡车型号"
+                    },
+                    "title": "更换卡车发动机",
+                    "warning_message": {
+                        "message": "如果您看到卡车上的<b>徽标悬浮或位置不正确</b>，可以使用下面的按钮将其移除。",
+                        "title": "记住"
+                    }
+                }
+            },
+            "change_truck_transmission": {
+                "description_card": "更换卡车的变速器",
+                "label_card": "更换卡车变速器",
+                "modal": {
+                    "btn_apply": "更改",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "btn_remove_badge": "移除徽标",
+                    "description": "将卡车变速器更换为您选择的型号",
+                    "input_brands": {
+                        "label": "品牌",
+                        "placeholder": "选择卡车品牌"
+                    },
+                    "input_models": {
+                        "label": "型号",
+                        "placeholder": "选择卡车型号"
+                    },
+                    "input_transmissions": {
+                        "label": "变速器",
+                        "placeholder": "选择卡车变速器"
+                    },
+                    "title": "更换卡车变速器",
+                    "warning_message": {
+                        "message": "如果您看到卡车上的<b>徽标悬浮或位置不正确</b>，可以使用下面的按钮将其移除。",
+                        "title": "记住"
+                    }
+                }
+            },
+            "fill_all_trucks_fuel": {
+                "description_card": "为所有卡车加油",
+                "label_card": "加满所有卡车的燃油",
+                "modal": {
+                    "btn_apply": "加油",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "此选项可让您为所有已购买的卡车加油",
+                    "title": "加满所有卡车的燃油"
+                }
+            },
+            "fill_fuel": {
+                "description_card": "为当前卡车加油",
+                "label_card": "加满燃油",
+                "modal": {
+                    "btn_apply": "加油",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "将您的卡车加满燃油",
+                    "title": "加满燃油"
+                }
+            },
+            "infinite_fuel": {
+                "description_card": "为当前卡车提供无限燃油",
+                "label_card": "为当前卡车提供无限燃油",
+                "modal": {
+                    "btn_apply": "加油",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "btn_restore_fuel": "恢复燃油",
+                    "description": "燃油并非真正无限，但约可行驶 5,000,000 公里（具体取决于卡车）",
+                    "title": "为当前卡车提供无限燃油",
+                    "warning_message": {
+                        "message": "在“游戏设置”中<b>禁用“真实油耗”</b>功能以激活此功能。",
+                        "title": "记住"
+                    }
+                }
+            },
+            "license_plate": {
+                "description_card": "更换卡车的车牌",
+                "label_card": "更换卡车车牌",
+                "modal": {
+                    "btn_apply": "应用",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "输入新的卡车车牌号，请记得从Word of Trucks(卡车世界/外部)中移除您的车牌",
+                    "title": "更改卡车车牌"
+                }
+            },
+            "repair_all_trucks": {
+                "description_card": "修复所有卡车",
+                "label_card": "修复所有卡车",
+                "modal": {
+                    "btn_apply": "修复",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "修复公司内所有卡车",
+                    "title": "修复所有卡车"
+                }
+            },
+            "repair_truck": {
+                "description_card": "修复当前卡车",
+                "label_card": "修复卡车",
+                "modal": {
+                    "btn_apply": "修复卡车损坏",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "修复您的卡车损坏",
+                    "title": "修复卡车"
+                }
+            },
+            "tab_title": "卡车"
+        }
+    }
+}
