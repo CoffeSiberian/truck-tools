@@ -1,6 +1,7 @@
 import { FC, useState, useContext, useEffect } from "react";
 import { open, OpenDialogOptions } from "@tauri-apps/plugin-dialog";
 import { documentDir } from "@tauri-apps/api/path";
+import { locale } from "@tauri-apps/plugin-os";
 import {
 	Modal,
 	ModalContent,
@@ -25,6 +26,7 @@ import {
 	setConvoySize,
 	getStoredOpasityStatus,
 	storeOpasityStatus,
+	mostSimilarLang,
 } from "@/utils/fileEdit";
 
 // types
@@ -127,6 +129,8 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 
 	const resetConfigs = async () => {
 		const dirSetDefault = await documentDir();
+		const sys_lang = await locale();
+		const lang_res = mostSimilarLang(sys_lang);
 
 		onClickTheme("system");
 		await storeDocumentDir(dirSetDefault);
@@ -143,6 +147,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 			opasityProfile: true,
 			documentDir: dirSetDefault,
 		});
+		changeLang(lang_res);
 	};
 
 	useEffect(() => {
