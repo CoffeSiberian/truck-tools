@@ -4,7 +4,7 @@
  * Remember to disable “Merge similar classes” to not have optional parameters
  */
 
-export type Langs = "en-US" | "es-CL";
+export type Langs = "en-US" | "es-CL" | "zh-Hans";
 
 export interface TranslationsTypes {
 	components: Components;
