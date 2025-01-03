@@ -79,10 +79,10 @@
                         "modal": {
                             "btn_apply": "确认重命名",
                             "btn_close": "取消",
-                            "description": "你可以对存档进行重命名，但是存档名称必须小于20个字符（小于10个汉字）。",
+                            "description": "你可以对存档进行重命名，但是存档名称必须小于20个字母（小于10个汉字）。",
                             "input_new_name": {
                                 "label": "重命名的存档名称",
-                                "placeholder": "给存档输入一个新的名称"
+                                "placeholder": "输入一个新的存档名称"
                             },
                             "title": "重命名存档"
                         }
@@ -119,11 +119,11 @@
         "profile_error": {
             "btn_how_to": "视频教程",
             "btn_how_to_disable": "如何禁用云存档",
-            "description": "记住在你的存档中 <b> 禁用云存档</b> 或者验证您的文档文件夹位置是否正确，否则您将无法加载您的存档。",
+            "description": "请在你的存档设置中 <b> 禁用云存档</b> 或者验证您的文档文件夹位置是否正确，否则您将无法加载您的存档。",
             "title": "未找到任何存档"
         },
         "updater": {
-            "alert_message": "安装失败，请稍候再次尝试进行安装",
+            "alert_message": "安装失败，请稍候再试(可尝试使用VPN)",
             "btn_cancel": "取消",
             "btn_manual_update": "手动更新",
             "btn_update_now": "现在更新",
@@ -288,7 +288,7 @@
                     "btn_close": "取消",
                     "btn_open": "查看详情",
                     "description": "输入一个新的挂车车牌",
-                    "title": "更换挂车牌照"
+                    "title": "更换挂车车牌"
                 }
             },
             "modify_job_weight": {
@@ -452,8 +452,8 @@
                     "btn_close": "取消",
                     "btn_open": "查看详情",
                     "btn_restore_fuel": "无限燃料",
-                    "description": "确切地说，燃料不是无限的，但大约可以使用 5.000.000 KM（取决于卡车）",
-                    "title": "修改当前卡车为的无限燃料",
+                    "description": "请注意，燃料不是无限的，只是近乎于无线，大约可以使用 5.000.000 KM（取决于卡车）",
+                    "title": "修改当前卡车为无限燃料",
                     "warning_message": {
                         "message": "<b>在 “游戏设置”中</b> 禁用 “真实油耗” 才能使此修改生效。",
                         "title": "提示"
