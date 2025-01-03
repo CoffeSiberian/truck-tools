@@ -261,13 +261,13 @@
                 "placeholder": "选择语言"
             },
             "input_change_theme": {
-                "label": "修改模式",
+                "label": "修改主题",
                 "options": {
                     "dark": "深色",
                     "light": "浅色",
                     "system": "跟随系统"
                 },
-                "placeholder": "选择模式"
+                "placeholder": "选择主题"
             },
             "input_document_folder": {
                 "label": "存档文件夹",
@@ -445,17 +445,17 @@
                 }
             },
             "infinite_fuel": {
-                "description_card": "修改当前卡车为的无限燃料",
-                "label_card": "修改当前卡车为的无限燃料",
+                "description_card": "修改当前卡车为无限燃油",
+                "label_card": "修改当前卡车为无限燃油",
                 "modal": {
                     "btn_apply": "应用",
                     "btn_close": "取消",
                     "btn_open": "查看详情",
-                    "btn_restore_fuel": "无限燃料",
-                    "description": "确切地说，燃料不是无限的，但大约可以使用 5.000.000 KM（取决于卡车）",
-                    "title": "修改当前卡车为的无限燃料",
+                    "btn_restore_fuel": "恢复燃油",
+                    "description": "确切地说，燃料不是无限的，但大约可以行驶 5.000.000 KM（取决于卡车）",
+                    "title": "修改当前卡车为无限燃油",
                     "warning_message": {
-                        "message": "<b>在 “游戏设置”中</b> 禁用 “真实油耗” 才能使此修改生效。",
+                        "message": "在 “游戏设置”中<b> 禁用 “真实油耗” </b>才能使此修改生效。",
                         "title": "提示"
                     }
                 }
