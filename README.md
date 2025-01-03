@@ -30,7 +30,9 @@ To install you will need to run the downloaded file (**.msi**) where it is likel
 
 **Many thanks for your help ❤️**
 
-[![Contributors](https://contrib.rocks/image?repo=CoffeSiberian/truck-tools&max=500&columns=20)](https://github.com/CoffeSiberian/truck-tools/graphs/contributors)
+<a href="https://github.com/coffesiberian/truck-tools/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=coffesiberian/truck-tools" />
+</a>
 
 ### Contribute Translations
 
@@ -43,6 +45,7 @@ Remember, contributing translations makes you a collaborator of the project!
 
 - [x] ATS compatibility
 - [ ] Logo for the app (desktop icon and the main image of the app)
+- [ ] Implement [decrypt_truck][decrypt_truck] library as BETA
 
 #### Trailers
 
@@ -86,18 +89,15 @@ Remember, contributing translations makes you a collaborator of the project!
 - [x] Enable console and developer mode
 - [x] Change convoy mode slots to `128`
 
-❌ Change save format (unnecessary function)
-
 #### Possible features
 
 - Share trailers and trucks with a link
-- Compatibility with DLC's when sharing trailers
 - User account
 - Create custom routes
 - Reset infractions
 - Mods management
 - Modify kilometers traveled by the truck
-- Changing the truck (no need to go to the garage)
+- Changing the truck or trailer (no need to go to the garage)
 - Allow cities to be unlocked and grages to be purchased in a specific way and not in a general
 - Flexible editor for truck and trailer accessories
 
@@ -117,3 +117,4 @@ https://github.com/TheLazyTomcat/SII_Decrypt
 Script to automate the search for engines and transmissions in the game https://github.com/CoffeSiberian/FindTruckInfo
 
 [weblate]: https://hosted.weblate.org/projects/truck-tools/
+[decrypt_truck]: https://crates.io/crates/decrypt_truck
