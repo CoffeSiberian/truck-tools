@@ -131,7 +131,7 @@ const RenderOptions = () => {
 
 			<Image
 				className={classNames(
-					"fixed left-44 top-2 z-20 cursor-pointer",
+					"fixed left-40 top-2 z-20 cursor-pointer",
 					"transition duration-100 ease-in hover:scale-110",
 					"drop-shadow-lg"
 				)}
@@ -142,7 +142,7 @@ const RenderOptions = () => {
 			/>
 			<div
 				className={classNames(
-					"fixed right-32 top-4 z-20 cursor-pointer",
+					"fixed right-28 top-4 z-20 cursor-pointer",
 					"drop-shadow-lg"
 				)}
 			>
