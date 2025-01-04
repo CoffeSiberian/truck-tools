@@ -822,6 +822,7 @@ export const mostSimilarLang = (lang: string | null): Langs => {
 		case "en-US":
 		case "en-CL":
 		case "zh-Hans":
+		case "fr-FR":
 			return lang as Langs;
 	}
 
@@ -833,6 +834,8 @@ export const mostSimilarLang = (lang: string | null): Langs => {
 			return "es-CL";
 		case "zh":
 			return "zh-Hans";
+		case "fr":
+			return "fr-FR";
 		default:
 			return "en-US";
 	}
