@@ -11,11 +11,11 @@
 			"input_colored_margin": "Colored margin",
 			"input_license_plate": {
 				"label": "License plate text",
-				"placeholder": "Enter license plate text"
+				"placeholder": "Enter text"
 			},
 			"input_license_plate_list_store": {
 				"label": "Select a stored plate",
-				"placeholder": "Select license plate"
+				"placeholder": "Select plate"
 			},
 			"title_select_bg_color": "Background color",
 			"title_select_text_color": "Text color"
