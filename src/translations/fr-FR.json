@@ -6,12 +6,12 @@
             "btn_store": "Magasin",
             "input_colored_margin": "Marge colorée",
             "input_license_plate": {
-                "label": "Texte de la plaque d’immatriculation",
+                "label": "Texte de la plaque",
                 "placeholder": "Entrer le texte de la plaque d’immatriculation"
             },
             "input_license_plate_list_store": {
                 "label": "Sélectionner une plaque stockée",
-                "placeholder": "Sélectionner la plaque d’immatriculation"
+                "placeholder": "Sélectionner la plaque"
             },
             "title_select_bg_color": "Couleur d'arrière-plan",
             "title_select_text_color": "Couleur du texte"
