@@ -115,7 +115,7 @@
         "profile_error": {
             "btn_how_to": "tutoriel vidéo",
             "btn_how_to_disable": "Comment désactiver le Cloud Steam",
-            "description": "Pensez à <b> désactiver le Cloud de Steam</b> dans votre profil ou vérifiez l’emplacement de votre dossier « Documents ».",
+            "description": "Pensez à <b> désactiver le Cloud de Steam</b> dans votre profil ou vérifiez l’emplacement de votre dossier « Documents »",
             "title": "Profils non trouvés"
         },
         "updater": {
