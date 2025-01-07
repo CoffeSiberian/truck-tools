@@ -118,5 +118,5 @@ https://github.com/TheLazyTomcat/SII_Decrypt
 
 Script to automate the search for engines and transmissions in the game https://github.com/CoffeSiberian/FindTruckInfo
 
-[weblate]: https://hosted.weblate.org/projects/truck-tools/
+[weblate]: https://hosted.weblate.org/projects/truck-tools/truck-tools/
 [decrypt_truck]: https://crates.io/crates/decrypt_truck
