@@ -1,123 +1,123 @@
 {
     "components": {
         "alert_on_save_default": {
-            "error": "",
-            "succes": ""
+            "error": "Đã xảy ra lỗi trong quá trình",
+            "succes": "Lưu thành công"
         },
         "license_plate": {
-            "btn_delete": "",
-            "btn_load": "",
+            "btn_delete": "Xóa",
+            "btn_load": "Tải",
             "btn_store": "",
             "input_colored_margin": "",
             "input_license_plate": {
-                "label": "",
-                "placeholder": ""
+                "label": "Chữ biển số xe",
+                "placeholder": "Nhập chữ"
             },
             "input_license_plate_list_store": {
                 "label": "",
                 "placeholder": ""
             },
-            "title_select_bg_color": "",
-            "title_select_text_color": ""
+            "title_select_bg_color": "Màu nền",
+            "title_select_text_color": "Màu chữ"
         },
         "player_profile": {
             "btn_profile": "",
             "dropdown": {
                 "profile_options": {
                     "btn_backup_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "Tạo một bản dự phòng cho hồ sơ của bạn",
+                        "label": "Hồ Sơ Dự Phòng",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "btn_open_folder": "",
-                            "description": "",
+                            "btn_apply": "Dự phòng",
+                            "btn_close": "Đóng",
+                            "btn_open_folder": "Mở thư mục",
+                            "description": "Tạo một sao lưu dự phòng, nhớ nhập đích đến",
                             "input_backup_destination": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Chọn thư mục đích",
+                                "placeholder": "Chọn thư mục đích"
                             },
                             "save_folder_dialog": {
                                 "filters_name": {
-                                    "zip": ""
+                                    "zip": "Tệp Zip"
                                 },
-                                "title": ""
+                                "title": "Chọn thư mục đích"
                             },
-                            "title": ""
+                            "title": "Hồ Sơ Dự Phòng"
                         }
                     },
                     "btn_clone_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "Sao chép hồ sơ của bạn sang một hồ sơ mới",
+                        "label": "Nhân Bản Hồ Sơ",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "Nhân bản",
+                            "btn_close": "Đóng",
+                            "description": "Nhập tên của hồ sơ bạn muốn sao chép. Thao tác này sẽ tạo một hồ sơ mới có cùng cài đặt với hồ sơ đã chọn.",
                             "input_new_name": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Tên Hồ Sơ Mới",
+                                "placeholder": "Nhập tên mới cho hồ sơ của bạn"
                             },
-                            "title": ""
+                            "title": "Nhân Bản Hồ Sơ"
                         }
                     },
                     "btn_copy_config": {
-                        "description": "",
-                        "label": "",
+                        "description": "Sao chép cài đặt từ hồ sơ khác",
+                        "label": "Sao Chép Cấu Hình",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "Sao Chép Cấu Hình",
+                            "btn_close": "Đóng",
+                            "description": "Chọn cấu hình mà bạn muốn sao chép cài đặt vào, hãy nhớ rằng cài đặt của bạn sẽ được thay thế, chúng tôi khuyên bạn nên <b>tạo một bản sao lưu cấu hình của mình</b>.",
                             "input_select_profile": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Hồ sơ",
+                                "placeholder": "Chọn một hồ sơ"
                             },
-                            "title": ""
+                            "title": "Sao Chép Cấu Hình"
                         }
                     },
                     "btn_rename_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "Đổi tên hồ sơ của bạn",
+                        "label": "Đổi Tên Hồ Sơ",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "Đổi tên",
+                            "btn_close": "Đóng",
+                            "description": "Bạn có thể đổi tên hồ sơ nhưng phải ít hơn 20 ký tự.",
                             "input_new_name": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Tên hồ sơ",
+                                "placeholder": "Nhập tên mới cho hồ sơ của bạn"
                             },
-                            "title": ""
+                            "title": "Đổi tên hồ sơ"
                         }
                     },
-                    "title": ""
+                    "title": "Tùy Chọn Hồ Sơ"
                 },
                 "save_game_options": {
                     "btn_decrypt_save": {
-                        "description": "",
-                        "label": ""
+                        "description": "Giải mã bản lưu trò chơi đã chọn",
+                        "label": "Giải Mã Bản Lưu"
                     },
                     "btn_open_folder": {
-                        "description": "",
-                        "label": ""
+                        "description": "Mở thư mục lưu trò chơi đã chọn",
+                        "label": "Mở Thư Mục Lưu"
                     },
-                    "title": ""
+                    "title": "Tùy Chọn Lưu Trò Chơi"
                 }
             },
             "input_select_profile": {
-                "label": "",
+                "label": "Chọn hồ sơ",
                 "options": {
-                    "save_load": ""
+                    "save_load": "Lưu"
                 },
-                "placeholder": ""
+                "placeholder": "Chọn một hồ sơ"
             },
             "input_select_save": {
-                "label": "",
-                "placeholder": ""
+                "label": "Chọn bản lưu",
+                "placeholder": "Chọn một bản lưu"
             },
-            "no_selected_profile": "",
-            "no_selected_save": "",
-            "total_saves": ""
+            "no_selected_profile": "Không có hồ sơ được chọn",
+            "no_selected_save": "Không bản lưu được chọn",
+            "total_saves": "Lưu"
         },
         "profile_error": {
-            "btn_how_to": "",
+            "btn_how_to": "Video Hướng Dẫn",
             "btn_how_to_disable": "",
             "description": "",
             "title": ""
