@@ -1,7 +1,7 @@
 {
 	"name": "trucktools",
 	"private": true,
-	"version": "0.6.3",
+	"version": "0.7.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
@@ -23,8 +23,8 @@
 	},
 	"dependencies": {
 		"@formkit/tempo": "^0.1.2",
-		"@nextui-org/react": "2.6.10",
-		"@tabler/icons-react": "^3.26.0",
+		"@nextui-org/react": "2.6.11",
+		"@tabler/icons-react": "^3.27.1",
 		"@tauri-apps/api": "^2.2.0",
 		"@tauri-apps/plugin-dialog": "^2.2.0",
 		"@tauri-apps/plugin-fs": "^2.2.0",
@@ -32,22 +32,22 @@
 		"@tauri-apps/plugin-process": "^2.2.0",
 		"@tauri-apps/plugin-shell": "^2.2.0",
 		"@tauri-apps/plugin-store": "^2.2.0",
-		"@tauri-apps/plugin-updater": "^2.3.0",
+		"@tauri-apps/plugin-updater": "^2.3.1",
 		"buffer": "^6.0.3",
 		"classnames": "^2.5.1",
-		"framer-motion": "^11.15.0",
+		"framer-motion": "^11.16.0",
 		"primereact": "^10.9.1",
 		"react": "^18.3.1",
 		"react-color-palette": "^7.3.0",
 		"react-dom": "^18.3.1",
 		"react-snowfall": "^2.2.0",
-		"uuid": "^11.0.3"
+		"uuid": "^11.0.4"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.17.0",
 		"@tauri-apps/cli": "^2.2.2",
 		"@types/node": "^22.10.5",
-		"@types/react": "^19.0.2",
+		"@types/react": "^19.0.3",
 		"@types/react-dom": "^19.0.2",
 		"@types/uuid": "^10.0.0",
 		"@vitejs/plugin-react": "^4.3.4",
@@ -61,7 +61,7 @@
 		"prettier-plugin-tailwindcss": "^0.6.9",
 		"tailwindcss": "^3.4.17",
 		"typescript": "^5.7.2",
-		"typescript-eslint": "^8.19.0",
+		"typescript-eslint": "^8.19.1",
 		"vite": "^6.0.7"
 	}
 }
