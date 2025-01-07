@@ -100,6 +100,8 @@ Remember, contributing translations makes you a collaborator of the project!
 - Changing the truck or trailer (no need to go to the garage)
 - Allow cities to be unlocked and grages to be purchased in a specific way and not in a general
 - Flexible editor for truck and trailer accessories
+- Unblock recruiting agencies
+- Discover all the map
 
 ### Related projects
 
