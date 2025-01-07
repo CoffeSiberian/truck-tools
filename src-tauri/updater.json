@@ -1,11 +1,11 @@
 {
-	"version": "v0.6.3",
-	"notes": "- New Volvo FH5 & Volvo FH6 engines and transmissions\n\nHappy Holidays from SiberianCoffe with love ❤️",
-	"pub_date": "2024-12-17T16:00:00-03:00",
+	"version": "v0.7.0",
+	"notes": "Truck Tools is now available in multiple languages 🎊🎊🎊\n\nThe app is now available in Chinese, French and Spanish thanks to the contributions of the community.\n\nMany thanks to those who contribute to the project!",
+	"pub_date": "2025-01-07T10:00:00-03:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlJTVmo3WDF3SzZSVWYzeHNJNDJCM21VOSt4b1ovWS9tY1ZIQ3BUL3dIalBvZERTZDZ3blNOM3JkYVhnQ0Ywd1FlWnNYZUFMaThXeDRDV01uZ3V4NmdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzM0NDY2OTI3CWZpbGU6VHJ1Y2sgVG9vbHNfMC42LjNfeDY0X2VuLVVTLm1zaS56aXAKWGlqUUxuUzRlUlc2bXN4V2JvSVhUdHUzc0VkNnFWMlA3cWNnY3ZtWjgwMUV1WFdEeEh5Y0FMVGgyaU4xczNRa280QzQ3aDVkZU9GdmF2ckUzY1duREE9PQo=",
-			"url": "https://cdn.siberiancoffe.dev/truck-tools/tauri-v1/Truck_Tools_0.6.3_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmI1MlJUVXV1VjBic1ZCczNtaU5QWDJ5Y2NzSDZjNXFZcVpLMkZNdUszSkU2Wm91SXlDUmk3NGZXTDVoZWRySTVPRml5QXl1djF5bmZjNmZiYmJzMmdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzM2MjU2OTkwCWZpbGU6VHJ1Y2sgVG9vbHNfMC43LjBfeDY0X2VuLVVTLm1zaS56aXAKMGxpbEVFRVpYTWZSOHdmaW83Ym5DSFE2SGlwSUVPNldXanVzaURqaGFvYmdiRlhMTGlVTGhuNUNvYXFQRWJXbXFEUE9PR2pNelVaNzYzdk1mckhVREE9PQo=",
+			"url": "https://cdn.siberiancoffe.dev/truck-tools/tauri-v1/Truck_Tools_0.7.0_x64_en-US.msi.zip"
 		}
 	}
 }
