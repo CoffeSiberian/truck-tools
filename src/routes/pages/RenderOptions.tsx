@@ -1,5 +1,6 @@
 import { JSX, useState, useContext } from "react";
 import { LocaleContext } from "@/hooks/useLocaleContext";
+import { DarkModeContex } from "@/hooks/useDarkModeContex";
 import { open } from "@tauri-apps/plugin-shell";
 import { Tabs, Tab, useDisclosure, Image, Button } from "@nextui-org/react";
 import classNames from "classnames";
@@ -36,6 +37,7 @@ interface ItemsTypes {
 
 const RenderOptions = () => {
 	const { translations } = useContext(LocaleContext);
+	const { darkMode } = useContext(DarkModeContex);
 	const [activeIndex, setActiveIndex] = useState<ItemId>("trailer");
 	const { trailers, trucks, profile, settings, about } =
 		translations.menu_options;
@@ -147,10 +149,14 @@ const RenderOptions = () => {
 				)}
 			>
 				<Button
-					onPress={() => open("https://github.com/CoffeSiberian/truck-tools")}
-					variant="bordered"
-					startContent={<IconBrandGithub />}
+					className={classNames(
+						darkMode ? "text-emerald-400" : "text-emerald-600",
+						"font-extrabold"
+					)}
+					variant="faded"
 					size="sm"
+					startContent={<IconBrandGithub />}
+					onPress={() => open("https://github.com/CoffeSiberian/truck-tools")}
 				>
 					Star on GitHub ❤️
 				</Button>
