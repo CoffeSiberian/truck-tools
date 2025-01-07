@@ -1,4 +1,5 @@
 import { FC, useState, useContext, useEffect } from "react";
+import { open as openLink } from "@tauri-apps/plugin-shell";
 import { open, OpenDialogOptions } from "@tauri-apps/plugin-dialog";
 import { documentDir } from "@tauri-apps/api/path";
 import { locale } from "@tauri-apps/plugin-os";
@@ -38,6 +39,7 @@ import {
 	IconFolderSearch,
 	IconFolderPlus,
 	IconRefresh,
+	IconEdit,
 } from "@tabler/icons-react";
 
 interface SettingsModalProps {
@@ -213,7 +215,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 									</SelectItem>
 								</Select>
 							</div>
-							<div className="flex justify-center gap-1">
+							<div className="flex items-center justify-center gap-2">
 								<Select
 									label={settings.input_change_language.label}
 									placeholder={settings.input_change_language.placeholder}
@@ -229,6 +231,17 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 									<SelectItem key="fr-FR">Français</SelectItem>
 									<SelectItem key="es-CL">Español</SelectItem>
 								</Select>
+								<Button
+									color="primary"
+									isIconOnly
+									onPress={() =>
+										openLink(
+											"https://github.com/CoffeSiberian/truck-tools?tab=readme-ov-file#contribute-translations"
+										)
+									}
+								>
+									<IconEdit />
+								</Button>
 							</div>
 							<div className="flex">
 								<Switch
