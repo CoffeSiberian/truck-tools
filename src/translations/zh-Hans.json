@@ -11,7 +11,7 @@
             "input_colored_margin": "彩色边框",
             "input_license_plate": {
                 "label": "车牌信息",
-                "placeholder": "输入车牌文字"
+                "placeholder": "输入文字"
             },
             "input_license_plate_list_store": {
                 "label": "选择一块已保存的车牌",
