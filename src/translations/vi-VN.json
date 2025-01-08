@@ -21,7 +21,7 @@
             "title_select_text_color": "Màu chữ"
         },
         "player_profile": {
-            "btn_profile": "",
+            "btn_profile": "Tùy Chọn Hồ Sơ",
             "dropdown": {
                 "profile_options": {
                     "btn_backup_profile": {
@@ -118,64 +118,64 @@
         },
         "profile_error": {
             "btn_how_to": "Video Hướng Dẫn",
-            "btn_how_to_disable": "",
-            "description": "",
-            "title": ""
+            "btn_how_to_disable": "Cách tắt Steam Cloud",
+            "description": "Nhớ <b> tắt Steam Cloud</b> từ hồ sơ của bạn hoặc xác minh vị trí thư mục \"Tài liệu\" của bạn",
+            "title": "Không tìm thấy hồ sơ"
         },
         "updater": {
-            "alert_message": "",
-            "btn_cancel": "",
-            "btn_manual_update": "",
-            "btn_update_now": "",
-            "downloading": "",
-            "release_notes": "",
-            "title": "",
-            "version": ""
+            "alert_message": "Cài đặt không thành công. Hãy thử lại sau",
+            "btn_cancel": "Hủy",
+            "btn_manual_update": "Cập Nhật Thủ Công",
+            "btn_update_now": "Cập Nhật Ngay",
+            "downloading": "Đang tải xuống...",
+            "release_notes": "Ghi chú phát hành",
+            "title": "Đã có phiên bản mới",
+            "version": "Phiên bản:"
         }
     },
     "menu_options": {
         "about": {
-            "description": "",
+            "description": "Đây là một ứng dụng mã nguồn mở được tạo ra nhằm giúp người chơi ETS 2 & ATS chỉnh sửa Lưu trò chơi của họ một cách đơn giản và dễ dàng cho những ai không muốn chỉnh sửa các mã này theo cách thủ công.",
             "tab_title": ""
         },
         "profile": {
             "add_experience": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Thay đổi kinh nghiệm vào hồ sơ của bạn",
+                "label_card": "Thay đổi kinh nghiệm",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Áp dụng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
+                    "description": "Nhập số lượng kinh nghiệm bạn muốn thêm vào hồ sơ của mình",
                     "input_experience": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Kinh nghiệm",
+                        "placeholder": "Nhập số điểm kinh nghiệm bằng số"
                     },
-                    "title": ""
+                    "title": "Thay đổi kinh nghiệm"
                 }
             },
             "add_money": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Thêm tiền vào hồ sơ của bạn",
+                "label_card": "Thay đổi tiền",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Áp dụng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
+                    "description": "Thêm số tiền bạn muốn vào hồ sơ của bạn",
                     "input_money": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Tiền",
+                        "placeholder": "Nhập số tiền tính bằng EUR"
                     },
-                    "title": ""
+                    "title": "Thay đổi tiền"
                 }
             },
             "dealer_visited": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Đặt tất cả trạng thái đại lý vào hồ sơ của bạn",
+                "label_card": "Khám phá tất cả các đại lý",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
+                    "btn_apply": "Áp dụng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
                     "description": "",
                     "input_dealer_status": {
                         "label": "",
@@ -191,10 +191,10 @@
                 "description_card": "",
                 "label_card": "",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Áp dụng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
+                    "description": "Chọn trạng thái gara muốn áp dụng vào hồ sơ của mình",
                     "input_garage_status": {
                         "label": "",
                         "options": {
@@ -208,13 +208,13 @@
                 }
             },
             "skills_points": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Đặt kỹ năng kinh nghiệm vào hồ sơ của bạn",
+                "label_card": "Đặt kỹ năng kinh nghiệm",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Áp dụng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
+                    "description": "Nhập số lượng kinh nghiệm bạn cần",
                     "eco_driving": "",
                     "fragile_cargo": "",
                     "high_value_cargo": "",
@@ -238,9 +238,9 @@
                 "description_card": "",
                 "label_card": "",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
+                    "btn_apply": "Áp dụng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
                     "description": "",
                     "input_city_status": {
                         "label": "",
@@ -257,17 +257,17 @@
             "btn_reset": "",
             "document_dialog_title": "",
             "input_change_language": {
-                "label": "",
-                "placeholder": ""
+                "label": "Thay đổi ngôn ngữ",
+                "placeholder": "Chọn ngôn ngữ"
             },
             "input_change_theme": {
-                "label": "",
+                "label": "Thay đổi chủ đề",
                 "options": {
-                    "dark": "",
-                    "light": "",
-                    "system": ""
+                    "dark": "Tối",
+                    "light": "Sáng",
+                    "system": "Hệ thống"
                 },
-                "placeholder": ""
+                "placeholder": "Chọn chủ đề"
             },
             "input_document_folder": {
                 "label": "",
@@ -281,12 +281,12 @@
         },
         "trailers": {
             "license_plate": {
-                "description_card": "",
+                "description_card": "Đổi biển số trailer",
                 "label_card": "",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
+                    "btn_apply": "Áp dụng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
                     "description": "",
                     "title": ""
                 }
@@ -295,24 +295,24 @@
                 "description_card": "",
                 "label_card": "",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Áp dụng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
+                    "description": "Điều này sẽ sửa đổi trọng lượng công việc hiện tại của bạn thành công việc bạn xác định ở đây. Hãy nhớ rằng bạn sẽ cần phải có một công việc tích cực gắn liền với xe tải của mình",
                     "input_weight": {
                         "label": "",
                         "placeholder": ""
                     },
-                    "title": ""
+                    "title": "Thay đổi trọng lượng tải"
                 }
             },
             "modify_trailer_weight": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Sửa đổi trọng lượng xe moóc, chỉ áp dụng một lần",
+                "label_card": "Thay đổi trọng lượng xe moóc",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
+                    "btn_apply": "Áp dụng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
                     "description": "",
                     "input_body_mass": {
                         "label": "",
@@ -322,16 +322,16 @@
                         "label": "",
                         "placeholder": ""
                     },
-                    "title": ""
+                    "title": "Thay đổi trọng lượng xe moóc"
                 }
             },
             "repair_all_trailer": {
                 "description_card": "",
                 "label_card": "",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
+                    "btn_apply": "Sửa chữa",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
                     "description": "",
                     "title": ""
                 }
@@ -340,9 +340,9 @@
                 "description_card": "",
                 "label_card": "",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
+                    "btn_apply": "Sửa chữa",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
                     "description": "",
                     "title": ""
                 }
@@ -352,14 +352,14 @@
                 "description_card": "",
                 "label_card": "",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
+                    "btn_apply": "Mở khóa",
+                    "btn_close": "Đóng",
                     "btn_how_to_use": "",
-                    "btn_open": "",
+                    "btn_open": "Mở",
                     "description": "",
                     "title": "",
                     "warning_message": {
-                        "message": "",
+                        "message": "Bạn phải gắn rơ-moóc vào xe tải để những thay đổi có hiệu lực.",
                         "title": ""
                     }
                 }
@@ -367,30 +367,30 @@
         },
         "trucks": {
             "change_truck_engine": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Thay đổi động cơ của xe tải",
+                "label_card": "Thay đổi động cơ xe tải",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_remove_badge": "",
-                    "description": "",
+                    "btn_apply": "Thay đổi",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
+                    "btn_remove_badge": "Gỡ huy hiệu",
+                    "description": "Thay đổi động cơ xe tải của bạn theo lựa chọn của bạn",
                     "input_brands": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Hãng",
+                        "placeholder": "Chọn hãng xe tải"
                     },
                     "input_engines": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Động cơ",
+                        "placeholder": "Chọn động cơ xe tải"
                     },
                     "input_models": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Mẫu",
+                        "placeholder": "Chọn mẫu xe tải"
                     },
-                    "title": "",
+                    "title": "Thay đổi động cơ xe tải",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Nếu bạn thấy bất kỳ <b>logo nào nổi hoặc ở vị trí sai</b> trên xe tải, bạn có thể xóa logo đó bằng nút bên dưới.",
+                        "title": "Nhớ"
                     }
                 }
             },
@@ -398,9 +398,9 @@
                 "description_card": "",
                 "label_card": "",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
+                    "btn_apply": "Thay đổi",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
                     "btn_remove_badge": "",
                     "description": "",
                     "input_brands": {
@@ -426,74 +426,74 @@
                 "description_card": "",
                 "label_card": "",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Đổ Xăng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
+                    "description": "Tùy chọn này sẽ cho phép bạn tiếp nhiên liệu cho tất cả các xe tải đã mua của bạn",
+                    "title": "Đổ đầy nhiên liệu tất cả xe tải"
                 }
             },
             "fill_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Đổ đầy nhiên liệu vào xe tải hiện tại",
+                "label_card": "Đổ đầy nhiên liệu",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Đổ Xăng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
+                    "description": "Tiếp nhiên liệu hoàn toàn cho xe tải của bạn",
+                    "title": "Đổ đầy nhiên liệu"
                 }
             },
             "infinite_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Nhiên liệu vô hạn trên xe tải hiện tại",
+                "label_card": "Nhiên liệu vô hạn trên xe tải hiện tại",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_restore_fuel": "",
-                    "description": "",
-                    "title": "",
+                    "btn_apply": "Đổ Xăng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
+                    "btn_restore_fuel": "Khôi phục nhiên liệu",
+                    "description": "Chính xác nhiên liệu không phải là vô tận nhưng nó dành cho khoảng 5.000.000 KM (tùy xe)",
+                    "title": "Nhiên liệu vô hạn trên xe tải hiện tại",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "<b>Tắt \"Mức tiêu thụ nhiên liệu thực tế\"</b> trong phần \"Trò chơi\" của bạn để chức năng này có hiệu lực.",
+                        "title": "Nhớ"
                     }
                 }
             },
             "license_plate": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Thay đổi biển số xe tải",
+                "label_card": "Thay đổi biển số xe tải",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Áp dụng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
+                    "description": "Nhập biển số xe tải mới. Hãy nhớ bỏ biển số xe của bạn khỏi Word of Trucks",
+                    "title": "Thay đổi biển số xe tải"
                 }
             },
             "repair_all_trucks": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Sửa chữa tất cả các đội xe tải",
+                "label_card": "Sửa chữa tất cả xe tải",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Sửa chữa",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
+                    "description": "Sửa chữa tất cả xe tải bạn có trong công ty của bạn",
+                    "title": "Sửa chữa tất cả xe tải"
                 }
             },
             "repair_truck": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Sửa chữa xe tải hiện tại của bạn",
+                "label_card": "Sửa chữa xe tải",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Sửa chữa",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
+                    "description": "Sửa chữa hư hỏng cho xe tải của bạn",
+                    "title": "Sửa chữa xe tải"
                 }
             },
-            "tab_title": ""
+            "tab_title": "Xe tải"
         }
     }
 }
