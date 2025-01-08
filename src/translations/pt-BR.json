@@ -127,6 +127,9 @@
             "release_notes": "",
             "title": "",
             "version": ""
+        },
+        "alert_on_save_default": {
+            "error": "Um erro ocorreu no Processo"
         }
     },
     "menu_options": {
