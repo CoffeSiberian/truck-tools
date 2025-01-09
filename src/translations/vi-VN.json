@@ -176,35 +176,35 @@
                     "btn_apply": "Áp dụng",
                     "btn_close": "Đóng",
                     "btn_open": "Mở",
-                    "description": "",
+                    "description": "Chọn trạng thái của tất cả các đại lý trong hồ sơ của bạn",
                     "input_dealer_status": {
-                        "label": "",
+                        "label": "Thành phố đã ghé thăm",
                         "options": {
-                            "unvisit_all": "",
-                            "visit_all": ""
+                            "unvisit_all": "Chưa ghé thăm tất cả các đại lý",
+                            "visit_all": "Đã ghé thăm tất cả các đại lý"
                         }
                     },
-                    "title": ""
+                    "title": "Khám phá tất cả các đại lý"
                 }
             },
             "garage_status": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Đặt bất kỳ trạng thái gara nào vào hồ sơ của bạn",
+                "label_card": "Mua tất cả gara",
                 "modal": {
                     "btn_apply": "Áp dụng",
                     "btn_close": "Đóng",
                     "btn_open": "Mở",
                     "description": "Chọn trạng thái gara muốn áp dụng vào hồ sơ của mình",
                     "input_garage_status": {
-                        "label": "",
+                        "label": "Tình trạng gara",
                         "options": {
-                            "large_garage": "",
-                            "medium_garage": "",
-                            "sell_garage": "",
-                            "small_garage": ""
+                            "large_garage": "Gara lớn",
+                            "medium_garage": "Gara hạng trung",
+                            "sell_garage": "Bán gara",
+                            "small_garage": "Gara nhỏ"
                         }
                     },
-                    "title": ""
+                    "title": "Mua tất cả gara"
                 }
             },
             "skills_points": {
@@ -216,14 +216,14 @@
                     "btn_open": "Mở",
                     "description": "Nhập số lượng kinh nghiệm bạn cần",
                     "eco_driving": "",
-                    "fragile_cargo": "",
-                    "high_value_cargo": "",
+                    "fragile_cargo": "Hàng dễ vỡ",
+                    "high_value_cargo": "Hàng có giá trị cao",
                     "input_skills_points": {
                         "corrosive": "",
                         "explosives": "",
-                        "flammable_liquids": "",
-                        "flammable_solids": "",
-                        "gases": "",
+                        "flammable_liquids": "Chất lỏng dễ cháy",
+                        "flammable_solids": "Chất rắn dễ cháy",
+                        "gases": "Khí",
                         "label": "",
                         "placeholder": "",
                         "toxic_and_infectious": ""
@@ -313,54 +313,54 @@
                     "btn_apply": "Áp dụng",
                     "btn_close": "Đóng",
                     "btn_open": "Mở",
-                    "description": "",
+                    "description": "Điều này sửa đổi trọng lượng của xe kéo của bạn theo 2 tham số. Thông thường, chassis_mass được sử dụng nhưng bạn cũng có thể chỉnh sửa body_mass (body_mass mặc định là 0)",
                     "input_body_mass": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Khối lượng bản thân tính bằng kg",
+                        "placeholder": "Nhập khối lượng bản thân tính bằng kg"
                     },
                     "input_chassis_mass": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Khối lượng khung tính bằng kg",
+                        "placeholder": "Nhập khối lượng khung xe tính bằng kg"
                     },
                     "title": "Thay đổi trọng lượng xe moóc"
                 }
             },
             "repair_all_trailer": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Sửa chữa tất cả các moóc kéo bạn có",
+                "label_card": "Sửa chữa tất cả các moóc kéo",
                 "modal": {
                     "btn_apply": "Sửa chữa",
                     "btn_close": "Đóng",
                     "btn_open": "Mở",
-                    "description": "",
-                    "title": ""
+                    "description": "Sửa chữa tất cả các moóc kéo bạn sở hữu",
+                    "title": "Sửa chữa tất cả các moóc kéo"
                 }
             },
             "repair_trailer": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Sửa chữa moóc kéo hiện tại",
+                "label_card": "Sửa chữa moóc kéo",
                 "modal": {
                     "btn_apply": "Sửa chữa",
                     "btn_close": "Đóng",
                     "btn_open": "Mở",
-                    "description": "",
-                    "title": ""
+                    "description": "Sửa chữa rơ-moóc hiện đang được gắn vào rơ-moóc",
+                    "title": "Sửa chữa moóc kéo"
                 }
             },
-            "tab_title": "",
+            "tab_title": "Moóc kéo",
             "unlock_trailer_country": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Mở khóa việc chặn moóc kéo trong khu vực",
+                "label_card": "Bỏ chặn moóc kéo theo quốc gia",
                 "modal": {
                     "btn_apply": "Mở khóa",
                     "btn_close": "Đóng",
-                    "btn_how_to_use": "",
+                    "btn_how_to_use": "Cách sử dụng",
                     "btn_open": "Mở",
-                    "description": "",
-                    "title": "",
+                    "description": "Mở khóa moóc kéo của bạn ở tất cả các quốc gia nếu nó bị trò chơi chặn",
+                    "title": "Mở Khóa Moóc Kéo Hiện Tại",
                     "warning_message": {
                         "message": "Bạn phải gắn rơ-moóc vào xe tải để những thay đổi có hiệu lực.",
-                        "title": ""
+                        "title": "Nhớ"
                     }
                 }
             }
@@ -418,7 +418,7 @@
                     "title": "",
                     "warning_message": {
                         "message": "",
-                        "title": ""
+                        "title": "Nhớ"
                     }
                 }
             },
