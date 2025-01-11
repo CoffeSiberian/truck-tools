@@ -51,7 +51,7 @@
                         "modal": {
                             "btn_apply": "复制",
                             "btn_close": "取消",
-                            "description": "复制存档并创建一个完全一模一样的存档",
+                            "description": "复制存档并创建一个完全一模一样的存档。",
                             "input_new_name": {
                                 "label": "复制存档名称",
                                 "placeholder": "输入复制存档的名称"
@@ -119,7 +119,7 @@
         "profile_error": {
             "btn_how_to": "视频教程",
             "btn_how_to_disable": "如何禁用云存档",
-            "description": "记住在你的存档中 <b> 禁用云存档</b> 或者验证您的文档文件夹位置是否正确，否则您将无法加载您的存档。",
+            "description": "记住在你的存档中 <b> 禁用云存档</b> 或者验证您的文档文件夹位置是否正确，否则您将无法加载您的存档",
             "title": "未找到任何存档"
         },
         "updater": {
@@ -141,7 +141,7 @@
         "profile": {
             "add_experience": {
                 "description_card": "修改存档经验",
-                "label_card": "经验修改",
+                "label_card": "修改经验等级",
                 "modal": {
                     "btn_apply": "应用",
                     "btn_close": "取消",
@@ -171,7 +171,7 @@
             },
             "dealer_visited": {
                 "description_card": "修改卡车经销商解锁状态",
-                "label_card": "包含所有经销商",
+                "label_card": "解锁所有卡车经销商",
                 "modal": {
                     "btn_apply": "应用",
                     "btn_close": "取消",
@@ -233,7 +233,7 @@
                     "title": "设置玩家技能点"
                 }
             },
-            "tab_title": "个人信息",
+            "tab_title": "存档基本修改",
             "visited_cities": {
                 "description_card": "设置您的存档中探索过的城市",
                 "label_card": "探索所有城市",
@@ -350,7 +350,7 @@
             "tab_title": "拖车",
             "unlock_trailer_country": {
                 "description_card": "解锁挂车的区域限制",
-                "label_card": "按国家/地区解锁拖车",
+                "label_card": "解锁挂车国家/地区限制",
                 "modal": {
                     "btn_apply": "解锁",
                     "btn_close": "取消",
