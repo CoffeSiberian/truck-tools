@@ -136,7 +136,7 @@
     "menu_options": {
         "about": {
             "description": "Il s’agit d’une application open source créée afin d’aider les joueurs ETS 2 & ATS à modifier leur sauvegarde de jeu d’une manière simple et facile pour ceux qui ne veulent pas éditer ces codes manuellement.",
-            "tab_title": "A propos de"
+            "tab_title": "A propos"
         },
         "profile": {
             "add_experience": {
@@ -292,8 +292,8 @@
                 }
             },
             "modify_job_weight": {
-                "description_card": "Modifier le poids de la tâche",
-                "label_card": "Modifier le poids de la tâche",
+                "description_card": "Modifier le poids de la livraison",
+                "label_card": "Modifier le poids de la livraison",
                 "modal": {
                     "btn_apply": "Appliquer",
                     "btn_close": "Fermé",
