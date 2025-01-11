@@ -7,15 +7,15 @@
         "license_plate": {
             "btn_delete": "Xóa",
             "btn_load": "Tải",
-            "btn_store": "",
-            "input_colored_margin": "",
+            "btn_store": "Lưu trữ",
+            "input_colored_margin": "Lề màu",
             "input_license_plate": {
                 "label": "Chữ biển số xe",
                 "placeholder": "Nhập chữ"
             },
             "input_license_plate_list_store": {
-                "label": "",
-                "placeholder": ""
+                "label": "Chọn biển số đã lưu",
+                "placeholder": "Chọn biển số"
             },
             "title_select_bg_color": "Màu nền",
             "title_select_text_color": "Màu chữ"
@@ -136,7 +136,7 @@
     "menu_options": {
         "about": {
             "description": "Đây là một ứng dụng mã nguồn mở được tạo ra nhằm giúp người chơi ETS 2 & ATS chỉnh sửa Lưu trò chơi của họ một cách đơn giản và dễ dàng cho những ai không muốn chỉnh sửa các mã này theo cách thủ công.",
-            "tab_title": ""
+            "tab_title": "Thông tin"
         },
         "profile": {
             "add_experience": {
@@ -215,47 +215,47 @@
                     "btn_close": "Đóng",
                     "btn_open": "Mở",
                     "description": "Nhập số lượng kinh nghiệm bạn cần",
-                    "eco_driving": "",
+                    "eco_driving": "Lái xe sinh thái",
                     "fragile_cargo": "Hàng dễ vỡ",
                     "high_value_cargo": "Hàng có giá trị cao",
                     "input_skills_points": {
-                        "corrosive": "",
-                        "explosives": "",
+                        "corrosive": "Chất ăn mòn",
+                        "explosives": "Thuốc nổ",
                         "flammable_liquids": "Chất lỏng dễ cháy",
                         "flammable_solids": "Chất rắn dễ cháy",
                         "gases": "Khí",
-                        "label": "",
-                        "placeholder": "",
-                        "toxic_and_infectious": ""
+                        "label": "ADR",
+                        "placeholder": "Chọn ADR",
+                        "toxic_and_infectious": "Độc hại và truyền nhiễm"
                     },
-                    "just_in_time_delivery": "",
-                    "long_distance": "",
-                    "title": ""
+                    "just_in_time_delivery": "Giao hàng đúng hẹn",
+                    "long_distance": "Khoảng cách dài",
+                    "title": "Đặt Kỹ Năng Kinh Nghiệm"
                 }
             },
-            "tab_title": "",
+            "tab_title": "Hồ sơ",
             "visited_cities": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Đặt bất kỳ trạng thái nào đã ghé thăm thành phố vào hồ sơ của bạn",
+                "label_card": "Khám phá tất cả thành phố",
                 "modal": {
                     "btn_apply": "Áp dụng",
                     "btn_close": "Đóng",
                     "btn_open": "Mở",
-                    "description": "",
+                    "description": "Chọn trạng thái của tất cả các thành phố đã ghé thăm",
                     "input_city_status": {
-                        "label": "",
+                        "label": "Thành phố đã ghé thăm",
                         "options": {
-                            "unvisit_all": "",
-                            "visit_all": ""
+                            "unvisit_all": "Chưa ghé thăm tất cả thành phố",
+                            "visit_all": "Đã ghé thăm tất cả thành phố"
                         }
                     },
-                    "title": ""
+                    "title": "Khám phá tất cả thành phố"
                 }
             }
         },
         "settings": {
-            "btn_reset": "",
-            "document_dialog_title": "",
+            "btn_reset": "Đặt Lại Cài Đặt",
+            "document_dialog_title": "Chọn thư mục lưu trữ chương trình của bạn",
             "input_change_language": {
                 "label": "Thay đổi ngôn ngữ",
                 "placeholder": "Chọn ngôn ngữ"
@@ -270,38 +270,38 @@
                 "placeholder": "Chọn chủ đề"
             },
             "input_document_folder": {
-                "label": "",
-                "placeholder": ""
+                "label": "Thư mục tài liệu",
+                "placeholder": "Nhập thư mục tài liệu"
             },
-            "input_enable_128_slots": "",
-            "input_enable_console": "",
-            "input_opacity_profile": "",
-            "tab_title": "",
-            "title": ""
+            "input_enable_128_slots": "Kích hoạt 128 chỗ chế độ đoàn xe",
+            "input_enable_console": "Bật bảng điều khiển và chế độ nhà phát triển",
+            "input_opacity_profile": "Độ mờ trên hồ sơ được chọn",
+            "tab_title": "Cài đặt",
+            "title": "Cài đặt"
         },
         "trailers": {
             "license_plate": {
                 "description_card": "Đổi biển số trailer",
-                "label_card": "",
+                "label_card": "Đổi biển số moóc kéo",
                 "modal": {
                     "btn_apply": "Áp dụng",
                     "btn_close": "Đóng",
                     "btn_open": "Mở",
-                    "description": "",
-                    "title": ""
+                    "description": "Nhập biển số mới của moóc kéo",
+                    "title": "Đổi biển số moóc kéo"
                 }
             },
             "modify_job_weight": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Điều chỉnh cân nặng công việc",
+                "label_card": "Sửa đổi cân nặng công việc",
                 "modal": {
                     "btn_apply": "Áp dụng",
                     "btn_close": "Đóng",
                     "btn_open": "Mở",
                     "description": "Điều này sẽ sửa đổi trọng lượng công việc hiện tại của bạn thành công việc bạn xác định ở đây. Hãy nhớ rằng bạn sẽ cần phải có một công việc tích cực gắn liền với xe tải của mình",
                     "input_weight": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Cân nặng kg",
+                        "placeholder": "Nhập cân nặng kg"
                     },
                     "title": "Thay đổi trọng lượng tải"
                 }
@@ -395,36 +395,36 @@
                 }
             },
             "change_truck_transmission": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Thay đổi hộp số của xe tải",
+                "label_card": "Thay đổi hộp số xe tải",
                 "modal": {
                     "btn_apply": "Thay đổi",
                     "btn_close": "Đóng",
                     "btn_open": "Mở",
-                    "btn_remove_badge": "",
-                    "description": "",
+                    "btn_remove_badge": "Gỡ huy hiệu",
+                    "description": "Thay đổi hộp số của xe tải của bạn thành hộp số bạn chọn",
                     "input_brands": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Hãng",
+                        "placeholder": "Chọn hãng xe tải"
                     },
                     "input_models": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Mẫu",
+                        "placeholder": "Chọn mẫu xe tải"
                     },
                     "input_transmissions": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Hộp số",
+                        "placeholder": "Chọn hộp số xe tải"
                     },
-                    "title": "",
+                    "title": "Thay đổi hộp số xe tải",
                     "warning_message": {
-                        "message": "",
+                        "message": "Nếu bạn thấy bất kỳ <b>logo nào nổi hoặc ở vị trí sai</b> trên xe tải, bạn có thể xóa nó bằng nút bên dưới.",
                         "title": "Nhớ"
                     }
                 }
             },
             "fill_all_trucks_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Tiếp nhiên liệu cho tất cả các xe tải của đội xe",
+                "label_card": "Đổ đầy nhiên liệu tất cả xe tải",
                 "modal": {
                     "btn_apply": "Đổ Xăng",
                     "btn_close": "Đóng",
