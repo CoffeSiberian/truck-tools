@@ -1,11 +1,11 @@
 {
-	"version": "v0.7.0",
-	"notes": "Truck Tools is now available in multiple languages 🎊🎊🎊\n\nThe app is now available in Chinese, French and Spanish thanks to the contributions of the community.\n\nMany thanks to those who contribute to the project!",
-	"pub_date": "2025-01-07T10:00:00-03:00",
+	"version": "v0.7.1",
+	"notes": "New languages added (Vietnamese and Portuguese) and minor corrections\n\nMany thanks to the contributors ❤️",
+	"pub_date": "2025-01-12T02:00:00-03:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmI1MlJUVXV1VjBic1ZCczNtaU5QWDJ5Y2NzSDZjNXFZcVpLMkZNdUszSkU2Wm91SXlDUmk3NGZXTDVoZWRySTVPRml5QXl1djF5bmZjNmZiYmJzMmdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzM2MjU2OTkwCWZpbGU6VHJ1Y2sgVG9vbHNfMC43LjBfeDY0X2VuLVVTLm1zaS56aXAKMGxpbEVFRVpYTWZSOHdmaW83Ym5DSFE2SGlwSUVPNldXanVzaURqaGFvYmdiRlhMTGlVTGhuNUNvYXFQRWJXbXFEUE9PR2pNelVaNzYzdk1mckhVREE9PQo=",
-			"url": "https://cdn.siberiancoffe.dev/truck-tools/tauri-v1/Truck_Tools_0.7.0_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlYrMXJ6cFY0TzBQeVBBZ0p1M1B6d3h2NndsUU5sZzl1MFZnWEptNmIxUWlDZUVpaVFvbytYRDEzemZ5YlM0RStCZFRnRVZLQTJtNWd2MUpMK3VIZVFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzM2NjU5MTk0CWZpbGU6VHJ1Y2sgVG9vbHNfMC43LjFfeDY0X2VuLVVTLm1zaS56aXAKd2JaWHRwYy9ZbmRaUVVsVXUrVTRQT2FnbVRUVjNtajlwSzRmQ3VLajcrdEFnTjVRdGNKaDdFcVRHbXoxTDFuTW5XMzRKL1d2QWRoWUFGNkZRemxNQUE9PQo=",
+			"url": "https://cdn.siberiancoffe.dev/truck-tools/tauri-v1/Truck_Tools_0.7.1_x64_en-US.msi.zip"
 		}
 	}
 }
