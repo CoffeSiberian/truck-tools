@@ -275,7 +275,7 @@
             },
             "input_enable_128_slots": "Kích hoạt 128 chỗ chế độ đoàn xe",
             "input_enable_console": "Bật bảng điều khiển và chế độ nhà phát triển",
-            "input_opacity_profile": "Độ mờ trên hồ sơ được chọn",
+            "input_opacity_profile": "Làm mờ phần chọn hồ sơ",
             "tab_title": "Cài đặt",
             "title": "Cài đặt"
         },
