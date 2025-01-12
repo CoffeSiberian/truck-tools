@@ -24,4 +24,30 @@ Our goal is to support multiple languages, driven by contributions from our comm
 - If a language is missing text strings to be translated and is over 50% complete, the missing strings will be filled in using the English template. This ensures the application can be uploaded without errors.
 - If a language is less than 50% complete, it will not be integrated into the application until it meets the minimum threshold (ideally, translations should always be 100% complete).
 
+### Thank you very much for contributing translations ❤️
+
+#### Chinese
+
+- [Gavin][GavinTnT]
+- [nulijiazaizhong][nulijiazaizhong]
+- [memo209][memo209]
+
+#### French
+
+- [David MARTIN][david12567]
+
+#### Vietnamese
+
+- [hoanghuy309][hoanghuy309]
+
+#### Portuguese (Brazil)
+
+- [Sonur][sonur]
+
 [weblate]: https://hosted.weblate.org/projects/truck-tools/truck-tools/
+[memo209]: https://hosted.weblate.org/user/memo209/
+[nulijiazaizhong]: https://hosted.weblate.org/user/nulijiazaizhong/
+[GavinTnT]: https://hosted.weblate.org/user/GavinTnT/
+[david12567]: https://hosted.weblate.org/user/david12567/
+[hoanghuy309]: https://hosted.weblate.org/user/hoanghuy309/
+[sonur]: https://hosted.weblate.org/user/sonur/
