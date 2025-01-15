@@ -1,499 +1,499 @@
 {
     "components": {
         "alert_on_save_default": {
-            "error": "",
-            "succes": ""
+            "error": "프로세스 중 오류가 발생했습니다",
+            "succes": "성공적으로 저장됨"
         },
         "license_plate": {
-            "btn_delete": "",
-            "btn_load": "",
-            "btn_store": "",
-            "input_colored_margin": "",
+            "btn_delete": "삭제",
+            "btn_load": "불러오기",
+            "btn_store": "가게(스토어)",
+            "input_colored_margin": "채색된 여백",
             "input_license_plate": {
-                "label": "",
-                "placeholder": ""
+                "label": "번호판 텍스트",
+                "placeholder": "텍스트 입력"
             },
             "input_license_plate_list_store": {
-                "label": "",
-                "placeholder": ""
+                "label": "저장된 번호판 선택",
+                "placeholder": "번호판 선택"
             },
-            "title_select_bg_color": "",
-            "title_select_text_color": ""
+            "title_select_bg_color": "배경색",
+            "title_select_text_color": "텍스트 색상"
         },
         "player_profile": {
-            "btn_profile": "",
+            "btn_profile": "프로필 옵션",
             "dropdown": {
                 "profile_options": {
                     "btn_backup_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "프로필의 백업 복사본 만들기",
+                        "label": "백업 프로필",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "btn_open_folder": "",
-                            "description": "",
+                            "btn_apply": "백업",
+                            "btn_close": "닫기",
+                            "btn_open_folder": "폴더 열기",
+                            "description": "백업 복사본을 만들고 목적지를 입력하는 것을 잊지 마세요",
                             "input_backup_destination": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "대상 폴더 선택",
+                                "placeholder": "대상 폴더 선택"
                             },
                             "save_folder_dialog": {
                                 "filters_name": {
-                                    "zip": ""
+                                    "zip": "Zip 파일"
                                 },
-                                "title": ""
+                                "title": "대상 폴더 선택"
                             },
-                            "title": ""
+                            "title": "프로필 백업"
                         }
                     },
                     "btn_clone_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "프로필을 새 프로필로 복제",
+                        "label": "프로필 복제",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "복제",
+                            "btn_close": "닫기",
+                            "description": "복제하려는 프로필의 이름을 입력합니다. 이렇게 하면 선택한 프로필과 동일한 설정의 새 프로필이 생성됩니다.",
                             "input_new_name": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "새 프로필 이름",
+                                "placeholder": "프로필의 새 이름 입력"
                             },
-                            "title": ""
+                            "title": "프로필 복제"
                         }
                     },
                     "btn_copy_config": {
-                        "description": "",
-                        "label": "",
+                        "description": "다른 프로필에서 설정 복사",
+                        "label": "구성 복사",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "구성 복사",
+                            "btn_close": "닫기",
+                            "description": "설정을 복사할 프로필을 선택하세요, 설정이 교체된다는 점을 기억하세요, <b>프로필의 백업 복사본을 만드는 것이 좋습니다</b>.",
                             "input_select_profile": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "프로필",
+                                "placeholder": "프로필 선택"
                             },
-                            "title": ""
+                            "title": "구성 복사"
                         }
                     },
                     "btn_rename_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "프로필 이름 변경",
+                        "label": "프로필 이름 변경",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "이름 변경",
+                            "btn_close": "닫기",
+                            "description": "프로필 이름을 변경할 수 있지만, 20자 미만이어야 합니다.",
                             "input_new_name": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "프로필 이름",
+                                "placeholder": "프로필의 새 이름 입력"
                             },
-                            "title": ""
+                            "title": "프로필 이름 변경"
                         }
                     },
-                    "title": ""
+                    "title": "프로필 옵션"
                 },
                 "save_game_options": {
                     "btn_decrypt_save": {
-                        "description": "",
-                        "label": ""
+                        "description": "선택한 저장 게임 복호화",
+                        "label": "저장 복호화"
                     },
                     "btn_open_folder": {
-                        "description": "",
-                        "label": ""
+                        "description": "선택한 저장 게임 폴더 열기",
+                        "label": "저장 폴더 열기"
                     },
-                    "title": ""
+                    "title": "저장 게임 옵션"
                 }
             },
             "input_select_profile": {
-                "label": "",
+                "label": "프로필 선택",
                 "options": {
-                    "save_load": ""
+                    "save_load": "저장"
                 },
-                "placeholder": ""
+                "placeholder": "프로필 선택"
             },
             "input_select_save": {
-                "label": "",
-                "placeholder": ""
+                "label": "저장 선택",
+                "placeholder": "저장 선택"
             },
-            "no_selected_profile": "",
-            "no_selected_save": "",
-            "total_saves": ""
+            "no_selected_profile": "프로필이 선택되지 않음",
+            "no_selected_save": "선택된 저장 없음",
+            "total_saves": "저장"
         },
         "profile_error": {
-            "btn_how_to": "",
-            "btn_how_to_disable": "",
-            "description": "",
-            "title": ""
+            "btn_how_to": "튜토리얼 비디오",
+            "btn_how_to_disable": "스팀 클라우드를 비활성화하는 방법",
+            "description": "프로필에서 <b>스팀 클라우드를 비활성화</b>하거나 \"문서\" 폴더 위치를 확인하는 것을 잊지 마세요",
+            "title": "프로필을 찾을 수 없음"
         },
         "updater": {
-            "alert_message": "",
-            "btn_cancel": "",
-            "btn_manual_update": "",
-            "btn_update_now": "",
-            "downloading": "",
-            "release_notes": "",
-            "title": "",
-            "version": ""
+            "alert_message": "설치에 실패했습니다. 나중에 다시 시도하세요",
+            "btn_cancel": "취소",
+            "btn_manual_update": "수동 업데이트",
+            "btn_update_now": "지금 업데이트",
+            "downloading": "다운로드 중...",
+            "release_notes": "릴리스 노트",
+            "title": "새 버전 사용 가능",
+            "version": "버전:"
         }
     },
     "menu_options": {
         "about": {
-            "description": "",
-            "tab_title": ""
+            "description": "이것은 ETS 2 및 ATS 플레이어들이 게임 저장을 간단하고 쉽게 편집할 수 있도록 돕기 위해 만들어진 오픈 소스 애플리케이션입니다. 이러한 코드를 수동으로 편집하고 싶지 않은 분들을 위해 만들어졌습니다.",
+            "tab_title": "대해서"
         },
         "profile": {
             "add_experience": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "프로필로 경험치 변경",
+                "label_card": "경험치 변경",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "적용",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "프로필에 추가하려는 경험치 입력",
                     "input_experience": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "경험치",
+                        "placeholder": "경험치 수를 숫자로 입력합니다"
                     },
-                    "title": ""
+                    "title": "경험치 변경"
                 }
             },
             "add_money": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "프로필에 돈 추가하기",
+                "label_card": "돈 변경",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "적용",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "프로필에 원하는 금액 추가하기",
                     "input_money": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "돈",
+                        "placeholder": "EUR로 금액 입력"
                     },
-                    "title": ""
+                    "title": "돈 변경"
                 }
             },
             "dealer_visited": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "모든 딜러 상태를 프로필로 설정",
+                "label_card": "모든 딜러 발견",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "적용",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "프로필에 있는 모든 딜러의 상태를 선택합니다",
                     "input_dealer_status": {
-                        "label": "",
+                        "label": "방문된 도시",
                         "options": {
-                            "unvisit_all": "",
-                            "visit_all": ""
+                            "unvisit_all": "방문하지 않은 모든 딜러",
+                            "visit_all": "방문된 모든 딜러"
                         }
                     },
-                    "title": ""
+                    "title": "모든 딜러 발견"
                 }
             },
             "garage_status": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "프로필에 차고 상태 설정",
+                "label_card": "모든 차고 구매",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "적용",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "프로필에 적용할 차고의 상태를 선택합니다",
                     "input_garage_status": {
-                        "label": "",
+                        "label": "차고 상태",
                         "options": {
-                            "large_garage": "",
-                            "medium_garage": "",
-                            "sell_garage": "",
-                            "small_garage": ""
+                            "large_garage": "대형 차고",
+                            "medium_garage": "중형 차고",
+                            "sell_garage": "차고 판매",
+                            "small_garage": "작은 차고"
                         }
                     },
-                    "title": ""
+                    "title": "모든 차고 구매"
                 }
             },
             "skills_points": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "프로필에 경험 기술 설정하기",
+                "label_card": "경험 기술 설정",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "eco_driving": "",
-                    "fragile_cargo": "",
-                    "high_value_cargo": "",
+                    "btn_apply": "적용",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "필요한 경험의 양을 입력합니다",
+                    "eco_driving": "에코 드라이빙",
+                    "fragile_cargo": "파손 주의 화물",
+                    "high_value_cargo": "고부가가치 화물",
                     "input_skills_points": {
-                        "corrosive": "",
-                        "explosives": "",
-                        "flammable_liquids": "",
-                        "flammable_solids": "",
-                        "gases": "",
-                        "label": "",
-                        "placeholder": "",
-                        "toxic_and_infectious": ""
+                        "corrosive": "부식성 물질",
+                        "explosives": "폭발물",
+                        "flammable_liquids": "인화성 액체",
+                        "flammable_solids": "인화성 고체",
+                        "gases": "가스",
+                        "label": "ADR",
+                        "placeholder": "ADR 선택",
+                        "toxic_and_infectious": "독성 및 전염성"
                     },
-                    "just_in_time_delivery": "",
-                    "long_distance": "",
-                    "title": ""
+                    "just_in_time_delivery": "정시 배송",
+                    "long_distance": "장거리",
+                    "title": "경험 기술 설정"
                 }
             },
-            "tab_title": "",
+            "tab_title": "프로필",
             "visited_cities": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "방문한 도시 상태를 프로필로 설정하기",
+                "label_card": "모든 도시 발견",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "적용",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "방문한 모든 도시의 상태 선택",
                     "input_city_status": {
-                        "label": "",
+                        "label": "방문된 도시",
                         "options": {
-                            "unvisit_all": "",
-                            "visit_all": ""
+                            "unvisit_all": "모든 도시를 방문하지 않음",
+                            "visit_all": "방문된 모든 도시"
                         }
                     },
-                    "title": ""
+                    "title": "모든 도시 발견"
                 }
             }
         },
         "settings": {
-            "btn_reset": "",
-            "document_dialog_title": "",
+            "btn_reset": "설정 재설정",
+            "document_dialog_title": "프로그레스가 저장된 폴더 선택",
             "input_change_language": {
-                "label": "",
-                "placeholder": ""
+                "label": "언어 변경",
+                "placeholder": "언어 선택"
             },
             "input_change_theme": {
-                "label": "",
+                "label": "테마 변경",
                 "options": {
-                    "dark": "",
-                    "light": "",
-                    "system": ""
+                    "dark": "어두운",
+                    "light": "밝음",
+                    "system": "시스템"
                 },
-                "placeholder": ""
+                "placeholder": "테마 선택"
             },
             "input_document_folder": {
-                "label": "",
-                "placeholder": ""
+                "label": "문서 폴더",
+                "placeholder": "문서 폴더 입력"
             },
-            "input_enable_128_slots": "",
-            "input_enable_console": "",
-            "input_opacity_profile": "",
-            "tab_title": "",
-            "title": ""
+            "input_enable_128_slots": "128개의 콘보이 모드 슬롯 활성화",
+            "input_enable_console": "콘솔 및 개발자 모드 활성화",
+            "input_opacity_profile": "선택 프로필의 불투명도",
+            "tab_title": "설정",
+            "title": "설정"
         },
         "trailers": {
             "license_plate": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "트레일러 번호판 변경",
+                "label_card": "트레일러 번호판 변경",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "적용",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "트레일러의 새 번호판 입력",
+                    "title": "트레일러 번호판 변경"
                 }
             },
             "modify_job_weight": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "작업의 무게 수정",
+                "label_card": "작업 무게 수정",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "적용",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "이렇게 하면 현재 작업의 무게가 여기서 정의한 것으로 변경됩니다. 트럭에 고정된 활동적인 작업이 필요하다는 점을 기억하세요",
                     "input_weight": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "체중(kg)",
+                        "placeholder": "체중(kg) 입력"
                     },
-                    "title": ""
+                    "title": "하중 무게 변경"
                 }
             },
             "modify_trailer_weight": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "트레일러 무게를 한 번만 적용하여 수정합니다",
+                "label_card": "트레일러 무게 변경",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "적용",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "이렇게 하면 트레일러의 무게가 두 가지 매개변수로 조정됩니다. 일반적으로 섀시_질량이 사용되지만, 바디_질량도 편집할 수 있습니다 (기본적으로 바디_질량은 0입니다)",
                     "input_body_mass": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "체질량(kg)",
+                        "placeholder": "체중(kg) 입력"
                     },
                     "input_chassis_mass": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "섀시 질량(kg)",
+                        "placeholder": "섀시 질량을 kg 단위로 입력"
                     },
-                    "title": ""
+                    "title": "트레일러 무게 변경"
                 }
             },
             "repair_all_trailer": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "가지고 있는 모든 트레일러 수리하기",
+                "label_card": "모든 트레일러 수리",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "수리",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "소유한 모든 트레일러 수리",
+                    "title": "모든 트레일러 수리"
                 }
             },
             "repair_trailer": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "현재 트레일러 수리",
+                "label_card": "트레일러 수리",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "수리",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "현재 트레일러에 부착된 트레일러 수리",
+                    "title": "트레일러 수리"
                 }
             },
-            "tab_title": "",
+            "tab_title": "트레일러",
             "unlock_trailer_country": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "트레일러의 지역 차단 해제",
+                "label_card": "국가별 트레일러 차단 해제",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_how_to_use": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": "",
+                    "btn_apply": "잠금 해제",
+                    "btn_close": "닫기",
+                    "btn_how_to_use": "사용 방법",
+                    "btn_open": "열기",
+                    "description": "게임으로 인해 트레일러가 차단된 경우 모든 국가에서 트레일러 잠금 해제",
+                    "title": "현재 트레일러 잠금 해제",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "변경 사항을 적용하려면 트레일러를 트럭에 연결해야 합니다.",
+                        "title": "기억하기"
                     }
                 }
             }
         },
         "trucks": {
             "change_truck_engine": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "트럭의 엔진 교체",
+                "label_card": "트럭 엔진 교체",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_remove_badge": "",
-                    "description": "",
+                    "btn_apply": "교체",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "btn_remove_badge": "배지 제거",
+                    "description": "트럭의 엔진을 원하는 엔진으로 변경하세요",
                     "input_brands": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "브랜드",
+                        "placeholder": "트럭 브랜드 선택"
                     },
                     "input_engines": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "엔진",
+                        "placeholder": "트럭 엔진 선택"
                     },
                     "input_models": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "모델",
+                        "placeholder": "트럭 모델 선택"
                     },
-                    "title": "",
+                    "title": "트럭 엔진 교체",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "트럭에 떠 있거나 <b>잘못된 위치에 있는 로고가 보이면</b> 아래 버튼으로 제거할 수 있습니다.",
+                        "title": "기억하기"
                     }
                 }
             },
             "change_truck_transmission": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "트럭의 변속기 변경",
+                "label_card": "트럭 변속기 변경",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_remove_badge": "",
-                    "description": "",
+                    "btn_apply": "교체",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "btn_remove_badge": "배지 제거",
+                    "description": "트럭의 변속기를 원하는 변속기로 변경하세요",
                     "input_brands": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "브랜드",
+                        "placeholder": "트럭 브랜드 선택"
                     },
                     "input_models": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "모델",
+                        "placeholder": "트럭 모델 선택"
                     },
                     "input_transmissions": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "변속기",
+                        "placeholder": "트럭 변속기 선택"
                     },
-                    "title": "",
+                    "title": "트럭 변속기 변경",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "트럭에 떠 있거나 <b>잘못된 위치에 있는 로고가 보이면</b> 아래 버튼으로 제거할 수 있습니다.",
+                        "title": "기억하기"
                     }
                 }
             },
             "fill_all_trucks_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "모든 차량 트럭에 주유하기",
+                "label_card": "모든 트럭 연료 채우기",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "주유하기",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "이 옵션을 사용하면 구매한 모든 트럭에 주유할 수 있습니다",
+                    "title": "모든 트럭 연료 채우기"
                 }
             },
             "fill_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "현재 트럭에 연료 채우기",
+                "label_card": "연료 채우기",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "주유하기",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "트럭을 완전히 주유합니다",
+                    "title": "연료 채우기"
                 }
             },
             "infinite_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "현재 트럭의 무한 연료",
+                "label_card": "현재 트럭의 무한 연료",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_restore_fuel": "",
-                    "description": "",
-                    "title": "",
+                    "btn_apply": "주유하기",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "btn_restore_fuel": "연료 복원",
+                    "description": "연료는 무한하지는 않지만 트럭에 따라 약 5,000,000km입니다",
+                    "title": "현재 트럭의 무한 연료",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "이 기능을 적용하려면 \"게임플레이\" 섹션에서 <b>\"현실적인 연료 소비\"를 비활성화</b>하세요.",
+                        "title": "기억하기"
                     }
                 }
             },
             "license_plate": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "트럭 번호판 변경",
+                "label_card": "트럭 번호판 변경",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "적용",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "새 트럭 번호판을 입력합니다. 트럭의 단어에서 번호판을 제거하는 것을 잊지 마세요",
+                    "title": "트럭 번호판 변경"
                 }
             },
             "repair_all_trucks": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "모든 차량 트럭 수리",
+                "label_card": "모든 트럭 수리하기",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "수리",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "회사에 있는 모든 트럭을 수리하세요",
+                    "title": "모든 트럭 수리하기"
                 }
             },
             "repair_truck": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "현재 트럭 수리하기",
+                "label_card": "트럭 수리",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "수리",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "트럭 데미지 수리",
+                    "title": "트럭 수리"
                 }
             },
-            "tab_title": ""
+            "tab_title": "트럭"
         }
     }
 }
