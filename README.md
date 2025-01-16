@@ -79,6 +79,7 @@ Remember, contributing translations makes you a collaborator of the project!
 - [x] Profile backup
 - [x] Clone profile
 - [x] Clone config
+- [ ] Clone config between games
 - [x] Rename profiles
 
 #### Settings
