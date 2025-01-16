@@ -44,6 +44,10 @@ Our goal is to support multiple languages, driven by contributions from our comm
 
 - [Sonur][sonur]
 
+### Korean
+
+- [Sconda][Sconda]
+
 [weblate]: https://hosted.weblate.org/projects/truck-tools/truck-tools/
 [memo209]: https://hosted.weblate.org/user/memo209/
 [nulijiazaizhong]: https://hosted.weblate.org/user/nulijiazaizhong/
@@ -51,3 +55,4 @@ Our goal is to support multiple languages, driven by contributions from our comm
 [david12567]: https://hosted.weblate.org/user/david12567/
 [hoanghuy309]: https://hosted.weblate.org/user/hoanghuy309/
 [sonur]: https://hosted.weblate.org/user/sonur/
+[Sconda]: https://hosted.weblate.org/user/Sconda/
