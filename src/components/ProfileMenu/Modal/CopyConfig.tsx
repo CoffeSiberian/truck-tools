@@ -1,5 +1,5 @@
-import { useState, useContext, FC } from "react";
-import ListProfilesDropdown from "@/components/ProfileMenu/Dropdown/ListProfilesDropdown";
+import { useState, useContext, useEffect, FC } from "react";
+import ListProfilesDropdownCopyConfig from "@/components/ProfileMenu/Dropdown/ListProfilesDropdownCopyConfig";
 import { ProfileContex } from "@/hooks/useProfileContex";
 import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
@@ -12,11 +12,15 @@ import {
 	ModalFooter,
 	Button,
 } from "@heroui/react";
-import { copyProfileConfigs } from "@/utils/fileEdit";
+import { copyProfileConfigs, readProfileNames } from "@/utils/fileEdit";
 import AlertSave from "@/components/AlertSave";
 
 // icons
 import { IconCopy, IconUserCircle, IconArrowRight } from "@tabler/icons-react";
+
+// images
+import ets2 from "@/static/icons/games/ets2.webp";
+import ats from "@/static/icons/games/ats.webp";
 
 // types
 import { ProfileWithoutSaves, Profile } from "@/types/SaveGameTypes";
@@ -32,8 +36,7 @@ interface ModalProps {
 }
 
 const CopyConfig: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
-	const Contex = useContext(ProfileContex);
-	const { selectedProfile, listProfiles } = Contex;
+	const { selectedProfile, listProfiles, game } = useContext(ProfileContex);
 
 	const { translations } = useContext(LocaleContext);
 	const { btn_copy_config } =
@@ -47,6 +50,9 @@ const CopyConfig: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 		error: false,
 		completed: false,
 	});
+	const [listProfilesBothGames, setListProfilesBothGames] = useState<
+		ProfileWithoutSaves[]
+	>([]);
 
 	const onClickApply = async () => {
 		if (completed.completed) {
@@ -56,7 +62,9 @@ const CopyConfig: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 
 		setIsLoading(true);
 
-		const sourceDir = listProfiles.find((p) => p.hex === ProfileInfo.hex);
+		const sourceDir = listProfilesBothGames.find(
+			(p) => p.hex === ProfileInfo.hex
+		);
 		if (!sourceDir || !selectedProfile) return;
 
 		const res = await copyProfileConfigs(sourceDir.dir, selectedProfile.dir);
@@ -76,10 +84,26 @@ const CopyConfig: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 		});
 	};
 
+	useEffect(() => {
+		if (isOpen) {
+			const invertGame = game === "ets2" ? "ats" : "ets2";
+
+			const loadDirectory = async () => {
+				const prof = await readProfileNames(invertGame);
+				if (!prof) return;
+
+				setListProfilesBothGames([...listProfiles, ...prof]);
+			};
+
+			loadDirectory();
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [isOpen]);
+
 	return (
 		<Modal
 			hideCloseButton
-			size="lg"
+			size="xl"
 			backdrop="blur"
 			isOpen={isOpen}
 			onOpenChange={() => {
@@ -100,59 +124,67 @@ const CopyConfig: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 									__html: btn_copy_config.modal.description,
 								}}
 							/>
-							<ListProfilesDropdown
-								{...Contex}
+							<ListProfilesDropdownCopyConfig
+								listProfiles={listProfilesBothGames}
 								selectedProfile={ProfileInfo}
 								setProfile={setProfile}
 							/>
 							{ProfileInfo && (
 								<div className="flex justify-between">
 									<div className="flex w-full flex-col items-center text-wrap break-words text-center">
-										<div className="w-[77px] text-center">
+										<div className="w-[80px] text-center">
 											{ProfileInfo.avatar ? (
 												<Image
 													src={ProfileInfo.avatar}
 													alt="profile avatar"
 													radius="full"
 													loading="lazy"
-													style={{
-														zoom: 0.81,
-														objectFit: "none",
-														objectPosition: "0% 0%",
-													}}
 												/>
 											) : (
-												<IconUserCircle size={77} />
+												<IconUserCircle size={80} />
 											)}
 										</div>
-										<p>
-											<strong>{ProfileInfo.name}</strong>
-										</p>
+										<div className="flex gap-1">
+											<p>
+												<strong>{ProfileInfo.name}</strong>
+											</p>
+											<div className="flex items-center">
+												{ProfileInfo.game === "ets2" ? (
+													<img src={ets2} className="w-6" alt="ets2" />
+												) : (
+													<img src={ats} className="w-6" alt="ats" />
+												)}
+											</div>
+										</div>
 									</div>
 									<div className="flex w-full items-center justify-center gap-2">
 										<IconArrowRight size={80} />
 									</div>
 									<div className="flex w-full flex-col items-center text-wrap break-words text-center">
-										<div className="w-[77px]">
+										<div className="w-[80px]">
 											{selectedProfile?.avatar ? (
 												<Image
 													src={selectedProfile.avatar}
 													alt="profile avatar"
 													radius="full"
 													loading="lazy"
-													style={{
-														zoom: 0.81,
-														objectFit: "none",
-														objectPosition: "0% 0%",
-													}}
 												/>
 											) : (
-												<IconUserCircle size={78} />
+												<IconUserCircle size={80} />
 											)}
 										</div>
-										<p>
-											<strong>{selectedProfile?.name}</strong>
-										</p>
+										<div className="mt-auto flex gap-1">
+											<p>
+												<strong>{selectedProfile?.name}</strong>
+											</p>
+											<div className="flex items-center">
+												{selectedProfile?.game === "ets2" ? (
+													<img src={ets2} className="w-6" alt="ets2" />
+												) : (
+													<img src={ats} className="w-6" alt="ats" />
+												)}
+											</div>
+										</div>
 									</div>
 								</div>
 							)}

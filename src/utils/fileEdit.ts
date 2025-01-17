@@ -135,6 +135,7 @@ export const readProfileNames = async (
 
 		const profileObject: ProfileWithoutSaves = {
 			name: dirProfiles[i].name,
+			game,
 			hex: dirProfiles[i].hex,
 			savesCount: saves,
 			avatar: profileImg,

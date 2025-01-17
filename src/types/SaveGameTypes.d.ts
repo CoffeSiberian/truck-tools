@@ -1,8 +1,11 @@
+import { GamesNames } from "@/types/ContexTypes";
+
 /////////////////////////////////////////////////////////
 // PROFILE TYPES
 
 export interface Profile {
 	name: string;
+	game: GamesNames;
 	hex: string;
 	saves: Array<SaveGame>;
 	avatar?: string;
@@ -23,6 +26,7 @@ export interface ProfileDir {
 
 export interface ProfileWithoutSaves {
 	name: string;
+	game: GamesNames;
 	hex: string;
 	savesCount: number;
 	avatar?: string;

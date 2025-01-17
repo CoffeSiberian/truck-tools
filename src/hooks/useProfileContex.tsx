@@ -100,6 +100,7 @@ export const ProfileContexInfo = ({ children }: ProviderProps) => {
 
 		const profile_to_save = {
 			name: profile_info.name,
+			game: profile_info.game,
 			hex: profile_info.hex,
 			saves: saveList,
 			avatar: profile_info.avatar,
