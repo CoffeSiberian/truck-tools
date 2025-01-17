@@ -18,6 +18,7 @@
 		"trailingComma": "es5",
 		"useTabs": true,
 		"arrowParens": "always",
+		"endOfLine": "auto",
 		"plugins": [
 			"prettier-plugin-tailwindcss"
 		]
