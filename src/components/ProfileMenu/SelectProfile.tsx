@@ -1,7 +1,7 @@
 import { JSX, useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
 import { DarkModeContex } from "@/hooks/useDarkModeContex";
-import { Card, CardBody, Tabs, Tab } from "@nextui-org/react";
+import { Card, CardBody, Tabs, Tab } from "@heroui/react";
 import classNames from "classnames";
 import ProfileCardBody from "@/components/ProfileMenu/ProfileCardBody";
 import ProfileError from "@/components/ProfileMenu/ProfileError";

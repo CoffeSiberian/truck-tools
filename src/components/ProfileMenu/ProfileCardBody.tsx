@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import ListProfiles from "@/components/ProfileMenu/ListProfiles";
 import ListSaves from "@/components/ProfileMenu/ListSaves";
 import RenderProfile from "@/components/ProfileMenu/RenderProfile";

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { DarkModeContex } from "@/hooks/useDarkModeContex";
 import { LocaleContext } from "@/hooks/useLocaleContext";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import { open } from "@tauri-apps/plugin-shell";
 import classNames from "classnames";
 

@@ -2,7 +2,7 @@ import { JSX, useState, useContext } from "react";
 import { LocaleContext } from "@/hooks/useLocaleContext";
 import { DarkModeContex } from "@/hooks/useDarkModeContex";
 import { open } from "@tauri-apps/plugin-shell";
-import { Tabs, Tab, useDisclosure, Image, Button } from "@nextui-org/react";
+import { Tabs, Tab, useDisclosure, Image, Button } from "@heroui/react";
 import classNames from "classnames";
 
 // components

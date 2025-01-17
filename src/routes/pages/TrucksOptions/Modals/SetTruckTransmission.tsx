@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from "react";
-import { Select, SelectItem } from "@nextui-org/react";
+import { Select, SelectItem } from "@heroui/react";
 import { ProfileContex } from "@/hooks/useProfileContex";
 import { LocaleContext } from "@/hooks/useLocaleContext";
 import {
@@ -12,7 +12,7 @@ import {
 	Button,
 	useDisclosure,
 	Image,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import {
 	setTruckTransmission,
 	get_brand_models_ets2,

@@ -15,7 +15,7 @@ import {
 	SelectItem,
 	Switch,
 	Input,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { DarkModeContex } from "@/hooks/useDarkModeContex";
 import { ProfileContex } from "@/hooks/useProfileContex";
 import { LocaleContext } from "@/hooks/useLocaleContext";

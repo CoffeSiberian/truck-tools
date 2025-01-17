@@ -1,6 +1,6 @@
 import { FC, useEffect } from "react";
 import classNames from "classnames";
-import { Alert } from "@nextui-org/react";
+import { Alert } from "@heroui/react";
 
 interface props {
 	message: string;

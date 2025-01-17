@@ -6,7 +6,7 @@ import {
 	CardFooter,
 	Image,
 	Divider,
-} from "@nextui-org/react";
+} from "@heroui/react";
 
 interface OptionCardProps {
 	id: string;

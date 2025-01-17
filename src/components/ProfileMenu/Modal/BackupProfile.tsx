@@ -12,7 +12,7 @@ import {
 	ModalFooter,
 	Button,
 	Input,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { backupProfile, openExplorer } from "@/utils/fileEdit";
 import AlertSave from "@/components/AlertSave";
 

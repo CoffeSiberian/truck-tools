@@ -11,7 +11,7 @@ import {
 	ModalBody,
 	ModalFooter,
 	Button,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { copyProfileConfigs } from "@/utils/fileEdit";
 import AlertSave from "@/components/AlertSave";
 

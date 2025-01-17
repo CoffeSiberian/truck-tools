@@ -10,7 +10,7 @@ import {
 	DropdownItem,
 	useDisclosure,
 	cn,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { descriptFiles, openExplorer } from "@/utils/fileEdit";
 
 // modals
@@ -29,7 +29,7 @@ import {
 	IconSettingsShare,
 	IconUserEdit,
 } from "@tabler/icons-react";
-import { Spinner } from "@nextui-org/spinner";
+import { Spinner } from "@heroui/spinner";
 
 interface DecryptResult {
 	isLoading: boolean;
@@ -134,134 +134,132 @@ const ProfileOptions = () => {
 		return keys;
 	};
 
-	return (
-		<>
-			<BackupProfile isOpen={isOpenBackup} onOpenChange={onOpenChangeBackup} />
-			<CloneProfile isOpen={isOpenClone} onOpenChange={onOpenChangeClone} />
-			<RenameProfile
-				isOpen={isOpenRenameProfile}
-				onOpenChange={onOpenChangeRenameProfile}
-			/>
-			<CopyConfig
-				isOpen={isOpenCopyConfig}
-				onOpenChange={onOpenChangeCopyConfig}
-			/>
-			<Dropdown backdrop="opaque" closeOnSelect={false}>
-				<DropdownTrigger>
-					<Button
-						isDisabled={selectedProfile ? false : true}
-						endContent={<IconMenu />}
-						size="sm"
-						variant="solid"
-						color={selectedProfile ? "primary" : "default"}
-					>
-						{player_profile.btn_profile}
-					</Button>
-				</DropdownTrigger>
-				<DropdownMenu
-					variant="faded"
-					aria-label="Dropdown menu with description"
-					disabledKeys={disabledKeys()}
-				>
-					<DropdownSection
-						title={player_profile.dropdown.save_game_options.title}
-						showDivider
-					>
-						<DropdownItem
-							key="open"
-							description={
-								player_profile.dropdown.save_game_options.btn_open_folder
-									.description
-							}
-							startContent={<IconFolderShare className={iconClasses} />}
-							onPress={
-								selectedSave
-									? () => openExplorer(selectedSave.dir.replace(/\//g, "\\"))
-									: undefined
-							}
-						>
-							{player_profile.dropdown.save_game_options.btn_open_folder.label}
-						</DropdownItem>
-						<DropdownItem
-							key="decrypt"
-							description={
-								player_profile.dropdown.save_game_options.btn_decrypt_save
-									.description
-							}
-							className={decryptStyles.textColor}
-							color={decryptStyles.color}
-							startContent={
-								decryptResult.isLoading ? (
-									<Spinner size="sm" />
-								) : (
-									decryptStyles.startContent
-								)
-							}
-							onPress={
-								selectedSave
-									? () => decryptSave(selectedSave.dir + "/game.sii")
-									: undefined
-							}
-						>
-							{player_profile.dropdown.save_game_options.btn_decrypt_save.label}
-						</DropdownItem>
-					</DropdownSection>
-					<DropdownSection
-						title={player_profile.dropdown.profile_options.title}
-					>
-						<DropdownItem
-							key="backup"
-							description={
-								player_profile.dropdown.profile_options.btn_backup_profile
-									.description
-							}
-							startContent={<IconFileTypeZip className={iconClasses} />}
-							closeOnSelect={true}
-							onPress={onOpenBackup}
-						>
-							{player_profile.dropdown.profile_options.btn_backup_profile.label}
-						</DropdownItem>
-						<DropdownItem
-							key="rename-profile"
-							description={
-								player_profile.dropdown.profile_options.btn_rename_profile
-									.description
-							}
-							startContent={<IconUserEdit className={iconClasses} />}
-							closeOnSelect={true}
-							onPress={onOpenRenameProfile}
-						>
-							{player_profile.dropdown.profile_options.btn_rename_profile.label}
-						</DropdownItem>
-						<DropdownItem
-							key="clone"
-							description={
-								player_profile.dropdown.profile_options.btn_clone_profile
-									.description
-							}
-							startContent={<IconCopy className={iconClasses} />}
-							closeOnSelect={true}
-							onPress={onOpenClone}
-						>
-							{player_profile.dropdown.profile_options.btn_clone_profile.label}
-						</DropdownItem>
-						<DropdownItem
-							key="copy-config"
-							description={
-								player_profile.dropdown.profile_options.btn_copy_config
-									.description
-							}
-							startContent={<IconSettingsShare className={iconClasses} />}
-							closeOnSelect={true}
-							onPress={onOpenCopyConfig}
-						>
-							{player_profile.dropdown.profile_options.btn_copy_config.label}
-						</DropdownItem>
-					</DropdownSection>
-				</DropdownMenu>
-			</Dropdown>
-		</>
-	);
+	return (<>
+        <BackupProfile isOpen={isOpenBackup} onOpenChange={onOpenChangeBackup} />
+        <CloneProfile isOpen={isOpenClone} onOpenChange={onOpenChangeClone} />
+        <RenameProfile
+            isOpen={isOpenRenameProfile}
+            onOpenChange={onOpenChangeRenameProfile}
+        />
+        <CopyConfig
+            isOpen={isOpenCopyConfig}
+            onOpenChange={onOpenChangeCopyConfig}
+        />
+        <Dropdown backdrop="opaque" closeOnSelect={false}>
+            <DropdownTrigger>
+                <Button
+                    isDisabled={selectedProfile ? false : true}
+                    endContent={<IconMenu />}
+                    size="sm"
+                    variant="solid"
+                    color={selectedProfile ? "primary" : "default"}
+                >
+                    {player_profile.btn_profile}
+                </Button>
+            </DropdownTrigger>
+            <DropdownMenu
+                variant="faded"
+                aria-label="Dropdown menu with description"
+                disabledKeys={disabledKeys()}
+            >
+                <DropdownSection
+                    title={player_profile.dropdown.save_game_options.title}
+                    showDivider
+                >
+                    <DropdownItem
+                        key="open"
+                        description={
+                            player_profile.dropdown.save_game_options.btn_open_folder
+                                .description
+                        }
+                        startContent={<IconFolderShare className={iconClasses} />}
+                        onPress={
+                            selectedSave
+                                ? () => openExplorer(selectedSave.dir.replace(/\//g, "\\"))
+                                : undefined
+                        }
+                    >
+                        {player_profile.dropdown.save_game_options.btn_open_folder.label}
+                    </DropdownItem>
+                    <DropdownItem
+                        key="decrypt"
+                        description={
+                            player_profile.dropdown.save_game_options.btn_decrypt_save
+                                .description
+                        }
+                        className={decryptStyles.textColor}
+                        color={decryptStyles.color}
+                        startContent={
+                            decryptResult.isLoading ? (
+                                <Spinner size="sm" />
+                            ) : (
+                                decryptStyles.startContent
+                            )
+                        }
+                        onPress={
+                            selectedSave
+                                ? () => decryptSave(selectedSave.dir + "/game.sii")
+                                : undefined
+                        }
+                    >
+                        {player_profile.dropdown.save_game_options.btn_decrypt_save.label}
+                    </DropdownItem>
+                </DropdownSection>
+                <DropdownSection
+                    title={player_profile.dropdown.profile_options.title}
+                >
+                    <DropdownItem
+                        key="backup"
+                        description={
+                            player_profile.dropdown.profile_options.btn_backup_profile
+                                .description
+                        }
+                        startContent={<IconFileTypeZip className={iconClasses} />}
+                        closeOnSelect={true}
+                        onPress={onOpenBackup}
+                    >
+                        {player_profile.dropdown.profile_options.btn_backup_profile.label}
+                    </DropdownItem>
+                    <DropdownItem
+                        key="rename-profile"
+                        description={
+                            player_profile.dropdown.profile_options.btn_rename_profile
+                                .description
+                        }
+                        startContent={<IconUserEdit className={iconClasses} />}
+                        closeOnSelect={true}
+                        onPress={onOpenRenameProfile}
+                    >
+                        {player_profile.dropdown.profile_options.btn_rename_profile.label}
+                    </DropdownItem>
+                    <DropdownItem
+                        key="clone"
+                        description={
+                            player_profile.dropdown.profile_options.btn_clone_profile
+                                .description
+                        }
+                        startContent={<IconCopy className={iconClasses} />}
+                        closeOnSelect={true}
+                        onPress={onOpenClone}
+                    >
+                        {player_profile.dropdown.profile_options.btn_clone_profile.label}
+                    </DropdownItem>
+                    <DropdownItem
+                        key="copy-config"
+                        description={
+                            player_profile.dropdown.profile_options.btn_copy_config
+                                .description
+                        }
+                        startContent={<IconSettingsShare className={iconClasses} />}
+                        closeOnSelect={true}
+                        onPress={onOpenCopyConfig}
+                    >
+                        {player_profile.dropdown.profile_options.btn_copy_config.label}
+                    </DropdownItem>
+                </DropdownSection>
+            </DropdownMenu>
+        </Dropdown>
+    </>);
 };
 
 export default ProfileOptions;

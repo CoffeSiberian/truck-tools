@@ -10,7 +10,7 @@ import {
 	ModalFooter,
 	Button,
 	useDisclosure,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { setInfinitFuelTruck, setFuelTruck } from "@/utils/fileEdit";
 import AlertSave from "@/components/AlertSave";
 import Warning from "@/components/Warning";

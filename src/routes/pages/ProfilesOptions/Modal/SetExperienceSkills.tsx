@@ -14,7 +14,7 @@ import {
 	Select,
 	SelectItem,
 	Image,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { setProfileSkill } from "@/utils/fileEdit";
 import AlertSave from "@/components/AlertSave";
 

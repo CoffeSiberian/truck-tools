@@ -15,7 +15,7 @@ import {
 	Divider,
 	Chip,
 	Progress,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { format as formatDate } from "@formkit/tempo";
 import AlertSaveChip from "@/components/AlertSaveChip";
 

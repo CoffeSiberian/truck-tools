@@ -1,6 +1,6 @@
 import { FC, useContext } from "react";
 import { LocaleContext } from "@/hooks/useLocaleContext";
-import { Select, SelectItem, Image } from "@nextui-org/react";
+import { Select, SelectItem, Image } from "@heroui/react";
 
 // icons
 import { IconUserCircle } from "@tabler/icons-react";

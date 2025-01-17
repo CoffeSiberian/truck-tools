@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "@/App";
 
 // hooks
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 import { PrimeReactProvider } from "primereact/api";
 import { DarkMode } from "@/hooks/useDarkModeContex";
 import { Locale } from "@/hooks/useLocaleContext";
@@ -13,7 +13,7 @@ import "@/styles.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<React.StrictMode>
-		<NextUIProvider>
+		<HeroUIProvider>
 			<PrimeReactProvider>
 				<DarkMode>
 					<Locale>
@@ -23,6 +23,6 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 					</Locale>
 				</DarkMode>
 			</PrimeReactProvider>
-		</NextUIProvider>
+		</HeroUIProvider>
 	</React.StrictMode>
 );

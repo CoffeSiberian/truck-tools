@@ -11,7 +11,7 @@ import {
 	ModalFooter,
 	Button,
 	useDisclosure,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { setLicensePlateTrailer } from "@/utils/fileEdit";
 import CustomLicensePlate from "@/components/CustomLicensePlate";
 import AlertSave from "@/components/AlertSave";

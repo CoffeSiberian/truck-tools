@@ -11,7 +11,7 @@ import {
 	Button,
 	useDisclosure,
 	RadioGroup,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import CustomRadio from "@/components/CustomRadio";
 import { setProfileDealerDiscovered } from "@/utils/fileEdit";
 import AlertSave from "@/components/AlertSave";

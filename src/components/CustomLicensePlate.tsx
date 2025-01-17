@@ -1,6 +1,6 @@
 import { FC, useState, useEffect, useContext } from "react";
 import { LocaleContext } from "@/hooks/useLocaleContext";
-import { Button, Checkbox, Input, Select, SelectItem } from "@nextui-org/react";
+import { Button, Checkbox, Input, Select, SelectItem } from "@heroui/react";
 import { ColorPicker, IColor } from "react-color-palette";
 import { v4 as uuidv4 } from "uuid";
 import { getStoredLicensePlate, storeLicensePlate } from "@/utils/fileEdit";

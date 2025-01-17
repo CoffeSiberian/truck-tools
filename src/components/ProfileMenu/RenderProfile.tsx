@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
 import { LocaleContext } from "@/hooks/useLocaleContext";
-import { Image, Skeleton } from "@nextui-org/react";
+import { Image, Skeleton } from "@heroui/react";
 import ProfileOptions from "@/components/ProfileMenu/ProfileOptions";
 
 // icons

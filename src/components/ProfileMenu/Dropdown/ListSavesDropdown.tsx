@@ -1,6 +1,6 @@
 import { FC, useContext } from "react";
 import { LocaleContext } from "@/hooks/useLocaleContext";
-import { Select, SelectItem } from "@nextui-org/react";
+import { Select, SelectItem } from "@heroui/react";
 import { ProfileTypesContext } from "@/types/ContexTypes";
 
 const ListSavesDropdown: FC<ProfileTypesContext> = ({

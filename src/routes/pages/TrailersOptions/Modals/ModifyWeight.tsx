@@ -11,7 +11,7 @@ import {
 	Button,
 	useDisclosure,
 	Input,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { setCargoMassTrailersAndSlave } from "@/utils/fileEdit";
 import AlertSave from "@/components/AlertSave";
 

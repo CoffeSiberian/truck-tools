@@ -10,7 +10,7 @@ import {
 	ModalFooter,
 	Button,
 	Avatar,
-} from "@nextui-org/react";
+} from "@heroui/react";
 
 // icons
 import {

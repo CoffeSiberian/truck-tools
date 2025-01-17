@@ -1,7 +1,7 @@
 import { FC, JSX, useContext } from "react";
 import { LocaleContext } from "@/hooks/useLocaleContext";
 import { classNames } from "primereact/utils";
-import { Image } from "@nextui-org/react";
+import { Image } from "@heroui/react";
 import { Dropdown } from "primereact/dropdown";
 
 // icons
