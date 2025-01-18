@@ -1,499 +1,499 @@
 {
     "components": {
         "alert_on_save_default": {
-            "error": "",
-            "succes": ""
+            "error": "В процесі виникла помилка",
+            "succes": "Успішно збережено"
         },
         "license_plate": {
-            "btn_delete": "",
-            "btn_load": "",
-            "btn_store": "",
-            "input_colored_margin": "",
+            "btn_delete": "Видалити",
+            "btn_load": "Завантажити",
+            "btn_store": "Зберегти",
+            "input_colored_margin": "Кольорова з полем",
             "input_license_plate": {
-                "label": "",
-                "placeholder": ""
+                "label": "Текст номерного знаку",
+                "placeholder": "Введіть текст"
             },
             "input_license_plate_list_store": {
-                "label": "",
-                "placeholder": ""
+                "label": "Оберіть збережений номер",
+                "placeholder": "Оберіть номер"
             },
-            "title_select_bg_color": "",
-            "title_select_text_color": ""
+            "title_select_bg_color": "Колір тла",
+            "title_select_text_color": "Колір тексту"
         },
         "player_profile": {
-            "btn_profile": "",
+            "btn_profile": "Параметри профілю",
             "dropdown": {
                 "profile_options": {
                     "btn_backup_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "Створіть резервну копію свого профілю",
+                        "label": "Створити бекап профілю",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "btn_open_folder": "",
-                            "description": "",
+                            "btn_apply": "Резервна копія",
+                            "btn_close": "Закрити",
+                            "btn_open_folder": "Відкрити теку",
+                            "description": "Будь ласка, вкажіть місце збереження резервної копії",
                             "input_backup_destination": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Вибір теки призначення",
+                                "placeholder": "Оберіть теку призначення"
                             },
                             "save_folder_dialog": {
                                 "filters_name": {
-                                    "zip": ""
+                                    "zip": "Zip-файли"
                                 },
-                                "title": ""
+                                "title": "Вибір теки призначення"
                             },
-                            "title": ""
+                            "title": "Резервна копія профілю"
                         }
                     },
                     "btn_clone_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "Клонуйте свій профіль у новий",
+                        "label": "Клонувати профіль",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "Клонувати",
+                            "btn_close": "Закрити",
+                            "description": "Введіть назву профілю, який потрібно клонувати. Буде створено новий профіль із тими самими налаштуваннями, що й обраного профілю.",
                             "input_new_name": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Назва нового профілю",
+                                "placeholder": "Введіть нову назву для вашого профілю"
                             },
-                            "title": ""
+                            "title": "Клонування профілю"
                         }
                     },
                     "btn_copy_config": {
-                        "description": "",
-                        "label": "",
+                        "description": "Скопіюйте налаштування з інших профілів",
+                        "label": "Копіювати конфігурацію",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "Копіювати конфігурацію",
+                            "btn_close": "Закрити",
+                            "description": "Оберіть профіль, в який ви хочете скопіювати налаштування. Зауважте, що ваші налаштування буде замінено, тому рекомендуємо вам <b>зробити резервну копію вашого профілю</b>.",
                             "input_select_profile": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Профілі",
+                                "placeholder": "Оберіть профіль"
                             },
-                            "title": ""
+                            "title": "Копіювання конфігурації"
                         }
                     },
                     "btn_rename_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "Перейменуйте свій профіль",
+                        "label": "Перейменувати профіль",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "Перейменувати",
+                            "btn_close": "Закрити",
+                            "description": "Ви можете перейменувати профіль, але його назва не повинна перевищувати 20 символів.",
                             "input_new_name": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Назва профілю",
+                                "placeholder": "Введіть нову назву для свого профілю"
                             },
-                            "title": ""
+                            "title": "Перейменування профілю"
                         }
                     },
-                    "title": ""
+                    "title": "Параметри профілю"
                 },
                 "save_game_options": {
                     "btn_decrypt_save": {
-                        "description": "",
-                        "label": ""
+                        "description": "Розшифруйте обране збереження гри",
+                        "label": "Розшифрувати збереження"
                     },
                     "btn_open_folder": {
-                        "description": "",
-                        "label": ""
+                        "description": "Відкрийте теку зі збереженою грою",
+                        "label": "Відкрийте теку збереження"
                     },
-                    "title": ""
+                    "title": "Параметри збережених ігор"
                 }
             },
             "input_select_profile": {
-                "label": "",
+                "label": "Вибір профілю",
                 "options": {
-                    "save_load": ""
+                    "save_load": "Збереження"
                 },
-                "placeholder": ""
+                "placeholder": "Оберіть профіль"
             },
             "input_select_save": {
-                "label": "",
-                "placeholder": ""
+                "label": "Вибір збереження",
+                "placeholder": "Оберіть збереження"
             },
-            "no_selected_profile": "",
-            "no_selected_save": "",
-            "total_saves": ""
+            "no_selected_profile": "Профіль не обрано",
+            "no_selected_save": "Збереження не обрано",
+            "total_saves": "Збереження"
         },
         "profile_error": {
-            "btn_how_to": "",
-            "btn_how_to_disable": "",
-            "description": "",
-            "title": ""
+            "btn_how_to": "Навчальне відео",
+            "btn_how_to_disable": "Як вимкнути Steam Cloud",
+            "description": "Не забудьте <b> вимкнути Steam Cloud</b> у своєму профілі або перевірити розташування теки «Документи»",
+            "title": "Профілі не знайдено"
         },
         "updater": {
-            "alert_message": "",
-            "btn_cancel": "",
-            "btn_manual_update": "",
-            "btn_update_now": "",
-            "downloading": "",
-            "release_notes": "",
-            "title": "",
-            "version": ""
+            "alert_message": "Помилка встановлення. Повторіть спробу пізніше",
+            "btn_cancel": "Скасувати",
+            "btn_manual_update": "Оновити вручну",
+            "btn_update_now": "Оновити зараз",
+            "downloading": "Завантаження...",
+            "release_notes": "Примітки до випуску",
+            "title": "Доступна нова версія",
+            "version": "Версія:"
         }
     },
     "menu_options": {
         "about": {
-            "description": "",
-            "tab_title": ""
+            "description": "Цей додаток з відкритим вихідним кодом, створено для того, щоб допомогти гравцям ETS 2 та ATS редагувати свої збереження гри простим і легким способом для тих, хто не хоче редагувати ці коди вручну.",
+            "tab_title": "Про додаток"
         },
         "profile": {
             "add_experience": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Змініть досвід у своєму профілі",
+                "label_card": "Зміна досвіду",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Застосувати",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Введіть кількість досвіду, яку ви хочете додати до свого профілю",
                     "input_experience": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Досвід",
+                        "placeholder": "Введіть кількість досвіду в цифрах"
                     },
-                    "title": ""
+                    "title": "Зміна досвіду"
                 }
             },
             "add_money": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Додайте кошти в свій профіль",
+                "label_card": "Зміна кількості коштів",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Застосувати",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Додайте потрібну суму коштів у своєму профілі",
                     "input_money": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Кошти",
+                        "placeholder": "Введіть суму коштів у євро"
                     },
-                    "title": ""
+                    "title": "Зміна кількості коштів"
                 }
             },
             "dealer_visited": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Відкрийте всіх дилерів у своєму профілі",
+                "label_card": "Відкриття всіх дилерів",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Застосувати",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Встановіть статуси всіх дилерів у вашому профілі",
                     "input_dealer_status": {
-                        "label": "",
+                        "label": "Відвідані міста",
                         "options": {
-                            "unvisit_all": "",
-                            "visit_all": ""
+                            "unvisit_all": "Всі дилери невідвідані",
+                            "visit_all": "Всі дилери відвідані"
                         }
                     },
-                    "title": ""
+                    "title": "Відкриття всіх дилерів"
                 }
             },
             "garage_status": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Встановіть статуси всіх гаражів у своєму профілі",
+                "label_card": "Придбати всі гаражі",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Застосувати",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Будь ласка, оберіть статус гаража, який ви хочете застосувати до свого профілю",
                     "input_garage_status": {
-                        "label": "",
+                        "label": "Статус гаража",
                         "options": {
-                            "large_garage": "",
-                            "medium_garage": "",
-                            "sell_garage": "",
-                            "small_garage": ""
+                            "large_garage": "Великий гараж",
+                            "medium_garage": "Середній гараж",
+                            "sell_garage": "Продати гараж",
+                            "small_garage": "Малий гараж"
                         }
                     },
-                    "title": ""
+                    "title": "Придбати всі гаражі"
                 }
             },
             "skills_points": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Встановіть навички досвіду у своєму профілі",
+                "label_card": "Встановлення навичок досвіду",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "eco_driving": "",
-                    "fragile_cargo": "",
-                    "high_value_cargo": "",
+                    "btn_apply": "Застосувати",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Введіть потрібну кількість досвіду",
+                    "eco_driving": "Еко-водіння",
+                    "fragile_cargo": "Обережність",
+                    "high_value_cargo": "Цінний вантаж",
                     "input_skills_points": {
-                        "corrosive": "",
-                        "explosives": "",
-                        "flammable_liquids": "",
-                        "flammable_solids": "",
-                        "gases": "",
-                        "label": "",
-                        "placeholder": "",
-                        "toxic_and_infectious": ""
+                        "corrosive": "Корозійні речовини",
+                        "explosives": "Вибухові речовини",
+                        "flammable_liquids": "Легкозаймисті рідини",
+                        "flammable_solids": "Легкозаймисті тверді речовини",
+                        "gases": "Гази",
+                        "label": "Вантажі класу ADR",
+                        "placeholder": "Оберіть вантажі класу ADR",
+                        "toxic_and_infectious": "Токсичні та інфекційні речовини"
                     },
-                    "just_in_time_delivery": "",
-                    "long_distance": "",
-                    "title": ""
+                    "just_in_time_delivery": "Термінові замовлення",
+                    "long_distance": "Далекі відстані",
+                    "title": "Встановлення навичок досвіду"
                 }
             },
-            "tab_title": "",
+            "tab_title": "Профіль",
             "visited_cities": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Встановіть статус відвіданого міста у своєму профілі",
+                "label_card": "Відкриття всіх міст",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Застосувати",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Будь ласка, оберіть статус всіх відвіданих міст",
                     "input_city_status": {
-                        "label": "",
+                        "label": "Відвідані міста",
                         "options": {
-                            "unvisit_all": "",
-                            "visit_all": ""
+                            "unvisit_all": "Всі міста невідвідані",
+                            "visit_all": "Всі міста відвідані"
                         }
                     },
-                    "title": ""
+                    "title": "Відкриття всіх міст"
                 }
             }
         },
         "settings": {
-            "btn_reset": "",
-            "document_dialog_title": "",
+            "btn_reset": "Скинути налаштування",
+            "document_dialog_title": "Оберіть теку, де зберігається ваш прогрес гри",
             "input_change_language": {
-                "label": "",
-                "placeholder": ""
+                "label": "Мова додатку",
+                "placeholder": "Оберіть мову"
             },
             "input_change_theme": {
-                "label": "",
+                "label": "Тема додатку",
                 "options": {
-                    "dark": "",
-                    "light": "",
-                    "system": ""
+                    "dark": "Темна",
+                    "light": "Світла",
+                    "system": "Як в системи"
                 },
-                "placeholder": ""
+                "placeholder": "Оберіть тему"
             },
             "input_document_folder": {
-                "label": "",
-                "placeholder": ""
+                "label": "Тека «Документи»",
+                "placeholder": "Оберіть вашу теку з документами"
             },
-            "input_enable_128_slots": "",
-            "input_enable_console": "",
-            "input_opacity_profile": "",
-            "tab_title": "",
-            "title": ""
+            "input_enable_128_slots": "Увімкнути 128 слотів у режимі конвою",
+            "input_enable_console": "Увімкнути консоль та режим розробника",
+            "input_opacity_profile": "Непрозорість на обраному профілі",
+            "tab_title": "Налаштування",
+            "title": "Налаштування"
         },
         "trailers": {
             "license_plate": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Змініть номерний знак свого причепа",
+                "label_card": "Зміна номерного знаку причепа",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Застосувати",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Будь ласка, введіть новий номерний знак причепа",
+                    "title": "Зміна номерного знаку причепа"
                 }
             },
             "modify_job_weight": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Змініть вагу вашого поточного завдання",
+                "label_card": "Зміна ваги завдання",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Застосувати",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Це змінить вагу вашого поточного завдання на ту, яку ви введете тут. Пам'ятайте, що вам потрібно буде мати активне завдання, прикріплене до вашої вантажівки",
                     "input_weight": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Вага (кг)",
+                        "placeholder": "Введіть вагу в кілограмах"
                     },
-                    "title": ""
+                    "title": "Зміна ваги вантажу"
                 }
             },
             "modify_trailer_weight": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Змінює вагу причепа, застосовуючи її лише один раз",
+                "label_card": "Зміна ваги причепа",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Застосувати",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Це змінить вагу вашого причепа за 2 параметрами. Зазвичай використовується chassis_mass, але ви також можете змінити body_mass (за замовчуванням body_mass дорівнює 0)",
                     "input_body_mass": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Маса тіла (body_mass), в кілограмах",
+                        "placeholder": "Введіть масу тіла в кілограмах"
                     },
                     "input_chassis_mass": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Маса шасі (chassis_mass), в кілограмах",
+                        "placeholder": "Введіть масу шасі в кілограмах"
                     },
-                    "title": ""
+                    "title": "Зміна ваги причепа"
                 }
             },
             "repair_all_trailer": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Відремонтуйте всі причепи, які у вас є",
+                "label_card": "Ремонт всіх причепів",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Відремонтувати",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Ремонт усіх причепів, якими ви володієте",
+                    "title": "Ремонт всіх причепів"
                 }
             },
             "repair_trailer": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Відремонтуйте поточний причіп",
+                "label_card": "Ремонт причепа",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Відремонтувати",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Відремонтує причіп, який зараз приєднаний до вантажівки",
+                    "title": "Ремонт причепа"
                 }
             },
-            "tab_title": "",
+            "tab_title": "Причіп",
             "unlock_trailer_country": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Розблокуйте регіональні блокування трейлерів",
+                "label_card": "Розблокування трейлеру за країною",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_how_to_use": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": "",
+                    "btn_apply": "Розблокувати",
+                    "btn_close": "Закрити",
+                    "btn_how_to_use": "Як користуватися",
+                    "btn_open": "Змінити",
+                    "description": "Розблокує ваш причіп у всіх країнах, якщо він заблокований грою",
+                    "title": "Розблокування поточного причіпу",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Щоб зміни набули чинності, причіп повинен бути приєднаний до вашої вантажівки.",
+                        "title": "Зауважте"
                     }
                 }
             }
         },
         "trucks": {
             "change_truck_engine": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Замініть двигун своєї вантажівки",
+                "label_card": "Заміна двигуна вантажівки",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_remove_badge": "",
-                    "description": "",
+                    "btn_apply": "Замінити",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "btn_remove_badge": "Видалити лого",
+                    "description": "Замінить двигун вашої вантажівки на той, який ви оберете",
                     "input_brands": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Бренди",
+                        "placeholder": "Оберіть бренд вантажівки"
                     },
                     "input_engines": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Двигуни",
+                        "placeholder": "Оберіть двигун вантажівки"
                     },
                     "input_models": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Моделі",
+                        "placeholder": "Оберіть модель вантажівки"
                     },
-                    "title": "",
+                    "title": "Заміна двигуна вантажівки",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Якщо ви бачите на вантажівці будь-який <b>логотип, який плаває або розміщений неправильно</b>, ви можете видалити його за допомогою кнопки нижче.",
+                        "title": "Зауважте"
                     }
                 }
             },
             "change_truck_transmission": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Замініть трансмісію своєї вантажівки",
+                "label_card": "Заміна трансмісії вантажівки",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_remove_badge": "",
-                    "description": "",
+                    "btn_apply": "Замінити",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "btn_remove_badge": "Видалити лого",
+                    "description": "Замінить трансмісію вашої вантажівки на ту, яку ви оберете",
                     "input_brands": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Бренди",
+                        "placeholder": "Оберіть бренд вантажівки"
                     },
                     "input_models": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Моделі",
+                        "placeholder": "Оберіть модель вантажівки"
                     },
                     "input_transmissions": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Трансмісії",
+                        "placeholder": "Оберіть трансмісію вантажівки"
                     },
-                    "title": "",
+                    "title": "Заміна трансмісії вантажівки",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Якщо ви бачите на вантажівці будь-який <b>логотип, який плаває або розміщений неправильно</b>, ви можете видалити його за допомогою кнопки нижче.",
+                        "title": "Зауважте"
                     }
                 }
             },
             "fill_all_trucks_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Дозаправте всі вантажівки ваших гаражів",
+                "label_card": "Дозаправка всіх вантажівок паливом",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Дозаправити",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Ця опція дозволить вам заправити всі придбані вами вантажівки",
+                    "title": "Дозаправка всіх вантажівок пальним"
                 }
             },
             "fill_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Дозаправте пальним поточну вантажівку",
+                "label_card": "Дозаправка пальним",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Дозаправити",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Дозаправить вашу поточну вантажівку повністю",
+                    "title": "Дозаправка пальним"
                 }
             },
             "infinite_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Нескінченна кількість палива для поточної вантажівки",
+                "label_card": "Нескінченне паливо для вантажівки",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_restore_fuel": "",
-                    "description": "",
-                    "title": "",
+                    "btn_apply": "Дозаправити",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "btn_restore_fuel": "Відновити пальне",
+                    "description": "Саме паливо не нескінченне, але його вистачить приблизно на 5 000 000 км (залежно від вантажівки)",
+                    "title": "Нескінченне паливо для поточної вантажівки",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Щоб ця функція почала працювати, будь ласка, <b>вимкніть параметр «Реалістична модель витрат пального»</b> в розділі налаштувань «Геймплей».",
+                        "title": "Зауважте"
                     }
                 }
             },
             "license_plate": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Змініть номерний знак вантажівки",
+                "label_card": "Зміна номерного знаку вантажівки",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Застосувати",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Введіть новий номерний знак вантажівки. Не забудьте видалити номерний знак із Word of Trucks",
+                    "title": "Зміна номерного знаку вантажівки"
                 }
             },
             "repair_all_trucks": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Відремонтуйте всі вантажівки автопарку",
+                "label_card": "Ремонт всіх вантажівок",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Відремонтувати",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Відремонтує всі вантажівки, які є у вашій компанії",
+                    "title": "Ремонт всіх вантажівок"
                 }
             },
             "repair_truck": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Відремонтуйте свою поточну вантажівку",
+                "label_card": "Ремонт вантажівки",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Відремонтувати",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Усуньте пошкодження вашої вантажівки",
+                    "title": "Ремонт вантажівки"
                 }
             },
-            "tab_title": ""
+            "tab_title": "Вантажівка"
         }
     }
 }
