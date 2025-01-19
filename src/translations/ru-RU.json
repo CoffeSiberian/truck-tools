@@ -1,232 +1,236 @@
 {
     "components": {
         "license_plate": {
-            "btn_delete": "",
-            "btn_load": "",
+            "btn_delete": "Удалить",
+            "btn_load": "Загрузить",
             "btn_store": "",
-            "input_colored_margin": "",
+            "input_colored_margin": "Цветное поле",
             "input_license_plate": {
-                "label": "",
-                "placeholder": ""
+                "label": "Текст номерного знака",
+                "placeholder": "Введите текст"
             },
             "input_license_plate_list_store": {
-                "label": "",
-                "placeholder": ""
+                "label": "Выберите сохранённый груз",
+                "placeholder": "Выбрать груз"
             },
-            "title_select_bg_color": "",
-            "title_select_text_color": ""
+            "title_select_bg_color": "Цвет фона",
+            "title_select_text_color": "Цвет текста"
         },
         "player_profile": {
-            "btn_profile": "",
+            "btn_profile": "Параметры профиля",
             "dropdown": {
                 "profile_options": {
                     "btn_backup_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "Создайте резервную копию своего профиля",
+                        "label": "Резервная копия Профиля",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "btn_open_folder": "",
-                            "description": "",
+                            "btn_apply": "Резервная копия",
+                            "btn_close": "Закрыть",
+                            "btn_open_folder": "Открыть папку",
+                            "description": "Создайте резервную копию, не забудьте указать место назначения",
                             "input_backup_destination": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Выберите папку назначения",
+                                "placeholder": "Выбрать папку назначения"
                             },
                             "save_folder_dialog": {
                                 "filters_name": {
-                                    "zip": ""
+                                    "zip": "Zip-файлы"
                                 },
-                                "title": ""
+                                "title": "Выберите папку назначения"
                             },
                             "title": ""
                         }
                     },
                     "btn_clone_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "Клонируйте свой профиль на новый",
+                        "label": "Клонировать профиль",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "Клонировать",
+                            "btn_close": "Закрыть",
+                            "description": "Введите имя профиля, который вы хотите клонировать. При этом будет создан новый профиль с теми же настройками, что и у выбранного профиля.",
                             "input_new_name": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Имя нового профиля",
+                                "placeholder": "Введите новое имя для своего профиля"
                             },
-                            "title": ""
+                            "title": "Клонировать профиль"
                         }
                     },
                     "btn_copy_config": {
-                        "description": "",
-                        "label": "",
+                        "description": "Копирование настроек из других профилей",
+                        "label": "Скопировать конфигурацию",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "Скопировать конфигурацию",
+                            "btn_close": "Закрыть",
+                            "description": "Выберите профиль, в который вы хотите скопировать настройки, помните, что ваши настройки будут заменены, мы рекомендуем вам <b>сделать резервную копию своего профиля</b>.",
                             "input_select_profile": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Профили",
+                                "placeholder": "Выберите профиль"
                             },
-                            "title": ""
+                            "title": "Скопировать конфигурацию"
                         }
                     },
                     "btn_rename_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "Переименовать свой профиль",
+                        "label": "Переименовать профиль",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "Переименовать",
+                            "btn_close": "Закрыть",
+                            "description": "Вы можете переименовать профиль, но оно должно быть менее 20 символов.",
                             "input_new_name": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Название профиля",
+                                "placeholder": "Введите новое имя для своего профиля"
                             },
-                            "title": ""
+                            "title": "Переименовать профиль"
                         }
                     },
-                    "title": ""
+                    "title": "Параметры профиля"
                 },
                 "save_game_options": {
                     "btn_decrypt_save": {
-                        "description": "",
+                        "description": "Расшифровать выбранное сохранение игры",
                         "label": ""
                     },
                     "btn_open_folder": {
-                        "description": "",
-                        "label": ""
+                        "description": "Открыть выбранную папку сохранения игры",
+                        "label": "Открыть папку сохранения"
                     },
-                    "title": ""
+                    "title": "Сохранить параметры игры"
                 }
             },
             "input_select_profile": {
-                "label": "",
+                "label": "Выбрать профиль",
                 "options": {
-                    "save_load": ""
+                    "save_load": "Сохранения"
                 },
-                "placeholder": ""
+                "placeholder": "Выберите профиль"
             },
             "input_select_save": {
-                "label": "",
-                "placeholder": ""
+                "label": "Выбрать сохранение",
+                "placeholder": "Выберите сохранение"
             },
-            "no_selected_profile": "",
-            "no_selected_save": "",
-            "total_saves": ""
+            "no_selected_profile": "Нет выбранных профилей",
+            "no_selected_save": "Нет выбранных сохранений",
+            "total_saves": "Сохранения"
         },
         "profile_error": {
-            "btn_how_to": "",
-            "btn_how_to_disable": "",
-            "description": "",
-            "title": ""
+            "btn_how_to": "Обучающее видео",
+            "btn_how_to_disable": "Как отключить Steam Cloud",
+            "description": "Не забудьте <b>отключить Steam Cloud</b> в своем профиле или проверить расположение папки «Документы»",
+            "title": "Профили не найдены"
         },
         "updater": {
-            "alert_message": "",
-            "btn_cancel": "",
-            "btn_manual_update": "",
-            "btn_update_now": "",
-            "downloading": "",
-            "release_notes": "",
-            "title": "",
-            "version": ""
+            "alert_message": "Установка не удалась. Повторите попытку позже",
+            "btn_cancel": "Отменить",
+            "btn_manual_update": "Обновление вручную",
+            "btn_update_now": "Обновить сейчас",
+            "downloading": "Загрузка...",
+            "release_notes": "Примечания к выпуску",
+            "title": "Доступна новая версия",
+            "version": "Версия:"
+        },
+        "alert_on_save_default": {
+            "error": "В процессе произошла ошибка",
+            "succes": "Сохранено успешно"
         }
     },
     "menu_options": {
         "about": {
-            "description": "",
-            "tab_title": ""
+            "description": "Это приложение с открытым исходным кодом, созданное для того, чтобы помочь игрокам ETS 2 и ATS редактировать свои сохранения игры простым и легким способом для тех, кто не хочет редактировать эти коды вручную.",
+            "tab_title": "О нас"
         },
         "profile": {
             "add_experience": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Измените опыт своего профиля",
+                "label_card": "Изменить опыт",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Применить",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "description": "Введите количество опыта, которое вы хотите добавить в свой профиль",
                     "input_experience": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Опыт",
+                        "placeholder": "Введите количество опыта в цифрах"
                     },
-                    "title": ""
+                    "title": "Изменить опыт"
                 }
             },
             "add_money": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Добавьте деньги в свой профиль",
+                "label_card": "Изменить деньги",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Применить",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "description": "Добавьте желаемую сумму денег в свой профиль",
                     "input_money": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Деньги",
+                        "placeholder": "Введите сумму денег в евро"
                     },
-                    "title": ""
+                    "title": "Изменить деньги"
                 }
             },
             "dealer_visited": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Установите все статусы дилеров в свой профиль",
+                "label_card": "Откройте для себя всех дилеров",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Применить",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "description": "Выберите статус всех дилеров в своем профиле",
                     "input_dealer_status": {
-                        "label": "",
+                        "label": "Посещенные города",
                         "options": {
-                            "unvisit_all": "",
-                            "visit_all": ""
+                            "unvisit_all": "Не посетил всех дилеров",
+                            "visit_all": "Посетил всех дилеров"
                         }
                     },
                     "title": ""
                 }
             },
             "garage_status": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Установите любой статус гаражей в свой профиль",
+                "label_card": "Купить все гаражи",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Применить",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "description": "Выберите статус гаража, который вы хотите применить к своему профилю",
                     "input_garage_status": {
-                        "label": "",
+                        "label": "Статус гаража",
                         "options": {
-                            "large_garage": "",
-                            "medium_garage": "",
-                            "sell_garage": "",
-                            "small_garage": ""
+                            "large_garage": "Большой Гараж",
+                            "medium_garage": "Средний Гараж",
+                            "sell_garage": "Продать Гаражи",
+                            "small_garage": "Маленький Гараж"
                         }
                     },
-                    "title": ""
+                    "title": "Купить все гаражи"
                 }
             },
             "skills_points": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Установите навыки опыта в свой профиль",
+                "label_card": "Установить навыки опыта",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "eco_driving": "",
-                    "fragile_cargo": "",
-                    "high_value_cargo": "",
+                    "btn_apply": "Применить",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "description": "Введите необходимое количество опыта",
+                    "eco_driving": "Эко вождение",
+                    "fragile_cargo": "Хрупкий груз",
+                    "high_value_cargo": "Дорогостоящий груз",
                     "input_skills_points": {
                         "corrosive": "",
-                        "explosives": "",
-                        "flammable_liquids": "",
-                        "flammable_solids": "",
-                        "gases": "",
-                        "label": "",
-                        "placeholder": "",
-                        "toxic_and_infectious": ""
+                        "explosives": "Взрывчатые вещества",
+                        "flammable_liquids": "Легковоспламеняющиеся жидкости",
+                        "flammable_solids": "Легковоспламеняющиеся твердые вещества",
+                        "gases": "Газы",
+                        "label": "ADR",
+                        "placeholder": "Выберите ADR",
+                        "toxic_and_infectious": "Токсичные и инфекционные"
                     },
-                    "just_in_time_delivery": "",
-                    "long_distance": "",
-                    "title": ""
+                    "just_in_time_delivery": "Доставка точно в срок",
+                    "long_distance": "Дальние дистанции",
+                    "title": "Установить навыки опыта"
                 }
             },
             "tab_title": "",
