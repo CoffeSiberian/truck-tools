@@ -1,499 +1,499 @@
 {
     "components": {
         "alert_on_save_default": {
-            "error": "",
-            "succes": ""
+            "error": "在處理過程中發生錯誤",
+            "succes": "保存成功"
         },
         "license_plate": {
-            "btn_delete": "",
-            "btn_load": "",
-            "btn_store": "",
-            "input_colored_margin": "",
+            "btn_delete": "刪除",
+            "btn_load": "加載",
+            "btn_store": "添加",
+            "input_colored_margin": "彩色邊框",
             "input_license_plate": {
-                "label": "",
-                "placeholder": ""
+                "label": "車牌信息",
+                "placeholder": "輸入文字"
             },
             "input_license_plate_list_store": {
-                "label": "",
-                "placeholder": ""
+                "label": "選擇一塊已儲存的車牌",
+                "placeholder": "選擇車牌"
             },
-            "title_select_bg_color": "",
-            "title_select_text_color": ""
+            "title_select_bg_color": "車牌背景顏色",
+            "title_select_text_color": "車牌文字及邊框顏色"
         },
         "player_profile": {
-            "btn_profile": "",
+            "btn_profile": "存檔選項",
             "dropdown": {
                 "profile_options": {
                     "btn_backup_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "創建存檔備份",
+                        "label": "備份存檔",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "btn_open_folder": "",
-                            "description": "",
+                            "btn_apply": "創建備份",
+                            "btn_close": "取消",
+                            "btn_open_folder": "選擇資料夾",
+                            "description": "創建存檔備份，記得輸入備份目錄",
                             "input_backup_destination": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "選擇備份存檔存放位置",
+                                "placeholder": "選擇存檔資料夾"
                             },
                             "save_folder_dialog": {
                                 "filters_name": {
-                                    "zip": ""
+                                    "zip": "Zip壓縮包"
                                 },
-                                "title": ""
+                                "title": "選擇備份資料夾"
                             },
-                            "title": ""
+                            "title": "備份存檔"
                         }
                     },
                     "btn_clone_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "將此存檔複製到新的存檔中",
+                        "label": "複製存檔",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "複製",
+                            "btn_close": "取消",
+                            "description": "複製存檔並創建一個完全一模一樣的存檔。",
                             "input_new_name": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "複製存檔名稱",
+                                "placeholder": "輸入複製存檔的名稱"
                             },
-                            "title": ""
+                            "title": "複製存檔"
                         }
                     },
                     "btn_copy_config": {
-                        "description": "",
-                        "label": "",
+                        "description": "從其他存檔複製配置/設定訊息",
+                        "label": "複製配置",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "複製配置",
+                            "btn_close": "取消",
+                            "description": "選擇需要複製的配置/設定資訊到此存檔，該操作將刪除你的配置/設定資訊<b>建議進行操作前對該存檔配置/設定資訊進行備份</b>（存檔資料夾下的config、 config_local、controls檔）。",
                             "input_select_profile": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "存檔",
+                                "placeholder": "選擇一個存檔"
                             },
-                            "title": ""
+                            "title": "複製存檔配置/設定訊息"
                         }
                     },
                     "btn_rename_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "重新命名存檔",
+                        "label": "對該存檔進行重新命名",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "確認重命名",
+                            "btn_close": "取消",
+                            "description": "你可以對存檔進行重新命名，但是存檔名稱必須小於20個字元（小於10個漢字）。",
                             "input_new_name": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "重新命名的存檔名稱",
+                                "placeholder": "給存檔輸入一個新的名稱"
                             },
-                            "title": ""
+                            "title": "重新命名存檔"
                         }
                     },
-                    "title": ""
+                    "title": "存檔選項"
                 },
                 "save_game_options": {
                     "btn_decrypt_save": {
-                        "description": "",
-                        "label": ""
+                        "description": "對存檔進行解密",
+                        "label": "解密存檔"
                     },
                     "btn_open_folder": {
-                        "description": "",
-                        "label": ""
+                        "description": "打開存檔資料夾",
+                        "label": "打開存檔資料夾"
                     },
-                    "title": ""
+                    "title": "保存存檔設置"
                 }
             },
             "input_select_profile": {
-                "label": "",
+                "label": "選擇存檔",
                 "options": {
-                    "save_load": ""
+                    "save_load": "保存"
                 },
-                "placeholder": ""
+                "placeholder": "選擇一個存檔"
             },
             "input_select_save": {
-                "label": "",
-                "placeholder": ""
+                "label": "選擇一個儲存",
+                "placeholder": "選擇儲存"
             },
-            "no_selected_profile": "",
-            "no_selected_save": "",
-            "total_saves": ""
+            "no_selected_profile": "沒有選擇存檔",
+            "no_selected_save": "沒有選擇儲存",
+            "total_saves": "保存"
         },
         "profile_error": {
-            "btn_how_to": "",
-            "btn_how_to_disable": "",
-            "description": "",
-            "title": ""
+            "btn_how_to": "影片教學",
+            "btn_how_to_disable": "如何禁用雲存檔",
+            "description": "記住在你的存檔中 <b> 禁用雲存檔</b> 或驗證您的文件資料夾位置是否正確，否則您將無法載入您的存檔",
+            "title": "未找到任何存檔"
         },
         "updater": {
-            "alert_message": "",
-            "btn_cancel": "",
-            "btn_manual_update": "",
-            "btn_update_now": "",
-            "downloading": "",
-            "release_notes": "",
-            "title": "",
-            "version": ""
+            "alert_message": "安裝失敗，請稍後再嘗試進行安裝",
+            "btn_cancel": "取消",
+            "btn_manual_update": "手動更新",
+            "btn_update_now": "現在更新",
+            "downloading": "下載中...",
+            "release_notes": "更新日誌",
+            "title": "發現新版本更新可用",
+            "version": "版本:"
         }
     },
     "menu_options": {
         "about": {
-            "description": "",
-            "tab_title": ""
+            "description": "這是一款開源的應用程序，旨在幫助歐卡和美卡的玩家使用簡單的方式編輯存檔內容，方便那些不會使用代碼編輯存檔的玩家。",
+            "tab_title": "關於"
         },
         "profile": {
             "add_experience": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "修改存檔經驗",
+                "label_card": "修改經驗等級",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "應用",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "description": "輸入要修改的存檔經驗值數量",
                     "input_experience": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "經驗值",
+                        "placeholder": "輸入經驗值數量"
                     },
-                    "title": ""
+                    "title": "修改經驗"
                 }
             },
             "add_money": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "修改存檔金幣數量",
+                "label_card": "修改金幣數量",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "應用",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "description": "你想要修改的金幣數量",
                     "input_money": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "金錢",
+                        "placeholder": "輸入金額（以歐元為單位）"
                     },
-                    "title": ""
+                    "title": "修改金幣數量"
                 }
             },
             "dealer_visited": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "修改卡車經銷商解鎖狀態",
+                "label_card": "解鎖所有卡車經銷商",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "應用",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "description": "選擇是否解鎖所有經銷商",
                     "input_dealer_status": {
-                        "label": "",
+                        "label": "解鎖城市",
                         "options": {
-                            "unvisit_all": "",
-                            "visit_all": ""
+                            "unvisit_all": "取消所有經銷商解鎖",
+                            "visit_all": "解鎖所有經銷商"
                         }
                     },
-                    "title": ""
+                    "title": "解鎖所有經銷商"
                 }
             },
             "garage_status": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "修改車庫大小",
+                "label_card": "購買所有車庫",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "應用",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "description": "選擇存檔中車庫大小",
                     "input_garage_status": {
-                        "label": "",
+                        "label": "車庫選項",
                         "options": {
-                            "large_garage": "",
-                            "medium_garage": "",
-                            "sell_garage": "",
-                            "small_garage": ""
+                            "large_garage": "大型車庫",
+                            "medium_garage": "中型車庫",
+                            "sell_garage": "賣出車庫",
+                            "small_garage": "小型車庫"
                         }
                     },
-                    "title": ""
+                    "title": "購買所有車庫"
                 }
             },
             "skills_points": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "設定駕駛員技能等級",
+                "label_card": "設定技能等級",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "eco_driving": "",
-                    "fragile_cargo": "",
-                    "high_value_cargo": "",
+                    "btn_apply": "應用",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "description": "選擇需要解鎖的危險物品運輸許可",
+                    "eco_driving": "節油駕駛",
+                    "fragile_cargo": "易碎貨物",
+                    "high_value_cargo": "貴重貨物",
                     "input_skills_points": {
-                        "corrosive": "",
-                        "explosives": "",
-                        "flammable_liquids": "",
-                        "flammable_solids": "",
-                        "gases": "",
-                        "label": "",
-                        "placeholder": "",
-                        "toxic_and_infectious": ""
+                        "corrosive": "腐蝕性物質",
+                        "explosives": "爆炸品",
+                        "flammable_liquids": "易燃液體",
+                        "flammable_solids": "易燃固體",
+                        "gases": "氣體",
+                        "label": "危險品",
+                        "placeholder": "選擇危險品種類",
+                        "toxic_and_infectious": "毒性和感染性物質"
                     },
-                    "just_in_time_delivery": "",
-                    "long_distance": "",
-                    "title": ""
+                    "just_in_time_delivery": "加急運輸",
+                    "long_distance": "長途運輸",
+                    "title": "設定玩家技能點"
                 }
             },
-            "tab_title": "",
+            "tab_title": "存檔基本修改",
             "visited_cities": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "設定您的檔案中探索過的城市",
+                "label_card": "探索所有城市",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "應用",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "description": "選擇所有訪問城市的狀態",
                     "input_city_status": {
-                        "label": "",
+                        "label": "造訪過的城市",
                         "options": {
-                            "unvisit_all": "",
-                            "visit_all": ""
+                            "unvisit_all": "取消所有城市解鎖",
+                            "visit_all": "解鎖所有城市"
                         }
                     },
-                    "title": ""
+                    "title": "解鎖所有城市"
                 }
             }
         },
         "settings": {
-            "btn_reset": "",
-            "document_dialog_title": "",
+            "btn_reset": "重置所有設定",
+            "document_dialog_title": "選擇您的存檔資料夾路徑",
             "input_change_language": {
-                "label": "",
-                "placeholder": ""
+                "label": "修改語言",
+                "placeholder": "選擇語言"
             },
             "input_change_theme": {
-                "label": "",
+                "label": "修改主題",
                 "options": {
-                    "dark": "",
-                    "light": "",
-                    "system": ""
+                    "dark": "深色",
+                    "light": "淺色",
+                    "system": "跟隨系統"
                 },
-                "placeholder": ""
+                "placeholder": "選擇主題"
             },
             "input_document_folder": {
-                "label": "",
-                "placeholder": ""
+                "label": "存檔資料夾",
+                "placeholder": "修改您的存檔資料夾路徑"
             },
-            "input_enable_128_slots": "",
-            "input_enable_console": "",
-            "input_opacity_profile": "",
-            "tab_title": "",
-            "title": ""
+            "input_enable_128_slots": "解鎖128人聯運模式",
+            "input_enable_console": "啟用控制台和開發人員模式（啟用飛航模式）",
+            "input_opacity_profile": "啟用無邊框模式",
+            "tab_title": "設定",
+            "title": "設定"
         },
         "trailers": {
             "license_plate": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "更換掛車車牌",
+                "label_card": "更換掛車牌照",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "應用",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "description": "輸入一個新的掛車車牌",
+                    "title": "更換掛車牌照"
                 }
             },
             "modify_job_weight": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "修改貨物重量",
+                "label_card": "修改貨物重量",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "應用",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "description": "這將把當前貨物重量修改為指定的重量。請記住，這僅適用於當前貨物",
                     "input_weight": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "重量（千克）",
+                        "placeholder": "輸入重量(千克)"
                     },
-                    "title": ""
+                    "title": "修改貨物重量"
                 }
             },
             "modify_trailer_weight": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "修改拖車重量，僅適用於當前拖車的一次修改",
+                "label_card": "修改拖車重量",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "應用",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "description": "這將透過 2 個參數修改掛車的重量。通常使用底盤重量，但也可以編輯車身重量（預設車身質量為 0）",
                     "input_body_mass": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "車身重量（kg）",
+                        "placeholder": "輸入車身重量（kg）"
                     },
                     "input_chassis_mass": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "底盤重量(千克)",
+                        "placeholder": "輸入底盤重量(千克)"
                     },
-                    "title": ""
+                    "title": "修改拖車重量"
                 }
             },
             "repair_all_trailer": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "維修你擁有的所有的拖車",
+                "label_card": "維修所有拖車",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "維修",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "description": "維修你所擁有所有掛車",
+                    "title": "維修你擁有的所有的拖車"
                 }
             },
             "repair_trailer": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "修理當前拖車",
+                "label_card": "維修當前拖車",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "維修",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "description": "維修當前拖車",
+                    "title": "掛車"
                 }
             },
-            "tab_title": "",
+            "tab_title": "拖車",
             "unlock_trailer_country": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "解鎖拖車的區域限制",
+                "label_card": "解鎖拖車國家/地區限制",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_how_to_use": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": "",
+                    "btn_apply": "解鎖",
+                    "btn_close": "取消",
+                    "btn_how_to_use": "如何使用",
+                    "btn_open": "查看詳情",
+                    "description": "解鎖所有拖車的區域限制",
+                    "title": "解鎖拖車限制",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "您必須將拖車連接到您的卡車上，更改才能生效。",
+                        "title": "提示"
                     }
                 }
             }
         },
         "trucks": {
             "change_truck_engine": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "修改卡車引擎功率",
+                "label_card": "修改卡車引擎功率",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_remove_badge": "",
-                    "description": "",
+                    "btn_apply": "應用",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "btn_remove_badge": "移除標誌",
+                    "description": "將卡車發動機更換為您選擇的發動機",
                     "input_brands": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "品牌",
+                        "placeholder": "選擇卡車品牌"
                     },
                     "input_engines": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "引擎",
+                        "placeholder": "選擇卡車發動機"
                     },
                     "input_models": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "車輛型號",
+                        "placeholder": "選擇卡車型號"
                     },
-                    "title": "",
+                    "title": "修改卡車引擎功率",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "如果您發現卡車上有任何<b>徽章漂浮或位置不佳</b>，可以使用下面的按鈕將其移除。",
+                        "title": "提示"
                     }
                 }
             },
             "change_truck_transmission": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "修改卡車變速箱",
+                "label_card": "修改卡車變速箱",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_remove_badge": "",
-                    "description": "",
+                    "btn_apply": "應用",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "btn_remove_badge": "移除徽章",
+                    "description": "將您的卡車變速箱更換為您選擇的變速箱",
                     "input_brands": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "品牌",
+                        "placeholder": "選擇卡車品牌"
                     },
                     "input_models": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "卡車型號",
+                        "placeholder": "選擇卡車型號"
                     },
                     "input_transmissions": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "變速箱",
+                        "placeholder": "選擇卡車變速箱"
                     },
-                    "title": "",
+                    "title": "修改卡車變速箱",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "如果您發現卡車上有任何<b>徽章漂浮或位置不佳</b>，可以使用下面的按鈕將其移除。",
+                        "title": "提示"
                     }
                 }
             },
             "fill_all_trucks_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "為所有卡車加滿油",
+                "label_card": "為所有卡車加滿油",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "應用",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "description": "此選項將允許您為所有購買的卡車加滿油",
+                    "title": "給所有卡車加滿燃油"
                 }
             },
             "fill_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "為目前卡車加滿油",
+                "label_card": "加滿油",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "加油",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "description": "為目前使用的卡車加滿油",
+                    "title": "加滿油"
                 }
             },
             "infinite_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "修改目前卡車為無限燃油",
+                "label_card": "修改目前卡車為無限燃油",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_restore_fuel": "",
-                    "description": "",
-                    "title": "",
+                    "btn_apply": "加油",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "btn_restore_fuel": "恢復燃油",
+                    "description": "確切地說，燃料不是無限的，但大約可以行駛 5.000.000 KM（取決於卡車）",
+                    "title": "修改目前卡車為無限燃油",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "在 「遊戲設定」中<b> 停用 “真實油耗” </b>才能使此修改生效。",
+                        "title": "提示"
                     }
                 }
             },
             "license_plate": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "修改卡車車牌",
+                "label_card": "修改卡車車牌",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "應用",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "description": "輸入新的卡車牌照。記得從 卡車世界 中刪除您的車牌",
+                    "title": "修改卡車車牌"
                 }
             },
             "repair_all_trucks": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "修理你所擁有的所有卡車",
+                "label_card": "修理所有卡車",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "維修",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "description": "修理您公司的所有卡車",
+                    "title": "修理所有卡車"
                 }
             },
             "repair_truck": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "修理當前卡車",
+                "label_card": "卡車維修",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "維修",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "description": "修復卡車損壞",
+                    "title": "維修卡車"
                 }
             },
-            "tab_title": ""
+            "tab_title": "卡車"
         }
     }
 }

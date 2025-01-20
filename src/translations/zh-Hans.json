@@ -430,7 +430,7 @@
                     "btn_close": "取消",
                     "btn_open": "查看详情",
                     "description": "此选项将允许您为所有购买的卡车加满油",
-                    "title": "给所有卡车加满燃料油"
+                    "title": "给所有卡车加满燃油"
                 }
             },
             "fill_fuel": {
@@ -448,7 +448,7 @@
                 "description_card": "修改当前卡车为无限燃油",
                 "label_card": "修改当前卡车为无限燃油",
                 "modal": {
-                    "btn_apply": "应用",
+                    "btn_apply": "加油",
                     "btn_close": "取消",
                     "btn_open": "查看详情",
                     "btn_restore_fuel": "恢复燃油",
