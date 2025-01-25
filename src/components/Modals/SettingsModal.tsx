@@ -233,6 +233,8 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 									<SelectItem key="pt-BR">Português</SelectItem>
 									<SelectItem key="es-CL">Español</SelectItem>
 									<SelectItem key="ko-KR">한국어</SelectItem>
+									<SelectItem key="zh-Hant">繁體中文</SelectItem>
+									<SelectItem key="uk-UA">Українська</SelectItem>
 								</Select>
 								<Button
 									color="primary"

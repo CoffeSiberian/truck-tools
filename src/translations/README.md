@@ -26,10 +26,14 @@ Our goal is to support multiple languages, driven by contributions from our comm
 
 ### Thank you very much for contributing translations ❤️
 
-#### Chinese
+#### Chinese (Simplified)
 
 - [Gavin][GavinTnT]
 - [nulijiazaizhong][nulijiazaizhong]
+- [memo209][memo209]
+
+#### Chinese (Traditional)
+
 - [memo209][memo209]
 
 #### French
@@ -44,9 +48,17 @@ Our goal is to support multiple languages, driven by contributions from our comm
 
 - [Sonur][sonur]
 
-### Korean
+#### Korean
 
 - [Sconda][Sconda]
+
+#### Ukrainian
+
+- [Vasyl Belynets][Vasyl Belynets]
+
+#### Russian
+
+- [maz1lovo][maz1lovo]
 
 [weblate]: https://hosted.weblate.org/projects/truck-tools/truck-tools/
 [memo209]: https://hosted.weblate.org/user/memo209/
@@ -56,3 +68,5 @@ Our goal is to support multiple languages, driven by contributions from our comm
 [hoanghuy309]: https://hosted.weblate.org/user/hoanghuy309/
 [sonur]: https://hosted.weblate.org/user/sonur/
 [Sconda]: https://hosted.weblate.org/user/Sconda/
+[Vasyl Belynets]: https://hosted.weblate.org/user/belynets/
+[maz1lovo]: https://hosted.weblate.org/user/authorless/
