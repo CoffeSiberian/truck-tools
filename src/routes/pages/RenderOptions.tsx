@@ -123,69 +123,66 @@ const RenderOptions = () => {
 	};
 
 	return (
-		<div className="mb-28 mt-12 flex flex-col items-center p-5">
+		<>
 			<AboutModal isOpen={isOpenAbout} onOpenChange={onOpenChangeAbout} />
-
 			<SettingsModal
 				isOpen={isOpenSettings}
 				onOpenChange={onOpenChangeSettings}
 			/>
-
-			<Image
-				className={classNames(
-					"fixed left-40 top-2 z-20 cursor-pointer",
-					"transition duration-100 ease-in hover:scale-110",
-					"drop-shadow-lg"
-				)}
-				alt="KoFi Card link"
-				width={120}
-				src={kofi}
-				onClick={() => open("https://ko-fi.com/siberiancoffe")}
-			/>
-			<div
-				className={classNames(
-					"fixed right-28 top-4 z-20 cursor-pointer",
-					"drop-shadow-lg"
-				)}
-			>
-				<Button
-					className={classNames(
-						darkMode ? "text-emerald-400" : "text-emerald-600",
-						"font-extrabold"
-					)}
-					variant="faded"
-					size="sm"
-					startContent={<IconBrandGithub />}
-					onPress={() => open("https://github.com/CoffeSiberian/truck-tools")}
-				>
-					Star on GitHub ❤️
-				</Button>
-			</div>
-			<Tabs
-				className="fixed top-2 z-20 justify-center"
-				onSelectionChange={(index) => {
-					if (index === "about") onOpenAbout();
-					else if (index === "settings") onOpenSettings();
-					else setActiveIndexOptions(index as ItemId);
-				}}
-				selectedKey={activeIndex}
-				size="lg"
-				aria-label="options"
-				variant="solid"
-				color="primary"
-			>
-				{items.map((item) => {
-					return renderCart(item.id, item.label, item.icon, false);
-				})}
-			</Tabs>
-			{items.map((item, index) => {
-				return (
-					<div key={"cardOptionNumber" + index}>
-						{activeIndex === item.id && item.jsx}
+			<div className="mb-28 mt-12 flex flex-col items-center p-5">
+				<div className="fixed top-2 z-20 flex items-center justify-center gap-5">
+					<Image
+						className={classNames(
+							"cursor-pointer transition duration-100 ease-in hover:scale-110",
+							"drop-shadow-lg"
+						)}
+						alt="KoFi Card link"
+						width={120}
+						src={kofi}
+						onClick={() => open("https://ko-fi.com/siberiancoffe")}
+					/>
+					<Tabs
+						onSelectionChange={(index) => {
+							if (index === "about") onOpenAbout();
+							else if (index === "settings") onOpenSettings();
+							else setActiveIndexOptions(index as ItemId);
+						}}
+						selectedKey={activeIndex}
+						size="lg"
+						aria-label="options"
+						variant="solid"
+						color="primary"
+					>
+						{items.map((item) => {
+							return renderCart(item.id, item.label, item.icon, false);
+						})}
+					</Tabs>
+					<div className={classNames("z-20 cursor-pointer", "drop-shadow-lg")}>
+						<Button
+							className={classNames(
+								darkMode ? "text-emerald-400" : "text-emerald-600",
+								"font-extrabold"
+							)}
+							variant="faded"
+							size="sm"
+							startContent={<IconBrandGithub />}
+							onPress={() =>
+								open("https://github.com/CoffeSiberian/truck-tools")
+							}
+						>
+							Star on GitHub ❤️
+						</Button>
 					</div>
-				);
-			})}
-		</div>
+				</div>
+				{items.map((item, index) => {
+					return (
+						<div key={"cardOptionNumber" + index}>
+							{activeIndex === item.id && item.jsx}
+						</div>
+					);
+				})}
+			</div>
+		</>
 	);
 };
 
