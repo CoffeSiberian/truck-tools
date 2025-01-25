@@ -1,93 +1,93 @@
 {
     "components": {
         "alert_on_save_default": {
-            "error": "",
-            "succes": ""
+            "error": "Es ist ein Fehler aufgetreten",
+            "succes": "Erfolgreich gespeichert"
         },
         "license_plate": {
-            "btn_delete": "",
-            "btn_load": "",
+            "btn_delete": "Löschen",
+            "btn_load": "Last / Laden",
             "btn_store": "",
-            "input_colored_margin": "",
+            "input_colored_margin": "Farbiger Rand",
             "input_license_plate": {
-                "label": "",
-                "placeholder": ""
+                "label": "Text des Nummernschilds",
+                "placeholder": "Text eingeben"
             },
             "input_license_plate_list_store": {
                 "label": "",
-                "placeholder": ""
+                "placeholder": "wähle ein Nummernschild"
             },
-            "title_select_bg_color": "",
-            "title_select_text_color": ""
+            "title_select_bg_color": "Hintergrundfarbe",
+            "title_select_text_color": "Textfarbe"
         },
         "player_profile": {
-            "btn_profile": "",
+            "btn_profile": "Profil-Optionen",
             "dropdown": {
                 "profile_options": {
                     "btn_backup_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "Erstellen Sie eine Sicherungskopie Ihres Profils",
+                        "label": "Backup-Profil",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "btn_open_folder": "",
-                            "description": "",
+                            "btn_apply": "Backup",
+                            "btn_close": "Schließen",
+                            "btn_open_folder": "Ordner öffnen",
+                            "description": "Erstellen Sie eine Sicherungskopie, denken Sie daran, das Ziel einzugeben",
                             "input_backup_destination": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Zielordner auswählen",
+                                "placeholder": "Wählen Sie den Zielordner aus"
                             },
                             "save_folder_dialog": {
                                 "filters_name": {
-                                    "zip": ""
+                                    "zip": "Zip-files"
                                 },
-                                "title": ""
+                                "title": "Zielordner auswählen"
                             },
-                            "title": ""
+                            "title": "Backup-Profil"
                         }
                     },
                     "btn_clone_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "Klonen Sie Ihr Profil in ein neues",
+                        "label": "Profil klonen",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "Klonen",
+                            "btn_close": "Schließen",
+                            "description": "Geben Sie den Namen des Profils ein, das Sie klonen möchten. Dadurch wird ein neues Profil mit den gleichen Einstellungen wie das ausgewählte Profil erstellt.",
                             "input_new_name": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Neuer Profilname",
+                                "placeholder": "Geben Sie den neuen Namen für Ihr Profil ein"
                             },
-                            "title": ""
+                            "title": "Profil klonen"
                         }
                     },
                     "btn_copy_config": {
-                        "description": "",
-                        "label": "",
+                        "description": "Kopieren von Einstellungen aus anderen Profilen",
+                        "label": "Konfiguration kopieren",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "Konfiguration kopieren",
+                            "btn_close": "Schließen",
+                            "description": "Wählen Sie das Profil aus, in das Sie die Einstellungen kopieren möchten, denken Sie daran, dass Ihre Einstellungen ersetzt werden, wir empfehlen Ihnen, <b>eine Sicherungskopie Ihres Profils zu erstellen</b>.",
                             "input_select_profile": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Profile",
+                                "placeholder": "Wählen Sie ein Profil aus"
                             },
-                            "title": ""
+                            "title": "Konfiguration kopieren"
                         }
                     },
                     "btn_rename_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "Benennen Sie Ihr Profil um",
+                        "label": "Profil umbenennen",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "Umbenennen",
+                            "btn_close": "Schließen",
+                            "description": "Sie können das Profil umbenennen, es muss jedoch weniger als 20 Zeichen lang sein.",
                             "input_new_name": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Name des Profils",
+                                "placeholder": "Geben Sie den neuen Namen für Ihr Profil ein"
                             },
-                            "title": ""
+                            "title": "Profil umbenennen"
                         }
                     },
-                    "title": ""
+                    "title": "Profil-Optionen"
                 },
                 "save_game_options": {
                     "btn_decrypt_save": {
@@ -95,256 +95,256 @@
                         "label": ""
                     },
                     "btn_open_folder": {
-                        "description": "",
-                        "label": ""
+                        "description": "Ausgewählten Spielstandordner öffnen",
+                        "label": "Öffnen Sie den Speicherordner"
                     },
                     "title": ""
                 }
             },
             "input_select_profile": {
-                "label": "",
+                "label": "Profil auswählen",
                 "options": {
-                    "save_load": ""
+                    "save_load": "Speicherstände"
                 },
-                "placeholder": ""
+                "placeholder": "Wählen Sie ein Profil aus"
             },
             "input_select_save": {
-                "label": "",
-                "placeholder": ""
+                "label": "Wählen Sie Speichern",
+                "placeholder": "Wählen Sie einen Spielstand aus"
             },
-            "no_selected_profile": "",
-            "no_selected_save": "",
-            "total_saves": ""
+            "no_selected_profile": "Kein Profil ausgewählt",
+            "no_selected_save": "Kein Spielstand ausgewählt",
+            "total_saves": "Speicherstände"
         },
         "profile_error": {
-            "btn_how_to": "",
-            "btn_how_to_disable": "",
-            "description": "",
-            "title": ""
+            "btn_how_to": "Tutorial video",
+            "btn_how_to_disable": "So deaktivieren Sie die Steam Cloud",
+            "description": "Denken Sie daran, <b> die Steam Cloud</b> in Ihrem Profil zu deaktivieren oder den Speicherort Ihres Ordners \"Dokumente\" zu überprüfen",
+            "title": "Profile nicht gefunden"
         },
         "updater": {
-            "alert_message": "",
-            "btn_cancel": "",
-            "btn_manual_update": "",
-            "btn_update_now": "",
-            "downloading": "",
-            "release_notes": "",
-            "title": "",
-            "version": ""
+            "alert_message": "Fehler bei der Installation. Versuchen Sie es später erneut",
+            "btn_cancel": "Abbrechen",
+            "btn_manual_update": "Manuelles Update",
+            "btn_update_now": "Jetzt aktualisieren",
+            "downloading": "lädt herunter...",
+            "release_notes": "Versionshinweise",
+            "title": "Neue Version verfügbar",
+            "version": "Version:"
         }
     },
     "menu_options": {
         "about": {
-            "description": "",
-            "tab_title": ""
+            "description": "Dies ist eine Open-Source-Anwendung, die entwickelt wurde, um ETS 2- und ATS-Spielern zu helfen, ihren Spielstand auf einfache Art und Weise zu bearbeiten, für diejenigen, die diese Codes nicht manuell bearbeiten möchten.",
+            "tab_title": "Über"
         },
         "profile": {
             "add_experience": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Ändern Sie die Erfahrung in Ihrem Profil",
+                "label_card": "Erfahrung ändern",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Übernehmen",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
+                    "description": "Geben Sie die Menge an Erfahrung ein, die Sie Ihrem Profil hinzufügen möchten",
                     "input_experience": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Erfahrung",
+                        "placeholder": "Geben Sie die Menge an Erfahrung in Zahlen ein"
                     },
-                    "title": ""
+                    "title": "Erfahrung ändern"
                 }
             },
             "add_money": {
-                "description_card": "",
+                "description_card": "Fügen Sie Ihrem Profil Geld hinzu",
                 "label_card": "",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Übernehmen",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
+                    "description": "Fügen Sie den gewünschten Geldbetrag in Ihrem Profil hinzu",
                     "input_money": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Geld",
+                        "placeholder": "Geben Sie den Geldbetrag in EUR ein"
                     },
                     "title": ""
                 }
             },
             "dealer_visited": {
                 "description_card": "",
-                "label_card": "",
+                "label_card": "Entdecken Sie alle Händler",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
+                    "btn_apply": "Übernehmen",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
                     "description": "",
                     "input_dealer_status": {
-                        "label": "",
+                        "label": "Besuchte Städte",
                         "options": {
                             "unvisit_all": "",
-                            "visit_all": ""
+                            "visit_all": "Alle Händler besucht"
                         }
                     },
-                    "title": ""
+                    "title": "Entdecke alle Händler"
                 }
             },
             "garage_status": {
                 "description_card": "",
-                "label_card": "",
+                "label_card": "Alle Garagen kaufen",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
+                    "btn_apply": "Übernehmen",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
                     "description": "",
                     "input_garage_status": {
                         "label": "",
                         "options": {
                             "large_garage": "",
                             "medium_garage": "",
-                            "sell_garage": "",
-                            "small_garage": ""
+                            "sell_garage": "Garage verkaufen",
+                            "small_garage": "Kleine Garage"
                         }
                     },
-                    "title": ""
+                    "title": "Kaufe alle Garagen"
                 }
             },
             "skills_points": {
                 "description_card": "",
                 "label_card": "",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
+                    "btn_apply": "Übernehmen",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
                     "description": "",
-                    "eco_driving": "",
-                    "fragile_cargo": "",
-                    "high_value_cargo": "",
+                    "eco_driving": "Umweltfreundliches Fahren",
+                    "fragile_cargo": "Zerbrechliche Fracht",
+                    "high_value_cargo": "Hochwertige Fracht",
                     "input_skills_points": {
-                        "corrosive": "",
-                        "explosives": "",
-                        "flammable_liquids": "",
-                        "flammable_solids": "",
-                        "gases": "",
-                        "label": "",
-                        "placeholder": "",
-                        "toxic_and_infectious": ""
+                        "corrosive": "Ätzend",
+                        "explosives": "Explosiv",
+                        "flammable_liquids": "Brennbare Flüssigkeit",
+                        "flammable_solids": "Brennbare feststoff",
+                        "gases": "Gase",
+                        "label": "ADR",
+                        "placeholder": "ADR auswählen",
+                        "toxic_and_infectious": "Giftig und infektiös"
                     },
-                    "just_in_time_delivery": "",
-                    "long_distance": "",
+                    "just_in_time_delivery": "Just-in-time-Lieferung",
+                    "long_distance": "Langstrecke",
                     "title": ""
                 }
             },
-            "tab_title": "",
+            "tab_title": "Profil",
             "visited_cities": {
                 "description_card": "",
-                "label_card": "",
+                "label_card": "Alle Städte entdecken",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
+                    "btn_apply": "Übernehmen",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
                     "description": "",
                     "input_city_status": {
-                        "label": "",
+                        "label": "Besuchte Städte",
                         "options": {
-                            "unvisit_all": "",
-                            "visit_all": ""
+                            "unvisit_all": "Alle Städte als nicht besucht setzen",
+                            "visit_all": "Alle Städte besucht"
                         }
                     },
-                    "title": ""
+                    "title": "Alle Städte entdecken"
                 }
             }
         },
         "settings": {
-            "btn_reset": "",
-            "document_dialog_title": "",
+            "btn_reset": "Einstellungen zurücksetzen",
+            "document_dialog_title": "Wählen Sie den Ordner aus, in dem Ihr Programm gespeichert ist",
             "input_change_language": {
-                "label": "",
-                "placeholder": ""
+                "label": "Sprache ändern",
+                "placeholder": "Sprache ändern"
             },
             "input_change_theme": {
-                "label": "",
+                "label": "Design ändern",
                 "options": {
-                    "dark": "",
-                    "light": "",
-                    "system": ""
+                    "dark": "Dunkel",
+                    "light": "Hell",
+                    "system": "System"
                 },
-                "placeholder": ""
+                "placeholder": "Design Auswahl"
             },
             "input_document_folder": {
-                "label": "",
-                "placeholder": ""
+                "label": "Dokumentenordner",
+                "placeholder": "Eingabe des Dokumentordners"
             },
-            "input_enable_128_slots": "",
-            "input_enable_console": "",
-            "input_opacity_profile": "",
-            "tab_title": "",
-            "title": ""
+            "input_enable_128_slots": "128 Slots für den Konvoimodus aktivieren",
+            "input_enable_console": "Konsolen- und Entwicklermodus aktivieren",
+            "input_opacity_profile": "Deckkraft bei der Profilauswahl",
+            "tab_title": "Einstellungen",
+            "title": "Einstellungen"
         },
         "trailers": {
             "license_plate": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Ändern Sie das Kennzeichen des Anhängers",
+                "label_card": "Anhänger-Kennzeichen ändern",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Übernehmen",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
+                    "description": "Geben Sie das neue Nummernschild des Anhängers ein",
+                    "title": "Nummernschild des Anhängers ändern"
                 }
             },
             "modify_job_weight": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Ändern Sie das Gewicht des Jobs",
+                "label_card": "Jobgewicht ändern",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Übernehmen",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
+                    "description": "Dadurch wird das Gewicht Ihres aktuellen Auftrags auf das hier angegebene Gewicht angepasst. Denken Sie daran, dass Ihnen ein aktiver Auftrag zugewiesen sein muss, der Ihrem LKW zugeordnet ist",
                     "input_weight": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Gewicht in kg",
+                        "placeholder": "Gewicht in kg eingeben"
                     },
-                    "title": ""
+                    "title": "Gewicht der Ladung ändern"
                 }
             },
             "modify_trailer_weight": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Ändert das Gewicht des Anhängers und wende es nur einmal an",
+                "label_card": "Gewicht des Anhängers ändern",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Übernehmen",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
+                    "description": "Damit wird das Gewicht des Anhängers in 2 Parametern geändert. Normalerweise wird die chassis_mass verwendet, aber Sie können auch die body_mass bearbeiten (Standard body_mass ist 0)",
                     "input_body_mass": {
                         "label": "",
                         "placeholder": ""
                     },
                     "input_chassis_mass": {
-                        "label": "",
+                        "label": "Zugmaschinen gewicht in kg",
                         "placeholder": ""
                     },
-                    "title": ""
+                    "title": "Anhängergewicht ändern"
                 }
             },
             "repair_all_trailer": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Repariere alle Anhänger, die du hast",
+                "label_card": "Alle Anhänger reparieren",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Reparieren",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
+                    "description": "Repariert alle Anhänger in Ihrem Besitz",
+                    "title": "Alle Anhänger reparieren"
                 }
             },
             "repair_trailer": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Reparieren Sie den aktuellen Anhänger",
+                "label_card": "Anhänger reparieren",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
+                    "btn_apply": "Reparieren",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
                     "description": "",
-                    "title": ""
+                    "title": "Anhänger reparieren"
                 }
             },
             "tab_title": "",
@@ -489,11 +489,11 @@
                     "btn_apply": "",
                     "btn_close": "",
                     "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "description": "Reparieren Sie Schäden an Ihrem Lkw",
+                    "title": "LKW reparieren"
                 }
             },
-            "tab_title": ""
+            "tab_title": "LKW"
         }
     }
 }
