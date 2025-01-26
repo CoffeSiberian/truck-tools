@@ -258,7 +258,7 @@
             "document_dialog_title": "Wählen Sie den Ordner aus, in dem Ihr Programm gespeichert ist",
             "input_change_language": {
                 "label": "Sprache ändern",
-                "placeholder": "Sprache ändern"
+                "placeholder": "Sprache Wählen"
             },
             "input_change_theme": {
                 "label": "Design ändern",
@@ -440,7 +440,7 @@
                     "btn_apply": "Auftanken",
                     "btn_close": "Schließen",
                     "btn_open": "Öffnen",
-                    "description": "Füllen Sie den Tank Ihres Lkw auf.",
+                    "description": "Füllen Sie den Tank Ihres Lkw auf",
                     "title": "Kraftstoff auffüllen"
                 }
             },
@@ -461,10 +461,10 @@
                 }
             },
             "license_plate": {
-                "description_card": "Ändern Sie das Kennzeichen Ihres Lkw.",
+                "description_card": "Ändern Sie das Kennzeichen Ihres Lkw",
                 "label_card": "Kennzeichen ändern",
                 "modal": {
-                    "btn_apply": "Anwenden",
+                    "btn_apply": "Übernehmen",
                     "btn_close": "Schließen",
                     "btn_open": "Öffnen",
                     "description": "Geben Sie das neue Lkw-Kennzeichen ein. Denken Sie daran, Ihr Nummernschild aus Word of Trucks zu entfernen",
@@ -472,7 +472,7 @@
                 }
             },
             "repair_all_trucks": {
-                "description_card": "Reparieren Sie alle beschädigten Lkw.",
+                "description_card": "Reparieren Sie alle beschädigten Lkw",
                 "label_card": "Alle Lkw reparieren",
                 "modal": {
                     "btn_apply": "Reparieren",
