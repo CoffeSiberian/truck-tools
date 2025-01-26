@@ -6,16 +6,16 @@
         },
         "license_plate": {
             "btn_delete": "Löschen",
-            "btn_load": "Last / Laden",
-            "btn_store": "",
+            "btn_load": "Laden",
+            "btn_store": "Speichern",
             "input_colored_margin": "Farbiger Rand",
             "input_license_plate": {
                 "label": "Text des Nummernschilds",
                 "placeholder": "Text eingeben"
             },
             "input_license_plate_list_store": {
-                "label": "",
-                "placeholder": "wähle ein Nummernschild"
+                "label": "Nummernschild speichern",
+                "placeholder": "Wähle ein Nummernschild"
             },
             "title_select_bg_color": "Hintergrundfarbe",
             "title_select_text_color": "Textfarbe"
@@ -28,7 +28,7 @@
                         "description": "Erstellen Sie eine Sicherungskopie Ihres Profils",
                         "label": "Backup-Profil",
                         "modal": {
-                            "btn_apply": "Backup",
+                            "btn_apply": "Backup erstellen",
                             "btn_close": "Schließen",
                             "btn_open_folder": "Ordner öffnen",
                             "description": "Erstellen Sie eine Sicherungskopie, denken Sie daran, das Ziel einzugeben",
@@ -38,7 +38,7 @@
                             },
                             "save_folder_dialog": {
                                 "filters_name": {
-                                    "zip": "Zip-files"
+                                    "zip": "Zip-Dateien"
                                 },
                                 "title": "Zielordner auswählen"
                             },
@@ -91,14 +91,14 @@
                 },
                 "save_game_options": {
                     "btn_decrypt_save": {
-                        "description": "",
-                        "label": ""
+                        "description": "Entschlüsseln Sie den Spielstand",
+                        "label": "Spielstand entschlüsseln"
                     },
                     "btn_open_folder": {
                         "description": "Ausgewählten Spielstandordner öffnen",
                         "label": "Öffnen Sie den Speicherordner"
                     },
-                    "title": ""
+                    "title": "Spielstand Optionen"
                 }
             },
             "input_select_profile": {
@@ -117,7 +117,7 @@
             "total_saves": "Speicherstände"
         },
         "profile_error": {
-            "btn_how_to": "Tutorial video",
+            "btn_how_to": "Tutorial Video",
             "btn_how_to_disable": "So deaktivieren Sie die Steam Cloud",
             "description": "Denken Sie daran, <b> die Steam Cloud</b> in Ihrem Profil zu deaktivieren oder den Speicherort Ihres Ordners \"Dokumente\" zu überprüfen",
             "title": "Profile nicht gefunden"
@@ -156,7 +156,7 @@
             },
             "add_money": {
                 "description_card": "Fügen Sie Ihrem Profil Geld hinzu",
-                "label_card": "",
+                "label_card": "Geld hinzufügen",
                 "modal": {
                     "btn_apply": "Übernehmen",
                     "btn_close": "Schließen",
@@ -166,21 +166,21 @@
                         "label": "Geld",
                         "placeholder": "Geben Sie den Geldbetrag in EUR ein"
                     },
-                    "title": ""
+                    "title": "Geld hinzufügen"
                 }
             },
             "dealer_visited": {
-                "description_card": "",
+                "description_card": "Besuchte Händler ändern",
                 "label_card": "Entdecken Sie alle Händler",
                 "modal": {
                     "btn_apply": "Übernehmen",
                     "btn_close": "Schließen",
                     "btn_open": "Öffnen",
-                    "description": "",
+                    "description": "Besuchte Händler auswählen",
                     "input_dealer_status": {
-                        "label": "Besuchte Städte",
+                        "label": "Besuchte Händler",
                         "options": {
-                            "unvisit_all": "",
+                            "unvisit_all": "Alle Händler als unbesucht markieren",
                             "visit_all": "Alle Händler besucht"
                         }
                     },
@@ -188,33 +188,33 @@
                 }
             },
             "garage_status": {
-                "description_card": "",
+                "description_card": "Garagen kaufen",
                 "label_card": "Alle Garagen kaufen",
                 "modal": {
                     "btn_apply": "Übernehmen",
                     "btn_close": "Schließen",
                     "btn_open": "Öffnen",
-                    "description": "",
+                    "description": "Wählen Sie, welche Garagen Sie kaufen möchten",
                     "input_garage_status": {
-                        "label": "",
+                        "label": "Garage",
                         "options": {
-                            "large_garage": "",
-                            "medium_garage": "",
+                            "large_garage": "Große Garage",
+                            "medium_garage": "Mittlere Garage",
                             "sell_garage": "Garage verkaufen",
                             "small_garage": "Kleine Garage"
                         }
                     },
-                    "title": "Kaufe alle Garagen"
+                    "title": "Garagen kaufen"
                 }
             },
             "skills_points": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Ändern Sie Ihre Fähigkeiten",
+                "label_card": "Fähigkeiten ändern",
                 "modal": {
                     "btn_apply": "Übernehmen",
                     "btn_close": "Schließen",
                     "btn_open": "Öffnen",
-                    "description": "",
+                    "description": "Verwalten Sie Ihre Fähigkeitswerte",
                     "eco_driving": "Umweltfreundliches Fahren",
                     "fragile_cargo": "Zerbrechliche Fracht",
                     "high_value_cargo": "Hochwertige Fracht",
@@ -222,7 +222,7 @@
                         "corrosive": "Ätzend",
                         "explosives": "Explosiv",
                         "flammable_liquids": "Brennbare Flüssigkeit",
-                        "flammable_solids": "Brennbare feststoff",
+                        "flammable_solids": "Brennbare Feststoffe",
                         "gases": "Gase",
                         "label": "ADR",
                         "placeholder": "ADR auswählen",
@@ -230,18 +230,18 @@
                     },
                     "just_in_time_delivery": "Just-in-time-Lieferung",
                     "long_distance": "Langstrecke",
-                    "title": ""
+                    "title": "Fähigkeiten ändern"
                 }
             },
             "tab_title": "Profil",
             "visited_cities": {
-                "description_card": "",
+                "description_card": "Besuchte Städte ändern",
                 "label_card": "Alle Städte entdecken",
                 "modal": {
                     "btn_apply": "Übernehmen",
                     "btn_close": "Schließen",
                     "btn_open": "Öffnen",
-                    "description": "",
+                    "description": "Besuchte Städte auswählen",
                     "input_city_status": {
                         "label": "Besuchte Städte",
                         "options": {
@@ -298,7 +298,7 @@
                     "btn_apply": "Übernehmen",
                     "btn_close": "Schließen",
                     "btn_open": "Öffnen",
-                    "description": "Dadurch wird das Gewicht Ihres aktuellen Auftrags auf das hier angegebene Gewicht angepasst. Denken Sie daran, dass Ihnen ein aktiver Auftrag zugewiesen sein muss, der Ihrem LKW zugeordnet ist",
+                    "description": "Dadurch wird das Gewicht Ihres aktuellen Auftrags auf das hier angegebene Gewicht angepasst. Denken Sie daran, dass Ihnen ein aktiver Auftrag zugewiesen sein muss, der Ihrem Lkw zugeordnet ist",
                     "input_weight": {
                         "label": "Gewicht in kg",
                         "placeholder": "Gewicht in kg eingeben"
@@ -313,14 +313,14 @@
                     "btn_apply": "Übernehmen",
                     "btn_close": "Schließen",
                     "btn_open": "Öffnen",
-                    "description": "Damit wird das Gewicht des Anhängers in 2 Parametern geändert. Normalerweise wird die chassis_mass verwendet, aber Sie können auch die body_mass bearbeiten (Standard body_mass ist 0)",
+                    "description": "Ändert das Gewicht des Anhängers in zwei Parametern: chassis_mass und body_mass",
                     "input_body_mass": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Body Mass",
+                        "placeholder": "Körpergewicht des Anhängers"
                     },
                     "input_chassis_mass": {
-                        "label": "Zugmaschinen gewicht in kg",
-                        "placeholder": ""
+                        "label": "Chassis-Mass",
+                        "placeholder": "Chassis-Mass des Anhängers"
                     },
                     "title": "Anhängergewicht ändern"
                 }
@@ -343,21 +343,21 @@
                     "btn_apply": "Reparieren",
                     "btn_close": "Schließen",
                     "btn_open": "Öffnen",
-                    "description": "",
+                    "description": "Repariert Schäden am aktuellen Anhänger",
                     "title": "Anhänger reparieren"
                 }
             },
-            "tab_title": "",
+            "tab_title": "Anhänger",
             "unlock_trailer_country": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Ländersperre für Anhänger aufheben",
+                "label_card": "Anhänger-Länder entsperren",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
+                    "btn_apply": "Übernehmen",
+                    "btn_close": "Schließen",
                     "btn_how_to_use": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": "",
+                    "btn_open": "Öffnen",
+                    "description": "Heben Sie die Ländersperre für den Anhänger auf",
+                    "title": "Anhängerland entsperren",
                     "warning_message": {
                         "message": "",
                         "title": ""
