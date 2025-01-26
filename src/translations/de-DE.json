@@ -204,7 +204,7 @@
                             "small_garage": "Kleine Garage"
                         }
                     },
-                    "title": "Garagen kaufen"
+                    "title": "Alle Garagen Kaufen"
                 }
             },
             "skills_points": {
@@ -230,7 +230,7 @@
                     },
                     "just_in_time_delivery": "Just-in-time-Lieferung",
                     "long_distance": "Langstrecke",
-                    "title": "Fähigkeiten ändern"
+                    "title": "Erfahrungsfähigkeiten festlegen"
                 }
             },
             "tab_title": "Profil",
@@ -352,145 +352,145 @@
                 "description_card": "Ländersperre für Anhänger aufheben",
                 "label_card": "Anhänger-Länder entsperren",
                 "modal": {
-                    "btn_apply": "Übernehmen",
+                    "btn_apply": "Freischalten",
                     "btn_close": "Schließen",
-                    "btn_how_to_use": "",
+                    "btn_how_to_use": "Anleitung",
                     "btn_open": "Öffnen",
                     "description": "Heben Sie die Ländersperre für den Anhänger auf",
                     "title": "Anhängerland entsperren",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Sie müssen den Anhänger an den Lkw angehängt haben, damit die Änderungen wirksam werden.",
+                        "title": "Merken"
                     }
                 }
             }
         },
         "trucks": {
             "change_truck_engine": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Wählen Sie einen neuen Motor für Ihr Fahrzeug",
+                "label_card": "Motor wechseln",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_remove_badge": "",
-                    "description": "",
+                    "btn_apply": "Anwenden",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
+                    "btn_remove_badge": "Abzeichen entfernen",
+                    "description": "Wechseln Sie den Motor Ihres Lkw gegen einen Motor Ihrer Wahl aus",
                     "input_brands": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Marke",
+                        "placeholder": "Wählen Sie eine Marke"
                     },
                     "input_engines": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Motor",
+                        "placeholder": "Wählen Sie einen Motor"
                     },
                     "input_models": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Modell",
+                        "placeholder": "Wählen Sie ein Modell"
                     },
-                    "title": "",
+                    "title": "Motor wechseln",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Wenn Sie ein <b>Logo sehen, das auf dem LKW schwebt oder schlecht positioniert ist</b>, können Sie es mit der Schaltfläche unten entfernen.",
+                        "title": "Warnung"
                     }
                 }
             },
             "change_truck_transmission": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Wählen Sie ein neues Getriebe für Ihr Fahrzeug",
+                "label_card": "Getriebe wechseln",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_remove_badge": "",
-                    "description": "",
+                    "btn_apply": "Anwenden",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
+                    "btn_remove_badge": "Abzeichen entfernen",
+                    "description": "Wählen Sie ein neues Getriebe aus der Liste für Ihr Fahrzeug",
                     "input_brands": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Marke",
+                        "placeholder": "Wählen Sie eine Marke"
                     },
                     "input_models": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Modell",
+                        "placeholder": "Wählen Sie ein Modell"
                     },
                     "input_transmissions": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Getriebe",
+                        "placeholder": "Wählen Sie ein Getriebe"
                     },
-                    "title": "",
+                    "title": "Getriebe wechseln",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Wenn Sie ein <b>Logo sehen, das auf dem LKW schwebt oder schlecht positioniert ist</b>, können Sie es mit der Schaltfläche unten entfernen.",
+                        "title": "Warnung"
                     }
                 }
             },
             "fill_all_trucks_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Betankung aller LKW der Flotte",
+                "label_card": "Alle Lkw tanken",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Auftanken",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
+                    "description": "Mit dieser Option können Sie alle Ihre gekauften Lkw auftanken",
+                    "title": "Alle Lkw tanken"
                 }
             },
             "fill_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Füllen Sie Kraftstoff in Ihren Lkw",
+                "label_card": "Kraftstoff auffüllen",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Auftanken",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
+                    "description": "Füllen Sie den Tank Ihres Lkw auf.",
+                    "title": "Kraftstoff auffüllen"
                 }
             },
             "infinite_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Unendlich viel Kraftstoff für den aktuellen Lkw",
+                "label_card": "Unbegrenzter Kraftstoff",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_restore_fuel": "",
-                    "description": "",
-                    "title": "",
+                    "btn_apply": "Auftanken",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
+                    "btn_restore_fuel": "Kraftstoff wiederherstellen",
+                    "description": "Genau genommen ist der Treibstoff nicht unendlich, sondern reicht für ca. 5.000.000 KM (je nach LKW)",
+                    "title": "Unbegrenzter Kraftstoff",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "<b>Deaktivieren Sie „Realistischer Treibstoffverbrauch“</b> in Ihrem „Gameplay“-Abschnitt, damit diese Funktion wirksam wird.",
+                        "title": "Warnung"
                     }
                 }
             },
             "license_plate": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Ändern Sie das Kennzeichen Ihres Lkw.",
+                "label_card": "Kennzeichen ändern",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Anwenden",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
+                    "description": "Geben Sie das neue Lkw-Kennzeichen ein. Denken Sie daran, Ihr Nummernschild aus Word of Trucks zu entfernen",
+                    "title": "Kennzeichen ändern"
                 }
             },
             "repair_all_trucks": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Reparieren Sie alle beschädigten Lkw.",
+                "label_card": "Alle Lkw reparieren",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Reparieren",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
+                    "description": "Reparieren Sie alle Lkw in Ihrem Unternehmen",
+                    "title": "Alle Lkw reparieren"
                 }
             },
             "repair_truck": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Ihren aktuellen Lkw reparieren",
+                "label_card": "Lkw reparieren",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "Reparieren Sie Schäden an Ihrem Lkw",
-                    "title": "LKW reparieren"
+                    "btn_apply": "Reparieren",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
+                    "description": "Schäden an Ihrem Lkw reparieren",
+                    "title": "Lkw reparieren"
                 }
             },
             "tab_title": "LKW"
