@@ -13,7 +13,8 @@ export type Langs =
 	| "pt-BR"
 	| "ko-KR"
 	| "zh-Hant"
-	| "uk-UA";
+	| "uk-UA"
+	| "de-DE";
 
 export interface TranslationsTypes {
 	components: Components;
