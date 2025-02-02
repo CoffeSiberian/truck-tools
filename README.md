@@ -103,6 +103,7 @@ Remember, contributing translations makes you a collaborator of the project!
 - Flexible editor for truck and trailer accessories
 - Unblock recruiting agencies
 - Discover all the map
+- Truck color management
 
 ### Related projects
 
