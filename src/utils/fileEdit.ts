@@ -134,6 +134,7 @@ export const readProfileNames = async (
 		if (saves === 0) continue;
 
 		const profileObject: ProfileWithoutSaves = {
+			id: dirProfiles[i].id,
 			name: dirProfiles[i].name,
 			game,
 			hex: dirProfiles[i].hex,

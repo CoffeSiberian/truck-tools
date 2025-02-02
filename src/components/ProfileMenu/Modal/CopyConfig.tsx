@@ -63,7 +63,7 @@ const CopyConfig: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 		setIsLoading(true);
 
 		const sourceDir = listProfilesBothGames.find(
-			(p) => p.hex === ProfileInfo.hex
+			(p) => p.id === ProfileInfo.id
 		);
 		if (!sourceDir || !selectedProfile) return;
 

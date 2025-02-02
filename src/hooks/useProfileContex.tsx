@@ -99,6 +99,7 @@ export const ProfileContexInfo = ({ children }: ProviderProps) => {
 		if (!saveList) return;
 
 		const profile_to_save = {
+			id: profile_info.id,
 			name: profile_info.name,
 			game: profile_info.game,
 			hex: profile_info.hex,

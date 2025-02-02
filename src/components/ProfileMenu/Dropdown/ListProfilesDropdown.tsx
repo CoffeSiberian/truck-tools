@@ -17,11 +17,11 @@ const ListProfilesDropdown: FC<ProfileTypesContext> = ({
 	const { translations } = useContext(LocaleContext);
 	const { player_profile } = translations.components;
 
-	const onClickProfile = (profileHex: string) => {
-		if (!profileHex) return;
+	const onClickProfile = (id: string) => {
+		if (!id) return;
 
 		const profileFind = listProfiles.find(
-			(p) => p.hex === profileHex
+			(p) => p.id === id
 		) as ProfileWithoutSaves;
 
 		setProfile(profileFind);
@@ -36,7 +36,7 @@ const ListProfilesDropdown: FC<ProfileTypesContext> = ({
 			isLoading={listProfiles.length === 0}
 			isInvalid={selectedProfile ? false : true}
 			items={listProfiles}
-			selectedKeys={selectedProfile ? [selectedProfile.hex] : []}
+			selectedKeys={selectedProfile ? [selectedProfile.id] : []}
 			onChange={(e) => onClickProfile(e.target.value)}
 			label={player_profile.input_select_profile.label}
 			placeholder={player_profile.input_select_profile.placeholder}
@@ -45,7 +45,7 @@ const ListProfilesDropdown: FC<ProfileTypesContext> = ({
 			size="md"
 		>
 			{(profile) => (
-				<SelectItem key={profile.hex} textValue={profile.name}>
+				<SelectItem key={profile.id} textValue={profile.name}>
 					<div className="flex items-center gap-2">
 						<div className="w-[30px]">
 							{profile.avatar ? (

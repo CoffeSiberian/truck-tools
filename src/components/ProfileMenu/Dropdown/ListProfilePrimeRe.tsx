@@ -20,11 +20,11 @@ const ListProfilePrimeRe: FC<ProfileTypesContext> = ({
 	const { translations } = useContext(LocaleContext);
 	const { player_profile } = translations.components;
 
-	const onClickProfile = (profileHex: string) => {
-		if (!profileHex) return;
+	const onClickProfile = (id: string) => {
+		if (!id) return;
 
 		const profileFind = listProfiles.find(
-			(p) => p.hex === profileHex
+			(p) => p.id === id
 		) as ProfileWithoutSaves;
 
 		setProfile(profileFind);
@@ -65,7 +65,7 @@ const ListProfilePrimeRe: FC<ProfileTypesContext> = ({
 	return (
 		<Dropdown
 			value={selectedProfile}
-			onChange={(e) => onClickProfile(e.value.hex)}
+			onChange={(e) => onClickProfile(e.value.id)}
 			options={listProfiles}
 			loading={isProfilesLoading}
 			disabled={listProfiles.length === 0}

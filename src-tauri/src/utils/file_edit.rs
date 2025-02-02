@@ -262,7 +262,9 @@ pub async fn get_list_save_game_dirs(path: String) -> Option<Vec<VecProfileDir>>
             Err(_) => continue,
         };
 
+        let uuid: String = Uuid::new_v4().to_string();
         result.push(VecProfileDir {
+            id: uuid,
             name: profile_path_name,
             hex: profile_path_hex.to_string(),
             dir: item_path,
