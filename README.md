@@ -56,6 +56,7 @@ Remember, contributing translations makes you a collaborator of the project!
 - [x] Repair all trailers
 - [x] Create customized color license plate
 - [x] Save license plate data
+- [ ] Changing the truck or trailer (no need to go to the garage)
 
 #### Trucks
 
@@ -67,6 +68,8 @@ Remember, contributing translations makes you a collaborator of the project!
 - [x] Create customized color license plate
 - [x] Save license plate data
 - [x] Set custom engines and transmission
+- [ ] Modify kilometers traveled by the truck
+- [ ] Changing the truck or trailer (no need to go to the garage)
 
 #### Profiles
 
@@ -97,8 +100,6 @@ Remember, contributing translations makes you a collaborator of the project!
 - Create custom routes
 - Reset infractions
 - Mods management
-- Modify kilometers traveled by the truck
-- Changing the truck or trailer (no need to go to the garage)
 - Allow cities to be unlocked and grages to be purchased in a specific way and not in a general
 - Flexible editor for truck and trailer accessories
 - Unblock recruiting agencies
