@@ -39,9 +39,9 @@
 		"classnames": "^2.5.1",
 		"framer-motion": "^12.0.6",
 		"primereact": "^10.9.2",
-		"react": "^18.3.1",
+		"react": "^19.0.0",
 		"react-color-palette": "^7.3.0",
-		"react-dom": "^18.3.1",
+		"react-dom": "^19.0.0",
 		"uuid": "^11.0.5"
 	},
 	"devDependencies": {
