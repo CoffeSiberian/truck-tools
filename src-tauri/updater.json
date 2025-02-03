@@ -1,11 +1,11 @@
 {
-	"version": "v0.8.0",
-	"notes": "- Added Korean language\n\n- Now it is possible to copy configurations between both games (ETS2 and ATS)\n\nMany thanks to the contributors ❤️",
-	"pub_date": "2025-01-17T13:00:00-03:00",
+	"version": "v0.8.1",
+	"notes": "- Ukrainian, Traditional Chinese, and German languages were added\n\n- A bug that prevented the correct selection of the profile to which the configuration should be copied was fixed\n\nMany thanks to the contributors ❤️",
+	"pub_date": "2025-02-03T14:00:00-03:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmVXeDdOSTN4enpmR1VYTzRqVDZLbnlqdXVPN0F3aTVPcHoyR1k2T0FWSHFpZldkU0FFaFVISVIvRmdlc3A5RkVhd3duWDBPUDd2Wld6OEFTQ09FMXdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzM3MTMxODYwCWZpbGU6VHJ1Y2sgVG9vbHNfMC44LjBfeDY0X2VuLVVTLm1zaS56aXAKT3RYUERIL0M3WFVIRE5iZnZUVE9DMXNialg1K1JWZEZkYktNbE5iVUZOVU0xYU1SdzlzZ3hRVmljYUdGMmNvbnVhN0tnMVhZWSt4YTN6ejJDSFhrQUE9PQo=",
-			"url": "https://cdn.siberiancoffe.dev/truck-tools/tauri-v1/Truck_Tools_0.8.0_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmMweDBEb2pMNHBXczROSXltZDgzbjMwakJabWZSMHpoNUU4T3kvWENndVcxc2lNTjVucEF3SUcyMU9KWVB1ZlJlOER5c3VUeVppNXVra21GZkloL0FvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzM4NjA1NTQ3CWZpbGU6VHJ1Y2sgVG9vbHNfMC44LjFfeDY0X2VuLVVTLm1zaS56aXAKM0tDeG8yVTR3NnpwNGhFVGJFeThXLzVVaU9zUDJUM2ZpQWNwOVIrbGJidys3bU5hL0NCdXlUaDF6eTdCbVJBSkZ5TDEydUlQOUtxNUpBelkyWHIxRHc9PQo=",
+			"url": "https://cdn.siberiancoffe.dev/truck-tools/tauri-v1/Truck_Tools_0.8.1_x64_en-US.msi.zip"
 		}
 	}
 }
