@@ -1,499 +1,499 @@
 {
     "components": {
         "alert_on_save_default": {
-            "error": "",
-            "succes": ""
+            "error": "Podczas stosowania zmian wystąpił błąd",
+            "succes": "Zapisano pomyślnie"
         },
         "license_plate": {
-            "btn_delete": "",
-            "btn_load": "",
-            "btn_store": "",
-            "input_colored_margin": "",
+            "btn_delete": "Usuń",
+            "btn_load": "Załaduj",
+            "btn_store": "Zachowaj",
+            "input_colored_margin": "Kolorowa ramka",
             "input_license_plate": {
-                "label": "",
-                "placeholder": ""
+                "label": "Napis na tablicy",
+                "placeholder": "Wprowadź tekst"
             },
             "input_license_plate_list_store": {
-                "label": "",
-                "placeholder": ""
+                "label": "Wybierz zachowaną tablicę",
+                "placeholder": "Wybierz tablicę"
             },
-            "title_select_bg_color": "",
-            "title_select_text_color": ""
+            "title_select_bg_color": "Kolor tła",
+            "title_select_text_color": "Kolor tekstu"
         },
         "player_profile": {
-            "btn_profile": "",
+            "btn_profile": "Opcje profilu",
             "dropdown": {
                 "profile_options": {
                     "btn_backup_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "Utwórz kopię zapasową swojego profilu",
+                        "label": "Kopia zapasowa profilu",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "btn_open_folder": "",
-                            "description": "",
+                            "btn_apply": "Utwórz",
+                            "btn_close": "Zamknij",
+                            "btn_open_folder": "Przejdź do folderu",
+                            "description": "Utwórz kopię zapasową profilu, pamiętając o wybraniu lokalizacji docelowej",
                             "input_backup_destination": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Wybierz folder docelowy",
+                                "placeholder": "Wybierz folder"
                             },
                             "save_folder_dialog": {
                                 "filters_name": {
-                                    "zip": ""
+                                    "zip": "Foldery skompresowane (zip)"
                                 },
-                                "title": ""
+                                "title": "Wybierz folder docelowy"
                             },
-                            "title": ""
+                            "title": "Kopia zapasowa profilu"
                         }
                     },
                     "btn_clone_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "Utwórz duplikat swojego profilu",
+                        "label": "Sklonuj profil",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "Sklonuj",
+                            "btn_close": "Zamknij",
+                            "description": "Wprowadź nazwę dla nowego profilu. To działanie utworzy nowy profil z tymi samymi ustawieniami co obecnie wybrany profil.",
                             "input_new_name": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Nowa nazwa profilu",
+                                "placeholder": "Wprowadź nową nazwę dla swojego profilu"
                             },
-                            "title": ""
+                            "title": "Sklonuj profil"
                         }
                     },
                     "btn_copy_config": {
-                        "description": "",
-                        "label": "",
+                        "description": "Skopiuj ustawienia z innego profilu",
+                        "label": "Kopiowanie ustawień",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "Kopiowanie ustawień",
+                            "btn_close": "Zamknij",
+                            "description": "Wybierz profil, z którego chcesz skopiować ustawienia. <b>Uwaga! Wszystkie ustawienia obecnego profilu zostaną zastąpione nowymi ustawieniami.</b> Zalecamy wykonanie kopii zapasowej obecnych ustawień.",
                             "input_select_profile": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Profile",
+                                "placeholder": "Wybierz profil"
                             },
-                            "title": ""
+                            "title": "Kopiowanie ustawień"
                         }
                     },
                     "btn_rename_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "Zmień nazwę swojego profilu",
+                        "label": "Zmień nazwę profilu",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "Zmień nazwę",
+                            "btn_close": "Zamknij",
+                            "description": "Nowa nazwa musi być krótsza niż 20 znaków.",
                             "input_new_name": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Nazwa profilu",
+                                "placeholder": "Wprowadź nową nazwę profilu"
                             },
-                            "title": ""
+                            "title": "Zmień nazwę profilu"
                         }
                     },
-                    "title": ""
+                    "title": "Ustawienia profilu"
                 },
                 "save_game_options": {
                     "btn_decrypt_save": {
-                        "description": "",
-                        "label": ""
+                        "description": "Odszyfruj wybrany zapis gry",
+                        "label": "Odszyfruj zapis"
                     },
                     "btn_open_folder": {
-                        "description": "",
-                        "label": ""
+                        "description": "Otwórz folder z wybranym zapisem gry",
+                        "label": "Otwórz folder zapisu"
                     },
-                    "title": ""
+                    "title": "Ustawienia zapisu gry"
                 }
             },
             "input_select_profile": {
-                "label": "",
+                "label": "Wybierz profil",
                 "options": {
-                    "save_load": ""
+                    "save_load": "Zapisy"
                 },
-                "placeholder": ""
+                "placeholder": "Wybierz profil"
             },
             "input_select_save": {
-                "label": "",
-                "placeholder": ""
+                "label": "Wybierz zapis",
+                "placeholder": "Wybierz zapis"
             },
-            "no_selected_profile": "",
-            "no_selected_save": "",
-            "total_saves": ""
+            "no_selected_profile": "Nie wybrano profilu",
+            "no_selected_save": "Nie wybrano zapisu",
+            "total_saves": "zapis(y/ów)"
         },
         "profile_error": {
-            "btn_how_to": "",
-            "btn_how_to_disable": "",
-            "description": "",
-            "title": ""
+            "btn_how_to": "Film instruktażowy",
+            "btn_how_to_disable": "Jak wyłączyć Steam Cloud",
+            "description": "<b> Wyłącz Steam Cloud</b> w swoim profilu lub zweryfikuj lokalizację folderu \"Dokumenty\"",
+            "title": "Nie znaleziono profili"
         },
         "updater": {
-            "alert_message": "",
-            "btn_cancel": "",
-            "btn_manual_update": "",
-            "btn_update_now": "",
-            "downloading": "",
-            "release_notes": "",
-            "title": "",
-            "version": ""
+            "alert_message": "Instalacja zakończona niepowodzeniem. Spróbuj ponownie później",
+            "btn_cancel": "Anuluj",
+            "btn_manual_update": "Ręczna aktualizacja",
+            "btn_update_now": "Zaktualizuj teraz",
+            "downloading": "Pobieranie...",
+            "release_notes": "Dziennik zmian",
+            "title": "Dostępna jest nowa wersja",
+            "version": "Wersja:"
         }
     },
     "menu_options": {
         "about": {
-            "description": "",
-            "tab_title": ""
+            "description": "Jest to aplikacja open source stworzona, aby pomóc graczom ETS 2 i ATS edytować zapisy gry w prosty i łatwy sposób bez konieczności edytowania plików ręcznie.",
+            "tab_title": "O aplikacji"
         },
         "profile": {
             "add_experience": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Zmień ilość punktów doświadczenia swojego profilu",
+                "label_card": "Edytuj doświadczenie",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Zastosuj",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Wprowadź ilość punktów doświadczenia, którą chcesz dodać do swojego profilu",
                     "input_experience": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Punkty doświadczenia",
+                        "placeholder": "Wprowadź ilość punktów doświadczenia"
                     },
-                    "title": ""
+                    "title": "Edytuj doświadczenie"
                 }
             },
             "add_money": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Dodaj wybraną ilość pieniędzy do swojego profilu",
+                "label_card": "Edytuj ilość pieniądzy",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Zastosuj",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Dodaj wybraną ilość pieniędzy do swojego profilu",
                     "input_money": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Ilość pieniędzy (w euro)",
+                        "placeholder": "Wprowadź ilość pieniędzy w euro"
                     },
-                    "title": ""
+                    "title": "Edytuj ilość pieniądzy"
                 }
             },
             "dealer_visited": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Zmień status odkrycia wszystkich dealerów w swoim profilu",
+                "label_card": "Odkryj wszystkich dealerów",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Zastosuj",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Wybierz status odkrycia wszystkich dealerów w swoim profilu",
                     "input_dealer_status": {
-                        "label": "",
+                        "label": "Odwiedzone miasta",
                         "options": {
-                            "unvisit_all": "",
-                            "visit_all": ""
+                            "unvisit_all": "Nie odkryto żadnego dealera",
+                            "visit_all": "Odkryto wszystkich dealerów"
                         }
                     },
-                    "title": ""
+                    "title": "Odkryj wszystkich dealerów"
                 }
             },
             "garage_status": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Zmień status posiadanych garaży w swoim profilu",
+                "label_card": "Kup wszystkie garaże",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Zastosuj",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Wybierz status garażu, który chcesz zastosować do swojego profilu",
                     "input_garage_status": {
-                        "label": "",
+                        "label": "Status garaży",
                         "options": {
-                            "large_garage": "",
-                            "medium_garage": "",
-                            "sell_garage": "",
-                            "small_garage": ""
+                            "large_garage": "Duży garaż",
+                            "medium_garage": "Średni garaż",
+                            "sell_garage": "Sprzedaj garaże",
+                            "small_garage": "Mały garaż"
                         }
                     },
-                    "title": ""
+                    "title": "Kup wszystkie garaże"
                 }
             },
             "skills_points": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Przydziel punkty doświadczenia dla swojego profilu",
+                "label_card": "Przydziel punkty doświadczenia",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "eco_driving": "",
-                    "fragile_cargo": "",
-                    "high_value_cargo": "",
+                    "btn_apply": "Zastosuj",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Przydziel punkty doświadczenia do poszczególnych zdolności",
+                    "eco_driving": "Ekologiczna jazda",
+                    "fragile_cargo": "Delikatny ładunek",
+                    "high_value_cargo": "Ładunek o wysokiej wartości",
                     "input_skills_points": {
-                        "corrosive": "",
-                        "explosives": "",
-                        "flammable_liquids": "",
-                        "flammable_solids": "",
-                        "gases": "",
-                        "label": "",
-                        "placeholder": "",
-                        "toxic_and_infectious": ""
+                        "corrosive": "Substancje żrące",
+                        "explosives": "Materiały wybuchowe",
+                        "flammable_liquids": "Płyny łatwopalne",
+                        "flammable_solids": "Materiały stałe zapalne",
+                        "gases": "Gazy",
+                        "label": "ADR",
+                        "placeholder": "Wybierz certyfikaty ADR",
+                        "toxic_and_infectious": "Toksyczne i zakaźne substancje"
                     },
-                    "just_in_time_delivery": "",
-                    "long_distance": "",
-                    "title": ""
+                    "just_in_time_delivery": "Dostawa na czas",
+                    "long_distance": "Długodystansowiec",
+                    "title": "Przydziel punkty doświadczenia"
                 }
             },
-            "tab_title": "",
+            "tab_title": "Profil",
             "visited_cities": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Wybierz status odwiedzin wszystkich miast w swoim profilu",
+                "label_card": "Odwiedź wszystkie miasta",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Zastosuj",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Wybierz status odwiedzin wszystkich miast",
                     "input_city_status": {
-                        "label": "",
+                        "label": "Odwiedzone miasta",
                         "options": {
-                            "unvisit_all": "",
-                            "visit_all": ""
+                            "unvisit_all": "Nie odwiedzono żadnego miasta",
+                            "visit_all": "Odwiedzono wszystkie miasta"
                         }
                     },
-                    "title": ""
+                    "title": "Odwiedź wszystkie miasta"
                 }
             }
         },
         "settings": {
-            "btn_reset": "",
-            "document_dialog_title": "",
+            "btn_reset": "Resetuj ustawienia",
+            "document_dialog_title": "Wskaż lokalizację folderu \"Dokumenty\"",
             "input_change_language": {
-                "label": "",
-                "placeholder": ""
+                "label": "Zmień język",
+                "placeholder": "Wybierz język"
             },
             "input_change_theme": {
-                "label": "",
+                "label": "Zmień motyw",
                 "options": {
-                    "dark": "",
-                    "light": "",
-                    "system": ""
+                    "dark": "Ciemny",
+                    "light": "Jasny",
+                    "system": "Zgodny z motywem systemu"
                 },
-                "placeholder": ""
+                "placeholder": "Wybierz motyw"
             },
             "input_document_folder": {
-                "label": "",
-                "placeholder": ""
+                "label": "Folder Dokumenty",
+                "placeholder": "Wybierz folder \"Dokumenty\""
             },
-            "input_enable_128_slots": "",
-            "input_enable_console": "",
-            "input_opacity_profile": "",
-            "tab_title": "",
-            "title": ""
+            "input_enable_128_slots": "Odblokuj tryb konwoju dla 128 graczy",
+            "input_enable_console": "Aktywuj konsolę i narzędzia deweloperskie",
+            "input_opacity_profile": "Przezroczystość sekcji wyboru profilu",
+            "tab_title": "Ustawienia",
+            "title": "Ustawienia"
         },
         "trailers": {
             "license_plate": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Zmień tablicę rejestracyjną obecnie używanej naczepy",
+                "label_card": "Zmień tablicę rejestracyjną naczepy",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Zastosuj",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Ustaw nową tablicę rejestracyjną dla naczepy",
+                    "title": "Zmień tablicę rejestracyjną naczepy"
                 }
             },
             "modify_job_weight": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Zmień ciężar obecnie przewożonego ładunku",
+                "label_card": "Zmień ciężar ładunku",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Zastosuj",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Ta opcja zmieni wagę obecnie przewożonego ładunku. Pamiętaj, że ładunek musi być aktualnie podczepiony do Twojej ciężarówki",
                     "input_weight": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Waga w kilogramach",
+                        "placeholder": "Wprowadź wagę w kilogramach"
                     },
-                    "title": ""
+                    "title": "Zmień ciężar ładunku"
                 }
             },
             "modify_trailer_weight": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Zmień na stałe ciężar naczepy",
+                "label_card": "Zmień ciężar naczepy",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Zastosuj",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Ta opcja zmieni ciężar naczepy w 2 parametrach. Zazwyczaj używany jest parametr chassis_mass, ale możesz również edytować parametr body_mass (domyślnie body_mass wynosi 0)",
                     "input_body_mass": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Ciężar nadwozia w kilogramach",
+                        "placeholder": "Wprowadź ciężar nadwozia w kilogramach"
                     },
                     "input_chassis_mass": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Ciężar podwozia w kilogramach",
+                        "placeholder": "Wprowadź ciężar podwozia w kilogramach"
                     },
-                    "title": ""
+                    "title": "Zmień ciężar naczepy"
                 }
             },
             "repair_all_trailer": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Napraw wszystkie posiadane naczepy",
+                "label_card": "Napraw wszystkie naczepy",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Napraw",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Naprawia wszystkie posiadane przez Ciebie naczepy",
+                    "title": "Napraw wszystkie naczepy"
                 }
             },
             "repair_trailer": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Napraw obecną naczepę",
+                "label_card": "Napraw naczepę",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Napraw",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Naprawia obecnie podczepioną naczepę",
+                    "title": "Napraw naczepę"
                 }
             },
-            "tab_title": "",
+            "tab_title": "Naczepa",
             "unlock_trailer_country": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Odblokuj dostęp do naczepy we wszystkich krajach",
+                "label_card": "Usuń blokadę regionalną naczep",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_how_to_use": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": "",
+                    "btn_apply": "Odblokuj",
+                    "btn_close": "Zamknij",
+                    "btn_how_to_use": "Jak to działa?",
+                    "btn_open": "Edytuj",
+                    "description": "Odblokuj możliwość używania naczepy we wszystkich krajach",
+                    "title": "Usuń blokadę obecnej naczepy",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Naczepa musi być podczepiona do ciężarówki.",
+                        "title": "Pamiętaj"
                     }
                 }
             }
         },
         "trucks": {
             "change_truck_engine": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Zmień silnik obecnej ciężarówki",
+                "label_card": "Zmień silnik ciężarówki",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_remove_badge": "",
-                    "description": "",
+                    "btn_apply": "Zmień",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "btn_remove_badge": "Usuń znaczek",
+                    "description": "Zmień silnik swojej ciężarówki na wybrany",
                     "input_brands": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Marka",
+                        "placeholder": "Wybierz markę ciężarówki"
                     },
                     "input_engines": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Silnik",
+                        "placeholder": "Wybierz silnik ciężarówki"
                     },
                     "input_models": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Model",
+                        "placeholder": "Wybierz model ciężarówki"
                     },
-                    "title": "",
+                    "title": "Zmień silnik ciężarówki",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Jeśli zauważysz <b>źle umieszczone lub latające logo</b> na ciężarówce, możesz je usunąć za pomocą przycisku poniżej.",
+                        "title": "Pamiętaj"
                     }
                 }
             },
             "change_truck_transmission": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Zmień skrzynię biegów obecnej ciężarówki",
+                "label_card": "Zmień skrzynię biegów ciężarówki",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_remove_badge": "",
-                    "description": "",
+                    "btn_apply": "Zmień",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "btn_remove_badge": "Usuń znaczek",
+                    "description": "Zmień skrzynię biegów swojej ciężarówki na wybraną",
                     "input_brands": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Marka",
+                        "placeholder": "Wybierz markę ciężarówki"
                     },
                     "input_models": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Model",
+                        "placeholder": "Wybierz model ciężarówki"
                     },
                     "input_transmissions": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Skrzynia biegów",
+                        "placeholder": "Wybierz skrzynię biegów ciężarówki"
                     },
-                    "title": "",
+                    "title": "Zmień skrzynię biegów ciężarówki",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Jeśli zauważysz <b>źle umieszczone lub latające logo</b> na ciężarówce, możesz je usunąć za pomocą przycisku poniżej.",
+                        "title": "Pamiętaj"
                     }
                 }
             },
             "fill_all_trucks_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Zatankuj wszystkie posiadane ciężarówki",
+                "label_card": "Zatankuj wszystkie ciężarówki",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Zatankuj",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Ta opcja pozwoli Ci zatankować wszystkie zakupione ciężarówki",
+                    "title": "Zatankuj wszystkie ciężarówki"
                 }
             },
             "fill_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Zatankuj obecnie używaną ciężarówkę",
+                "label_card": "Zatankuj ciężarówkę",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Zatankuj",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Zatankuj obecnie używaną ciężarówkę do pełna",
+                    "title": "Zatankuj ciężarówkę"
                 }
             },
             "infinite_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Nieskończone paliwo w obecnej ciężarówce",
+                "label_card": "Nieskończone paliwo",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_restore_fuel": "",
-                    "description": "",
-                    "title": "",
+                    "btn_apply": "Zatankuj",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "btn_restore_fuel": "Przywróć do normy",
+                    "description": "Tak naprawdę paliwo nie będzie nieskończone, ale wystarcza na około 5 000 000 km (w zależności od ciężarówki)",
+                    "title": "Nieskończone paliwo w obecnej ciężarówce",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "<b>Wyłącz \"Realistyczne zużycie paliwa\"</b> w sekcji ustawień \"Rozgrywka\", aby ta funkcja zaczęła działać.",
+                        "title": "Pamiętaj"
                     }
                 }
             },
             "license_plate": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Zmień tablicę rejestracyjną obecnie używanej ciężarówki",
+                "label_card": "Zmień tablicę rejestracyjną ciężarówki",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Zastosuj",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Wprowadź nową tablicę rejestracyjną ciężarówki. Pamiętaj, aby usunąć swoją tablicę rejestracyjną z Word of Trucks",
+                    "title": "Zmień tablicę rejestracyjną ciężarówki"
                 }
             },
             "repair_all_trucks": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Napraw wszystkie posiadane ciężarówki",
+                "label_card": "Napraw wszystkie ciężarówki",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Napraw",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Napraw wszystkie ciężarówki, które posiadasz w swojej firmie",
+                    "title": "Napraw wszystkie ciężarówki"
                 }
             },
             "repair_truck": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Napraw obecnie używaną ciężarówkę",
+                "label_card": "Napraw ciężarówkę",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Napraw",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Napraw uszkodzenia swojej ciężarówki",
+                    "title": "Napraw ciężarówkę"
                 }
             },
-            "tab_title": ""
+            "tab_title": "Ciężarówka"
         }
     }
 }
