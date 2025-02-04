@@ -4,7 +4,9 @@ use super::accessories::{
 use super::license_plate::get_license_plate_formated;
 
 use crate::structs::vec_items_find::VecItemsFind;
-use crate::structs::vec_trucks::{Models, TruckBrandsATS, TruckBrandsETS2, VecTrucksId};
+use crate::structs::vec_trucks::{
+    Models, TruckBrandsATS, TruckBrandsETS2, VecTruckProfitLog, VecTrucksId, VecTrucksListId,
+};
 use cached::proc_macro::cached;
 use serde_json::from_str;
 
@@ -159,27 +161,94 @@ fn get_truck_fuel(arr_val: &Vec<String>, fuel: &str, index: usize) -> Option<Vec
     return None;
 }
 
-fn get_list_trucks_id(arr_val: &Vec<String>) -> Option<Vec<VecTrucksId>> {
-    let mut result: Vec<VecTrucksId> = Vec::new();
+fn get_truck_km(arr_val: &Vec<String>, km: &str, index: usize) -> Option<Vec<VecItemsFind>> {
+    let mut result: Vec<VecItemsFind> = Vec::new();
+
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
+        let option_values: Vec<&str> = item.split(':').collect();
+
+        match option_values[0] {
+            "}" => break,
+            " odometer" => {
+                result.push(VecItemsFind {
+                    index: i,
+                    value: format!(" odometer: {}", km),
+                });
+            }
+            " integrity_odometer" => {
+                result.push(VecItemsFind {
+                    index: i,
+                    value: format!(" integrity_odometer: {}", km),
+                });
+            }
+            " trip_distance_km" => {
+                result.push(VecItemsFind {
+                    index: i,
+                    value: format!(" trip_distance_km: {}", km),
+                });
+            }
+            _ => (),
+        }
+    }
+
+    if result.len() > 0 {
+        return Some(result);
+    }
+    return None;
+}
+
+fn get_truck_km_profit(arr_val: &Vec<String>, km: &str, index: usize) -> Option<Vec<VecItemsFind>> {
+    let mut result: Vec<VecItemsFind> = Vec::new();
+
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
+        let option_values: Vec<&str> = item.split(':').collect();
+
+        match option_values[0] {
+            "}" => break,
+            " acc_distance_on_job" => {
+                result.push(VecItemsFind {
+                    index: i,
+                    value: format!(" acc_distance_on_job: {}", km),
+                });
+            }
+            " acc_distance_free" => {
+                result.push(VecItemsFind {
+                    index: i,
+                    value: format!(" acc_distance_free: {}", km),
+                });
+            }
+            _ => (),
+        }
+    }
+
+    if result.len() > 0 {
+        return Some(result);
+    }
+    return None;
+}
+
+fn get_list_trucks_id(arr_val: &Vec<String>) -> Option<Vec<VecTrucksListId>> {
+    let mut result: Vec<VecTrucksListId> = Vec::new();
     let mut truck_enum: u16 = 0;
     let mut truck_string_find: String = format!(" trucks[{}]", truck_enum);
 
     for (i, item) in arr_val.iter().enumerate() {
         if item.contains(&truck_string_find) {
             let option_values: Vec<&str> = item.split(':').collect();
+            let id = option_values[1].to_string();
 
-            let truck_index =
-                match get_truck_vehicle_index(arr_val, option_values[1].to_string(), i) {
-                    Some(truck_index) => truck_index,
-                    None => {
-                        truck_enum += 1;
-                        truck_string_find = format!(" trucks[{}]", truck_enum);
-                        continue;
-                    }
-                };
-            result.push(VecTrucksId {
+            let truck_index = match get_truck_vehicle_index(arr_val, &id, i) {
+                Some(truck_index) => truck_index,
+                None => {
+                    truck_enum += 1;
+                    truck_string_find = format!(" trucks[{}]", truck_enum);
+                    continue;
+                }
+            };
+            result.push(VecTrucksListId {
+                truck_number: truck_enum,
                 index: truck_index,
-                id: option_values[1].to_string(),
+                id,
             });
             truck_enum += 1;
             truck_string_find = format!(" trucks[{}]", truck_enum);
@@ -249,7 +318,7 @@ pub fn get_truck_id(arr_val: &Vec<String>) -> Option<VecTrucksId> {
 
 pub fn get_truck_vehicle_index(
     arr_val: &Vec<String>,
-    truck_id: String,
+    truck_id: &String,
     index: usize,
 ) -> Option<usize> {
     let value_find: String = format!("{} {}", truck_id, "{");
@@ -257,6 +326,68 @@ pub fn get_truck_vehicle_index(
     for (i, item) in arr_val.iter().enumerate().skip(index) {
         if item.contains(&value_find) {
             return Some(i);
+        }
+    }
+
+    return None;
+}
+
+pub fn get_truck_number(arr_val: &Vec<String>, truck_id: &String) -> Option<u16> {
+    let trucks = match get_list_trucks_id(&arr_val) {
+        Some(trucks) => trucks,
+        None => return None,
+    };
+
+    for item in trucks.iter() {
+        if item.id == *truck_id {
+            return Some(item.truck_number);
+        };
+    }
+
+    return None;
+}
+
+pub fn get_truck_profit_log_index(
+    arr_val: &Vec<String>,
+    profit_log_id: &String,
+    index: usize,
+) -> Option<usize> {
+    let value_find: String = format!("{} {}", profit_log_id, "{");
+
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
+        if item.contains(&value_find) {
+            return Some(i);
+        }
+    }
+
+    return None;
+}
+
+pub fn get_truck_profit_log_id(
+    arr_val: &Vec<String>,
+    index: usize,
+    truck_number: u16,
+) -> Option<VecTruckProfitLog> {
+    let truck_jobs_string_find: String = format!(" truck_profit_logs[{}]", truck_number);
+
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
+        if item.contains(&truck_jobs_string_find) {
+            let option_values: Vec<&str> = item.split(':').collect();
+            let id = option_values[1].to_string();
+
+            let profit_log_id_index = match get_truck_profit_log_index(arr_val, &id, i) {
+                Some(profit_log_id) => profit_log_id,
+                None => return None,
+            };
+
+            return Some(VecTruckProfitLog {
+                index: profit_log_id_index,
+                id,
+            });
+        }
+
+        if item == "}" {
+            break;
         }
     }
 
@@ -290,7 +421,7 @@ pub fn set_truck_wear(arr_val: &Vec<String>, wear: &str, index: usize) -> Option
 pub fn set_any_trucks_wear(arr_val: &Vec<String>, wear: &str) -> Option<Vec<String>> {
     let mut arr_val_clone: Vec<String> = arr_val.clone();
 
-    let trucks_list: Vec<VecTrucksId> = match get_list_trucks_id(&arr_val) {
+    let trucks_list: Vec<VecTrucksListId> = match get_list_trucks_id(&arr_val) {
         Some(trucks_list) => trucks_list,
         None => return None,
     };
@@ -338,7 +469,7 @@ pub fn set_truck_fuel(arr_val: &Vec<String>, fuel: &str, index: usize) -> Option
 pub fn set_any_trucks_fuel(arr_val: &Vec<String>, fuel: &str) -> Option<Vec<String>> {
     let mut arr_val_clone: Vec<String> = arr_val.clone();
 
-    let trucks_list: Vec<VecTrucksId> = match get_list_trucks_id(&arr_val) {
+    let trucks_list: Vec<VecTrucksListId> = match get_list_trucks_id(&arr_val) {
         Some(trucks_list) => trucks_list,
         None => return None,
     };
@@ -485,6 +616,38 @@ pub fn remove_truck_badge(arr_val: &Vec<String>, index_end_block: usize) -> Opti
     }
 
     return None;
+}
+
+pub fn set_truck_km_edit(
+    arr_val: &Vec<String>,
+    profit_log: VecTruckProfitLog,
+    truck_index: usize,
+    km: &str,
+) -> Option<Vec<String>> {
+    let mut arr_val_clone: Vec<String> = arr_val.clone();
+
+    let set_truck_km_vec = match get_truck_km(&arr_val, km, truck_index) {
+        Some(set_truck_km) => set_truck_km,
+        None => return None,
+    };
+
+    println!("we_paso_1");
+
+    for item in set_truck_km_vec.iter() {
+        arr_val_clone[item.index] = item.value.to_string();
+    }
+
+    let set_truck_km_profit_vec = match get_truck_km_profit(&arr_val, km, profit_log.index) {
+        Some(set_truck_km_profit_vec) => set_truck_km_profit_vec,
+        None => return None,
+    };
+    println!("we_paso_2");
+
+    for item in set_truck_km_profit_vec.iter() {
+        arr_val_clone[item.index] = item.value.to_string();
+    }
+
+    return Some(arr_val_clone);
 }
 
 pub fn get_truck_brand_models_ets2(brand: &str) -> Option<Vec<Models>> {

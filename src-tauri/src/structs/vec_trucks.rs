@@ -5,6 +5,18 @@ pub struct VecTrucksId {
     pub id: String,
 }
 
+pub struct VecTrucksListId {
+    pub truck_number: u16,
+    pub index: usize,
+    pub id: String,
+}
+
+#[allow(dead_code)]
+pub struct VecTruckProfitLog {
+    pub index: usize,
+    pub id: String,
+}
+
 #[derive(Clone, Serialize, Deserialize)]
 pub struct TruckBrandsATS {
     pub kenworth: Vec<Models>,

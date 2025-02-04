@@ -17,10 +17,10 @@ use main_options::trailers::{
     set_remove_trailer_restricted_areas, set_trailer_license_plate, set_trailer_wear,
 };
 use main_options::trucks::{
-    get_truck_brand_models_ets2, get_truck_brands_models_ats, get_truck_id,
-    get_truck_vehicle_index, remove_truck_badge, set_any_trucks_fuel, set_any_trucks_wear,
-    set_infinite_fuel_truck, set_truck_engine, set_truck_fuel, set_truck_license_plate,
-    set_truck_transmissions, set_truck_wear,
+    get_truck_brand_models_ets2, get_truck_brands_models_ats, get_truck_id, get_truck_number,
+    get_truck_profit_log_id, get_truck_vehicle_index, remove_truck_badge, set_any_trucks_fuel,
+    set_any_trucks_wear, set_infinite_fuel_truck, set_truck_engine, set_truck_fuel,
+    set_truck_km_edit, set_truck_license_plate, set_truck_transmissions, set_truck_wear,
 };
 
 use std::path::Path;
@@ -232,7 +232,8 @@ async fn repait_truck(dir_save: &str, wear: &str) -> Result<DefaultResponse, ()>
         None => return Ok(DefaultResponse { res: false }),
     };
 
-    let truck_index: usize = match get_truck_vehicle_index(&file, truck_find.id, truck_find.index) {
+    let truck_index: usize = match get_truck_vehicle_index(&file, &truck_find.id, truck_find.index)
+    {
         Some(truck_index) => truck_index,
         None => return Ok(DefaultResponse { res: false }),
     };
@@ -274,7 +275,8 @@ async fn fill_fuel_truck(dir_save: &str, fuel: &str) -> Result<DefaultResponse, 
         None => return Ok(DefaultResponse { res: false }),
     };
 
-    let truck_index: usize = match get_truck_vehicle_index(&file, truck_find.id, truck_find.index) {
+    let truck_index: usize = match get_truck_vehicle_index(&file, &truck_find.id, truck_find.index)
+    {
         Some(truck_index) => truck_index,
         None => return Ok(DefaultResponse { res: false }),
     };
@@ -316,7 +318,8 @@ async fn set_infinite_fuel(dir_save: &str) -> Result<DefaultResponse, ()> {
         None => return Ok(DefaultResponse { res: false }),
     };
 
-    let truck_index: usize = match get_truck_vehicle_index(&file, truck_find.id, truck_find.index) {
+    let truck_index: usize = match get_truck_vehicle_index(&file, &truck_find.id, truck_find.index)
+    {
         Some(truck_index) => truck_index,
         None => return Ok(DefaultResponse { res: false }),
     };
@@ -382,7 +385,8 @@ async fn set_license_plate_truck(
         None => return Ok(DefaultResponse { res: false }),
     };
 
-    let truck_index: usize = match get_truck_vehicle_index(&file, truck_find.id, truck_find.index) {
+    let truck_index: usize = match get_truck_vehicle_index(&file, &truck_find.id, truck_find.index)
+    {
         Some(truck_index) => truck_index,
         None => return Ok(DefaultResponse { res: false }),
     };
@@ -415,7 +419,8 @@ async fn set_truck_engine_def(dir_save: &str, engine_code: &str) -> Result<Defau
         None => return Ok(DefaultResponse { res: false }),
     };
 
-    let truck_index: usize = match get_truck_vehicle_index(&file, truck_find.id, truck_find.index) {
+    let truck_index: usize = match get_truck_vehicle_index(&file, &truck_find.id, truck_find.index)
+    {
         Some(truck_index) => truck_index,
         None => return Ok(DefaultResponse { res: false }),
     };
@@ -444,7 +449,8 @@ async fn set_truck_transmissions_def(
         None => return Ok(DefaultResponse { res: false }),
     };
 
-    let truck_index: usize = match get_truck_vehicle_index(&file, truck_find.id, truck_find.index) {
+    let truck_index: usize = match get_truck_vehicle_index(&file, &truck_find.id, truck_find.index)
+    {
         Some(truck_index) => truck_index,
         None => return Ok(DefaultResponse { res: false }),
     };
@@ -837,7 +843,8 @@ async fn set_remove_truck_badge(dir_save: &str) -> Result<DefaultResponse, ()> {
         None => return Ok(DefaultResponse { res: false }),
     };
 
-    let truck_index: usize = match get_truck_vehicle_index(&file, truck_find.id, truck_find.index) {
+    let truck_index: usize = match get_truck_vehicle_index(&file, &truck_find.id, truck_find.index)
+    {
         Some(truck_index) => truck_index,
         None => return Ok(DefaultResponse { res: false }),
     };
@@ -848,6 +855,44 @@ async fn set_remove_truck_badge(dir_save: &str) -> Result<DefaultResponse, ()> {
     };
 
     save_file(dir_save.to_string(), no_truck_badge).await;
+    return Ok(DefaultResponse { res: true });
+}
+
+#[tauri::command]
+async fn set_truck_km(dir_save: &str, km: &str) -> Result<DefaultResponse, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let truck_find = match get_truck_id(&file) {
+        Some(truck_find) => truck_find,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let truck_index: usize = match get_truck_vehicle_index(&file, &truck_find.id, truck_find.index)
+    {
+        Some(truck_index) => truck_index,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let truck_number = match get_truck_number(&file, &truck_find.id) {
+        Some(truck_number) => truck_number,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let profit_log_index = match get_truck_profit_log_id(&file, truck_find.index, truck_number) {
+        Some(profit_log_index) => profit_log_index,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let truck_km: Vec<String> = match set_truck_km_edit(&file, profit_log_index, truck_index, km) {
+        Some(truck_km) => truck_km,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    save_file(dir_save.to_string(), truck_km).await;
+
     return Ok(DefaultResponse { res: true });
 }
 
@@ -897,6 +942,7 @@ fn main() {
             repair_trailer,
             repair_all_trailers,
             set_remove_truck_badge,
+            set_truck_km,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
