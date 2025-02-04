@@ -214,7 +214,7 @@ fn get_truck_km_profit(arr_val: &Vec<String>, km: &str, index: usize) -> Option<
             " acc_distance_free" => {
                 result.push(VecItemsFind {
                     index: i,
-                    value: format!(" acc_distance_free: {}", km),
+                    value: format!(" acc_distance_free: {}", "0"),
                 });
             }
             _ => (),
@@ -631,8 +631,6 @@ pub fn set_truck_km_edit(
         None => return None,
     };
 
-    println!("we_paso_1");
-
     for item in set_truck_km_vec.iter() {
         arr_val_clone[item.index] = item.value.to_string();
     }
@@ -641,7 +639,6 @@ pub fn set_truck_km_edit(
         Some(set_truck_km_profit_vec) => set_truck_km_profit_vec,
         None => return None,
     };
-    println!("we_paso_2");
 
     for item in set_truck_km_profit_vec.iter() {
         arr_val_clone[item.index] = item.value.to_string();
