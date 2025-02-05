@@ -27,6 +27,7 @@ import SetInfiniteFuel from "@/routes/pages/TrucksOptions/Modals/SetInfiniteFuel
 import FillAllTrucksFuel from "@/routes/pages/TrucksOptions/Modals/FillAllTrucksFuel";
 import EditLicensePlate from "@/routes/pages/TrucksOptions/Modals/EditLicensePlate";
 import SetTruckEngine from "@/routes/pages/TrucksOptions/Modals/SetTruckEngine";
+import ModifyKm from "@/routes/pages/TrucksOptions/Modals/ModifyKm";
 import SetTruckTransmission from "@/routes/pages/TrucksOptions/Modals/SetTruckTransmission";
 
 const TrucksOptions = () => {
@@ -93,6 +94,14 @@ const TrucksOptions = () => {
 		},
 		{
 			id: "8",
+			title: "Change Km driven",
+			description: "Change the mileage on your truck",
+			image: game === "ets2" ? img9 : img9_ats,
+			modal: <ModifyKm />,
+			disable: false,
+		},
+		{
+			id: "9",
 			title: trucks.infinite_fuel.label_card,
 			description: trucks.infinite_fuel.description_card,
 			image: game === "ets2" ? img10 : img10_ats,

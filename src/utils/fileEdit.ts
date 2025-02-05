@@ -674,6 +674,23 @@ export const setRemoveTruckBadge = async (
 	return invoceRes.res;
 };
 
+export const setTruckKm = async (
+	dirSave: string,
+	km: string
+): Promise<boolean> => {
+	const rustParams = {
+		dirSave: dirSave + "/game.sii",
+		km,
+	};
+
+	const invoceRes = (await invoke(
+		"set_truck_km",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
+};
+
 // App Variables store
 
 // theme store
