@@ -493,7 +493,22 @@
                     "title": "Sửa chữa xe tải"
                 }
             },
-            "tab_title": "Xe tải"
+            "tab_title": "Xe tải",
+            "change_km": {
+                "description_card": "Change the mileage on your truck",
+                "label_card": "Change the truck mileage",
+                "modal": {
+                    "btn_apply": "Apply",
+                    "btn_close": "Close",
+                    "btn_open": "Open",
+                    "input_km": {
+                        "label": "Distance in Km",
+                        "placeholder": "Distance in Km"
+                    },
+                    "description": "Change the mileage on your truck",
+                    "title": "Change the truck mileage"
+                }
+            }
         }
     }
 }
