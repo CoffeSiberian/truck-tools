@@ -493,7 +493,22 @@
                     "title": "Napraw ciężarówkę"
                 }
             },
-            "tab_title": "Ciężarówka"
+            "tab_title": "Ciężarówka",
+            "change_km": {
+                "description_card": "Change the mileage on your truck",
+                "label_card": "Change the truck mileage",
+                "modal": {
+                    "btn_apply": "Apply",
+                    "input_km": {
+                        "label": "Distance in Km",
+                        "placeholder": "Distance in Km"
+                    },
+                    "btn_close": "Close",
+                    "btn_open": "Open",
+                    "title": "Change the truck mileage",
+                    "description": "Change the mileage on your truck"
+                }
+            }
         }
     }
 }

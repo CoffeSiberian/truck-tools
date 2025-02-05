@@ -493,7 +493,22 @@
                     "title": "Reparar caminhão"
                 }
             },
-            "tab_title": "Caminhão"
+            "tab_title": "Caminhão",
+            "change_km": {
+                "modal": {
+                    "btn_apply": "Apply",
+                    "input_km": {
+                        "placeholder": "Distance in Km",
+                        "label": "Distance in Km"
+                    },
+                    "btn_open": "Open",
+                    "title": "Change the truck mileage",
+                    "btn_close": "Close",
+                    "description": "Change the mileage on your truck"
+                },
+                "label_card": "Change the truck mileage",
+                "description_card": "Change the mileage on your truck"
+            }
         }
     }
 }

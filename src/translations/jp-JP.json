@@ -1,12 +1,12 @@
 {
     "components": {
         "alert_on_save_default": {
-            "error": "",
-            "succes": ""
+            "error": "実行中にエラーが発生しました",
+            "succes": "正常に保存されました"
         },
         "license_plate": {
-            "btn_delete": "",
-            "btn_load": "",
+            "btn_delete": "削除",
+            "btn_load": "読み込み",
             "btn_store": "",
             "input_colored_margin": "",
             "input_license_plate": {

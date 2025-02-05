@@ -493,7 +493,22 @@
                     "title": "Ремонт вантажівки"
                 }
             },
-            "tab_title": "Вантажівка"
+            "tab_title": "Вантажівка",
+            "change_km": {
+                "description_card": "Change the mileage on your truck",
+                "modal": {
+                    "btn_apply": "Apply",
+                    "description": "Change the mileage on your truck",
+                    "title": "Change the truck mileage",
+                    "input_km": {
+                        "label": "Distance in Km",
+                        "placeholder": "Distance in Km"
+                    },
+                    "btn_open": "Open",
+                    "btn_close": "Close"
+                },
+                "label_card": "Change the truck mileage"
+            }
         }
     }
 }
