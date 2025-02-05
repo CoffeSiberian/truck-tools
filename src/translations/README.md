@@ -64,6 +64,10 @@ Our goal is to support multiple languages, driven by contributions from our comm
 
 - [Jan G.][Gerfo]
 
+#### Polish
+
+- [Thwade][Thwade]
+
 [weblate]: https://hosted.weblate.org/projects/truck-tools/truck-tools/
 [memo209]: https://hosted.weblate.org/user/memo209/
 [nulijiazaizhong]: https://hosted.weblate.org/user/nulijiazaizhong/
@@ -74,4 +78,5 @@ Our goal is to support multiple languages, driven by contributions from our comm
 [Sconda]: https://hosted.weblate.org/user/Sconda/
 [Vasyl Belynets]: https://hosted.weblate.org/user/belynets/
 [maz1lovo]: https://hosted.weblate.org/user/authorless/
-[Gerfo]:https://hosted.weblate.org/user/Gerfo/
+[Gerfo]: https://hosted.weblate.org/user/Gerfo/
+[Thwade]: https://hosted.weblate.org/user/Thwade/

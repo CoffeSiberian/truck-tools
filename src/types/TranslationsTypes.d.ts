@@ -14,7 +14,8 @@ export type Langs =
 	| "ko-KR"
 	| "zh-Hant"
 	| "uk-UA"
-	| "de-DE";
+	| "de-DE"
+	| "pl-PL";
 
 export interface TranslationsTypes {
 	components: Components;
