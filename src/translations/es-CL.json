@@ -493,7 +493,22 @@
                     "title": "Reparar camión"
                 }
             },
-            "tab_title": "Camión"
+            "tab_title": "Camión",
+            "change_km": {
+                "description_card": "Cambia el kilometraje en tu camión",
+                "label_card": "Cambiar el kilometraje del camión",
+                "modal": {
+                    "btn_apply": "Aplicar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "input_km": {
+                        "label": "Distancia en km",
+                        "placeholder": "Distancia en km"
+                    },
+                    "title": "Cambiar el kilometraje del camión",
+                    "description": "Cambia el kilometraje en tu camión"
+                }
+            }
         }
     }
 }
