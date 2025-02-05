@@ -493,7 +493,22 @@
                     "title": "維修卡車"
                 }
             },
-            "tab_title": "卡車"
+            "tab_title": "卡車",
+            "change_km": {
+                "modal": {
+                    "title": "Change the truck mileage",
+                    "btn_close": "Close",
+                    "btn_open": "Open",
+                    "input_km": {
+                        "placeholder": "Distance in Km",
+                        "label": "Distance in Km"
+                    },
+                    "btn_apply": "Apply",
+                    "description": "Change the mileage on your truck"
+                },
+                "description_card": "Change the mileage on your truck",
+                "label_card": "Change the truck mileage"
+            }
         }
     }
 }
