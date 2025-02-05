@@ -458,7 +458,23 @@ export interface Trucks {
 	license_plate: TrucksLicensePlate;
 	repair_all_trucks: RepairAllTrucks;
 	repair_truck: RepairTruck;
+	change_km: ChangeKM;
 	tab_title: string;
+}
+
+export interface ChangeKM {
+	description_card: string;
+	label_card: string;
+	modal: ChangeKMModal;
+}
+
+export interface ChangeKMModal {
+	btn_apply: string;
+	btn_close: string;
+	btn_open: string;
+	description: string;
+	title: string;
+	input_km: Input;
 }
 
 export interface ChangeTruckEngine {

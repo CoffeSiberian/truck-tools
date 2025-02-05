@@ -26,7 +26,7 @@ interface completedProps {
 const ModifyKm = () => {
 	const { selectedSave } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { modify_job_weight } = translations.menu_options.trailers;
+	const { change_km } = translations.menu_options.trucks;
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
@@ -71,7 +71,7 @@ const ModifyKm = () => {
 				color="primary"
 				variant="shadow"
 			>
-				{modify_job_weight.modal.btn_open}
+				{change_km.modal.btn_open}
 			</Button>
 			<Modal
 				hideCloseButton
@@ -84,17 +84,17 @@ const ModifyKm = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								Change Km driven
+								<h2>{change_km.modal.title}</h2>
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="py-1">
-								<p>Change the mileage on your truck</p>
+								<p>{change_km.modal.description}</p>
 								<Input
 									className="mt-1"
 									startContent={<IconRoad />}
 									isInvalid={Km === ""}
-									label="Distance in Km"
-									placeholder="Distance in Km"
+									label={change_km.modal.input_km.label}
+									placeholder={change_km.modal.input_km.placeholder}
 									value={Km}
 									onValueChange={setWeightOnlyNumbers}
 									variant="bordered"
@@ -119,7 +119,7 @@ const ModifyKm = () => {
 									variant="light"
 									onPress={onClose}
 								>
-									Close
+									{change_km.modal.btn_close}
 								</Button>
 								<Button
 									endContent={<IconDeviceFloppy />}
@@ -127,7 +127,7 @@ const ModifyKm = () => {
 									color="success"
 									onPress={onClickApply}
 								>
-									Apply
+									{change_km.modal.btn_apply}
 								</Button>
 							</ModalFooter>
 						</>

@@ -493,6 +493,21 @@
 					"title": "Repair truck"
 				}
 			},
+			"change_km": {
+				"description_card": "Change the mileage on your truck",
+				"label_card": "Change the truck mileage",
+				"modal": {
+					"btn_apply": "Apply",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Change the mileage on your truck",
+					"title": "Change the truck mileage",
+					"input_km": {
+						"label": "Distance in Km",
+						"placeholder": "Distance in Km"
+					}
+				}
+			},
 			"tab_title": "Truck"
 		}
 	}

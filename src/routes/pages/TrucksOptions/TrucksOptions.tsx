@@ -96,8 +96,8 @@ const TrucksOptions = () => {
 		},
 		{
 			id: "8",
-			title: "Change Km driven",
-			description: "Change the mileage on your truck",
+			title: trucks.change_km.label_card,
+			description: trucks.change_km.description_card,
 			image: game === "ets2" ? img18 : img18_ats,
 			modal: <ModifyKm />,
 			disable: false,
