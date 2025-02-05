@@ -12,6 +12,7 @@ import img5 from "@/static/img/ets2/OptionsImages/5.webp";
 import img17 from "@/static/img/ets2/OptionsImages/17.webp";
 
 // ats
+import img3_ats from "@/static/img/ats/OptionsImages/3.webp";
 import img4_ats from "@/static/img/ats/OptionsImages/4.webp";
 import img5_ats from "@/static/img/ats/OptionsImages/5.webp";
 import img17_ats from "@/static/img/ats/OptionsImages/17.webp";
@@ -50,7 +51,7 @@ const TrailersOptions = () => {
 			id: "3",
 			title: trailers.unlock_trailer_country.label_card,
 			description: trailers.unlock_trailer_country.description_card,
-			image: img3,
+			image: game === "ets2" ? img3 : img3_ats,
 			modal: <UnlockTrailers />,
 			disable: false,
 		},

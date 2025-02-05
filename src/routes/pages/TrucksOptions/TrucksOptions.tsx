@@ -11,6 +11,7 @@ import img7 from "@/static/img/ets2/OptionsImages/7.webp";
 import img8 from "@/static/img/ets2/OptionsImages/8.webp";
 import img9 from "@/static/img/ets2/OptionsImages/9.webp";
 import img10 from "@/static/img/ets2/OptionsImages/10.webp";
+import img18 from "@/static/img/ets2/OptionsImages/18.webp";
 
 // ats
 import img6_ats from "@/static/img/ats/OptionsImages/6.webp";
@@ -18,6 +19,7 @@ import img7_ats from "@/static/img/ats/OptionsImages/7.webp";
 import img8_ats from "@/static/img/ats/OptionsImages/8.webp";
 import img9_ats from "@/static/img/ats/OptionsImages/9.webp";
 import img10_ats from "@/static/img/ats/OptionsImages/10.webp";
+import img18_ats from "@/static/img/ats/OptionsImages/18.webp";
 
 // modals
 import RepairTruck from "@/routes/pages/TrucksOptions/Modals/RepairTruck";
@@ -96,7 +98,7 @@ const TrucksOptions = () => {
 			id: "8",
 			title: "Change Km driven",
 			description: "Change the mileage on your truck",
-			image: game === "ets2" ? img9 : img9_ats,
+			image: game === "ets2" ? img18 : img18_ats,
 			modal: <ModifyKm />,
 			disable: false,
 		},
