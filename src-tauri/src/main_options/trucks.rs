@@ -227,7 +227,10 @@ fn get_truck_km_profit(arr_val: &Vec<String>, km: &str, index: usize) -> Option<
     return None;
 }
 
-fn get_list_trucks_id(arr_val: &Vec<String>) -> Option<Vec<VecTrucksListId>> {
+fn get_list_trucks_id(
+    arr_val: &Vec<String>,
+    skip_find_truck_index: bool,
+) -> Option<Vec<VecTrucksListId>> {
     let mut result: Vec<VecTrucksListId> = Vec::new();
     let mut truck_enum: u16 = 0;
     let mut truck_string_find: String = format!(" trucks[{}]", truck_enum);
@@ -236,15 +239,19 @@ fn get_list_trucks_id(arr_val: &Vec<String>) -> Option<Vec<VecTrucksListId>> {
         if item.contains(&truck_string_find) {
             let option_values: Vec<&str> = item.split(':').collect();
             let id = option_values[1].to_string();
+            let mut truck_index: usize = 0;
 
-            let truck_index = match get_truck_vehicle_index(arr_val, &id, i) {
-                Some(truck_index) => truck_index,
-                None => {
-                    truck_enum += 1;
-                    truck_string_find = format!(" trucks[{}]", truck_enum);
-                    continue;
-                }
-            };
+            if !skip_find_truck_index {
+                truck_index = match get_truck_vehicle_index(arr_val, &id, i) {
+                    Some(truck_index) => truck_index,
+                    None => {
+                        truck_enum += 1;
+                        truck_string_find = format!(" trucks[{}]", truck_enum);
+                        continue;
+                    }
+                };
+            }
+
             result.push(VecTrucksListId {
                 truck_number: truck_enum,
                 index: truck_index,
@@ -333,7 +340,7 @@ pub fn get_truck_vehicle_index(
 }
 
 pub fn get_truck_number(arr_val: &Vec<String>, truck_id: &String) -> Option<u16> {
-    let trucks = match get_list_trucks_id(&arr_val) {
+    let trucks = match get_list_trucks_id(&arr_val, true) {
         Some(trucks) => trucks,
         None => return None,
     };
@@ -421,7 +428,7 @@ pub fn set_truck_wear(arr_val: &Vec<String>, wear: &str, index: usize) -> Option
 pub fn set_any_trucks_wear(arr_val: &Vec<String>, wear: &str) -> Option<Vec<String>> {
     let mut arr_val_clone: Vec<String> = arr_val.clone();
 
-    let trucks_list: Vec<VecTrucksListId> = match get_list_trucks_id(&arr_val) {
+    let trucks_list: Vec<VecTrucksListId> = match get_list_trucks_id(&arr_val, false) {
         Some(trucks_list) => trucks_list,
         None => return None,
     };
@@ -469,7 +476,7 @@ pub fn set_truck_fuel(arr_val: &Vec<String>, fuel: &str, index: usize) -> Option
 pub fn set_any_trucks_fuel(arr_val: &Vec<String>, fuel: &str) -> Option<Vec<String>> {
     let mut arr_val_clone: Vec<String> = arr_val.clone();
 
-    let trucks_list: Vec<VecTrucksListId> = match get_list_trucks_id(&arr_val) {
+    let trucks_list: Vec<VecTrucksListId> = match get_list_trucks_id(&arr_val, false) {
         Some(trucks_list) => trucks_list,
         None => return None,
     };
