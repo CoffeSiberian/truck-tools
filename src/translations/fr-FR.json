@@ -493,7 +493,22 @@
                     "title": "réparer le camion"
                 }
             },
-            "tab_title": "Camion"
+            "tab_title": "Camion",
+            "change_km": {
+                "modal": {
+                    "btn_apply": "Apply",
+                    "description": "Change the mileage on your truck",
+                    "input_km": {
+                        "label": "Distance in Km",
+                        "placeholder": "Distance in Km"
+                    },
+                    "btn_close": "Close",
+                    "btn_open": "Open",
+                    "title": "Change the truck mileage"
+                },
+                "description_card": "Change the mileage on your truck",
+                "label_card": "Change the truck mileage"
+            }
         }
     }
 }
