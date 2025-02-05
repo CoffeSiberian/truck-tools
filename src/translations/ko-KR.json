@@ -493,7 +493,22 @@
                     "title": "트럭 수리"
                 }
             },
-            "tab_title": "트럭"
+            "tab_title": "트럭",
+            "change_km": {
+                "modal": {
+                    "btn_apply": "Apply",
+                    "btn_close": "Close",
+                    "description": "Change the mileage on your truck",
+                    "input_km": {
+                        "placeholder": "Distance in Km",
+                        "label": "Distance in Km"
+                    },
+                    "btn_open": "Open",
+                    "title": "Change the truck mileage"
+                },
+                "description_card": "Change the mileage on your truck",
+                "label_card": "Change the truck mileage"
+            }
         }
     }
 }
