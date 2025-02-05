@@ -68,7 +68,7 @@ Remember, contributing translations makes you a collaborator of the project!
 - [x] Create customized color license plate
 - [x] Save license plate data
 - [x] Set custom engines and transmission
-- [ ] Modify kilometers traveled by the truck
+- [x] Modify kilometers traveled by the truck
 - [ ] Changing the truck or trailer (no need to go to the garage)
 
 #### Profiles
