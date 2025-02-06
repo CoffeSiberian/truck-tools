@@ -62,7 +62,7 @@ Our goal is to support multiple languages, driven by contributions from our comm
 
 #### German
 
-- [Jan G.][Gerfo]
+- [Gerfo][Gerfo]
 
 #### Polish
 
