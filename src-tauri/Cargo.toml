@@ -1,6 +1,6 @@
 [package]
 name = "trucktools"
-version = "0.8.1"
+version = "0.9.0"
 description = "Truck Tools"
 authors = ["SiberianCoffe"]
 edition = "2021"
@@ -22,7 +22,7 @@ serde_json = "1.0.138"
 cached = "0.54.0"
 libloading = "0.8.6"
 hex = "0.4.3"
-uuid = "1.12.1"
+uuid = "1.13.1"
 walkdir = "2.5.0"
 zip = "2.2.2"
 tauri-plugin-os = "2.2.0"
