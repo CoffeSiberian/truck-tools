@@ -109,7 +109,7 @@
                 "placeholder": "Wählen Sie ein Profil aus"
             },
             "input_select_save": {
-                "label": "Wählen Sie Speichern",
+                "label": "Wähle einen Spielstand",
                 "placeholder": "Wählen Sie einen Spielstand aus"
             },
             "no_selected_profile": "Kein Profil ausgewählt",
@@ -495,18 +495,18 @@
             },
             "tab_title": "LKW",
             "change_km": {
-                "description_card": "Change the mileage on your truck",
-                "label_card": "Change the truck mileage",
+                "description_card": "Ändern Sie den Kilometerstand Ihres Lkw",
+                "label_card": "Ändern Sie den Kilometerstand des Lkw",
                 "modal": {
-                    "btn_close": "Close",
-                    "btn_open": "Open",
-                    "description": "Change the mileage on your truck",
-                    "title": "Change the truck mileage",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
+                    "description": "Ändern Sie den Kilometerstand Ihres Lkw",
+                    "title": "Ändern Sie den Kilometerstand des Lkw",
                     "input_km": {
-                        "label": "Distance in Km",
-                        "placeholder": "Distance in Km"
+                        "label": "Entfernung in km",
+                        "placeholder": "Entfernung in km"
                     },
-                    "btn_apply": "Apply"
+                    "btn_apply": "Übernehmen"
                 }
             }
         }
