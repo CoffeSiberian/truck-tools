@@ -7,34 +7,34 @@
         "license_plate": {
             "btn_delete": "删除",
             "btn_load": "加载",
-            "btn_store": "添加",
+            "btn_store": "保存",
             "input_colored_margin": "彩色边框",
             "input_license_plate": {
-                "label": "车牌信息",
-                "placeholder": "输入文字"
+                "label": "车牌文本",
+                "placeholder": "输入文本"
             },
             "input_license_plate_list_store": {
                 "label": "选择一块已保存的车牌",
                 "placeholder": "选择车牌"
             },
             "title_select_bg_color": "车牌背景颜色",
-            "title_select_text_color": "车牌文字及边框颜色"
+            "title_select_text_color": "车牌文本及边框颜色"
         },
         "player_profile": {
-            "btn_profile": "存档选项",
+            "btn_profile": "档案选项",
             "dropdown": {
                 "profile_options": {
                     "btn_backup_profile": {
-                        "description": "创建存档备份",
-                        "label": "备份存档",
+                        "description": "创建档案备份",
+                        "label": "备份档案",
                         "modal": {
                             "btn_apply": "创建备份",
                             "btn_close": "取消",
                             "btn_open_folder": "选择文件夹",
-                            "description": "创建存档备份，记得输入备份目录",
+                            "description": "创建档案备份，记得输入备份目录",
                             "input_backup_destination": {
-                                "label": "选择备份存档存放位置",
-                                "placeholder": "选择存档文件夹"
+                                "label": "选择备份档案存放位置",
+                                "placeholder": "选择文件夹"
                             },
                             "save_folder_dialog": {
                                 "filters_name": {
@@ -42,52 +42,52 @@
                                 },
                                 "title": "选择备份文件夹"
                             },
-                            "title": "备份存档"
+                            "title": "备份档案"
                         }
                     },
                     "btn_clone_profile": {
-                        "description": "将此存档复制到新的存档中",
-                        "label": "复制存档",
+                        "description": "将此档案复制到新的档案中",
+                        "label": "复制档案",
                         "modal": {
                             "btn_apply": "复制",
                             "btn_close": "取消",
-                            "description": "复制存档并创建一个完全一模一样的存档。",
+                            "description": "复制档案并创建一个完全一模一样的档案。",
                             "input_new_name": {
-                                "label": "复制存档名称",
-                                "placeholder": "输入复制存档的名称"
+                                "label": "复制档案名称",
+                                "placeholder": "输入复制档案的名称"
                             },
-                            "title": "复制存档"
+                            "title": "复制档案"
                         }
                     },
                     "btn_copy_config": {
-                        "description": "从其他存档复制配置/设置信息",
+                        "description": "从其他档案复制配置/设置信息",
                         "label": "复制配置",
                         "modal": {
                             "btn_apply": "复制配置",
                             "btn_close": "取消",
-                            "description": "选择需要复制的配置/设置信息到此存档，该操作将删除你的配置/设置信息<b>建议进行操作前对该存档配置/设置信息进行备份</b>（存档文件夹下的config、config_local、controls文件）。",
+                            "description": "选择需要复制的配置/设置信息到此档案，该操作将删除你的配置/设置信息<b>建议进行操作前对该档案配置/设置信息进行备份</b>（档案文件夹下的config、config_local、controls文件）。",
                             "input_select_profile": {
-                                "label": "存档",
-                                "placeholder": "选择一个存档"
+                                "label": "档案",
+                                "placeholder": "选择一个档案"
                             },
-                            "title": "复制存档配置/设置信息"
+                            "title": "复制档案配置/设置信息"
                         }
                     },
                     "btn_rename_profile": {
-                        "description": "重命名存档",
-                        "label": "对该存档进行重命名",
+                        "description": "重命名档案",
+                        "label": "对该档案进行重命名",
                         "modal": {
                             "btn_apply": "确认重命名",
                             "btn_close": "取消",
-                            "description": "你可以对存档进行重命名，但是存档名称必须小于20个字符（小于10个汉字）。",
+                            "description": "你可以对档案进行重命名，但是档案名称必须小于20个字符（小于10个汉字）。",
                             "input_new_name": {
-                                "label": "重命名的存档名称",
-                                "placeholder": "给存档输入一个新的名称"
+                                "label": "重命名的档案名称",
+                                "placeholder": "给档案输入一个新的名称"
                             },
-                            "title": "重命名存档"
+                            "title": "重命名档案"
                         }
                     },
-                    "title": "存档选项"
+                    "title": "档案选项"
                 },
                 "save_game_options": {
                     "btn_decrypt_save": {
@@ -95,32 +95,32 @@
                         "label": "解密存档"
                     },
                     "btn_open_folder": {
-                        "description": "打开存档文件夹",
+                        "description": "打开当前存档文件夹",
                         "label": "打开存档文件夹"
                     },
-                    "title": "保存存档设置"
+                    "title": "存档选项"
                 }
             },
             "input_select_profile": {
-                "label": "选择存档",
+                "label": "选择档案",
                 "options": {
                     "save_load": "保存"
                 },
-                "placeholder": "选择一个存档"
+                "placeholder": "选择一个档案"
             },
             "input_select_save": {
                 "label": "选择一个保存",
                 "placeholder": "选择保存"
             },
-            "no_selected_profile": "没有选择存档",
+            "no_selected_profile": "没有选择档案",
             "no_selected_save": "没有选择保存",
             "total_saves": "保存"
         },
         "profile_error": {
             "btn_how_to": "视频教程",
-            "btn_how_to_disable": "如何禁用云存档",
-            "description": "记住在你的存档中 <b> 禁用云存档</b> 或者验证您的文档文件夹位置是否正确，否则您将无法加载您的存档",
-            "title": "未找到任何存档"
+            "btn_how_to_disable": "如何禁用Steam云端",
+            "description": "记住在你的档案中 <b> 禁用Steam云端</b> 或者验证您的文档文件夹位置是否正确，否则您将无法加载您的档案",
+            "title": "找不到档案"
         },
         "updater": {
             "alert_message": "安装失败，请稍候再次尝试进行安装",
@@ -135,13 +135,13 @@
     },
     "menu_options": {
         "about": {
-            "description": "这是一款开源的应用程序，旨在帮助欧卡和美卡的玩家使用简单的方式编辑存档内容，方便那些不会使用代码编辑存档的玩家。",
+            "description": "这是一款开源的应用程序，旨在帮助欧卡和美卡的玩家使用简单的方式编辑游戏存档，方便那些不想手动编辑代码的玩家。",
             "tab_title": "关于"
         },
         "profile": {
             "add_experience": {
-                "description_card": "修改存档经验",
-                "label_card": "修改经验等级",
+                "description_card": "修改存档经验值",
+                "label_card": "修改经验值",
                 "modal": {
                     "btn_apply": "应用",
                     "btn_close": "取消",
@@ -255,7 +255,7 @@
         },
         "settings": {
             "btn_reset": "重置所有设置",
-            "document_dialog_title": "选择您的存档文件夹路径",
+            "document_dialog_title": "选择“文档”文件夹",
             "input_change_language": {
                 "label": "修改语言",
                 "placeholder": "选择语言"
@@ -270,12 +270,12 @@
                 "placeholder": "选择主题"
             },
             "input_document_folder": {
-                "label": "存档文件夹",
-                "placeholder": "修改您的存档文件夹路径"
+                "label": "文档文件夹",
+                "placeholder": "修改您的文档文件夹路径"
             },
             "input_enable_128_slots": "解锁128人联运模式",
             "input_enable_console": "启用控制台和开发人员模式（启用飞行模式）",
-            "input_opacity_profile": "启用无边框模式",
+            "input_opacity_profile": "降低底部工具栏透明度",
             "tab_title": "设置",
             "title": "设置"
         },
@@ -389,7 +389,7 @@
                     },
                     "title": "修改卡车引擎功率",
                     "warning_message": {
-                        "message": "如果您发现卡车上有任何<b>徽章漂浮或位置不佳</b>，可以使用下面的按钮将其移除。",
+                        "message": "如果您发现卡车上有任何<b>徽标漂浮或位置不佳</b>，可以使用下面的按钮将其移除。",
                         "title": "提示"
                     }
                 }
@@ -497,17 +497,17 @@
             "change_km": {
                 "modal": {
                     "input_km": {
-                        "placeholder": "Distance in Km",
-                        "label": "Distance in Km"
+                        "placeholder": "里程表数值（公里）",
+                        "label": "里程表数值（公里）"
                     },
-                    "btn_apply": "Apply",
-                    "btn_close": "Close",
-                    "title": "Change the truck mileage",
-                    "btn_open": "Open",
-                    "description": "Change the mileage on your truck"
+                    "btn_apply": "应用",
+                    "btn_close": "关闭",
+                    "title": "更改卡车里程表",
+                    "btn_open": "打开",
+                    "description": "更改当前卡车里程表"
                 },
-                "label_card": "Change the truck mileage",
-                "description_card": "Change the mileage on your truck"
+                "label_card": "更改卡车里程表",
+                "description_card": "更改当前卡车里程表"
             }
         }
     }
