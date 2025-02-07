@@ -496,18 +496,18 @@
             "tab_title": "Camion",
             "change_km": {
                 "modal": {
-                    "btn_apply": "Apply",
-                    "description": "Change the mileage on your truck",
+                    "btn_apply": "Appliquer",
+                    "description": "Modifier le kilométrage de votre camion",
                     "input_km": {
-                        "label": "Distance in Km",
-                        "placeholder": "Distance in Km"
+                        "label": "distance en Km",
+                        "placeholder": "distance en Km"
                     },
-                    "btn_close": "Close",
-                    "btn_open": "Open",
-                    "title": "Change the truck mileage"
+                    "btn_close": "Fermé",
+                    "btn_open": "Ouvrir",
+                    "title": "Changer le kilométrage du camion"
                 },
-                "description_card": "Change the mileage on your truck",
-                "label_card": "Change the truck mileage"
+                "description_card": "Modifier le kilométrage de votre camion",
+                "label_card": "Changer le kilométrage du camion"
             }
         }
     }
