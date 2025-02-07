@@ -156,7 +156,7 @@
             },
             "add_money": {
                 "description_card": "Dodaj wybraną ilość pieniędzy do swojego profilu",
-                "label_card": "Edytuj ilość pieniądzy",
+                "label_card": "Edytuj ilość pieniędzy",
                 "modal": {
                     "btn_apply": "Zastosuj",
                     "btn_close": "Zamknij",
@@ -166,7 +166,7 @@
                         "label": "Ilość pieniędzy (w euro)",
                         "placeholder": "Wprowadź ilość pieniędzy w euro"
                     },
-                    "title": "Edytuj ilość pieniądzy"
+                    "title": "Edytuj ilość pieniędzy"
                 }
             },
             "dealer_visited": {
@@ -327,7 +327,7 @@
             },
             "repair_all_trailer": {
                 "description_card": "Napraw wszystkie posiadane naczepy",
-                "label_card": "Napraw wszystkie naczepy",
+                "label_card": "Naprawia wszystkie posiadane naczepy",
                 "modal": {
                     "btn_apply": "Napraw",
                     "btn_close": "Zamknij",
@@ -467,7 +467,7 @@
                     "btn_apply": "Zastosuj",
                     "btn_close": "Zamknij",
                     "btn_open": "Edytuj",
-                    "description": "Wprowadź nową tablicę rejestracyjną ciężarówki. Pamiętaj, aby usunąć swoją tablicę rejestracyjną z Word of Trucks",
+                    "description": "Wprowadź nową tablicę rejestracyjną ciężarówki. Pamiętaj, aby usunąć swoją tablicę rejestracyjną z World of Trucks",
                     "title": "Zmień tablicę rejestracyjną ciężarówki"
                 }
             },
@@ -495,18 +495,18 @@
             },
             "tab_title": "Ciężarówka",
             "change_km": {
-                "description_card": "Change the mileage on your truck",
-                "label_card": "Change the truck mileage",
+                "description_card": "Zmień przebieg swojej ciężarówki",
+                "label_card": "Zmień przebieg ciężarówki",
                 "modal": {
-                    "btn_apply": "Apply",
+                    "btn_apply": "Zastosuj",
                     "input_km": {
-                        "label": "Distance in Km",
-                        "placeholder": "Distance in Km"
+                        "label": "Dystans w kilometrach",
+                        "placeholder": "Dystans w kilometrach"
                     },
-                    "btn_close": "Close",
-                    "btn_open": "Open",
-                    "title": "Change the truck mileage",
-                    "description": "Change the mileage on your truck"
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "title": "Zmień przebieg ciężarówki",
+                    "description": "Zmień przebieg swojej ciężarówki"
                 }
             }
         }
