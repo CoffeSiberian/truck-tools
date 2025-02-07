@@ -109,7 +109,7 @@
                 "placeholder": "Wählen Sie ein Profil aus"
             },
             "input_select_save": {
-                "label": "Wähle einen Spielstand",
+                "label": "Wählen einen Spielstand aus",
                 "placeholder": "Wählen Sie einen Spielstand aus"
             },
             "no_selected_profile": "Kein Profil ausgewählt",
