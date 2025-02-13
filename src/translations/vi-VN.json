@@ -495,18 +495,18 @@
             },
             "tab_title": "Xe tải",
             "change_km": {
-                "description_card": "Change the mileage on your truck",
-                "label_card": "Change the truck mileage",
+                "description_card": "Thay đổi số dặm trên xe tải của bạn",
+                "label_card": "Thay đổi số dặm xe tải",
                 "modal": {
-                    "btn_apply": "Apply",
-                    "btn_close": "Close",
-                    "btn_open": "Open",
+                    "btn_apply": "Áp dụng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
                     "input_km": {
-                        "label": "Distance in Km",
-                        "placeholder": "Distance in Km"
+                        "label": "Khoảng cách tính bằng km",
+                        "placeholder": "Khoảng cách tính bằng km"
                     },
-                    "description": "Change the mileage on your truck",
-                    "title": "Change the truck mileage"
+                    "description": "Thay đổi số dặm trên xe tải của bạn",
+                    "title": "Thay đổi số dặm xe tải"
                 }
             }
         }
