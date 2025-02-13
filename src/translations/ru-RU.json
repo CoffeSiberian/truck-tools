@@ -3,15 +3,15 @@
         "license_plate": {
             "btn_delete": "Удалить",
             "btn_load": "Загрузить",
-            "btn_store": "",
+            "btn_store": "Сохранить",
             "input_colored_margin": "Цветное поле",
             "input_license_plate": {
                 "label": "Текст номерного знака",
                 "placeholder": "Введите текст"
             },
             "input_license_plate_list_store": {
-                "label": "Выберите сохранённый груз",
-                "placeholder": "Выбрать груз"
+                "label": "Выберите сохранённый номер",
+                "placeholder": "Выбрать номер"
             },
             "title_select_bg_color": "Цвет фона",
             "title_select_text_color": "Цвет текста"
@@ -38,7 +38,7 @@
                                 },
                                 "title": "Выберите папку назначения"
                             },
-                            "title": ""
+                            "title": "Резервная копия профиля"
                         }
                     },
                     "btn_clone_profile": {
@@ -88,7 +88,7 @@
                 "save_game_options": {
                     "btn_decrypt_save": {
                         "description": "Расшифровать выбранное сохранение игры",
-                        "label": ""
+                        "label": "Расшифровать сохранение"
                     },
                     "btn_open_folder": {
                         "description": "Открыть выбранную папку сохранения игры",
@@ -184,7 +184,7 @@
                             "visit_all": "Посетил всех дилеров"
                         }
                     },
-                    "title": ""
+                    "title": "Открыть все дилерские центры"
                 }
             },
             "garage_status": {
@@ -219,7 +219,7 @@
                     "fragile_cargo": "Хрупкий груз",
                     "high_value_cargo": "Дорогостоящий груз",
                     "input_skills_points": {
-                        "corrosive": "",
+                        "corrosive": "Коррозийные вещества",
                         "explosives": "Взрывчатые вещества",
                         "flammable_liquids": "Легковоспламеняющиеся жидкости",
                         "flammable_solids": "Легковоспламеняющиеся твердые вещества",
@@ -233,164 +233,164 @@
                     "title": "Установить навыки опыта"
                 }
             },
-            "tab_title": "",
+            "tab_title": "Профиль",
             "visited_cities": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Установить статус посещенного города в вашем профиле",
+                "label_card": "Открытие всех городов",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Применить",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "description": "Выберите статус всех посещенных городов",
                     "input_city_status": {
-                        "label": "",
+                        "label": "Посещенные города",
                         "options": {
-                            "unvisit_all": "",
-                            "visit_all": ""
+                            "unvisit_all": "Сделать все города неизведанными",
+                            "visit_all": "Посетить все города"
                         }
                     },
-                    "title": ""
+                    "title": "Открыть все города"
                 }
             }
         },
         "settings": {
-            "btn_reset": "",
-            "document_dialog_title": "",
+            "btn_reset": "Сбросить настройки",
+            "document_dialog_title": "Выберите папку, в которой сохранен ваш прогресс",
             "input_change_language": {
-                "label": "",
-                "placeholder": ""
+                "label": "Язык",
+                "placeholder": "Выберете язык"
             },
             "input_change_theme": {
-                "label": "",
+                "label": "Тема",
                 "options": {
-                    "dark": "",
-                    "light": "",
-                    "system": ""
+                    "dark": "Темная",
+                    "light": "Светлая",
+                    "system": "Системная"
                 },
-                "placeholder": ""
+                "placeholder": "Выберите тему"
             },
             "input_document_folder": {
-                "label": "",
-                "placeholder": ""
+                "label": "Папка \"Документы\"",
+                "placeholder": "Введите папку с документами"
             },
-            "input_enable_128_slots": "",
-            "input_enable_console": "",
-            "input_opacity_profile": "",
-            "tab_title": "",
-            "title": ""
+            "input_enable_128_slots": "Включить 128 слотов в режиме конвой",
+            "input_enable_console": "Включить консоль и режим разработчика",
+            "input_opacity_profile": "Непрозрачность при выборе профиля",
+            "tab_title": "Настройки",
+            "title": "Настройки"
         },
         "trailers": {
             "license_plate": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Изменение номерного знака прицепа",
+                "label_card": "Изменить номерной знак трейлера",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Применить",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "description": "Введите новый номерной знак прицепа",
+                    "title": "Изменить номерной знак трейлера"
                 }
             },
             "modify_job_weight": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Изменение веса текущего груза",
+                "label_card": "Изменить вес груза",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Применить",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "description": "Это изменит вес вашего текущего груза на тот, который вы определяете здесь. Помните, что вам требуется груз, прицепленный к вашему грузовику",
                     "input_weight": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Вес в кг",
+                        "placeholder": "Введите вес в кг"
                     },
-                    "title": ""
+                    "title": "Изменение веса груза"
                 }
             },
             "modify_trailer_weight": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Изменяет вес прицепа, применяйте его только один раз",
+                "label_card": "Изменить вес прицепа",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Применить",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "description": "Это изменит вес вашего прицепа по 2 (двум) параметрам. Обычно используется chassis_mass, но вы также можете изменить body_mass (по умолчанию body_mass равен 0)",
                     "input_body_mass": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Масса тела (body_mass), в килограммах",
+                        "placeholder": "Введите массу тела в килограммах"
                     },
                     "input_chassis_mass": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Масса шасси (chassis_mass), в килограммах",
+                        "placeholder": "Введите массу шасси в килограммах"
                     },
-                    "title": ""
+                    "title": "Изменить вес прицепа"
                 }
             },
             "repair_all_trailer": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Ремонт всех прицепов, которые у вас есть",
+                "label_card": "Ремонт всех прицепов",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Ремонт",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "description": "Ремонт всех прицепов, которыми вы владеете",
+                    "title": "Ремонт всех прицепов"
                 }
             },
             "repair_trailer": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Ремонт текущего прицепа",
+                "label_card": "Ремонт прицепа",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Ремонт",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "description": "Ремонт прицепа, который сейчас прикреплен к грузовику",
+                    "title": "Ремонт прицепов"
                 }
             },
-            "tab_title": "",
+            "tab_title": "Прицеп",
             "unlock_trailer_country": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Снимет региональные блокировки прицепов",
+                "label_card": "Снятие ограничения на прицепы",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_how_to_use": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": "",
+                    "btn_apply": "Разблокировать",
+                    "btn_close": "Закрыть",
+                    "btn_how_to_use": "Как пользоваться",
+                    "btn_open": "Открыть",
+                    "description": "Разблокируйте свой трейлер во всех странах, где он заблокирован игрой",
+                    "title": "Разблокировать текущий прицеп",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Чтобы изменения вступили в силу, прицеп должен быть зацеплен к вашему грузовику.",
+                        "title": "Внимание"
                     }
                 }
             }
         },
         "trucks": {
             "change_truck_engine": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Изменение двигателя грузовика",
+                "label_card": "Изменить двигатель грузовика",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_remove_badge": "",
-                    "description": "",
+                    "btn_apply": "Изменить",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "btn_remove_badge": "Удалить шильдик",
+                    "description": "Изменить двигатель вашего грузовика на тот, который вы выберете",
                     "input_brands": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Марка",
+                        "placeholder": "Выбрать марку грузовика"
                     },
                     "input_engines": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Двигатели",
+                        "placeholder": "Выбрать двигатель грузовика"
                     },
                     "input_models": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Модели",
+                        "placeholder": "Выбрать модель грузовика"
                     },
-                    "title": "",
+                    "title": "Изменить двигатель грузовика",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Если вы видите <b>висящий или неправильно размещенный шильдик</b> на грузовике, то вы можете удалить его кнопкой ниже.",
+                        "title": "Внимание"
                     }
                 }
             },
