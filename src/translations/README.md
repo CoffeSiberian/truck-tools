@@ -31,6 +31,7 @@ Our goal is to support multiple languages, driven by contributions from our comm
 - [Gavin][GavinTnT]
 - [nulijiazaizhong][nulijiazaizhong]
 - [memo209][memo209]
+- [Resound][Resound]
 
 #### Chinese (Traditional)
 
@@ -59,6 +60,7 @@ Our goal is to support multiple languages, driven by contributions from our comm
 #### Russian
 
 - [maz1lovo][maz1lovo]
+- [kylishovm][kylishovm]
 
 #### German
 
@@ -80,3 +82,5 @@ Our goal is to support multiple languages, driven by contributions from our comm
 [maz1lovo]: https://hosted.weblate.org/user/authorless/
 [Gerfo]: https://hosted.weblate.org/user/Gerfo/
 [Thwade]: https://hosted.weblate.org/user/Thwade/
+[Resound]: https://hosted.weblate.org/user/Resoundof/
+[kylishovm]: https://hosted.weblate.org/user/kylishovm/
