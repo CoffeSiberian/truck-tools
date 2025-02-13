@@ -230,7 +230,7 @@
                     },
                     "just_in_time_delivery": "Доставка точно в срок",
                     "long_distance": "Дальние дистанции",
-                    "title": "Установить навыки опыта"
+                    "title": "Установка навыков опыта"
                 }
             },
             "tab_title": "Профиль",
@@ -282,13 +282,13 @@
         "trailers": {
             "license_plate": {
                 "description_card": "Изменение номерного знака прицепа",
-                "label_card": "Изменить номерной знак трейлера",
+                "label_card": "Изменить номерной знак прицепа",
                 "modal": {
                     "btn_apply": "Применить",
                     "btn_close": "Закрыть",
                     "btn_open": "Открыть",
                     "description": "Введите новый номерной знак прицепа",
-                    "title": "Изменить номерной знак трейлера"
+                    "title": "Изменить номерной знак прицепа"
                 }
             },
             "modify_job_weight": {
@@ -395,105 +395,120 @@
                 }
             },
             "change_truck_transmission": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Изменение трансмиссии своего грузовика",
+                "label_card": "Изменить трансмиссию грузовика",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_remove_badge": "",
-                    "description": "",
+                    "btn_apply": "Изменить",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "btn_remove_badge": "Удалить шильдик",
+                    "description": "Изменить трансмиссию грузовика на ту, которую вы выберите",
                     "input_brands": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Марка",
+                        "placeholder": "Выбрать марку грузовика"
                     },
                     "input_models": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Модели",
+                        "placeholder": "Выбрать модель грузовика"
                     },
                     "input_transmissions": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Трансмиссии",
+                        "placeholder": "Выбрать трансмиссию"
                     },
-                    "title": "",
+                    "title": "Изменить трансмиссию грузовика",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Если вы видите <b>висящий или неправильно размещенный шильдик</b> на грузовике, то вы можете удалить его кнопкой ниже.",
+                        "title": "Внимание"
                     }
                 }
             },
             "fill_all_trucks_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Заправить все грузовики в гаражах",
+                "label_card": "Заправить все грузовики",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Заправить",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "description": "Эта опция позволяет заправить все имеющиеся грузовики вашего автопарка",
+                    "title": "Заправить все грузовики"
                 }
             },
             "fill_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Заправить текущий грузовик",
+                "label_card": "Заправка",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Заправить",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "description": "Заправить ваш текущий грузовик полностью",
+                    "title": "Заправка"
                 }
             },
             "infinite_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Бесконечное топливо для текущего грузовика",
+                "label_card": "Бесконечное топливо для текущего грузовика",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_restore_fuel": "",
-                    "description": "",
-                    "title": "",
+                    "btn_apply": "Заправить",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "btn_restore_fuel": "Восстановить",
+                    "description": "Само топливо не является бесконечным, но его вам хватит примерно на 5000000 км (в зависимости от грузовика)",
+                    "title": "Бесконечное топливо для текущего грузовика",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Чтобы эта функция начала работать,<b>отключите параметр \"реалистичная модель расхода топлива\"</b>в разделе настроек \"Геймплей\".",
+                        "title": "Внимание"
                     }
                 }
             },
             "license_plate": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Изменение номерного знака грузовика",
+                "label_card": "Изменить номер грузовика",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Применить",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "description": "Введите новый номер грузовика. Не забудьте удалить свой номерной знак из Word of Trucks",
+                    "title": "Изменить номер грузовика"
                 }
             },
             "repair_all_trucks": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Ремонт всех грузовиков автопарка",
+                "label_card": "Ремонт всех грузовиков",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Ремонт",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "description": "Ремонт всех грузовиков, которые есть в вашем автопарке",
+                    "title": "Ремонт всех грузовиков"
                 }
             },
             "repair_truck": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Ремонт текущего грузовика",
+                "label_card": "Ремонт грузовика",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Ремонт",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "description": "Убрать повреждения вашего грузовика",
+                    "title": "Ремонт грузовика"
                 }
             },
-            "tab_title": ""
+            "tab_title": "Грузовик",
+            "change_km": {
+                "description_card": "Изменить пробег вашего грузовика",
+                "label_card": "Изменить пробег грузовика",
+                "modal": {
+                    "btn_apply": "Применить",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "description": "Изменить пробег вашего грузовика",
+                    "title": "Изменить пробег грузовика",
+                    "input_km": {
+                        "label": "Пробег в километрах",
+                        "placeholder": "Пробег в километрах"
+                    }
+                }
+            }
         }
     }
 }
