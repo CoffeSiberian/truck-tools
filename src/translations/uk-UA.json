@@ -102,14 +102,14 @@
                 }
             },
             "input_select_profile": {
-                "label": "Вибір профілю",
+                "label": "Оберіть профілю",
                 "options": {
                     "save_load": "Збереження"
                 },
                 "placeholder": "Оберіть профіль"
             },
             "input_select_save": {
-                "label": "Вибір збереження",
+                "label": "Оберіть збереження",
                 "placeholder": "Оберіть збереження"
             },
             "no_selected_profile": "Профіль не обрано",
