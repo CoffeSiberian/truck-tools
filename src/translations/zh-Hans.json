@@ -507,7 +507,7 @@
                     "description": "更改当前卡车里程表"
                 },
                 "label_card": "更改卡车里程表",
-                "description_card": "更改当前卡车里程表"
+                "description_card": "更改当前卡车里程数"
             }
         }
     }
