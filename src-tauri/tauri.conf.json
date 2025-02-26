@@ -18,11 +18,11 @@
 			"icons/icon.icns",
 			"icons/icon.ico"
 		],
-		"createUpdaterArtifacts": "v1Compatible"
+		"createUpdaterArtifacts": true
 	},
 	"productName": "Truck Tools",
 	"mainBinaryName": "Truck Tools",
-	"version": "0.9.1",
+	"version": "0.9.2",
 	"identifier": "com.trucktools.dev",
 	"plugins": {
 		"updater": {
