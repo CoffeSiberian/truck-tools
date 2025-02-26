@@ -29,7 +29,7 @@ import {
 	IconSettingsShare,
 	IconUserEdit,
 } from "@tabler/icons-react";
-import { Spinner } from "@heroui/spinner";
+import { Spinner } from "@heroui/react";
 
 interface DecryptResult {
 	isLoading: boolean;
