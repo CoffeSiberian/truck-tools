@@ -1,17 +1,17 @@
 [package]
 name = "trucktools"
-version = "0.9.0"
+version = "0.9.1"
 description = "Truck Tools"
 authors = ["SiberianCoffe"]
-edition = "2021"
+edition = "2024"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [build-dependencies]
-tauri-build = { version = "2.0.5", features = [] }
+tauri-build = { version = "2.0.6", features = [] }
 
 [dependencies]
-tauri = { version = "2.2.5", features = ["protocol-asset"] }
+tauri = { version = "2.3.0", features = ["protocol-asset"] }
 tauri-plugin-store = "2.2.0"
 tauri-plugin-dialog = "2.2.0"
 tauri-plugin-fs = "2.2.0"
