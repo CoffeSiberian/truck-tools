@@ -1,5 +1,5 @@
 use libloading::{Library, Symbol};
-use std::fs::{write, File};
+use std::fs::{File, write};
 use std::io::Read;
 use std::os::raw::c_uint;
 

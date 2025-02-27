@@ -3,8 +3,8 @@ use std::io::{Read, Write};
 use std::path::Path;
 
 use walkdir::WalkDir;
-use zip::write::{SimpleFileOptions, ZipWriter};
 use zip::CompressionMethod;
+use zip::write::{SimpleFileOptions, ZipWriter};
 
 pub async fn compress_folder_files(
     src_dir: &Path,

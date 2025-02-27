@@ -169,7 +169,7 @@ async fn get_save_game_name(
                 return Ok(SaveGameResponse {
                     res: false,
                     save_games: vec![],
-                })
+                });
             }
         };
 
@@ -202,7 +202,7 @@ async fn get_brand_models_ets2(brand: &str) -> Result<TruckBrandModelsResponse, 
             return Ok(TruckBrandModelsResponse {
                 res: false,
                 models: vec![],
-            })
+            });
         }
     };
 }
@@ -215,7 +215,7 @@ async fn get_brand_models_ats(brand: &str) -> Result<TruckBrandModelsResponse, (
             return Ok(TruckBrandModelsResponse {
                 res: false,
                 models: vec![],
-            })
+            });
         }
     };
 }
@@ -473,7 +473,7 @@ async fn get_list_dir_profile(dir_profile: &str) -> Result<ListProfilesResponse,
             return Ok(ListProfilesResponse {
                 res: false,
                 profiles: vec![],
-            })
+            });
         }
     };
 
@@ -692,19 +692,19 @@ fn get_os_theme(window: Window) -> SystemThemeResponse {
             return SystemThemeResponse {
                 res: true,
                 theme: "dark",
-            }
+            };
         }
         Ok(Theme::Light) => {
             return SystemThemeResponse {
                 res: true,
                 theme: "light",
-            }
+            };
         }
         _ => {
             return SystemThemeResponse {
                 res: true,
                 theme: "dark",
-            }
+            };
         }
     }
 }
@@ -720,7 +720,7 @@ async fn get_developer_game_status(dir_docs_game_folder: &str) -> Result<Develop
                     developer: false,
                     console: false,
                     active_max_convoy_mode: false,
-                })
+                });
             }
         };
 
