@@ -70,6 +70,10 @@ Our goal is to support multiple languages, driven by contributions from our comm
 
 - [Thwade][Thwade]
 
+#### Romanian
+
+- [Kiry][Kiry]
+
 [weblate]: https://hosted.weblate.org/projects/truck-tools/truck-tools/
 [memo209]: https://hosted.weblate.org/user/memo209/
 [nulijiazaizhong]: https://hosted.weblate.org/user/nulijiazaizhong/
@@ -84,3 +88,4 @@ Our goal is to support multiple languages, driven by contributions from our comm
 [Thwade]: https://hosted.weblate.org/user/Thwade/
 [Resound]: https://hosted.weblate.org/user/Resoundof/
 [kylishovm]: https://hosted.weblate.org/user/kylishovm/
+[Kiry]: https://hosted.weblate.org/user/kiryionut/
