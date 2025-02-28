@@ -113,7 +113,7 @@
 				"placeholder": "Selectați o salvare"
 			},
 			"no_selected_profile": "Niciun profil selectat",
-			"no_selected_save": "Nu a fost selectată nicio salvare,
+			"no_selected_save": "Nu a fost selectată nicio salvare",
 			"total_saves": "Salvează"
 		},
 		"profile_error": {
@@ -473,7 +473,7 @@
 			},
 			"repair_all_trucks": {
 				"description_card": "Repara toate autocamioanele",
-				"label_card": "Repara toate camioanele,
+				"label_card": "Repara toate camioanele",
 				"modal": {
 					"btn_apply": "Reparare",
 					"btn_close": "închide",
