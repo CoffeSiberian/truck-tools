@@ -1,0 +1,514 @@
+{
+	"components": {
+		"alert_on_save_default": {
+			"error": "A apărut o eroare în proces",
+			"succes": "Salvat cu succes"
+		},
+		"license_plate": {
+			"btn_delete": "Şterge",
+			"btn_load": "încărca",
+			"btn_store": "Magazin",
+			"input_colored_margin": "Marginea colorată",
+			"input_license_plate": {
+				"label": "Textul plăcuței de înmatriculare",
+				"placeholder": "Introduceți text"
+			},
+			"input_license_plate_list_store": {
+				"label": "Selectați o plăcuță de înmatriculare stocată",
+				"placeholder": "Selectați plăcuța de înmatriculare"
+			},
+			"title_select_bg_color": "Culoare de fundal",
+			"title_select_text_color": "Culoarea textului"
+		},
+		"player_profile": {
+			"btn_profile": "Opțiuni de profil",
+			"dropdown": {
+				"profile_options": {
+					"btn_backup_profile": {
+						"description": "Creați o copie de rezervă a profilului dvs",
+						"label": "Profil de rezervă",
+						"modal": {
+							"btn_apply": "Copii de rezervă",
+							"btn_close": "închide",
+							"btn_open_folder": "Deschide folderul",
+							"description": "Creați o copie de rezervă, nu uitați să introduceți destinația",
+							"input_backup_destination": {
+								"label": "Selectați folderul de destinație",
+								"placeholder": "Selectați folderul de destinație"
+							},
+							"save_folder_dialog": {
+								"filters_name": {
+									"zip": "Fișiere Zip"
+								},
+								"title": "Selectați folderul de destinație"
+							},
+							"title": "Profil de rezervă"
+						}
+					},
+					"btn_clone_profile": {
+						"description": "Clonează-ți profilul într-unul nou",
+						"label": "Clonează profilul",
+						"modal": {
+							"btn_apply": "Clonează",
+							"btn_close": "închide",
+							"description": "Introduceți numele profilului pe care doriți să-l clonați. Aceasta va crea un profil nou cu aceleași setări ca și profilul selectat.",
+							"input_new_name": {
+								"label": "Nume de profil nou",
+								"placeholder": "Introduceți noul nume pentru profilul dvs"
+							},
+							"title": "Clonează profilul"
+						}
+					},
+					"btn_copy_config": {
+						"description": "Copiați setările din alte profiluri",
+						"label": "Copiați config",
+						"modal": {
+							"btn_apply": "Copiați config",
+							"btn_close": "închide",
+							"description": "Selectați profilul în care doriți să copiați setările, amintiți-vă că setările dvs. vor fi înlocuite, vă recomandăm să faceți o copie de rezervă a profilului dvs.</b>.",
+							"input_select_profile": {
+								"label": "Profiluri",
+								"placeholder": "Selecteaza Profilul"
+							},
+							"title": "Copiați config"
+						}
+					},
+					"btn_rename_profile": {
+						"description": "Redenumiți-vă profilul",
+						"label": "Redenumiți profilul",
+						"modal": {
+							"btn_apply": "Redenumiți",
+							"btn_close": "închide",
+							"description": "Puteți redenumi profilul, dar acesta trebuie să aibă mai puțin de 20 de caractere.",
+							"input_new_name": {
+								"label": "Numele profilului",
+								"placeholder": "Introduceți noul nume pentru profilul dvs"
+							},
+							"title": "Redenumiți profilul"
+						}
+					},
+					"title": "Opțiuni de Profil"
+				},
+				"save_game_options": {
+					"btn_decrypt_save": {
+						"description": "Decriptați jocul salvat selectat",
+						"label": "Decriptați salvarea"
+					},
+					"btn_open_folder": {
+						"description": "Deschideți folderul de salvare a jocului selectat",
+						"label": "Deschideți folderul Salvare"
+					},
+					"title": "Opțiuni de salvare a jocului"
+				}
+			},
+			"input_select_profile": {
+				"label": "Selectați profilul",
+				"options": {
+					"save_load": "Salvează"
+				},
+				"placeholder": "Selectați un profil"
+			},
+			"input_select_save": {
+				"label": "Selectați salvarea",
+				"placeholder": "Selectați o salvare"
+			},
+			"no_selected_profile": "Niciun profil selectat",
+			"no_selected_save": "Nu a fost selectată nicio salvare,
+			"total_saves": "Salvează"
+		},
+		"profile_error": {
+			"btn_how_to": "Videoclipuri tutoriale",
+			"btn_how_to_disable": "Cum să dezactivezi Steam Cloud",
+			"description": "Nu uitați să <b> dezactivați Steam Cloud</b> din profilul dvs. sau să verificați locația dosarului dvs. \"Documente\".",
+			"title": "Nu au fost găsite profile"
+		},
+		"updater": {
+			"alert_message": "Instalarea a eșuat. Încercați din nou mai târziu",
+			"btn_cancel": "Anulare",
+			"btn_manual_update": "Actualizare manuală",
+			"btn_update_now": "Actualizați acum",
+			"downloading": "Descărcare...",
+			"release_notes": "Note de lansare",
+			"title": "Versiune nouă disponibilă",
+			"version": "Versiune:"
+		}
+	},
+	"menu_options": {
+		"about": {
+			"description": "Aceasta este o aplicație open source creată pentru a ajuta jucătorii ETS2 și ATS să-și editeze Game Save într-un mod simplu și ușor pentru cei care nu doresc să editeze aceste coduri manual.",
+			"tab_title": "Despre"
+		},
+		"profile": {
+			"add_experience": {
+				"description_card": "Schimbați experiența în profilul dvs",
+				"label_card": "Schimbați experiența",
+				"modal": {
+					"btn_apply": "Aplicați",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"description": "Introduceți cantitatea de experiență pe care doriți să o adăugați profilului dvs",
+					"input_experience": {
+						"label": "Experienţă",
+						"placeholder": "Introduceți cantitatea de experiență în cifre"
+					},
+					"title": "Schimbați experiența"
+				}
+			},
+			"add_money": {
+				"description_card": "Adaugă bani la profilul tău",
+				"label_card": "Schimba Banii",
+				"modal": {
+					"btn_apply": "Aplicați",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"description": "Adăugați suma de bani pe care o doriți în profilul dvs",
+					"input_money": {
+						"label": "Bani",
+						"placeholder": "Introduceți suma de bani în EUR"
+					},
+					"title": "Schimbă Banii"
+				}
+			},
+			"dealer_visited": {
+				"description_card": "Setați toate statutul de dealer în profilul dvs",
+				"label_card": "Descoperiți toți dealerii",
+				"modal": {
+					"btn_apply": "Aplicați",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"description": "Selectați starea tuturor dealerilor din profilul dvs",
+					"input_dealer_status": {
+						"label": "Orașe Vizitate",
+						"options": {
+							"unvisit_all": "Nevizitați toți dealerii",
+							"visit_all": "Vizitați toți dealerii"
+						}
+					},
+					"title": "Descoperiți toți dealerii"
+				}
+			},
+			"garage_status": {
+				"description_card": "Setați orice stare de garaj în profilul dvs",
+				"label_card": "Cumpărați toate garajele",
+				"modal": {
+					"btn_apply": "Aplicați",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"description": "Selectați statutul garajului pe care doriți să îl aplicați profilului dvs",
+					"input_garage_status": {
+						"label": "Starea Garajului",
+						"options": {
+							"large_garage": "Garaj mare",
+							"medium_garage": "Garaj Mediu",
+							"sell_garage": "Vanzare Garaj",
+							"small_garage": "Garaj Mic"
+						}
+					},
+					"title": "Cumpărați toate garajele"
+				}
+			},
+			"skills_points": {
+				"description_card": "Setați abilitățile de experiență în profilul dvs",
+				"label_card": "Setați abilități de experiență",
+				"modal": {
+					"btn_apply": "Aplicați",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"description": "Introduceți cantitatea de experiență de care aveți nevoie",
+					"eco_driving": "Conducere ecologică",
+					"fragile_cargo": "Marfă fragilă",
+					"high_value_cargo": "Marfă de mare valoare",
+					"input_skills_points": {
+						"corrosive": "Coroziv",
+						"explosives": "Explozivi",
+						"flammable_liquids": "Lichide inflamabile",
+						"flammable_solids": "Solide inflamabile",
+						"gases": "Gaze",
+						"label": "ADR",
+						"placeholder": "Selectați ADR",
+						"toxic_and_infectious": "Toxic și infecțios"
+					},
+					"just_in_time_delivery": "Livrare la timp",
+					"long_distance": "Distanță lungă",
+					"title": "Setați abilități de experiență"
+				}
+			},
+			"tab_title": "Profil",
+			"visited_cities": {
+				"description_card": "Setați statutul oricărui oraș vizitat în profilul dvs",
+				"label_card": "Descoperă toate orașele",
+				"modal": {
+					"btn_apply": "Aplicați",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"description": "Selectați starea tuturor orașelor vizitate",
+					"input_city_status": {
+						"label": "Orașe nevizitate",
+						"options": {
+							"unvisit_all": "Nevizitate toate orașele",
+							"visit_all": "Am vizitat toate orașele"
+						}
+					},
+					"title": "Descoperă toate orașele"
+				}
+			}
+		},
+		"settings": {
+			"btn_reset": "Resetați Setările",
+			"document_dialog_title": "Selectați folderul în care este stocat progresul dvs",
+			"input_change_language": {
+				"label": "Schimbați Limba",
+				"placeholder": "Selectați Limba"
+			},
+			"input_change_theme": {
+				"label": "Schimbați Tema",
+				"options": {
+					"dark": "Întunecata",
+					"light": "Luminoasa",
+					"system": "Sistem"
+				},
+				"placeholder": "Selectați Tema"
+			},
+			"input_document_folder": {
+				"label": "Folder de documente",
+				"placeholder": "Intrați în dosarul de documente"
+			},
+			"input_enable_128_slots": "Activați 128 de sloturi pentru modul convoi",
+			"input_enable_console": "Activați modul consolă și dezvoltator",
+			"input_opacity_profile": "Opacitate pe profilul selectat",
+			"tab_title": "Setări",
+			"title": "Setări"
+		},
+		"trailers": {
+			"license_plate": {
+				"description_card": "Schimbați plăcuța de înmatriculare a remorcii",
+				"label_card": "Schimbați plăcuța de înmatriculare a remorcii",
+				"modal": {
+					"btn_apply": "Aplicați",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"description": "Introduceți noua plăcuță de înmatriculare a remorcii",
+					"title": "Schimbați plăcuța de înmatriculare a remorcii"
+				}
+			},
+			"modify_job_weight": {
+				"description_card": "Modificați greutatea marfii",
+				"label_card": "Modificați greutatea marfii",
+				"modal": {
+					"btn_apply": "Aplicați",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"description": "Acest lucru va modifica greutatea marfii dvs. curent la cea pe care o definiți aici. Amintiți-vă că va trebui să aveți marfa activa ancorata pe camionul dvs",
+					"input_weight": {
+						"label": "Greutate în kg",
+						"placeholder": "Introduceți greutatea în kg"
+					},
+					"title": "Modificați greutatea încărcăturii"
+				}
+			},
+			"modify_trailer_weight": {
+				"description_card": "Modifică greutatea remorcii, aplicând-o o singură dată",
+				"label_card": "Schimbați greutatea remorcii",
+				"modal": {
+					"btn_apply": "Aplicați",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"description": "Aceasta modifică greutatea remorcii dumneavoastră în 2 parametri. De obicei se folosește masa șasiului, dar puteți edita și masa corporală (body_mass implicit este 0)",
+					"input_body_mass": {
+						"label": "Masa corporala in kg",
+						"placeholder": "Introduceți masa corporală în kg"
+					},
+					"input_chassis_mass": {
+						"label": "Masa șasiului în kg",
+						"placeholder": "Introduceți masa șasiului în kg"
+					},
+					"title": "Schimbați greutatea remorcii"
+				}
+			},
+			"repair_all_trailer": {
+				"description_card": "Reparați toate remorcile pe care le aveți",
+				"label_card": "Reparați toate remorcile",
+				"modal": {
+					"btn_apply": "Reparație",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"description": "Repara toate remorcile pe care le dețineți",
+					"title": "Reparați toate remorcile"
+				}
+			},
+			"repair_trailer": {
+				"description_card": "Reparați remorca actuală",
+				"label_card": "Repara Remorcă",
+				"modal": {
+					"btn_apply": "Reparație",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"description": "Repară remorca care este atașată în prezent la camion",
+					"title": "Reparați remorci"
+				}
+			},
+			"tab_title": "Remorcă",
+			"unlock_trailer_country": {
+				"description_card": "Deblocați blocarea regională a remorcilor",
+				"label_card": "Deblocare remorcă în funcție de țară",
+				"modal": {
+					"btn_apply": "Deblocati",
+					"btn_close": "închide",
+					"btn_how_to_use": "Cum se utilizează",
+					"btn_open": "Deschide",
+					"description": "Deblocați-vă trailerul în toate țările dacă este blocat de joc",
+					"title": "Deblocați trailerul actual",
+					"warning_message": {
+						"message": "Trebuie să aveți remorca atașată la camion pentru ca modificările să intre în vigoare.",
+						"title": "Ține minte"
+					}
+				}
+			}
+		},
+		"trucks": {
+			"change_truck_engine": {
+				"description_card": "Schimbați motorul camionului",
+				"label_card": "Schimbați motorul camionului",
+				"modal": {
+					"btn_apply": "Schimbă",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"btn_remove_badge": "Scoateți insigna",
+					"description": "Schimbați motorul camionului dvs. cu cel ales",
+					"input_brands": {
+						"label": "Mărci",
+						"placeholder": "Selectați marca de camion"
+					},
+					"input_engines": {
+						"label": "Motoare",
+						"placeholder": "Selectați motorul camionului"
+					},
+					"input_models": {
+						"label": "Modele",
+						"placeholder": "Selectați modelul de camion"
+					},
+					"title": "Schimbați motorul camionului",
+					"warning_message": {
+						"message": "Dacă vedeți orice <b>logo plutind sau poziționat</b> prost pe camion, îl puteți elimina cu butonul de mai jos.",
+						"title": "Ține minte"
+					}
+				}
+			},
+			"change_truck_transmission": {
+				"description_card": "Schimbați transmisia camionului",
+				"label_card": "Schimbați transmisia camionului",
+				"modal": {
+					"btn_apply": "Schimba",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"btn_remove_badge": "Scoateți insigna",
+					"description": "Schimbați transmisia camionului dvs. cu cea la alegere",
+					"input_brands": {
+						"label": "Mărci",
+						"placeholder": "Selectați marca de camion"
+					},
+					"input_models": {
+						"label": "Modele",
+						"placeholder": "Selectați modelul de camion"
+					},
+					"input_transmissions": {
+						"label": "Transmisii",
+						"placeholder": "Selectați transmisia camionului"
+					},
+					"title": "Schimbați transmisia camionului",
+					"warning_message": {
+						"message": "Dacă vedeți orice <b>logo plutind sau poziționat prost</b> pe camion, îl puteți elimina cu butonul de mai jos.",
+						"title": "Ține minte"
+					}
+				}
+			},
+			"fill_all_trucks_fuel": {
+				"description_card": "Alimentarea cu combustibil a tuturor autocamioanelor",
+				"label_card": "Umpleți toate camioanele cu combustibil",
+				"modal": {
+					"btn_apply": "Alimentați cu combustibil",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"description": "Această opțiune vă va permite să alimentați toate camioanele achiziționate",
+					"title": "Umpleți toate camioanele cu combustibil"
+				}
+			},
+			"fill_fuel": {
+				"description_card": "Umpleți combustibil în camionul actual",
+				"label_card": "Umpleți combustibil",
+				"modal": {
+					"btn_apply": "Realimentare",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"description": "Îți alimentează complet camionul",
+					"title": "Umpleți combustibil"
+				}
+			},
+			"infinite_fuel": {
+				"description_card": "Combustibil infinit pe camionul actual",
+				"label_card": "Combustibil infinit pe camionul actual",
+				"modal": {
+					"btn_apply": "Realimentare",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"btn_restore_fuel": "Restaurați combustibilul",
+					"description": "Exact combustibilul nu este infinit, dar este pentru aproximativ 5.000.000 KM (în funcție de camion)",
+					"title": "Combustibil infinit pe camionul actual",
+					"warning_message": {
+						"message": "<b>Dezactivați „Consum realist de combustibil”</b> în secțiunea „Joc” pentru ca această funcție să intre în vigoare.",
+						"title": "Ține minte"
+					}
+				}
+			},
+			"license_plate": {
+				"description_card": "Schimbați plăcuța de înmatriculare a camionului",
+				"label_card": "Schimbați plăcuța de înmatriculare a camionului",
+				"modal": {
+					"btn_apply": "Aplicați",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"description": "Introduceți noua plăcuță de înmatriculare a camionului. Nu uitați să vă eliminați plăcuța de înmatriculare din Word of Trucks",
+					"title": "Schimbați plăcuța de înmatriculare a camionului"
+				}
+			},
+			"repair_all_trucks": {
+				"description_card": "Repara toate autocamioanele",
+				"label_card": "Repara toate camioanele,
+				"modal": {
+					"btn_apply": "Reparare",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"description": "Repara toate camioanele",
+					"title": "Reparați toate camioanele"
+				}
+			},
+			"repair_truck": {
+				"description_card": "Reparați-vă camionul actual",
+				"label_card": "Reparatie camion",
+				"modal": {
+					"btn_apply": "Reparare",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"description": "Reparați daunele aduse camionului dvs",
+					"title": "Reparatie camion"
+				}
+			},
+			"change_km": {
+				"description_card": "Schimbați kilometrajul camionului dvs",
+				"label_card": "Schimbați kilometrajul camionului",
+				"modal": {
+					"btn_apply": "Aplicați",
+					"btn_close": "închide",
+					"btn_open": "Deschide",
+					"description": "Schimbați kilometrajul camionului dvs",
+					"title": "Schimbați kilometrajul camionului",
+					"input_km": {
+						"label": "Distanta in Km",
+						"placeholder": "Distanta in Km"
+					}
+				}
+			},
+			"tab_title": "Camion"
+		}
+	}
+}
