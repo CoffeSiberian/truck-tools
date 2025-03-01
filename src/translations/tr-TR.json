@@ -1,36 +1,36 @@
 {
     "components": {
         "alert_on_save_default": {
-            "error": "",
-            "succes": ""
+            "error": "İşlem sırasında bir hata meydana geldi",
+            "succes": "Başarıyla kaydedildi"
         },
         "license_plate": {
-            "btn_delete": "",
-            "btn_load": "",
+            "btn_delete": "Sil",
+            "btn_load": "Yükle",
             "btn_store": "",
             "input_colored_margin": "",
             "input_license_plate": {
                 "label": "",
-                "placeholder": ""
+                "placeholder": "Bir metin girin"
             },
             "input_license_plate_list_store": {
                 "label": "",
-                "placeholder": ""
+                "placeholder": "Plaka seç"
             },
             "title_select_bg_color": "",
-            "title_select_text_color": ""
+            "title_select_text_color": "Yazı rengi"
         },
         "player_profile": {
             "btn_profile": "",
             "dropdown": {
                 "profile_options": {
                     "btn_backup_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "Profilin bir yedeğini oluştur",
+                        "label": "Profilin yedeğini al",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "btn_open_folder": "",
+                            "btn_apply": "Yedekle",
+                            "btn_close": "Kapat",
+                            "btn_open_folder": "Klasörde aç",
                             "description": "",
                             "input_backup_destination": {
                                 "label": "",
@@ -38,7 +38,7 @@
                             },
                             "save_folder_dialog": {
                                 "filters_name": {
-                                    "zip": ""
+                                    "zip": "Zip dosyaları"
                                 },
                                 "title": ""
                             },
@@ -53,10 +53,10 @@
                             "btn_close": "",
                             "description": "",
                             "input_new_name": {
-                                "label": "",
+                                "label": "Yeni Profil Adı",
                                 "placeholder": ""
                             },
-                            "title": ""
+                            "title": "Profili Klonla"
                         }
                     },
                     "btn_copy_config": {
@@ -75,14 +75,14 @@
                     },
                     "btn_rename_profile": {
                         "description": "",
-                        "label": "",
+                        "label": "Profili yeniden adlandır",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "Yeniden adlandır",
+                            "btn_close": "Kapat",
+                            "description": "Profil adını değiştirebilirsin, ama 20 karakterden kısa olmalı.",
                             "input_new_name": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Profil adı",
+                                "placeholder": "Profilinin ismini gir"
                             },
                             "title": ""
                         }
