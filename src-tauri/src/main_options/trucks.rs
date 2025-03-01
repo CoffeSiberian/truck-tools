@@ -402,6 +402,23 @@ pub fn get_truck_profit_log_id(
     return None;
 }
 
+pub fn get_model_name_data_path(data_path: String) -> Option<String> {
+    let value_split: Vec<&str> = data_path.split('/').collect();
+
+    if value_split.len() >= 4 {
+        let value = value_split[4].to_string();
+        let value_name: Vec<&str> = value.split('.').collect();
+
+        return Some(format!(
+            "{} {}",
+            value_name[0].to_uppercase().replace("_", " "),
+            value_name[1].to_uppercase().replace("_", " ")
+        ));
+    }
+
+    return None;
+}
+
 pub fn get_truck_model_name(arr_val: &Vec<String>, index: usize) -> Option<String> {
     let accessories = match get_list_trucks_accessories_id(&arr_val, index) {
         Some(accessories) => accessories,
@@ -417,11 +434,10 @@ pub fn get_truck_model_name(arr_val: &Vec<String>, index: usize) -> Option<Strin
         let value_filter = data_path.value.replace('"', "");
 
         if value_filter.contains("data.sii") {
-            let value_split: Vec<&str> = value_filter.split('/').collect();
-
-            if value_split.len() >= 4 {
-                return Some(value_split[4].to_string());
-            }
+            match get_model_name_data_path(value_filter) {
+                Some(model_name) => return Some(model_name),
+                None => continue,
+            };
         }
     }
 
@@ -444,7 +460,7 @@ pub fn get_truck_to_list_info(
     };
 
     return Some(VecSaveTrucks {
-        truck_id: truck_info.id.to_string(),
+        truck_id: truck_info.id.to_string().replace(" ", ""),
         truck_number: truck_info.truck_number,
         brand_name: model_name,
     });
