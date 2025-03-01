@@ -17,18 +17,19 @@ use main_options::trailers::{
     set_remove_trailer_restricted_areas, set_trailer_license_plate, set_trailer_wear,
 };
 use main_options::trucks::{
-    get_truck_brand_models_ets2, get_truck_brands_models_ats, get_truck_id, get_truck_number,
-    get_truck_profit_log_id, get_truck_vehicle_index, remove_truck_badge, set_any_trucks_fuel,
-    set_any_trucks_wear, set_infinite_fuel_truck, set_truck_engine, set_truck_fuel,
-    set_truck_km_edit, set_truck_license_plate, set_truck_transmissions, set_truck_wear,
+    get_list_trucks_info, get_truck_brand_models_ets2, get_truck_brands_models_ats, get_truck_id,
+    get_truck_number, get_truck_profit_log_id, get_truck_vehicle_index, remove_truck_badge,
+    set_any_trucks_fuel, set_any_trucks_wear, set_infinite_fuel_truck, set_truck_engine,
+    set_truck_fuel, set_truck_km_edit, set_truck_license_plate, set_truck_transmissions,
+    set_truck_wear,
 };
 
 use std::path::Path;
 
 use structs::experience_skills::ExperienceSkills;
 use structs::responses::{
-    DefaultResponse, DeveloperValues, ListProfilesResponse, SaveGameCountResponse,
-    SaveGameResponse, SystemThemeResponse, TruckBrandModelsResponse,
+    DefaultResponse, DeveloperValues, ListProfilesResponse, ListTrucksResponse,
+    SaveGameCountResponse, SaveGameResponse, SystemThemeResponse, TruckBrandModelsResponse,
 };
 use structs::vec_save_games::VecSaveGames;
 
@@ -896,6 +897,34 @@ async fn set_truck_km(dir_save: &str, km: &str) -> Result<DefaultResponse, ()> {
     return Ok(DefaultResponse { res: true });
 }
 
+#[tauri::command]
+async fn get_save_list_trucks(dir_save: &str) -> Result<ListTrucksResponse, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => {
+            return Ok(ListTrucksResponse {
+                res: false,
+                trucks: Vec::new(),
+            });
+        }
+    };
+
+    let truck_list = match get_list_trucks_info(&file) {
+        Some(truck_list) => truck_list,
+        None => {
+            return Ok(ListTrucksResponse {
+                res: false,
+                trucks: Vec::new(),
+            });
+        }
+    };
+
+    return Ok(ListTrucksResponse {
+        res: true,
+        trucks: truck_list,
+    });
+}
+
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_os::init())
@@ -943,6 +972,7 @@ fn main() {
             repair_all_trailers,
             set_remove_truck_badge,
             set_truck_km,
+            get_save_list_trucks,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

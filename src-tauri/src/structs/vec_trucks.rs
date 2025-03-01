@@ -11,6 +11,13 @@ pub struct VecTrucksListId {
     pub id: String,
 }
 
+#[derive(Serialize)]
+pub struct VecSaveTrucks {
+    pub truck_id: String,
+    pub truck_number: u16,
+    pub brand_name: String,
+}
+
 #[allow(dead_code)]
 pub struct VecTruckProfitLog {
     pub index: usize,

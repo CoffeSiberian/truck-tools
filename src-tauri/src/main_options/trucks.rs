@@ -5,7 +5,8 @@ use super::license_plate::get_license_plate_formated;
 
 use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_trucks::{
-    Models, TruckBrandsATS, TruckBrandsETS2, VecTruckProfitLog, VecTrucksId, VecTrucksListId,
+    Models, TruckBrandsATS, TruckBrandsETS2, VecSaveTrucks, VecTruckProfitLog, VecTrucksId,
+    VecTrucksListId,
 };
 use cached::proc_macro::cached;
 use serde_json::from_str;
@@ -399,6 +400,72 @@ pub fn get_truck_profit_log_id(
     }
 
     return None;
+}
+
+pub fn get_truck_model_name(arr_val: &Vec<String>, index: usize) -> Option<String> {
+    let accessories = match get_list_trucks_accessories_id(&arr_val, index) {
+        Some(accessories) => accessories,
+        None => return None,
+    };
+
+    for item in accessories.iter() {
+        let data_path: VecItemsFind = match get_accessories_data_path(&arr_val, item.index) {
+            Some(data_path) => data_path,
+            None => continue,
+        };
+
+        let value_filter = data_path.value.replace('"', "");
+
+        if value_filter.contains("data.sii") {
+            let value_split: Vec<&str> = value_filter.split('/').collect();
+
+            if value_split.len() >= 4 {
+                return Some(value_split[4].to_string());
+            }
+        }
+    }
+
+    return None;
+}
+
+pub fn get_truck_to_list_info(
+    arr_varl: &Vec<String>,
+    truck_info: &VecTrucksListId,
+    index: usize,
+) -> Option<VecSaveTrucks> {
+    let truck_index = match get_truck_vehicle_index(&arr_varl, &truck_info.id, index) {
+        Some(truck_id) => truck_id,
+        None => return None,
+    };
+
+    let model_name = match get_truck_model_name(&arr_varl, truck_index) {
+        Some(model_name) => model_name,
+        None => return None,
+    };
+
+    return Some(VecSaveTrucks {
+        truck_id: truck_info.id.to_string(),
+        truck_number: truck_info.truck_number,
+        brand_name: model_name,
+    });
+}
+
+pub fn get_list_trucks_info(arr_val: &Vec<String>) -> Option<Vec<VecSaveTrucks>> {
+    let mut result: Vec<VecSaveTrucks> = Vec::new();
+
+    let trucks_list: Vec<VecTrucksListId> = match get_list_trucks_id(&arr_val, false) {
+        Some(trucks_list) => trucks_list,
+        None => return None,
+    };
+
+    for item in trucks_list.iter() {
+        match get_truck_to_list_info(&arr_val, &item, item.index) {
+            Some(truck_info) => result.push(truck_info),
+            None => continue,
+        };
+    }
+
+    Some(result)
 }
 
 pub fn set_truck_wear(arr_val: &Vec<String>, wear: &str, index: usize) -> Option<Vec<String>> {

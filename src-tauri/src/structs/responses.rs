@@ -1,6 +1,6 @@
 use super::vec_save_games::VecProfileDir;
 use super::vec_save_games::VecSaveGames;
-use super::vec_trucks::Models;
+use super::vec_trucks::{Models, VecSaveTrucks};
 use serde::Serialize;
 
 #[derive(Serialize)]
@@ -44,4 +44,10 @@ pub struct DeveloperValues {
     pub developer: bool,
     pub console: bool,
     pub active_max_convoy_mode: bool,
+}
+
+#[derive(Serialize)]
+pub struct ListTrucksResponse {
+    pub res: bool,
+    pub trucks: Vec<VecSaveTrucks>,
 }
