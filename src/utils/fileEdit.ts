@@ -27,6 +27,7 @@ import {
 	responseGetDeveloperValues,
 	licensePlateSaved,
 	listLicensePlateSaved,
+	ResponseSaveGameTrucks,
 } from "@/types/fileEditTypes";
 import {
 	IColorRgbToValidate,
@@ -685,6 +686,40 @@ export const setTruckKm = async (
 
 	const invoceRes = (await invoke(
 		"set_truck_km",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
+};
+
+export const getSaveGameTrucks = async (
+	dirSave: string
+): Promise<ResponseSaveGameTrucks> => {
+	const rustParams = {
+		dirSave: dirSave + "/game.sii",
+	};
+
+	const invoceRes = (await invoke(
+		"get_save_list_trucks",
+		rustParams
+	)) as ResponseSaveGameTrucks;
+
+	return invoceRes;
+};
+
+export const setPlayerTruck = async (
+	dirSave: string,
+	currentTruckId: string,
+	replaceTruckId: string
+): Promise<boolean> => {
+	const rustParams = {
+		dirSave: dirSave + "/game.sii",
+		currentTruckId,
+		replaceTruckId,
+	};
+
+	const invoceRes = (await invoke(
+		"set_player_truck",
 		rustParams
 	)) as responseRustTypes;
 
