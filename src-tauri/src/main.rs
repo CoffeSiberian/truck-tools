@@ -931,6 +931,10 @@ async fn set_player_truck(
     current_truck_id: &str,
     replace_truck_id: &str,
 ) -> Result<DefaultResponse, ()> {
+    if current_truck_id == replace_truck_id {
+        return Ok(DefaultResponse { res: false });
+    }
+
     let file: Vec<String> = match read_file_text(dir_save).await {
         Some(file) => file,
         None => return Ok(DefaultResponse { res: false }),
