@@ -49,5 +49,6 @@ pub struct DeveloperValues {
 #[derive(Serialize)]
 pub struct ListTrucksResponse {
     pub res: bool,
+    pub current_truck_id: Option<String>,
     pub trucks: Vec<VecSaveTrucks>,
 }

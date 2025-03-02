@@ -904,6 +904,7 @@ async fn get_save_list_trucks(dir_save: &str) -> Result<ListTrucksResponse, ()> 
         None => {
             return Ok(ListTrucksResponse {
                 res: false,
+                current_truck_id: None,
                 trucks: Vec::new(),
             });
         }
@@ -914,13 +915,20 @@ async fn get_save_list_trucks(dir_save: &str) -> Result<ListTrucksResponse, ()> 
         None => {
             return Ok(ListTrucksResponse {
                 res: false,
+                current_truck_id: None,
                 trucks: Vec::new(),
             });
         }
     };
 
+    let current_truck_id = match get_truck_id(&file) {
+        Some(truck_find) => Some(truck_find.id),
+        None => None,
+    };
+
     return Ok(ListTrucksResponse {
         res: true,
+        current_truck_id,
         trucks: truck_list,
     });
 }
