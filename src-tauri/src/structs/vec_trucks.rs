@@ -11,6 +11,23 @@ pub struct VecTrucksListId {
     pub id: String,
 }
 
+#[allow(dead_code)]
+#[derive(Clone)]
+pub struct GarageInfo {
+    pub name: String,
+    pub index: usize,
+    pub total_vehicle: u8,
+    pub list_trucks: Vec<ValueGarage>,
+    pub list_drivers: Vec<ValueGarage>,
+}
+
+#[derive(Clone)]
+pub struct ValueGarage {
+    pub index: usize,
+    pub number: u8,
+    pub value: String,
+}
+
 #[derive(Serialize)]
 pub struct VecSaveTrucks {
     pub truck_id: String,

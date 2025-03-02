@@ -5,8 +5,8 @@ use super::license_plate::get_license_plate_formated;
 
 use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_trucks::{
-    Models, TruckBrandsATS, TruckBrandsETS2, VecSaveTrucks, VecTruckProfitLog, VecTrucksId,
-    VecTrucksListId,
+    GarageInfo, Models, TruckBrandsATS, TruckBrandsETS2, ValueGarage, VecSaveTrucks,
+    VecTruckProfitLog, VecTrucksId, VecTrucksListId,
 };
 use cached::proc_macro::cached;
 use serde_json::from_str;
@@ -482,6 +482,167 @@ pub fn get_list_trucks_info(arr_val: &Vec<String>) -> Option<Vec<VecSaveTrucks>>
     }
 
     Some(result)
+}
+
+pub fn get_list_garage_trucks_and_trailers(
+    arr_val: &Vec<String>,
+    index: usize,
+) -> Option<(Vec<ValueGarage>, Vec<ValueGarage>)> {
+    let mut trucks_list: Vec<ValueGarage> = Vec::new();
+    let mut drivers_list: Vec<ValueGarage> = Vec::new();
+
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
+        if item.contains(" vehicles[") {
+            let vehicles_id = item.split(':').collect::<Vec<&str>>()[1];
+
+            trucks_list.push(ValueGarage {
+                index: i,
+                number: trucks_list.len() as u8,
+                value: vehicles_id.to_string().replace(" ", ""),
+            });
+
+            continue;
+        } else if item.contains(" drivers[") {
+            let drivers_id = item.split(':').collect::<Vec<&str>>()[1];
+
+            drivers_list.push(ValueGarage {
+                index: i,
+                number: drivers_list.len() as u8,
+                value: drivers_id.to_string().replace(" ", ""),
+            });
+
+            continue;
+        }
+
+        if item == "}" {
+            break;
+        }
+    }
+
+    if trucks_list.is_empty() && drivers_list.is_empty() {
+        return None;
+    }
+
+    Some((trucks_list, drivers_list))
+}
+
+pub fn get_truck_garage(arr_val: &Vec<String>, truck_id: &str, index: usize) -> Option<GarageInfo> {
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
+        if item.contains("garage :") {
+            let (trucks, drivers) = match get_list_garage_trucks_and_trailers(&arr_val, i) {
+                Some(data) => data,
+                None => continue,
+            };
+
+            for r in trucks.iter() {
+                if r.value.contains(truck_id) {
+                    return Some(GarageInfo {
+                        name: item.to_string(),
+                        index: i,
+                        total_vehicle: trucks.len() as u8,
+                        list_trucks: trucks.clone(),
+                        list_drivers: drivers.clone(),
+                    });
+                }
+            }
+        }
+    }
+
+    return None;
+}
+
+pub fn set_player_truck_file(
+    arr_val: &Vec<String>,
+    truck_id: &str,
+) -> Option<(Vec<VecItemsFind>, usize)> {
+    let mut vec_items_replace: Vec<VecItemsFind> = Vec::new();
+
+    let mut found_truck: bool = false;
+    let mut truck_index: usize = 0;
+    for (i, item) in arr_val.iter().enumerate() {
+        if item.contains("assigned_truck") {
+            vec_items_replace.push(VecItemsFind {
+                index: i,
+                value: format!(" assigned_truck: {}", truck_id),
+            });
+            vec_items_replace.push(VecItemsFind {
+                index: i + 1,
+                value: format!(" my_truck: {}", truck_id),
+            });
+            found_truck = true;
+            truck_index = i;
+            break;
+        }
+    }
+
+    if found_truck {
+        return Some((vec_items_replace, truck_index));
+    }
+
+    return None;
+}
+
+pub fn set_player_driver_truck(
+    arr_val: &Vec<String>,
+    my_truck_index: usize,
+    current_truck_id: &str,
+    replace_truck_id: &str,
+) -> Option<Vec<VecItemsFind>> {
+    let current_truck_garage = match get_truck_garage(&arr_val, current_truck_id, my_truck_index) {
+        Some(truck_garage) => truck_garage,
+        None => return None,
+    };
+    let replace_truck_garage = match get_truck_garage(&arr_val, replace_truck_id, my_truck_index) {
+        Some(truck_garage) => truck_garage,
+        None => return None,
+    };
+
+    let mut current_truck_driver_replace: Option<ValueGarage> = None;
+    for (index, item) in current_truck_garage.list_trucks.iter().enumerate() {
+        if item.value.contains(current_truck_id) {
+            let driver = current_truck_garage.list_drivers[index].clone();
+
+            current_truck_driver_replace = Some(driver);
+            break;
+        }
+    }
+
+    let mut replace_truck_driver: Option<ValueGarage> = None;
+    for (index, item) in replace_truck_garage.list_trucks.iter().enumerate() {
+        if item.value.contains(replace_truck_id) {
+            let driver = replace_truck_garage.list_drivers[index].clone();
+
+            replace_truck_driver = Some(driver);
+            break;
+        }
+    }
+
+    let current_truck_driver_replace = match current_truck_driver_replace {
+        Some(current_truck_driver) => current_truck_driver,
+        None => return None,
+    };
+    let replace_truck_driver = match replace_truck_driver {
+        Some(replace_truck_driver) => replace_truck_driver,
+        None => return None,
+    };
+
+    let mut vec_items_replace: Vec<VecItemsFind> = Vec::new();
+    vec_items_replace.push(VecItemsFind {
+        index: current_truck_driver_replace.index,
+        value: format!(
+            " drivers[{}]: {}",
+            current_truck_driver_replace.number, replace_truck_driver.value
+        ),
+    });
+    vec_items_replace.push(VecItemsFind {
+        index: replace_truck_driver.index,
+        value: format!(
+            " drivers[{}]: {}",
+            replace_truck_driver.number, current_truck_driver_replace.value
+        ),
+    });
+
+    return Some(vec_items_replace);
 }
 
 pub fn set_truck_wear(arr_val: &Vec<String>, wear: &str, index: usize) -> Option<Vec<String>> {
