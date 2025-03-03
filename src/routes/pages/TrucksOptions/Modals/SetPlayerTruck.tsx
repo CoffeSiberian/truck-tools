@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from "react";
+import { open } from "@tauri-apps/plugin-shell";
 import { Select, SelectItem } from "@heroui/react";
 import { ProfileContex } from "@/hooks/useProfileContex";
 import { LocaleContext } from "@/hooks/useLocaleContext";
@@ -17,9 +18,15 @@ import {
 	setPlayerTruck as setPlayerTruckSave,
 } from "@/utils/fileEdit";
 import AlertSave from "@/components/AlertSave";
+import Warning from "@/components/Warning";
 
 // icons
-import { IconPencil, IconReplace, IconReload } from "@tabler/icons-react";
+import {
+	IconPencil,
+	IconReplace,
+	IconReload,
+	IconBrandYoutube,
+} from "@tabler/icons-react";
 
 // types
 import { SaveTrucks } from "@/types/fileEditTypes";
@@ -152,6 +159,7 @@ const SetPlayerTruck = () => {
 										isLoading={listTrucks.trucks.length === 0}
 										isDisabled={listTrucks.trucks.length === 0}
 										placeholder="Select truck"
+										size="md"
 									>
 										{listTrucks.trucks.map((item) => (
 											<SelectItem
@@ -163,7 +171,7 @@ const SetPlayerTruck = () => {
 														<span className="text-small">
 															<b>{item.truck_number + 1}</b> - {item.brand_name}
 														</span>
-														<span className="text-tiny text-default-400">
+														<span className="text-tiny text-default-500">
 															{item.truck_id}
 														</span>
 													</div>
@@ -187,10 +195,30 @@ const SetPlayerTruck = () => {
 										setCompleted({ error: completed.error, completed: false })
 									}
 								/>
+								<Warning
+									text={
+										<div className="flex flex-col gap-2">
+											<b>Warning</b>
+											<p>
+												If you created a new save, remember to update the list
+												of trucks so you don't get an error when changing
+												trucks.
+											</p>
+										</div>
+									}
+								/>
 							</ModalBody>
 							<ModalFooter>
 								<Button variant="light" onPress={onClose} color="danger">
 									Close
+								</Button>
+								<Button
+									endContent={<IconBrandYoutube />}
+									color="warning"
+									variant="flat"
+									onPress={() => open("https://youtu.be/drwZSHw8hw8")}
+								>
+									How to use
 								</Button>
 								<Button
 									endContent={<IconReplace />}

@@ -12,6 +12,7 @@ import img8 from "@/static/img/ets2/OptionsImages/8.webp";
 import img9 from "@/static/img/ets2/OptionsImages/9.webp";
 import img10 from "@/static/img/ets2/OptionsImages/10.webp";
 import img18 from "@/static/img/ets2/OptionsImages/18.webp";
+import img19 from "@/static/img/ets2/OptionsImages/19.webp";
 
 // ats
 import img6_ats from "@/static/img/ats/OptionsImages/6.webp";
@@ -20,6 +21,7 @@ import img8_ats from "@/static/img/ats/OptionsImages/8.webp";
 import img9_ats from "@/static/img/ats/OptionsImages/9.webp";
 import img10_ats from "@/static/img/ats/OptionsImages/10.webp";
 import img18_ats from "@/static/img/ats/OptionsImages/18.webp";
+import img19_ats from "@/static/img/ats/OptionsImages/19.webp";
 
 // modals
 import RepairTruck from "@/routes/pages/TrucksOptions/Modals/RepairTruck";
@@ -59,7 +61,7 @@ const TrucksOptions = () => {
 			id: "3",
 			title: "Change Truck in road",
 			description: "Change your truck without going to the garage",
-			image: game === "ets2" ? img7 : img7_ats,
+			image: game === "ets2" ? img19 : img19_ats,
 			modal: <SetPlayerTruck />,
 			disable: false,
 		},
