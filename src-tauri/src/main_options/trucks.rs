@@ -235,8 +235,13 @@ fn get_list_trucks_id(
     let mut result: Vec<VecTrucksListId> = Vec::new();
     let mut truck_enum: u16 = 0;
     let mut truck_string_find: String = format!(" trucks[{}]", truck_enum);
+    let mut player_found: bool = false;
 
     for (i, item) in arr_val.iter().enumerate() {
+        if !player_found && item.contains("player :") {
+            player_found = true;
+        }
+
         if item.contains(&truck_string_find) {
             let option_values: Vec<&str> = item.split(':').collect();
             let id = option_values[1].to_string();
@@ -262,7 +267,7 @@ fn get_list_trucks_id(
             truck_string_find = format!(" trucks[{}]", truck_enum);
         }
 
-        if truck_enum > 0 && item == "}" {
+        if player_found && item == "}" {
             break;
         }
     }

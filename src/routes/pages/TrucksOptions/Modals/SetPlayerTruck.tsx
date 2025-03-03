@@ -38,6 +38,7 @@ interface completedProps {
 
 interface ListTrucksState {
 	trucks: SaveTrucks[];
+	trucks_found: boolean;
 	current_truck_id: string;
 }
 
@@ -47,8 +48,10 @@ const SetPlayerTruck = () => {
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
+	const [loadingListTrucks, setLoadingListTrucks] = useState<boolean>(false);
 	const [listTrucks, setListTrucks] = useState<ListTrucksState>({
 		trucks: [],
+		trucks_found: true,
 		current_truck_id: "",
 	});
 	const [selectedTruck, setSelectedTruck] = useState<string[]>([]);
@@ -84,30 +87,46 @@ const SetPlayerTruck = () => {
 		setSelectedTruck([]);
 		setListTrucks({
 			trucks: [],
+			trucks_found: true,
 			current_truck_id: "",
 		});
+
+		setLoadingListTrucks(true);
 		const res = await getSaveGameTrucks(selectedSave.dir);
-		if (res) {
+		if (res.res) {
 			setListTrucks({
 				trucks: res.trucks,
+				trucks_found: true,
 				current_truck_id: res.current_truck_id,
 			});
 		} else {
-			setCompleted({ error: true, completed: true });
+			setListTrucks({
+				trucks: [],
+				trucks_found: false,
+				current_truck_id: "",
+			});
 		}
+		setLoadingListTrucks(false);
 	};
 
 	useEffect(() => {
 		if (isOpen && selectedSave) {
+			setLoadingListTrucks(true);
 			getSaveGameTrucks(selectedSave.dir).then((res) => {
-				if (res) {
+				if (res.res) {
 					setListTrucks({
 						trucks: res.trucks,
+						trucks_found: true,
 						current_truck_id: res.current_truck_id,
 					});
 				} else {
-					setCompleted({ error: true, completed: true });
+					setListTrucks({
+						trucks: [],
+						trucks_found: false,
+						current_truck_id: "",
+					});
 				}
+				setLoadingListTrucks(false);
 			});
 
 			return;
@@ -117,6 +136,7 @@ const SetPlayerTruck = () => {
 			setSelectedTruck([]);
 			setListTrucks({
 				trucks: [],
+				trucks_found: true,
 				current_truck_id: "",
 			});
 		}
@@ -156,8 +176,10 @@ const SetPlayerTruck = () => {
 										label="Select truck"
 										selectedKeys={selectedTruck}
 										onChange={(e) => setSelectedTruck([e.target.value])}
-										isLoading={listTrucks.trucks.length === 0}
+										isLoading={loadingListTrucks}
 										isDisabled={listTrucks.trucks.length === 0}
+										isInvalid={!listTrucks.trucks_found}
+										errorMessage="Trucks not found"
 										placeholder="Select truck"
 										size="md"
 									>
