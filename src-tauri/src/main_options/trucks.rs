@@ -489,7 +489,7 @@ pub fn get_list_trucks_info(arr_val: &Vec<String>) -> Option<Vec<VecSaveTrucks>>
     Some(result)
 }
 
-pub fn get_list_garage_trucks_and_trailers(
+pub fn get_list_garage_trucks_and_drivers(
     arr_val: &Vec<String>,
     index: usize,
 ) -> Option<(Vec<ValueGarage>, Vec<ValueGarage>)> {
@@ -534,7 +534,7 @@ pub fn get_list_garage_trucks_and_trailers(
 pub fn get_truck_garage(arr_val: &Vec<String>, truck_id: &str, index: usize) -> Option<GarageInfo> {
     for (i, item) in arr_val.iter().enumerate().skip(index) {
         if item.contains("garage :") {
-            let (trucks, drivers) = match get_list_garage_trucks_and_trailers(&arr_val, i) {
+            let (trucks, drivers) = match get_list_garage_trucks_and_drivers(&arr_val, i) {
                 Some(data) => data,
                 None => continue,
             };
