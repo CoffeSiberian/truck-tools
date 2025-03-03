@@ -19,7 +19,7 @@ import {
 import AlertSave from "@/components/AlertSave";
 
 // icons
-import { IconPencil, IconReplace } from "@tabler/icons-react";
+import { IconPencil, IconReplace, IconReload } from "@tabler/icons-react";
 
 // types
 import { SaveTrucks } from "@/types/fileEditTypes";
@@ -69,6 +69,25 @@ const SetPlayerTruck = () => {
 		}
 
 		setIsLoading(false);
+	};
+
+	const reloadListTrucks = async () => {
+		if (!selectedSave) return;
+
+		setSelectedTruck([]);
+		setListTrucks({
+			trucks: [],
+			current_truck_id: "",
+		});
+		const res = await getSaveGameTrucks(selectedSave.dir);
+		if (res) {
+			setListTrucks({
+				trucks: res.trucks,
+				current_truck_id: res.current_truck_id,
+			});
+		} else {
+			setCompleted({ error: true, completed: true });
+		}
 	};
 
 	useEffect(() => {
@@ -124,33 +143,38 @@ const SetPlayerTruck = () => {
 							<Divider />
 							<ModalBody className="py-1">
 								<p>Change your truck without going to the garage</p>
-								<Select
-									className="w-full"
-									label="Select truck"
-									selectedKeys={selectedTruck}
-									onChange={(e) => setSelectedTruck([e.target.value])}
-									isLoading={listTrucks.trucks.length === 0}
-									isDisabled={listTrucks.trucks.length === 0}
-									placeholder="Select truck"
-								>
-									{listTrucks.trucks.map((item) => (
-										<SelectItem
-											key={item.truck_id}
-											textValue={`${item.truck_number + 1} - ${item.brand_name}`}
-										>
-											<div className="flex items-center gap-2">
-												<div className="flex flex-col">
-													<span className="text-small">
-														<b>{item.truck_number + 1}</b> - {item.brand_name}
-													</span>
-													<span className="text-tiny text-default-400">
-														{item.truck_id}
-													</span>
+								<div className="flex items-center gap-1">
+									<Select
+										className="w-full"
+										label="Select truck"
+										selectedKeys={selectedTruck}
+										onChange={(e) => setSelectedTruck([e.target.value])}
+										isLoading={listTrucks.trucks.length === 0}
+										isDisabled={listTrucks.trucks.length === 0}
+										placeholder="Select truck"
+									>
+										{listTrucks.trucks.map((item) => (
+											<SelectItem
+												key={item.truck_id}
+												textValue={`${item.truck_number + 1} - ${item.brand_name}`}
+											>
+												<div className="flex items-center gap-2">
+													<div className="flex flex-col">
+														<span className="text-small">
+															<b>{item.truck_number + 1}</b> - {item.brand_name}
+														</span>
+														<span className="text-tiny text-default-400">
+															{item.truck_id}
+														</span>
+													</div>
 												</div>
-											</div>
-										</SelectItem>
-									))}
-								</Select>
+											</SelectItem>
+										))}
+									</Select>
+									<Button isIconOnly color="primary" onPress={reloadListTrucks}>
+										<IconReload />
+									</Button>
+								</div>
 								<AlertSave
 									message={
 										completed.error
