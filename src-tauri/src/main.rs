@@ -922,7 +922,7 @@ async fn get_save_list_trucks(dir_save: &str) -> Result<ListTrucksResponse, ()> 
     };
 
     let current_truck_id = match get_truck_id(&file) {
-        Some(truck_find) => Some(truck_find.id),
+        Some(truck_find) => Some(truck_find.id.replace(" ", "")),
         None => None,
     };
 

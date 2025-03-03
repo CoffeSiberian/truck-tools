@@ -61,9 +61,9 @@ export interface IColorHsvToValidate {
 }
 
 export interface SaveTrucks {
+	brand_name: string;
 	truck_id: string;
 	truck_number: number;
-	truck_name: string;
 }
 
 export interface ResponseSaveGameTrucks extends responseRustTypes {

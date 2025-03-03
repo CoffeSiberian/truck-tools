@@ -31,6 +31,7 @@ import EditLicensePlate from "@/routes/pages/TrucksOptions/Modals/EditLicensePla
 import SetTruckEngine from "@/routes/pages/TrucksOptions/Modals/SetTruckEngine";
 import ModifyKm from "@/routes/pages/TrucksOptions/Modals/ModifyKm";
 import SetTruckTransmission from "@/routes/pages/TrucksOptions/Modals/SetTruckTransmission";
+import SetPlayerTruck from "@/routes/pages/TrucksOptions/Modals/SetPlayerTruck";
 
 const TrucksOptions = () => {
 	const { game } = useContext(ProfileContex);
@@ -56,6 +57,14 @@ const TrucksOptions = () => {
 		},
 		{
 			id: "3",
+			title: "Change Truck in road",
+			description: "Change your truck without going to the garage",
+			image: game === "ets2" ? img7 : img7_ats,
+			modal: <SetPlayerTruck />,
+			disable: false,
+		},
+		{
+			id: "4",
 			title: trucks.license_plate.label_card,
 			description: trucks.license_plate.description_card,
 			image: img1,
@@ -63,7 +72,7 @@ const TrucksOptions = () => {
 			disable: game === "ets2" ? false : true,
 		},
 		{
-			id: "4",
+			id: "5",
 			title: trucks.repair_truck.label_card,
 			description: trucks.repair_truck.description_card,
 			image: game === "ets2" ? img8 : img8_ats,
@@ -71,7 +80,7 @@ const TrucksOptions = () => {
 			disable: false,
 		},
 		{
-			id: "5",
+			id: "6",
 			title: trucks.repair_all_trucks.label_card,
 			description: trucks.repair_all_trucks.description_card,
 			image: game === "ets2" ? img8 : img8_ats,
@@ -79,7 +88,7 @@ const TrucksOptions = () => {
 			disable: false,
 		},
 		{
-			id: "6",
+			id: "7",
 			title: trucks.fill_fuel.label_card,
 			description: trucks.fill_fuel.description_card,
 			image: game === "ets2" ? img9 : img9_ats,
@@ -87,7 +96,7 @@ const TrucksOptions = () => {
 			disable: false,
 		},
 		{
-			id: "7",
+			id: "8",
 			title: trucks.fill_all_trucks_fuel.label_card,
 			description: trucks.fill_all_trucks_fuel.description_card,
 			image: game === "ets2" ? img9 : img9_ats,
@@ -95,7 +104,7 @@ const TrucksOptions = () => {
 			disable: false,
 		},
 		{
-			id: "8",
+			id: "9",
 			title: trucks.change_km.label_card,
 			description: trucks.change_km.description_card,
 			image: game === "ets2" ? img18 : img18_ats,
@@ -103,7 +112,7 @@ const TrucksOptions = () => {
 			disable: false,
 		},
 		{
-			id: "9",
+			id: "10",
 			title: trucks.infinite_fuel.label_card,
 			description: trucks.infinite_fuel.description_card,
 			image: game === "ets2" ? img10 : img10_ats,
