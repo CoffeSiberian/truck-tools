@@ -1,19 +1,19 @@
 import { useContext } from "react";
 import { ProfileContex } from "@/hooks/useProfileContex";
 
-/* 
-import SelectProfileObject from "./SelectProfileObject";
+import ListProfilesDropdown from "@/components/ProfileMenu/Dropdown/ListProfilesDropdown";
 
-It will be temporarily disabled while the bug 
-https://github.com/nextui-org/nextui/issues/3510 is being fixed.
-*/
+/*
+This component will remain for a while until the stability 
+and functionality of the HeroUI dropdown are properly verified.
 
 import ListProfilePrimeRe from "@/components/ProfileMenu/Dropdown/ListProfilePrimeRe";
+*/
 
 const ListProfiles = () => {
 	const Contex = useContext(ProfileContex);
 
-	return <ListProfilePrimeRe {...Contex} />;
+	return <ListProfilesDropdown {...Contex} />;
 };
 
 export default ListProfiles;

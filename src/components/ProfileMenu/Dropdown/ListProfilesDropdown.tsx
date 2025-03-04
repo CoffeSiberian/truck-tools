@@ -10,6 +10,7 @@ import { ProfileWithoutSaves } from "@/types/SaveGameTypes";
 import { ProfileTypesContext } from "@/types/ContexTypes";
 
 const ListProfilesDropdown: FC<ProfileTypesContext> = ({
+	isProfilesLoading,
 	listProfiles,
 	selectedProfile,
 	setProfile,
@@ -33,7 +34,7 @@ const ListProfilesDropdown: FC<ProfileTypesContext> = ({
 			errorMessage={
 				listProfiles.length > 0 ? undefined : player_profile.no_selected_profile
 			}
-			isLoading={listProfiles.length === 0}
+			isLoading={isProfilesLoading}
 			isInvalid={selectedProfile ? false : true}
 			items={listProfiles}
 			selectedKeys={selectedProfile ? [selectedProfile.id] : []}
@@ -52,13 +53,8 @@ const ListProfilesDropdown: FC<ProfileTypesContext> = ({
 								<Image
 									src={profile.avatar}
 									alt="profile avatar select"
-									radius="full"
+									radius="lg"
 									loading="lazy"
-									style={{
-										zoom: 0.31,
-										objectFit: "none",
-										objectPosition: "0% 0%",
-									}}
 								/>
 							) : (
 								<IconUserCircle size={30} />
@@ -66,7 +62,7 @@ const ListProfilesDropdown: FC<ProfileTypesContext> = ({
 						</div>
 						<div className="flex flex-col">
 							<span className="text-small">{profile.name}</span>
-							<span className="text-tiny text-default-400">
+							<span className="text-tiny text-default-500">
 								{profile.savesCount} {player_profile.total_saves}
 							</span>
 						</div>

@@ -11,15 +11,15 @@ edition = "2024"
 tauri-build = { version = "2.0.6", features = [] }
 
 [dependencies]
-tauri = { version = "2.3.0", features = ["protocol-asset"] }
+tauri = { version = "2.3.1", features = ["protocol-asset"] }
 tauri-plugin-store = "2.2.0"
 tauri-plugin-dialog = "2.2.0"
 tauri-plugin-fs = "2.2.0"
 tauri-plugin-shell = "2.2.0"
 tauri-plugin-process = "2.2.0"
 serde = { version = "1.0.218", features = ["derive"] }
-serde_json = "1.0.139"
-cached = "0.54.0"
+serde_json = "1.0.140"
+cached = "0.55.1"
 libloading = "0.8.6"
 hex = "0.4.3"
 uuid = "1.15.1"
