@@ -57,7 +57,7 @@ Remember, contributing translations makes you a collaborator of the project!
 - [x] Repair all trailers
 - [x] Create customized color license plate
 - [x] Save license plate data
-- [ ] Changing the truck or trailer (no need to go to the garage)
+- [x] Changing the truck (no need to go to the garage)
 
 #### Trucks
 
@@ -70,7 +70,7 @@ Remember, contributing translations makes you a collaborator of the project!
 - [x] Save license plate data
 - [x] Set custom engines and transmission
 - [x] Modify kilometers traveled by the truck
-- [ ] Changing the truck or trailer (no need to go to the garage)
+- [ ] Changing the trailer (no need to go to the garage)
 
 #### Profiles
 
