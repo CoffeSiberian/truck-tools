@@ -45,6 +45,7 @@ interface ListTrucksState {
 const SetPlayerTruck = () => {
 	const { selectedSave } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
+	const { change_truck } = translations.menu_options.trucks;
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
@@ -152,7 +153,7 @@ const SetPlayerTruck = () => {
 				color="primary"
 				variant="shadow"
 			>
-				Open
+				{change_truck.modal.btn_open}
 			</Button>
 			<Modal
 				hideCloseButton
@@ -165,22 +166,22 @@ const SetPlayerTruck = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								Change Truck in road
+								{change_truck.modal.title}
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="py-1">
-								<p>Change your truck without going to the garage</p>
+								<p>{change_truck.modal.description}</p>
 								<div className="flex items-center gap-1">
 									<Select
 										className="w-full"
-										label="Select truck"
 										selectedKeys={selectedTruck}
 										onChange={(e) => setSelectedTruck([e.target.value])}
 										isLoading={loadingListTrucks}
 										isDisabled={listTrucks.trucks.length === 0}
 										isInvalid={!listTrucks.trucks_found}
-										errorMessage="Trucks not found"
-										placeholder="Select truck"
+										label={change_truck.modal.select_label}
+										errorMessage={change_truck.modal.select_error}
+										placeholder={change_truck.modal.select_placeholder}
 										size="md"
 									>
 										{listTrucks.trucks.map((item) => (
@@ -220,19 +221,15 @@ const SetPlayerTruck = () => {
 								<Warning
 									text={
 										<div className="flex flex-col gap-2">
-											<b>Warning</b>
-											<p>
-												If you created a new save, remember to update the list
-												of trucks so you don't get an error when changing
-												trucks.
-											</p>
+											<b>{change_truck.modal.warning_message.title}</b>
+											<p>{change_truck.modal.warning_message.message}</p>
 										</div>
 									}
 								/>
 							</ModalBody>
 							<ModalFooter>
 								<Button variant="light" onPress={onClose} color="danger">
-									Close
+									{change_truck.modal.btn_close}
 								</Button>
 								<Button
 									endContent={<IconBrandYoutube />}
@@ -240,7 +237,7 @@ const SetPlayerTruck = () => {
 									variant="flat"
 									onPress={() => open("https://youtu.be/drwZSHw8hw8")}
 								>
-									How to use
+									{change_truck.modal.btn_how_to_use}
 								</Button>
 								<Button
 									endContent={<IconReplace />}
@@ -249,7 +246,7 @@ const SetPlayerTruck = () => {
 									isLoading={isLoading}
 									onPress={setPlayerTruck}
 								>
-									Change
+									{change_truck.modal.btn_apply}
 								</Button>
 							</ModalFooter>
 						</>

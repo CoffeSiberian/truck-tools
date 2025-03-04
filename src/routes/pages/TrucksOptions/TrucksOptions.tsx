@@ -59,8 +59,8 @@ const TrucksOptions = () => {
 		},
 		{
 			id: "3",
-			title: "Change Truck in road",
-			description: "Change your truck without going to the garage",
+			title: trucks.change_truck.label_card,
+			description: trucks.change_truck.description_card,
 			image: game === "ets2" ? img19 : img19_ats,
 			modal: <SetPlayerTruck />,
 			disable: false,

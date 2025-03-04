@@ -508,6 +508,25 @@
                     "title": "Cambiar el kilometraje del camión",
                     "description": "Cambia el kilometraje en tu camión"
                 }
+            },
+            "change_truck": {
+                "description_card": "Cambia tu camión sin ir al garaje",
+                "label_card": "Cambiar camión en ruta",
+                "modal": {
+                    "btn_apply": "Cambiar",
+                    "btn_how_to_use": "Cómo usar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Cambia tu camión sin ir al garaje",
+                    "title": "Cambia tu camión en ruta",
+                    "select_label": "Selecciona un camión",
+                    "select_error": "Camiones no encontrado",	
+					"select_placeholder": "Selecciona un camión",
+                    "warning_message": {
+                        "title": "Advertencia",
+                        "message": "Si has creado un nuevo guardado, recuerda actualizar la lista de camiones para que no se produzca un error al cambiar de camión."
+                    }
+                }
             }
         }
     }

@@ -15,7 +15,9 @@ export type Langs =
 	| "zh-Hant"
 	| "uk-UA"
 	| "de-DE"
-	| "pl-PL";
+	| "pl-PL"
+	| "ru-RU"
+	| "ro-RO";
 
 export interface TranslationsTypes {
 	components: Components;
@@ -459,6 +461,7 @@ export interface Trucks {
 	repair_all_trucks: RepairAllTrucks;
 	repair_truck: RepairTruck;
 	change_km: ChangeKM;
+	change_truck: ChangeTruck;
 	tab_title: string;
 }
 
@@ -475,6 +478,25 @@ export interface ChangeKMModal {
 	description: string;
 	title: string;
 	input_km: Input;
+}
+
+export interface ChangeTruck {
+	description_card: string;
+	label_card: string;
+	modal: ChangeTruckModal;
+}
+
+export interface ChangeTruckModal {
+	btn_apply: string;
+	btn_how_to_use: string;
+	btn_close: string;
+	btn_open: string;
+	description: string;
+	title: string;
+	select_label: string;
+	select_error: string;
+	select_placeholder: string;
+	warning_message: WarningMessage;
 }
 
 export interface ChangeTruckEngine {

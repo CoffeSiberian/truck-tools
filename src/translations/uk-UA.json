@@ -508,7 +508,26 @@
                     "btn_close": "Закрити"
                 },
                 "label_card": "Зміна пробігу вантажівки"
-            }
+            },
+			"change_truck": {
+				"description_card": "Change your truck without going to the garage",
+				"label_card": "Change Truck in road",
+				"modal": {
+					"btn_apply": "Change",
+					"btn_how_to_use": "How to use",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Change your truck without going to the garage",
+					"title": "Change your truck on the road",	
+                    "select_label": "Select truck",		
+                    "select_error": "Trucks not found",	
+					"select_placeholder": "Select a truck",		
+					"warning_message": {
+						"title": "Warning",
+						"message": "If you created a new save, remember to update the list of trucks so you don't get an error when changing trucks."
+					}
+				}
+			}
         }
     }
 }
