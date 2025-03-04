@@ -519,7 +519,7 @@
 					"btn_open": "Open",
 					"description": "Change your truck without going to the garage",
 					"title": "Change your truck on the road",
-                    "select_label": "Select truck",		
+                    "select_label": "Trucks",		
                     "select_error": "Trucks not found",	
 					"select_placeholder": "Select a truck",			
 					"warning_message": {

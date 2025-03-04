@@ -519,7 +519,7 @@
                     "btn_open": "Abrir",
                     "description": "Cambia tu camión sin ir al garaje",
                     "title": "Cambia tu camión en ruta",
-                    "select_label": "Selecciona un camión",
+                    "select_label": "Camiones",
                     "select_error": "Camiones no encontrado",	
 					"select_placeholder": "Selecciona un camión",
                     "warning_message": {
