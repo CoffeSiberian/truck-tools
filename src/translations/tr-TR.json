@@ -7,21 +7,21 @@
         "license_plate": {
             "btn_delete": "Sil",
             "btn_load": "Yükle",
-            "btn_store": "",
-            "input_colored_margin": "",
+            "btn_store": "Depola",
+            "input_colored_margin": "Renkli Kenar",
             "input_license_plate": {
-                "label": "",
+                "label": "Plaka metni",
                 "placeholder": "Bir metin girin"
             },
             "input_license_plate_list_store": {
-                "label": "",
+                "label": "Depolanmış plaka seç",
                 "placeholder": "Plaka seç"
             },
-            "title_select_bg_color": "",
+            "title_select_bg_color": "Arkaplan rengi",
             "title_select_text_color": "Yazı rengi"
         },
         "player_profile": {
-            "btn_profile": "",
+            "btn_profile": "Profil ayarları",
             "dropdown": {
                 "profile_options": {
                     "btn_backup_profile": {
@@ -31,27 +31,27 @@
                             "btn_apply": "Yedekle",
                             "btn_close": "Kapat",
                             "btn_open_folder": "Klasörde aç",
-                            "description": "",
+                            "description": "Yedek oluştur, kayıt lokasyonu oluşturmayı unutma",
                             "input_backup_destination": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Hedef klasörü seçin",
+                                "placeholder": "Hedef klasörü seçin"
                             },
                             "save_folder_dialog": {
                                 "filters_name": {
                                     "zip": "Zip dosyaları"
                                 },
-                                "title": ""
+                                "title": "Hedef klasörü seç"
                             },
-                            "title": ""
+                            "title": "Profil yedeği oluştur"
                         }
                     },
                     "btn_clone_profile": {
-                        "description": "",
-                        "label": "",
+                        "description": "Profili yeni bir profile klonla",
+                        "label": "Profili klonla",
                         "modal": {
-                            "btn_apply": "",
-                            "btn_close": "",
-                            "description": "",
+                            "btn_apply": "Klonla",
+                            "btn_close": "Kapat",
+                            "description": "Klonlanmak istediğin profilin adını gir. Bu, seçili profille aynı ayarlara sahip yeni bir profil oluşturacaktır.",
                             "input_new_name": {
                                 "label": "Yeni Profil Adı",
                                 "placeholder": ""
@@ -64,7 +64,7 @@
                         "label": "",
                         "modal": {
                             "btn_apply": "",
-                            "btn_close": "",
+                            "btn_close": "Kapat",
                             "description": "",
                             "input_select_profile": {
                                 "label": "",
@@ -74,25 +74,25 @@
                         }
                     },
                     "btn_rename_profile": {
-                        "description": "",
-                        "label": "Profili yeniden adlandır",
+                        "description": "Profilini tekrar adlandır",
+                        "label": "Profil adını değiştir",
                         "modal": {
                             "btn_apply": "Yeniden adlandır",
                             "btn_close": "Kapat",
-                            "description": "Profil adını değiştirebilirsin, ama 20 karakterden kısa olmalı.",
+                            "description": "Profili yeniden adlandırabilirsiniz, ancak 20 karakterden daha az olmalıdır.",
                             "input_new_name": {
                                 "label": "Profil adı",
                                 "placeholder": "Profilinin ismini gir"
                             },
-                            "title": ""
+                            "title": "Profil adını değiştir"
                         }
                     },
-                    "title": ""
+                    "title": "Profil ayarları"
                 },
                 "save_game_options": {
                     "btn_decrypt_save": {
                         "description": "",
-                        "label": ""
+                        "label": "Kayıtlı dosyayı decryple"
                     },
                     "btn_open_folder": {
                         "description": "",
