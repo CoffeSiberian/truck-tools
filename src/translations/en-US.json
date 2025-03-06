@@ -112,8 +112,8 @@
 				"label": "Select save",
 				"placeholder": "Select a save"
 			},
-			"no_selected_profile": "No profile selected",
-			"no_selected_save": "No save selected",
+			"no_selected_profile": "No profiles found",
+			"no_selected_save": "No saved data found",
 			"total_saves": "Saves"
 		},
 		"profile_error": {
