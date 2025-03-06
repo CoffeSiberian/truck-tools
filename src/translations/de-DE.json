@@ -390,7 +390,7 @@
                     "title": "Motor wechseln",
                     "warning_message": {
                         "message": "Wenn Sie ein <b>Logo sehen, das auf dem LKW schwebt oder schlecht positioniert ist</b>, können Sie es mit der Schaltfläche unten entfernen.",
-                        "title": "Warnung"
+                        "title": "Erinnerung"
                     }
                 }
             },
@@ -418,7 +418,7 @@
                     "title": "Getriebe wechseln",
                     "warning_message": {
                         "message": "Wenn Sie ein <b>Logo sehen, das auf dem LKW schwebt oder schlecht positioniert ist</b>, können Sie es mit der Schaltfläche unten entfernen.",
-                        "title": "Warnung"
+                        "title": "Erinnerung"
                     }
                 }
             },
@@ -456,7 +456,7 @@
                     "title": "Unbegrenzter Kraftstoff",
                     "warning_message": {
                         "message": "<b>Deaktivieren Sie „Realistischer Treibstoffverbrauch“</b> in Ihrem „Gameplay“-Abschnitt, damit diese Funktion wirksam wird.",
-                        "title": "Warnung"
+                        "title": "Erinnerung"
                     }
                 }
             },
@@ -509,25 +509,25 @@
                     "btn_apply": "Übernehmen"
                 }
             },
-			"change_truck": {
-				"description_card": "Change your truck without going to the garage",
-				"label_card": "Change Truck in road",
-				"modal": {
-					"btn_apply": "Change",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Change your truck without going to the garage",
-					"title": "Change your truck on the road",	
-                    "select_label": "Trucks",	
-                    "select_error": "Trucks not found",	
-					"select_placeholder": "Select a truck",			
-					"warning_message": {
-						"title": "Warning",
-						"message": "If you created a new save, remember to update the list of trucks so you don't get an error when changing trucks."
-					}
-				}
-			}
+            "change_truck": {
+                "description_card": "Wechseln Sie Ihren Lkw, ohne in die Werkstatt zu gehen",
+                "label_card": "Wechsel des Lkw auf der Straße",
+                "modal": {
+                    "btn_apply": "wechseln",
+                    "btn_how_to_use": "Anleitung zur Nutzung",
+                    "btn_close": "Schließen",
+                    "btn_open": "Open",
+                    "description": "Wechsle deinen Lkw, ohne in die Werkstatt zu fahren",
+                    "title": "Ändere deinen Lkw auf der Straße",
+                    "select_label": "Lkws",
+                    "select_error": "Lkw nicht gefunden",
+                    "select_placeholder": "Wähle einen Lkw",
+                    "warning_message": {
+                        "title": "Warnung",
+                        "message": "Wenn du einen neuen Spielstand erstellt hast, denke daran, die Lkw-Liste zu aktualisieren, damit du keinen Fehler bekommst, wenn du die Lkws wechselst."
+                    }
+                }
+            }
         }
     }
 }
