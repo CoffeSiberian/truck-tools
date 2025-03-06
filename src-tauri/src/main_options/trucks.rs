@@ -587,6 +587,25 @@ pub fn set_player_truck_file(
     return None;
 }
 
+pub fn set_plyaer_hq_truck_file(
+    arr_val: &Vec<String>,
+    new_hq: &str,
+) -> Option<(VecItemsFind, usize)> {
+    for (i, item) in arr_val.iter().enumerate() {
+        if item.contains("hq_city") {
+            return Some((
+                VecItemsFind {
+                    index: i,
+                    value: format!(" hq_city: {}", new_hq),
+                },
+                i,
+            ));
+        }
+    }
+
+    return None;
+}
+
 pub fn set_player_driver_truck(
     arr_val: &Vec<String>,
     my_truck_index: usize,
@@ -631,6 +650,17 @@ pub fn set_player_driver_truck(
         None => return None,
     };
 
+    let my_truck_city_name = replace_truck_garage.name.split(".").collect::<Vec<&str>>();
+    if my_truck_city_name.len() < 2 {
+        return None;
+    };
+    let new_hq = my_truck_city_name[1].replace(" ", "").replace("{", "");
+
+    let (new_player_hq, _) = match set_plyaer_hq_truck_file(arr_val, &new_hq) {
+        Some(new_player_hq) => new_player_hq,
+        None => return None,
+    };
+
     let mut vec_items_replace: Vec<VecItemsFind> = Vec::new();
     vec_items_replace.push(VecItemsFind {
         index: current_truck_driver_replace.index,
@@ -646,6 +676,7 @@ pub fn set_player_driver_truck(
             replace_truck_driver.number, current_truck_driver_replace.value
         ),
     });
+    vec_items_replace.push(new_player_hq);
 
     return Some(vec_items_replace);
 }
