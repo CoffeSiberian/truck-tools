@@ -509,25 +509,25 @@
                     "title": "Thay đổi số dặm xe tải"
                 }
             },
-			"change_truck": {
-				"description_card": "Change your truck without going to the garage",
-				"label_card": "Change Truck in road",
-				"modal": {
-					"btn_apply": "Change",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Change your truck without going to the garage",
-					"title": "Change your truck on the road",
-                    "select_label": "Trucks",		
-                    "select_error": "Trucks not found",	
-					"select_placeholder": "Select a truck",			
-					"warning_message": {
-						"title": "Warning",
-						"message": "If you created a new save, remember to update the list of trucks so you don't get an error when changing trucks."
-					}
-				}
-			}
+            "change_truck": {
+                "description_card": "Đổi xe tải của bạn mà không cần đến nhà để xe",
+                "label_card": "Đổi xe tải trên đường",
+                "modal": {
+                    "btn_apply": "Thay đổi",
+                    "btn_how_to_use": "Cách sử dụng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Open",
+                    "description": "Đổi xe tải của bạn mà không cần đến nhà để xe",
+                    "title": "Đổi xe tải của bạn trên đường",
+                    "select_label": "Xe tải",
+                    "select_error": "Không tìm thấy xe tải",
+                    "select_placeholder": "Chọn một xe tải",
+                    "warning_message": {
+                        "title": "Cảnh báo",
+                        "message": "Nếu bạn đã tạo một lần lưu mới, hãy nhớ cập nhật danh sách các xe tải để bạn không gặp lỗi khi thay đổi xe tải."
+                    }
+                }
+            }
         }
     }
 }
