@@ -1,11 +1,11 @@
 {
-	"version": "v0.9.2",
-	"notes": "- Russian language added\n\n- Updated other languages\n\nMany thanks as always to the people who collaborate with the translations. Your contributions on Weblate are very helpful ❤️",
-	"pub_date": "2025-02-26T15:00:00-03:00",
+	"version": "v0.10.0",
+	"notes": "- New feature that will allow you to change your truck without needing to travel to your garage\n- The profile selection and save menu has been updated\n- Romanian language added\n\nMany thanks as always to the people who collaborate with the translations. Your contributions on Weblate are very helpful ❤️",
+	"pub_date": "2025-03-06T20:00:00-03:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmIwTXR5Vno0M013aEdmMTdKZ0lTODJYQnh0a1FFV0ttRGRlNlpjYmF1bW11RmpqTGZvRHJwYW9Yd2FVTDloNUxQQk85SUxMeGU5TjRpVjh2RDAvekFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzQwNjA2MDIwCWZpbGU6VHJ1Y2sgVG9vbHNfMC45LjJfeDY0X2VuLVVTLm1zaS56aXAKRllsL1grV3g5SXozNkpSTFdFTWVtSHhXY0dxSFNtN29IUWpxK1NWTVpBcllUcWgrMUVtbW9tQlMvY1htTEpTUEFtZ2d6ajdwNHNYVzVTSHcwaXRpRHc9PQo=",
-			"url": "https://cdn.siberiancoffe.dev/truck-tools/tauri-v1/Truck_Tools_0.9.2_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlczMWhmVXp3TlhzQlRxRHZsbkxSU0k4STZXbzQvQWFIY2UvblpYOUR2NnNmeVZnaUZEUjU1MFMzbVBmb29kTVpjMEtHbTE3RllSYnRSYnlZakppZUF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzQxMzA1NjU4CWZpbGU6VHJ1Y2sgVG9vbHNfMC4xMC4wX3g2NF9lbi1VUy5tc2kuemlwClBVTXlpUFUrYnViRURUZndlZmdCeHhpM21XYkZQV2FxZ2g3TER3Zk1xcUlTNStPdjlCUVBFSHltamlsOXZtbFcxSVlQUk5YM3phQ3BWUVBlODZUL0RRPT0K",
+			"url": "https://cdn.siberiancoffe.dev/truck-tools/tauri-v1/Truck_Tools_0.10.0_x64_en-US.msi.zip"
 		}
 	}
 }
