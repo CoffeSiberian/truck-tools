@@ -112,8 +112,8 @@
                 "label": "Chọn bản lưu",
                 "placeholder": "Chọn một bản lưu"
             },
-            "no_selected_profile": "Không có hồ sơ được chọn",
-            "no_selected_save": "Không bản lưu được chọn",
+            "no_selected_profile": "Không tìm thấy hồ sơ",
+            "no_selected_save": "Không tìm thấy dữ liệu đã lưu",
             "total_saves": "Lưu"
         },
         "profile_error": {

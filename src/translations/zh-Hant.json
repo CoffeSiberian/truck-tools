@@ -509,25 +509,25 @@
                 "description_card": "更改當前卡車里程表",
                 "label_card": "更改卡車里程表"
             },
-			"change_truck": {
-				"description_card": "Change your truck without going to the garage",
-				"label_card": "Change Truck in road",
-				"modal": {
-					"btn_apply": "Change",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Change your truck without going to the garage",
-					"title": "Change your truck on the road",		
-                    "select_label": "Trucks",			
-                    "select_error": "Trucks not found",	
-					"select_placeholder": "Select a truck",
-					"warning_message": {
-						"title": "Warning",
-						"message": "If you created a new save, remember to update the list of trucks so you don't get an error when changing trucks."
-					}
-				}
-			}
+            "change_truck": {
+                "description_card": "不用去車庫換卡車",
+                "label_card": "在道路上更換卡車",
+                "modal": {
+                    "btn_apply": "應用",
+                    "btn_how_to_use": "如何使用",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "description": "不用去車庫換卡車",
+                    "title": "在道路上更換您的卡車",
+                    "select_label": "卡車",
+                    "select_error": "未找到卡車",
+                    "select_placeholder": "選擇一輛卡車",
+                    "warning_message": {
+                        "title": "警告⚠️",
+                        "message": "如果您創建了新的保存，請記得更新卡車列表，這樣在更換卡車時就不會收到錯誤。"
+                    }
+                }
+            }
         }
     }
 }

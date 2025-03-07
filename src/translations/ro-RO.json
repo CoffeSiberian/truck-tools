@@ -396,7 +396,7 @@
             },
             "change_truck_transmission": {
                 "description_card": "Schimbați transmisia camionului",
-                "label_card": "Schimbați transmisia camionului",
+                "label_card": "Schimbați transmisia",
                 "modal": {
                     "btn_apply": "Schimba",
                     "btn_close": "închide",
@@ -415,7 +415,7 @@
                         "label": "Transmisii",
                         "placeholder": "Selectați transmisia camionului"
                     },
-                    "title": "Schimbați transmisia camionului",
+                    "title": "Schimbați transmisia",
                     "warning_message": {
                         "message": "Dacă vedeți orice <b>logo plutind sau poziționat prost</b> pe camion, îl puteți elimina cu butonul de mai jos.",
                         "title": "Ține minte"
@@ -508,25 +508,25 @@
                     }
                 }
             },
-			"change_truck": {
-				"description_card": "Change your truck without going to the garage",
-				"label_card": "Change Truck in road",
-				"modal": {
-					"btn_apply": "Change",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Change your truck without going to the garage",
-					"title": "Change your truck on the road",	
-                    "select_label": "Trucks",		
-                    "select_error": "Trucks not found",	
-					"select_placeholder": "Select a truck",		
-					"warning_message": {
-						"title": "Warning",
-						"message": "If you created a new save, remember to update the list of trucks so you don't get an error when changing trucks."
-					}
-				}
-			},
+            "change_truck": {
+                "description_card": "Schimbați-vă camionul fără a merge în garaj",
+                "label_card": "Schimbați camionul pe drum",
+                "modal": {
+                    "btn_apply": "Schimba",
+                    "btn_how_to_use": "Cum se utilizează",
+                    "btn_close": "închide",
+                    "btn_open": "Open",
+                    "description": "Schimbați-vă camionul fără a merge în garaj",
+                    "title": "Schimbă-ți camionul pe drum",
+                    "select_label": "Camioane",
+                    "select_error": "Nu au fost găsite camioane",
+                    "select_placeholder": "Alegeți un camion",
+                    "warning_message": {
+                        "title": "Avertizare",
+                        "message": "Dacă ați creat o nouă salvare, nu uitați să actualizați lista de camioane pentru a nu primi o eroare la schimbarea camioanelor."
+                    }
+                }
+            },
             "tab_title": "Camion"
         }
     }
