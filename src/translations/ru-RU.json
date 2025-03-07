@@ -108,8 +108,8 @@
                 "label": "Выбрать сохранение",
                 "placeholder": "Выберите сохранение"
             },
-            "no_selected_profile": "Нет выбранных профилей",
-            "no_selected_save": "Нет выбранных сохранений",
+            "no_selected_profile": "Профили не найдены",
+            "no_selected_save": "Сохранения не найдены",
             "total_saves": "Сохранения"
         },
         "profile_error": {
@@ -510,21 +510,21 @@
                 }
             },
             "change_truck": {
-                "description_card": "Change your truck without going to the garage",
-                "label_card": "Change Truck in road",
+                "description_card": "Смена текущего грузовика не заходя в гараж",
+                "label_card": "Сменить грузовик в дороге",
                 "modal": {
-                    "btn_apply": "Change",
-                    "btn_how_to_use": "How to use",
-                    "btn_close": "Close",
+                    "btn_apply": "Изменить",
+                    "btn_how_to_use": "Инструкция",
+                    "btn_close": "Закрыть",
                     "btn_open": "Open",
-                    "description": "Change your truck without going to the garage",
-                    "title": "Change your truck on the road",
-                    "select_label": "Trucks",
-                    "select_error": "Trucks not found",
-                    "select_placeholder": "Select a truck",
+                    "description": "Смена текущего грузовика не заходя в гараж",
+                    "title": "Смена вашего грузовика в дороге",
+                    "select_label": "Грузовики",
+                    "select_error": "Грузовики не найдены",
+                    "select_placeholder": "Выберите грузовик",
                     "warning_message": {
-                        "title": "Warning",
-                        "message": "If you created a new save, remember to update the list of trucks so you don't get an error when changing trucks."
+                        "title": "Предупреждение",
+                        "message": "Если вы создали новое сохранение, не забудьте обновить список грузовиков, чтобы не получить ошибку при смене грузовиков."
                     }
                 }
             }
