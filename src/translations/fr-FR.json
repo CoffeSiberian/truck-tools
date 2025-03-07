@@ -510,21 +510,21 @@
                 "label_card": "Changer le kilométrage du camion"
             },
             "change_truck": {
-                "description_card": "Change your truck without going to the garage",
-                "label_card": "Change Truck in road",
+                "description_card": "Changer de camion sans aller au garage",
+                "label_card": "Changer de camion sur la route",
                 "modal": {
-                    "btn_apply": "Change",
-                    "btn_how_to_use": "How to use",
-                    "btn_close": "Close",
+                    "btn_apply": "changement",
+                    "btn_how_to_use": "comment utiliser",
+                    "btn_close": "Fermé",
                     "btn_open": "Open",
-                    "description": "Change your truck without going to the garage",
-                    "title": "Change your truck on the road",
-                    "select_label": "Trucks",
-                    "select_error": "Trucks not found",
-                    "select_placeholder": "Select a truck",
+                    "description": "Changer de camion sans aller au garage",
+                    "title": "Changer de camion sur la route",
+                    "select_label": "Camions",
+                    "select_error": "Camions non trouvés",
+                    "select_placeholder": "Sélectionnez un camion",
                     "warning_message": {
-                        "title": "Warning",
-                        "message": "If you created a new save, remember to update the list of trucks so you don't get an error when changing trucks."
+                        "title": "Avertissement",
+                        "message": "Si vous avez créé une nouvelle sauvegarde, n’oubliez pas de mettre à jour la liste des camions afin d’éviter les erreurs lors du changement de camion."
                     }
                 }
             }
