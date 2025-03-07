@@ -113,7 +113,7 @@
                 "placeholder": "选择保存"
             },
             "no_selected_profile": "没有选择档案",
-            "no_selected_save": "没有选择保存",
+            "no_selected_save": "没有选择存档",
             "total_saves": "保存"
         },
         "profile_error": {
@@ -510,21 +510,21 @@
                 "description_card": "更改当前卡车里程数"
             },
             "change_truck": {
-                "description_card": "Change your truck without going to the garage",
-                "label_card": "Change Truck in road",
+                "description_card": "不用去车库换卡车",
+                "label_card": "在道路上更换卡车",
                 "modal": {
-                    "btn_apply": "Change",
-                    "btn_how_to_use": "How to use",
-                    "btn_close": "Close",
-                    "btn_open": "Open",
-                    "description": "Change your truck without going to the garage",
-                    "title": "Change your truck on the road",
-                    "select_label": "Trucks",
-                    "select_error": "Trucks not found",
-                    "select_placeholder": "Select a truck",
+                    "btn_apply": "应用",
+                    "btn_how_to_use": "如何使用",
+                    "btn_close": "取消",
+                    "btn_open": "查看详情",
+                    "description": "不用去车库换卡车",
+                    "title": "在道路上更换您的卡车",
+                    "select_label": "卡车",
+                    "select_error": "未找到卡车",
+                    "select_placeholder": "选择一辆卡车",
                     "warning_message": {
-                        "title": "Warning",
-                        "message": "If you created a new save, remember to update the list of trucks so you don't get an error when changing trucks."
+                        "title": "警告⚠️",
+                        "message": "如果您创建了新的保存，请记得更新卡车列表，这样在更换卡车时就不会收到错误。"
                     }
                 }
             }
