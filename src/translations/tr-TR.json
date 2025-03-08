@@ -54,28 +54,28 @@
                             "description": "Klonlanmak istediğin profilin adını gir. Bu, seçili profille aynı ayarlara sahip yeni bir profil oluşturacaktır.",
                             "input_new_name": {
                                 "label": "Yeni Profil Adı",
-                                "placeholder": ""
+                                "placeholder": "Profiliniz için yeni bir isim belirleyin"
                             },
                             "title": "Profili Klonla"
                         }
                     },
                     "btn_copy_config": {
-                        "description": "",
-                        "label": "",
+                        "description": "Diğer profillerden ayarları kopyala",
+                        "label": "Yapılandırmayı Kopyala",
                         "modal": {
-                            "btn_apply": "",
+                            "btn_apply": "Yapılandırmayı Kopyala",
                             "btn_close": "Kapat",
-                            "description": "",
+                            "description": "Ayarları kopyalamak istediğiniz profili seçin, ayarlarınızın değiştirileceğini unutmayın. <b>Profilinizin bir yedek kopyasını oluşturmanızı öneririz</b>.",
                             "input_select_profile": {
-                                "label": "",
-                                "placeholder": ""
+                                "label": "Profiller",
+                                "placeholder": "Profil seçin"
                             },
-                            "title": ""
+                            "title": "Yapılandırmayı Kopyala"
                         }
                     },
                     "btn_rename_profile": {
                         "description": "Profilini tekrar adlandır",
-                        "label": "Profil adını değiştir",
+                        "label": "Profili yeniden isimlendir",
                         "modal": {
                             "btn_apply": "Yeniden adlandır",
                             "btn_close": "Kapat",
@@ -91,443 +91,443 @@
                 },
                 "save_game_options": {
                     "btn_decrypt_save": {
-                        "description": "",
+                        "description": "Seçili kayıt dosyasının şifresini çöz",
                         "label": "Kayıtlı dosyayı decryple"
                     },
                     "btn_open_folder": {
-                        "description": "",
-                        "label": ""
+                        "description": "Seçili kayıt dosyası klasörünü aç",
+                        "label": "Kayıt Dosyası Klasörünü Aç"
                     },
-                    "title": ""
+                    "title": "Kayıt Dosyası Ayarları"
                 }
             },
             "input_select_profile": {
-                "label": "",
+                "label": "Profil Seçin",
                 "options": {
-                    "save_load": ""
+                    "save_load": "Kayıtlar"
                 },
-                "placeholder": ""
+                "placeholder": "Bir profil seçin"
             },
             "input_select_save": {
-                "label": "",
-                "placeholder": ""
+                "label": "Kayıt seçin",
+                "placeholder": "Bir kayıt seçin"
             },
-            "no_selected_profile": "",
-            "no_selected_save": "",
-            "total_saves": ""
+            "no_selected_profile": "Hiç profil bulunamadı",
+            "no_selected_save": "Hiç kayıtlı veri bulunamadı",
+            "total_saves": "Kayıtlar"
         },
         "profile_error": {
-            "btn_how_to": "",
-            "btn_how_to_disable": "",
-            "description": "",
-            "title": ""
+            "btn_how_to": "Eğitici video",
+            "btn_how_to_disable": "Steam Cloud nasıl devre dışı bırakılır",
+            "description": "Profilinizden <b>Steam Cloud'u devre dışı bırakmayı</b> veya \"Belgeler\" klasörünüzün konumunu doğrulamayı unutmayın",
+            "title": "Profiller bulunamadı"
         },
         "updater": {
-            "alert_message": "",
-            "btn_cancel": "",
-            "btn_manual_update": "",
-            "btn_update_now": "",
-            "downloading": "",
-            "release_notes": "",
-            "title": "",
-            "version": ""
+            "alert_message": "Kurulum başarısız. Daha sonra tekrar deneyin",
+            "btn_cancel": "İptal",
+            "btn_manual_update": "Manuel Güncelleme",
+            "btn_update_now": "Şimdi Güncelle",
+            "downloading": "İndiriliyor...",
+            "release_notes": "Güncelleme notları",
+            "title": "Yeni sürüm mevcut",
+            "version": "Sürüm:"
         }
     },
     "menu_options": {
         "about": {
-            "description": "",
-            "tab_title": ""
+            "description": "ETS 2 ve ATS oyuncularının kodları manuel olarak düzenlemek istemeyenler için oyun kayıtlarını basit ve kolay bir şekilde düzenlemelerine yardımcı olmak amacıyla oluşturulmuş açık kaynaklı bir uygulamadır.",
+            "tab_title": "Hakkında"
         },
         "profile": {
             "add_experience": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Profilinizin tecrübe puanını değiştirin",
+                "label_card": "Tecrübe puanını değiştir",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Uygula",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "Profilinize eklemek istediğiniz tecrübe puanı miktarını girin",
                     "input_experience": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Tecrübe",
+                        "placeholder": "Tecrübe puanı miktarını sayı olarak girin"
                     },
-                    "title": ""
+                    "title": "Tecrübeyi düzenle"
                 }
             },
             "add_money": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Profilinize para ekleyin",
+                "label_card": "Para miktarını değiştir",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Uygula",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "Profilinize eklemek istediğiniz para miktarını girin",
                     "input_money": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Para",
+                        "placeholder": "Euro cinsinden para miktarını girin"
                     },
-                    "title": ""
+                    "title": "Parayı düzenle"
                 }
             },
             "dealer_visited": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Profilinizdeki bayilerin durumunu düzenleyin",
+                "label_card": "Tüm bayileri keşfet",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Uygula",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "Profilinizdeki bayilerin durumlarını seçin",
                     "input_dealer_status": {
-                        "label": "",
+                        "label": "Ziyaret edilen şehirler",
                         "options": {
-                            "unvisit_all": "",
-                            "visit_all": ""
+                            "unvisit_all": "Tüm bayiler ziyaret edilmedi",
+                            "visit_all": "Tüm bayiler ziyaret edildi"
                         }
                     },
-                    "title": ""
+                    "title": "Tüm bayileri keşfet"
                 }
             },
             "garage_status": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Profilinizdeki herhangi bir garajın durumunu ayarlayın",
+                "label_card": "Tüm garajları satın al",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Uygula",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "Profilinizde değiştirmek istediğiniz garajın durumunu seçin",
                     "input_garage_status": {
-                        "label": "",
+                        "label": "Garaj durumu",
                         "options": {
-                            "large_garage": "",
-                            "medium_garage": "",
-                            "sell_garage": "",
-                            "small_garage": ""
+                            "large_garage": "Büyük Garaj",
+                            "medium_garage": "Orta Garaj",
+                            "sell_garage": "Garajı Sat",
+                            "small_garage": "Küçük Garaj"
                         }
                     },
-                    "title": ""
+                    "title": "Tüm garajları satın al"
                 }
             },
             "skills_points": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Profilinizin tecrübe puanını düzenleyin",
+                "label_card": "Tecrübeleri seç",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "eco_driving": "",
-                    "fragile_cargo": "",
-                    "high_value_cargo": "",
+                    "btn_apply": "Uygula",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "İhtiyacınız olan deneyim miktarını girin",
+                    "eco_driving": "Ekonomik sürüş",
+                    "fragile_cargo": "Kırılgan yük",
+                    "high_value_cargo": "Yüksek değerli yük",
                     "input_skills_points": {
-                        "corrosive": "",
-                        "explosives": "",
-                        "flammable_liquids": "",
-                        "flammable_solids": "",
-                        "gases": "",
-                        "label": "",
-                        "placeholder": "",
-                        "toxic_and_infectious": ""
+                        "corrosive": "Aşındırıcı",
+                        "explosives": "Patlayıcılar",
+                        "flammable_liquids": "Yanıcı sıvılar",
+                        "flammable_solids": "Yanıcı katılar",
+                        "gases": "Gazlar",
+                        "label": "ADR",
+                        "placeholder": "ADR'yi seç",
+                        "toxic_and_infectious": "Zehirli ve bulaşıcı"
                     },
-                    "just_in_time_delivery": "",
-                    "long_distance": "",
-                    "title": ""
+                    "just_in_time_delivery": "Tam zamanında teslimat",
+                    "long_distance": "Uzun mesafe",
+                    "title": "Tecrübe puanını belirle"
                 }
             },
-            "tab_title": "",
+            "tab_title": "Profil",
             "visited_cities": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Profilinizde ziyaret edilen herhangi bir şehrin durumunu ayarlayın",
+                "label_card": "Tüm şehirleri keşfedin",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Uygula",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "Ziyaret edilen tüm şehirlerin durumunu seç",
                     "input_city_status": {
-                        "label": "",
+                        "label": "Ziyaret edilen şehirler",
                         "options": {
-                            "unvisit_all": "",
-                            "visit_all": ""
+                            "unvisit_all": "Tüm şehirler ziyaret edilmedi",
+                            "visit_all": "Tüm şehirler ziyaret edildi"
                         }
                     },
-                    "title": ""
+                    "title": "Tüm şehirleri keşfet"
                 }
             }
         },
         "settings": {
-            "btn_reset": "",
-            "document_dialog_title": "",
+            "btn_reset": "Ayarları Sıfırla",
+            "document_dialog_title": "İlerlemenizin saklandığı klasörü seçin",
             "input_change_language": {
-                "label": "",
-                "placeholder": ""
+                "label": "Dili değiştir",
+                "placeholder": "Dil seçin"
             },
             "input_change_theme": {
-                "label": "",
+                "label": "Temayı değiştir",
                 "options": {
-                    "dark": "",
-                    "light": "",
-                    "system": ""
+                    "dark": "Karanlık",
+                    "light": "Açık",
+                    "system": "Sistem"
                 },
-                "placeholder": ""
+                "placeholder": "Tema seçin"
             },
             "input_document_folder": {
-                "label": "",
-                "placeholder": ""
+                "label": "Belgeler klasörü",
+                "placeholder": "Belgeler klasörüne girin"
             },
-            "input_enable_128_slots": "",
-            "input_enable_console": "",
-            "input_opacity_profile": "",
-            "tab_title": "",
-            "title": ""
+            "input_enable_128_slots": "128 kişilik konvoy modunu etkinleştir",
+            "input_enable_console": "Konsolu ve geliştirici modunu etkinleştirin",
+            "input_opacity_profile": "Profil seçiminde opak arkaplan",
+            "tab_title": "Ayarlar",
+            "title": "Ayarlar"
         },
         "trailers": {
             "license_plate": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Dorsenin plakasını değiştirin",
+                "label_card": "Dorse plakasını değiştir",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Uygula",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "Dorsenin yeni plakasını girin",
+                    "title": "Dorse plakasını değiştir"
                 }
             },
             "modify_job_weight": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "İşin ağırlığını değiştirin",
+                "label_card": "İş ağırlığını değiştir",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Uygula",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "Mevcut işinizin ağırlığını burada tanımladığınız ağırlığa değiştirecektir. Kamyonunuza bağlı aktif bir işiniz olması gerektiğini unutmayın",
                     "input_weight": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Kg cinsinden ağırlık",
+                        "placeholder": "Ağırlığı kg olarak girin"
                     },
-                    "title": ""
+                    "title": "Yük ağırlığını değiştir"
                 }
             },
             "modify_trailer_weight": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Dorse ağırlığını değiştirir, yalnızca bir kez uygular",
+                "label_card": "Dorse ağırlığını değiştir",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
+                    "btn_apply": "Uygula",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "Dorsenizin ağırlığını 2 parametrede değiştirir. Genellikle chassis_mass kullanılır ancak body_mass'ıda düzenleyebilirsiniz (varsayılan body_mass 0'dır)",
                     "input_body_mass": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Kg cinsinde gövde ağırlığı",
+                        "placeholder": "Gövde ağırlığını kg cinsinden girin"
                     },
                     "input_chassis_mass": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Kg cinsinden şasi ağırlığı",
+                        "placeholder": "Şasi ağırlığını kg cinsinden girin"
                     },
-                    "title": ""
+                    "title": "Dorse ağırlığını değiştir"
                 }
             },
             "repair_all_trailer": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Sahip olunan tüm dorseleri tamir et",
+                "label_card": "Tüm dorseleri tamir et",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Tamir et",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "Sahip olduğunuz tüm dorseleri onarır",
+                    "title": "Tüm dorseleri onar"
                 }
             },
             "repair_trailer": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Mevcut dorseyi tamir et",
+                "label_card": "Dorseyi tamir et",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Tamir et",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "Şu anda dorseye bağlı olan dorseyi onarır",
+                    "title": "Dorseleri tamir et"
                 }
             },
-            "tab_title": "",
+            "tab_title": "Dorse",
             "unlock_trailer_country": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Bölgesel dorse engellemesinin kilidini açın",
+                "label_card": "Ülkeye göre dorse engelleme kaldırma",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_how_to_use": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": "",
+                    "btn_apply": "Kilidi aç",
+                    "btn_close": "Kapat",
+                    "btn_how_to_use": "Nasıl kullanılır",
+                    "btn_open": "Aç",
+                    "description": "Oyun tarafından engellenirse tüm ülkelerde dorsenizin kilidini açın",
+                    "title": "Mevcut Dorsenin Kilidini Aç",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Değişikliklerin etkili olabilmesi için dorsenin kamyona bağlı olması gerekir.",
+                        "title": "Hatırla"
                     }
                 }
             }
         },
         "trucks": {
             "change_truck_engine": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Kamyonun motorunu değiştir",
+                "label_card": "Kamyon motorunu değiştir",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_remove_badge": "",
-                    "description": "",
+                    "btn_apply": "Değiştir",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "btn_remove_badge": "Etiketi kaldır",
+                    "description": "Kamyonunuzun motorunu istediğiniz motorla değiştirin",
                     "input_brands": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Markalar",
+                        "placeholder": "Kamyon markasını seçin"
                     },
                     "input_engines": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Motorlar",
+                        "placeholder": "Kamyon motorunu seçin"
                     },
                     "input_models": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Modeller",
+                        "placeholder": "Kamyon modelini seçin"
                     },
-                    "title": "",
+                    "title": "Kamyon motorunu değiştir",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Kamyon üzerinde <b>herhangi bir logonun havada asılı kaldığını veya kötü konumlandırıldığını görürseniz</b>, aşağıdaki butondan kaldırabilirsiniz.",
+                        "title": "Hatırla"
                     }
                 }
             },
             "change_truck_transmission": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Kamyonun şanzımanını değiştirin",
+                "label_card": "Kamyon şanzımanını değiştir",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_remove_badge": "",
-                    "description": "",
+                    "btn_apply": "Değiştir",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "btn_remove_badge": "Etiketi kaldır",
+                    "description": "Kamyonunuzun şanzımanını istediğiniz şanzımanla değiştirin",
                     "input_brands": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Markalar",
+                        "placeholder": "Kamyon markasını seçin"
                     },
                     "input_models": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Modeller",
+                        "placeholder": "Kamyon modelini seçin"
                     },
                     "input_transmissions": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Şanzımanlar",
+                        "placeholder": "Kamyon şanzımanını seçin"
                     },
-                    "title": "",
+                    "title": "Kamyon şanzımanını değiştir",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Kamyon üzerinde <b>herhangi bir logonun havada asılı kaldığını veya kötü konumlandırıldığını görürseniz</b>, aşağıdaki butondan kaldırabilirsiniz.",
+                        "title": "Hatırla"
                     }
                 }
             },
             "fill_all_trucks_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Tüm şirket kamyonlarına yakıt ikmali",
+                "label_card": "Tüm kamyonların yakıtını doldurun",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Yakıt ikmali",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "Bu seçenek satın aldığınız tüm kamyonlara yakıt ikmali yapmanıza olanak tanır",
+                    "title": "Tüm kamyonların yakıtını doldurun"
                 }
             },
             "fill_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Mevcut kamyona yakıt doldurun",
+                "label_card": "Yakıt doldurun",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Yakıt ikmali",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "Kamyonunuzu tamamen yakıtla doldurur",
+                    "title": "Yakıt doldurun"
                 }
             },
             "infinite_fuel": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Mevcut kamyonda sınırsız yakıt",
+                "label_card": "Mevcut kamyonda sınırsız yakıt",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "btn_restore_fuel": "",
-                    "description": "",
-                    "title": "",
+                    "btn_apply": "Yakıt ikmali",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "btn_restore_fuel": "Yakıtı yenileyin",
+                    "description": "Yakıtınız tam anlamıyla sınırsız değil ancak yaklaşık 5.000.000 KM olacaktır (kamyona bağlı olarak değişebilir)",
+                    "title": "Mevcut kamyonda sınırsız yakıt",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "Bu fonksiyonun etkili olması için <b>“Oyun” ayarlarınızda “Gerçekçi yakıt tüketimi”ni devre dışı bırakın</b>.",
+                        "title": "Hatırla"
                     }
                 }
             },
             "license_plate": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Kamyonun plakasını değiştirin",
+                "label_card": "Kamyon plakasını değiştir",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Uygula",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "Yeni kamyon plakasını girin. Plakanızı Word of Trucks'tan kaldırmayı unutmayın",
+                    "title": "Kamyon plakasını değiştir"
                 }
             },
             "repair_all_trucks": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Tüm şirket kamyonlarını onarır",
+                "label_card": "Tüm kamyonları onarın",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Tamir et",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "Şirketinizdeki tüm kamyonları onarın",
+                    "title": "Tüm kamyonları onarın"
                 }
             },
             "repair_truck": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Mevcut kamyonunuzu onarın",
+                "label_card": "Kamyonu tamir et",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "Tamir et",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "Kamyonunuzdaki hasarı onarın",
+                    "title": "Kamyonu tamir et"
                 }
             },
             "change_km": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "Kamyonunuzun kilometresini değiştirin",
+                "label_card": "Kamyon kilometresini değiştirin",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": "",
+                    "btn_apply": "Uygula",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "Kamyonunuzun kilometresini değiştirin",
+                    "title": "Kamyon kilometresini değiştirin",
                     "input_km": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Km cinsinden mesafe",
+                        "placeholder": "Km cinsinden mesafe"
                     }
                 }
             },
-			"change_truck": {
-				"description_card": "Change your truck without going to the garage",
-				"label_card": "Change Truck in road",
-				"modal": {
-					"btn_apply": "Change",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Change your truck without going to the garage",
-					"title": "Change your truck on the road",	
-                    "select_label": "Trucks",		
-                    "select_error": "Trucks not found",	
-					"select_placeholder": "Select a truck",		
-					"warning_message": {
-						"title": "Warning",
-						"message": "If you created a new save, remember to update the list of trucks so you don't get an error when changing trucks."
-					}
-				}
-			},
-            "tab_title": ""
+            "change_truck": {
+                "description_card": "Garaja gitmeden kamyonunuzu değiştirin",
+                "label_card": "Kamyonu Yolda Değiştir",
+                "modal": {
+                    "btn_apply": "Değiştir",
+                    "btn_how_to_use": "Nasıl kullanılır",
+                    "btn_close": "Kapat",
+                    "btn_open": "Open",
+                    "description": "Garaja gitmeden kamyonunuzu değiştirin",
+                    "title": "Kamyonunuzu yolda değiştirin",
+                    "select_label": "Kamyonlar",
+                    "select_error": "Kamyon bulunamadı",
+                    "select_placeholder": "Bir kamyon seçin",
+                    "warning_message": {
+                        "title": "Uyarı",
+                        "message": "Eğer yeni bir kayıt oluşturduysanız, kamyon değiştirirken hata almamak için kamyon listesini güncellemeyi unutmayın."
+                    }
+                }
+            },
+            "tab_title": "Kamyon"
         }
     }
 }
