@@ -1,7 +1,9 @@
+use super::accessories::{get_accessories_data_path, get_list_trucks_accessories_id};
 use super::license_plate::get_license_plate_formated;
+use super::trucks::get_model_name_data_path;
 
 use crate::structs::vec_items_find::VecItemsFind;
-use crate::structs::vec_trailers::VecTrailersId;
+use crate::structs::vec_trailers::{VecSaveTrailers, VecTrailersId, VecTrailersNoSlaveId};
 
 const COUNTRY_VALIDITY: &str = " country_validity: 0";
 const COUNTRY_VALIDITY_NULL: &str = " source_name: null";
@@ -101,6 +103,50 @@ fn get_list_trailers_id(arr_val: &Vec<String>) -> Option<Vec<VecTrailersId>> {
         }
 
         if trailer_enum > 0 && item == "}" {
+            break;
+        }
+    }
+
+    if !result.is_empty() {
+        return Some(result);
+    }
+    return None;
+}
+
+fn get_list_trailers_no_slave_id(arr_val: &Vec<String>) -> Option<Vec<VecTrailersNoSlaveId>> {
+    let mut result: Vec<VecTrailersNoSlaveId> = Vec::new();
+    let mut trailer_enum: u16 = 0;
+    let mut trailer_string_find: String = format!(" trailers[{}]", trailer_enum);
+    let mut player_found: bool = false;
+
+    for (i, item) in arr_val.iter().enumerate() {
+        if !player_found && item.contains("player :") {
+            player_found = true;
+        }
+
+        if item.contains(&trailer_string_find) {
+            let option_values: Vec<&str> = item.split(':').collect();
+            let id = option_values[1].to_string();
+
+            let trailer_index = match get_trailer_index(arr_val, &id, &i) {
+                Some(truck_index) => truck_index,
+                None => {
+                    trailer_enum += 1;
+                    trailer_string_find = format!(" trailers[{}]", trailer_enum);
+                    continue;
+                }
+            };
+
+            result.push(VecTrailersNoSlaveId {
+                id,
+                trailer_number: trailer_enum,
+                index: trailer_index,
+            });
+            trailer_enum += 1;
+            trailer_string_find = format!(" trailers[{}]", trailer_enum);
+        }
+
+        if player_found && item == "}" {
             break;
         }
     }
@@ -225,6 +271,145 @@ fn get_trailer_wear_wheels(
         return Some(result);
     }
     return None;
+}
+
+pub fn get_slave_trailers_id(arr_val: &Vec<String>, index: usize) -> Option<(String, usize)> {
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
+        if item.contains(" slave_trailer:") {
+            if item.contains(" null") {
+                return None;
+            }
+            let option_values: Vec<&str> = item.split(':').collect();
+            return Some((option_values[1].to_string(), i));
+        }
+
+        if item == "}" {
+            return None;
+        }
+    }
+
+    return None;
+}
+
+pub fn get_trailer_index(
+    arr_val: &Vec<String>,
+    trailer_id: &String,
+    index: &usize,
+) -> Option<usize> {
+    let value_find: String = format!("{} {}", trailer_id, "{");
+
+    for (i, item) in arr_val.iter().enumerate().skip(*index) {
+        if item.contains(value_find.as_str()) {
+            return Some(i);
+        }
+    }
+
+    return None;
+}
+
+pub fn get_trailer_def_id(arr_val: &Vec<String>, index: usize) -> Option<String> {
+    for item in arr_val.iter().skip(index) {
+        if item.contains(" trailer_definition:") {
+            if item.contains(" null") {
+                return None;
+            }
+            let option_values: Vec<&str> = item.split(':').collect();
+            return Some(option_values[1].to_string());
+        }
+    }
+
+    return None;
+}
+
+pub fn get_trailer_def_index(arr_val: &Vec<String>, trailer_def_id: String) -> Option<usize> {
+    let value_find: String = format!("{} {}", trailer_def_id, "{");
+
+    for (i, item) in arr_val.iter().enumerate() {
+        if item.contains(value_find.as_str()) {
+            return Some(i);
+        }
+    }
+
+    return None;
+}
+
+pub fn get_my_trailer_id(arr_val: &Vec<String>) -> Option<(String, usize)> {
+    for (i, item) in arr_val.iter().enumerate() {
+        if item.contains(" assigned_trailer:") {
+            if item.contains(" null") {
+                return None;
+            }
+            let option_values: Vec<&str> = item.split(':').collect();
+            return Some((option_values[1].to_string(), i));
+        }
+    }
+
+    return None;
+}
+
+pub fn get_trailer_model_name(arr_val: &Vec<String>, index: usize) -> Option<String> {
+    let accessories = match get_list_trucks_accessories_id(&arr_val, index) {
+        Some(accessories) => accessories,
+        None => return None,
+    };
+
+    for item in accessories.iter() {
+        let data_path: VecItemsFind = match get_accessories_data_path(&arr_val, item.index) {
+            Some(data_path) => data_path,
+            None => continue,
+        };
+
+        let value_filter = data_path.value.replace('"', "");
+
+        if value_filter.contains("data.sii") {
+            match get_model_name_data_path(value_filter) {
+                Some(model_name) => return Some(model_name),
+                None => continue,
+            };
+        }
+    }
+
+    return None;
+}
+
+pub fn get_trailer_to_list_info(
+    arr_varl: &Vec<String>,
+    trailer_info: &VecTrailersNoSlaveId,
+    index: usize,
+) -> Option<VecSaveTrailers> {
+    let truck_index = match get_trailer_index(&arr_varl, &trailer_info.id, &index) {
+        Some(truck_id) => truck_id,
+        None => return None,
+    };
+
+    let model_name = match get_trailer_model_name(&arr_varl, truck_index) {
+        Some(model_name) => model_name,
+        None => return None,
+    };
+
+    return Some(VecSaveTrailers {
+        trailer_id: trailer_info.id.to_string().replace(" ", ""),
+        trailer_number: trailer_info.trailer_number,
+        brand_name: model_name,
+    });
+}
+
+pub fn get_list_trailers_info(arr_val: &Vec<String>) -> Option<Vec<VecSaveTrailers>> {
+    let mut result: Vec<VecSaveTrailers> = Vec::new();
+
+    let trailers_index = match get_list_trailers_no_slave_id(&arr_val) {
+        Some(trailers_index) => trailers_index,
+        None => return None,
+    };
+
+    for item in trailers_index.iter() {
+        match get_trailer_to_list_info(&arr_val, item, item.index) {
+            Some(trailer_info) => result.push(trailer_info),
+            None => continue,
+        };
+    }
+
+    return Some(result);
 }
 
 pub fn set_cargo_mass_trailer(
@@ -363,80 +548,6 @@ pub fn set_any_slave_trailers_weight(
     }
 
     return Some(arr_val_clone);
-}
-
-pub fn get_slave_trailers_id(arr_val: &Vec<String>, index: usize) -> Option<(String, usize)> {
-    for (i, item) in arr_val.iter().enumerate().skip(index) {
-        if item.contains(" slave_trailer:") {
-            if item.contains(" null") {
-                return None;
-            }
-            let option_values: Vec<&str> = item.split(':').collect();
-            return Some((option_values[1].to_string(), i));
-        }
-
-        if item == "}" {
-            return None;
-        }
-    }
-
-    return None;
-}
-
-pub fn get_trailer_index(
-    arr_val: &Vec<String>,
-    trailer_id: &String,
-    index: &usize,
-) -> Option<usize> {
-    let value_find: String = format!("{} {}", trailer_id, "{");
-
-    for (i, item) in arr_val.iter().enumerate().skip(*index) {
-        if item.contains(value_find.as_str()) {
-            return Some(i);
-        }
-    }
-
-    return None;
-}
-
-pub fn get_trailer_def_id(arr_val: &Vec<String>, index: usize) -> Option<String> {
-    for item in arr_val.iter().skip(index) {
-        if item.contains(" trailer_definition:") {
-            if item.contains(" null") {
-                return None;
-            }
-            let option_values: Vec<&str> = item.split(':').collect();
-            return Some(option_values[1].to_string());
-        }
-    }
-
-    return None;
-}
-
-pub fn get_trailer_def_index(arr_val: &Vec<String>, trailer_def_id: String) -> Option<usize> {
-    let value_find: String = format!("{} {}", trailer_def_id, "{");
-
-    for (i, item) in arr_val.iter().enumerate() {
-        if item.contains(value_find.as_str()) {
-            return Some(i);
-        }
-    }
-
-    return None;
-}
-
-pub fn get_my_trailer_id(arr_val: &Vec<String>) -> Option<(String, usize)> {
-    for (i, item) in arr_val.iter().enumerate() {
-        if item.contains(" assigned_trailer:") {
-            if item.contains(" null") {
-                return None;
-            }
-            let option_values: Vec<&str> = item.split(':').collect();
-            return Some((option_values[1].to_string(), i));
-        }
-    }
-
-    return None;
 }
 
 pub fn set_trailer_license_plate(

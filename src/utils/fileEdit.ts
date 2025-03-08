@@ -707,6 +707,21 @@ export const getSaveGameTrucks = async (
 	return invoceRes;
 };
 
+export const getSaveGameTrailers = async (
+	dirSave: string
+): Promise<ResponseSaveGameTrucks> => {
+	const rustParams = {
+		dirSave: dirSave + "/game.sii",
+	};
+
+	const invoceRes = (await invoke(
+		"get_save_list_trailers",
+		rustParams
+	)) as ResponseSaveGameTrucks;
+
+	return invoceRes;
+};
+
 export const setPlayerTruck = async (
 	dirSave: string,
 	currentTruckId: string,

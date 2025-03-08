@@ -1,5 +1,6 @@
 use super::vec_save_games::VecProfileDir;
 use super::vec_save_games::VecSaveGames;
+use super::vec_trailers::VecSaveTrailers;
 use super::vec_trucks::{Models, VecSaveTrucks};
 use serde::Serialize;
 
@@ -51,4 +52,11 @@ pub struct ListTrucksResponse {
     pub res: bool,
     pub current_truck_id: Option<String>,
     pub trucks: Vec<VecSaveTrucks>,
+}
+
+#[derive(Serialize)]
+pub struct ListTrailersResponse {
+    pub res: bool,
+    pub current_trailer_id: Option<String>,
+    pub trailers: Vec<VecSaveTrailers>,
 }
