@@ -741,6 +741,25 @@ export const setPlayerTruck = async (
 	return invoceRes.res;
 };
 
+export const setPlayerTrailer = async (
+	dirSave: string,
+	currentTrailerId: string,
+	replaceTrailerId: string
+): Promise<boolean> => {
+	const rustParams = {
+		dirSave: dirSave + "/game.sii",
+		currentTrailerId,
+		replaceTrailerId,
+	};
+
+	const invoceRes = (await invoke(
+		"set_player_trailer",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
+};
+
 // App Variables store
 
 // theme store

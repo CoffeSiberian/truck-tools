@@ -14,8 +14,8 @@ use main_options::profiles::{
 use main_options::trailers::{
     get_list_trailers_info, get_my_trailer_id, get_trailer_def_id, get_trailer_def_index,
     get_trailer_index, set_any_slave_trailers_weight, set_any_trailers_wear,
-    set_chassis_and_body_mass_def_trailers, set_remove_trailer_restricted_areas,
-    set_trailer_license_plate, set_trailer_wear,
+    set_chassis_and_body_mass_def_trailers, set_player_trailer_file,
+    set_remove_trailer_restricted_areas, set_trailer_license_plate, set_trailer_wear,
 };
 use main_options::trucks::{
     get_list_trucks_info, get_truck_brand_models_ets2, get_truck_brands_models_ats, get_truck_id,
@@ -1011,6 +1011,36 @@ async fn get_save_list_trailers(dir_save: &str) -> Result<ListTrailersResponse, 
     });
 }
 
+#[tauri::command]
+async fn set_player_trailer(
+    dir_save: &str,
+    current_trailer_id: &str,
+    replace_trailer_id: &str,
+) -> Result<DefaultResponse, ()> {
+    if current_trailer_id == replace_trailer_id {
+        return Ok(DefaultResponse { res: false });
+    }
+
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let (player_trailer, _) = match set_player_trailer_file(&file, replace_trailer_id) {
+        Some(player_trailer) => player_trailer,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let mut arr_val_clone = file.clone();
+
+    for item in player_trailer.iter() {
+        arr_val_clone[item.index] = item.value.to_string();
+    }
+
+    save_file(dir_save.to_string(), arr_val_clone).await;
+    return Ok(DefaultResponse { res: true });
+}
+
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_os::init())
@@ -1061,6 +1091,7 @@ fn main() {
             get_save_list_trucks,
             set_player_truck,
             get_save_list_trailers,
+            set_player_trailer,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
