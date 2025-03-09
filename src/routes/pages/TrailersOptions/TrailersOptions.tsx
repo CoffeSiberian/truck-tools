@@ -10,12 +10,14 @@ import img3 from "@/static/img/ets2/OptionsImages/3.webp";
 import img4 from "@/static/img/ets2/OptionsImages/4.webp";
 import img5 from "@/static/img/ets2/OptionsImages/5.webp";
 import img17 from "@/static/img/ets2/OptionsImages/17.webp";
+import img20 from "@/static/img/ets2/OptionsImages/20.webp";
 
 // ats
 import img3_ats from "@/static/img/ats/OptionsImages/3.webp";
 import img4_ats from "@/static/img/ats/OptionsImages/4.webp";
 import img5_ats from "@/static/img/ats/OptionsImages/5.webp";
 import img17_ats from "@/static/img/ats/OptionsImages/17.webp";
+import img20_ats from "@/static/img/ats/OptionsImages/20.webp";
 
 // modals
 import ModifyWeight from "@/routes/pages/TrailersOptions/Modals/ModifyWeight";
@@ -51,8 +53,9 @@ const TrailersOptions = () => {
 		{
 			id: "3",
 			title: "Change Player Trailer",
-			description: "Change the player trailer",
-			image: game === "ets2" ? img3 : img3_ats,
+			description:
+				"Change the trailer you are currently carrying without going to the garage",
+			image: game === "ets2" ? img20 : img20_ats,
 			modal: <SetPlayerTrailer />,
 			disable: false,
 		},
