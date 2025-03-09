@@ -112,8 +112,8 @@
                 "label": "Wybierz zapis",
                 "placeholder": "Wybierz zapis"
             },
-            "no_selected_profile": "Nie wybrano profilu",
-            "no_selected_save": "Nie wybrano zapisu",
+            "no_selected_profile": "Nie znaleziono żadnego profilu",
+            "no_selected_save": "Nie znaleziono zapisanych danych",
             "total_saves": "zapis(y/ów)"
         },
         "profile_error": {
