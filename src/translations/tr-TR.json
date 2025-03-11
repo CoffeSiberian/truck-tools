@@ -360,7 +360,7 @@
                     "title": "Mevcut Dorsenin Kilidini Aç",
                     "warning_message": {
                         "message": "Değişikliklerin etkili olabilmesi için dorsenin kamyona bağlı olması gerekir.",
-                        "title": "Hatırla"
+                        "title": "Hatırlatma"
                     }
                 }
             }
@@ -390,7 +390,7 @@
                     "title": "Kamyon motorunu değiştir",
                     "warning_message": {
                         "message": "Kamyon üzerinde <b>herhangi bir logonun havada asılı kaldığını veya kötü konumlandırıldığını görürseniz</b>, aşağıdaki butondan kaldırabilirsiniz.",
-                        "title": "Hatırla"
+                        "title": "Hatırlatma"
                     }
                 }
             },
@@ -418,7 +418,7 @@
                     "title": "Kamyon şanzımanını değiştir",
                     "warning_message": {
                         "message": "Kamyon üzerinde <b>herhangi bir logonun havada asılı kaldığını veya kötü konumlandırıldığını görürseniz</b>, aşağıdaki butondan kaldırabilirsiniz.",
-                        "title": "Hatırla"
+                        "title": "Hatırlatma"
                     }
                 }
             },
@@ -456,7 +456,7 @@
                     "title": "Mevcut kamyonda sınırsız yakıt",
                     "warning_message": {
                         "message": "Bu fonksiyonun etkili olması için <b>“Oyun” ayarlarınızda “Gerçekçi yakıt tüketimi”ni devre dışı bırakın</b>.",
-                        "title": "Hatırla"
+                        "title": "Hatırlatma"
                     }
                 }
             },

@@ -112,8 +112,8 @@
                 "label": "Wybierz zapis",
                 "placeholder": "Wybierz zapis"
             },
-            "no_selected_profile": "Nie wybrano profilu",
-            "no_selected_save": "Nie wybrano zapisu",
+            "no_selected_profile": "Nie znaleziono żadnego profilu",
+            "no_selected_save": "Nie znaleziono zapisanych danych",
             "total_saves": "zapis(y/ów)"
         },
         "profile_error": {
@@ -510,21 +510,21 @@
                 }
             },
             "change_truck": {
-                "description_card": "Change your truck without going to the garage",
-                "label_card": "Change Truck in road",
+                "description_card": "Zamień swoją obecną ciężarówkę bez konieczności udawania się do garażu",
+                "label_card": "Zamień ciężarówkę w trasie",
                 "modal": {
-                    "btn_apply": "Change",
-                    "btn_how_to_use": "How to use",
-                    "btn_close": "Close",
-                    "btn_open": "Open",
-                    "description": "Change your truck without going to the garage",
-                    "title": "Change your truck on the road",
-                    "select_label": "Trucks",
-                    "select_error": "Trucks not found",
-                    "select_placeholder": "Select a truck",
+                    "btn_apply": "Zamień",
+                    "btn_how_to_use": "Film instruktażowy",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Zamień swoją obecną ciężarówkę bez konieczności udawania się do garażu",
+                    "title": "Zamień ciężarówkę w trasie",
+                    "select_label": "Ciężarówki",
+                    "select_error": "Nie znaleziono żadnych ciężarówek",
+                    "select_placeholder": "Wybierz ciężarówkę",
                     "warning_message": {
-                        "title": "Warning",
-                        "message": "If you created a new save, remember to update the list of trucks so you don't get an error when changing trucks."
+                        "title": "Uwaga",
+                        "message": "Jeśli utworzyłeś/aś nowy zapis, pamiętaj o zaktualizowaniu listy ciężarówek, aby nie otrzymać błędu podczas zamiany ciężarówki."
                     }
                 }
             }
