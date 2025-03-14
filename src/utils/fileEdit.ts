@@ -28,6 +28,7 @@ import {
 	licensePlateSaved,
 	listLicensePlateSaved,
 	ResponseSaveGameTrucks,
+	ResponseSaveGameTrailers,
 } from "@/types/fileEditTypes";
 import {
 	IColorRgbToValidate,
@@ -704,6 +705,23 @@ export const getSaveGameTrucks = async (
 		rustParams
 	)) as ResponseSaveGameTrucks;
 
+	console.log(await getSaveGameTrailers(dirSave));
+
+	return invoceRes;
+};
+
+export const getSaveGameTrailers = async (
+	dirSave: string
+): Promise<ResponseSaveGameTrailers> => {
+	const rustParams = {
+		dirSave: dirSave + "/game.sii",
+	};
+
+	const invoceRes = (await invoke(
+		"get_save_list_trailers",
+		rustParams
+	)) as ResponseSaveGameTrailers;
+
 	return invoceRes;
 };
 
@@ -720,6 +738,25 @@ export const setPlayerTruck = async (
 
 	const invoceRes = (await invoke(
 		"set_player_truck",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
+};
+
+export const setPlayerTrailer = async (
+	dirSave: string,
+	currentTrailerId: string,
+	replaceTrailerId: string
+): Promise<boolean> => {
+	const rustParams = {
+		dirSave: dirSave + "/game.sii",
+		currentTrailerId,
+		replaceTrailerId,
+	};
+
+	const invoceRes = (await invoke(
+		"set_player_trailer",
 		rustParams
 	)) as responseRustTypes;
 
