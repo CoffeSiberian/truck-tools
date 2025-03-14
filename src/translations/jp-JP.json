@@ -363,7 +363,26 @@
                         "title": ""
                     }
                 }
-            }
+            },
+            "change_trailer": {
+				"description_card": "Change your trailer without going to the garage",
+				"label_card": "Change Trailer on road",
+				"modal": {
+					"btn_apply": "Change",
+					"btn_how_to_use": "How to use",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Change your trailer without going to the garage",
+					"title": "Change your trailer on the road",			
+					"select_label": "Trailers",	
+					"select_error": "Trailers not found",	
+					"select_placeholder": "Select a trailer",
+					"warning_message": {
+						"title": "Warning",
+						"message": "If you created a new save, remember to update the list of trailers so you don't get an error when changing trailers."
+					}
+				}
+			}
         },
         "trucks": {
             "change_truck_engine": {

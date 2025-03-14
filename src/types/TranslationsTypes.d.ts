@@ -371,6 +371,31 @@ export interface Trailers {
 	repair_trailer: RepairTrailer;
 	tab_title: string;
 	unlock_trailer_country: UnlockTrailerCountry;
+	change_trailer: ChangeTrailer;
+}
+
+export interface ChangeTrailer {
+	description_card: string;
+	label_card: string;
+	modal: ChangeTrailerModal;
+}
+
+export interface ChangeTrailerModal {
+	btn_apply: string;
+	btn_how_to_use: string;
+	btn_close: string;
+	btn_open: string;
+	description: string;
+	title: string;
+	select_label: string;
+	select_error: string;
+	select_placeholder: string;
+	warning_message: WarningMessage;
+}
+
+export interface WarningMessage {
+	title: string;
+	message: string;
 }
 
 export interface TrailersLicensePlate {
@@ -444,11 +469,6 @@ export interface UnlockTrailerCountryModal {
 	description: string;
 	title: string;
 	warning_message: WarningMessage;
-}
-
-export interface WarningMessage {
-	message: string;
-	title: string;
 }
 
 export interface Trucks {
