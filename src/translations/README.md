@@ -74,6 +74,11 @@ Our goal is to support multiple languages, driven by contributions from our comm
 
 - [Kiry][Kiry]
 
+#### Turkish
+
+- [Onur Korkmaz][onrkrkmz22]
+- [Metehan BİLAL][MBCustoms]
+
 [weblate]: https://hosted.weblate.org/projects/truck-tools/truck-tools/
 [memo209]: https://hosted.weblate.org/user/memo209/
 [nulijiazaizhong]: https://hosted.weblate.org/user/nulijiazaizhong/
@@ -89,3 +94,5 @@ Our goal is to support multiple languages, driven by contributions from our comm
 [Resound]: https://hosted.weblate.org/user/Resoundof/
 [kylishovm]: https://hosted.weblate.org/user/kylishovm/
 [Kiry]: https://hosted.weblate.org/user/kiryionut/
+[MBCustoms]: https://hosted.weblate.org/user/MBCustoms/
+[onrkrkmz22]: https://hosted.weblate.org/user/onrkrkmz22/
