@@ -365,21 +365,21 @@
                 }
             },
             "change_trailer": {
-				"description_card": "Change your trailer without going to the garage",
-				"label_card": "Change Trailer on road",
+				"description_card": "Cambiar tráiler en ruta",
+				"label_card": "Cambia tu tráiler sin ir al garaje",
 				"modal": {
-					"btn_apply": "Change",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Change your trailer without going to the garage",
-					"title": "Change your trailer on the road",			
-					"select_label": "Trailers",	
-					"select_error": "Trailers not found",	
-					"select_placeholder": "Select a trailer",
+					"btn_apply": "Cambiar",
+					"btn_how_to_use": "Cómo usar",
+					"btn_close": "Cerrar",
+					"btn_open": "Abrir",
+					"description": "Cambia tu tráiler sin ir al garaje",
+					"title": "Cambia tu tráiler en ruta",			
+					"select_label": "Tráilers",	
+					"select_error": "Tráilers no encontrados",	
+					"select_placeholder": "Seleccionar un tráiler",
 					"warning_message": {
-						"title": "Warning",
-						"message": "If you created a new save, remember to update the list of trailers so you don't get an error when changing trailers."
+						"title": "Advertencia",
+						"message": "Si has creado un nuevo guardado, recuerda actualizar la lista de tráilers para que no se produzca un error al cambiar de tráiler."
 					}
 				}
 			}
