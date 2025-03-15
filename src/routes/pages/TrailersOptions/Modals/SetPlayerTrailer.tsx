@@ -241,7 +241,7 @@ const SetPlayerTrailer = () => {
 									endContent={<IconBrandYoutube />}
 									color="warning"
 									variant="flat"
-									onPress={() => open("https://youtu.be/drwZSHw8hw8")}
+									onPress={() => open("https://youtu.be/y_XB8vSacSA")}
 								>
 									{change_trailer.modal.btn_how_to_use}
 								</Button>
