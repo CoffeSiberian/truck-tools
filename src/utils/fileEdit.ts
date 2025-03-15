@@ -705,8 +705,6 @@ export const getSaveGameTrucks = async (
 		rustParams
 	)) as ResponseSaveGameTrucks;
 
-	console.log(await getSaveGameTrailers(dirSave));
-
 	return invoceRes;
 };
 
@@ -746,7 +744,7 @@ export const setPlayerTruck = async (
 
 export const setPlayerTrailer = async (
 	dirSave: string,
-	currentTrailerId: string,
+	currentTrailerId: string | null,
 	replaceTrailerId: string
 ): Promise<boolean> => {
 	const rustParams = {

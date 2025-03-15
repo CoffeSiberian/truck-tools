@@ -78,6 +78,6 @@ export interface SaveTrailers {
 }
 
 export interface ResponseSaveGameTrailers extends responseRustTypes {
-	current_trailer_id: string;
+	current_trailer_id: string | null;
 	trailers: SaveTrailers[];
 }

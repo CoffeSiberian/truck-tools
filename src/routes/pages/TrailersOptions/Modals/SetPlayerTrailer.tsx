@@ -39,7 +39,7 @@ interface completedProps {
 interface ListTrailerState {
 	trailers: SaveTrailers[];
 	trailers_found: boolean;
-	current_trailer_id: string;
+	current_trailer_id: string | null;
 }
 
 const SetPlayerTrailer = () => {

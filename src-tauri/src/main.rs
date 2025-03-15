@@ -1000,7 +1000,7 @@ async fn get_save_list_trailers(dir_save: &str) -> Result<ListTrailersResponse, 
     };
 
     let current_trailer_id = match get_my_trailer_id(&file) {
-        Some((trailer_id, _)) => Some(trailer_id),
+        Some((trailer_id, _)) => Some(trailer_id.replace(" ", "")),
         None => None,
     };
 
@@ -1014,11 +1014,16 @@ async fn get_save_list_trailers(dir_save: &str) -> Result<ListTrailersResponse, 
 #[tauri::command]
 async fn set_player_trailer(
     dir_save: &str,
-    current_trailer_id: &str,
+    current_trailer_id: Option<&str>,
     replace_trailer_id: &str,
 ) -> Result<DefaultResponse, ()> {
-    if current_trailer_id == replace_trailer_id {
-        return Ok(DefaultResponse { res: false });
+    match current_trailer_id {
+        Some(current_trailer_id) => {
+            if current_trailer_id == replace_trailer_id {
+                return Ok(DefaultResponse { res: false });
+            }
+        }
+        None => return Ok(DefaultResponse { res: false }),
     }
 
     let file: Vec<String> = match read_file_text(dir_save).await {
