@@ -45,7 +45,7 @@ interface ListTrailerState {
 const SetPlayerTrailer = () => {
 	const { selectedSave } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { change_truck } = translations.menu_options.trucks;
+	const { change_trailer } = translations.menu_options.trailers;
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
@@ -154,7 +154,7 @@ const SetPlayerTrailer = () => {
 				color="primary"
 				variant="shadow"
 			>
-				{change_truck.modal.btn_open}
+				{change_trailer.modal.btn_open}
 			</Button>
 			<Modal
 				hideCloseButton
@@ -167,11 +167,11 @@ const SetPlayerTrailer = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								{change_truck.modal.title}
+								{change_trailer.modal.title}
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="py-1">
-								<p>{change_truck.modal.description}</p>
+								<p>{change_trailer.modal.description}</p>
 								<div className="flex items-center gap-1">
 									<Select
 										className="w-full"
@@ -180,9 +180,9 @@ const SetPlayerTrailer = () => {
 										isLoading={loadingListTrailers}
 										isDisabled={listTrailers.trailers.length === 0}
 										isInvalid={!listTrailers.trailers_found}
-										label={change_truck.modal.select_label}
-										errorMessage={change_truck.modal.select_error}
-										placeholder={change_truck.modal.select_placeholder}
+										label={change_trailer.modal.select_label}
+										errorMessage={change_trailer.modal.select_error}
+										placeholder={change_trailer.modal.select_placeholder}
 										size="md"
 									>
 										{listTrailers.trailers.map((item) => (
@@ -227,15 +227,15 @@ const SetPlayerTrailer = () => {
 								<Warning
 									text={
 										<div className="flex flex-col gap-2">
-											<b>{change_truck.modal.warning_message.title}</b>
-											<p>{change_truck.modal.warning_message.message}</p>
+											<b>{change_trailer.modal.warning_message.title}</b>
+											<p>{change_trailer.modal.warning_message.message}</p>
 										</div>
 									}
 								/>
 							</ModalBody>
 							<ModalFooter>
 								<Button variant="light" onPress={onClose} color="danger">
-									{change_truck.modal.btn_close}
+									{change_trailer.modal.btn_close}
 								</Button>
 								<Button
 									endContent={<IconBrandYoutube />}
@@ -243,7 +243,7 @@ const SetPlayerTrailer = () => {
 									variant="flat"
 									onPress={() => open("https://youtu.be/drwZSHw8hw8")}
 								>
-									{change_truck.modal.btn_how_to_use}
+									{change_trailer.modal.btn_how_to_use}
 								</Button>
 								<Button
 									endContent={<IconReplace />}
@@ -252,7 +252,7 @@ const SetPlayerTrailer = () => {
 									isLoading={isLoading}
 									onPress={setPlayerTrailer}
 								>
-									{change_truck.modal.btn_apply}
+									{change_trailer.modal.btn_apply}
 								</Button>
 							</ModalFooter>
 						</>

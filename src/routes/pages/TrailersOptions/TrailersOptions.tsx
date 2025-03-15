@@ -52,9 +52,8 @@ const TrailersOptions = () => {
 		},
 		{
 			id: "3",
-			title: "Change Player Trailer",
-			description:
-				"Change the trailer you are currently carrying without going to the garage",
+			title: trailers.change_trailer.label_card,
+			description: trailers.change_trailer.description_card,
 			image: game === "ets2" ? img20 : img20_ats,
 			modal: <SetPlayerTrailer />,
 			disable: false,
