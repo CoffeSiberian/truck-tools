@@ -354,7 +354,7 @@
                 "modal": {
                     "btn_apply": "Odblokuj",
                     "btn_close": "Zamknij",
-                    "btn_how_to_use": "Jak to działa?",
+                    "btn_how_to_use": "Film instruktażowy",
                     "btn_open": "Edytuj",
                     "description": "Odblokuj możliwość używania naczepy we wszystkich krajach",
                     "title": "Usuń blokadę obecnej naczepy",
@@ -365,24 +365,24 @@
                 }
             },
             "change_trailer": {
-				"description_card": "Change your trailer without going to the garage",
-				"label_card": "Change Trailer on road",
-				"modal": {
-					"btn_apply": "Change",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Change your trailer without going to the garage",
-					"title": "Change your trailer on the road",			
-					"select_label": "Trailers",	
-					"select_error": "Trailers not found",	
-					"select_placeholder": "Select a trailer",
-					"warning_message": {
-						"title": "Warning",
-						"message": "If you created a new save, remember to update the list of trailers so you don't get an error when changing trailers."
-					}
-				}
-			}
+                "description_card": "Zamień obecnie używaną naczepę bez konieczności udawania się do garażu",
+                "label_card": "Zamień naczepę w trasie",
+                "modal": {
+                    "btn_apply": "Zamień",
+                    "btn_how_to_use": "Film instruktażowy",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Zamień obecnie używaną naczepę bez konieczności udawania się do garażu",
+                    "title": "Zamień naczepę w trasie",
+                    "select_label": "Naczepy",
+                    "select_error": "Nie znaleziono żadnych naczep",
+                    "select_placeholder": "Wybierz naczepę",
+                    "warning_message": {
+                        "title": "Uwaga",
+                        "message": "Jeśli utworzyłeś/aś nowy zapis, pamiętaj o zaktualizowaniu listy naczep, aby nie otrzymać błędu podczas zamiany naczepy."
+                    }
+                }
+            }
         },
         "trucks": {
             "change_truck_engine": {
@@ -529,14 +529,14 @@
                 }
             },
             "change_truck": {
-                "description_card": "Zamień swoją obecną ciężarówkę bez konieczności udawania się do garażu",
+                "description_card": "Zamień obecnie używaną ciężarówkę bez konieczności udawania się do garażu",
                 "label_card": "Zamień ciężarówkę w trasie",
                 "modal": {
                     "btn_apply": "Zamień",
                     "btn_how_to_use": "Film instruktażowy",
                     "btn_close": "Zamknij",
                     "btn_open": "Edytuj",
-                    "description": "Zamień swoją obecną ciężarówkę bez konieczności udawania się do garażu",
+                    "description": "Zamień obecnie używaną ciężarówkę bez konieczności udawania się do garażu",
                     "title": "Zamień ciężarówkę w trasie",
                     "select_label": "Ciężarówki",
                     "select_error": "Nie znaleziono żadnych ciężarówek",
