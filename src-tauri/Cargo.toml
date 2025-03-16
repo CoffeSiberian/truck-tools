@@ -1,6 +1,6 @@
 [package]
 name = "trucktools"
-version = "0.10.0"
+version = "0.11.0"
 description = "Truck Tools"
 authors = ["SiberianCoffe"]
 edition = "2024"
@@ -24,7 +24,7 @@ libloading = "0.8.6"
 hex = "0.4.3"
 uuid = "1.16.0"
 walkdir = "2.5.0"
-zip = "2.2.3"
+zip = "2.3.0"
 tauri-plugin-os = "2.2.1"
 
 [features]
