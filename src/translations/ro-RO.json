@@ -365,24 +365,24 @@
                 }
             },
             "change_trailer": {
-				"description_card": "Change your trailer without going to the garage",
-				"label_card": "Change Trailer on road",
-				"modal": {
-					"btn_apply": "Change",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Change your trailer without going to the garage",
-					"title": "Change your trailer on the road",			
-					"select_label": "Trailers",	
-					"select_error": "Trailers not found",	
-					"select_placeholder": "Select a trailer",
-					"warning_message": {
-						"title": "Warning",
-						"message": "If you created a new save, remember to update the list of trailers so you don't get an error when changing trailers."
-					}
-				}
-			}
+                "description_card": "Schimbați-vă remorca fără a merge în garaj",
+                "label_card": "Schimbați remorca pe drum",
+                "modal": {
+                    "btn_apply": "Schimba",
+                    "btn_how_to_use": "Cum se utilizează",
+                    "btn_close": "închide",
+                    "btn_open": "Open",
+                    "description": "Schimbați-vă remorca fără a merge în garaj",
+                    "title": "Schimba remorca pe drum",
+                    "select_label": "Remorci",
+                    "select_error": "Nu au fost găsite remorci",
+                    "select_placeholder": "Selectați o remorcă",
+                    "warning_message": {
+                        "title": "Avertizare",
+                        "message": "Dacă ați creat o nouă salvare, nu uitați să actualizați lista de remorci, astfel încât să nu primiți o eroare la schimbarea remorcilor."
+                    }
+                }
+            }
         },
         "trucks": {
             "change_truck_engine": {
