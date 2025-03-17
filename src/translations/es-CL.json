@@ -365,24 +365,24 @@
                 }
             },
             "change_trailer": {
-				"description_card": "Cambiar tráiler en ruta",
-				"label_card": "Cambia tu tráiler sin ir al garaje",
-				"modal": {
-					"btn_apply": "Cambiar",
-					"btn_how_to_use": "Cómo usar",
-					"btn_close": "Cerrar",
-					"btn_open": "Abrir",
-					"description": "Cambia tu tráiler sin ir al garaje",
-					"title": "Cambia tu tráiler en ruta",			
-					"select_label": "Tráilers",	
-					"select_error": "Tráilers no encontrados",	
-					"select_placeholder": "Seleccionar un tráiler",
-					"warning_message": {
-						"title": "Advertencia",
-						"message": "Si has creado un nuevo guardado, recuerda actualizar la lista de tráilers para que no se produzca un error al cambiar de tráiler."
-					}
-				}
-			}
+                "description_card": "Cambiar tráiler en ruta",
+                "label_card": "Cambiar tráiler en ruta",
+                "modal": {
+                    "btn_apply": "Cambiar",
+                    "btn_how_to_use": "Cómo usar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Cambia tu tráiler sin ir al garaje",
+                    "title": "Cambia tu tráiler en ruta",
+                    "select_label": "Tráilers",
+                    "select_error": "Tráilers no encontrados",
+                    "select_placeholder": "Seleccionar un tráiler",
+                    "warning_message": {
+                        "title": "Advertencia",
+                        "message": "Si has creado un nuevo guardado, recuerda actualizar la lista de tráilers para que no se produzca un error al cambiar de tráiler."
+                    }
+                }
+            }
         },
         "trucks": {
             "change_truck_engine": {
