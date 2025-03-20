@@ -102,25 +102,25 @@
                 }
             },
             "input_select_profile": {
-                "label": "Оберіть профілю",
+                "label": "Профіль",
                 "options": {
                     "save_load": "Збереження"
                 },
                 "placeholder": "Оберіть профіль"
             },
             "input_select_save": {
-                "label": "Оберіть збереження",
+                "label": "Збереження",
                 "placeholder": "Оберіть збереження"
             },
-            "no_selected_profile": "Профіль не обрано",
-            "no_selected_save": "Збереження не обрано",
+            "no_selected_profile": "Профіль не знайдено",
+            "no_selected_save": "Збереження не знайдено",
             "total_saves": "збережень(ня)"
         },
         "profile_error": {
             "btn_how_to": "Навчальне відео",
             "btn_how_to_disable": "Як вимкнути Steam Cloud",
             "description": "Не забудьте <b> вимкнути Steam Cloud</b> у своєму профілі або перевірити розташування теки «Документи»",
-            "title": "Профілі не знайдено"
+            "title": "Профілів не знайдено"
         },
         "updater": {
             "alert_message": "Помилка встановлення. Повторіть спробу пізніше",
@@ -365,24 +365,24 @@
                 }
             },
             "change_trailer": {
-				"description_card": "Change your trailer without going to the garage",
-				"label_card": "Change Trailer on road",
-				"modal": {
-					"btn_apply": "Change",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Change your trailer without going to the garage",
-					"title": "Change your trailer on the road",			
-					"select_label": "Trailers",	
-					"select_error": "Trailers not found",	
-					"select_placeholder": "Select a trailer",
-					"warning_message": {
-						"title": "Warning",
-						"message": "If you created a new save, remember to update the list of trailers so you don't get an error when changing trailers."
-					}
-				}
-			}
+                "description_card": "Замініть свій причіп, не відвідуючи гараж",
+                "label_card": "Заміна причепу в дорозі",
+                "modal": {
+                    "btn_apply": "Замінити",
+                    "btn_how_to_use": "Як користуватися",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Замініть свій причіп, не відвідуючи гараж",
+                    "title": "Заміна причепу в дорозі",
+                    "select_label": "Причепи",
+                    "select_error": "Причепів не знайдено",
+                    "select_placeholder": "Оберіть причіп",
+                    "warning_message": {
+                        "title": "Зауважте",
+                        "message": "Якщо ви створили нове збереження, не забудьте оновити список причепів, щоб не отримати помилку при заміні причепу."
+                    }
+                }
+            }
         },
         "trucks": {
             "change_truck_engine": {
@@ -529,21 +529,21 @@
                 "label_card": "Зміна пробігу вантажівки"
             },
             "change_truck": {
-                "description_card": "Change your truck without going to the garage",
-                "label_card": "Change Truck in road",
+                "description_card": "Замініть свою вантажівку, не відвідуючи гараж",
+                "label_card": "Заміна вантажівки в дорозі",
                 "modal": {
-                    "btn_apply": "Change",
-                    "btn_how_to_use": "How to use",
-                    "btn_close": "Close",
-                    "btn_open": "Open",
-                    "description": "Change your truck without going to the garage",
-                    "title": "Change your truck on the road",
-                    "select_label": "Trucks",
-                    "select_error": "Trucks not found",
-                    "select_placeholder": "Select a truck",
+                    "btn_apply": "Замінити",
+                    "btn_how_to_use": "Як користуватися",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Замініть свою вантажівку, не відвідуючи гараж",
+                    "title": "Зміна вантажівки в дорозі",
+                    "select_label": "Вантажівки",
+                    "select_error": "Вантажівок не знайдено",
+                    "select_placeholder": "Оберіть вантажівку",
                     "warning_message": {
-                        "title": "Warning",
-                        "message": "If you created a new save, remember to update the list of trucks so you don't get an error when changing trucks."
+                        "title": "Зауважте",
+                        "message": "Якщо ви створили нове збереження, не забудьте оновити список вантажівок, щоб не отримати помилку при зміні вантажівки."
                     }
                 }
             }

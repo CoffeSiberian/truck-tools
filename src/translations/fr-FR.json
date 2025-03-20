@@ -365,24 +365,24 @@
                 }
             },
             "change_trailer": {
-				"description_card": "Change your trailer without going to the garage",
-				"label_card": "Change Trailer on road",
-				"modal": {
-					"btn_apply": "Change",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Change your trailer without going to the garage",
-					"title": "Change your trailer on the road",			
-					"select_label": "Trailers",	
-					"select_error": "Trailers not found",	
-					"select_placeholder": "Select a trailer",
-					"warning_message": {
-						"title": "Warning",
-						"message": "If you created a new save, remember to update the list of trailers so you don't get an error when changing trailers."
-					}
-				}
-			}
+                "description_card": "Changez votre remorque sans aller au garage",
+                "label_card": "Changer la remorque sur la route",
+                "modal": {
+                    "btn_apply": "Change",
+                    "btn_how_to_use": "comment utiliser",
+                    "btn_close": "Fermé",
+                    "btn_open": "Open",
+                    "description": "Changez votre remorque sans aller au garage",
+                    "title": "Changez votre remorque sur la route",
+                    "select_label": "Remorques",
+                    "select_error": "Remorques non trouvées",
+                    "select_placeholder": "Sélectionnez une remorque",
+                    "warning_message": {
+                        "title": "Avertissement",
+                        "message": "Si vous avez créé une nouvelle sauvegarde, n’oubliez pas de mettre à jour la liste des remorques pour ne pas recevoir d’erreur lors du changement de remorque."
+                    }
+                }
+            }
         },
         "trucks": {
             "change_truck_engine": {
