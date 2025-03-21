@@ -70,7 +70,7 @@ Remember, contributing translations makes you a collaborator of the project!
 - [x] Save license plate data
 - [x] Set custom engines and transmission
 - [x] Modify kilometers traveled by the truck
-- [ ] Changing the trailer (no need to go to the garage)
+- [x] Changing the trailer (no need to go to the garage)
 
 #### Profiles
 
