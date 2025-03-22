@@ -112,8 +112,8 @@
                 "label": "저장 선택",
                 "placeholder": "저장 선택"
             },
-            "no_selected_profile": "프로필이 선택되지 않음",
-            "no_selected_save": "선택된 저장 없음",
+            "no_selected_profile": "프로필을 찾을 수 없음",
+            "no_selected_save": "저장된 데이터를 찾을 수 없음",
             "total_saves": "저장"
         },
         "profile_error": {
@@ -365,24 +365,24 @@
                 }
             },
             "change_trailer": {
-				"description_card": "Change your trailer without going to the garage",
-				"label_card": "Change Trailer on road",
-				"modal": {
-					"btn_apply": "Change",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Change your trailer without going to the garage",
-					"title": "Change your trailer on the road",			
-					"select_label": "Trailers",	
-					"select_error": "Trailers not found",	
-					"select_placeholder": "Select a trailer",
-					"warning_message": {
-						"title": "Warning",
-						"message": "If you created a new save, remember to update the list of trailers so you don't get an error when changing trailers."
-					}
-				}
-			}
+                "description_card": "차고에 가지 않고 트레일러를 교체하세요",
+                "label_card": "도로 위 트레일러 변경",
+                "modal": {
+                    "btn_apply": "변경",
+                    "btn_how_to_use": "사용 방법",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "차고에 가지 않고 트레일러를 교체하세요",
+                    "title": "도로에서 트레일러 교체하기",
+                    "select_label": "트레일러",
+                    "select_error": "트레일러를 찾을 수 없음",
+                    "select_placeholder": "트레일러 선택",
+                    "warning_message": {
+                        "title": "경고",
+                        "message": "새 세이브를 생성한 경우 트레일러를 변경할 때 오류가 발생하지 않도록 트레일러 목록을 업데이트하는 것을 잊지 마세요."
+                    }
+                }
+            }
         },
         "trucks": {
             "change_truck_engine": {
@@ -515,35 +515,35 @@
             "tab_title": "트럭",
             "change_km": {
                 "modal": {
-                    "btn_apply": "Apply",
-                    "btn_close": "Close",
-                    "description": "Change the mileage on your truck",
+                    "btn_apply": "적용",
+                    "btn_close": "닫기",
+                    "description": "트럭의 주행 거리 변경",
                     "input_km": {
-                        "placeholder": "Distance in Km",
-                        "label": "Distance in Km"
+                        "placeholder": "Km 거리",
+                        "label": "Km 거리"
                     },
-                    "btn_open": "Open",
-                    "title": "Change the truck mileage"
+                    "btn_open": "열기",
+                    "title": "트럭 주행 거리 변경"
                 },
-                "description_card": "Change the mileage on your truck",
-                "label_card": "Change the truck mileage"
+                "description_card": "트럭의 주행 거리 변경",
+                "label_card": "트럭 주행 거리 변경"
             },
             "change_truck": {
-                "description_card": "Change your truck without going to the garage",
-                "label_card": "Change Truck in road",
+                "description_card": "차고에 가지 않고 트럭을 갈아타세요",
+                "label_card": "도로에서 트럭 교체하기",
                 "modal": {
-                    "btn_apply": "Change",
-                    "btn_how_to_use": "How to use",
-                    "btn_close": "Close",
-                    "btn_open": "Open",
-                    "description": "Change your truck without going to the garage",
-                    "title": "Change your truck on the road",
-                    "select_label": "Trucks",
-                    "select_error": "Trucks not found",
-                    "select_placeholder": "Select a truck",
+                    "btn_apply": "변경",
+                    "btn_how_to_use": "사용 방법",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "차고에 가지 않고 트럭을 갈아타세요",
+                    "title": "도로에서 트럭 교체하기",
+                    "select_label": "트럭",
+                    "select_error": "트럭을 찾을 수 없음",
+                    "select_placeholder": "트럭 선택",
                     "warning_message": {
-                        "title": "Warning",
-                        "message": "If you created a new save, remember to update the list of trucks so you don't get an error when changing trucks."
+                        "title": "경고",
+                        "message": "새 세이브를 생성했다면 트럭을 교체할 때 오류가 발생하지 않도록 트럭 목록을 업데이트하는 것을 잊지 마세요."
                     }
                 }
             }
