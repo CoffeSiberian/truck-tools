@@ -372,14 +372,14 @@
                     "btn_how_to_use": "Cách sử dụng",
                     "btn_close": "Đóng",
                     "btn_open": "Open",
-                    "description": "Change your trailer without going to the garage",
-                    "title": "Change your trailer on the road",
-                    "select_label": "Trailers",
-                    "select_error": "Trailers not found",
-                    "select_placeholder": "Select a trailer",
+                    "description": "Đổi moóc kéo của bạn mà không cần đến nhà để xe",
+                    "title": "Đổi moóc kéo của bạn trên đường",
+                    "select_label": "Moóc kéo",
+                    "select_error": "Không tìm thấy moóc kéo",
+                    "select_placeholder": "Chọn moóc kéo",
                     "warning_message": {
-                        "title": "Warning",
-                        "message": "If you created a new save, remember to update the list of trailers so you don't get an error when changing trailers."
+                        "title": "Cảnh báo",
+                        "message": "Nếu bạn đã tạo một bản lưu mới, nhớ cập nhật danh sách các moóc kéo để bạn không gặp lỗi khi thay đổi moóc kéo."
                     }
                 }
             }
