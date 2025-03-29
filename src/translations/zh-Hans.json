@@ -368,18 +368,18 @@
                 "description_card": "不用去车库换挂车",
                 "label_card": "在道路上更换挂车",
                 "modal": {
-                    "btn_apply": "Change",
-                    "btn_how_to_use": "How to use",
-                    "btn_close": "Close",
+                    "btn_apply": "改变",
+                    "btn_how_to_use": "如何使用",
+                    "btn_close": "关闭",
                     "btn_open": "Open",
-                    "description": "Change your trailer without going to the garage",
+                    "description": "无需去车库即可更换拖车",
                     "title": "在道路上更换挂车",
-                    "select_label": "Trailers",
-                    "select_error": "Trailers not found",
-                    "select_placeholder": "Select a trailer",
+                    "select_label": "挂车",
+                    "select_error": "未找到挂车",
+                    "select_placeholder": "选择挂车",
                     "warning_message": {
-                        "title": "Warning",
-                        "message": "If you created a new save, remember to update the list of trailers so you don't get an error when changing trailers."
+                        "title": "警告",
+                        "message": "如果您创建了新的保存，请记得更新挂车列表，这样在更改挂车时就不会出错。"
                     }
                 }
             }
