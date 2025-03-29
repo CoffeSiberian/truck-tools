@@ -365,24 +365,24 @@
                 }
             },
             "change_trailer": {
-				"description_card": "Change your trailer without going to the garage",
-				"label_card": "Change Trailer on road",
-				"modal": {
-					"btn_apply": "Change",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Change your trailer without going to the garage",
-					"title": "Change your trailer on the road",			
-					"select_label": "Trailers",	
-					"select_error": "Trailers not found",	
-					"select_placeholder": "Select a trailer",
-					"warning_message": {
-						"title": "Warning",
-						"message": "If you created a new save, remember to update the list of trailers so you don't get an error when changing trailers."
-					}
-				}
-			}
+                "description_card": "Garaja gitmeden dorsenizi değiştirin",
+                "label_card": "Dorseyi Yolda Değiştir",
+                "modal": {
+                    "btn_apply": "Değiştir",
+                    "btn_how_to_use": "Nasıl Kullanılır",
+                    "btn_close": "Kapat",
+                    "btn_open": "Open",
+                    "description": "Garaja gitmeden dorsenizi değiştirin",
+                    "title": "Dorsenizi Yolda değiştirin",
+                    "select_label": "Dorseler",
+                    "select_error": "Dorse bulunamadı",
+                    "select_placeholder": "Dorse seçin",
+                    "warning_message": {
+                        "title": "Uyarı",
+                        "message": "Eğer yeni bir kayıt oluşturduysanız, dorseleri değiştirirken hata almamak için dorse listesini güncellemeyi unutmayın."
+                    }
+                }
+            }
         },
         "trucks": {
             "change_truck_engine": {
