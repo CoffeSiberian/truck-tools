@@ -17,7 +17,8 @@ export type Langs =
 	| "de-DE"
 	| "pl-PL"
 	| "ru-RU"
-	| "ro-RO";
+	| "ro-RO"
+	| "tr-TR";
 
 export interface TranslationsTypes {
 	components: Components;
