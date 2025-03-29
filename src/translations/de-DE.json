@@ -112,8 +112,8 @@
                 "label": "Wählen einen Spielstand aus",
                 "placeholder": "Wählen Sie einen Spielstand aus"
             },
-            "no_selected_profile": "Kein Profil ausgewählt",
-            "no_selected_save": "Kein Spielstand ausgewählt",
+            "no_selected_profile": "Keine Profile gefunden",
+            "no_selected_save": "Keine gespeicherten Daten gefunden",
             "total_saves": "Speicherstände"
         },
         "profile_error": {
@@ -365,24 +365,24 @@
                 }
             },
             "change_trailer": {
-				"description_card": "Change your trailer without going to the garage",
-				"label_card": "Change Trailer on road",
-				"modal": {
-					"btn_apply": "Change",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Change your trailer without going to the garage",
-					"title": "Change your trailer on the road",			
-					"select_label": "Trailers",	
-					"select_error": "Trailers not found",	
-					"select_placeholder": "Select a trailer",
-					"warning_message": {
-						"title": "Warning",
-						"message": "If you created a new save, remember to update the list of trailers so you don't get an error when changing trailers."
-					}
-				}
-			}
+                "description_card": "Wechseln Sie Ihren Anhänger, ohne in die Werkstatt zu gehen",
+                "label_card": "Anhänger auf der Straße wechseln",
+                "modal": {
+                    "btn_apply": "Wechseln",
+                    "btn_how_to_use": "Wie man es benutzt",
+                    "btn_close": "Schließen",
+                    "btn_open": "Open",
+                    "description": "Wechseln Sie Ihren Anhänger, ohne in die Werkstatt zu gehen",
+                    "title": "Wechseln Sie Ihren Anhänger auf der Straße",
+                    "select_label": "Anhänger",
+                    "select_error": "Anhänger nicht gefunden",
+                    "select_placeholder": "Anhänger auswählen",
+                    "warning_message": {
+                        "title": "Warnung",
+                        "message": "Wenn Sie einen neuen Speicherstand erstellt haben, denken Sie daran, die Liste der Anhänger zu aktualisieren, damit Sie beim Ändern der Anhänger keine Fehlermeldung erhalten."
+                    }
+                }
+            }
         },
         "trucks": {
             "change_truck_engine": {
