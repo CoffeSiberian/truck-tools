@@ -65,6 +65,7 @@ Our goal is to support multiple languages, driven by contributions from our comm
 #### German
 
 - [Gerfo][Gerfo]
+- [Ettore Atalan][Atalanttore]
 
 #### Polish
 
@@ -96,3 +97,4 @@ Our goal is to support multiple languages, driven by contributions from our comm
 [Kiry]: https://hosted.weblate.org/user/kiryionut/
 [MBCustoms]: https://hosted.weblate.org/user/MBCustoms/
 [onrkrkmz22]: https://hosted.weblate.org/user/onrkrkmz22/
+[Atalanttore]: https://hosted.weblate.org/user/Atalanttore/
