@@ -46,16 +46,7 @@ const UpdaterModal = () => {
 
 	const getDate = (date: string): string => {
 		try {
-			const dateSplit = date.split(" ");
-			const timeZoneSplit = dateSplit[2].split(":");
-
-			const dateC = dateSplit[0];
-			const time = dateSplit[1].replace(".0", "");
-			const timeZone = `${timeZoneSplit[0]}:${timeZoneSplit[1]}`;
-
-			const completeDate = `${dateC}T${time}${timeZone}`;
-
-			return formatDate(completeDate, {
+			return formatDate(date, {
 				date: "medium",
 				time: "short",
 			});
