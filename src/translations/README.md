@@ -56,6 +56,7 @@ Our goal is to support multiple languages, driven by contributions from our comm
 #### Ukrainian
 
 - [Vasyl Belynets][Vasyl Belynets]
+- [djoh][kaktusgame806]
 
 #### Russian
 
@@ -98,3 +99,4 @@ Our goal is to support multiple languages, driven by contributions from our comm
 [MBCustoms]: https://hosted.weblate.org/user/MBCustoms/
 [onrkrkmz22]: https://hosted.weblate.org/user/onrkrkmz22/
 [Atalanttore]: https://hosted.weblate.org/user/Atalanttore/
+[kaktusgame806]:https://hosted.weblate.org/user/kaktusgame806/
