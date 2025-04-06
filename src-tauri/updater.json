@@ -1,11 +1,11 @@
 {
-	"version": "v0.11.0",
-	"notes": "- New feature that will allow you to change your trailer without needing to travel to your garage\n- Turkish language added\n\nAs always, we are grateful to the collaborators of the project ❤️",
-	"pub_date": "2025-03-16T19:00:00-03:00",
+	"version": "v0.11.1",
+	"notes": "- Language Update\n- Internal Dependencies Updated\n\nAs always, we are grateful to the collaborators of the project ❤️",
+	"pub_date": "2025-04-06T12:00:00-03:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlVPdEs1dnpvRVRza1BjbndLWDlkcWY3MWRTRDVHb0RSeXRhckJnQ1I5OWhBbHo2SFVHUEd6N1p6Y0I4S09mcWs2dnJhNFlhSzRPRjdIUUZWa1dxQUFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzQyMTY2MDgwCWZpbGU6VHJ1Y2sgVG9vbHNfMC4xMS4wX3g2NF9lbi1VUy5tc2kuemlwCk1Qek11UEpZUjVQVGlJem12cUFsdkk2dUZDMDFJcjRITkdXa29JRnNDTHVhQlNQd2R6TUtOZ3ZWWm1GMWp0ZUZuZ2F2RklFOFpaSzI5Tlc5Q215eURBPT0K",
-			"url": "https://cdn.siberiancoffe.dev/truck-tools/tauri-v1/Truck_Tools_0.11.0_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlFtaEVXMjVoNm5wWVNoZ1dNKzkxbVYzNERveU0vRDc1QkgrbmN2a0RCZmJTc0ZaM05pNkc5L3pmV2UyT0Y2N0hhNXJnNmJFT1hMQzUrRmhPR2hnQ3dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzQzOTYyNDQwCWZpbGU6VHJ1Y2sgVG9vbHNfMC4xMS4xX3g2NF9lbi1VUy5tc2kuemlwCnhaNzNOQi9BM2tKV3ovZHo2MEp4Y3J1L1JDTlRScGJNbHF2TXh5c2xKYWNwQytBRG8zenFVSEZ5MnU4ckt1SmRxbWg2NlVQN2tIODBLQlFvUUxhekFBPT0K",
+			"url": "https://legacy.siberiancoffe.dev/Truck_Tools_0.11.1_x64_en-US.msi.zip"
 		}
 	}
 }
