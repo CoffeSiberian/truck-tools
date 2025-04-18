@@ -29,9 +29,9 @@ use std::path::Path;
 
 use structs::experience_skills::ExperienceSkills;
 use structs::responses::{
-    DefaultResponse, DeveloperValues, ListProfilesResponse, ListTrailersResponse,
-    ListTrucksResponse, SaveGameCountResponse, SaveGameResponse, SystemThemeResponse,
-    TruckBrandModelsResponse,
+    DefaultResponse, DeveloperValues, ListCamerasResponse, ListProfilesResponse,
+    ListTrailersResponse, ListTrucksResponse, SaveGameCountResponse, SaveGameResponse,
+    SystemThemeResponse, TruckBrandModelsResponse,
 };
 use structs::vec_save_games::VecSaveGames;
 
@@ -41,8 +41,8 @@ use utils::compress_folder::compress_folder_files;
 use utils::decrypt_saves::decrypt_file_to_save;
 use utils::file_edit::{
     copy_folder, get_developer_value, get_list_save_count, get_list_save_game,
-    get_list_save_game_dirs, get_rgb_hex_to_game_format, read_file_text, rename_folder, save_file,
-    set_convoy_mode_status, set_developer_value,
+    get_list_save_game_dirs, get_rgb_hex_to_game_format, get_save_camera, read_file_text,
+    rename_folder, save_file, set_convoy_mode_status, set_developer_value,
 };
 
 const IGNORED_FOLDERS: [&str; 1] = ["album"];
@@ -1046,6 +1046,26 @@ async fn set_player_trailer(
     return Ok(DefaultResponse { res: true });
 }
 
+#[tauri::command]
+async fn get_save_player_camera(dir_cam: &str) -> Result<ListCamerasResponse, ()> {
+    let (location, rotation) = match get_save_camera(dir_cam).await {
+        Some(camera) => camera,
+        None => {
+            return Ok(ListCamerasResponse {
+                res: false,
+                location: None,
+                rotation: None,
+            });
+        }
+    };
+
+    return Ok(ListCamerasResponse {
+        res: true,
+        location: Some(location),
+        rotation: Some(rotation),
+    });
+}
+
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_os::init())
@@ -1097,6 +1117,7 @@ fn main() {
             set_player_truck,
             get_save_list_trailers,
             set_player_trailer,
+            get_save_player_camera,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

@@ -60,3 +60,10 @@ pub struct ListTrailersResponse {
     pub current_trailer_id: Option<String>,
     pub trailers: Vec<VecSaveTrailers>,
 }
+
+#[derive(Serialize)]
+pub struct ListCamerasResponse {
+    pub res: bool,
+    pub location: Option<String>,
+    pub rotation: Option<String>,
+}
