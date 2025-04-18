@@ -2,7 +2,7 @@ import { Profile, SaveGame, ProfileWithoutSaves } from "@/types/SaveGameTypes";
 import { themeTypesSystem } from "@/types/fileEditTypes";
 
 // translations types
-import { TranslationsTypes } from "./TranslationsTypes";
+import { TranslationsTypes } from "@/types/TranslationsTypes";
 
 export type GamesNames = "ets2" | "ats";
 
@@ -10,6 +10,7 @@ export interface ProfileObjectType {
 	selectedProfile?: Profile;
 	selectedSave?: SaveGame;
 	listProfiles: Array<ProfileWithoutSaves>;
+	dirDocsGame?: string;
 	game: GamesNames;
 }
 

@@ -39,8 +39,8 @@ import { Langs } from "@/types/TranslationsTypes";
 import { IColor } from "react-color-palette";
 
 const STORE_FILE = ".settings.dat";
-const ATS_DIR = "American Truck Simulator";
-const ETS2_DIR = "Euro Truck Simulator 2";
+export const ATS_DIR = "American Truck Simulator";
+export const ETS2_DIR = "Euro Truck Simulator 2";
 
 const getProfileImage = async (path: string): Promise<string | undefined> => {
 	const imgPath = await join(path, "online_avatar.png");
@@ -82,6 +82,13 @@ export const openExplorer = async (path: string) => {
 	await command.execute();
 };
 
+export const getDocsDir = async (): Promise<string> => {
+	const storeDocsDir = await getStoredDocumentDir();
+	const docsDirSystem = await documentDir();
+
+	return storeDocsDir || docsDirSystem;
+};
+
 export const getListSaves = async (
 	profilePath: string
 ): Promise<SaveGame[] | null> => {
@@ -120,9 +127,7 @@ export const readProfileNames = async (
 ): Promise<ProfileWithoutSaves[]> => {
 	const readDirProfiles = (game === "ets2" ? ETS2_DIR : ATS_DIR) + "/profiles";
 
-	const storeDocsDir = await getStoredDocumentDir();
-	const docsDirSystem = await documentDir();
-	const docsDir = storeDocsDir || docsDirSystem;
+	const docsDir = await getDocsDir();
 
 	const dirProfiles = await getListDirProfiles(
 		(await join(docsDir, readDirProfiles)).toString()
@@ -550,9 +555,7 @@ export const getSystemTheme = async (): Promise<themeTypes> => {
 export const getGameDeveloperStatus = async (
 	game: GamesNames
 ): Promise<responseGetDeveloperValues> => {
-	const storeDocsDir = await getStoredDocumentDir();
-	const docsDirSystem = await documentDir();
-	const docsDir = storeDocsDir || docsDirSystem;
+	const docsDir = await getDocsDir();
 
 	const rustParams = {
 		dirDocsGameFolder: (
@@ -572,9 +575,7 @@ export const setGameDeveloperStatus = async (
 	statusDeveloper: boolean,
 	game: GamesNames
 ): Promise<boolean> => {
-	const storeDocsDir = await getStoredDocumentDir();
-	const docsDirSystem = await documentDir();
-	const docsDir = storeDocsDir || docsDirSystem;
+	const docsDir = await getDocsDir();
 
 	const rustParams = {
 		dirDocsGameFolder: (
@@ -595,9 +596,7 @@ export const setConvoySize = async (
 	convoyStatus: boolean,
 	game: GamesNames
 ): Promise<boolean> => {
-	const storeDocsDir = await getStoredDocumentDir();
-	const docsDirSystem = await documentDir();
-	const docsDir = storeDocsDir || docsDirSystem;
+	const docsDir = await getDocsDir();
 
 	const rustParams = {
 		dirDocsGameFolder: (
