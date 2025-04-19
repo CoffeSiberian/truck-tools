@@ -9,7 +9,8 @@ use hex::encode_upper;
 
 use main_options::profiles::{
     copy_profile_configs, set_any_status_garage, set_bank_money, set_dealerships_discovered_status,
-    set_experience, set_experience_skills, set_profile_name, set_visited_cities,
+    set_experience, set_experience_skills, set_player_map_position, set_profile_name,
+    set_visited_cities,
 };
 use main_options::trailers::{
     get_list_trailers_info, get_my_trailer_id, get_trailer_def_id, get_trailer_def_index,
@@ -1066,6 +1067,27 @@ async fn get_save_player_camera(dir_cam: &str) -> Result<ListCamerasResponse, ()
     });
 }
 
+#[tauri::command]
+async fn set_player_position(
+    dir_save: &str,
+    location: &str,
+    rotation: &str,
+) -> Result<DefaultResponse, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let set_player_position = match set_player_map_position(&file, location, rotation) {
+        Some(set_player_position) => set_player_position,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    save_file(dir_save.to_string(), set_player_position).await;
+
+    return Ok(DefaultResponse { res: true });
+}
+
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_os::init())
@@ -1118,6 +1140,7 @@ fn main() {
             get_save_list_trailers,
             set_player_trailer,
             get_save_player_camera,
+            set_player_position,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

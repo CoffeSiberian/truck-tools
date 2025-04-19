@@ -640,3 +640,43 @@ pub async fn copy_profile_configs(dir_profile: &Path, dest_dir_profile: &Path) -
 
     return true;
 }
+
+pub fn set_player_map_position(
+    arr_val: &Vec<String>,
+    location: &str,
+    rotation: &str,
+) -> Option<Vec<String>> {
+    let mut arr_val_clone = arr_val.clone();
+
+    let mut num_trailers: u8 = 0;
+    let mut found_truck: bool = false;
+    for (i, item) in arr_val.iter().enumerate() {
+        match item {
+            item if item.contains("my_truck:") => {
+                found_truck = true;
+            }
+            item if item.contains(" assigned_trailer: _nameless") => {
+                num_trailers += 1;
+            }
+            item if item.contains(" assigned_trailer_connected: false") && num_trailers == 1 => {
+                num_trailers += 1;
+                arr_val_clone[i] = format!(" assigned_trailer_connected: true");
+            }
+            item if item.contains(" truck_placement:") => {
+                arr_val_clone[i] = format!(" truck_placement: {} {}", location, rotation);
+            }
+            item if item.contains(" trailer_placement:") => {
+                arr_val_clone[i] = format!(" trailer_placement: (0, 0, 0) {}", rotation);
+            }
+            item if item.contains(" slave_trailer_placements[") => {
+                let split = item.split(":").collect::<Vec<&str>>()[0];
+
+                arr_val_clone[i] = format!("{}: (0, 0, 0) {}", split, rotation);
+            }
+            item if item.as_str() == "}" && found_truck => break,
+            _ => continue,
+        }
+    }
+
+    return Some(arr_val_clone);
+}
