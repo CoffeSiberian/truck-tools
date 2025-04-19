@@ -29,6 +29,7 @@ import {
 	listLicensePlateSaved,
 	ResponseSaveGameTrucks,
 	ResponseSaveGameTrailers,
+	ResponseSaveCameraPositions,
 } from "@/types/fileEditTypes";
 import {
 	IColorRgbToValidate,
@@ -754,6 +755,44 @@ export const setPlayerTrailer = async (
 
 	const invoceRes = (await invoke(
 		"set_player_trailer",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
+};
+
+export const getSavePlayerCamera = async (
+	dirCam: string
+): Promise<ResponseSaveCameraPositions | null> => {
+	const rustParams = {
+		dirCam: dirCam + "/cams.txt",
+	};
+
+	const invoceRes = (await invoke(
+		"get_save_player_camera",
+		rustParams
+	)) as ResponseSaveCameraPositions;
+
+	if (invoceRes.res) {
+		return invoceRes;
+	}
+
+	return null;
+};
+
+export const setPlayerPosition = async (
+	dirSave: string,
+	location: string,
+	camera: string
+): Promise<boolean> => {
+	const rustParams = {
+		dirSave: dirSave + "/game.sii",
+		location,
+		camera,
+	};
+
+	const invoceRes = (await invoke(
+		"set_player_position",
 		rustParams
 	)) as responseRustTypes;
 
