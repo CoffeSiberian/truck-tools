@@ -783,12 +783,12 @@ export const getSavePlayerCamera = async (
 export const setPlayerPosition = async (
 	dirSave: string,
 	location: string,
-	camera: string
+	rotation: string
 ): Promise<boolean> => {
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 		location,
-		camera,
+		rotation,
 	};
 
 	const invoceRes = (await invoke(
