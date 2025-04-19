@@ -649,18 +649,17 @@ pub fn set_player_map_position(
     let mut arr_val_clone = arr_val.clone();
 
     let mut num_trailers: u8 = 0;
-    let mut found_truck: bool = false;
     for (i, item) in arr_val.iter().enumerate() {
         match item {
-            item if item.contains("my_truck:") => {
-                found_truck = true;
-            }
             item if item.contains(" assigned_trailer: _nameless") => {
                 num_trailers += 1;
             }
             item if item.contains(" assigned_trailer_connected: false") && num_trailers == 1 => {
                 num_trailers += 1;
                 arr_val_clone[i] = format!(" assigned_trailer_connected: true");
+            }
+            item if item.contains(" nav_node_position:") && num_trailers == 2 => {
+                arr_val_clone[i] = format!(" nav_node_position: (0, 0, 0)");
             }
             item if item.contains(" truck_placement:") => {
                 arr_val_clone[i] = format!(" truck_placement: {} {}", location, rotation);
@@ -673,7 +672,6 @@ pub fn set_player_map_position(
 
                 arr_val_clone[i] = format!("{}: (0, 0, 0) {}", split, rotation);
             }
-            item if item.as_str() == "}" && found_truck => break,
             _ => continue,
         }
     }
