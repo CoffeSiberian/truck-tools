@@ -119,7 +119,7 @@ const TeleportPlayer = () => {
 									endContent={<IconBrandYoutube />}
 									color="warning"
 									variant="flat"
-									onPress={() => open("https://youtu.be/drwZSHw8hw8")}
+									onPress={() => open("https://youtu.be/bD68jEzw-wg")}
 								>
 									How to use
 								</Button>
