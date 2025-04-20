@@ -1,6 +1,14 @@
 import { useState, useContext } from "react";
+import { open } from "@tauri-apps/plugin-shell";
+
+// context and hooks
 import { ProfileContex } from "@/hooks/useProfileContex";
 import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// utils
+import { setPlayerPosition, getSavePlayerCamera } from "@/utils/fileEdit";
+
+// components
 import {
 	Modal,
 	ModalContent,
@@ -11,11 +19,10 @@ import {
 	Button,
 	useDisclosure,
 } from "@heroui/react";
-import { setPlayerPosition, getSavePlayerCamera } from "@/utils/fileEdit";
 import AlertSave from "@/components/AlertSave";
 
 // icons
-import { IconPencil, IconTool } from "@tabler/icons-react";
+import { IconBrandYoutube, IconMapPin, IconPencil } from "@tabler/icons-react";
 
 interface completedProps {
 	error: boolean;
@@ -109,7 +116,15 @@ const TeleportPlayer = () => {
 									Close
 								</Button>
 								<Button
-									endContent={<IconTool />}
+									endContent={<IconBrandYoutube />}
+									color="warning"
+									variant="flat"
+									onPress={() => open("https://youtu.be/drwZSHw8hw8")}
+								>
+									How to use
+								</Button>
+								<Button
+									endContent={<IconMapPin />}
 									isLoading={isLoading}
 									color="success"
 									onPress={onClickApply}
