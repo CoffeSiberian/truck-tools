@@ -61,7 +61,7 @@ const TrucksOptions = () => {
 		{
 			id: "3",
 			title: "Teleport player position",
-			description: "Teleport to a location using the game's debug camera",
+			description: "Teleport to a location using the game debug camera",
 			image: game === "ets2" ? img19 : img19_ats,
 			modal: <TeleportPlayer />,
 			disable: false,
