@@ -546,7 +546,24 @@
                         "message": "Wenn du einen neuen Spielstand erstellt hast, denke daran, die Lkw-Liste zu aktualisieren, damit du keinen Fehler bekommst, wenn du die Lkws wechselst."
                     }
                 }
-            }
+            },
+            "teleport_player": {
+				"description_card": "Teleport to a location using the game debug camera",
+				"label_card": "Teleport player position",
+				"modal": {
+					"btn_apply": "Teleport",
+					"btn_how_to_use": "How to use",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Teleport to a location using the game debug camera",
+					"title": "Teleport player position",			
+					"warning_message": {
+						"title": "Remember",
+						"message_1": "- You need to enable the console and developer mode to use this option; you can do this in the settings (with the game closed)",
+						"message_2": "- To generate new coordinates, you need to use the following key combination: <b>Alt + F12</b>"
+					}
+				}
+			}
         }
     }
 }

@@ -33,7 +33,7 @@ interface completedProps {
 const TeleportPlayer = () => {
 	const { selectedSave, dirDocsGame } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	// const { trucks } = translations.menu_options;
+	const { teleport_player } = translations.menu_options.trucks;
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
@@ -90,7 +90,7 @@ const TeleportPlayer = () => {
 				color="primary"
 				variant="shadow"
 			>
-				Open
+				{teleport_player.modal.btn_open}
 			</Button>
 			<Modal
 				hideCloseButton
@@ -104,11 +104,11 @@ const TeleportPlayer = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								Teleport player position
+								{teleport_player.modal.title}
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="py-1">
-								<p>Teleport to a location using the game debug camera</p>
+								<p>{teleport_player.modal.description}</p>
 								<AlertSave
 									message={
 										completed.error
@@ -124,16 +124,14 @@ const TeleportPlayer = () => {
 								<Warning
 									text={
 										<div className="flex flex-col gap-2">
-											<b>Remember</b>
-											<p>
-												- You need to enable the console and developer mode to
-												use this option; you can do this in the settings (with
-												the game closed)
-											</p>
-											<p>
-												- To generate new coordinates, you need to use the
-												following key combination: <b>Alt + F12</b>
-											</p>
+											<b>{teleport_player.modal.warning_message.title}</b>
+											<p>{teleport_player.modal.warning_message.message_1}</p>
+											<p
+												dangerouslySetInnerHTML={{
+													__html:
+														teleport_player.modal.warning_message.message_2,
+												}}
+											/>
 										</div>
 									}
 								/>
@@ -146,7 +144,7 @@ const TeleportPlayer = () => {
 							</ModalBody>
 							<ModalFooter>
 								<Button color="danger" variant="light" onPress={onClose}>
-									Close
+									{teleport_player.modal.btn_close}
 								</Button>
 								<Button
 									endContent={<IconBrandYoutube />}
@@ -154,7 +152,7 @@ const TeleportPlayer = () => {
 									variant="flat"
 									onPress={() => open("https://youtu.be/bD68jEzw-wg")}
 								>
-									How to use
+									{teleport_player.modal.btn_how_to_use}
 								</Button>
 								<Button
 									endContent={<IconMapPin />}
@@ -162,7 +160,7 @@ const TeleportPlayer = () => {
 									color="success"
 									onPress={onClickApply}
 								>
-									Teleport
+									{teleport_player.modal.btn_apply}
 								</Button>
 							</ModalFooter>
 						</>
