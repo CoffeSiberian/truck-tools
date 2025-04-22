@@ -13,6 +13,7 @@ import img9 from "@/static/img/ets2/OptionsImages/9.webp";
 import img10 from "@/static/img/ets2/OptionsImages/10.webp";
 import img18 from "@/static/img/ets2/OptionsImages/18.webp";
 import img19 from "@/static/img/ets2/OptionsImages/19.webp";
+import img21 from "@/static/img/ets2/OptionsImages/21.webp";
 
 // ats
 import img6_ats from "@/static/img/ats/OptionsImages/6.webp";
@@ -22,6 +23,7 @@ import img9_ats from "@/static/img/ats/OptionsImages/9.webp";
 import img10_ats from "@/static/img/ats/OptionsImages/10.webp";
 import img18_ats from "@/static/img/ats/OptionsImages/18.webp";
 import img19_ats from "@/static/img/ats/OptionsImages/19.webp";
+import img21_ats from "@/static/img/ats/OptionsImages/21.webp";
 
 // modals
 import RepairTruck from "@/routes/pages/TrucksOptions/Modals/RepairTruck";
@@ -62,7 +64,7 @@ const TrucksOptions = () => {
 			id: "3",
 			title: trucks.teleport_player.label_card,
 			description: trucks.teleport_player.description_card,
-			image: game === "ets2" ? img19 : img19_ats,
+			image: game === "ets2" ? img21 : img21_ats,
 			modal: <TeleportPlayer />,
 			disable: false,
 		},
