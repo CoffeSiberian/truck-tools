@@ -548,22 +548,22 @@
                 }
             },
             "teleport_player": {
-				"description_card": "Teleport to a location using the game debug camera",
-				"label_card": "Teleport player position",
-				"modal": {
-					"btn_apply": "Teleport",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Teleport to a location using the game debug camera",
-					"title": "Teleport player position",			
-					"warning_message": {
-						"title": "Remember",
-						"message_1": "- You need to enable the console and developer mode to use this option; you can do this in the settings (with the game closed)",
-						"message_2": "- To generate new coordinates, you need to use the following key combination: <b>Alt + F12</b>"
-					}
-				}
-			}
+                "description_card": "Teletranspórtate a un lugar utilizando la cámara de depuración del juego",
+                "label_card": "Teletransportar la posición del jugador",
+                "modal": {
+                    "btn_apply": "Teletransportarse",
+                    "btn_how_to_use": "Cómo usar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Open",
+                    "description": "Teletranspórtate a un lugar utilizando la cámara de depuración del juego",
+                    "title": "Teletransportar la posición del jugador",
+                    "warning_message": {
+                        "title": "Recuerda",
+                        "message_1": "- Tienes que activar la consola y el modo desarrollador para utilizar esta opción; puedes hacerlo en los ajustes (con el juego cerrado)",
+                        "message_2": "- Para generar nuevas coordenadas, debe utilizar la siguiente combinación de teclas: <b>Alt + F12</b>"
+                    }
+                }
+            }
         }
     }
 }
