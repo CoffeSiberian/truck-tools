@@ -94,7 +94,7 @@ const TeleportPlayer = () => {
 			</Button>
 			<Modal
 				hideCloseButton
-				size="md"
+				size="2xl"
 				backdrop="blur"
 				isOpen={isOpen}
 				onOpenChange={onOpenChange}
