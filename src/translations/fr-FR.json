@@ -548,22 +548,22 @@
                 }
             },
             "teleport_player": {
-				"description_card": "Teleport to a location using the game debug camera",
-				"label_card": "Teleport player position",
-				"modal": {
-					"btn_apply": "Teleport",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Teleport to a location using the game debug camera",
-					"title": "Teleport player position",			
-					"warning_message": {
-						"title": "Remember",
-						"message_1": "- You need to enable the console and developer mode to use this option; you can do this in the settings (with the game closed)",
-						"message_2": "- To generate new coordinates, you need to use the following key combination: <b>Alt + F12</b>"
-					}
-				}
-			}
+                "description_card": "Se téléporter à un endroit en utilisant la caméra de débogage du jeu",
+                "label_card": "Téléporte la position du joueur",
+                "modal": {
+                    "btn_apply": "Teleport",
+                    "btn_how_to_use": "comment utiliser",
+                    "btn_close": "Fermé",
+                    "btn_open": "Open",
+                    "description": "Se téléporter à un endroit en utilisant la caméra de débogage du jeu",
+                    "title": "Position du joueur de téléportation",
+                    "warning_message": {
+                        "title": "se souvenir",
+                        "message_1": "- Vous devez activer le mode console et développeur pour utiliser cette option; vous pouvez le faire dans les paramètres (avec le jeu fermé)",
+                        "message_2": "- Pour générer de nouvelles coordonnées, vous devez utiliser la combinaison de touches suivante : <b>Alt + F12</b>"
+                    }
+                }
+            }
         }
     }
 }
