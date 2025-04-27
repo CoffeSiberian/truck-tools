@@ -13,6 +13,7 @@ import img9 from "@/static/img/ets2/OptionsImages/9.webp";
 import img10 from "@/static/img/ets2/OptionsImages/10.webp";
 import img18 from "@/static/img/ets2/OptionsImages/18.webp";
 import img19 from "@/static/img/ets2/OptionsImages/19.webp";
+import img21 from "@/static/img/ets2/OptionsImages/21.webp";
 
 // ats
 import img6_ats from "@/static/img/ats/OptionsImages/6.webp";
@@ -22,6 +23,7 @@ import img9_ats from "@/static/img/ats/OptionsImages/9.webp";
 import img10_ats from "@/static/img/ats/OptionsImages/10.webp";
 import img18_ats from "@/static/img/ats/OptionsImages/18.webp";
 import img19_ats from "@/static/img/ats/OptionsImages/19.webp";
+import img21_ats from "@/static/img/ats/OptionsImages/21.webp";
 
 // modals
 import RepairTruck from "@/routes/pages/TrucksOptions/Modals/RepairTruck";
@@ -34,6 +36,7 @@ import SetTruckEngine from "@/routes/pages/TrucksOptions/Modals/SetTruckEngine";
 import ModifyKm from "@/routes/pages/TrucksOptions/Modals/ModifyKm";
 import SetTruckTransmission from "@/routes/pages/TrucksOptions/Modals/SetTruckTransmission";
 import SetPlayerTruck from "@/routes/pages/TrucksOptions/Modals/SetPlayerTruck";
+import TeleportPlayer from "@/routes/pages/TrucksOptions/Modals/TeleportPlayer";
 
 const TrucksOptions = () => {
 	const { game } = useContext(ProfileContex);
@@ -59,6 +62,14 @@ const TrucksOptions = () => {
 		},
 		{
 			id: "3",
+			title: trucks.teleport_player.label_card,
+			description: trucks.teleport_player.description_card,
+			image: game === "ets2" ? img21 : img21_ats,
+			modal: <TeleportPlayer />,
+			disable: false,
+		},
+		{
+			id: "4",
 			title: trucks.change_truck.label_card,
 			description: trucks.change_truck.description_card,
 			image: game === "ets2" ? img19 : img19_ats,
@@ -66,7 +77,7 @@ const TrucksOptions = () => {
 			disable: false,
 		},
 		{
-			id: "4",
+			id: "5",
 			title: trucks.license_plate.label_card,
 			description: trucks.license_plate.description_card,
 			image: img1,
@@ -74,7 +85,7 @@ const TrucksOptions = () => {
 			disable: game === "ets2" ? false : true,
 		},
 		{
-			id: "5",
+			id: "6",
 			title: trucks.repair_truck.label_card,
 			description: trucks.repair_truck.description_card,
 			image: game === "ets2" ? img8 : img8_ats,
@@ -82,7 +93,7 @@ const TrucksOptions = () => {
 			disable: false,
 		},
 		{
-			id: "6",
+			id: "7",
 			title: trucks.repair_all_trucks.label_card,
 			description: trucks.repair_all_trucks.description_card,
 			image: game === "ets2" ? img8 : img8_ats,
@@ -90,7 +101,7 @@ const TrucksOptions = () => {
 			disable: false,
 		},
 		{
-			id: "7",
+			id: "8",
 			title: trucks.fill_fuel.label_card,
 			description: trucks.fill_fuel.description_card,
 			image: game === "ets2" ? img9 : img9_ats,
@@ -98,7 +109,7 @@ const TrucksOptions = () => {
 			disable: false,
 		},
 		{
-			id: "8",
+			id: "9",
 			title: trucks.fill_all_trucks_fuel.label_card,
 			description: trucks.fill_all_trucks_fuel.description_card,
 			image: game === "ets2" ? img9 : img9_ats,
@@ -106,7 +117,7 @@ const TrucksOptions = () => {
 			disable: false,
 		},
 		{
-			id: "9",
+			id: "10",
 			title: trucks.change_km.label_card,
 			description: trucks.change_km.description_card,
 			image: game === "ets2" ? img18 : img18_ats,
@@ -114,7 +125,7 @@ const TrucksOptions = () => {
 			disable: false,
 		},
 		{
-			id: "10",
+			id: "11",
 			title: trucks.infinite_fuel.label_card,
 			description: trucks.infinite_fuel.description_card,
 			image: game === "ets2" ? img10 : img10_ats,

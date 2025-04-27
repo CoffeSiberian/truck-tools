@@ -81,3 +81,8 @@ export interface ResponseSaveGameTrailers extends responseRustTypes {
 	current_trailer_id: string | null;
 	trailers: SaveTrailers[];
 }
+
+export interface ResponseSaveCameraPositions extends responseRustTypes {
+	location: string;
+	rotation: string;
+}

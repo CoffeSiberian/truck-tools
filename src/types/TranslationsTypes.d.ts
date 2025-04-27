@@ -391,10 +391,10 @@ export interface ChangeTrailerModal {
 	select_label: string;
 	select_error: string;
 	select_placeholder: string;
-	warning_message: WarningMessage;
+	warning_message: PurpleWarningMessage;
 }
 
-export interface WarningMessage {
+export interface PurpleWarningMessage {
 	title: string;
 	message: string;
 }
@@ -469,7 +469,7 @@ export interface UnlockTrailerCountryModal {
 	btn_open: string;
 	description: string;
 	title: string;
-	warning_message: WarningMessage;
+	warning_message: PurpleWarningMessage;
 }
 
 export interface Trucks {
@@ -483,6 +483,7 @@ export interface Trucks {
 	repair_truck: RepairTruck;
 	change_km: ChangeKM;
 	change_truck: ChangeTruck;
+	teleport_player: TeleportPlayer;
 	tab_title: string;
 }
 
@@ -517,7 +518,7 @@ export interface ChangeTruckModal {
 	select_label: string;
 	select_error: string;
 	select_placeholder: string;
-	warning_message: WarningMessage;
+	warning_message: PurpleWarningMessage;
 }
 
 export interface ChangeTruckEngine {
@@ -536,7 +537,7 @@ export interface ChangeTruckEngineModal {
 	input_engines: Input;
 	input_models: Input;
 	title: string;
-	warning_message: WarningMessage;
+	warning_message: PurpleWarningMessage;
 }
 
 export interface ChangeTruckTransmission {
@@ -555,7 +556,7 @@ export interface ChangeTruckTransmissionModal {
 	input_models: Input;
 	input_transmissions: Input;
 	title: string;
-	warning_message: WarningMessage;
+	warning_message: PurpleWarningMessage;
 }
 
 export interface FillAllTrucksFuel {
@@ -583,7 +584,7 @@ export interface InfiniteFuelModal {
 	btn_restore_fuel: string;
 	description: string;
 	title: string;
-	warning_message: WarningMessage;
+	warning_message: PurpleWarningMessage;
 }
 
 export interface TrucksLicensePlate {
@@ -602,4 +603,26 @@ export interface RepairTruck {
 	description_card: string;
 	label_card: string;
 	modal: LicensePlateModal;
+}
+
+export interface TeleportPlayer {
+	description_card: string;
+	label_card: string;
+	modal: TeleportPlayerModal;
+}
+
+export interface TeleportPlayerModal {
+	btn_apply: string;
+	btn_how_to_use: string;
+	btn_close: string;
+	btn_open: string;
+	description: string;
+	title: string;
+	warning_message: FluffyWarningMessage;
+}
+
+export interface FluffyWarningMessage {
+	title: string;
+	message_1: string;
+	message_2: string;
 }

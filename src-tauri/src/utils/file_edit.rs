@@ -416,3 +416,28 @@ pub async fn set_convoy_mode_status(path: &str, status: bool) -> Option<Vec<Stri
 
     return Some(file);
 }
+
+pub async fn get_save_camera(path: &str) -> Option<(String, String)> {
+    let file: Vec<String> = match file_split_space(path).await {
+        Some(file) => file,
+        None => return None,
+    };
+
+    let file_len: usize = file.len();
+    if file.is_empty() || file_len < 2 {
+        return None;
+    }
+
+    let last_item: String = file[file_len - 2].to_string();
+    let remove_spaces: String = last_item.replace(" ", "");
+    let split: Vec<&str> = remove_spaces.split(";").collect();
+
+    if split.len() < 3 {
+        return None;
+    }
+
+    let location = format!("({},{},{})", split[1], split[2], split[3]);
+    let rotation = format!("({};{},{},{})", split[4], split[5], split[6], split[7]);
+
+    return Some((location, rotation));
+}
