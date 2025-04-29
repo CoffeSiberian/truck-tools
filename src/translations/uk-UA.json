@@ -548,22 +548,22 @@
                 }
             },
             "teleport_player": {
-				"description_card": "Teleport to a location using the game debug camera",
-				"label_card": "Teleport player position",
-				"modal": {
-					"btn_apply": "Teleport",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Teleport to a location using the game debug camera",
-					"title": "Teleport player position",			
-					"warning_message": {
-						"title": "Remember",
-						"message_1": "- You need to enable the console and developer mode to use this option; you can do this in the settings (with the game closed)",
-						"message_2": "- To generate new coordinates, you need to use the following key combination: <b>Alt + F12</b>"
-					}
-				}
-			}
+                "description_card": "Телепортуйтеся в іншу локацію за допомогою камери гри",
+                "label_card": "Телепорт позиції гравця",
+                "modal": {
+                    "btn_apply": "Телепортація",
+                    "btn_how_to_use": "Як користуватися",
+                    "btn_close": "Закрити",
+                    "btn_open": "Open",
+                    "description": "Телепортуйтеся в локацію за допомогою налагоджувальної камери гри",
+                    "title": "Телепортація позиції гравця",
+                    "warning_message": {
+                        "title": "Зауважте",
+                        "message_1": "- Щоб скористатися цією опцією, потрібно ввімкнути консоль і режим розробника. Зробити це можна в налаштуваннях (при закритій грі)",
+                        "message_2": "- Щоб згенерувати нові координати, використовуйте комбінацію клавіш <b>Alt + F12</b>"
+                    }
+                }
+            }
         }
     }
 }

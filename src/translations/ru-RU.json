@@ -365,24 +365,24 @@
                 }
             },
             "change_trailer": {
-				"description_card": "Change your trailer without going to the garage",
-				"label_card": "Change Trailer on road",
-				"modal": {
-					"btn_apply": "Change",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Change your trailer without going to the garage",
-					"title": "Change your trailer on the road",			
-					"select_label": "Trailers",	
-					"select_error": "Trailers not found",	
-					"select_placeholder": "Select a trailer",
-					"warning_message": {
-						"title": "Warning",
-						"message": "If you created a new save, remember to update the list of trailers so you don't get an error when changing trailers."
-					}
-				}
-			}
+                "description_card": "Замена прицепа вне гаража",
+                "label_card": "Замена прицепа в дороге",
+                "modal": {
+                    "btn_apply": "Изменить",
+                    "btn_how_to_use": "Инструкция",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Open",
+                    "description": "Замена прицепа вне гаража",
+                    "title": "Замена вашего прицепа в дороге",
+                    "select_label": "Прицепы",
+                    "select_error": "Прицепы не найдены",
+                    "select_placeholder": "Выбрать прицеп",
+                    "warning_message": {
+                        "title": "Предупреждение",
+                        "message": "Если вы сделали новое сохранение, не забудьте обновить список прицепов, чтобы не получить ошибку при замене прицепа."
+                    }
+                }
+            }
         },
         "trucks": {
             "change_truck_engine": {
@@ -548,22 +548,22 @@
                 }
             },
             "teleport_player": {
-				"description_card": "Teleport to a location using the game debug camera",
-				"label_card": "Teleport player position",
-				"modal": {
-					"btn_apply": "Teleport",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Teleport to a location using the game debug camera",
-					"title": "Teleport player position",			
-					"warning_message": {
-						"title": "Remember",
-						"message_1": "- You need to enable the console and developer mode to use this option; you can do this in the settings (with the game closed)",
-						"message_2": "- To generate new coordinates, you need to use the following key combination: <b>Alt + F12</b>"
-					}
-				}
-			}
+                "description_card": "Телепортируйтесь в нужное место с помощью свободной камеры",
+                "label_card": "Телепорт игрока",
+                "modal": {
+                    "btn_apply": "Телепорт",
+                    "btn_how_to_use": "Инструкция",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Open",
+                    "description": "Телепортируйтесь в нужное место с помощью свободной камеры",
+                    "title": "Телепорт игрока",
+                    "warning_message": {
+                        "title": "Внимание",
+                        "message_1": "- Вам необходимо включить консоль и режим разработчика, чтобы использовать эту опцию; Вы можете сделать это в настройках (игра должна быть закрыта)",
+                        "message_2": "- Чтобы сгенерировать новые координаты, вам необходимо использовать следующую комбинацию клавиш: <b>Alt + F12</b>"
+                    }
+                }
+            }
         }
     }
 }
