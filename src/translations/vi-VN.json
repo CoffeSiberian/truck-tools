@@ -548,22 +548,22 @@
                 }
             },
             "teleport_player": {
-				"description_card": "Teleport to a location using the game debug camera",
-				"label_card": "Teleport player position",
-				"modal": {
-					"btn_apply": "Teleport",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Teleport to a location using the game debug camera",
-					"title": "Teleport player position",			
-					"warning_message": {
-						"title": "Remember",
-						"message_1": "- You need to enable the console and developer mode to use this option; you can do this in the settings (with the game closed)",
-						"message_2": "- To generate new coordinates, you need to use the following key combination: <b>Alt + F12</b>"
-					}
-				}
-			}
+                "description_card": "Dịch chuyển đến một vị trí bằng camera gỡ lỗi trò chơi",
+                "label_card": "Dịch chuyển vị trí người chơi",
+                "modal": {
+                    "btn_apply": "Dịch chuyển",
+                    "btn_how_to_use": "Cách dùng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Open",
+                    "description": "Dịch chuyển đến một vị trí bằng camera gỡ lỗi trò chơi",
+                    "title": "Dịch chuyển vị trí người chơi",
+                    "warning_message": {
+                        "title": "Ghi nhớ",
+                        "message_1": "- Bạn cần bật console và chế độ nhà phát triển để sử dụng tùy chọn này; Bạn có thể làm điều này trong các cài đặt (với trò chơi đã đóng)",
+                        "message_2": "- Để tạo tọa độ mới, bạn cần sử dụng kết hợp khóa sau: <b>Alt + F12</b>"
+                    }
+                }
+            }
         }
     }
 }
