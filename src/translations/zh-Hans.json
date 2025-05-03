@@ -548,22 +548,22 @@
                 }
             },
             "teleport_player": {
-				"description_card": "Teleport to a location using the game debug camera",
-				"label_card": "Teleport player position",
-				"modal": {
-					"btn_apply": "Teleport",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Teleport to a location using the game debug camera",
-					"title": "Teleport player position",			
-					"warning_message": {
-						"title": "Remember",
-						"message_1": "- You need to enable the console and developer mode to use this option; you can do this in the settings (with the game closed)",
-						"message_2": "- To generate new coordinates, you need to use the following key combination: <b>Alt + F12</b>"
-					}
-				}
-			}
+                "description_card": "通过游戏调试摄像机传送到指定位置",
+                "label_card": "传送玩家位置",
+                "modal": {
+                    "btn_apply": "传送",
+                    "btn_how_to_use": "如何使用",
+                    "btn_close": "取消",
+                    "btn_open": "Open",
+                    "description": "通过游戏调试摄像机传送到指定位置",
+                    "title": "传送玩家位置",
+                    "warning_message": {
+                        "title": "记住",
+                        "message_1": "- 要使用此选项，您需要先启用控制台和开发者模式；请在游戏关闭后，前往设置中进行相关操作",
+                        "message_2": "- 按下 <b> Alt + F12</b> 就能立即生成一组新的坐标并在屏幕上显示出来"
+                    }
+                }
+            }
         }
     }
 }
