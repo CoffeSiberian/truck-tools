@@ -6,7 +6,7 @@
             "btn_store": "Guardar",
             "input_colored_margin": "Margen de color",
             "input_license_plate": {
-                "label": "Texto",
+                "label": "Placa de Matrícula",
                 "placeholder": "Texto de la matrícula"
             },
             "input_license_plate_list_store": {
@@ -17,7 +17,7 @@
             "title_select_text_color": "Color del texto"
         },
         "player_profile": {
-            "btn_profile": "Opciones",
+            "btn_profile": "Opciones del perfil",
             "dropdown": {
                 "profile_options": {
                     "btn_backup_profile": {
@@ -75,7 +75,7 @@
                         "modal": {
                             "btn_apply": "Renombrar",
                             "btn_close": "Cerrar",
-                            "description": "Puedes renombrar el perfil, pero debe tener igual o menos de 20 caracteres.",
+                            "description": "Puedes renombrar el perfil, pero debe tener menos de 20 caracteres.",
                             "input_new_name": {
                                 "label": "Nombre del perfil",
                                 "placeholder": "Ingresa el nuevo nombre para tu perfil"
@@ -108,8 +108,8 @@
                 "label": "Seleccionar guardado",
                 "placeholder": "Selecciona un guardado"
             },
-            "no_selected_profile": "Ningún perfil seleccionado",
-            "no_selected_save": "Ningún guardado seleccionado",
+            "no_selected_profile": "No se han encontrado perfiles",
+            "no_selected_save": "No se han encontrado datos guardados",
             "total_saves": "Guardados"
         },
         "profile_error": {
