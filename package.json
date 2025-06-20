@@ -25,7 +25,7 @@
 	},
 	"dependencies": {
 		"@formkit/tempo": "^0.1.2",
-		"@heroui/react": "2.7.6",
+		"@heroui/react": "2.7.10",
 		"@tabler/icons-react": "^3.31.0",
 		"@tauri-apps/api": "^2.5.0",
 		"@tauri-apps/plugin-dialog": "^2.2.1",
@@ -46,7 +46,7 @@
 	"devDependencies": {
 		"@eslint/js": "^9.25.1",
 		"@tauri-apps/cli": "^2.5.0",
-		"@types/node": "^22.15.2",
+		"@types/node": "^24.0.3",
 		"@types/react": "^19.1.2",
 		"@types/react-dom": "^19.1.2",
 		"@types/uuid": "^10.0.0",
