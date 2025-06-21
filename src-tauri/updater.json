@@ -1,11 +1,11 @@
 {
-	"version": "v0.12.0",
-	"notes": "- New option to teleport using the DEBUG camera or the well-known \"camera 0\"\n\nAs always, we are grateful to the collaborators of the project ❤️",
-	"pub_date": "2025-04-27T14:00:00-03:00",
+	"version": "v0.12.1",
+	"notes": "- Maintenance update\n- Update to some translations\n\nSiberianCoffe: Apologies for the delay in the updates. My time has been more limited, but we're still going strong!\n\nAs always, we are grateful to the collaborators of the project ❤️",
+	"pub_date": "2025-06-20T21:00:00-03:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmJoc3ZVQnlnSVFyY2llK2M4QU5tVEFwbVVEY2VnSEZLTzNBd1EwTDhxZ1dVTEdFdzROMzAvWmYrVjk4NEY2V0VCR2lvcGsvZHhsZ2tET1FVeHdJS1E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzQ1Nzc3NTk2CWZpbGU6VHJ1Y2sgVG9vbHNfMC4xMi4wX3g2NF9lbi1VUy5tc2kuemlwCm1zbEIvK3VGRjNOT1dxeDVTb2ExdXU1M2FNdkowMHVaRGcwQUVYOUNjc3BWTkw3TndFZm5tK3FZK2piQW5JNmJCTUd4Rm1uODBxcis0TG5GQ0xWMkJnPT0K",
-			"url": "https://legacy.siberiancoffe.dev/Truck_Tools_0.12.0_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlpza2t0NHY1c0NYUmg0RWVqbVI3THdXZHZDUWJUVjBpbHBibFNlUjdFSFVlQ2w4Uk9mWlp2TmhMS3YrRXVnUnRlamFhbUduakZVdWJBbzJpMGlYcHdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzUwNDc0Nzg0CWZpbGU6VHJ1Y2sgVG9vbHNfMC4xMi4xX3g2NF9lbi1VUy5tc2kuemlwCjRLTXh1cDhrK2hadGRRVVlKTkJPelYwbGNuNkxlTUZxZy9LNFVtRWxQYTBQRmk1cE5hWWtnSjFYWWwrM2VFMEQydGhiK2ErUXhEYVg4alNYMU5pU0NBPT0K",
+			"url": "https://legacy.siberiancoffe.dev/Truck_Tools_0.12.1_x64_en-US.msi.zip"
 		}
 	}
 }
