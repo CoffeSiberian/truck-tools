@@ -10,26 +10,26 @@
                 "placeholder": "Digite o texto"
             },
             "input_license_plate_list_store": {
-                "label": "Placas guardadas",
+                "label": "Selecione uma placa guardada",
                 "placeholder": "Selecione a placa"
             },
             "title_select_bg_color": "Cor de fundo",
             "title_select_text_color": "Cor do texto"
         },
         "player_profile": {
-            "btn_profile": "Opções",
+            "btn_profile": "Opções do perfil",
             "dropdown": {
                 "profile_options": {
                     "btn_backup_profile": {
-                        "description": "Cria um backup do seu perfil",
+                        "description": "Crie uma cópia de backup do seu perfil",
                         "label": "Backup do Perfil",
                         "modal": {
                             "btn_apply": "Backup",
                             "btn_close": "Fechar",
                             "btn_open_folder": "Abrir pasta",
-                            "description": "Crie uma copia de segurança, lembre-se de escolher um destino",
+                            "description": "Crie uma cópia do backup, lembre-se de escolher um destino",
                             "input_backup_destination": {
-                                "label": "Pasta de destino",
+                                "label": "Selecione uma pasta de destino",
                                 "placeholder": "Selecione a pasta de destino"
                             },
                             "save_folder_dialog": {
@@ -108,8 +108,8 @@
                 "label": "Selecionar jogo salvo",
                 "placeholder": "Selecione um jogo salvo"
             },
-            "no_selected_profile": "Nenhum perfil selecionado",
-            "no_selected_save": "Nenhum jogo salvo selecionado",
+            "no_selected_profile": "Nenhum perfil encontrado",
+            "no_selected_save": "Nenhum dado salvo encontrado",
             "total_saves": "Jogos Salvos"
         },
         "profile_error": {
@@ -365,28 +365,28 @@
                 }
             },
             "change_trailer": {
-				"description_card": "Change your trailer without going to the garage",
-				"label_card": "Change Trailer on road",
-				"modal": {
-					"btn_apply": "Change",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Change your trailer without going to the garage",
-					"title": "Change your trailer on the road",			
-					"select_label": "Trailers",	
-					"select_error": "Trailers not found",	
-					"select_placeholder": "Select a trailer",
-					"warning_message": {
-						"title": "Warning",
-						"message": "If you created a new save, remember to update the list of trailers so you don't get an error when changing trailers."
-					}
-				}
-			}
+                "description_card": "Troque o seu reboque sem ir até a garagem",
+                "label_card": "Trocar reboque na estrada",
+                "modal": {
+                    "btn_apply": "Trocar",
+                    "btn_how_to_use": "Como usar",
+                    "btn_close": "Fechar",
+                    "btn_open": "Open",
+                    "description": "Troque seu reboque sem ir até a garagem",
+                    "title": "Troque seu reboque na estrada",
+                    "select_label": "Reboques",
+                    "select_error": "Reboques não encontrados",
+                    "select_placeholder": "Selecione um reboque",
+                    "warning_message": {
+                        "title": "Alerta",
+                        "message": "Se você criou um novo jogo, lembre-se de atualizar a lista de reboques para que você não receba um erro ao trocar de reboques."
+                    }
+                }
+            }
         },
         "trucks": {
             "change_truck_engine": {
-                "description_card": "Mudar motor do caminhão",
+                "description_card": "Mudar o motor do caminhão",
                 "label_card": "Alterar motor do caminhão",
                 "modal": {
                     "btn_apply": "Alterar",
@@ -515,55 +515,55 @@
             "tab_title": "Caminhão",
             "change_km": {
                 "modal": {
-                    "btn_apply": "Apply",
+                    "btn_apply": "Aplicar",
                     "input_km": {
-                        "placeholder": "Distance in Km",
-                        "label": "Distance in Km"
+                        "placeholder": "Distância em Km",
+                        "label": "Distância em Km"
                     },
-                    "btn_open": "Open",
-                    "title": "Change the truck mileage",
-                    "btn_close": "Close",
-                    "description": "Change the mileage on your truck"
+                    "btn_open": "Abrir",
+                    "title": "Altere a quilometragem do caminhão",
+                    "btn_close": "Fechar",
+                    "description": "Altere a quilometragem do seu caminhão"
                 },
-                "label_card": "Change the truck mileage",
-                "description_card": "Change the mileage on your truck"
+                "label_card": "Altere a quilometragem do caminhão",
+                "description_card": "Altere a quilometragem do seu caminhão"
             },
             "change_truck": {
-                "description_card": "Change your truck without going to the garage",
-                "label_card": "Change Truck in road",
+                "description_card": "Altere o seu caminhão sem ir até a garagem",
+                "label_card": "Trocar o caminhão na estrada",
                 "modal": {
-                    "btn_apply": "Change",
-                    "btn_how_to_use": "How to use",
-                    "btn_close": "Close",
+                    "btn_apply": "Alterar",
+                    "btn_how_to_use": "Como usar",
+                    "btn_close": "Fechar",
                     "btn_open": "Open",
-                    "description": "Change your truck without going to the garage",
-                    "title": "Change your truck on the road",
-                    "select_label": "Trucks",
-                    "select_error": "Trucks not found",
-                    "select_placeholder": "Select a truck",
+                    "description": "Altere o seu caminhão sem ir até a garagem",
+                    "title": "Altere o seu caminhão na estrada",
+                    "select_label": "Caminhões",
+                    "select_error": "Caminhões não encontrados",
+                    "select_placeholder": "Selecione um caminhão",
                     "warning_message": {
-                        "title": "Warning",
-                        "message": "If you created a new save, remember to update the list of trucks so you don't get an error when changing trucks."
+                        "title": "Alerta",
+                        "message": "Se você criou um novo jogo, lembre-se de atualizar a lista de caminhões para que você não receba um erro ao alterar caminhões."
                     }
                 }
             },
             "teleport_player": {
-				"description_card": "Teleport to a location using the game debug camera",
-				"label_card": "Teleport player position",
-				"modal": {
-					"btn_apply": "Teleport",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Teleport to a location using the game debug camera",
-					"title": "Teleport player position",			
-					"warning_message": {
-						"title": "Remember",
-						"message_1": "- You need to enable the console and developer mode to use this option; you can do this in the settings (with the game closed)",
-						"message_2": "- To generate new coordinates, you need to use the following key combination: <b>Alt + F12</b>"
-					}
-				}
-			}
+                "description_card": "Teletransporte para uma localização usando a câmera de debug do jogo",
+                "label_card": "Teletransporte posição do jogador",
+                "modal": {
+                    "btn_apply": "Teletransporte",
+                    "btn_how_to_use": "Como usar",
+                    "btn_close": "Fechar",
+                    "btn_open": "Open",
+                    "description": "Teletransporte para uma localização usando a câmera de debug do jogo",
+                    "title": "Teletransporte posição do jogador",
+                    "warning_message": {
+                        "title": "Lembre-se",
+                        "message_1": "- Você precisa habilitar o console e o modo de desenvolvedor para usar essa opção; você consegue fazer isso nas configurações (com o jogo fechado)",
+                        "message_2": "- Para gerar novas coordenadas, você precisa usar a seguinte combinação de teclas: <b>Alt + F12</b>"
+                    }
+                }
+            }
         }
     }
 }
