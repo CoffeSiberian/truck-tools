@@ -119,7 +119,7 @@
         "profile_error": {
             "btn_how_to": "チュートリアルビデオ",
             "btn_how_to_disable": "Steamクラウドを無効にする方法",
-            "description": "プロフィールから<b>Steamクラウドを無効にする</b>か、「ドキュメント」フォルダの場所を確認してください。",
+            "description": "プロフィールから<b>Steamクラウドを無効にする</b>か、「ドキュメント」フォルダの場所を確認してください",
             "title": "プロフィールが見つかりません"
         },
         "updater": {
@@ -471,84 +471,99 @@
                     "btn_close": "閉じる",
                     "btn_open": "開く",
                     "btn_restore_fuel": "燃料を回復する",
-                    "description": "",
-                    "title": "",
+                    "description": "燃料は無限ではありませんが、約500万km（トラックによって異なります）です",
+                    "title": "現在のトラックの燃料は無限",
                     "warning_message": {
-                        "message": "",
-                        "title": ""
+                        "message": "この機能を有効にするには、「ゲームプレイ」セクションで<b>「リアルな燃料消費」を無効</b>にしてください。",
+                        "title": "記憶する"
                     }
                 }
             },
             "license_plate": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "トラックのナンバープレートを変更する",
+                "label_card": "トラックのナンバープレートを変更する",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "適用",
+                    "btn_close": "閉じる",
+                    "btn_open": "開く",
+                    "description": "新しいトラックのナンバープレートを入力してください。Word of Trucksからナンバープレートを削除することを忘れないでください",
+                    "title": "トラックのナンバープレートを変更する"
                 }
             },
             "repair_all_trucks": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "すべての未稼働のトラックを修理する",
+                "label_card": "すべてのトラックを修理する",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "修理",
+                    "btn_close": "閉じる",
+                    "btn_open": "開く",
+                    "description": "会社にあるすべてのトラックを修理する",
+                    "title": "すべてのトラックを修理する"
                 }
             },
             "repair_truck": {
-                "description_card": "",
-                "label_card": "",
+                "description_card": "現在のトラックを修理する",
+                "label_card": "トラックを修理",
                 "modal": {
-                    "btn_apply": "",
-                    "btn_close": "",
-                    "btn_open": "",
-                    "description": "",
-                    "title": ""
+                    "btn_apply": "修理",
+                    "btn_close": "閉じる",
+                    "btn_open": "開く",
+                    "description": "トラックの損傷を修理する",
+                    "title": "トラックを修理"
                 }
             },
             "change_truck": {
-                "description_card": "Change your truck without going to the garage",
-                "label_card": "Change Truck in road",
+                "description_card": "ガレージに行かずにトラックを交換する",
+                "label_card": "道路上でトラックを交換する",
                 "modal": {
-                    "btn_apply": "Change",
-                    "btn_how_to_use": "How to use",
-                    "btn_close": "Close",
+                    "btn_apply": "変更",
+                    "btn_how_to_use": "使い方",
+                    "btn_close": "閉じる",
                     "btn_open": "Open",
-                    "description": "Change your truck without going to the garage",
-                    "title": "Change your truck on the road",
-                    "select_label": "Trucks",
-                    "select_error": "Trucks not found",
-                    "select_placeholder": "Select a truck",
+                    "description": "ガレージに行かずにトラックを交換する",
+                    "title": "路上でトラックを交換する",
+                    "select_label": "トラック",
+                    "select_error": "トラックが見つかりません",
+                    "select_placeholder": "トラックを選択",
                     "warning_message": {
-                        "title": "Warning",
-                        "message": "If you created a new save, remember to update the list of trucks so you don't get an error when changing trucks."
+                        "title": "注意",
+                        "message": "新しいセーブを作成した場合は、トラックを変更するときにエラーが発生しないように、必ずトラックのリストを更新してください。"
                     }
                 }
             },
             "teleport_player": {
-                "description_card": "Teleport to a location using the game debug camera",
-                "label_card": "Teleport player position",
+                "description_card": "ゲームデバッグカメラを使用して場所に移動する",
+                "label_card": "プレイヤーの位置を移動",
                 "modal": {
-                    "btn_apply": "Teleport",
-                    "btn_how_to_use": "How to use",
-                    "btn_close": "Close",
+                    "btn_apply": "移動",
+                    "btn_how_to_use": "使い方",
+                    "btn_close": "閉じる",
                     "btn_open": "Open",
-                    "description": "Teleport to a location using the game debug camera",
-                    "title": "Teleport player position",
+                    "description": "ゲームデバッグカメラを使用して場所に移動する",
+                    "title": "プレイヤーの位置を移動",
                     "warning_message": {
-                        "title": "Remember",
-                        "message_1": "- You need to enable the console and developer mode to use this option; you can do this in the settings (with the game closed)",
-                        "message_2": "- To generate new coordinates, you need to use the following key combination: <b>Alt + F12</b>"
+                        "title": "削除",
+                        "message_1": "- このオプションを使用するには、コンソールと開発者モードを有効にする必要があります。これは設定で行うことができます（ゲームを閉じた状態で）",
+                        "message_2": "- 新しい座標を生成するには、次のキーの組み合わせを使用する必要があります: <b>Alt + F12</b>"
                     }
                 }
             },
-            "tab_title": ""
+            "tab_title": "トラック",
+            "change_km": {
+                "description_card": "トラックの走行距離を変更する",
+                "label_card": "トラックの走行距離を変更する",
+                "modal": {
+                    "btn_apply": "適用",
+                    "btn_close": "閉じる",
+                    "btn_open": "開く",
+                    "description": "トラックの走行距離を変更する",
+                    "title": "トラックの走行距離を変更する",
+                    "input_km": {
+                        "label": "距離 km",
+                        "placeholder": "距離 km"
+                    }
+                }
+            }
         }
     }
 }
