@@ -31,7 +31,7 @@ const ProfileError = () => {
 						size={32}
 						stroke={2}
 					/>
-					<h2 className="text-balance text-lg font-semibold tracking-wide text-white">
+					<h2 className="text-lg font-semibold tracking-wide text-balance text-white">
 						{profile_error.title}
 					</h2>
 				</div>

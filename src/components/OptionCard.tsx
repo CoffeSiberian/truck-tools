@@ -24,7 +24,7 @@ const OptionCard: FC<OptionCardProps> = ({
 }) => {
 	return (
 		<Card className="w-full max-w-sm gap-1">
-			<CardHeader className="flex-col items-start px-4 pb-0 pt-2">
+			<CardHeader className="flex-col items-start px-4 pt-2 pb-0">
 				<h4 className="text-large font-bold">{title}</h4>
 				<small className="text-default-500">{description}</small>
 			</CardHeader>

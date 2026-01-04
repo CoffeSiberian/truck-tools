@@ -47,7 +47,7 @@ const SelectProfile = () => {
 	};
 
 	return (
-		<div className="fixed bottom-0 z-10 mb-2 mt-auto flex w-full justify-center gap-2">
+		<div className="fixed bottom-0 z-10 mt-auto mb-2 flex w-full justify-center gap-2">
 			{profilesNotFound && <ProfileError />}
 			<div
 				className={classNames(

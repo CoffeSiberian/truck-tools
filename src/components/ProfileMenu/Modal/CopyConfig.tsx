@@ -131,8 +131,8 @@ const CopyConfig: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 							/>
 							{ProfileInfo && (
 								<div className="flex justify-between">
-									<div className="flex w-full flex-col items-center text-wrap break-words text-center">
-										<div className="w-[80px] text-center">
+									<div className="flex w-full flex-col items-center text-center text-wrap wrap-break-word">
+										<div className="w-20 text-center">
 											{ProfileInfo.avatar ? (
 												<Image
 													src={ProfileInfo.avatar}
@@ -160,8 +160,8 @@ const CopyConfig: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 									<div className="flex w-full items-center justify-center gap-2">
 										<IconArrowRight size={80} />
 									</div>
-									<div className="flex w-full flex-col items-center text-wrap break-words text-center">
-										<div className="w-[80px]">
+									<div className="flex w-full flex-col items-center text-center text-wrap wrap-break-word">
+										<div className="w-20">
 											{selectedProfile?.avatar ? (
 												<Image
 													src={selectedProfile.avatar}

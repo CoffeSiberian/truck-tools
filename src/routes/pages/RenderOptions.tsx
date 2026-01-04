@@ -129,7 +129,7 @@ const RenderOptions = () => {
 				isOpen={isOpenSettings}
 				onOpenChange={onOpenChangeSettings}
 			/>
-			<div className="mb-28 mt-12 flex flex-col items-center p-5">
+			<div className="mt-12 mb-28 flex flex-col items-center p-5">
 				<div className="fixed top-2 z-20 flex items-center justify-center gap-5">
 					<Image
 						className={classNames(
