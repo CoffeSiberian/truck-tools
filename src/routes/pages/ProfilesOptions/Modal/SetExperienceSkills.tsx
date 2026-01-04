@@ -161,7 +161,7 @@ const SetExperienceSkills = () => {
 										<SelectItem key={adr_value.name} textValue={adr_value.name}>
 											<div className="flex items-center gap-2">
 												<div className="flex items-center gap-2">
-													<div className="w-[30px]">
+													<div className="w-7.5">
 														<Image
 															src={adr_value.img}
 															alt="ADR-icon"

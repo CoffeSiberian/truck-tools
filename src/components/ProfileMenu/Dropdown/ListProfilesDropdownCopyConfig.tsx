@@ -56,7 +56,7 @@ const ListProfilesDropdownCopyConfig: FC<ProfileListProps> = ({
 			{(profile) => (
 				<SelectItem key={profile.id} textValue={profile.name}>
 					<div className="flex items-center gap-2">
-						<div className="w-[30px]">
+						<div className="w-7.5">
 							{profile.avatar ? (
 								<Image
 									src={profile.avatar}

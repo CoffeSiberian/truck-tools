@@ -20,14 +20,14 @@ const ProfileError = () => {
 	return (
 		<div
 			className={classNames(
-				"fixed bottom-[105px] max-w-3xl rounded-3xl shadow-lg",
+				"fixed bottom-26.25 max-w-3xl rounded-3xl shadow-lg",
 				darkMode ? "bg-[#c81260]" : "bg-[#f51260]"
 			)}
 		>
 			<div className="flex flex-row items-center p-4">
 				<div className="mr-2 flex items-center">
 					<IconAlertTriangle
-						className="mr-3 h-8 w-8 flex-shrink-0 text-white"
+						className="mr-3 h-8 w-8 shrink-0 text-white"
 						size={32}
 						stroke={2}
 					/>
