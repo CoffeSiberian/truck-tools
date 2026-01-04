@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { Select, SelectItem } from "@heroui/react";
 import { ProfileContex } from "@/hooks/useProfileContex";
 import { LocaleContext } from "@/hooks/useLocaleContext";
@@ -175,17 +175,24 @@ const SetTruckEngine = () => {
 			: true
 		: false;
 
-	useEffect(() => {
-		if (!isOpen) {
-			setStateEngine({
-				selectedBrand: undefined,
-				selectedModel: undefined,
-				selectedEngine: undefined,
-				engines: undefined,
-			});
-			setCompleted({ error: false, completed: false });
-		}
-	}, [isOpen]);
+	const resetState = () => {
+		setStateEngine({
+			selectedBrand: undefined,
+			selectedModel: undefined,
+			selectedEngine: undefined,
+			engines: undefined,
+		});
+		setCompleted({ error: false, completed: false });
+	};
+
+	const handleClose = () => {
+		resetState();
+	};
+
+	const openModalChange = (open: boolean) => {
+		onOpenChange();
+		if (!open) handleClose();
+	};
 
 	return (
 		<>
@@ -203,7 +210,7 @@ const SetTruckEngine = () => {
 				size="md"
 				backdrop="blur"
 				isOpen={isOpen}
-				onOpenChange={onOpenChange}
+				onOpenChange={openModalChange}
 			>
 				<ModalContent>
 					{(onClose) => (

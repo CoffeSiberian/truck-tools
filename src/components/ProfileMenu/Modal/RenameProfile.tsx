@@ -61,10 +61,11 @@ const RenameProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 	};
 
 	useEffect(() => {
-		if (selectedProfile) {
+		if (isOpen && selectedProfile) {
+			// eslint-disable-next-line
 			setProfileName(selectedProfile.name);
 		}
-	}, [selectedProfile]);
+	}, [selectedProfile, isOpen]);
 
 	return (
 		<Modal

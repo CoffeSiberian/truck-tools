@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { Select, SelectItem } from "@heroui/react";
 import { ProfileContex } from "@/hooks/useProfileContex";
 import { LocaleContext } from "@/hooks/useLocaleContext";
@@ -177,17 +177,24 @@ const SetTruckTransmission = () => {
 			: true
 		: false;
 
-	useEffect(() => {
-		if (!isOpen) {
-			setTransmissionState({
-				selectedBrand: undefined,
-				selectedModel: undefined,
-				selectedTransmission: undefined,
-				transmissions: undefined,
-			});
-			setCompleted({ error: false, completed: false });
-		}
-	}, [isOpen]);
+	const resetState = () => {
+		setTransmissionState({
+			selectedBrand: undefined,
+			selectedModel: undefined,
+			selectedTransmission: undefined,
+			transmissions: undefined,
+		});
+		setCompleted({ error: false, completed: false });
+	};
+
+	const handleClose = () => {
+		resetState();
+	};
+
+	const openModalChange = (open: boolean) => {
+		onOpenChange();
+		if (!open) handleClose();
+	};
 
 	return (
 		<>
@@ -205,7 +212,7 @@ const SetTruckTransmission = () => {
 				size="md"
 				backdrop="blur"
 				isOpen={isOpen}
-				onOpenChange={onOpenChange}
+				onOpenChange={openModalChange}
 			>
 				<ModalContent>
 					{(onClose) => (

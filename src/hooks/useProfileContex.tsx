@@ -141,6 +141,7 @@ export const ProfileContexInfo = ({ children }: ProviderProps) => {
 	useEffect(() => {
 		if (!loaded.current) {
 			loaded.current = true;
+			// eslint-disable-next-line
 			loadDirectory();
 		}
 	}, [loadDirectory]);

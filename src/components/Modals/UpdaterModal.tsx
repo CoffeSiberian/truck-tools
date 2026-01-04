@@ -140,6 +140,7 @@ const UpdaterModal = () => {
 	useEffect(() => {
 		if (!updateChecked.current) {
 			updateChecked.current = true;
+			// eslint-disable-next-line
 			checkUpdateState();
 		}
 	}, [checkUpdateState]);
@@ -161,7 +162,7 @@ const UpdaterModal = () => {
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="flex items-center justify-center py-1">
-								<div className="mb-2 mt-2 flex w-full flex-col gap-2">
+								<div className="mt-2 mb-2 flex w-full flex-col gap-2">
 									<div className="flex justify-center gap-5">
 										<Chip
 											color="secondary"

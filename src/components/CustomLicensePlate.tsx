@@ -124,6 +124,7 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 
 	useEffect(() => {
 		if (modalOpen) {
+			// eslint-disable-next-line
 			setIsLoadingStore(true);
 
 			getStoredLicensePlate().then((data) => {
@@ -150,7 +151,7 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 						}}
 					>
 						<p
-							className="truncate whitespace-break-spaces text-2xl"
+							className="truncate text-2xl whitespace-break-spaces"
 							style={{
 								color: `${txColor.hex}`,
 							}}

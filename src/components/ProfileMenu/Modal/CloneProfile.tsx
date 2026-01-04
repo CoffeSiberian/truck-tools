@@ -61,12 +61,11 @@ const CloneProfile: FC<ModalProps> = ({ isOpen, onOpenChange }) => {
 	};
 
 	useEffect(() => {
-		if (isOpen) {
-			if (selectedProfile) {
-				setProfileName(selectedProfile.name + " - Clone");
-			}
+		if (isOpen && selectedProfile) {
+			// eslint-disable-next-line
+			setProfileName(selectedProfile.name + " - Clone");
 		}
-	}, [isOpen, selectedProfile]);
+	}, [selectedProfile, isOpen]);
 
 	return (
 		<Modal
