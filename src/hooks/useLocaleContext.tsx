@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useRef } from "react";
+import { createContext, useState, useEffect } from "react";
 import { getCurrentLocale, storeOsLocale } from "@/utils/fileEdit";
 
 // types
@@ -23,13 +23,14 @@ export const LocaleContext = createContext<LocaleContextTypes>(
 );
 
 interface LangeState {
+	loaded: boolean;
 	lang: LangsTypes;
 	translations: TranslationsTypes;
 }
 
 export const Locale = ({ children }: ProviderProps) => {
-	const isLoaded = useRef(false);
 	const [Lang, setLang] = useState<LangeState>({
+		loaded: false,
 		lang: "en-US",
 		translations: {} as TranslationsTypes,
 	});
@@ -38,6 +39,7 @@ export const Locale = ({ children }: ProviderProps) => {
 		const translations = await getLang(lang);
 
 		setLang({
+			loaded: true,
 			lang: lang,
 			translations: translations,
 		});
@@ -49,25 +51,25 @@ export const Locale = ({ children }: ProviderProps) => {
 		const translations = await getLang(lang);
 
 		setLang({
+			loaded: true,
 			lang: lang,
 			translations: translations,
 		});
 	};
 
 	useEffect(() => {
-		if (!isLoaded.current) {
-			isLoaded.current = true;
+		if (!Lang.loaded) {
 			getCurrentLocale()
 				.then((res) => changeLangWithoutSaving(res))
 				.catch(() => changeLangWithoutSaving("en-US"));
 		}
-	}, []);
+	}, [Lang.loaded]);
 
 	return (
 		<LocaleContext.Provider
 			value={{ lang: Lang.lang, translations: Lang.translations, changeLang }}
 		>
-			{isLoaded.current && children}
+			{Lang.loaded && children}
 		</LocaleContext.Provider>
 	);
 };
