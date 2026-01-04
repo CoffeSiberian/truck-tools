@@ -53,6 +53,7 @@
 		"@types/react-dom": "19.2.3",
 		"@vitejs/plugin-react": "5.1.2",
 		"autoprefixer": "10.4.23",
+		"babel-plugin-react-compiler": "1.0.0",
 		"eslint": "9.39.2",
 		"eslint-plugin-react-hooks": "7.0.1",
 		"eslint-plugin-react-refresh": "0.4.26",
