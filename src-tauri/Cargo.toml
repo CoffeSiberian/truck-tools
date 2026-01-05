@@ -7,27 +7,34 @@ edition = "2024"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "tauri_app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
 [build-dependencies]
-tauri-build = { version = "2.2.0", features = [] }
+tauri-build = { version = "2.5.3", features = [] }
 
 [dependencies]
-tauri = { version = "2.5.1", features = ["protocol-asset"] }
-tauri-plugin-store = "2.2.1"
-tauri-plugin-dialog = "2.2.2"
-tauri-plugin-fs = "2.3.0"
-tauri-plugin-shell = "2.2.2"
-tauri-plugin-process = "2.2.2"
-serde = { version = "1.0.219", features = ["derive"] }
-serde_json = "1.0.140"
-cached = "0.55.1"
-libloading = "0.8.8"
+tauri = { version = "2.9.5", features = ["protocol-asset"] }
+tauri-plugin-store = "2.4.1"
+tauri-plugin-dialog = "2.4.2"
+tauri-plugin-fs = "2.4.4"
+tauri-plugin-shell = "2.3.3"
+tauri-plugin-process = "2.3.1"
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.148"
+cached = "0.56.0"
+libloading = "0.9.0"
 hex = "0.4.3"
 walkdir = "2.5.0"
-zip = "4.1.0"
-tauri-plugin-os = "2.2.2"
+zip = "7.0.0"
+tauri-plugin-os = "2.3.2"
 
 [dependencies.uuid]
-version = "1.17.0"
+version = "1.19.0"
 features = ["v4"]
 
 [features]
