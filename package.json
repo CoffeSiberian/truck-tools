@@ -46,6 +46,7 @@
 		"@heroui/system": "2.4.25",
 		"@heroui/tabs": "2.2.26",
 		"@heroui/theme": "2.4.25",
+		"@heroui/use-disclosure": "2.2.18",
 		"@tabler/icons-react": "3.36.1",
 		"@tailwindcss/vite": "4.1.18",
 		"@tauri-apps/api": "2.5.0",
@@ -85,5 +86,6 @@
 		"typescript": "5.9.3",
 		"typescript-eslint": "8.52.0",
 		"vite": "7.3.0"
-	}
+	},
+	"packageManager": "pnpm@10.27.0"
 }
