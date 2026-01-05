@@ -1,10 +1,15 @@
 import { useContext } from "react";
-import { ProfileContex } from "@/hooks/useProfileContex";
-import { LocaleContext } from "@/hooks/useLocaleContext";
-import { Image, Skeleton } from "@heroui/react";
+
+// UI
+import { Skeleton } from "@heroui/skeleton";
+import { Image } from "@heroui/image";
 import ProfileOptions from "@/components/ProfileMenu/ProfileOptions";
 
-// icons
+// Hooks
+import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// Icons
 import { IconUserCircle } from "@tabler/icons-react";
 
 const RenderProfile = () => {

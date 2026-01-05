@@ -1,21 +1,26 @@
 import { FC, useState, useContext, useEffect } from "react";
+
+// Tauri
 import { open as openLink } from "@tauri-apps/plugin-shell";
 import { open, OpenDialogOptions } from "@tauri-apps/plugin-dialog";
 import { documentDir } from "@tauri-apps/api/path";
 import { locale } from "@tauri-apps/plugin-os";
+
+// UI
+import { Input } from "@heroui/input";
+import { Switch } from "@heroui/switch";
+import { Select, SelectItem } from "@heroui/select";
+import { Divider } from "@heroui/divider";
+import { Button } from "@heroui/button";
 import {
 	Modal,
 	ModalContent,
 	ModalHeader,
-	Divider,
 	ModalBody,
 	ModalFooter,
-	Button,
-	Select,
-	SelectItem,
-	Switch,
-	Input,
-} from "@heroui/react";
+} from "@heroui/modal";
+
+// Hooks
 import { DarkModeContex } from "@/hooks/useDarkModeContex";
 import { ProfileContex } from "@/hooks/useProfileContex";
 import { LocaleContext } from "@/hooks/useLocaleContext";
@@ -30,11 +35,11 @@ import {
 	mostSimilarLang,
 } from "@/utils/fileEdit";
 
-// types
+// Types
 import { Langs } from "@/types/TranslationsTypes";
 import { themeTypesSystem } from "@/types/fileEditTypes";
 
-// icons
+// Icons
 import {
 	IconFolderSearch,
 	IconFolderPlus,

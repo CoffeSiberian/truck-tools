@@ -1,5 +1,9 @@
 import { FC } from "react";
-import { Radio, RadioProps, Image, cn } from "@heroui/react";
+
+// UI
+import { cn } from "@heroui/theme";
+import { Image } from "@heroui/image";
+import { Radio, RadioProps } from "@heroui/radio";
 
 interface CustomRadioProps extends RadioProps {
 	text: string;

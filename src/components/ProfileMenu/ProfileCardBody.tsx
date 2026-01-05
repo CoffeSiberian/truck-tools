@@ -1,11 +1,15 @@
 import { useContext } from "react";
-import { ProfileContex } from "@/hooks/useProfileContex";
-import { Button } from "@heroui/react";
+
+// UI
+import { Button } from "@heroui/button";
 import ListProfiles from "@/components/ProfileMenu/ListProfiles";
 import ListSaves from "@/components/ProfileMenu/ListSaves";
 import RenderProfile from "@/components/ProfileMenu/RenderProfile";
 
-// icons
+// Hooks
+import { ProfileContex } from "@/hooks/useProfileContex";
+
+// Icons
 import { IconReload } from "@tabler/icons-react";
 
 const ProfileCardBody = () => {

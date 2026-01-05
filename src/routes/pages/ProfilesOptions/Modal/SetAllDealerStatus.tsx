@@ -1,25 +1,31 @@
 import { useState, useContext } from "react";
-import { ProfileContex } from "@/hooks/useProfileContex";
-import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// UI
+import { RadioGroup } from "@heroui/radio";
+import { useDisclosure } from "@heroui/use-disclosure";
+import { Button } from "@heroui/button";
+import { Divider } from "@heroui/divider";
 import {
 	Modal,
 	ModalContent,
 	ModalHeader,
-	Divider,
 	ModalBody,
 	ModalFooter,
-	Button,
-	useDisclosure,
-	RadioGroup,
-} from "@heroui/react";
-import CustomRadio from "@/components/CustomRadio";
-import { setProfileDealerDiscovered } from "@/utils/fileEdit";
+} from "@heroui/modal";
 import AlertSave from "@/components/AlertSave";
+import CustomRadio from "@/components/CustomRadio";
 
-// icons
+// Hooks
+import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// Utils
+import { setProfileDealerDiscovered } from "@/utils/fileEdit";
+
+// Icons
 import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";
 
-// images
+// Images
 // ets2
 import discovered from "@/static/img/ets2/dealers/discovered.webp";
 import undiscovered from "@/static/img/ets2/dealers/undiscovered.webp";

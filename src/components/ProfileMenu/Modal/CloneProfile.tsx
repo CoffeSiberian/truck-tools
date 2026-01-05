@@ -1,20 +1,26 @@
 import { useState, useEffect, useContext, FC } from "react";
-import { ProfileContex } from "@/hooks/useProfileContex";
-import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// UI
+import { Input } from "@heroui/input";
+import { Button } from "@heroui/button";
+import { Divider } from "@heroui/divider";
 import {
 	Modal,
 	ModalContent,
 	ModalHeader,
-	Divider,
 	ModalBody,
 	ModalFooter,
-	Button,
-	Input,
-} from "@heroui/react";
-import { copyProfile } from "@/utils/fileEdit";
+} from "@heroui/modal";
 import AlertSave from "@/components/AlertSave";
 
-// icons
+// Hooks
+import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// Utils
+import { copyProfile } from "@/utils/fileEdit";
+
+// Icons
 import { IconUserEdit, IconCopy } from "@tabler/icons-react";
 
 interface completedProps {

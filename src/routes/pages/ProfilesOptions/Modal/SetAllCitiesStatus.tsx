@@ -1,26 +1,32 @@
 import { useState, useContext } from "react";
-import { ProfileContex } from "@/hooks/useProfileContex";
-import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// UI
+import { useDisclosure } from "@heroui/use-disclosure";
+import { RadioGroup } from "@heroui/radio";
+import { Button } from "@heroui/button";
+import { Divider } from "@heroui/divider";
 import {
 	Modal,
 	ModalContent,
 	ModalHeader,
-	Divider,
 	ModalBody,
 	ModalFooter,
-	Button,
-	useDisclosure,
-	RadioGroup,
-} from "@heroui/react";
+} from "@heroui/modal";
 import CustomRadio from "@/components/CustomRadio";
-import { setProfileVisitedCities } from "@/utils/fileEdit";
 import AlertSave from "@/components/AlertSave";
 
-// icons
+// Hooks
+import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// Utils
+import { setProfileVisitedCities } from "@/utils/fileEdit";
+
+// Icons
 import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";
 
-// images
-//ets2
+// Images
+// ets2
 import unvisited from "@/static/img/ets2/cities/unvisited.webp";
 import visited from "@/static/img/ets2/cities/visited.webp";
 

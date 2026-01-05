@@ -1,11 +1,14 @@
 import { FC, useContext } from "react";
 import { LocaleContext } from "@/hooks/useLocaleContext";
-import { Select, SelectItem, Image } from "@heroui/react";
 
-// icons
+// UI
+import { Image } from "@heroui/image";
+import { Select, SelectItem } from "@heroui/select";
+
+// Icons
 import { IconUserCircle } from "@tabler/icons-react";
 
-// types
+// Types
 import { ProfileWithoutSaves } from "@/types/SaveGameTypes";
 import { ProfileTypesContext } from "@/types/ContexTypes";
 

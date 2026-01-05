@@ -1,18 +1,24 @@
 import { FC, useContext } from "react";
+
+// Tauri
 import { open } from "@tauri-apps/plugin-shell";
+
+// Hooks
 import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// UI
+import { Avatar } from "@heroui/avatar";
+import { Button } from "@heroui/button";
+import { Divider } from "@heroui/divider";
 import {
 	Modal,
 	ModalContent,
 	ModalHeader,
-	Divider,
 	ModalBody,
 	ModalFooter,
-	Button,
-	Avatar,
-} from "@heroui/react";
+} from "@heroui/modal";
 
-// icons
+// Icons
 import {
 	IconBrandGithub,
 	IconBrandTwitch,

@@ -1,10 +1,21 @@
 import { useContext } from "react";
+
+// UI
+import OptionCard from "@/components/OptionCard";
+
+// Modals
+import SetMoney from "@/routes/pages/ProfilesOptions/Modal/SetMoney";
+import SetExperience from "@/routes/pages/ProfilesOptions/Modal/SetExperience";
+import SetGarageStatus from "@/routes/pages/ProfilesOptions/Modal/SetGarageStatus";
+import SetAllCitiesStatus from "@/routes/pages/ProfilesOptions/Modal/SetAllCitiesStatus";
+import SetAllDealerStatus from "@/routes/pages/ProfilesOptions/Modal/SetAllDealerStatus";
+import SetExperienceSkills from "@/routes/pages/ProfilesOptions/Modal/SetExperienceSkills";
+
+// Hooks
 import { ProfileContex } from "@/hooks/useProfileContex";
 import { LocaleContext } from "@/hooks/useLocaleContext";
 
-import OptionCard from "@/components/OptionCard";
-
-// images
+// Images
 // ets2
 import img11 from "@/static/img/ets2/OptionsImages/11.webp";
 import img12 from "@/static/img/ets2/OptionsImages/12.webp";
@@ -16,14 +27,6 @@ import img16 from "@/static/img/ets2/OptionsImages/16.webp";
 // ats
 import img14_ats from "@/static/img/ats/OptionsImages/14.webp";
 import img15_ats from "@/static/img/ats/OptionsImages/15.webp";
-
-// modals
-import SetMoney from "@/routes/pages/ProfilesOptions/Modal/SetMoney";
-import SetExperience from "@/routes/pages/ProfilesOptions/Modal/SetExperience";
-import SetGarageStatus from "@/routes/pages/ProfilesOptions/Modal/SetGarageStatus";
-import SetAllCitiesStatus from "@/routes/pages/ProfilesOptions/Modal/SetAllCitiesStatus";
-import SetAllDealerStatus from "@/routes/pages/ProfilesOptions/Modal/SetAllDealerStatus";
-import SetExperienceSkills from "@/routes/pages/ProfilesOptions/Modal/SetExperienceSkills";
 
 const ProfilesOptions = () => {
 	const { game } = useContext(ProfileContex);

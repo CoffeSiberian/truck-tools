@@ -1,8 +1,12 @@
 import { useEffect, useContext } from "react";
-import { DarkModeContex } from "@/hooks/useDarkModeContex";
 import Home from "@/routes/pages/Home";
+
+// UI
 import UpdaterModal from "@/components/Modals/UpdaterModal";
 import SelectProfile from "@/components/ProfileMenu/SelectProfile";
+
+// Hooks
+import { DarkModeContex } from "@/hooks/useDarkModeContex";
 
 /*
 import Snowfall from "react-snowfall";

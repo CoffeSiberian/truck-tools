@@ -1,24 +1,29 @@
 import { useState, useContext } from "react";
-import { ProfileContex } from "@/hooks/useProfileContex";
-import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// UI
+import { useDisclosure } from "@heroui/use-disclosure";
+import { Image } from "@heroui/image";
+import { Select, SelectItem } from "@heroui/select";
+import { Slider } from "@heroui/slider";
+import { Button } from "@heroui/button";
+import { Divider } from "@heroui/divider";
 import {
 	Modal,
 	ModalContent,
 	ModalHeader,
-	Divider,
 	ModalBody,
 	ModalFooter,
-	Button,
-	useDisclosure,
-	Slider,
-	Select,
-	SelectItem,
-	Image,
-} from "@heroui/react";
-import { setProfileSkill } from "@/utils/fileEdit";
+} from "@heroui/modal";
 import AlertSave from "@/components/AlertSave";
 
-// icons
+// Hooks
+import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// Utils
+import { setProfileSkill } from "@/utils/fileEdit";
+
+// Icons
 import { IconPencil, IconArrowBigUpLine } from "@tabler/icons-react";
 import Explosives from "@/static/icons/trailers/Explosives.svg";
 import Gases from "@/static/icons/trailers/Gases.svg";
@@ -27,7 +32,7 @@ import FlammableSolids from "@/static/icons/trailers/FlammableSolids.svg";
 import ToxicInfectiousSubstances from "@/static/icons/trailers/ToxicInfectiousSubstances.svg";
 import CorrosiveSubstances from "@/static/icons/trailers/CorrosiveSubstances.svg";
 
-// types
+// Types
 import { ATR_Values } from "@/types/ConstTypes";
 
 interface completedProps {

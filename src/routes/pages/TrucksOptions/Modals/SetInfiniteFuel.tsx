@@ -1,21 +1,27 @@
 import { useState, useContext } from "react";
-import { ProfileContex } from "@/hooks/useProfileContex";
-import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// UI
+import { useDisclosure } from "@heroui/use-disclosure";
+import { Button } from "@heroui/button";
+import { Divider } from "@heroui/divider";
 import {
 	Modal,
 	ModalContent,
 	ModalHeader,
-	Divider,
 	ModalBody,
 	ModalFooter,
-	Button,
-	useDisclosure,
-} from "@heroui/react";
-import { setInfinitFuelTruck, setFuelTruck } from "@/utils/fileEdit";
+} from "@heroui/modal";
 import AlertSave from "@/components/AlertSave";
 import Warning from "@/components/Warning";
 
-// icons
+// Hooks
+import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// Utils
+import { setInfinitFuelTruck, setFuelTruck } from "@/utils/fileEdit";
+
+// Icons
 import { IconPencil, IconGasStation, IconRestore } from "@tabler/icons-react";
 
 interface completedProps {

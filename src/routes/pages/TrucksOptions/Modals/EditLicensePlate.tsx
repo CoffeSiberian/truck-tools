@@ -1,22 +1,28 @@
 import { useState, useContext } from "react";
+
+// UI
 import { useColor } from "react-color-palette";
-import { ProfileContex } from "@/hooks/useProfileContex";
-import { LocaleContext } from "@/hooks/useLocaleContext";
+import { useDisclosure } from "@heroui/use-disclosure";
+import { Button } from "@heroui/button";
+import { Divider } from "@heroui/divider";
 import {
 	Modal,
 	ModalContent,
 	ModalHeader,
-	Divider,
 	ModalBody,
 	ModalFooter,
-	Button,
-	useDisclosure,
-} from "@heroui/react";
-import { setLicensePlateTruck } from "@/utils/fileEdit";
+} from "@heroui/modal";
 import CustomLicensePlate from "@/components/CustomLicensePlate";
 import AlertSave from "@/components/AlertSave";
 
-// icons
+// Hooks
+import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// Utils
+import { setLicensePlateTruck } from "@/utils/fileEdit";
+
+// Icons
 import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";
 
 interface completedProps {

@@ -1,18 +1,27 @@
 import { JSX, useState, useContext } from "react";
-import { LocaleContext } from "@/hooks/useLocaleContext";
-import { DarkModeContex } from "@/hooks/useDarkModeContex";
-import { open } from "@tauri-apps/plugin-shell";
-import { Tabs, Tab, useDisclosure, Image, Button } from "@heroui/react";
-import classNames from "classnames";
 
-// components
+// Tauri
+import { open } from "@tauri-apps/plugin-shell";
+
+// UI
+import { useDisclosure } from "@heroui/use-disclosure";
+import { Image } from "@heroui/image";
+import { Button } from "@heroui/button";
+import { Tabs, Tab } from "@heroui/tabs";
 import TrailersOptions from "@/routes/pages/TrailersOptions/TrailersOptions";
 import TrucksOptions from "@/routes/pages/TrucksOptions/TrucksOptions";
 import ProfilesOptions from "@/routes/pages/ProfilesOptions/ProfilesOptions";
 import AboutModal from "@/components/Modals/AboutModal";
 import SettingsModal from "@/components/Modals/SettingsModal";
 
-// icons
+// Hooks
+import { LocaleContext } from "@/hooks/useLocaleContext";
+import { DarkModeContex } from "@/hooks/useDarkModeContex";
+
+// Utils
+import classNames from "classnames";
+
+// Icons
 import {
 	IconTruck,
 	IconUserCircle,

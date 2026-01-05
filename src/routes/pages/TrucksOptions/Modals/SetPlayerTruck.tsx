@@ -1,26 +1,34 @@
 import { useState, useContext, useEffect } from "react";
+
+// Tauri
 import { open } from "@tauri-apps/plugin-shell";
-import { Select, SelectItem } from "@heroui/react";
-import { ProfileContex } from "@/hooks/useProfileContex";
-import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// UI
+import { useDisclosure } from "@heroui/use-disclosure";
+import { Button } from "@heroui/button";
+import { Select, SelectItem } from "@heroui/select";
+import { Divider } from "@heroui/divider";
 import {
 	Modal,
 	ModalContent,
 	ModalHeader,
-	Divider,
 	ModalBody,
 	ModalFooter,
-	Button,
-	useDisclosure,
-} from "@heroui/react";
+} from "@heroui/modal";
+import AlertSave from "@/components/AlertSave";
+import Warning from "@/components/Warning";
+
+// Hooks
+import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// Utils
 import {
 	getSaveGameTrucks,
 	setPlayerTruck as setPlayerTruckSave,
 } from "@/utils/fileEdit";
-import AlertSave from "@/components/AlertSave";
-import Warning from "@/components/Warning";
 
-// icons
+// Icons
 import {
 	IconPencil,
 	IconReplace,
@@ -28,7 +36,7 @@ import {
 	IconBrandYoutube,
 } from "@tabler/icons-react";
 
-// types
+// Types
 import { SaveTrucks } from "@/types/fileEditTypes";
 
 interface completedProps {

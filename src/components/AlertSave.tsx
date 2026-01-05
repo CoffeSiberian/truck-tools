@@ -1,6 +1,10 @@
 import { FC, useEffect } from "react";
+
+// UI
+import { Alert } from "@heroui/alert";
+
+// Utils
 import classNames from "classnames";
-import { Alert } from "@heroui/react";
 
 interface props {
 	message: string;

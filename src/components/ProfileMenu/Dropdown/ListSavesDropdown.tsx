@@ -1,6 +1,12 @@
 import { FC, useContext } from "react";
+
+// UI
+import { Select, SelectItem } from "@heroui/select";
+
+// Hooks
 import { LocaleContext } from "@/hooks/useLocaleContext";
-import { Select, SelectItem } from "@heroui/react";
+
+// Types
 import { ProfileTypesContext } from "@/types/ContexTypes";
 
 const ListSavesDropdown: FC<ProfileTypesContext> = ({

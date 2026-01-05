@@ -1,15 +1,20 @@
 import { FC, useContext } from "react";
-import { LocaleContext } from "@/hooks/useLocaleContext";
-import { Select, SelectItem, Image } from "@heroui/react";
 
-// icons
+// UI
+import { Image } from "@heroui/image";
+import { Select, SelectItem } from "@heroui/select";
+
+// Hooks
+import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// Icons
 import { IconUserCircle } from "@tabler/icons-react";
 
-// images
+// Images
 import ets2 from "@/static/icons/games/ets2.webp";
 import ats from "@/static/icons/games/ats.webp";
 
-// types
+// Types
 import { Profile, ProfileWithoutSaves } from "@/types/SaveGameTypes";
 
 interface ProfileListProps {

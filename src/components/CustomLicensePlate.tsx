@@ -1,12 +1,21 @@
 import { FC, useState, useEffect, useContext } from "react";
-import { LocaleContext } from "@/hooks/useLocaleContext";
-import { Button, Checkbox, Input, Select, SelectItem } from "@heroui/react";
+
+// UI
+import "react-color-palette/css";
+import { Select, SelectItem } from "@heroui/select";
+import { Input } from "@heroui/input";
+import { Checkbox } from "@heroui/checkbox";
+import { Button } from "@heroui/button";
 import { ColorPicker, IColor } from "react-color-palette";
+
+// Hooks
+import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// Utils
 import { v4 as uuidv4 } from "uuid";
 import { getStoredLicensePlate, storeLicensePlate } from "@/utils/fileEdit";
-import "react-color-palette/css";
 
-//types
+// Types
 import { licensePlateSaved } from "@/types/fileEditTypes";
 
 interface CustomLicensePlateProps {

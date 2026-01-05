@@ -1,5 +1,7 @@
 import { FC } from "react";
-import { Chip } from "@heroui/react";
+
+// UI
+import { Chip } from "@heroui/chip";
 
 // icons
 import { IconDeviceFloppy, IconAlertTriangle } from "@tabler/icons-react";

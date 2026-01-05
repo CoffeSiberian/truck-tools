@@ -1,25 +1,30 @@
 import { useState, useContext, JSX } from "react";
-import { ProfileContex } from "@/hooks/useProfileContex";
-import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// UI
+import { cn } from "@heroui/theme";
+import { useDisclosure } from "@heroui/use-disclosure";
 import {
-	Button,
 	Dropdown,
 	DropdownTrigger,
 	DropdownMenu,
 	DropdownSection,
 	DropdownItem,
-	useDisclosure,
-	cn,
-} from "@heroui/react";
+} from "@heroui/dropdown";
+import { Button } from "@heroui/button";
+import { Spinner } from "@heroui/spinner";
 import { descriptFiles, openExplorer } from "@/utils/fileEdit";
 
-// modals
+// Hooks
+import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// Modals
 import BackupProfile from "@/components/ProfileMenu/Modal/BackupProfile";
 import CloneProfile from "@/components/ProfileMenu/Modal/CloneProfile";
 import CopyConfig from "@/components/ProfileMenu/Modal/CopyConfig";
 import RenameProfile from "@/components/ProfileMenu/Modal/RenameProfile";
 
-// icons
+// Icons
 import {
 	IconFolderShare,
 	IconBinary,
@@ -29,7 +34,6 @@ import {
 	IconSettingsShare,
 	IconUserEdit,
 } from "@tabler/icons-react";
-import { Spinner } from "@heroui/react";
 
 interface DecryptResult {
 	isLoading: boolean;

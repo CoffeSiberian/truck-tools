@@ -1,25 +1,33 @@
 import { useState, useEffect, useRef, useCallback, useContext } from "react";
-import { DarkModeContex } from "@/hooks/useDarkModeContex";
-import { LocaleContext } from "@/hooks/useLocaleContext";
-import classNames from "classnames";
+
+// Tauri
 import { check as checkUpdate, Update } from "@tauri-apps/plugin-updater";
 import { relaunch } from "@tauri-apps/plugin-process";
 import { open } from "@tauri-apps/plugin-shell";
+
+// UI
+import { Progress } from "@heroui/progress";
+import { Chip } from "@heroui/chip";
+import { Divider } from "@heroui/divider";
+import { Button } from "@heroui/button";
 import {
 	Modal,
 	ModalContent,
 	ModalHeader,
 	ModalBody,
 	ModalFooter,
-	Button,
-	Divider,
-	Chip,
-	Progress,
-} from "@heroui/react";
-import { format as formatDate } from "@formkit/tempo";
+} from "@heroui/modal";
 import AlertSaveChip from "@/components/AlertSaveChip";
 
-// icons
+// Hooks
+import { DarkModeContex } from "@/hooks/useDarkModeContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// Utils
+import classNames from "classnames";
+import { format as formatDate } from "@formkit/tempo";
+
+// Icons
 import {
 	IconCalendarWeek,
 	IconBrandWindows,

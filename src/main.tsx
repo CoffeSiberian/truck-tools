@@ -2,8 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "@/App";
 
-// hooks
-import { HeroUIProvider } from "@heroui/react";
+// UI
+import { HeroUIProvider } from "@heroui/system";
+
+// Hooks
 import { DarkMode } from "@/hooks/useDarkModeContex";
 import { Locale } from "@/hooks/useLocaleContext";
 import { ProfileContexInfo } from "@/hooks/useProfileContex";

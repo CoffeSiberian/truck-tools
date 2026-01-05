@@ -1,15 +1,22 @@
 import { JSX, useContext } from "react";
+
+// UI
+import { Tabs, Tab } from "@heroui/tabs";
+import { Card, CardBody } from "@heroui/card";
+
+// Hooks
 import { ProfileContex } from "@/hooks/useProfileContex";
 import { DarkModeContex } from "@/hooks/useDarkModeContex";
-import { Card, CardBody, Tabs, Tab } from "@heroui/react";
-import classNames from "classnames";
 import ProfileCardBody from "@/components/ProfileMenu/ProfileCardBody";
 import ProfileError from "@/components/ProfileMenu/ProfileError";
 
-// types
+// Utils
+import classNames from "classnames";
+
+// Types
 import { GamesNames } from "@/types/ContexTypes";
 
-// images
+// Images
 import ets2 from "@/static/icons/games/ets2.webp";
 import ats from "@/static/icons/games/ats.webp";
 

@@ -1,28 +1,34 @@
 import { useState, useContext, useEffect, FC } from "react";
-import ListProfilesDropdownCopyConfig from "@/components/ProfileMenu/Dropdown/ListProfilesDropdownCopyConfig";
-import { ProfileContex } from "@/hooks/useProfileContex";
-import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// UI
+import { Button } from "@heroui/button";
+import { Divider } from "@heroui/divider";
+import { Image } from "@heroui/image";
 import {
 	Modal,
-	Image,
 	ModalContent,
 	ModalHeader,
-	Divider,
 	ModalBody,
 	ModalFooter,
-	Button,
-} from "@heroui/react";
-import { copyProfileConfigs, readProfileNames } from "@/utils/fileEdit";
+} from "@heroui/modal";
 import AlertSave from "@/components/AlertSave";
+import ListProfilesDropdownCopyConfig from "@/components/ProfileMenu/Dropdown/ListProfilesDropdownCopyConfig";
 
-// icons
+// Hooks
+import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// Utils
+import { copyProfileConfigs, readProfileNames } from "@/utils/fileEdit";
+
+// Icons
 import { IconCopy, IconUserCircle, IconArrowRight } from "@tabler/icons-react";
 
-// images
+// Images
 import ets2 from "@/static/icons/games/ets2.webp";
 import ats from "@/static/icons/games/ats.webp";
 
-// types
+// Types
 import { ProfileWithoutSaves, Profile } from "@/types/SaveGameTypes";
 
 interface completedProps {

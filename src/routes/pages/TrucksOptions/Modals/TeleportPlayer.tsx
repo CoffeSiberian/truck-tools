@@ -1,26 +1,28 @@
 import { useState, useContext } from "react";
+
+// Tauri
 import { open } from "@tauri-apps/plugin-shell";
 
-// context and hooks
-import { ProfileContex } from "@/hooks/useProfileContex";
-import { LocaleContext } from "@/hooks/useLocaleContext";
-import Warning from "@/components/Warning";
-
-// utils
-import { setPlayerPosition, getSavePlayerCamera } from "@/utils/fileEdit";
-
-// components
+// UI
+import { useDisclosure } from "@heroui/use-disclosure";
+import { Button } from "@heroui/button";
+import { Divider } from "@heroui/divider";
 import {
 	Modal,
 	ModalContent,
 	ModalHeader,
-	Divider,
 	ModalBody,
 	ModalFooter,
-	Button,
-	useDisclosure,
-} from "@heroui/react";
+} from "@heroui/modal";
 import AlertSave from "@/components/AlertSave";
+import Warning from "@/components/Warning";
+
+// Hooks
+import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// Utils
+import { setPlayerPosition, getSavePlayerCamera } from "@/utils/fileEdit";
 
 // icons
 import { IconBrandYoutube, IconMapPin, IconPencil } from "@tabler/icons-react";

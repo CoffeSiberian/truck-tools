@@ -1,25 +1,31 @@
 import { useState, useContext } from "react";
-import { ProfileContex } from "@/hooks/useProfileContex";
-import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// UI
+import { RadioGroup } from "@heroui/radio";
+import { useDisclosure } from "@heroui/use-disclosure";
+import { Button } from "@heroui/button";
+import { Divider } from "@heroui/divider";
 import {
 	Modal,
 	ModalContent,
 	ModalHeader,
-	Divider,
 	ModalBody,
 	ModalFooter,
-	Button,
-	useDisclosure,
-	RadioGroup,
-} from "@heroui/react";
+} from "@heroui/modal";
 import CustomRadio from "@/components/CustomRadio";
-import { setProfileGarageStatus } from "@/utils/fileEdit";
 import AlertSave from "@/components/AlertSave";
 
-// icons
+// Hooks
+import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// Utils
+import { setProfileGarageStatus } from "@/utils/fileEdit";
+
+// Icons
 import { IconPencil, IconDeviceFloppy } from "@tabler/icons-react";
 
-// images
+// Images
 // ets2
 import smallGarage from "@/static/img/ets2/garages/small.webp";
 import mediumGarage from "@/static/img/ets2/garages/medium.webp";

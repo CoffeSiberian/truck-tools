@@ -1,12 +1,9 @@
 import { FC, JSX } from "react";
-import {
-	Card,
-	CardHeader,
-	CardBody,
-	CardFooter,
-	Image,
-	Divider,
-} from "@heroui/react";
+
+// UI
+import { Divider } from "@heroui/divider";
+import { Image } from "@heroui/image";
+import { Card, CardHeader, CardBody, CardFooter } from "@heroui/card";
 
 interface OptionCardProps {
 	id: string;

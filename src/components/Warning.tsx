@@ -1,6 +1,10 @@
 import { useContext, FC, JSX } from "react";
-import classNames from "classnames";
+
+// Hooks
 import { DarkModeContex } from "@/hooks/useDarkModeContex";
+
+// Utils
+import classNames from "classnames";
 
 interface WarningProps {
 	text: JSX.Element;

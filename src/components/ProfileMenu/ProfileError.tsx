@@ -1,11 +1,17 @@
 import { useContext } from "react";
-import { DarkModeContex } from "@/hooks/useDarkModeContex";
-import { LocaleContext } from "@/hooks/useLocaleContext";
-import { Button } from "@heroui/react";
+
+// Tauri
 import { open } from "@tauri-apps/plugin-shell";
+
+// UI
+import { Button } from "@heroui/button";
 import classNames from "classnames";
 
-// icons
+// Hooks
+import { DarkModeContex } from "@/hooks/useDarkModeContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// Icons
 import {
 	IconAlertTriangle,
 	IconHelp,

@@ -1,9 +1,13 @@
 import { useContext } from "react";
-import { ProfileContex } from "@/hooks/useProfileContex";
-import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// UI
 import OptionCard from "@/components/OptionCard";
 
-// images
+// Hooks
+import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// Images
 // ets2
 import img2 from "@/static/img/ets2/OptionsImages/2.webp";
 import img3 from "@/static/img/ets2/OptionsImages/3.webp";

@@ -1,9 +1,26 @@
 import { useContext } from "react";
-import { ProfileContex } from "@/hooks/useProfileContex";
-import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// UI
 import OptionCard from "@/components/OptionCard";
 
-// images
+// Modals
+import RepairTruck from "@/routes/pages/TrucksOptions/Modals/RepairTruck";
+import RepairAllTrucks from "@/routes/pages/TrucksOptions/Modals/RepairAllTrucks";
+import FillTruckFuel from "@/routes/pages/TrucksOptions/Modals/FillTruckFuel";
+import SetInfiniteFuel from "@/routes/pages/TrucksOptions/Modals/SetInfiniteFuel";
+import FillAllTrucksFuel from "@/routes/pages/TrucksOptions/Modals/FillAllTrucksFuel";
+import EditLicensePlate from "@/routes/pages/TrucksOptions/Modals/EditLicensePlate";
+import SetTruckEngine from "@/routes/pages/TrucksOptions/Modals/SetTruckEngine";
+import ModifyKm from "@/routes/pages/TrucksOptions/Modals/ModifyKm";
+import SetTruckTransmission from "@/routes/pages/TrucksOptions/Modals/SetTruckTransmission";
+import SetPlayerTruck from "@/routes/pages/TrucksOptions/Modals/SetPlayerTruck";
+import TeleportPlayer from "@/routes/pages/TrucksOptions/Modals/TeleportPlayer";
+
+// Hooks
+import { ProfileContex } from "@/hooks/useProfileContex";
+import { LocaleContext } from "@/hooks/useLocaleContext";
+
+// Images
 // ets2
 import img1 from "@/static/img/ets2/OptionsImages/1.webp";
 import img6 from "@/static/img/ets2/OptionsImages/6.webp";
@@ -24,19 +41,6 @@ import img10_ats from "@/static/img/ats/OptionsImages/10.webp";
 import img18_ats from "@/static/img/ats/OptionsImages/18.webp";
 import img19_ats from "@/static/img/ats/OptionsImages/19.webp";
 import img21_ats from "@/static/img/ats/OptionsImages/21.webp";
-
-// modals
-import RepairTruck from "@/routes/pages/TrucksOptions/Modals/RepairTruck";
-import RepairAllTrucks from "@/routes/pages/TrucksOptions/Modals/RepairAllTrucks";
-import FillTruckFuel from "@/routes/pages/TrucksOptions/Modals/FillTruckFuel";
-import SetInfiniteFuel from "@/routes/pages/TrucksOptions/Modals/SetInfiniteFuel";
-import FillAllTrucksFuel from "@/routes/pages/TrucksOptions/Modals/FillAllTrucksFuel";
-import EditLicensePlate from "@/routes/pages/TrucksOptions/Modals/EditLicensePlate";
-import SetTruckEngine from "@/routes/pages/TrucksOptions/Modals/SetTruckEngine";
-import ModifyKm from "@/routes/pages/TrucksOptions/Modals/ModifyKm";
-import SetTruckTransmission from "@/routes/pages/TrucksOptions/Modals/SetTruckTransmission";
-import SetPlayerTruck from "@/routes/pages/TrucksOptions/Modals/SetPlayerTruck";
-import TeleportPlayer from "@/routes/pages/TrucksOptions/Modals/TeleportPlayer";
 
 const TrucksOptions = () => {
 	const { game } = useContext(ProfileContex);
