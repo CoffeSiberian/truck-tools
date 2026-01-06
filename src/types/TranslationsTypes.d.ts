@@ -18,7 +18,8 @@ export type Langs =
 	| "pl-PL"
 	| "ru-RU"
 	| "ro-RO"
-	| "tr-TR";
+	| "tr-TR"
+	| "jp-JP";
 
 export interface TranslationsTypes {
 	components: Components;
