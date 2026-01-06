@@ -29,7 +29,7 @@
                         "label": "备份档案",
                         "modal": {
                             "btn_apply": "创建备份",
-                            "btn_close": "取消",
+                            "btn_close": "关闭",
                             "btn_open_folder": "选择文件夹",
                             "description": "创建档案备份，记得输入备份目录",
                             "input_backup_destination": {
@@ -50,7 +50,7 @@
                         "label": "复制档案",
                         "modal": {
                             "btn_apply": "复制",
-                            "btn_close": "取消",
+                            "btn_close": "关闭",
                             "description": "复制档案并创建一个完全一模一样的档案。",
                             "input_new_name": {
                                 "label": "复制档案名称",
@@ -64,7 +64,7 @@
                         "label": "复制配置",
                         "modal": {
                             "btn_apply": "复制配置",
-                            "btn_close": "取消",
+                            "btn_close": "关闭",
                             "description": "选择需要复制的配置/设置信息到此档案，该操作将删除你的配置/设置信息<b>建议进行操作前对该档案配置/设置信息进行备份</b>（档案文件夹下的config、config_local、controls文件）。",
                             "input_select_profile": {
                                 "label": "档案",
@@ -78,7 +78,7 @@
                         "label": "对该档案进行重命名",
                         "modal": {
                             "btn_apply": "确认重命名",
-                            "btn_close": "取消",
+                            "btn_close": "关闭",
                             "description": "你可以对档案进行重命名，但是档案名称必须小于20个字符（小于10个汉字）。",
                             "input_new_name": {
                                 "label": "重命名的档案名称",
@@ -104,17 +104,17 @@
             "input_select_profile": {
                 "label": "选择档案",
                 "options": {
-                    "save_load": "保存"
+                    "save_load": "个存档"
                 },
                 "placeholder": "选择一个档案"
             },
             "input_select_save": {
-                "label": "选择一个保存",
-                "placeholder": "选择保存"
+                "label": "选择存档",
+                "placeholder": "选择一个存档"
             },
             "no_selected_profile": "没有选择档案",
             "no_selected_save": "没有选择存档",
-            "total_saves": "保存"
+            "total_saves": "个存档"
         },
         "profile_error": {
             "btn_how_to": "视频教程",
@@ -144,8 +144,8 @@
                 "label_card": "修改经验值",
                 "modal": {
                     "btn_apply": "应用",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "description": "输入要修改的存档经验值数量",
                     "input_experience": {
                         "label": "经验值",
@@ -159,8 +159,8 @@
                 "label_card": "修改金币数量",
                 "modal": {
                     "btn_apply": "应用",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "description": "你想要修改的金币数量",
                     "input_money": {
                         "label": "金币",
@@ -174,8 +174,8 @@
                 "label_card": "解锁所有卡车经销商",
                 "modal": {
                     "btn_apply": "应用",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "description": "选择是否解锁所有经销商",
                     "input_dealer_status": {
                         "label": "解锁城市",
@@ -192,8 +192,8 @@
                 "label_card": "购买所有车库",
                 "modal": {
                     "btn_apply": "应用",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "description": "选择存档中车库大小",
                     "input_garage_status": {
                         "label": "车库选项",
@@ -212,8 +212,8 @@
                 "label_card": "设置技能等级",
                 "modal": {
                     "btn_apply": "应用",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "description": "选择需要解锁的危险品运输许可",
                     "eco_driving": "节油驾驶",
                     "fragile_cargo": "易碎货物",
@@ -239,8 +239,8 @@
                 "label_card": "探索所有城市",
                 "modal": {
                     "btn_apply": "应用",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "description": "选择所有访问城市的状态",
                     "input_city_status": {
                         "label": "访问过的城市",
@@ -275,7 +275,7 @@
             },
             "input_enable_128_slots": "解锁128人联运模式",
             "input_enable_console": "启用控制台和开发人员模式（启用飞行模式）",
-            "input_opacity_profile": "降低底部工具栏透明度",
+            "input_opacity_profile": "降低底部工具栏不透明度",
             "tab_title": "设置",
             "title": "设置"
         },
@@ -285,8 +285,8 @@
                 "label_card": "更换挂车牌照",
                 "modal": {
                     "btn_apply": "应用",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "description": "输入一个新的挂车车牌",
                     "title": "更换挂车牌照"
                 }
@@ -296,8 +296,8 @@
                 "label_card": "修改货物重量",
                 "modal": {
                     "btn_apply": "应用",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "description": "这将把当前货物重量修改为指定的重量。请记住，这仅适用于当前货物",
                     "input_weight": {
                         "label": "重量（千克）",
@@ -311,8 +311,8 @@
                 "label_card": "修改挂车重量",
                 "modal": {
                     "btn_apply": "应用",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "description": "这将通过 2 个参数修改挂车的重量。通常使用底盘重量，但也可以编辑车身重量（默认车身质量为 0）",
                     "input_body_mass": {
                         "label": "车身重量（kg）",
@@ -330,8 +330,8 @@
                 "label_card": "维修所有挂车",
                 "modal": {
                     "btn_apply": "维修",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "description": "维修你所拥有所有挂车",
                     "title": "维修你拥有的所有的挂车"
                 }
@@ -341,8 +341,8 @@
                 "label_card": "维修当前挂车",
                 "modal": {
                     "btn_apply": "维修",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "description": "维修当前挂车",
                     "title": "挂车"
                 }
@@ -353,9 +353,9 @@
                 "label_card": "解锁挂车国家/地区限制",
                 "modal": {
                     "btn_apply": "解锁",
-                    "btn_close": "取消",
+                    "btn_close": "关闭",
                     "btn_how_to_use": "如何使用",
-                    "btn_open": "查看详情",
+                    "btn_open": "打开",
                     "description": "解锁所有挂车的区域限制",
                     "title": "解锁挂车限制",
                     "warning_message": {
@@ -371,7 +371,7 @@
                     "btn_apply": "改变",
                     "btn_how_to_use": "如何使用",
                     "btn_close": "关闭",
-                    "btn_open": "Open",
+                    "btn_open": "打开",
                     "description": "无需去车库即可更换拖车",
                     "title": "在道路上更换挂车",
                     "select_label": "挂车",
@@ -379,19 +379,19 @@
                     "select_placeholder": "选择挂车",
                     "warning_message": {
                         "title": "警告",
-                        "message": "如果您创建了新的保存，请记得更新挂车列表，这样在更改挂车时就不会出错。"
+                        "message": "如果您创建了一个新的存档，请记得更新挂车列表，这样在更改挂车时就不会出错。"
                     }
                 }
             }
         },
         "trucks": {
             "change_truck_engine": {
-                "description_card": "修改卡车引擎功率",
-                "label_card": "修改卡车引擎功率",
+                "description_card": "修改卡车发动机",
+                "label_card": "修改卡车发动机",
                 "modal": {
                     "btn_apply": "应用",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "btn_remove_badge": "移除徽标",
                     "description": "将卡车发动机更换为您所选择的发动机",
                     "input_brands": {
@@ -406,7 +406,7 @@
                         "label": "车辆型号",
                         "placeholder": "选择卡车型号"
                     },
-                    "title": "修改卡车引擎功率",
+                    "title": "修改卡车发动机",
                     "warning_message": {
                         "message": "如果您发现卡车上有任何<b>徽标漂浮或位置不佳</b>，可以使用下面的按钮将其移除。",
                         "title": "提示"
@@ -418,8 +418,8 @@
                 "label_card": "修改卡车变速箱",
                 "modal": {
                     "btn_apply": "应用",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "btn_remove_badge": "移除徽章",
                     "description": "将您的卡车变速箱更换为您所选择的变速箱",
                     "input_brands": {
@@ -446,8 +446,8 @@
                 "label_card": "为所有卡车加满油",
                 "modal": {
                     "btn_apply": "应用",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "description": "此选项将允许您为所有购买的卡车加满油",
                     "title": "给所有卡车加满燃油"
                 }
@@ -457,8 +457,8 @@
                 "label_card": "加满油",
                 "modal": {
                     "btn_apply": "应用",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "description": "为当前使用的卡车加满油",
                     "title": "加满油"
                 }
@@ -468,8 +468,8 @@
                 "label_card": "修改当前卡车为无限燃油",
                 "modal": {
                     "btn_apply": "加油",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "btn_restore_fuel": "恢复燃油",
                     "description": "确切地说，燃料不是无限的，但大约可以行驶 5.000.000 KM（取决于卡车）",
                     "title": "修改当前卡车为无限燃油",
@@ -484,8 +484,8 @@
                 "label_card": "修改卡车车牌",
                 "modal": {
                     "btn_apply": "应用",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "description": "输入新的卡车牌照。记住要从 卡车世界 中删除您的车牌",
                     "title": "修改卡车车牌"
                 }
@@ -495,8 +495,8 @@
                 "label_card": "修理所有卡车",
                 "modal": {
                     "btn_apply": "维修",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "description": "修理您公司的所有卡车",
                     "title": "修理所有卡车"
                 }
@@ -506,8 +506,8 @@
                 "label_card": "卡车维修",
                 "modal": {
                     "btn_apply": "维修",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "description": "修复卡车损坏",
                     "title": "维修卡车"
                 }
@@ -534,8 +534,8 @@
                 "modal": {
                     "btn_apply": "应用",
                     "btn_how_to_use": "如何使用",
-                    "btn_close": "取消",
-                    "btn_open": "查看详情",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
                     "description": "不用去车库换卡车",
                     "title": "在道路上更换您的卡车",
                     "select_label": "卡车",
@@ -543,19 +543,19 @@
                     "select_placeholder": "选择一辆卡车",
                     "warning_message": {
                         "title": "警告⚠️",
-                        "message": "如果您创建了新的保存，请记得更新卡车列表，这样在更换卡车时就不会收到错误。"
+                        "message": "如果您创建了一个新的存档，请记得更新卡车列表，这样在更换卡车时就不会收到错误。"
                     }
                 }
             },
             "teleport_player": {
-                "description_card": "通过游戏调试摄像机传送到指定位置",
+                "description_card": "通过游戏调试摄像机传送到指定位置(TPC)",
                 "label_card": "传送玩家位置",
                 "modal": {
                     "btn_apply": "传送",
                     "btn_how_to_use": "如何使用",
-                    "btn_close": "取消",
-                    "btn_open": "Open",
-                    "description": "通过游戏调试摄像机传送到指定位置",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "通过游戏调试摄像机传送到指定位置(TPC)",
                     "title": "传送玩家位置",
                     "warning_message": {
                         "title": "记住",
