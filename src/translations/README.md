@@ -23,6 +23,7 @@ Our goal is to support multiple languages, driven by contributions from our comm
 
 - If a language is missing text strings to be translated and is over 50% complete, the missing strings will be filled in using the English template. This ensures the application can be uploaded without errors.
 - If a language is less than 50% complete, it will not be integrated into the application until it meets the minimum threshold (ideally, translations should always be 100% complete).
+- If for any reason you contributed to the translations but do not appear on the list, please open an issue to add yourself to the list.
 
 ### Thank you very much for contributing translations ❤️
 
@@ -81,6 +82,10 @@ Our goal is to support multiple languages, driven by contributions from our comm
 - [Onur Korkmaz][onrkrkmz22]
 - [Metehan BİLAL][MBCustoms]
 
+#### Japanese
+
+- [しまんと][yyuuchanneru]
+
 [weblate]: https://hosted.weblate.org/projects/truck-tools/truck-tools/
 [memo209]: https://hosted.weblate.org/user/memo209/
 [nulijiazaizhong]: https://hosted.weblate.org/user/nulijiazaizhong/
@@ -100,3 +105,4 @@ Our goal is to support multiple languages, driven by contributions from our comm
 [onrkrkmz22]: https://hosted.weblate.org/user/onrkrkmz22/
 [Atalanttore]: https://hosted.weblate.org/user/Atalanttore/
 [kaktusgame806]:https://hosted.weblate.org/user/kaktusgame806/
+[yyuuchanneru]: https://hosted.weblate.org/user/yyuuchanneru/
