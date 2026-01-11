@@ -1,6 +1,6 @@
 [package]
 name = "trucktools"
-version = "0.12.2"
+version = "0.12.3"
 description = "Truck Tools"
 authors = ["SiberianCoffe"]
 edition = "2024"
