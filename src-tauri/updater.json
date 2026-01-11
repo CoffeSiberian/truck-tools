@@ -1,11 +1,11 @@
 {
-	"version": "v0.12.1",
-	"notes": "- Maintenance update\n- Update to some translations\n\nSiberianCoffe: Apologies for the delay in the updates. My time has been more limited, but we're still going strong!\n\nAs always, we are grateful to the collaborators of the project ❤️",
-	"pub_date": "2025-06-20T21:00:00-03:00",
+	"version": "v0.12.3",
+	"notes": "- Japanese has been added to the languages supported by the app\n- Library updates and UI optimizations\n\nAs always, we would like to thank everyone who contributed in one way or another to the translations ❤️☕☕",
+	"pub_date": "2026-01-11T13:00:00-03:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlpza2t0NHY1c0NYUmg0RWVqbVI3THdXZHZDUWJUVjBpbHBibFNlUjdFSFVlQ2w4Uk9mWlp2TmhMS3YrRXVnUnRlamFhbUduakZVdWJBbzJpMGlYcHdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzUwNDc0Nzg0CWZpbGU6VHJ1Y2sgVG9vbHNfMC4xMi4xX3g2NF9lbi1VUy5tc2kuemlwCjRLTXh1cDhrK2hadGRRVVlKTkJPelYwbGNuNkxlTUZxZy9LNFVtRWxQYTBQRmk1cE5hWWtnSjFYWWwrM2VFMEQydGhiK2ErUXhEYVg4alNYMU5pU0NBPT0K",
-			"url": "https://legacy.siberiancoffe.dev/Truck_Tools_0.12.1_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmJjbXE5RFdjN3V2NkpETXpYTGwxbjBNVTMvY1ZEb21GY3ZpRW1GQjcrUE00a205ckFQOWhaaG03NHJJVFBlRFFQdDRmaGV6dTVtdDNQT3lKUkNwSGdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzY4MTY3NzgwCWZpbGU6VHJ1Y2sgVG9vbHNfMC4xMi4zX3g2NF9lbi1VUy5tc2kuemlwCjZjeHFZT3BURWl0S3NUN3YvQzROczVML2VRWGFaYUU4QVpDK1pqTU1kL1NkQU14NXUrMm0yVHRFblJNamVEelNmOXhLblRTdkxnUFB5aUxralpQeURBPT0K",
+			"url": "https://legacy.siberiancoffe.dev/Truck_Tools_0.12.3_x64_en-US.msi.zip"
 		}
 	}
 }
