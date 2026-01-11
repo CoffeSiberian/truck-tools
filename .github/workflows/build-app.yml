@@ -31,19 +31,25 @@ jobs:
             - name: Set FILE_NAME
               run: echo "FILE_NAME=${{ env.APP_NAME }}_${{ env.APP_VERSION }}_${{ env.APP_BUILD_TARGET }}" | Out-File -Append -FilePath $env:GITHUB_ENV -Encoding utf8
 
+            - name: Install pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: 10
+
             - name: Install NodeJS
               uses: actions/setup-node@v4
               with:
                   node-version: lts/*
+                  cache: 'pnpm'
 
             - name: Install Rust stable
               uses: dtolnay/rust-toolchain@stable
 
             - name: Install dependencies
-              run: npm install
+              run: pnpm install
 
             - name: Build app
-              run: npm run tauri build
+              run: pnpm tauri build
 
             - name: Upload artifact MSI
               uses: actions/upload-artifact@v4
