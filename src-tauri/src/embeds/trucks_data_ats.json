@@ -556,16 +556,16 @@
 					"code": "/def/vehicle/truck/intnational.lt/engine/x15_450.sii"
 				},
 				{
+					"name": "S13 Integrated Powertrain 470",
+					"cv": "470",
+					"nm": "2373",
+					"code": "/def/vehicle/truck/intnational.lt/engine/s13_475.sii"
+				},
+				{
 					"name": "International A26 475",
 					"cv": "475",
 					"nm": "2305",
 					"code": "/def/vehicle/truck/intnational.lt/engine/a26_475.sii"
-				},
-				{
-					"name": "S13 Integrated Powertrain 475",
-					"cv": "475",
-					"nm": "2373",
-					"code": "/def/vehicle/truck/intnational.lt/engine/s13_475.sii"
 				},
 				{
 					"name": "Cummins X15 Efficiency 500",
@@ -576,7 +576,7 @@
 				{
 					"name": "S13 Integrated Powertrain 515",
 					"cv": "515",
-					"nm": "2440",
+					"nm": "2508",
 					"code": "/def/vehicle/truck/intnational.lt/engine/s13_515.sii"
 				},
 				{
@@ -810,10 +810,28 @@
 			"model": "t680_2022",
 			"engines": [
 				{
+					"name": "Cummins X12 Efficiency 350",
+					"cv": "350",
+					"nm": "1830",
+					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/x12_350.sii"
+				},
+				{
+					"name": "Cummins X12 Efficiency 410",
+					"cv": "410",
+					"nm": "1966",
+					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/x12_410.sii"
+				},
+				{
 					"name": "Paccar MX-13 430",
 					"cv": "430",
 					"nm": "2102",
 					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/mx13_430.sii"
+				},
+				{
+					"name": "Cummins X15 Efficiency 450",
+					"cv": "450",
+					"nm": "2373",
+					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/x15_450.sii"
 				},
 				{
 					"name": "Paccar MX-13 455",
@@ -822,25 +840,84 @@
 					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/mx13_455.sii"
 				},
 				{
+					"name": "Cummins X12 Efficiency 455",
+					"cv": "455",
+					"nm": "2305",
+					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/x12_455.sii"
+				},
+				{
 					"name": "Paccar MX-13 485",
 					"cv": "485",
 					"nm": "2237",
 					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/mx13_485.sii"
 				},
 				{
+					"name": "Cummins X15 Efficiency 500",
+					"cv": "500",
+					"nm": "2508",
+					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/x15_500.sii"
+				},
+				{
 					"name": "Paccar MX-13 510",
 					"cv": "510",
 					"nm": "2508",
 					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/mx13_510.sii"
+				},
+				{
+					"name": "Cummins X15 Performance 565",
+					"cv": "565",
+					"nm": "2779",
+					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/x15_565.sii"
+				},
+				{
+					"name": "Cummins X15 Productivity 605",
+					"cv": "605",
+					"nm": "2779",
+					"code": "/def/vehicle/truck/kenworth.t680_2022/engine/x15_605.sii"
 				}
 			],
 			"transmissions": [
+				{
+					"name": "Allison 4500 RDS",
+					"speeds": "6",
+					"retarder": false,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/kenworth.t680_2022/transmission/allison.sii"
+				},
+				{
+					"name": "Allison 4500 RDS R",
+					"speeds": "6",
+					"retarder": true,
+					"ratio": "4.7 - 0.67",
+					"code": "/def/vehicle/truck/kenworth.t680_2022/transmission/allison_retarder.sii"
+				},
+				{
+					"name": "Eaton UltraShift FM-15E310B-LAS",
+					"speeds": "10",
+					"retarder": false,
+					"ratio": "15.42 - 1.0",
+					"code": "/def/vehicle/truck/kenworth.t680_2022/transmission/10_speed.sii"
+				},
 				{
 					"name": "PACCAR TX-12",
 					"speeds": "12",
 					"retarder": false,
 					"ratio": "14.43 - 0.77",
 					"code": "/def/vehicle/truck/kenworth.t680_2022/transmission/tx12.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-20E313A-MHP",
+					"speeds": "13",
+					"retarder": false,
+					"ratio": "12.29 - 0.73",
+					"code": "/def/vehicle/truck/kenworth.t680_2022/transmission/13_speed.sii"
+				},
+				{
+					"name": "Eaton UltraShift FO-22E318B-VXP",
+					"speeds": "18",
+					"retarder": false,
+					"ratio": "14.40 - 0.73",
+					"code": "/def/vehicle/truck/kenworth.t680_2022/transmission/18_speed.sii"
 				}
 			]
 		},

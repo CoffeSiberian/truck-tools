@@ -242,6 +242,27 @@
 		},
 		{
 			"brand": "daf",
+			"model": "xf_electric",
+			"engines": [
+				{
+					"name": "PACCAR EX-D2 310",
+					"cv": "415",
+					"nm": "0.0",
+					"code": "/def/vehicle/truck/daf.xf_electric/engine/ex_d2_310.sii"
+				}
+			],
+			"transmissions": [
+				{
+					"name": "Gearbox Electric",
+					"speeds": "3",
+					"retarder": true,
+					"ratio": "10.0 - 3.25",
+					"code": "/def/vehicle/truck/daf.xf_electric/transmission/hd2.sii"
+				}
+			]
+		},
+		{
+			"brand": "daf",
 			"model": "xf_euro6",
 			"engines": [
 				{
@@ -1728,10 +1749,22 @@
 					"code": "/def/vehicle/truck/scania.r_2016/engine/dc13_410.sii"
 				},
 				{
+					"name": "DC13 176 420 Euro 6 SUPER",
+					"cv": "420",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/scania.r_2016/engine/dc13_420s.sii"
+				},
+				{
 					"name": "DC13 148 450 Euro 6",
 					"cv": "450",
 					"nm": "2350",
 					"code": "/def/vehicle/truck/scania.r_2016/engine/dc13_450.sii"
+				},
+				{
+					"name": "DC13 175 460 Euro 6 SUPER",
+					"cv": "460",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/scania.r_2016/engine/dc13_460s.sii"
 				},
 				{
 					"name": "DC13 155 500 Euro 6",
@@ -1740,10 +1773,22 @@
 					"code": "/def/vehicle/truck/scania.r_2016/engine/dc13_500.sii"
 				},
 				{
+					"name": "DC13 174 500 Euro 6 SUPER",
+					"cv": "500",
+					"nm": "2650",
+					"code": "/def/vehicle/truck/scania.r_2016/engine/dc13_500s.sii"
+				},
+				{
 					"name": "DC16 116 520 Euro 6 V8",
 					"cv": "520",
 					"nm": "2700",
 					"code": "/def/vehicle/truck/scania.r_2016/engine/dc16_520.sii"
+				},
+				{
+					"name": "DC13 173 560 Euro 6 SUPER",
+					"cv": "560",
+					"nm": "2800",
+					"code": "/def/vehicle/truck/scania.r_2016/engine/dc13_560s.sii"
 				},
 				{
 					"name": "DC16 117 580 Euro 6 V8",
@@ -1752,16 +1797,34 @@
 					"code": "/def/vehicle/truck/scania.r_2016/engine/dc16_580.sii"
 				},
 				{
+					"name": "DC16 121 590 Euro 6 V8",
+					"cv": "590",
+					"nm": "3050",
+					"code": "/def/vehicle/truck/scania.r_2016/engine/dc16_590.sii"
+				},
+				{
 					"name": "DC16 118 650 Euro 6 V8",
 					"cv": "650",
 					"nm": "3300",
 					"code": "/def/vehicle/truck/scania.r_2016/engine/dc16_650.sii"
 				},
 				{
+					"name": "DC16 122 660 Euro 6 V8",
+					"cv": "660",
+					"nm": "3300",
+					"code": "/def/vehicle/truck/scania.r_2016/engine/dc16_660.sii"
+				},
+				{
 					"name": "DC16 107 730 Euro 6 V8",
 					"cv": "730",
 					"nm": "3500",
 					"code": "/def/vehicle/truck/scania.r_2016/engine/dc16_730.sii"
+				},
+				{
+					"name": "DC16 123 770 Euro 6 V8",
+					"cv": "770",
+					"nm": "3700",
+					"code": "/def/vehicle/truck/scania.r_2016/engine/dc16_770.sii"
 				}
 			],
 			"transmissions": [
@@ -1806,6 +1869,48 @@
 					"retarder": true,
 					"ratio": "9.164 - 0.8",
 					"code": "/def/vehicle/truck/scania.r_2016/transmission/grso905_r.sii"
+				},
+				{
+					"name": "Opticruise G25CM",
+					"speeds": "14",
+					"retarder": false,
+					"ratio": "20.81 - 0.78",
+					"code": "/def/vehicle/truck/scania.r_2016/transmission/g25cm.sii"
+				},
+				{
+					"name": "Opticruise G25CMR",
+					"speeds": "14",
+					"retarder": true,
+					"ratio": "20.81 - 0.78",
+					"code": "/def/vehicle/truck/scania.r_2016/transmission/g25cm_r.sii"
+				},
+				{
+					"name": "Opticruise G33CM",
+					"speeds": "14",
+					"retarder": false,
+					"ratio": "20.81 - 0.78",
+					"code": "/def/vehicle/truck/scania.r_2016/transmission/g33cm.sii"
+				},
+				{
+					"name": "Opticruise G33CMR",
+					"speeds": "14",
+					"retarder": true,
+					"ratio": "20.81 - 0.78",
+					"code": "/def/vehicle/truck/scania.r_2016/transmission/g33cm_r.sii"
+				},
+				{
+					"name": "Opticruise G38CM",
+					"speeds": "14",
+					"retarder": false,
+					"ratio": "20.81 - 0.78",
+					"code": "/def/vehicle/truck/scania.r_2016/transmission/g38cm.sii"
+				},
+				{
+					"name": "Opticruise G38CMR",
+					"speeds": "14",
+					"retarder": true,
+					"ratio": "20.81 - 0.78",
+					"code": "/def/vehicle/truck/scania.r_2016/transmission/g38cm_r.sii"
 				},
 				{
 					"name": "Opticruise GRSO 925",
@@ -2018,10 +2123,22 @@
 					"code": "/def/vehicle/truck/scania.s_2016/engine/dc13_410.sii"
 				},
 				{
+					"name": "DC13 176 420 Euro 6 SUPER",
+					"cv": "420",
+					"nm": "2300",
+					"code": "/def/vehicle/truck/scania.s_2016/engine/dc13_420s.sii"
+				},
+				{
 					"name": "DC13 148 450 Euro 6",
 					"cv": "450",
 					"nm": "2350",
 					"code": "/def/vehicle/truck/scania.s_2016/engine/dc13_450.sii"
+				},
+				{
+					"name": "DC13 175 460 Euro 6 SUPER",
+					"cv": "460",
+					"nm": "2500",
+					"code": "/def/vehicle/truck/scania.s_2016/engine/dc13_460s.sii"
 				},
 				{
 					"name": "DC13 155 500 Euro 6",
@@ -2030,10 +2147,22 @@
 					"code": "/def/vehicle/truck/scania.s_2016/engine/dc13_500.sii"
 				},
 				{
+					"name": "DC13 174 500 Euro 6 SUPER",
+					"cv": "500",
+					"nm": "2650",
+					"code": "/def/vehicle/truck/scania.s_2016/engine/dc13_500s.sii"
+				},
+				{
 					"name": "DC16 116 520 Euro 6 V8",
 					"cv": "520",
 					"nm": "2700",
 					"code": "/def/vehicle/truck/scania.s_2016/engine/dc16_520.sii"
+				},
+				{
+					"name": "DC13 173 560 Euro 6 SUPER",
+					"cv": "560",
+					"nm": "2800",
+					"code": "/def/vehicle/truck/scania.s_2016/engine/dc13_560s.sii"
 				},
 				{
 					"name": "DC16 117 580 Euro 6 V8",
@@ -2042,16 +2171,34 @@
 					"code": "/def/vehicle/truck/scania.s_2016/engine/dc16_580.sii"
 				},
 				{
+					"name": "DC16 121 590 Euro 6 V8",
+					"cv": "590",
+					"nm": "3050",
+					"code": "/def/vehicle/truck/scania.s_2016/engine/dc16_590.sii"
+				},
+				{
 					"name": "DC16 118 650 Euro 6 V8",
 					"cv": "650",
 					"nm": "3300",
 					"code": "/def/vehicle/truck/scania.s_2016/engine/dc16_650.sii"
 				},
 				{
+					"name": "DC16 122 660 Euro 6 V8",
+					"cv": "660",
+					"nm": "3300",
+					"code": "/def/vehicle/truck/scania.s_2016/engine/dc16_660.sii"
+				},
+				{
 					"name": "DC16 107 730 Euro 6 V8",
 					"cv": "730",
 					"nm": "3500",
 					"code": "/def/vehicle/truck/scania.s_2016/engine/dc16_730.sii"
+				},
+				{
+					"name": "DC16 123 770 Euro 6 V8",
+					"cv": "770",
+					"nm": "3700",
+					"code": "/def/vehicle/truck/scania.s_2016/engine/dc16_770.sii"
 				}
 			],
 			"transmissions": [
@@ -2096,6 +2243,48 @@
 					"retarder": true,
 					"ratio": "9.164 - 0.8",
 					"code": "/def/vehicle/truck/scania.s_2016/transmission/grso905_r.sii"
+				},
+				{
+					"name": "Opticruise G25CM",
+					"speeds": "14",
+					"retarder": false,
+					"ratio": "20.81 - 0.78",
+					"code": "/def/vehicle/truck/scania.s_2016/transmission/g25cm.sii"
+				},
+				{
+					"name": "Opticruise G25CMR",
+					"speeds": "14",
+					"retarder": true,
+					"ratio": "20.81 - 0.78",
+					"code": "/def/vehicle/truck/scania.s_2016/transmission/g25cm_r.sii"
+				},
+				{
+					"name": "Opticruise G33CM",
+					"speeds": "14",
+					"retarder": false,
+					"ratio": "20.81 - 0.78",
+					"code": "/def/vehicle/truck/scania.s_2016/transmission/g33cm.sii"
+				},
+				{
+					"name": "Opticruise G33CMR",
+					"speeds": "14",
+					"retarder": true,
+					"ratio": "20.81 - 0.78",
+					"code": "/def/vehicle/truck/scania.s_2016/transmission/g33cm_r.sii"
+				},
+				{
+					"name": "Opticruise G38CM",
+					"speeds": "14",
+					"retarder": false,
+					"ratio": "20.81 - 0.78",
+					"code": "/def/vehicle/truck/scania.s_2016/transmission/g38cm.sii"
+				},
+				{
+					"name": "Opticruise G38CMR",
+					"speeds": "14",
+					"retarder": true,
+					"ratio": "20.81 - 0.78",
+					"code": "/def/vehicle/truck/scania.s_2016/transmission/g38cm_r.sii"
 				},
 				{
 					"name": "Opticruise GRSO 925",
