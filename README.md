@@ -61,6 +61,7 @@ Remember, contributing translations makes you a collaborator of the project!
 
 #### Trucks
 
+- [ ]
 - [x] Repair truck
 - [x] Repair all trucks
 - [x] Infinite fuel on current truck
@@ -74,6 +75,8 @@ Remember, contributing translations makes you a collaborator of the project!
 
 #### Profiles
 
+- [ ] Display the current level of the profile
+- [ ] Assign profile levels instead of XP points to the profile
 - [x] Add infinite money
 - [x] Add level 100
 - [x] Unlock garages
@@ -88,16 +91,21 @@ Remember, contributing translations makes you a collaborator of the project!
 
 #### Settings
 
+- [ ] Possibility to activate and deactivate the BETA decryptor
+- [ ] Warning message when a user activates the BETA decryptor
 - [x] Documents Path
 - [x] Dark Mode config
 - [x] Change language
 - [x] Enable console and developer mode
 - [x] Change convoy mode slots to `128`
 
+#### CORE
+
+- [ ] Share trailers and trucks with a link
+- [ ] User account
+
 #### Possible features
 
-- Share trailers and trucks with a link
-- User account
 - Create custom routes
 - Reset infractions
 - Mods management
