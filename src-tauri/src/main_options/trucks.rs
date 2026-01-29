@@ -414,6 +414,10 @@ pub fn get_model_name_data_path(data_path: String) -> Option<String> {
         let value = value_split[4].to_string();
         let value_name: Vec<&str> = value.split('.').collect();
 
+        if value_name.len() < 2 {
+            return Some(value_name[0].to_uppercase());
+        }
+
         return Some(format!(
             "{} {}",
             value_name[0].to_uppercase().replace("_", " "),
