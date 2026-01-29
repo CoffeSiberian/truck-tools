@@ -61,7 +61,6 @@ Remember, contributing translations makes you a collaborator of the project!
 
 #### Trucks
 
-- [ ]
 - [x] Repair truck
 - [x] Repair all trucks
 - [x] Infinite fuel on current truck
