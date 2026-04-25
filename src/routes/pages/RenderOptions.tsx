@@ -139,6 +139,23 @@ const RenderOptions = () => {
 				onOpenChange={onOpenChangeSettings}
 			/>
 			<div className="mt-12 mb-28 flex flex-col items-center p-5">
+				<div className="mb-6 flex max-w-3xl flex-col items-center gap-3 text-center">
+					<Image
+						alt="Truck Tools logo"
+						className="drop-shadow-lg"
+						height={128}
+						radius="none"
+						src="/app-icon.png"
+						width={128}
+					/>
+					<div>
+						<h1 className="text-3xl font-black tracking-tight">Truck Tools</h1>
+						<p className="text-default-500">
+							Save editor utilities for Euro Truck Simulator 2 and American
+							Truck Simulator.
+						</p>
+					</div>
+				</div>
 				<div className="fixed top-2 z-20 flex items-center justify-center gap-5">
 					<Image
 						className={classNames(
