@@ -45,7 +45,7 @@ Remember, contributing translations makes you a collaborator of the project!
 
 - [x] ATS compatibility
 - [x] Teleporting with a game save
-- [ ] Logo for the app (desktop icon and the main image of the app)
+- [x] Logo for the app (desktop icon and the main image of the app)
 - [ ] Implement [decrypt_truck][decrypt_truck] library as BETA
 
 #### Trailers
