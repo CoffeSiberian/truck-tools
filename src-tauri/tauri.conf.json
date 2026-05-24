@@ -7,8 +7,7 @@
 	},
 	"bundle": {
 		"active": true,
-		"targets": "msi",
-		"resources": ["resources/SII_Decrypt.dll"],
+		"targets": ["msi", "appimage", "deb"],
 		"publisher": "SiberianCoffe",
 		"copyright": "SiberianCoffe",
 		"icon": [
@@ -47,7 +46,9 @@
 				"minWidth": 1280,
 				"minHeight": 720,
 				"resizable": true,
-				"center": true
+				"center": true,
+				"decorations": true,
+				"theme": "Dark"
 			}
 		],
 		"security": {
