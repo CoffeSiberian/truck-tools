@@ -86,12 +86,12 @@ export const openExplorer = async (path: string) => {
 };
 
 export const getDocsDir = async (): Promise<string> => {
-	const storeDocsDir = await getStoredDocumentDir();
-	if (storeDocsDir) return storeDocsDir;
-
 	const os = await platform();
-	// On Linux, ATS/ETS2 save to ~/.local/share/ not ~/Documents/
-	return os === "linux" ? dataDir() : documentDir();
+	// On Linux, ATS/ETS2 save to ~/.local/share/ — ignore any stored path
+	if (os === "linux") return dataDir();
+
+	const storeDocsDir = await getStoredDocumentDir();
+	return storeDocsDir || documentDir();
 };
 
 export const getListSaves = async (
