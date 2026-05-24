@@ -271,6 +271,7 @@
 			},
 			"input_document_folder": {
 				"label": "Document folder",
+				"label_linux": "Save data folder",
 				"placeholder": "Enter the document folder"
 			},
 			"input_enable_128_slots": "Enable 128 convoy mode slots",

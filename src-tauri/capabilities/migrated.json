@@ -19,7 +19,6 @@
 		{
 			"identifier": "fs:scope",
 			"allow": [
-				{ "path": "**" },
 				{ "path": "$HOME/**" },
 				{ "path": "$DATA/**" },
 				{ "path": "$DOCUMENT/**" }

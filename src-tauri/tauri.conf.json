@@ -46,9 +46,7 @@
 				"minWidth": 1280,
 				"minHeight": 720,
 				"resizable": true,
-				"center": true,
-				"decorations": true,
-				"theme": "Dark"
+				"center": true
 			}
 		],
 		"security": {

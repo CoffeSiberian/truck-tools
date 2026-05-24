@@ -52,6 +52,7 @@ export interface ComponentsLicensePlate {
 
 export interface Input {
 	label: string;
+	label_linux?: string;
 	placeholder: string;
 }
 
