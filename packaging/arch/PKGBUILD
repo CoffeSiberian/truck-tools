@@ -1,0 +1,50 @@
+# Maintainer: CoffeSiberian <https://github.com/CoffeSiberian>
+# Contributor: heldr <https://github.com/heldr>
+pkgname=truck-tools
+pkgver=0.12.4
+pkgrel=1
+pkgdesc="Save game editor for American Truck Simulator and Euro Truck Simulator 2"
+arch=('x86_64')
+url="https://github.com/CoffeSiberian/truck-tools"
+license=('MIT')
+depends=(
+    'webkit2gtk-4.1'
+    'gtk3'
+    'openssl'
+    'libayatana-appindicator'
+    'glib2'
+    'cairo'
+    'pango'
+    'gdk-pixbuf2'
+)
+makedepends=('cargo' 'pnpm' 'nodejs')
+options=('!lto')
+source=("$pkgname::git+$url.git#tag=v$pkgver")
+sha256sums=('SKIP')
+
+build() {
+    cd "$srcdir/$pkgname"
+    # Disable updater artifact signing (users update via pacman)
+    sed -i 's/"createUpdaterArtifacts": true/"createUpdaterArtifacts": false/' src-tauri/tauri.conf.json
+    pnpm install --no-frozen-lockfile
+    pnpm tauri build --bundles deb
+}
+
+package() {
+    _debdata="$srcdir/$pkgname/src-tauri/target/release/bundle/deb/Truck Tools_${pkgver}_amd64"
+    mkdir -p "$srcdir/debdata"
+    tar xzf "$_debdata/data.tar.gz" -C "$srcdir/debdata"
+    _data="$srcdir/debdata"
+
+    install -Dm755 "$_data/usr/bin/Truck Tools"     "$pkgdir/usr/bin/truck-tools"
+    install -Dm644 "$_data/usr/share/applications/Truck Tools.desktop" \
+        "$pkgdir/usr/share/applications/truck-tools.desktop"
+    sed -i 's|Exec="Truck Tools"|Exec=truck-tools|; s|Icon=Truck Tools|Icon=truck-tools|' \
+        "$pkgdir/usr/share/applications/truck-tools.desktop"
+    install -Dm644 "$_data/usr/share/icons/hicolor/32x32/apps/Truck Tools.png" \
+        "$pkgdir/usr/share/icons/hicolor/32x32/apps/truck-tools.png"
+    install -Dm644 "$_data/usr/share/icons/hicolor/128x128/apps/Truck Tools.png" \
+        "$pkgdir/usr/share/icons/hicolor/128x128/apps/truck-tools.png"
+    install -Dm644 "$_data/usr/share/icons/hicolor/256x256@2/apps/Truck Tools.png" \
+        "$pkgdir/usr/share/icons/hicolor/256x256/apps/truck-tools.png"
+}
