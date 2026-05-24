@@ -39,8 +39,38 @@ export const ProfileContexInfo = ({ children }: ProviderProps) => {
 	const loadDirectory = useCallback(async () => {
 		// only used on first load or complete reload
 		setIsProfilesLoading(true);
-		const prof = await readProfileNames(profile.game);
-		if (prof.length === 0) {
+		try {
+			const prof = await readProfileNames(profile.game);
+			if (prof.length === 0) {
+				setProfilesNotFound(true);
+				setIsProfilesLoading(false);
+				setProfile({
+					game: profile.game,
+					selectedProfile: undefined,
+					selectedSave: undefined,
+					listProfiles: [],
+				});
+				return;
+			}
+			if (profilesNotFound) setProfilesNotFound(false);
+
+			setIsProfilesLoading(false);
+
+			const docsDir = await getDocsDir();
+			const dirDocsGame = await join(
+				docsDir,
+				profile.game === "ets2" ? ETS2_DIR : ATS_DIR
+			);
+
+			setProfile({
+				game: profile.game,
+				selectedProfile: undefined,
+				selectedSave: undefined,
+				listProfiles: prof,
+				dirDocsGame: dirDocsGame,
+			});
+		} catch (e) {
+			console.error("loadDirectory failed:", e);
 			setProfilesNotFound(true);
 			setIsProfilesLoading(false);
 			setProfile({
@@ -49,31 +79,43 @@ export const ProfileContexInfo = ({ children }: ProviderProps) => {
 				selectedSave: undefined,
 				listProfiles: [],
 			});
-			return;
 		}
-		if (profilesNotFound) setProfilesNotFound(false);
-
-		setIsProfilesLoading(false);
-
-		const docsDir = await getDocsDir();
-		const dirDocsGame = await join(
-			docsDir,
-			profile.game === "ets2" ? ETS2_DIR : ATS_DIR
-		);
-
-		setProfile({
-			game: profile.game,
-			selectedProfile: undefined,
-			selectedSave: undefined,
-			listProfiles: prof,
-			dirDocsGame: dirDocsGame,
-		});
 	}, [profile, profilesNotFound]);
 
 	const loadDirectoryGame = async (game: GamesNames) => {
 		setIsProfilesLoading(true);
-		const prof = await readProfileNames(game);
-		if (prof.length === 0) {
+		try {
+			const prof = await readProfileNames(game);
+			if (prof.length === 0) {
+				setProfilesNotFound(true);
+				setIsProfilesLoading(false);
+				setProfile({
+					game: game,
+					selectedProfile: undefined,
+					selectedSave: undefined,
+					listProfiles: [],
+				});
+				return;
+			}
+			if (profilesNotFound) setProfilesNotFound(false);
+
+			setIsProfilesLoading(false);
+
+			const docsDir = await getDocsDir();
+			const dirDocsGame = await join(
+				docsDir,
+				game === "ets2" ? ETS2_DIR : ATS_DIR
+			);
+
+			setProfile({
+				game: game,
+				selectedProfile: undefined,
+				selectedSave: undefined,
+				listProfiles: prof,
+				dirDocsGame: dirDocsGame,
+			});
+		} catch (e) {
+			console.error("loadDirectoryGame failed:", e);
 			setProfilesNotFound(true);
 			setIsProfilesLoading(false);
 			setProfile({
@@ -82,25 +124,7 @@ export const ProfileContexInfo = ({ children }: ProviderProps) => {
 				selectedSave: undefined,
 				listProfiles: [],
 			});
-			return;
 		}
-		if (profilesNotFound) setProfilesNotFound(false);
-
-		setIsProfilesLoading(false);
-
-		const docsDir = await getDocsDir();
-		const dirDocsGame = await join(
-			docsDir,
-			game === "ets2" ? ETS2_DIR : ATS_DIR
-		);
-
-		setProfile({
-			game: game,
-			selectedProfile: undefined,
-			selectedSave: undefined,
-			listProfiles: prof,
-			dirDocsGame: dirDocsGame,
-		});
 	};
 
 	const setSelectedProfile = async (

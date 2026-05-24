@@ -3,8 +3,8 @@ import { FC, useState, useContext, useEffect } from "react";
 // Tauri
 import { open as openLink } from "@tauri-apps/plugin-shell";
 import { open, OpenDialogOptions } from "@tauri-apps/plugin-dialog";
-import { documentDir } from "@tauri-apps/api/path";
-import { locale } from "@tauri-apps/plugin-os";
+import { documentDir, dataDir } from "@tauri-apps/api/path";
+import { locale, platform } from "@tauri-apps/plugin-os";
 
 // UI
 import { Input } from "@heroui/input";
@@ -66,6 +66,7 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 	const { translations, lang, changeLang } = useContext(LocaleContext);
 	const { settings } = translations.menu_options;
 
+	const isLinux = platform() === "linux";
 	const [optionsState, setOptionsState] = useState<OptionsStateTypes>({
 		enableConsole: false,
 		enable128Convoy: false,
@@ -135,12 +136,12 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 	};
 
 	const resetConfigs = async () => {
-		const dirSetDefault = await documentDir();
+		const dirSetDefault = isLinux ? await dataDir() : await documentDir();
 		const sys_lang = await locale();
 		const lang_res = mostSimilarLang(sys_lang);
 
 		onClickTheme("system");
-		await storeDocumentDir(dirSetDefault);
+		if (!isLinux) await storeDocumentDir(dirSetDefault);
 		reloadProfiles();
 
 		await setGameDeveloperStatus(false, game);
@@ -163,10 +164,12 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 			const getGameDeveloperStatusStore = await getGameDeveloperStatus(game);
 			const getOpasityStatusStore = await getStoredOpasityStatus();
 
-			let documentDirString = getDocumentDirStore;
-			if (!documentDirString) {
-				documentDirString = await documentDir();
-				storeDocumentDir(documentDirString);
+			let documentDirString: string;
+			if (isLinux) {
+				documentDirString = await dataDir();
+			} else {
+				documentDirString = getDocumentDirStore || await documentDir();
+				if (!getDocumentDirStore) storeDocumentDir(documentDirString);
 			}
 
 			setOptionsState({
@@ -289,17 +292,23 @@ const SettingsModal: FC<SettingsModalProps> = ({ isOpen, onOpenChange }) => {
 									value={optionsState.documentDir || ""}
 									startContent={<IconFolderPlus />}
 									endContent={
-										<div className="flex">
-											<Button
-												color="primary"
-												startContent={<IconFolderSearch />}
-												onPress={openSelectDir}
-												size="sm"
-											/>
-										</div>
+										!isLinux && (
+											<div className="flex">
+												<Button
+													color="primary"
+													startContent={<IconFolderSearch />}
+													onPress={openSelectDir}
+													size="sm"
+												/>
+											</div>
+										)
 									}
 									size="sm"
-									label={settings.input_document_folder.label}
+									label={
+										isLinux
+											? (settings.input_document_folder.label_linux ?? settings.input_document_folder.label)
+											: settings.input_document_folder.label
+									}
 									placeholder={settings.input_document_folder.placeholder}
 									variant="bordered"
 								/>

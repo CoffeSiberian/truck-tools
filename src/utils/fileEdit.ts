@@ -1,12 +1,12 @@
 // tauri
-import { documentDir } from "@tauri-apps/api/path";
+import { documentDir, dataDir } from "@tauri-apps/api/path";
 import { exists } from "@tauri-apps/plugin-fs";
 import { join } from "@tauri-apps/api/path";
 import { Command } from "@tauri-apps/plugin-shell";
 import { convertFileSrc } from "@tauri-apps/api/core";
 import { invoke } from "@tauri-apps/api/core";
 import { LazyStore } from "@tauri-apps/plugin-store";
-import { locale } from "@tauri-apps/plugin-os";
+import { locale, platform } from "@tauri-apps/plugin-os";
 
 // types
 import {
@@ -79,15 +79,19 @@ export const descriptFiles = async (path: string): Promise<boolean> => {
 };
 
 export const openExplorer = async (path: string) => {
-	const command = await Command.create("explorer", path);
+	const os = await platform();
+	const cmdName = os === "linux" ? "xdg-open" : "explorer";
+	const command = await Command.create(cmdName, path);
 	await command.execute();
 };
 
 export const getDocsDir = async (): Promise<string> => {
-	const storeDocsDir = await getStoredDocumentDir();
-	const docsDirSystem = await documentDir();
+	const os = await platform();
+	// On Linux, ATS/ETS2 save to ~/.local/share/ — ignore any stored path
+	if (os === "linux") return dataDir();
 
-	return storeDocsDir || docsDirSystem;
+	const storeDocsDir = await getStoredDocumentDir();
+	return storeDocsDir || documentDir();
 };
 
 export const getListSaves = async (
@@ -129,10 +133,8 @@ export const readProfileNames = async (
 	const readDirProfiles = (game === "ets2" ? ETS2_DIR : ATS_DIR) + "/profiles";
 
 	const docsDir = await getDocsDir();
-
-	const dirProfiles = await getListDirProfiles(
-		(await join(docsDir, readDirProfiles)).toString()
-	);
+	const profilesPath = (await join(docsDir, readDirProfiles)).toString();
+	const dirProfiles = await getListDirProfiles(profilesPath);
 	if (!dirProfiles) return [];
 
 	const profileNames: ProfileWithoutSaves[] = [];

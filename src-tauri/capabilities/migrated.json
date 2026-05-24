@@ -19,9 +19,9 @@
 		{
 			"identifier": "fs:scope",
 			"allow": [
-				{
-					"path": "**"
-				}
+				{ "path": "$HOME/**" },
+				{ "path": "$DATA/**" },
+				{ "path": "$DOCUMENT/**" }
 			]
 		},
 		"shell:default",
@@ -33,9 +33,16 @@
 					"cmd": "explorer",
 					"name": "explorer",
 					"sidecar": false
+				},
+				{
+					"args": true,
+					"cmd": "xdg-open",
+					"name": "xdg-open",
+					"sidecar": false
 				}
 			]
 		},
+		"os:allow-platform",
 		"shell:allow-open",
 		"dialog:allow-open",
 		"dialog:allow-save",

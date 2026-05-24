@@ -1087,6 +1087,26 @@ async fn set_player_position(
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
+    #[cfg(target_os = "linux")]
+    {
+        // Tell WebKitGTK to follow the system GTK theme and honour dark-mode preference.
+        // GDK_BACKEND fallback ensures the app works on both Wayland and X11.
+        // GTK_USE_PORTAL=1 makes file/colour dialogs use the XDG portal (native look).
+        unsafe {
+            if std::env::var("GDK_BACKEND").is_err() {
+                std::env::set_var("GDK_BACKEND", "wayland,x11");
+            }
+            // Use XDG portals for native file/colour dialogs.
+            if std::env::var("GTK_USE_PORTAL").is_err() {
+                std::env::set_var("GTK_USE_PORTAL", "1");
+            }
+            // Disable DMA-BUF renderer — avoids blank window on systems without GBM support.
+            if std::env::var("WEBKIT_DISABLE_DMABUF_RENDERER").is_err() {
+                std::env::set_var("WEBKIT_DISABLE_DMABUF_RENDERER", "1");
+            }
+        }
+    }
+
     tauri::Builder::default()
         .plugin(tauri_plugin_os::init())
         .plugin(tauri_plugin_process::init())
