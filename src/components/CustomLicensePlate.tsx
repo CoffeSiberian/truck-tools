@@ -1,7 +1,6 @@
 import { FC, useState, useEffect, useContext } from "react";
 
 // UI
-import "react-color-palette/css";
 import { Select, SelectItem } from "@heroui/select";
 import { Input } from "@heroui/input";
 import { Checkbox } from "@heroui/checkbox";
