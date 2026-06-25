@@ -8,7 +8,7 @@ use crate::structs::vec_trucks::{
     GarageInfo, Models, TruckBrandsATS, TruckBrandsETS2, ValueGarage, VecSaveTrucks,
     VecTruckProfitLog, VecTrucksId, VecTrucksListId,
 };
-use cached::proc_macro::cached;
+use cached::cached;
 use serde_json::from_str;
 
 const ETS2_TRUCK_BRANDS: &str = include_str!("../embeds/trucks_data_ets2.json");
