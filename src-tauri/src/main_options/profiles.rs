@@ -641,6 +641,20 @@ pub async fn copy_profile_configs(dir_profile: &Path, dest_dir_profile: &Path) -
     return true;
 }
 
+fn find_assigned_vehicle_id(arr_val: &Vec<String>) -> Option<String> {
+    for item in arr_val.iter() {
+        let trimmed = item.trim_start();
+        if let Some(rest) = trimmed.strip_prefix("assigned_vehicles:") {
+            let id = rest.trim();
+            if !id.is_empty() && id != "null" {
+                return Some(id.to_string());
+            }
+        }
+    }
+
+    return None;
+}
+
 pub fn set_player_map_position(
     arr_val: &Vec<String>,
     location: &str,
@@ -648,26 +662,33 @@ pub fn set_player_map_position(
 ) -> Option<Vec<String>> {
     let mut arr_val_clone = arr_val.clone();
 
+    let assigned_vehicle_id = find_assigned_vehicle_id(arr_val);
+    let mut current_player_vehicle: Option<String> = None;
+
     let mut num_trailers: u8 = 0;
     for (i, item) in arr_val.iter().enumerate() {
+        let trimmed = item.trim_start();
+        if trimmed.starts_with("player_vehicles :") {
+            current_player_vehicle = trimmed
+                .split_whitespace()
+                .find(|token| token.starts_with("_nameless"))
+                .map(|token| token.to_string());
+        } else if trimmed.ends_with('{') && trimmed.contains(" : ") {
+            current_player_vehicle = None;
+        }
+
+        let is_assigned_unit =
+            current_player_vehicle.is_some() && current_player_vehicle == assigned_vehicle_id;
+
         match item {
-            item if item.contains(" assigned_trailer: _nameless") => {
+            item if item.contains(" stored_trailer_attached: false") && is_assigned_unit => {
                 num_trailers += 1;
+                arr_val_clone[i] = format!(" stored_trailer_attached: true");
             }
-            item if item.contains(" assigned_trailer_connected: false") && num_trailers == 1 => {
-                num_trailers += 1;
-                arr_val_clone[i] = format!(" assigned_trailer_connected: true");
+            item if item.contains(" stored_vehicle_placement:") && is_assigned_unit => {
+                arr_val_clone[i] = format!(" stored_vehicle_placement: {} {}", location, rotation);
             }
-            item if item.contains(" nav_node_position:") && num_trailers == 2 => {
-                arr_val_clone[i] = format!(" nav_node_position: (0, 0, 0)");
-            }
-            item if item.contains(" truck_placement:") => {
-                arr_val_clone[i] = format!(" truck_placement: {} {}", location, rotation);
-            }
-            item if item.contains(" trailer_placement:") => {
-                arr_val_clone[i] = format!(" trailer_placement: (0, 0, 0) {}", rotation);
-            }
-            item if item.contains(" slave_trailer_placements[") => {
+            item if item.contains(" stored_trailer_placements[") && is_assigned_unit => {
                 let split = item.split(":").collect::<Vec<&str>>()[0];
 
                 arr_val_clone[i] = format!("{}: (0, 0, 0) {}", split, rotation);
@@ -675,6 +696,5 @@ pub fn set_player_map_position(
             _ => continue,
         }
     }
-
     return Some(arr_val_clone);
 }
