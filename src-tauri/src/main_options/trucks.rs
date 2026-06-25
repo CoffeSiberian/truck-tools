@@ -2,12 +2,12 @@ use super::accessories::{
     get_accessories_data_path, get_list_trucks_accessories_id, remove_accessorie,
 };
 use super::license_plate::get_license_plate_formated;
-
 use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_trucks::{
     GarageInfo, Models, TruckBrandsATS, TruckBrandsETS2, ValueGarage, VecSaveTrucks,
     VecTruckProfitLog, VecTrucksId, VecTrucksListId,
 };
+use crate::utils::player_vehicles::find_in_player_vehicles_block;
 use cached::cached;
 use serde_json::from_str;
 
@@ -312,34 +312,8 @@ fn is_badge(value_split: &String) -> bool {
 }
 
 pub fn get_truck_id(arr_val: &[String]) -> Option<VecTrucksId> {
-    let player_start = arr_val
-        .iter()
-        .position(|line| line.starts_with("player : _nameless") && line.ends_with('{'))?;
-
-    let assigned_vehicles_id = arr_val.iter().skip(player_start).find_map(|line| {
-        if line.contains("assigned_vehicles:") {
-            line.split(':').nth(1).map(|s| s.trim().to_string())
-        } else {
-            None
-        }
-    })?;
-
-    let block_header = format!("player_vehicles : {} {{", assigned_vehicles_id);
-    let block_start = arr_val
-        .iter()
-        .position(|line| line.contains(&block_header))?;
-
-    for (i, line) in arr_val.iter().enumerate().skip(block_start) {
-        if i > block_start && line.trim() == "}" {
-            break;
-        }
-        if line.contains("vehicle:") && !line.contains("null") {
-            let id = line.split(':').nth(1)?.trim().to_string();
-            return Some(VecTrucksId { index: i, id });
-        }
-    }
-
-    None
+    let (id, index) = find_in_player_vehicles_block(arr_val, "vehicle:")?;
+    Some(VecTrucksId { index, id })
 }
 
 pub fn get_truck_vehicle_index(arr_val: &[String], truck_id: &str, index: usize) -> Option<usize> {

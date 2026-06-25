@@ -4,6 +4,7 @@ use super::trucks::get_model_name_data_path;
 
 use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_trailers::{VecSaveTrailers, VecTrailersId, VecTrailersNoSlaveId};
+use crate::utils::player_vehicles::find_in_player_vehicles_block;
 
 const COUNTRY_VALIDITY: &str = " country_validity: 0";
 const COUNTRY_VALIDITY_NULL: &str = " source_name: null";
@@ -334,34 +335,7 @@ pub fn get_trailer_def_index(arr_val: &Vec<String>, trailer_def_id: String) -> O
 }
 
 pub fn get_my_trailer_id(arr_val: &[String]) -> Option<(String, usize)> {
-    let player_start = arr_val
-        .iter()
-        .position(|line| line.starts_with("player : _nameless") && line.ends_with('{'))?;
-
-    let assigned_vehicles_id = arr_val.iter().skip(player_start).find_map(|line| {
-        if line.contains("assigned_vehicles:") {
-            line.split(':').nth(1).map(|s| s.trim().to_string())
-        } else {
-            None
-        }
-    })?;
-
-    let block_header = format!("player_vehicles : {} {{", assigned_vehicles_id);
-    let block_start = arr_val
-        .iter()
-        .position(|line| line.contains(&block_header))?;
-
-    for (i, line) in arr_val.iter().enumerate().skip(block_start) {
-        if i > block_start && line.trim() == "}" {
-            break;
-        }
-        if line.contains("trailer:") && !line.contains("null") {
-            let id = line.split(':').nth(1)?.trim().to_string();
-            return Some((id, i));
-        }
-    }
-
-    None
+    find_in_player_vehicles_block(arr_val, "trailer:")
 }
 
 pub fn get_trailer_model_name(arr_val: &Vec<String>, index: usize) -> Option<String> {
