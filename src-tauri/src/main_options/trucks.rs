@@ -311,7 +311,61 @@ fn is_badge(value_split: &String) -> bool {
     return false;
 }
 
+pub fn get_assigned_vehicle_unit_id(arr_val: &Vec<String>) -> Option<String> {
+    for item in arr_val.iter() {
+        let trimmed = item.trim_start();
+        if let Some(rest) = trimmed.strip_prefix("assigned_vehicles:") {
+            let id = rest.trim();
+            if !id.is_empty() && id != "null" {
+                return Some(id.to_string());
+            }
+            return None;
+        }
+    }
+
+    return None;
+}
+
+pub fn get_assigned_vehicle_field(arr_val: &Vec<String>, field: &str) -> Option<String> {
+    let unit_id = match get_assigned_vehicle_unit_id(arr_val) {
+        Some(unit_id) => unit_id,
+        None => return None,
+    };
+
+    let header: String = format!("player_vehicles : {} {{", unit_id);
+    let field_prefix: String = format!("{}:", field);
+    let mut in_block: bool = false;
+
+    for item in arr_val.iter() {
+        if !in_block {
+            if item.contains(&header) {
+                in_block = true;
+            }
+            continue;
+        }
+
+        let trimmed = item.trim_start();
+        if trimmed.starts_with(&field_prefix) {
+            let value = trimmed[field_prefix.len()..].trim();
+            if value.is_empty() || value == "null" {
+                return None;
+            }
+            return Some(format!(" {}", value));
+        }
+
+        if item == "}" {
+            break;
+        }
+    }
+
+    return None;
+}
+
 pub fn get_truck_id(arr_val: &Vec<String>) -> Option<VecTrucksId> {
+    if let Some(id) = get_assigned_vehicle_field(arr_val, "vehicle") {
+        return Some(VecTrucksId { index: 0, id });
+    }
+
     for (i, item) in arr_val.iter().enumerate() {
         if item.contains(" assigned_truck") {
             if item.contains(" null") {
@@ -565,6 +619,63 @@ pub fn set_player_truck_file(
     truck_id: &str,
 ) -> Option<(Vec<VecItemsFind>, usize)> {
     let mut vec_items_replace: Vec<VecItemsFind> = Vec::new();
+
+    let truck_id_trim: &str = truck_id.trim_start();
+
+    if let Some(unit_id) = get_assigned_vehicle_unit_id(arr_val) {
+        let header: String = format!("player_vehicles : {} {{", unit_id);
+        let mut in_block: bool = false;
+        let mut old_vehicle_id: Option<String> = None;
+
+        for (i, item) in arr_val.iter().enumerate() {
+            if !in_block {
+                if item.contains(&header) {
+                    in_block = true;
+                }
+                continue;
+            }
+
+            let trimmed = item.trim_start();
+            if trimmed.starts_with("vehicle:") {
+                let current_value = trimmed["vehicle:".len()..].trim();
+                if !current_value.is_empty() && current_value != "null" {
+                    old_vehicle_id = Some(current_value.to_string());
+                }
+                vec_items_replace.push(VecItemsFind {
+                    index: i,
+                    value: format!(" vehicle: {}", truck_id_trim),
+                });
+                break;
+            }
+
+            if item == "}" {
+                break;
+            }
+        }
+
+        // The active truck is mirrored in both the assigned_vehicles unit and
+        // its my_vehicles slot (same vehicle id and placement). Update every
+        // slot pointing at the old vehicle so they stay in sync.
+        if let Some(old_id) = old_vehicle_id {
+            for (i, item) in arr_val.iter().enumerate() {
+                if vec_items_replace.iter().any(|x| x.index == i) {
+                    continue;
+                }
+
+                let trimmed = item.trim_start();
+                if trimmed.starts_with("vehicle:") && trimmed["vehicle:".len()..].trim() == old_id {
+                    vec_items_replace.push(VecItemsFind {
+                        index: i,
+                        value: format!(" vehicle: {}", truck_id_trim),
+                    });
+                }
+            }
+        }
+
+        if !vec_items_replace.is_empty() {
+            return Some((vec_items_replace, 0));
+        }
+    }
 
     let mut found_truck: bool = false;
     let mut truck_index: usize = 0;
