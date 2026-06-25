@@ -57,7 +57,7 @@ const ListProfilesDropdown: FC<ProfileTypesContext> = ({
 									src={profile.avatar}
 									alt="profile avatar select"
 									radius="lg"
-									loading="lazy"
+									loading="eager"
 								/>
 							) : (
 								<IconUserCircle size={30} />
