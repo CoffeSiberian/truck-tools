@@ -333,18 +333,35 @@ pub fn get_trailer_def_index(arr_val: &Vec<String>, trailer_def_id: String) -> O
     return None;
 }
 
-pub fn get_my_trailer_id(arr_val: &Vec<String>) -> Option<(String, usize)> {
-    for (i, item) in arr_val.iter().enumerate() {
-        if item.contains(" assigned_trailer:") {
-            if item.contains(" null") {
-                return None;
-            }
-            let option_values: Vec<&str> = item.split(':').collect();
-            return Some((option_values[1].to_string(), i));
+pub fn get_my_trailer_id(arr_val: &[String]) -> Option<(String, usize)> {
+    let player_start = arr_val
+        .iter()
+        .position(|line| line.starts_with("player : _nameless") && line.ends_with('{'))?;
+
+    let assigned_vehicles_id = arr_val.iter().skip(player_start).find_map(|line| {
+        if line.contains("assigned_vehicles:") {
+            line.split(':').nth(1).map(|s| s.trim().to_string())
+        } else {
+            None
+        }
+    })?;
+
+    let block_header = format!("player_vehicles : {} {{", assigned_vehicles_id);
+    let block_start = arr_val
+        .iter()
+        .position(|line| line.contains(&block_header))?;
+
+    for (i, line) in arr_val.iter().enumerate().skip(block_start) {
+        if i > block_start && line.trim() == "}" {
+            break;
+        }
+        if line.contains("trailer:") && !line.contains("null") {
+            let id = line.split(':').nth(1)?.trim().to_string();
+            return Some((id, i));
         }
     }
 
-    return None;
+    None
 }
 
 pub fn get_trailer_model_name(arr_val: &Vec<String>, index: usize) -> Option<String> {
