@@ -1,6 +1,6 @@
 use super::accessories::{get_accessories_data_path, get_list_trucks_accessories_id};
 use super::license_plate::get_license_plate_formated;
-use super::trucks::get_model_name_data_path;
+use super::trucks::{get_assigned_vehicle_field, get_assigned_vehicle_unit_id, get_model_name_data_path};
 
 use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_trailers::{VecSaveTrailers, VecTrailersId, VecTrailersNoSlaveId};
@@ -334,6 +334,10 @@ pub fn get_trailer_def_index(arr_val: &Vec<String>, trailer_def_id: String) -> O
 }
 
 pub fn get_my_trailer_id(arr_val: &Vec<String>) -> Option<(String, usize)> {
+    if let Some(id) = get_assigned_vehicle_field(arr_val, "trailer") {
+        return Some((id, 0));
+    }
+
     for (i, item) in arr_val.iter().enumerate() {
         if item.contains(" assigned_trailer:") {
             if item.contains(" null") {
@@ -417,6 +421,45 @@ pub fn set_player_trailer_file(
     truck_id: &str,
 ) -> Option<(Vec<VecItemsFind>, usize)> {
     let mut vec_items_replace: Vec<VecItemsFind> = Vec::new();
+
+    let trailer_id_trim: &str = truck_id.trim_start();
+
+    if let Some(unit_id) = get_assigned_vehicle_unit_id(arr_val) {
+        let header: String = format!("player_vehicles : {} {{", unit_id);
+        let mut in_block: bool = false;
+        let mut trailer_line: usize = 0;
+
+        for (i, item) in arr_val.iter().enumerate() {
+            if !in_block {
+                if item.contains(&header) {
+                    in_block = true;
+                }
+                continue;
+            }
+
+            let trimmed = item.trim_start();
+            if trimmed.starts_with("trailer:") {
+                trailer_line = i;
+                vec_items_replace.push(VecItemsFind {
+                    index: i,
+                    value: format!(" trailer: {}", trailer_id_trim),
+                });
+            } else if trimmed.starts_with("stored_trailer_attached:") {
+                vec_items_replace.push(VecItemsFind {
+                    index: i,
+                    value: format!(" stored_trailer_attached: true"),
+                });
+            }
+
+            if item == "}" {
+                break;
+            }
+        }
+
+        if !vec_items_replace.is_empty() {
+            return Some((vec_items_replace, trailer_line));
+        }
+    }
 
     let mut found_trailer: bool = false;
     let mut trailer_index: usize = 0;
