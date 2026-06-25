@@ -457,6 +457,64 @@ pub fn set_player_trailer_file(
         }
 
         if !vec_items_replace.is_empty() {
+            // The active truck is mirrored across the assigned_vehicles unit and
+            // its my_vehicles slot (same vehicle id and placement). Sync the
+            // trailer state into every other slot that references the same
+            // vehicle so the mirror stays consistent.
+            if let Some(active_vehicle) = get_assigned_vehicle_field(arr_val, "vehicle") {
+                let active_vehicle: String = active_vehicle.trim().to_string();
+                let mut in_pv: bool = false;
+                let mut is_assigned: bool = false;
+                let mut block_vehicle: Option<String> = None;
+                let mut block_trailer_idx: Option<usize> = None;
+                let mut block_attached_idx: Option<usize> = None;
+
+                for (i, item) in arr_val.iter().enumerate() {
+                    let trimmed = item.trim_start();
+
+                    if trimmed.starts_with("player_vehicles : ") {
+                        in_pv = true;
+                        is_assigned = item.contains(&unit_id);
+                        block_vehicle = None;
+                        block_trailer_idx = None;
+                        block_attached_idx = None;
+                        continue;
+                    }
+
+                    if !in_pv {
+                        continue;
+                    }
+
+                    if trimmed.starts_with("vehicle:") {
+                        block_vehicle = Some(trimmed["vehicle:".len()..].trim().to_string());
+                    } else if trimmed.starts_with("trailer:") {
+                        block_trailer_idx = Some(i);
+                    } else if trimmed.starts_with("stored_trailer_attached:") {
+                        block_attached_idx = Some(i);
+                    }
+
+                    if item == "}" {
+                        if !is_assigned
+                            && block_vehicle.as_deref() == Some(active_vehicle.as_str())
+                        {
+                            if let Some(ti) = block_trailer_idx {
+                                vec_items_replace.push(VecItemsFind {
+                                    index: ti,
+                                    value: format!(" trailer: {}", trailer_id_trim),
+                                });
+                            }
+                            if let Some(ai) = block_attached_idx {
+                                vec_items_replace.push(VecItemsFind {
+                                    index: ai,
+                                    value: format!(" stored_trailer_attached: true"),
+                                });
+                            }
+                        }
+                        in_pv = false;
+                    }
+                }
+            }
+
             return Some((vec_items_replace, trailer_line));
         }
     }

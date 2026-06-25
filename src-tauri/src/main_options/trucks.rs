@@ -625,6 +625,7 @@ pub fn set_player_truck_file(
     if let Some(unit_id) = get_assigned_vehicle_unit_id(arr_val) {
         let header: String = format!("player_vehicles : {} {{", unit_id);
         let mut in_block: bool = false;
+        let mut old_vehicle_id: Option<String> = None;
 
         for (i, item) in arr_val.iter().enumerate() {
             if !in_block {
@@ -634,7 +635,12 @@ pub fn set_player_truck_file(
                 continue;
             }
 
-            if item.trim_start().starts_with("vehicle:") {
+            let trimmed = item.trim_start();
+            if trimmed.starts_with("vehicle:") {
+                let current_value = trimmed["vehicle:".len()..].trim();
+                if !current_value.is_empty() && current_value != "null" {
+                    old_vehicle_id = Some(current_value.to_string());
+                }
                 vec_items_replace.push(VecItemsFind {
                     index: i,
                     value: format!(" vehicle: {}", truck_id_trim),
@@ -644,6 +650,25 @@ pub fn set_player_truck_file(
 
             if item == "}" {
                 break;
+            }
+        }
+
+        // The active truck is mirrored in both the assigned_vehicles unit and
+        // its my_vehicles slot (same vehicle id and placement). Update every
+        // slot pointing at the old vehicle so they stay in sync.
+        if let Some(old_id) = old_vehicle_id {
+            for (i, item) in arr_val.iter().enumerate() {
+                if vec_items_replace.iter().any(|x| x.index == i) {
+                    continue;
+                }
+
+                let trimmed = item.trim_start();
+                if trimmed.starts_with("vehicle:") && trimmed["vehicle:".len()..].trim() == old_id {
+                    vec_items_replace.push(VecItemsFind {
+                        index: i,
+                        value: format!(" vehicle: {}", truck_id_trim),
+                    });
+                }
             }
         }
 
