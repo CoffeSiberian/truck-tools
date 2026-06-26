@@ -335,6 +335,7 @@ pub fn get_truck_id(arr_val: &Vec<String>) -> Option<VecTrucksId> {
 
     return Some(VecTrucksId {
         index: vehicle_id.index,
+        index_vehicle_id: assigned_vehicles_index,
         id: vehicle_id.value,
     });
 }

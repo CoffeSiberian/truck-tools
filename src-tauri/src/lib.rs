@@ -882,10 +882,11 @@ async fn set_truck_km(dir_save: &str, km: &str) -> Result<DefaultResponse, ()> {
         None => return Ok(DefaultResponse { res: false }),
     };
 
-    let profit_log_index = match get_truck_profit_log_id(&file, truck_find.index, truck_number) {
-        Some(profit_log_index) => profit_log_index,
-        None => return Ok(DefaultResponse { res: false }),
-    };
+    let profit_log_index =
+        match get_truck_profit_log_id(&file, truck_find.index_vehicle_id, truck_number) {
+            Some(profit_log_index) => profit_log_index,
+            None => return Ok(DefaultResponse { res: false }),
+        };
 
     let truck_km: Vec<String> = match set_truck_km_edit(&file, profit_log_index, truck_index, km) {
         Some(truck_km) => truck_km,

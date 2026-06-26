@@ -2,6 +2,7 @@ use serde::{Deserialize, Serialize};
 
 pub struct VecTrucksId {
     pub index: usize,
+    pub index_vehicle_id: usize,
     pub id: String,
 }
 
