@@ -10,7 +10,8 @@
 		"lint": "eslint",
 		"format": "prettier --write .",
 		"preview": "vite preview",
-		"tauri": "tauri"
+		"tauri": "tauri",
+		"tauri:debug": "tauri build --debug --no-bundle"
 	},
 	"prettier": {
 		"tabWidth": 2,

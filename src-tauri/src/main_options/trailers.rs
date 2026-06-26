@@ -4,6 +4,7 @@ use super::trucks::get_model_name_data_path;
 
 use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_trailers::{VecSaveTrailers, VecTrailersId, VecTrailersNoSlaveId};
+use crate::utils::player_vehicles::find_in_player_vehicles_block;
 
 const COUNTRY_VALIDITY: &str = " country_validity: 0";
 const COUNTRY_VALIDITY_NULL: &str = " source_name: null";
@@ -333,18 +334,8 @@ pub fn get_trailer_def_index(arr_val: &Vec<String>, trailer_def_id: String) -> O
     return None;
 }
 
-pub fn get_my_trailer_id(arr_val: &Vec<String>) -> Option<(String, usize)> {
-    for (i, item) in arr_val.iter().enumerate() {
-        if item.contains(" assigned_trailer:") {
-            if item.contains(" null") {
-                return None;
-            }
-            let option_values: Vec<&str> = item.split(':').collect();
-            return Some((option_values[1].to_string(), i));
-        }
-    }
-
-    return None;
+pub fn get_my_trailer_id(arr_val: &[String]) -> Option<(String, usize)> {
+    find_in_player_vehicles_block(arr_val, "trailer:")
 }
 
 pub fn get_trailer_model_name(arr_val: &Vec<String>, index: usize) -> Option<String> {
@@ -413,34 +404,17 @@ pub fn get_list_trailers_info(arr_val: &Vec<String>) -> Option<Vec<VecSaveTraile
 }
 
 pub fn set_player_trailer_file(
-    arr_val: &Vec<String>,
-    truck_id: &str,
+    arr_val: &[String],
+    trailer_id: &str,
 ) -> Option<(Vec<VecItemsFind>, usize)> {
-    let mut vec_items_replace: Vec<VecItemsFind> = Vec::new();
+    let (_, index) = find_in_player_vehicles_block(arr_val, "trailer:")?;
 
-    let mut found_trailer: bool = false;
-    let mut trailer_index: usize = 0;
-    for (i, item) in arr_val.iter().enumerate() {
-        if item.contains("assigned_trailer") {
-            vec_items_replace.push(VecItemsFind {
-                index: i,
-                value: format!(" assigned_trailer: {}", truck_id),
-            });
-            vec_items_replace.push(VecItemsFind {
-                index: i + 1,
-                value: format!(" my_trailer: {}", truck_id),
-            });
-            found_trailer = true;
-            trailer_index = i;
-            break;
-        }
-    }
+    let replacement = vec![VecItemsFind {
+        index,
+        value: format!(" trailer: {}", trailer_id),
+    }];
 
-    if found_trailer {
-        return Some((vec_items_replace, trailer_index));
-    }
-
-    return None;
+    Some((replacement, index))
 }
 
 pub fn set_cargo_mass_trailer(

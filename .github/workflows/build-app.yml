@@ -6,6 +6,7 @@ on:
             - main
         paths:
             - version
+    workflow_dispatch:
 
 permissions:
     contents: write
@@ -23,7 +24,7 @@ jobs:
             TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
 
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v6
 
             - name: Get version
               run: echo "APP_VERSION=$(type version)" | Out-File -Append -FilePath $env:GITHUB_ENV -Encoding utf8
@@ -32,10 +33,10 @@ jobs:
               run: echo "FILE_NAME=${{ env.APP_NAME }}_${{ env.APP_VERSION }}_${{ env.APP_BUILD_TARGET }}" | Out-File -Append -FilePath $env:GITHUB_ENV -Encoding utf8
 
             - name: Install pnpm
-              uses: pnpm/action-setup@v4
+              uses: pnpm/action-setup@v4.4.0
 
             - name: Install NodeJS
-              uses: actions/setup-node@v4
+              uses: actions/setup-node@v6
               with:
                   node-version: lts/*
 

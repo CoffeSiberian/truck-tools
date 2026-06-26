@@ -2,6 +2,7 @@ use crate::structs::experience_skills::ExperienceSkills;
 use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_items_replace::{VecGaragesReplace, VecItemsReplace};
 use crate::utils::file_edit::copy_single_file;
+use crate::utils::player_vehicles::get_assigned_vehicle_block;
 use std::collections::HashSet;
 use std::path::Path;
 use std::vec;
@@ -646,35 +647,20 @@ pub fn set_player_map_position(
     location: &str,
     rotation: &str,
 ) -> Option<Vec<String>> {
-    let mut arr_val_clone = arr_val.clone();
+    let (block_start, block_end) = get_assigned_vehicle_block(arr_val)?;
+    let mut result = arr_val.clone();
 
-    let mut num_trailers: u8 = 0;
-    for (i, item) in arr_val.iter().enumerate() {
-        match item {
-            item if item.contains(" assigned_trailer: _nameless") => {
-                num_trailers += 1;
-            }
-            item if item.contains(" assigned_trailer_connected: false") && num_trailers == 1 => {
-                num_trailers += 1;
-                arr_val_clone[i] = format!(" assigned_trailer_connected: true");
-            }
-            item if item.contains(" nav_node_position:") && num_trailers == 2 => {
-                arr_val_clone[i] = format!(" nav_node_position: (0, 0, 0)");
-            }
-            item if item.contains(" truck_placement:") => {
-                arr_val_clone[i] = format!(" truck_placement: {} {}", location, rotation);
-            }
-            item if item.contains(" trailer_placement:") => {
-                arr_val_clone[i] = format!(" trailer_placement: (0, 0, 0) {}", rotation);
-            }
-            item if item.contains(" slave_trailer_placements[") => {
-                let split = item.split(":").collect::<Vec<&str>>()[0];
-
-                arr_val_clone[i] = format!("{}: (0, 0, 0) {}", split, rotation);
-            }
-            _ => continue,
+    for i in block_start..=block_end {
+        let line = &arr_val[i];
+        if line.contains("stored_trailer_attached: false") {
+            result[i] = " stored_trailer_attached: true".to_string();
+        } else if line.contains("stored_vehicle_placement:") {
+            result[i] = format!(" stored_vehicle_placement: {} {}", location, rotation);
+        } else if line.contains("stored_trailer_placements[") {
+            let key = line.split(':').next().unwrap_or("");
+            result[i] = format!("{}: (0, 0, 0) {}", key, rotation);
         }
     }
 
-    return Some(arr_val_clone);
+    Some(result)
 }
