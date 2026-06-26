@@ -4,7 +4,8 @@ use super::accessories::{
 use super::license_plate::get_license_plate_formated;
 
 use crate::main_options::vehicles_player::{
-    get_assigned_vehicles_player, get_player_vehicles_index, get_vehicle_id_from_player_vehicles,
+    get_assigned_vehicles_player, get_player_vehicles_data_have_same_vehicle_id,
+    get_player_vehicles_index, get_vehicle_id_from_player_vehicles,
 };
 use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_trucks::{
@@ -575,29 +576,29 @@ pub fn set_player_truck_file(
 ) -> Option<(Vec<VecItemsFind>, usize)> {
     let mut vec_items_replace: Vec<VecItemsFind> = Vec::new();
 
-    let (assigned_vehicles_index, assigned_vehicles_id) =
-        match get_assigned_vehicles_player(arr_val) {
-            Some(assigned_vehicles) => (assigned_vehicles.index, assigned_vehicles.value),
-            None => return None,
-        };
-
-    let vehicle_id_index =
-        match get_player_vehicles_index(arr_val, &assigned_vehicles_id, assigned_vehicles_index) {
-            Some(vehicle_id_index) => vehicle_id_index,
-            None => return None,
-        };
-
-    let vehicle_index = match get_vehicle_id_from_player_vehicles(arr_val, vehicle_id_index) {
-        Some(vehicle_id) => vehicle_id.index,
+    let current_truck_id = match get_truck_id(&arr_val) {
+        Some(truck_id) => truck_id,
         None => return None,
     };
 
-    vec_items_replace.push(VecItemsFind {
-        index: vehicle_index,
-        value: format!(" vehicle: {}", truck_id),
-    });
+    let vehicles_list_same_truck_id =
+        match get_player_vehicles_data_have_same_vehicle_id(arr_val, &current_truck_id.id) {
+            Some(vehicles_list_same_truck_id) => vehicles_list_same_truck_id,
+            None => return None,
+        };
 
-    return Some((vec_items_replace, vehicle_index));
+    for item in vehicles_list_same_truck_id.iter() {
+        vec_items_replace.push(VecItemsFind {
+            index: item.vehicle_id_index,
+            value: format!(" vehicle: {}", truck_id),
+        });
+    }
+
+    if vec_items_replace.is_empty() {
+        return None;
+    }
+
+    return Some((vec_items_replace, current_truck_id.index));
 }
 
 pub fn set_plyaer_hq_truck_file(
