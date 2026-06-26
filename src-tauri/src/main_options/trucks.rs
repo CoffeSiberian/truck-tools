@@ -575,29 +575,29 @@ pub fn set_player_truck_file(
 ) -> Option<(Vec<VecItemsFind>, usize)> {
     let mut vec_items_replace: Vec<VecItemsFind> = Vec::new();
 
-    let mut found_truck: bool = false;
-    let mut truck_index: usize = 0;
-    for (i, item) in arr_val.iter().enumerate() {
-        if item.contains("assigned_truck") {
-            vec_items_replace.push(VecItemsFind {
-                index: i,
-                value: format!(" assigned_truck: {}", truck_id),
-            });
-            vec_items_replace.push(VecItemsFind {
-                index: i + 1,
-                value: format!(" my_truck: {}", truck_id),
-            });
-            found_truck = true;
-            truck_index = i;
-            break;
-        }
-    }
+    let (assigned_vehicles_index, assigned_vehicles_id) =
+        match get_assigned_vehicles_player(arr_val) {
+            Some(assigned_vehicles) => (assigned_vehicles.index, assigned_vehicles.value),
+            None => return None,
+        };
 
-    if found_truck {
-        return Some((vec_items_replace, truck_index));
-    }
+    let vehicle_id_index =
+        match get_player_vehicles_index(arr_val, &assigned_vehicles_id, assigned_vehicles_index) {
+            Some(vehicle_id_index) => vehicle_id_index,
+            None => return None,
+        };
 
-    return None;
+    let vehicle_index = match get_vehicle_id_from_player_vehicles(arr_val, vehicle_id_index) {
+        Some(vehicle_id) => vehicle_id.index,
+        None => return None,
+    };
+
+    vec_items_replace.push(VecItemsFind {
+        index: vehicle_index,
+        value: format!(" vehicle: {}", truck_id),
+    });
+
+    return Some((vec_items_replace, vehicle_index));
 }
 
 pub fn set_plyaer_hq_truck_file(
