@@ -1,5 +1,5 @@
 use crate::structs::vec_items_find::VecItemsFind;
-use crate::structs::vec_vehicles_player::PlayerVehiclesData;
+use crate::structs::vec_vehicles_player::{PlayerVehiclesData, VecPlayerTrailersPlacements};
 
 pub fn get_assigned_vehicles_player(arr_val: &Vec<String>) -> Option<VecItemsFind> {
     let mut result: String = String::new();
@@ -119,9 +119,33 @@ pub fn get_stored_vehicle_placement_from_player_vehicles(
 pub fn get_stored_trailer_placements_from_player_vehicles(
     arr_val: &Vec<String>,
     index: usize,
-) -> Option<VecItemsFind> {
+) -> Option<Vec<VecPlayerTrailersPlacements>> {
+    let mut trailers_placements: Vec<VecPlayerTrailersPlacements> = Vec::new();
+
     for (i, item) in arr_val.iter().enumerate().skip(index) {
         if item.contains(" stored_trailer_placements") {
+            let option_values: Vec<&str> = item.split(':').collect();
+
+            trailers_placements.push(VecPlayerTrailersPlacements {
+                index: i,
+                value: option_values[1].to_string(),
+            });
+        }
+
+        if item == "}" {
+            return Some(trailers_placements);
+        }
+    }
+
+    return None;
+}
+
+pub fn get_player_vehicle_trailer_status(
+    arr_val: &Vec<String>,
+    index: usize,
+) -> Option<VecItemsFind> {
+    for (i, item) in arr_val.iter().enumerate().skip(index) {
+        if item.contains(" stored_trailer_attached") {
             let option_values: Vec<&str> = item.split(':').collect();
 
             return Some(VecItemsFind {
@@ -171,13 +195,18 @@ pub fn get_all_player_vehicles_data(
                     None => (String::from("null"), 0),
                 };
 
-            let (stored_trailer_placements, stored_trailer_placements_index) =
+            let stored_trailers_placements =
                 match get_stored_trailer_placements_from_player_vehicles(arr_val, i) {
-                    Some(stored_trailer_placements) => (
-                        stored_trailer_placements.value,
-                        stored_trailer_placements.index,
-                    ),
-                    None => (String::from("null"), 0),
+                    Some(stored_trailer_placements) => stored_trailer_placements,
+                    None => Vec::new(),
+                };
+
+            let (stored_trailer_attached, stored_trailer_attached_index) =
+                match get_player_vehicle_trailer_status(arr_val, i) {
+                    Some(stored_trailer_attached) => {
+                        (stored_trailer_attached.value, stored_trailer_attached.index)
+                    }
+                    None => (String::from("false"), 0),
                 };
 
             let player_vehicles_data = PlayerVehiclesData {
@@ -189,8 +218,9 @@ pub fn get_all_player_vehicles_data(
                 stored_vehicle_placement_index,
                 trailer_id,
                 trailer_id_index,
-                stored_trailer_placements,
-                stored_trailer_placements_index,
+                trailer_placements: stored_trailers_placements,
+                stored_trailer_attached,
+                stored_trailer_attached_index,
             };
             result.push(player_vehicles_data);
         }

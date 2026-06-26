@@ -1081,8 +1081,13 @@ async fn set_player_position(
         None => return Ok(DefaultResponse { res: false }),
     };
 
-    save_file(dir_save.to_string(), set_player_position).await;
+    let mut arr_val_clone = file.clone();
 
+    for item in set_player_position.iter() {
+        arr_val_clone[item.index] = item.value.to_string();
+    }
+
+    save_file(dir_save.to_string(), arr_val_clone).await;
     return Ok(DefaultResponse { res: true });
 }
 

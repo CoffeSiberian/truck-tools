@@ -1,3 +1,5 @@
+use crate::main_options::trucks::get_truck_id;
+use crate::main_options::vehicles_player::get_player_vehicles_data_have_same_vehicle_id;
 use crate::structs::experience_skills::ExperienceSkills;
 use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_items_replace::{VecGaragesReplace, VecItemsReplace};
@@ -645,36 +647,52 @@ pub fn set_player_map_position(
     arr_val: &Vec<String>,
     location: &str,
     rotation: &str,
-) -> Option<Vec<String>> {
-    let mut arr_val_clone = arr_val.clone();
+) -> Option<Vec<VecItemsFind>> {
+    let mut vec_items_replace: Vec<VecItemsFind> = Vec::new();
 
-    let mut num_trailers: u8 = 0;
-    for (i, item) in arr_val.iter().enumerate() {
-        match item {
-            item if item.contains(" assigned_trailer: _nameless") => {
-                num_trailers += 1;
-            }
-            item if item.contains(" assigned_trailer_connected: false") && num_trailers == 1 => {
-                num_trailers += 1;
-                arr_val_clone[i] = format!(" assigned_trailer_connected: true");
-            }
-            item if item.contains(" nav_node_position:") && num_trailers == 2 => {
-                arr_val_clone[i] = format!(" nav_node_position: (0, 0, 0)");
-            }
-            item if item.contains(" truck_placement:") => {
-                arr_val_clone[i] = format!(" truck_placement: {} {}", location, rotation);
-            }
-            item if item.contains(" trailer_placement:") => {
-                arr_val_clone[i] = format!(" trailer_placement: (0, 0, 0) {}", rotation);
-            }
-            item if item.contains(" slave_trailer_placements[") => {
-                let split = item.split(":").collect::<Vec<&str>>()[0];
+    let truck_id = match get_truck_id(&arr_val) {
+        Some(truck_id) => truck_id,
+        None => return None,
+    };
 
-                arr_val_clone[i] = format!("{}: (0, 0, 0) {}", split, rotation);
+    let vehicles_list_same_truck_id =
+        match get_player_vehicles_data_have_same_vehicle_id(arr_val, &truck_id.id) {
+            Some(vehicles_list_same_truck_id) => vehicles_list_same_truck_id,
+            None => return None,
+        };
+
+    for item in vehicles_list_same_truck_id.iter() {
+        vec_items_replace.push(VecItemsFind {
+            index: item.stored_vehicle_placement_index,
+            value: format!(" stored_vehicle_placement: {} {}", location, rotation),
+        });
+
+        if item.trailer_placements.len() > 1 {
+            for (i, trailer_item) in item.trailer_placements.iter().enumerate() {
+                if i == 0 {
+                    continue;
+                }
+                vec_items_replace.push(VecItemsFind {
+                    index: trailer_item.index,
+                    value: format!(
+                        " stored_trailer_placements[{}]: {} {}",
+                        i - 1,
+                        location,
+                        rotation
+                    ),
+                });
             }
-            _ => continue,
+
+            vec_items_replace.push(VecItemsFind {
+                index: item.stored_trailer_attached_index,
+                value: format!(" stored_trailer_attached: true"),
+            });
         }
     }
 
-    return Some(arr_val_clone);
+    if vec_items_replace.is_empty() {
+        return None;
+    }
+
+    return Some(vec_items_replace);
 }
