@@ -27,6 +27,7 @@ There is **no test suite** in this repo.
 ## Architecture
 
 ### Frontend ⇄ Rust bridge
+
 The frontend never edits files directly. Every operation calls a Rust `#[tauri::command]`
 through Tauri IPC. All `invoke()` calls are centralized in
 [src/utils/fileEdit.ts](src/utils/fileEdit.ts) as typed wrapper functions; UI code imports
@@ -35,6 +36,7 @@ Rust snake_case args automatically (Tauri convention). Most commands return
 `{ res: boolean }` (`responseRustTypes`).
 
 ### Rust backend
+
 - [src-tauri/src/lib.rs](src-tauri/src/lib.rs) defines all `#[tauri::command]` functions and
   registers them in `tauri::generate_handler![...]`. A command must be listed there to be
   callable from JS.
@@ -44,7 +46,9 @@ Rust snake_case args automatically (Tauri convention). Most commands return
   in `src-tauri/src/structs/`.
 
 ### Save-editing model (important)
+
 SCS `.sii` save files are encrypted. Editing follows this pattern:
+
 1. **Decrypt** — [decrypt_saves.rs](src-tauri/src/utils/decrypt_saves.rs) loads the bundled
    `resources/SII_Decrypt.dll` via `libloading` FFI. `get_memory_format` returns the format:
    `1` = plaintext, `2` = encrypted, `4` = 3nK-encoded; formats 2/4 are decoded to text.
@@ -59,6 +63,7 @@ File targets: vehicle/world edits operate on `game.sii` inside a save folder; pr
 edits on `profile.sii`; game settings (developer mode, convoy size) on `config.cfg`.
 
 ### Frontend structure
+
 - [src/main.tsx](src/main.tsx) wraps the app in `HeroUIProvider` → `DarkMode` → `Locale` →
   `ProfileContexInfo` context providers (in `src/hooks/`).
 - Feature UIs are tab/page based under `src/routes/pages/` —
@@ -73,7 +78,9 @@ edits on `profile.sii`; game settings (developer mode, convoy size) on `config.c
   `document_dir`, `license_plate`, `lang`, `opasity_profile`).
 
 ## Adding a save-edit feature
+
 A new feature typically touches all of these layers:
+
 1. Logic + a getter/setter in the relevant `src-tauri/src/main_options/*.rs`.
 2. A `#[tauri::command]` in `lib.rs`, **also added to** `generate_handler![...]`.
 3. A response struct in `src-tauri/src/structs/responses.rs` if not returning `DefaultResponse`.
@@ -81,6 +88,7 @@ A new feature typically touches all of these layers:
 5. UI (usually a modal) under the appropriate `src/routes/pages/*Options/Modals/`.
 
 ## Conventions & gotchas
+
 - ESLint ignores `dist` and `src-tauri`; Rust is not linted by ESLint.
 - Some existing command/function names contain typos (e.g. `repait_truck`,
   `descriptFiles`, `opasity`). Match the existing spelling when wiring calls together.

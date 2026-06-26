@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { open } from "@tauri-apps/plugin-shell";
 
 // UI
@@ -117,45 +117,16 @@ const SetPlayerTrailer = () => {
 		setLoadingListTrailers(false);
 	};
 
-	useEffect(() => {
-		if (isOpen && selectedSave) {
-			setLoadingListTrailers(true);
-			getSaveGameTrailers(selectedSave.dir).then((res) => {
-				if (res.res) {
-					setListTrailers({
-						trailers: res.trailers,
-						trailers_found: true,
-						current_trailer_id: res.current_trailer_id,
-					});
-				} else {
-					setListTrailers({
-						trailers: [],
-						trailers_found: false,
-						current_trailer_id: "",
-					});
-				}
-				setLoadingListTrailers(false);
-			});
-
-			return;
-		}
-
-		if (!isOpen) {
-			setSelectedTrailer([]);
-			setListTrailers({
-				trailers: [],
-				trailers_found: true,
-				current_trailer_id: "",
-			});
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [isOpen]);
+	const handleOpen = () => {
+		onOpen();
+		reloadListTrailers();
+	};
 
 	return (
 		<>
 			<Button
 				endContent={<IconPencil stroke={2} />}
-				onPress={onOpen}
+				onPress={handleOpen}
 				isDisabled={!selectedSave}
 				color="primary"
 				variant="shadow"

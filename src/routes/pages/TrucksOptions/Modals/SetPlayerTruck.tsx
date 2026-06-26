@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 
 // Tauri
 import { open } from "@tauri-apps/plugin-shell";
@@ -118,45 +118,16 @@ const SetPlayerTruck = () => {
 		setLoadingListTrucks(false);
 	};
 
-	useEffect(() => {
-		if (isOpen && selectedSave) {
-			setLoadingListTrucks(true);
-			getSaveGameTrucks(selectedSave.dir).then((res) => {
-				if (res.res) {
-					setListTrucks({
-						trucks: res.trucks,
-						trucks_found: true,
-						current_truck_id: res.current_truck_id,
-					});
-				} else {
-					setListTrucks({
-						trucks: [],
-						trucks_found: false,
-						current_truck_id: "",
-					});
-				}
-				setLoadingListTrucks(false);
-			});
-
-			return;
-		}
-
-		if (!isOpen) {
-			setSelectedTruck([]);
-			setListTrucks({
-				trucks: [],
-				trucks_found: true,
-				current_truck_id: "",
-			});
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [isOpen]);
+	const handleOpen = () => {
+		onOpen();
+		reloadListTrucks();
+	};
 
 	return (
 		<>
 			<Button
 				endContent={<IconPencil stroke={2} />}
-				onPress={onOpen}
+				onPress={handleOpen}
 				isDisabled={!selectedSave}
 				color="primary"
 				variant="shadow"
