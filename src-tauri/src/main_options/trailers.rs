@@ -2,6 +2,9 @@ use super::accessories::{get_accessories_data_path, get_list_trucks_accessories_
 use super::license_plate::get_license_plate_formated;
 use super::trucks::get_model_name_data_path;
 
+use crate::main_options::vehicles_player::{
+    get_assigned_vehicles_player, get_player_vehicles_index, get_trailer_id_from_player_vehicles,
+};
 use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_trailers::{VecSaveTrailers, VecTrailersId, VecTrailersNoSlaveId};
 
@@ -334,17 +337,24 @@ pub fn get_trailer_def_index(arr_val: &Vec<String>, trailer_def_id: String) -> O
 }
 
 pub fn get_my_trailer_id(arr_val: &Vec<String>) -> Option<(String, usize)> {
-    for (i, item) in arr_val.iter().enumerate() {
-        if item.contains(" assigned_trailer:") {
-            if item.contains(" null") {
-                return None;
-            }
-            let option_values: Vec<&str> = item.split(':').collect();
-            return Some((option_values[1].to_string(), i));
-        }
-    }
+    let (assigned_vehicles_index, assigned_vehicles_id) =
+        match get_assigned_vehicles_player(arr_val) {
+            Some(assigned_vehicles) => (assigned_vehicles.index, assigned_vehicles.value),
+            None => return None,
+        };
 
-    return None;
+    let vehicle_id_index =
+        match get_player_vehicles_index(arr_val, &assigned_vehicles_id, assigned_vehicles_index) {
+            Some(vehicle_id_index) => vehicle_id_index,
+            None => return None,
+        };
+
+    let trailer_id = match get_trailer_id_from_player_vehicles(arr_val, vehicle_id_index) {
+        Some(trailer_id) => trailer_id,
+        None => return None,
+    };
+
+    return Some((trailer_id.value, trailer_id.index));
 }
 
 pub fn get_trailer_model_name(arr_val: &Vec<String>, index: usize) -> Option<String> {
