@@ -544,34 +544,17 @@ pub fn get_truck_garage(arr_val: &Vec<String>, truck_id: &str, index: usize) -> 
 }
 
 pub fn set_player_truck_file(
-    arr_val: &Vec<String>,
+    arr_val: &[String],
     truck_id: &str,
 ) -> Option<(Vec<VecItemsFind>, usize)> {
-    let mut vec_items_replace: Vec<VecItemsFind> = Vec::new();
+    let (_, index) = find_in_player_vehicles_block(arr_val, "vehicle:")?;
 
-    let mut found_truck: bool = false;
-    let mut truck_index: usize = 0;
-    for (i, item) in arr_val.iter().enumerate() {
-        if item.contains("assigned_truck") {
-            vec_items_replace.push(VecItemsFind {
-                index: i,
-                value: format!(" assigned_truck: {}", truck_id),
-            });
-            vec_items_replace.push(VecItemsFind {
-                index: i + 1,
-                value: format!(" my_truck: {}", truck_id),
-            });
-            found_truck = true;
-            truck_index = i;
-            break;
-        }
-    }
+    let replacement = vec![VecItemsFind {
+        index,
+        value: format!(" vehicle: {}", truck_id),
+    }];
 
-    if found_truck {
-        return Some((vec_items_replace, truck_index));
-    }
-
-    return None;
+    Some((replacement, index))
 }
 
 pub fn set_plyaer_hq_truck_file(
