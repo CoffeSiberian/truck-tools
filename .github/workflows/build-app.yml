@@ -23,7 +23,7 @@ jobs:
             TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
 
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v5
 
             - name: Get version
               run: echo "APP_VERSION=$(type version)" | Out-File -Append -FilePath $env:GITHUB_ENV -Encoding utf8
@@ -32,12 +32,13 @@ jobs:
               run: echo "FILE_NAME=${{ env.APP_NAME }}_${{ env.APP_VERSION }}_${{ env.APP_BUILD_TARGET }}" | Out-File -Append -FilePath $env:GITHUB_ENV -Encoding utf8
 
             - name: Install pnpm
-              uses: pnpm/action-setup@v4
+              uses: pnpm/action-setup@v6
 
             - name: Install NodeJS
-              uses: actions/setup-node@v4
+              uses: actions/setup-node@v5
               with:
                   node-version: lts/*
+                  package-manager-cache: false
 
             - name: Install Rust stable
               uses: dtolnay/rust-toolchain@stable
@@ -49,13 +50,13 @@ jobs:
               run: pnpm tauri build
 
             - name: Upload artifact MSI
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v5
               with:
                   name: ${{ env.FILE_NAME }}.msi
                   path: src-tauri/target/release/bundle/msi/${{ env.FILE_NAME }}.msi
 
             - name: Upload artifact MSI SIG
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v5
               with:
                   name: ${{ env.FILE_NAME }}.msi.sig
                   path: src-tauri/target/release/bundle/msi/${{ env.FILE_NAME }}.msi.sig
@@ -69,7 +70,7 @@ jobs:
             APP_NAME_W_S: Truck_Tools
 
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v5
 
             - name: Get the version
               run: echo "APP_VERSION=$(cat version)" >> $GITHUB_ENV
@@ -81,7 +82,7 @@ jobs:
               run: echo "FILE_NAME_W_S=${{ env.APP_NAME_W_S }}_${{ env.APP_VERSION }}_${{ env.APP_BUILD_TARGET }}" >> $GITHUB_ENV
 
             - name: Download artifact MSI
-              uses: actions/download-artifact@v4
+              uses: actions/download-artifact@v5
               with:
                   name: ${{ env.FILE_NAME }}.msi
 
@@ -90,7 +91,7 @@ jobs:
                   mv "${{ env.FILE_NAME }}.msi" "${{ env.FILE_NAME_W_S }}.msi"
 
             - name: Download artifact MSI SIG
-              uses: actions/download-artifact@v4
+              uses: actions/download-artifact@v5
               with:
                   name: ${{ env.FILE_NAME }}.msi.sig
 
@@ -99,7 +100,7 @@ jobs:
                   mv "${{ env.FILE_NAME }}.msi.sig" "${{ env.FILE_NAME_W_S }}.msi.sig"
 
             - name: Release
-              uses: softprops/action-gh-release@v2
+              uses: softprops/action-gh-release@v3
               with:
                   name: Release ${{ env.APP_VERSION }}
                   tag_name: ${{ env.APP_VERSION }}
