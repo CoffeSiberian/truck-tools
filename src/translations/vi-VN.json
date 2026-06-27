@@ -464,16 +464,16 @@
                 }
             },
             "custom_fuel": {
-                "description_card": "Set a custom fuel level for your current truck",
-                "label_card": "Custom fuel level",
+                "description_card": "Đặt mức nhiên liệu tùy chỉnh cho xe tải hiện tại của bạn",
+                "label_card": "Mức nhiên liệu tùy chỉnh",
                 "modal": {
                     "btn_apply": "Đổ Xăng",
                     "btn_close": "Đóng",
                     "btn_open": "Mở",
                     "btn_restore_fuel": "Khôi phục nhiên liệu",
-                    "description": "Set the fuel level for your current truck. A higher fuel level also increases the truck's weight, since fuel has physics and affects its handling.",
-                    "title": "Custom fuel level",
-                    "fuel_level": "Fuel level",
+                    "description": "Hãy điều chỉnh mức nhiên liệu cho xe tải hiện tại của bạn. Mức nhiên liệu cao hơn cũng làm tăng trọng lượng của xe tải, vì nhiên liệu có các quy luật vật lý và ảnh hưởng đến khả năng điều khiển của xe.",
+                    "title": "Mức nhiên liệu tùy chỉnh",
+                    "fuel_level": "Mức nhiên liệu",
                     "warning_message": {
                         "message": "<b>Tắt \"Mức tiêu thụ nhiên liệu thực tế\"</b> trong phần \"Trò chơi\" của bạn để chức năng này có hiệu lực.",
                         "title": "Nhớ"
