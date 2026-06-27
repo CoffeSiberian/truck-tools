@@ -463,16 +463,17 @@
                     "title": "燃料を補給する"
                 }
             },
-            "infinite_fuel": {
-                "description_card": "現在のトラックの燃料は無限",
-                "label_card": "現在のトラックの燃料は無限",
+            "custom_fuel": {
+                "description_card": "Set a custom fuel level for your current truck",
+                "label_card": "Custom fuel level",
                 "modal": {
                     "btn_apply": "補給",
                     "btn_close": "閉じる",
                     "btn_open": "開く",
                     "btn_restore_fuel": "燃料を回復する",
-                    "description": "燃料は無限ではありませんが、約500万km（トラックによって異なります）です",
-                    "title": "現在のトラックの燃料は無限",
+                    "description": "Set the fuel level for your current truck. A higher fuel level also increases the truck's weight, since fuel has physics and affects its handling.",
+                    "title": "Custom fuel level",
+                    "fuel_level": "Fuel level",
                     "warning_message": {
                         "message": "この機能を有効にするには、「ゲームプレイ」セクションで<b>「リアルな燃料消費」を無効</b>にしてください。",
                         "title": "記憶する"

@@ -463,16 +463,17 @@
                     "title": "Llenar combustible"
                 }
             },
-            "infinite_fuel": {
-                "description_card": "Combustible infinito en el camión actual",
-                "label_card": "Combustible infinito en el camión actual",
+            "custom_fuel": {
+                "description_card": "Set a custom fuel level for your current truck",
+                "label_card": "Custom fuel level",
                 "modal": {
                     "btn_apply": "Reabastecer",
                     "btn_close": "Cerrar",
                     "btn_open": "Abrir",
                     "btn_restore_fuel": "Restaurar combustible",
-                    "description": "Exactamente el combustible no es infinito pero lo es por aproximadamente 5.000.000 KM (dependiendo del camión)",
-                    "title": "Combustible infinito en el camión actual",
+                    "description": "Set the fuel level for your current truck. A higher fuel level also increases the truck's weight, since fuel has physics and affects its handling.",
+                    "title": "Custom fuel level",
+                    "fuel_level": "Fuel level",
                     "warning_message": {
                         "message": "<b>Desactiva “Consumo de combustible realista”</b> en tu sección de “Jugabilidad” para que esta función surta efecto.",
                         "title": "Recuerda"

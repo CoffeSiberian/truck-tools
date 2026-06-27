@@ -130,8 +130,8 @@ const TrucksOptions = () => {
 		},
 		{
 			id: "11",
-			title: trucks.infinite_fuel.label_card,
-			description: trucks.infinite_fuel.description_card,
+			title: trucks.custom_fuel.label_card,
+			description: trucks.custom_fuel.description_card,
 			image: game === "ets2" ? img10 : img10_ats,
 			modal: <SetInfiniteFuel />,
 			disable: false,

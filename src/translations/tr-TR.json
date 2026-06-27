@@ -463,16 +463,17 @@
                     "title": "Yakıt doldurun"
                 }
             },
-            "infinite_fuel": {
-                "description_card": "Mevcut kamyonda sınırsız yakıt",
-                "label_card": "Mevcut kamyonda sınırsız yakıt",
+            "custom_fuel": {
+                "description_card": "Set a custom fuel level for your current truck",
+                "label_card": "Custom fuel level",
                 "modal": {
                     "btn_apply": "Yakıt ikmali",
                     "btn_close": "Kapat",
                     "btn_open": "Aç",
                     "btn_restore_fuel": "Yakıtı yenileyin",
-                    "description": "Yakıtınız tam anlamıyla sınırsız değil ancak yaklaşık 5.000.000 KM olacaktır (kamyona bağlı olarak değişebilir)",
-                    "title": "Mevcut kamyonda sınırsız yakıt",
+                    "description": "Set the fuel level for your current truck. A higher fuel level also increases the truck's weight, since fuel has physics and affects its handling.",
+                    "title": "Custom fuel level",
+                    "fuel_level": "Fuel level",
                     "warning_message": {
                         "message": "Bu fonksiyonun etkili olması için <b>“Oyun” ayarlarınızda “Gerçekçi yakıt tüketimi”ni devre dışı bırakın</b>.",
                         "title": "Hatırlatma"

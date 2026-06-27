@@ -270,10 +270,12 @@ export const setAllFuelTruck = async (dirSave: string): Promise<boolean> => {
 };
 
 export const setInfinitFuelTruck = async (
-	dirSave: string
+	dirSave: string,
+	fuelLevel: string
 ): Promise<boolean> => {
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
+		fuelLevel,
 	};
 
 	const invoceRes = (await invoke(

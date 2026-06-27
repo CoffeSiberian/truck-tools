@@ -308,7 +308,7 @@ async fn fill_any_trucks_fuel(dir_save: &str, fuel: &str) -> Result<DefaultRespo
 }
 
 #[tauri::command]
-async fn set_infinite_fuel(dir_save: &str) -> Result<DefaultResponse, ()> {
+async fn set_infinite_fuel(dir_save: &str, fuel_level: &str) -> Result<DefaultResponse, ()> {
     let file: Vec<String> = match read_file_text(dir_save).await {
         Some(file) => file,
         None => return Ok(DefaultResponse { res: false }),
@@ -325,7 +325,7 @@ async fn set_infinite_fuel(dir_save: &str) -> Result<DefaultResponse, ()> {
         None => return Ok(DefaultResponse { res: false }),
     };
 
-    let truck_fuel: Vec<String> = match set_infinite_fuel_truck(&file, truck_index) {
+    let truck_fuel: Vec<String> = match set_infinite_fuel_truck(&file, truck_index, fuel_level) {
         Some(truck_fuel) => truck_fuel,
         None => return Ok(DefaultResponse { res: false }),
     };

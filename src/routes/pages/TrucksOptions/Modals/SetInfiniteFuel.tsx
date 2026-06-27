@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 // UI
 import { useDisclosure } from "@heroui/use-disclosure";
 import { Button } from "@heroui/button";
+import { Slider } from "@heroui/slider";
 import { Divider } from "@heroui/divider";
 import {
 	Modal,
@@ -36,6 +37,7 @@ const SetInfiniteFuel = () => {
 
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
+	const [fuelLevel, setFuelLevel] = useState<number>(1);
 	const [isLoadingRefuel, setIsLoadingRefuel] = useState<boolean>(false);
 	const [isLoadingRestore, setIsLoadingRestore] = useState<boolean>(false);
 	const [completed, setCompleted] = useState<completedProps>({
@@ -50,7 +52,10 @@ const SetInfiniteFuel = () => {
 
 		if (selectedSave) {
 			setIsLoadingRefuel(true);
-			const res = await setInfinitFuelTruck(selectedSave.dir);
+			const res = await setInfinitFuelTruck(
+				selectedSave.dir,
+				fuelLevel.toFixed(1)
+			);
 			setCompleted({
 				error: !res,
 				completed: true,
@@ -84,7 +89,7 @@ const SetInfiniteFuel = () => {
 				color="primary"
 				variant="shadow"
 			>
-				{trucks.infinite_fuel.modal.btn_open}
+				{trucks.custom_fuel.modal.btn_open}
 			</Button>
 			<Modal
 				hideCloseButton
@@ -98,19 +103,31 @@ const SetInfiniteFuel = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1">
-								{trucks.infinite_fuel.modal.title}
+								{trucks.custom_fuel.modal.title}
 							</ModalHeader>
 							<Divider />
 							<ModalBody className="py-1">
-								<p>{trucks.infinite_fuel.modal.description}</p>
+								<p>{trucks.custom_fuel.modal.description}</p>
+								<Slider
+									size="lg"
+									color="success"
+									label={trucks.custom_fuel.modal.fuel_level}
+									minValue={0}
+									maxValue={10}
+									step={0.1}
+									value={fuelLevel}
+									onChange={(v) => setFuelLevel(Array.isArray(v) ? v[0] : v)}
+									getValue={(v) => Number(v).toFixed(1)}
+									className="max-w-md"
+								/>
 								<Warning
 									text={
 										<div className="flex flex-col gap-2">
-											<b>{trucks.infinite_fuel.modal.warning_message.title}</b>
+											<b>{trucks.custom_fuel.modal.warning_message.title}</b>
 											<p
 												dangerouslySetInnerHTML={{
 													__html:
-														trucks.infinite_fuel.modal.warning_message.message,
+														trucks.custom_fuel.modal.warning_message.message,
 												}}
 											/>
 										</div>
@@ -131,7 +148,7 @@ const SetInfiniteFuel = () => {
 							</ModalBody>
 							<ModalFooter>
 								<Button color="danger" variant="light" onPress={onClose}>
-									{trucks.infinite_fuel.modal.btn_close}
+									{trucks.custom_fuel.modal.btn_close}
 								</Button>
 								<Button
 									endContent={<IconRestore />}
@@ -140,7 +157,7 @@ const SetInfiniteFuel = () => {
 									variant="flat"
 									onPress={onClickRestore}
 								>
-									{trucks.infinite_fuel.modal.btn_restore_fuel}
+									{trucks.custom_fuel.modal.btn_restore_fuel}
 								</Button>
 								<Button
 									endContent={<IconGasStation />}
@@ -148,7 +165,7 @@ const SetInfiniteFuel = () => {
 									color="success"
 									onPress={onClickApply}
 								>
-									{trucks.infinite_fuel.modal.btn_apply}
+									{trucks.custom_fuel.modal.btn_apply}
 								</Button>
 							</ModalFooter>
 						</>

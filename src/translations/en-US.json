@@ -463,16 +463,17 @@
 					"title": "Fill fuel"
 				}
 			},
-			"infinite_fuel": {
-				"description_card": "Infinite fuel on current truck",
-				"label_card": "Infinite fuel on current truck",
+			"custom_fuel": {
+				"description_card": "Set a custom fuel level for your current truck",
+				"label_card": "Custom fuel level",
 				"modal": {
 					"btn_apply": "Refuel",
 					"btn_close": "Close",
 					"btn_open": "Open",
 					"btn_restore_fuel": "Restore fuel",
-					"description": "Exactly the fuel is not infinite but it is for approximately 5.000.000 KM (depending on the truck)",
-					"title": "Infinite fuel on current truck",
+					"description": "Set the fuel level for your current truck. A higher fuel level also increases the truck's weight, since fuel has physics and affects its handling.",
+					"title": "Custom fuel level",
+					"fuel_level": "Fuel level",
 					"warning_message": {
 						"message": "<b>Disable “Realistic fuel consumption”</b> in your “Gameplay” section for this function to take effect.",
 						"title": "Remember"

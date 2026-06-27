@@ -463,16 +463,17 @@
                     "title": "연료 채우기"
                 }
             },
-            "infinite_fuel": {
-                "description_card": "현재 트럭의 무한 연료",
-                "label_card": "현재 트럭의 무한 연료",
+            "custom_fuel": {
+                "description_card": "Set a custom fuel level for your current truck",
+                "label_card": "Custom fuel level",
                 "modal": {
                     "btn_apply": "주유하기",
                     "btn_close": "닫기",
                     "btn_open": "열기",
                     "btn_restore_fuel": "연료 복원",
-                    "description": "연료는 무한하지는 않지만 트럭에 따라 약 5,000,000km입니다",
-                    "title": "현재 트럭의 무한 연료",
+                    "description": "Set the fuel level for your current truck. A higher fuel level also increases the truck's weight, since fuel has physics and affects its handling.",
+                    "title": "Custom fuel level",
+                    "fuel_level": "Fuel level",
                     "warning_message": {
                         "message": "이 기능을 적용하려면 \"게임플레이\" 섹션에서 <b>\"현실적인 연료 소비\"를 비활성화</b>하세요.",
                         "title": "기억하기"

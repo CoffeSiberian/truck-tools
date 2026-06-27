@@ -463,16 +463,17 @@
                     "title": "加滿油"
                 }
             },
-            "infinite_fuel": {
-                "description_card": "修改目前卡車為無限燃油",
-                "label_card": "修改目前卡車為無限燃油",
+            "custom_fuel": {
+                "description_card": "Set a custom fuel level for your current truck",
+                "label_card": "Custom fuel level",
                 "modal": {
                     "btn_apply": "加油",
                     "btn_close": "取消",
                     "btn_open": "查看詳情",
                     "btn_restore_fuel": "恢復燃油",
-                    "description": "確切地說，燃料不是無限的，但大約可以行駛 5.000.000 KM（取決於卡車）",
-                    "title": "修改目前卡車為無限燃油",
+                    "description": "Set the fuel level for your current truck. A higher fuel level also increases the truck's weight, since fuel has physics and affects its handling.",
+                    "title": "Custom fuel level",
+                    "fuel_level": "Fuel level",
                     "warning_message": {
                         "message": "在 「遊戲設定」中<b> 停用 “真實油耗” </b>才能使此修改生效。",
                         "title": "提示"

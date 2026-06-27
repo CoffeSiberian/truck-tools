@@ -478,7 +478,7 @@ export interface Trucks {
 	change_truck_transmission: ChangeTruckTransmission;
 	fill_all_trucks_fuel: FillAllTrucksFuel;
 	fill_fuel: FillFuel;
-	infinite_fuel: InfiniteFuel;
+	custom_fuel: CustomFuel;
 	license_plate: TrucksLicensePlate;
 	repair_all_trucks: RepairAllTrucks;
 	repair_truck: RepairTruck;
@@ -572,19 +572,20 @@ export interface FillFuel {
 	modal: LicensePlateModal;
 }
 
-export interface InfiniteFuel {
+export interface CustomFuel {
 	description_card: string;
 	label_card: string;
-	modal: InfiniteFuelModal;
+	modal: CustomFuelModal;
 }
 
-export interface InfiniteFuelModal {
+export interface CustomFuelModal {
 	btn_apply: string;
 	btn_close: string;
 	btn_open: string;
 	btn_restore_fuel: string;
 	description: string;
 	title: string;
+	fuel_level: string;
 	warning_message: PurpleWarningMessage;
 }
 

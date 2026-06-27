@@ -463,16 +463,17 @@
                     "title": "Kraftstoff auffüllen"
                 }
             },
-            "infinite_fuel": {
-                "description_card": "Unendlich viel Kraftstoff für den aktuellen Lkw",
-                "label_card": "Unbegrenzter Kraftstoff",
+            "custom_fuel": {
+                "description_card": "Set a custom fuel level for your current truck",
+                "label_card": "Custom fuel level",
                 "modal": {
                     "btn_apply": "Auftanken",
                     "btn_close": "Schließen",
                     "btn_open": "Öffnen",
                     "btn_restore_fuel": "Kraftstoff wiederherstellen",
-                    "description": "Genau genommen ist der Treibstoff nicht unendlich, sondern reicht für ca. 5.000.000 KM (je nach LKW)",
-                    "title": "Unbegrenzter Kraftstoff",
+                    "description": "Set the fuel level for your current truck. A higher fuel level also increases the truck's weight, since fuel has physics and affects its handling.",
+                    "title": "Custom fuel level",
+                    "fuel_level": "Fuel level",
                     "warning_message": {
                         "message": "<b>Deaktivieren Sie „Realistischer Treibstoffverbrauch“</b> in Ihrem „Gameplay“-Abschnitt, damit diese Funktion wirksam wird.",
                         "title": "Erinnerung"

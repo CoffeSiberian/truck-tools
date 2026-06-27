@@ -463,16 +463,17 @@
                     "title": "Umpleți combustibil"
                 }
             },
-            "infinite_fuel": {
-                "description_card": "Combustibil infinit pe camionul actual",
-                "label_card": "Combustibil infinit pe camionul actual",
+            "custom_fuel": {
+                "description_card": "Set a custom fuel level for your current truck",
+                "label_card": "Custom fuel level",
                 "modal": {
                     "btn_apply": "Realimentare",
                     "btn_close": "închide",
                     "btn_open": "Deschide",
                     "btn_restore_fuel": "Restaurați combustibilul",
-                    "description": "Exact combustibilul nu este infinit, dar este pentru aproximativ 5.000.000 KM (în funcție de camion)",
-                    "title": "Combustibil infinit pe camionul actual",
+                    "description": "Set the fuel level for your current truck. A higher fuel level also increases the truck's weight, since fuel has physics and affects its handling.",
+                    "title": "Custom fuel level",
+                    "fuel_level": "Fuel level",
                     "warning_message": {
                         "message": "<b>Dezactivați „Consum realist de combustibil”</b> în secțiunea „Joc” pentru ca această funcție să intre în vigoare.",
                         "title": "Ține minte"
