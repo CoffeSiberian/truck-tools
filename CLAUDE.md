@@ -18,11 +18,14 @@ Run frontend/Tauri commands from the repo root; run `cargo` commands from `src-t
 - `pnpm build` — type-check + build the frontend (`tsc && vite build`)
 - `pnpm tauri build` — build the production MSI installer
 - `pnpm tsc` — type-check only
-- `pnpm lint` — ESLint
+- `pnpm lint` — ESLint (flat config in `eslint.config.js`)
 - `pnpm format` — Prettier (tabs, double quotes, Tailwind class sorting)
 - `cargo check` / `cargo build` (in `src-tauri/`) — compile the Rust backend
 
 There is **no test suite** in this repo.
+
+When bumping a dependency to a brand-new version, add it to `minimumReleaseAgeExclude` in
+[pnpm-workspace.yaml](pnpm-workspace.yaml) — otherwise pnpm's release-age policy blocks `install`.
 
 ## Architecture
 
@@ -41,9 +44,12 @@ Rust snake_case args automatically (Tauri convention). Most commands return
   registers them in `tauri::generate_handler![...]`. A command must be listed there to be
   callable from JS.
 - Business logic lives in `src-tauri/src/main_options/` (`trucks.rs`, `trailers.rs`,
-  `profiles.rs`, `license_plate.rs`, `accessories.rs`) and `src-tauri/src/utils/`
-  (`file_edit.rs`, `decrypt_saves.rs`, `compress_folder.rs`). Response and data shapes live
-  in `src-tauri/src/structs/`.
+  `profiles.rs`, `license_plate.rs`, `accessories.rs`, `vehicles_player.rs`) and
+  `src-tauri/src/utils/` (`file_edit.rs`, `decrypt_saves.rs`, `compress_folder.rs`). Response
+  and data shapes live in `src-tauri/src/structs/`.
+- `src-tauri/src/embeds/` holds engine/transmission reference data
+  (`trucks_data_ets2.json`, `trucks_data_ats.json`) embedded at compile time via `include_str!`
+  in `trucks.rs` and served to the UI by `get_brand_models_ets2` / `get_brand_models_ats`.
 
 ### Save-editing model (important)
 
@@ -66,9 +72,9 @@ edits on `profile.sii`; game settings (developer mode, convoy size) on `config.c
 
 - [src/main.tsx](src/main.tsx) wraps the app in `HeroUIProvider` → `DarkMode` → `Locale` →
   `ProfileContexInfo` context providers (in `src/hooks/`).
-- Feature UIs are tab/page based under `src/routes/pages/` —
-  `TrucksOptions/`, `TrailersOptions/`, `ProfilesOptions/`, each with a `Modals/` subfolder
-  per action.
+- Feature UIs are tab/page based under `src/routes/pages/` — `TrucksOptions/`,
+  `TrailersOptions/`, `ProfilesOptions/`. Each action is its own modal in a subfolder:
+  `Modals/` for Trucks and Trailers, `Modal/` (singular) for Profiles.
 - Path alias `@` → `./src` (configured in [vite.config.ts](vite.config.ts) and tsconfig).
 - i18n: lazy-imported JSON files in `src/translations/` (BCP-47 names like `en-US.json`),
   selected via the `Locale` context; `mostSimilarLang` in `fileEdit.ts` maps a system locale
@@ -85,7 +91,7 @@ A new feature typically touches all of these layers:
 2. A `#[tauri::command]` in `lib.rs`, **also added to** `generate_handler![...]`.
 3. A response struct in `src-tauri/src/structs/responses.rs` if not returning `DefaultResponse`.
 4. A typed wrapper in [src/utils/fileEdit.ts](src/utils/fileEdit.ts).
-5. UI (usually a modal) under the appropriate `src/routes/pages/*Options/Modals/`.
+5. UI (usually a modal) under the appropriate `src/routes/pages/*Options/Modal(s)/`.
 
 ## Conventions & gotchas
 
