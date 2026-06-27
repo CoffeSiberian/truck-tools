@@ -473,7 +473,7 @@
                     "btn_restore_fuel": "恢复燃油",
                     "description": "设置当前卡车的燃油量。燃油量越高，卡车的重量也会增加，因为燃油具有物理效果，会影响车辆的操控性。",
                     "title": "Custom fuel level",
-                    "fuel_level": "油量",
+                    "fuel_level": "油量倍数",
                     "warning_message": {
                         "message": "在 “游戏设置”中<b> 禁用 “真实油耗” </b>才能使此修改生效。",
                         "title": "提示"
