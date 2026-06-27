@@ -6,11 +6,11 @@
             "btn_store": "Magasin",
             "input_colored_margin": "Marge colorée",
             "input_license_plate": {
-                "label": "Texte de la plaque",
+                "label": "Texte de la plaque d'immatriculation",
                 "placeholder": "Entrer le texte"
             },
             "input_license_plate_list_store": {
-                "label": "Sélectionner une plaque stockée",
+                "label": "Sélectionnez une plaque enregistrée",
                 "placeholder": "Sélectionner la plaque"
             },
             "title_select_bg_color": "Couleur d'arrière-plan",
@@ -108,8 +108,8 @@
                 "label": "Sélectionner la sauvegarde",
                 "placeholder": "Sélectionner une sauvegarde"
             },
-            "no_selected_profile": "Aucun profil sélectionné",
-            "no_selected_save": "Aucune sauvegarde sélectionnée",
+            "no_selected_profile": "Aucun profil trouvé",
+            "no_selected_save": "Aucune sauvegarde n'a été trouvée",
             "total_saves": "sauvegarde"
         },
         "profile_error": {
@@ -464,15 +464,15 @@
                 }
             },
             "custom_fuel": {
-                "description_card": "Set a custom fuel level for your current truck",
-                "label_card": "Custom fuel level",
+                "description_card": "Définissez un niveau de carburant personnalisé pour votre camion actuel",
+                "label_card": "Niveau de carburant personnalisé",
                 "modal": {
                     "btn_apply": "ravitailler",
                     "btn_close": "Fermé",
                     "btn_open": "Ouvrir",
                     "btn_restore_fuel": "Restaurer le carburant",
-                    "description": "Set the fuel level for your current truck. A higher fuel level also increases the truck's weight, since fuel has physics and affects its handling.",
-                    "title": "Custom fuel level",
+                    "description": "Définissez le niveau de carburant pour votre camion actuel. Un niveau de carburant plus élevé augmente également le poids du camion, car le carburant a une physique et affecte sa maniabilité",
+                    "title": "Niveau de carburant personnalisé",
                     "fuel_level": "Fuel level",
                     "warning_message": {
                         "message": "<b>Désactiver \"Consommation de carburant réaliste\"</b> dans la section \"Gameplay\" pour que cette fonction prenne effet.",
@@ -552,7 +552,7 @@
                 "description_card": "Se téléporter à un endroit en utilisant la caméra de débogage du jeu",
                 "label_card": "Téléporte la position du joueur",
                 "modal": {
-                    "btn_apply": "Teleport",
+                    "btn_apply": "Téléportation",
                     "btn_how_to_use": "comment utiliser",
                     "btn_close": "Fermé",
                     "btn_open": "Open",
