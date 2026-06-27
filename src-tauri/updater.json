@@ -1,11 +1,11 @@
 {
-	"version": "v0.12.4",
-	"notes": "- Added missing transmissions and engines (ETS2 and ATS)",
-	"pub_date": "2026-01-15T13:00:00-03:00",
+	"version": "v0.12.5",
+	"notes": "SiberianCoffe reporting in here ☕☕\n\nI'm bringing you several fixes regarding the last update, which completely broke how the player's truck and trailer IDs are handled. This is most likely due to SCS's plans to add vehicles and buses, so they're laying the groundwork for that.\n\n- Fixed a bug that prevented using most options related to \"trailers\" and \"trucks\"\n- Fixed profile pictures not loading on the first try\n- Changed the \"infinite fuel\" option to \"custom fuel levels\", since fuel now has weight, which is noticeable when moving the truck\n- Updated dependencies on both the UI and backend side\n\nSpecial thanks to Seven-TMP and rpastuhov for their quick collaboration!",
+	"pub_date": "2026-06-26T17:00:00-04:00",
 	"platforms": {
 		"windows-x86_64": {
-			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dmNwaWtpc0JqWlFiNWNHbXlISHBDanlPSUNQM3J1MjM3SDJuUXU4NjhkZkpHdUdzdnp2ZFBhRTAvMElGUE5RMlhYOFA3dHBJYk1wWkY1b0V6azM3d3d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzY4NDk2NTE2CWZpbGU6VHJ1Y2sgVG9vbHNfMC4xMi40X3g2NF9lbi1VUy5tc2kuemlwCmxzRU1SODNGbW8rSmc4dVg3MmhHcnVCT1pvcTRleUhOWDBXbVpMdFNXVVE0OUIvYXNOTzZrUlpVS0NKZEZuRy9yWVo3enNKeFVISHFjVGh2N09SWUJRPT0K",
-			"url": "https://legacy.siberiancoffe.dev/Truck_Tools_0.12.4_x64_en-US.msi.zip"
+			"signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbS9QUHhUQmY4dlhhZFR1RmdyclB5aTBiaklpcU03azg2Qy9EdTRyZkx1ajEvRHFSRFdOZ2RCd1VyQjFUb0xzNS82S0w5TnBjUTUwb0ZQN25zNENTYkNXNHhFZ3JkZndBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgyNTI1MjUzCWZpbGU6VHJ1Y2sgVG9vbHNfMC4xMi41X3g2NF9lbi1VUy5tc2kKWmxaQlc1WUE4bHJiVUUzelhjWis5ei9kUDc5aXhNN1kvby9NYmw2S0JOb05pZW1iTmNRamYwa0FQTG5sejdWM2NYVTMxdGw1RWk5dHZITldVMmx6RHc9PQo=",
+			"url": "https://cdn.siberiancoffe.dev/truck-tools/tauri-v2/Truck_Tools_0.12.5_x64_en-US.msi"
 		}
 	}
 }
