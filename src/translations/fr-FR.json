@@ -108,7 +108,7 @@
                 "label": "Sélectionner la sauvegarde",
                 "placeholder": "Sélectionner une sauvegarde"
             },
-            "no_selected_profile": "Aucun profil trouvé",
+            "no_selected_profile": "Aucun profil sélectionné",
             "no_selected_save": "Aucune sauvegarde n'a été trouvée",
             "total_saves": "sauvegarde"
         },
@@ -471,11 +471,11 @@
                     "btn_close": "Fermé",
                     "btn_open": "Ouvrir",
                     "btn_restore_fuel": "Restaurer le carburant",
-                    "description": "Définissez le niveau de carburant pour votre camion actuel. Un niveau de carburant plus élevé augmente également le poids du camion, car le carburant a une physique et affecte sa maniabilité",
+                    "description": "Définissez le niveau de carburant de votre camion actuel. Un niveau de carburant plus élevé augmente également le poids du camion, car le carburant obéit aux lois de la physique et influe sur sa maniabilité.",
                     "title": "Niveau de carburant personnalisé",
                     "fuel_level": "Fuel level",
                     "warning_message": {
-                        "message": "<b>Désactiver \"Consommation de carburant réaliste\"</b> dans la section \"Gameplay\" pour que cette fonction prenne effet.",
+                        "message": "<b>Désactiver \"Consommation de carburant réaliste\"</b> dans la section \"Jouabilité\" pour que cette fonction prenne effet.",
                         "title": "se souvenir"
                     }
                 }
