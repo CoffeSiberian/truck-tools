@@ -464,16 +464,16 @@
                 }
             },
             "custom_fuel": {
-                "description_card": "Set a custom fuel level for your current truck",
-                "label_card": "Custom fuel level",
+                "description_card": "Ustaw własny poziom zatankowania obecnie używanej ciężarówki",
+                "label_card": "Własny poziom zatankowania",
                 "modal": {
                     "btn_apply": "Zatankuj",
                     "btn_close": "Zamknij",
                     "btn_open": "Edytuj",
                     "btn_restore_fuel": "Przywróć do normy",
-                    "description": "Set the fuel level for your current truck. A higher fuel level also increases the truck's weight, since fuel has physics and affects its handling.",
-                    "title": "Custom fuel level",
-                    "fuel_level": "Fuel level",
+                    "description": "Ustaw poziom zatankowania obecnie używanej ciężarówki. Wyższy poziom paliwa zwiększy masę ciężarówki, ponieważ fizyka paliwa ma realny wpływ na jej sterowność.",
+                    "title": "Własny poziom zatankowania",
+                    "fuel_level": "Poziom zatankowania",
                     "warning_message": {
                         "message": "<b>Wyłącz \"Realistyczne zużycie paliwa\"</b> w sekcji ustawień \"Rozgrywka\", aby ta funkcja zaczęła działać.",
                         "title": "Pamiętaj"
