@@ -226,6 +226,12 @@ fn get_trailer_wear(arr_val: &Vec<String>, wear: &str, index: usize) -> Option<V
                     value: format!(" chassis_wear_unfixable: {}", wear),
                 });
             }
+            " cargo_damage" => {
+                result.push(VecItemsFind {
+                    index: i,
+                    value: format!(" cargo_damage: {}", wear),
+                });
+            }
             _ => (),
         }
     }
