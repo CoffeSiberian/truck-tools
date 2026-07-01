@@ -182,6 +182,31 @@ pub fn get_rgb_hex_to_game_format(color: &str) -> String {
 ///////////////////////////////////////// Profile options ///////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+pub fn decode_hex_utf8(s: &str) -> String {
+    let bytes = s.as_bytes();
+    let mut out_bytes: Vec<u8> = Vec::with_capacity(bytes.len());
+    let mut i = 0;
+
+    while i < bytes.len() {
+        if bytes[i] == b'\\'
+            && i + 3 < bytes.len()
+            && (bytes[i + 1] == b'x' || bytes[i + 1] == b'X')
+        {
+            if let Some(hex) = s.get(i + 2..i + 4) {
+                if let Ok(byte_val) = u8::from_str_radix(hex, 16) {
+                    out_bytes.push(byte_val);
+                    i += 4;
+                    continue;
+                }
+            }
+        }
+        out_bytes.push(bytes[i]);
+        i += 1;
+    }
+
+    String::from_utf8_lossy(&out_bytes).into_owned()
+}
+
 pub fn get_save_name(arr_val: &Vec<String>, default_name: &str) -> Option<String> {
     for item in arr_val.iter() {
         let option_values: Vec<&str> = item.split(':').collect();
@@ -190,7 +215,8 @@ pub fn get_save_name(arr_val: &Vec<String>, default_name: &str) -> Option<String
             if option_values[1] == " \"\"" {
                 return Some(default_name.to_owned());
             }
-            return Some(option_values[1].replace("\"", "").trim().to_string());
+            let raw_name = option_values[1].replace("\"", "").trim().to_string();
+            return Some(decode_hex_utf8(&raw_name));
         }
     }
 
