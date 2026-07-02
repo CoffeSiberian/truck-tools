@@ -233,6 +233,32 @@
                     "title": "経験スキルを設定する"
                 }
             },
+            "drivers_skills_points": {
+                "description_card": "プロフィールにドライバーの経験スキルを設定する",
+                "label_card": "ドライバーの経験スキルを設定する",
+                "modal": {
+                    "btn_apply": "適用",
+                    "btn_close": "閉じる",
+                    "btn_open": "開く",
+                    "description": "必要な経験スキルを入力してください",
+                    "eco_driving": "エコドライブ",
+                    "fragile_cargo": "精密貨物",
+                    "high_value_cargo": "高額貨物",
+                    "input_skills_points": {
+                        "corrosive": "腐敗性物質",
+                        "explosives": "爆発物",
+                        "flammable_liquids": "可燃性液体",
+                        "flammable_solids": "可燃性固体",
+                        "gases": "ガス",
+                        "label": "危険物",
+                        "placeholder": "危険物を選択",
+                        "toxic_and_infectious": "毒物および感染性物質"
+                    },
+                    "just_in_time_delivery": "ジャストインタイム配送",
+                    "long_distance": "長距離",
+                    "title": "経験スキルを設定する"
+                }
+            },
             "tab_title": "プロフィール",
             "visited_cities": {
                 "description_card": "訪問した都市の状態をプロフィールに設定する",

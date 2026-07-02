@@ -203,6 +203,7 @@ export interface Profile {
 	dealer_visited: DealerVisited;
 	garage_status: GarageStatus;
 	skills_points: SkillsPoints;
+	drivers_skills_points: SkillsPoints;
 	tab_title: string;
 	visited_cities: VisitedCities;
 }

@@ -233,6 +233,32 @@
                     "title": "Establecer habilidades de experiencia"
                 }
             },
+            "drivers_skills_points": {
+                "description_card": "Establecer habilidades de experiencia de conductor en tu perfil",
+                "label_card": "Establecer habilidades de experiencia de conductor",
+                "modal": {
+                    "btn_apply": "Aplicar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Introduce la cantidad de experiencia que necesitas",
+                    "eco_driving": "Conducción económica",
+                    "fragile_cargo": "Carga frágil",
+                    "high_value_cargo": "Carga de alto valor",
+                    "input_skills_points": {
+                        "corrosive": "Corrosivos",
+                        "explosives": "Explosivos",
+                        "flammable_liquids": "Líquidos inflamables",
+                        "flammable_solids": "Sólidos inflamables",
+                        "gases": "Gases",
+                        "label": "ADR",
+                        "placeholder": "Selecciona ADR",
+                        "toxic_and_infectious": "Tóxicos e infecciosos"
+                    },
+                    "just_in_time_delivery": "Entrega justo a tiempo",
+                    "long_distance": "Larga distancia",
+                    "title": "Establecer habilidades de experiencia"
+                }
+            },
             "tab_title": "Perfil",
             "visited_cities": {
                 "description_card": "Establecer el estado de cualquier ciudad visitada en tu perfil",

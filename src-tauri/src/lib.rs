@@ -6,8 +6,8 @@ use hex::encode_upper;
 
 use main_options::profiles::{
     copy_profile_configs, set_any_status_garage, set_bank_money, set_dealerships_discovered_status,
-    set_experience, set_experience_skills, set_player_map_position, set_profile_name,
-    set_visited_cities,
+    set_drivers_experience_skills, set_experience, set_experience_skills, set_player_map_position,
+    set_profile_name, set_visited_cities,
 };
 use main_options::trailers::{
     get_list_trailers_info, get_my_trailer_id, get_trailer_def_id, get_trailer_def_index,
@@ -612,6 +612,45 @@ async fn set_profile_experience_skills(
 }
 
 #[tauri::command]
+async fn set_profile_drivers_experience_skills(
+    dir_save: &str,
+    adr_bin: &str,
+    long_dist: &str,
+    heavy: &str,
+    fragile: &str,
+    urgent: &str,
+    mechanical: &str,
+) -> Result<DefaultResponse, ()> {
+    if adr_bin.chars().count() != 6 {
+        return Ok(DefaultResponse { res: false });
+    }
+
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let experience_skills: ExperienceSkills = ExperienceSkills {
+        adr_number: adr_bin.to_string(),
+        long_dist: long_dist.to_string(),
+        heavy: heavy.to_string(),
+        fragile: fragile.to_string(),
+        urgent: urgent.to_string(),
+        mechanical: mechanical.to_string(),
+    };
+
+    let experience_skills: Vec<String> =
+        match set_drivers_experience_skills(&file, experience_skills) {
+            Some(experience_skills) => experience_skills,
+            None => return Ok(DefaultResponse { res: false }),
+        };
+
+    save_file(dir_save.to_string(), experience_skills).await;
+
+    return Ok(DefaultResponse { res: true });
+}
+
+#[tauri::command]
 async fn backup_profile(dir_profile: &str, dest_dir_zip: &str) -> Result<DefaultResponse, ()> {
     let result: bool = compress_folder_files(
         Path::new(dir_profile),
@@ -1127,6 +1166,7 @@ pub fn run() {
             set_cities_visited,
             set_dealerships_discovered,
             set_profile_experience_skills,
+            set_profile_drivers_experience_skills,
             backup_profile,
             copy_profile,
             copy_controls_config,

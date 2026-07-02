@@ -233,6 +233,32 @@
                     "title": "Imposta abilità"
                 }
             },
+            "drivers_skills_points": {
+                "description_card": "Imposta le competenze di esperienza dei conducenti nel tuo profilo",
+                "label_card": "Imposta competenze di esperienza dei conducenti",
+                "modal": {
+                    "btn_apply": "Applica",
+                    "btn_close": "Chiudi",
+                    "btn_open": "Apri",
+                    "description": "Inserisci la quantità di esperienza necessaria",
+                    "eco_driving": "Guida Economica",
+                    "fragile_cargo": "Carico Fragile",
+                    "high_value_cargo": "Alto Valore",
+                    "input_skills_points": {
+                        "corrosive": "Corrosivo",
+                        "explosives": "Esplosivi",
+                        "flammable_liquids": "Liquidi infiammabili",
+                        "flammable_solids": "Solidi infiammabili",
+                        "gases": "Gas",
+                        "label": "ADR",
+                        "placeholder": "Seleziona ADR",
+                        "toxic_and_infectious": "Tossico e infettivo"
+                    },
+                    "just_in_time_delivery": "Consegna Puntuale",
+                    "long_distance": "Lunga Distanza",
+                    "title": "Imposta abilità"
+                }
+            },
             "tab_title": "Profilo",
             "visited_cities": {
                 "description_card": "Imposta lo stato di visitato a qualsiasi città sul tuo profilo",

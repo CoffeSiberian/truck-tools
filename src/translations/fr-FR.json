@@ -233,6 +233,32 @@
                     "title": "Compétences de l’expérience"
                 }
             },
+            "drivers_skills_points": {
+                "description_card": "Définir les compétences d’expérience des conducteurs dans votre profil",
+                "label_card": "Définir les compétences d’expérience des conducteurs",
+                "modal": {
+                    "btn_apply": "appliquer",
+                    "btn_close": "Fermé",
+                    "btn_open": "Ouvrir",
+                    "description": "Entrez la quantité d’expérience dont vous avez besoin",
+                    "eco_driving": "éco-conduite",
+                    "fragile_cargo": "cargaisons fragiles",
+                    "high_value_cargo": "marchandises de valeur",
+                    "input_skills_points": {
+                        "corrosive": "produit corrosif",
+                        "explosives": "matières explosibles",
+                        "flammable_liquids": "liquide inflammable",
+                        "flammable_solids": "matières solides inflammables",
+                        "gases": "gaz",
+                        "label": "ADR",
+                        "placeholder": "Sélectionnez ADR",
+                        "toxic_and_infectious": "toxiques et infectieuses"
+                    },
+                    "just_in_time_delivery": "livraison juste-à-temps",
+                    "long_distance": "longue distance",
+                    "title": "Compétences de l’expérience"
+                }
+            },
             "tab_title": "profil",
             "visited_cities": {
                 "description_card": "Définir le statut de la ville visitée à votre profil",

@@ -468,6 +468,23 @@ export const setProfileSkill = async (
 	return invoceRes.res;
 };
 
+export const setDriversProfileSkill = async (
+	dirSave: string,
+	experience: ExperienceSkillsTypes
+): Promise<boolean> => {
+	const rustParams = {
+		dirSave: dirSave + "/game.sii",
+		...experience,
+	};
+
+	const invoceRes = (await invoke(
+		"set_profile_drivers_experience_skills",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
+};
+
 export const backupProfile = async (
 	dirProfile: string,
 	destDirZip: string

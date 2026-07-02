@@ -233,6 +233,32 @@
                     "title": "Установка навыков опыта"
                 }
             },
+            "drivers_skills_points": {
+                "description_card": "Установите навыки опыта водителей в свой профиль",
+                "label_card": "Установить навыки опыта водителей",
+                "modal": {
+                    "btn_apply": "Применить",
+                    "btn_close": "Закрыть",
+                    "btn_open": "Открыть",
+                    "description": "Введите необходимое количество опыта",
+                    "eco_driving": "Эко вождение",
+                    "fragile_cargo": "Хрупкий груз",
+                    "high_value_cargo": "Дорогостоящий груз",
+                    "input_skills_points": {
+                        "corrosive": "Коррозийные вещества",
+                        "explosives": "Взрывчатые вещества",
+                        "flammable_liquids": "Легковоспламеняющиеся жидкости",
+                        "flammable_solids": "Легковоспламеняющиеся твердые вещества",
+                        "gases": "Газы",
+                        "label": "ADR",
+                        "placeholder": "Выберите ADR",
+                        "toxic_and_infectious": "Токсичные и инфекционные"
+                    },
+                    "just_in_time_delivery": "Доставка точно в срок",
+                    "long_distance": "Дальние дистанции",
+                    "title": "Установка навыков опыта"
+                }
+            },
             "tab_title": "Профиль",
             "visited_cities": {
                 "description_card": "Установить статус посещенного города в вашем профиле",

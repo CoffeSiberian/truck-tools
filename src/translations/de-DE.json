@@ -233,6 +233,32 @@
                     "title": "Erfahrungsfähigkeiten festlegen"
                 }
             },
+            "drivers_skills_points": {
+                "description_card": "Legen Sie die Erfahrungsfähigkeiten der Fahrer in Ihrem Profil fest",
+                "label_card": "Erfahrungsfähigkeiten der Fahrer festlegen",
+                "modal": {
+                    "btn_apply": "Übernehmen",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
+                    "description": "Verwalten Sie Ihre Fähigkeitswerte",
+                    "eco_driving": "Umweltfreundliches Fahren",
+                    "fragile_cargo": "Zerbrechliche Fracht",
+                    "high_value_cargo": "Hochwertige Fracht",
+                    "input_skills_points": {
+                        "corrosive": "Ätzend",
+                        "explosives": "Explosiv",
+                        "flammable_liquids": "Brennbare Flüssigkeit",
+                        "flammable_solids": "Brennbare Feststoffe",
+                        "gases": "Gase",
+                        "label": "ADR",
+                        "placeholder": "ADR auswählen",
+                        "toxic_and_infectious": "Giftig und infektiös"
+                    },
+                    "just_in_time_delivery": "Just-in-time-Lieferung",
+                    "long_distance": "Langstrecke",
+                    "title": "Erfahrungsfähigkeiten festlegen"
+                }
+            },
             "tab_title": "Profil",
             "visited_cities": {
                 "description_card": "Besuchte Städte ändern",

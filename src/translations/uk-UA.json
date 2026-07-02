@@ -233,6 +233,32 @@
                     "title": "Встановлення навичок досвіду в грі"
                 }
             },
+            "drivers_skills_points": {
+                "description_card": "Встановіть навички досвіду водіїв у своєму профілі",
+                "label_card": "Встановлення навичок досвіду водіїв",
+                "modal": {
+                    "btn_apply": "Застосувати",
+                    "btn_close": "Закрити",
+                    "btn_open": "Змінити",
+                    "description": "Введіть потрібну кількість досвіду",
+                    "eco_driving": "Еко-водіння",
+                    "fragile_cargo": "Обережність",
+                    "high_value_cargo": "Цінний вантаж",
+                    "input_skills_points": {
+                        "corrosive": "Корозійні речовини",
+                        "explosives": "Вибухові речовини",
+                        "flammable_liquids": "Легкозаймисті рідини",
+                        "flammable_solids": "Легкозаймисті тверді речовини",
+                        "gases": "Гази",
+                        "label": "Вантажі класу ADR",
+                        "placeholder": "Оберіть вантажі класу ADR",
+                        "toxic_and_infectious": "Токсичні та інфекційні речовини"
+                    },
+                    "just_in_time_delivery": "Термінові замовлення",
+                    "long_distance": "Далекі відстані",
+                    "title": "Встановлення навичок досвіду в грі"
+                }
+            },
             "tab_title": "Профіль",
             "visited_cities": {
                 "description_card": "Встановіть статус відвіданого міста у своєму профілі",

@@ -233,6 +233,32 @@
                     "title": "設定玩家技能點"
                 }
             },
+            "drivers_skills_points": {
+                "description_card": "在您的個人資料中設定駕駛員經驗技能等級",
+                "label_card": "設定駕駛員經驗技能等級",
+                "modal": {
+                    "btn_apply": "應用",
+                    "btn_close": "取消",
+                    "btn_open": "查看詳情",
+                    "description": "選擇需要解鎖的危險物品運輸許可",
+                    "eco_driving": "節油駕駛",
+                    "fragile_cargo": "易碎貨物",
+                    "high_value_cargo": "貴重貨物",
+                    "input_skills_points": {
+                        "corrosive": "腐蝕性物質",
+                        "explosives": "爆炸品",
+                        "flammable_liquids": "易燃液體",
+                        "flammable_solids": "易燃固體",
+                        "gases": "氣體",
+                        "label": "危險品",
+                        "placeholder": "選擇危險品種類",
+                        "toxic_and_infectious": "毒性和感染性物質"
+                    },
+                    "just_in_time_delivery": "加急運輸",
+                    "long_distance": "長途運輸",
+                    "title": "設定玩家技能點"
+                }
+            },
             "tab_title": "存檔基本修改",
             "visited_cities": {
                 "description_card": "設定您的檔案中探索過的城市",
@@ -365,24 +391,24 @@
                 }
             },
             "change_trailer": {
-				"description_card": "Change your trailer without going to the garage",
-				"label_card": "Change Trailer on road",
-				"modal": {
-					"btn_apply": "Change",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Change your trailer without going to the garage",
-					"title": "Change your trailer on the road",			
-					"select_label": "Trailers",	
-					"select_error": "Trailers not found",	
-					"select_placeholder": "Select a trailer",
-					"warning_message": {
-						"title": "Warning",
-						"message": "If you created a new save, remember to update the list of trailers so you don't get an error when changing trailers."
-					}
-				}
-			}
+                "description_card": "Change your trailer without going to the garage",
+                "label_card": "Change Trailer on road",
+                "modal": {
+                    "btn_apply": "Change",
+                    "btn_how_to_use": "How to use",
+                    "btn_close": "Close",
+                    "btn_open": "Open",
+                    "description": "Change your trailer without going to the garage",
+                    "title": "Change your trailer on the road",
+                    "select_label": "Trailers",
+                    "select_error": "Trailers not found",
+                    "select_placeholder": "Select a trailer",
+                    "warning_message": {
+                        "title": "Warning",
+                        "message": "If you created a new save, remember to update the list of trailers so you don't get an error when changing trailers."
+                    }
+                }
+            }
         },
         "trucks": {
             "change_truck_engine": {
@@ -549,22 +575,22 @@
                 }
             },
             "teleport_player": {
-				"description_card": "Teleport to a location using the game debug camera",
-				"label_card": "Teleport player position",
-				"modal": {
-					"btn_apply": "Teleport",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Teleport to a location using the game debug camera",
-					"title": "Teleport player position",			
-					"warning_message": {
-						"title": "Remember",
-						"message_1": "- You need to enable the console and developer mode to use this option; you can do this in the settings (with the game closed)",
-						"message_2": "- To generate new coordinates, you need to use the following key combination: <b>Alt + F12</b>"
-					}
-				}
-			}
+                "description_card": "Teleport to a location using the game debug camera",
+                "label_card": "Teleport player position",
+                "modal": {
+                    "btn_apply": "Teleport",
+                    "btn_how_to_use": "How to use",
+                    "btn_close": "Close",
+                    "btn_open": "Open",
+                    "description": "Teleport to a location using the game debug camera",
+                    "title": "Teleport player position",
+                    "warning_message": {
+                        "title": "Remember",
+                        "message_1": "- You need to enable the console and developer mode to use this option; you can do this in the settings (with the game closed)",
+                        "message_2": "- To generate new coordinates, you need to use the following key combination: <b>Alt + F12</b>"
+                    }
+                }
+            }
         }
     }
 }

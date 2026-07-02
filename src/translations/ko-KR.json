@@ -233,6 +233,32 @@
                     "title": "경험 기술 설정"
                 }
             },
+            "drivers_skills_points": {
+                "description_card": "프로필에 운전자 경험 기술 설정하기",
+                "label_card": "운전자 경험 기술 설정",
+                "modal": {
+                    "btn_apply": "적용",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "description": "필요한 경험의 양을 입력합니다",
+                    "eco_driving": "에코 드라이빙",
+                    "fragile_cargo": "파손 주의 화물",
+                    "high_value_cargo": "고부가가치 화물",
+                    "input_skills_points": {
+                        "corrosive": "부식성 물질",
+                        "explosives": "폭발물",
+                        "flammable_liquids": "인화성 액체",
+                        "flammable_solids": "인화성 고체",
+                        "gases": "가스",
+                        "label": "ADR",
+                        "placeholder": "ADR 선택",
+                        "toxic_and_infectious": "독성 및 전염성"
+                    },
+                    "just_in_time_delivery": "정시 배송",
+                    "long_distance": "장거리",
+                    "title": "경험 기술 설정"
+                }
+            },
             "tab_title": "프로필",
             "visited_cities": {
                 "description_card": "방문한 도시 상태를 프로필로 설정하기",
