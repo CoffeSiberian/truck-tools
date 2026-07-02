@@ -5,6 +5,7 @@ use hex::decode;
 use std::fs::{File, read_dir, rename, write};
 use std::io::Read;
 use std::path::Path;
+use std::time::SystemTime;
 use uuid::Uuid;
 use walkdir::WalkDir;
 
@@ -232,7 +233,7 @@ pub async fn get_list_save_game(
         None => return None,
     };
 
-    let mut result: Vec<VecSaveGames> = Vec::new();
+    let mut result: Vec<(VecSaveGames, SystemTime)> = Vec::new();
     for item in dir_saves_content.iter() {
         let item_path: String = item.to_string().replace("\\", "/");
         let item_path_split: Vec<&str> = item_path.split("/").collect();
@@ -259,14 +260,26 @@ pub async fn get_list_save_game(
         };
 
         let uuid: String = Uuid::new_v4().to_string();
-        result.push(VecSaveGames {
-            id: uuid,
-            name: save_game_name,
-            dir: item.to_string(),
-        });
+
+        let modified_time: SystemTime = std::fs::metadata(format!("{}/info.sii", item_path))
+            .and_then(|meta| meta.modified())
+            .unwrap_or(SystemTime::UNIX_EPOCH);
+
+        result.push((
+            VecSaveGames {
+                id: uuid,
+                name: save_game_name,
+                dir: item.to_string(),
+            },
+            modified_time,
+        ));
     }
 
-    return Some(result);
+    result.sort_by(|a, b| a.1.cmp(&b.1));
+
+    let sorted_result: Vec<VecSaveGames> = result.into_iter().map(|(save, _)| save).collect();
+
+    return Some(sorted_result);
 }
 
 pub async fn get_list_save_game_dirs(path: String) -> Option<Vec<VecProfileDir>> {
