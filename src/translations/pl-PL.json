@@ -233,6 +233,32 @@
                     "title": "Przydziel punkty doświadczenia"
                 }
             },
+            "drivers_skills_points": {
+                "description_card": "Przydziel punkty doświadczenia kierowców dla swojego profilu",
+                "label_card": "Przydziel punkty doświadczenia kierowców",
+                "modal": {
+                    "btn_apply": "Zastosuj",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Przydziel punkty doświadczenia do poszczególnych zdolności",
+                    "eco_driving": "Ekologiczna jazda",
+                    "fragile_cargo": "Delikatny ładunek",
+                    "high_value_cargo": "Ładunek o wysokiej wartości",
+                    "input_skills_points": {
+                        "corrosive": "Substancje żrące",
+                        "explosives": "Materiały wybuchowe",
+                        "flammable_liquids": "Płyny łatwopalne",
+                        "flammable_solids": "Materiały stałe zapalne",
+                        "gases": "Gazy",
+                        "label": "ADR",
+                        "placeholder": "Wybierz certyfikaty ADR",
+                        "toxic_and_infectious": "Toksyczne i zakaźne substancje"
+                    },
+                    "just_in_time_delivery": "Dostawa na czas",
+                    "long_distance": "Długodystansowiec",
+                    "title": "Przydziel punkty doświadczenia"
+                }
+            },
             "tab_title": "Profil",
             "visited_cities": {
                 "description_card": "Wybierz status odwiedzin wszystkich miast w swoim profilu",

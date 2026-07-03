@@ -233,6 +233,32 @@
                     "title": "设置玩家技能点"
                 }
             },
+            "drivers_skills_points": {
+                "description_card": "在您的个人资料中设置驾驶员经验技能等级",
+                "label_card": "设置驾驶员经验技能等级",
+                "modal": {
+                    "btn_apply": "应用",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "选择需要解锁的危险品运输许可",
+                    "eco_driving": "节油驾驶",
+                    "fragile_cargo": "易碎货物",
+                    "high_value_cargo": "贵重货物",
+                    "input_skills_points": {
+                        "corrosive": "腐蚀性物质",
+                        "explosives": "爆炸品",
+                        "flammable_liquids": "易燃液体",
+                        "flammable_solids": "易燃固体",
+                        "gases": "气体",
+                        "label": "危险品",
+                        "placeholder": "选择危险品种类",
+                        "toxic_and_infectious": "毒性和感染性物质"
+                    },
+                    "just_in_time_delivery": "加急运输",
+                    "long_distance": "长途运输",
+                    "title": "设置玩家技能点"
+                }
+            },
             "tab_title": "存档基本修改",
             "visited_cities": {
                 "description_card": "设置您的存档中探索过的城市",

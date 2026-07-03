@@ -233,6 +233,32 @@
 					"title": "Set Experience Skills"
 				}
 			},
+			"drivers_skills_points": {
+				"description_card": "Set drivers experience skills to your profile",
+				"label_card": "Set drivers experience skills",
+				"modal": {
+					"btn_apply": "Apply",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Enter the amount of experience you need",
+					"eco_driving": "Eco driving",
+					"fragile_cargo": "Fragile cargo",
+					"high_value_cargo": "High value cargo",
+					"input_skills_points": {
+						"corrosive": "Corrosive",
+						"explosives": "Explosives",
+						"flammable_liquids": "Flammable liquids",
+						"flammable_solids": "Flammable solids",
+						"gases": "Gases",
+						"label": "ADR",
+						"placeholder": "Select ADR",
+						"toxic_and_infectious": "Toxic and infectious"
+					},
+					"just_in_time_delivery": "Just in time delivery",
+					"long_distance": "Long distance",
+					"title": "Set Experience Skills"
+				}
+			},
 			"tab_title": "Profile",
 			"visited_cities": {
 				"description_card": "Set any city visited status to your profile",
@@ -363,7 +389,7 @@
 						"title": "Remember"
 					}
 				}
-			},			
+			},
 			"change_trailer": {
 				"description_card": "Change your trailer without going to the garage",
 				"label_card": "Change Trailer on road",
@@ -373,9 +399,9 @@
 					"btn_close": "Close",
 					"btn_open": "Open",
 					"description": "Change your trailer without going to the garage",
-					"title": "Change your trailer on the road",			
-					"select_label": "Trailers",	
-					"select_error": "Trailers not found",	
+					"title": "Change your trailer on the road",
+					"select_label": "Trailers",
+					"select_error": "Trailers not found",
 					"select_placeholder": "Select a trailer",
 					"warning_message": {
 						"title": "Warning",
@@ -537,9 +563,9 @@
 					"btn_close": "Close",
 					"btn_open": "Open",
 					"description": "Change your truck without going to the garage",
-					"title": "Change your truck on the road",			
-					"select_label": "Trucks",	
-					"select_error": "Trucks not found",	
+					"title": "Change your truck on the road",
+					"select_label": "Trucks",
+					"select_error": "Trucks not found",
 					"select_placeholder": "Select a truck",
 					"warning_message": {
 						"title": "Warning",
@@ -556,7 +582,7 @@
 					"btn_close": "Close",
 					"btn_open": "Open",
 					"description": "Teleport to a location using the game debug camera",
-					"title": "Teleport player position",			
+					"title": "Teleport player position",
 					"warning_message": {
 						"title": "Remember",
 						"message_1": "- You need to enable the console and developer mode to use this option; you can do this in the settings (with the game closed)",

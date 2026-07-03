@@ -233,6 +233,32 @@
                     "title": "Setați abilități de experiență"
                 }
             },
+            "drivers_skills_points": {
+                "description_card": "Setați abilitățile de experiență a șoferilor în profilul dvs",
+                "label_card": "Setați abilități de experiență a șoferilor",
+                "modal": {
+                    "btn_apply": "Aplicați",
+                    "btn_close": "închide",
+                    "btn_open": "Deschide",
+                    "description": "Introduceți cantitatea de experiență de care aveți nevoie",
+                    "eco_driving": "Conducere ecologică",
+                    "fragile_cargo": "Marfă fragilă",
+                    "high_value_cargo": "Marfă de mare valoare",
+                    "input_skills_points": {
+                        "corrosive": "Coroziv",
+                        "explosives": "Explozivi",
+                        "flammable_liquids": "Lichide inflamabile",
+                        "flammable_solids": "Solide inflamabile",
+                        "gases": "Gaze",
+                        "label": "ADR",
+                        "placeholder": "Selectați ADR",
+                        "toxic_and_infectious": "Toxic și infecțios"
+                    },
+                    "just_in_time_delivery": "Livrare la timp",
+                    "long_distance": "Distanță lungă",
+                    "title": "Setați abilități de experiență"
+                }
+            },
             "tab_title": "Profil",
             "visited_cities": {
                 "description_card": "Setați statutul oricărui oraș vizitat în profilul dvs",
@@ -548,22 +574,22 @@
                 }
             },
             "teleport_player": {
-				"description_card": "Teleport to a location using the game debug camera",
-				"label_card": "Teleport player position",
-				"modal": {
-					"btn_apply": "Teleport",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Teleport to a location using the game debug camera",
-					"title": "Teleport player position",			
-					"warning_message": {
-						"title": "Remember",
-						"message_1": "- You need to enable the console and developer mode to use this option; you can do this in the settings (with the game closed)",
-						"message_2": "- To generate new coordinates, you need to use the following key combination: <b>Alt + F12</b>"
-					}
-				}
-			},
+                "description_card": "Teleport to a location using the game debug camera",
+                "label_card": "Teleport player position",
+                "modal": {
+                    "btn_apply": "Teleport",
+                    "btn_how_to_use": "How to use",
+                    "btn_close": "Close",
+                    "btn_open": "Open",
+                    "description": "Teleport to a location using the game debug camera",
+                    "title": "Teleport player position",
+                    "warning_message": {
+                        "title": "Remember",
+                        "message_1": "- You need to enable the console and developer mode to use this option; you can do this in the settings (with the game closed)",
+                        "message_2": "- To generate new coordinates, you need to use the following key combination: <b>Alt + F12</b>"
+                    }
+                }
+            },
             "tab_title": "Camion"
         }
     }

@@ -233,6 +233,32 @@
                     "title": "Đặt Kỹ Năng Kinh Nghiệm"
                 }
             },
+            "drivers_skills_points": {
+                "description_card": "Đặt kỹ năng kinh nghiệm của tài xế vào hồ sơ của bạn",
+                "label_card": "Đặt kỹ năng kinh nghiệm của tài xế",
+                "modal": {
+                    "btn_apply": "Áp dụng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
+                    "description": "Nhập số lượng kinh nghiệm bạn cần",
+                    "eco_driving": "Lái xe sinh thái",
+                    "fragile_cargo": "Hàng dễ vỡ",
+                    "high_value_cargo": "Hàng có giá trị cao",
+                    "input_skills_points": {
+                        "corrosive": "Chất ăn mòn",
+                        "explosives": "Thuốc nổ",
+                        "flammable_liquids": "Chất lỏng dễ cháy",
+                        "flammable_solids": "Chất rắn dễ cháy",
+                        "gases": "Khí",
+                        "label": "ADR",
+                        "placeholder": "Chọn ADR",
+                        "toxic_and_infectious": "Độc hại và truyền nhiễm"
+                    },
+                    "just_in_time_delivery": "Giao hàng đúng hẹn",
+                    "long_distance": "Khoảng cách dài",
+                    "title": "Đặt Kỹ Năng Kinh Nghiệm"
+                }
+            },
             "tab_title": "Hồ sơ",
             "visited_cities": {
                 "description_card": "Đặt bất kỳ trạng thái nào đã ghé thăm thành phố vào hồ sơ của bạn",

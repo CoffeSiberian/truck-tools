@@ -10,6 +10,7 @@ import SetGarageStatus from "@/routes/pages/ProfilesOptions/Modal/SetGarageStatu
 import SetAllCitiesStatus from "@/routes/pages/ProfilesOptions/Modal/SetAllCitiesStatus";
 import SetAllDealerStatus from "@/routes/pages/ProfilesOptions/Modal/SetAllDealerStatus";
 import SetExperienceSkills from "@/routes/pages/ProfilesOptions/Modal/SetExperienceSkills";
+import SetDriversExperienceSkills from "@/routes/pages/ProfilesOptions/Modal/SetDriversExperienceSkills";
 
 // Hooks
 import { ProfileContex } from "@/hooks/useProfileContex";
@@ -23,6 +24,7 @@ import img13 from "@/static/img/ets2/OptionsImages/13.webp";
 import img14 from "@/static/img/ets2/OptionsImages/14.webp";
 import img15 from "@/static/img/ets2/OptionsImages/15.webp";
 import img16 from "@/static/img/ets2/OptionsImages/16.webp";
+import img22 from "@/static/img/ets2/OptionsImages/22.webp";
 
 // ats
 import img14_ats from "@/static/img/ats/OptionsImages/14.webp";
@@ -75,6 +77,13 @@ const ProfilesOptions = () => {
 			description: profile.skills_points.description_card,
 			image: img16,
 			modal: <SetExperienceSkills />,
+		},
+		{
+			id: "7",
+			title: profile.drivers_skills_points.label_card,
+			description: profile.drivers_skills_points.description_card,
+			image: img22,
+			modal: <SetDriversExperienceSkills />,
 		},
 	];
 

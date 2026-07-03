@@ -626,6 +626,57 @@ pub fn set_experience_skills(
     return Some(arr_val_clone);
 }
 
+pub fn set_drivers_experience_skills(
+    arr_val: &Vec<String>,
+    experience_skills: ExperienceSkills,
+) -> Option<Vec<String>> {
+    let adr_number_string = match get_number_from_binary_string(&experience_skills.adr_number) {
+        Some(val) => val,
+        None => return None,
+    };
+    let mut arr_val_clone = arr_val.clone();
+    let mut in_block = false;
+
+    for (i, item) in arr_val.iter().enumerate() {
+        if item.contains("driver_ai :") {
+            in_block = true;
+            continue;
+        }
+        if !in_block {
+            continue;
+        }
+        if item.trim() == "}" {
+            in_block = false;
+            continue;
+        }
+
+        let split_item: Vec<&str> = item.split(":").collect();
+        match split_item[0] {
+            " adr" => {
+                arr_val_clone[i] = format!(" adr: {}", adr_number_string);
+            }
+            " long_dist" => {
+                arr_val_clone[i] = format!(" long_dist: {}", experience_skills.long_dist);
+            }
+            " heavy" => {
+                arr_val_clone[i] = format!(" heavy: {}", experience_skills.heavy);
+            }
+            " fragile" => {
+                arr_val_clone[i] = format!(" fragile: {}", experience_skills.fragile);
+            }
+            " urgent" => {
+                arr_val_clone[i] = format!(" urgent: {}", experience_skills.urgent);
+            }
+            " mechanical" => {
+                arr_val_clone[i] = format!(" mechanical: {}", experience_skills.mechanical)
+            }
+            _ => continue,
+        }
+    }
+
+    return Some(arr_val_clone);
+}
+
 pub async fn copy_profile_configs(dir_profile: &Path, dest_dir_profile: &Path) -> bool {
     for item in PROFILES_CONFIGS_FILES_NAMES.iter() {
         let file_path = dir_profile.join(item);

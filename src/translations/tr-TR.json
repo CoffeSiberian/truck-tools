@@ -233,6 +233,32 @@
                     "title": "Tecrübe puanını belirle"
                 }
             },
+            "drivers_skills_points": {
+                "description_card": "Profilinizin sürücü tecrübe puanını düzenleyin",
+                "label_card": "Sürücü tecrübelerini seç",
+                "modal": {
+                    "btn_apply": "Uygula",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "İhtiyacınız olan deneyim miktarını girin",
+                    "eco_driving": "Ekonomik sürüş",
+                    "fragile_cargo": "Kırılgan yük",
+                    "high_value_cargo": "Yüksek değerli yük",
+                    "input_skills_points": {
+                        "corrosive": "Aşındırıcı",
+                        "explosives": "Patlayıcılar",
+                        "flammable_liquids": "Yanıcı sıvılar",
+                        "flammable_solids": "Yanıcı katılar",
+                        "gases": "Gazlar",
+                        "label": "ADR",
+                        "placeholder": "ADR'yi seç",
+                        "toxic_and_infectious": "Zehirli ve bulaşıcı"
+                    },
+                    "just_in_time_delivery": "Tam zamanında teslimat",
+                    "long_distance": "Uzun mesafe",
+                    "title": "Tecrübe puanını belirle"
+                }
+            },
             "tab_title": "Profil",
             "visited_cities": {
                 "description_card": "Profilinizde ziyaret edilen herhangi bir şehrin durumunu ayarlayın",

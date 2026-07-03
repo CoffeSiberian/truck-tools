@@ -233,6 +233,32 @@
                     "title": "Defina Pontos de Habilidades"
                 }
             },
+            "drivers_skills_points": {
+                "description_card": "Defina pontos de habilidades de motoristas para seu perfil",
+                "label_card": "Defina pontos de habilidades de motoristas",
+                "modal": {
+                    "btn_apply": "Aplicar",
+                    "btn_close": "Fechar",
+                    "btn_open": "Abrir",
+                    "description": "Digite a quantidade de experiencia que você precisa",
+                    "eco_driving": "Ecocondução",
+                    "fragile_cargo": "Carga Frágil",
+                    "high_value_cargo": "Carga de Alto Valor",
+                    "input_skills_points": {
+                        "corrosive": "Substâncias corrosivas",
+                        "explosives": "Explosivos",
+                        "flammable_liquids": "Líquidos inflamáveis",
+                        "flammable_solids": "Sólidos inflamáveis",
+                        "gases": "Gases",
+                        "label": "ADR",
+                        "placeholder": "Selecione ADR",
+                        "toxic_and_infectious": "Substâncias tóxicas e infecciosas"
+                    },
+                    "just_in_time_delivery": "Entrega Pontual",
+                    "long_distance": "Longa Distância",
+                    "title": "Defina Pontos de Habilidades"
+                }
+            },
             "tab_title": "Perfil",
             "visited_cities": {
                 "description_card": "Defina a condição de qualquer cidade no seu perfil",
