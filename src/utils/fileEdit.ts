@@ -30,6 +30,7 @@ import {
 	ResponseSaveGameTrucks,
 	ResponseSaveGameTrailers,
 	ResponseSaveCameraPositions,
+	ResponseProfileCompanyName,
 } from "@/types/fileEditTypes";
 import {
 	IColorRgbToValidate,
@@ -631,6 +632,42 @@ export const setNewProfileName = async (
 	)) as responseRustTypes;
 
 	return invoceRes.res;
+};
+
+export const getProfileCompanyNameEts2 = async (
+	dirProfile: string,
+	game: GamesNames
+): Promise<ResponseProfileCompanyName> => {
+	const rustParams = {
+		dirProfile,
+		game,
+	};
+
+	const invoceRes = (await invoke(
+		"get_profile_company_name_ets2",
+		rustParams
+	)) as ResponseProfileCompanyName;
+
+	return invoceRes;
+};
+
+export const setProfileCompanyNameEts2 = async (
+	dirProfile: string,
+	game: GamesNames,
+	companyName: string
+): Promise<ResponseProfileCompanyName> => {
+	const rustParams = {
+		dirProfile,
+		game,
+		companyName,
+	};
+
+	const invoceRes = (await invoke(
+		"set_profile_company_name_ets2",
+		rustParams
+	)) as ResponseProfileCompanyName;
+
+	return invoceRes;
 };
 
 export const setRepairTrailer = async (dirSave: string): Promise<boolean> => {

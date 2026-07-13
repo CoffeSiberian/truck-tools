@@ -169,6 +169,26 @@
                     "title": "Mudar dinheiro"
                 }
             },
+            "company_name": {
+                "description_card": "Leia e atualize o nome da sua empresa no ETS2",
+                "label_card": "Alterar nome da empresa",
+                "modal": {
+                    "btn_apply": "Salvar",
+                    "btn_close": "Fechar",
+                    "btn_open": "Abrir",
+                    "current_company_name": "Nome atual da empresa",
+                    "description": "Atualize o nome da empresa salvo neste perfil do ETS2.",
+                    "input_company_name": {
+                        "label": "Novo nome da empresa",
+                        "placeholder": "Digite o novo nome da empresa"
+                    },
+                    "load_error": "Nao foi possivel carregar o nome da empresa.",
+                    "save_error": "Nao foi possivel atualizar o nome da empresa.",
+                    "save_success": "Nome da empresa atualizado com sucesso.",
+                    "title": "Alterar nome da empresa",
+                    "unsupported_game": "A edicao do nome da empresa esta disponivel apenas para perfis do ETS2."
+                }
+            },
             "dealer_visited": {
                 "description_card": "Define a condição das concessionárias no seu perfil",
                 "label_card": "Descobrir todas as concessionárias",

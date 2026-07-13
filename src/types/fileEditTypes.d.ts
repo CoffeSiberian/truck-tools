@@ -86,3 +86,8 @@ export interface ResponseSaveCameraPositions extends responseRustTypes {
 	location: string;
 	rotation: string;
 }
+
+export interface ResponseProfileCompanyName extends responseRustTypes {
+	company_name: string | null;
+	error: string | null;
+}

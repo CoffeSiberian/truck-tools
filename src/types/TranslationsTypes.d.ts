@@ -200,11 +200,32 @@ export interface About {
 export interface Profile {
 	add_experience: AddExperience;
 	add_money: AddMoney;
+	company_name: CompanyName;
 	dealer_visited: DealerVisited;
 	garage_status: GarageStatus;
 	skills_points: SkillsPoints;
 	tab_title: string;
 	visited_cities: VisitedCities;
+}
+
+export interface CompanyName {
+	description_card: string;
+	label_card: string;
+	modal: CompanyNameModal;
+}
+
+export interface CompanyNameModal {
+	btn_apply: string;
+	btn_close: string;
+	btn_open: string;
+	current_company_name: string;
+	description: string;
+	input_company_name: Input;
+	load_error: string;
+	save_error: string;
+	save_success: string;
+	title: string;
+	unsupported_game: string;
 }
 
 export interface AddExperience {

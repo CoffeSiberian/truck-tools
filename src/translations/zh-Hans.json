@@ -169,6 +169,26 @@
                     "title": "修改金币数量"
                 }
             },
+            "company_name": {
+                "description_card": "Read and update your ETS2 company name",
+                "label_card": "Change company name",
+                "modal": {
+                    "btn_apply": "Save",
+                    "btn_close": "Close",
+                    "btn_open": "Open",
+                    "current_company_name": "Current company name",
+                    "description": "Update the company name stored in this ETS2 profile.",
+                    "input_company_name": {
+                        "label": "New company name",
+                        "placeholder": "Enter the new company name"
+                    },
+                    "load_error": "Unable to load the company name.",
+                    "save_error": "Unable to update the company name.",
+                    "save_success": "Company name updated successfully.",
+                    "title": "Change company name",
+                    "unsupported_game": "Company name editing is available only for ETS2 profiles."
+                }
+            },
             "dealer_visited": {
                 "description_card": "修改卡车经销商解锁状态",
                 "label_card": "解锁所有卡车经销商",

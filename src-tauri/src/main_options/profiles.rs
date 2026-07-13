@@ -48,6 +48,7 @@ const CITIES_VISITED_FALSE: [&str; 2] = [" visited_cities: 0", " visited_cities_
 const DEALER_DISCOVERED_FALSE: &str = " unlocked_dealers: 0";
 
 const PROFILES_CONFIGS_FILES_NAMES: [&str; 3] = ["config.cfg", "config_local.cfg", "controls.sii"];
+const ETS2_COMPANY_NAME_KEY: &str = "company_name";
 
 fn get_bank_id(arr_val: &Vec<String>) -> Option<VecItemsFind> {
     let mut bank_id: Option<VecItemsFind> = None;
@@ -351,6 +352,126 @@ pub fn set_profile_name(arr_val: &Vec<String>, name: &str) -> Option<Vec<String>
     }
 
     return Some(arr_val_clone);
+}
+
+fn parse_quoted_sii_value(value: &str) -> Result<String, String> {
+    let value = value.trim();
+
+    if !value.starts_with('"') {
+        return Err("company_name is not a quoted SII string".to_string());
+    }
+
+    let mut escaped = false;
+    let mut result = String::new();
+    let mut closing_quote_index: Option<usize> = None;
+
+    for (index, ch) in value.char_indices().skip(1) {
+        if escaped {
+            result.push(ch);
+            escaped = false;
+            continue;
+        }
+
+        match ch {
+            '\\' => escaped = true,
+            '"' => {
+                closing_quote_index = Some(index);
+                break;
+            }
+            _ => result.push(ch),
+        }
+    }
+
+    let closing_quote_index = match closing_quote_index {
+        Some(index) => index,
+        None => return Err("company_name has an unterminated quoted value".to_string()),
+    };
+
+    if escaped {
+        return Err("company_name ends with an incomplete escape sequence".to_string());
+    }
+
+    if !value[closing_quote_index + 1..].trim().is_empty() {
+        return Err("company_name has unexpected text after the quoted value".to_string());
+    }
+
+    return Ok(result);
+}
+
+fn get_company_name_line(arr_val: &Vec<String>) -> Result<(usize, String, String), String> {
+    let mut result: Option<(usize, String, String)> = None;
+
+    for (index, item) in arr_val.iter().enumerate() {
+        let trimmed_start = item.trim_start();
+        let indentation_len = item.len() - trimmed_start.len();
+
+        if !trimmed_start.starts_with(ETS2_COMPANY_NAME_KEY) {
+            continue;
+        }
+
+        let after_key = &trimmed_start[ETS2_COMPANY_NAME_KEY.len()..];
+        if !after_key.starts_with(':') {
+            continue;
+        }
+
+        if result.is_some() {
+            return Err("profile.sii contains more than one company_name property".to_string());
+        }
+
+        result = Some((
+            index,
+            item[..indentation_len].to_string(),
+            after_key[1..].to_string(),
+        ));
+    }
+
+    match result {
+        Some(result) => Ok(result),
+        None => Err("profile.sii does not contain a company_name property".to_string()),
+    }
+}
+
+pub fn get_company_name(arr_val: &Vec<String>) -> Result<String, String> {
+    let (_, _, value) = get_company_name_line(arr_val)?;
+    return parse_quoted_sii_value(&value);
+}
+
+fn validate_company_name(name: &str) -> Result<String, String> {
+    let trimmed_name = name.trim();
+
+    if trimmed_name.is_empty() {
+        return Err("Company name cannot be empty".to_string());
+    }
+
+    if trimmed_name
+        .chars()
+        .any(|ch| ch == '\r' || ch == '\n' || ch == '\0')
+    {
+        return Err("Company name cannot contain line breaks or null characters".to_string());
+    }
+
+    // The verified local ETS2 profile values are simple quoted strings. Until the project has
+    // broader SII string escaping examples, reject characters that would require serialization.
+    if trimmed_name.chars().any(|ch| ch == '"' || ch == '\\') {
+        return Err("Company name cannot contain quotes or backslashes".to_string());
+    }
+
+    return Ok(trimmed_name.to_string());
+}
+
+pub fn set_company_name(arr_val: &Vec<String>, name: &str) -> Result<Vec<String>, String> {
+    let validated_name = validate_company_name(name)?;
+    let (index, indentation, value) = get_company_name_line(arr_val)?;
+
+    parse_quoted_sii_value(&value)?;
+
+    let mut arr_val_clone = arr_val.clone();
+    arr_val_clone[index] = format!(
+        "{}{}: \"{}\"",
+        indentation, ETS2_COMPANY_NAME_KEY, validated_name
+    );
+
+    return Ok(arr_val_clone);
 }
 
 pub fn get_garage_vec_names(arr_val: &Vec<String>) -> Option<Vec<VecItemsFind>> {

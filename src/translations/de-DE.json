@@ -169,6 +169,26 @@
                     "title": "Geld hinzufügen"
                 }
             },
+            "company_name": {
+                "description_card": "ETS2-Firmennamen lesen und aktualisieren",
+                "label_card": "Firmenname andern",
+                "modal": {
+                    "btn_apply": "Speichern",
+                    "btn_close": "Schliessen",
+                    "btn_open": "Offnen",
+                    "current_company_name": "Aktueller Firmenname",
+                    "description": "Aktualisiere den in diesem ETS2-Profil gespeicherten Firmennamen.",
+                    "input_company_name": {
+                        "label": "Neuer Firmenname",
+                        "placeholder": "Neuen Firmennamen eingeben"
+                    },
+                    "load_error": "Der Firmenname konnte nicht geladen werden.",
+                    "save_error": "Der Firmenname konnte nicht aktualisiert werden.",
+                    "save_success": "Firmenname erfolgreich aktualisiert.",
+                    "title": "Firmenname andern",
+                    "unsupported_game": "Der Firmenname kann nur fur ETS2-Profile geandert werden."
+                }
+            },
             "dealer_visited": {
                 "description_card": "Besuchte Händler ändern",
                 "label_card": "Entdecken Sie alle Händler",
