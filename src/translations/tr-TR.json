@@ -169,6 +169,26 @@
                     "title": "Parayı düzenle"
                 }
             },
+            "company_name": {
+                "description_card": "ETS2 sirket adini goruntuleyin ve guncelleyin",
+                "label_card": "Sirket adini degistir",
+                "modal": {
+                    "btn_apply": "Kaydet",
+                    "btn_close": "Kapat",
+                    "btn_open": "Ac",
+                    "current_company_name": "Gecerli sirket adi",
+                    "description": "Bu ETS2 profilinde kayitli sirket adini guncelleyin.",
+                    "input_company_name": {
+                        "label": "Yeni sirket adi",
+                        "placeholder": "Yeni sirket adini girin"
+                    },
+                    "load_error": "Sirket adi yuklenemedi.",
+                    "save_error": "Sirket adi guncellenemedi.",
+                    "save_success": "Sirket adi basariyla guncellendi.",
+                    "title": "Sirket adini degistir",
+                    "unsupported_game": "Sirket adi duzenleme yalnizca ETS2 profilleri icin kullanilabilir."
+                }
+            },
             "dealer_visited": {
                 "description_card": "Profilinizdeki bayilerin durumunu düzenleyin",
                 "label_card": "Tüm bayileri keşfet",

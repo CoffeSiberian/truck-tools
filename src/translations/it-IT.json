@@ -169,6 +169,26 @@
                     "title": "Modifica soldi"
                 }
             },
+            "company_name": {
+                "description_card": "Leggi e aggiorna il nome azienda di ETS2",
+                "label_card": "Modifica nome azienda",
+                "modal": {
+                    "btn_apply": "Salva",
+                    "btn_close": "Chiudi",
+                    "btn_open": "Apri",
+                    "current_company_name": "Nome azienda attuale",
+                    "description": "Aggiorna il nome azienda salvato in questo profilo ETS2.",
+                    "input_company_name": {
+                        "label": "Nuovo nome azienda",
+                        "placeholder": "Inserisci il nuovo nome azienda"
+                    },
+                    "load_error": "Impossibile caricare il nome azienda.",
+                    "save_error": "Impossibile aggiornare il nome azienda.",
+                    "save_success": "Nome azienda aggiornato correttamente.",
+                    "title": "Modifica nome azienda",
+                    "unsupported_game": "La modifica del nome azienda e disponibile solo per i profili ETS2."
+                }
+            },
             "dealer_visited": {
                 "description_card": "",
                 "label_card": "Scopri tutti i rivenditori",
