@@ -5,9 +5,9 @@ mod utils;
 use hex::encode_upper;
 
 use main_options::profiles::{
-    copy_profile_configs, set_any_status_garage, set_bank_money, set_dealerships_discovered_status,
-    set_experience, set_experience_skills, set_player_map_position, set_profile_name,
-    set_visited_cities,
+    copy_profile_configs, get_company_name, set_any_status_garage, set_bank_money,
+    set_company_name, set_dealerships_discovered_status, set_experience, set_experience_skills,
+    set_player_map_position, set_profile_name, set_visited_cities,
 };
 use main_options::trailers::{
     get_list_trailers_info, get_my_trailer_id, get_trailer_def_id, get_trailer_def_index,
@@ -28,8 +28,8 @@ use std::path::Path;
 use structs::experience_skills::ExperienceSkills;
 use structs::responses::{
     DefaultResponse, DeveloperValues, ListCamerasResponse, ListProfilesResponse,
-    ListTrailersResponse, ListTrucksResponse, SaveGameCountResponse, SaveGameResponse,
-    SystemThemeResponse, TruckBrandModelsResponse,
+    ListTrailersResponse, ListTrucksResponse, ProfileCompanyNameResponse, SaveGameCountResponse,
+    SaveGameResponse, SystemThemeResponse, TruckBrandModelsResponse,
 };
 use structs::vec_save_games::VecSaveGames;
 
@@ -800,6 +800,106 @@ async fn set_new_profile_name(
     return Ok(DefaultResponse { res: true });
 }
 
+fn reject_unsupported_company_name_game(game: &str) -> Option<ProfileCompanyNameResponse> {
+    if game == "ets2" {
+        return None;
+    }
+
+    return Some(ProfileCompanyNameResponse {
+        res: false,
+        company_name: None,
+        error: Some(
+            "Company name editing is supported only for Euro Truck Simulator 2".to_string(),
+        ),
+    });
+}
+
+#[tauri::command]
+async fn get_profile_company_name_ets2(
+    dir_profile: &str,
+    game: &str,
+) -> Result<ProfileCompanyNameResponse, ()> {
+    if let Some(response) = reject_unsupported_company_name_game(game) {
+        return Ok(response);
+    }
+
+    let profile_sii = format!("{}/profile.sii", dir_profile);
+    let file: Vec<String> = match read_file_text(&profile_sii).await {
+        Some(file) => file,
+        None => {
+            return Ok(ProfileCompanyNameResponse {
+                res: false,
+                company_name: None,
+                error: Some("Unable to read or decrypt profile.sii".to_string()),
+            });
+        }
+    };
+
+    match get_company_name(&file) {
+        Ok(company_name) => Ok(ProfileCompanyNameResponse {
+            res: true,
+            company_name: Some(company_name),
+            error: None,
+        }),
+        Err(error) => Ok(ProfileCompanyNameResponse {
+            res: false,
+            company_name: None,
+            error: Some(error),
+        }),
+    }
+}
+
+#[tauri::command]
+async fn set_profile_company_name_ets2(
+    dir_profile: &str,
+    game: &str,
+    company_name: &str,
+) -> Result<ProfileCompanyNameResponse, ()> {
+    if let Some(response) = reject_unsupported_company_name_game(game) {
+        return Ok(response);
+    }
+
+    let profile_sii = format!("{}/profile.sii", dir_profile);
+    let file: Vec<String> = match read_file_text(&profile_sii).await {
+        Some(file) => file,
+        None => {
+            return Ok(ProfileCompanyNameResponse {
+                res: false,
+                company_name: None,
+                error: Some("Unable to read or decrypt profile.sii".to_string()),
+            });
+        }
+    };
+
+    let company_name_file: Vec<String> = match set_company_name(&file, company_name) {
+        Ok(company_name_file) => company_name_file,
+        Err(error) => {
+            return Ok(ProfileCompanyNameResponse {
+                res: false,
+                company_name: None,
+                error: Some(error),
+            });
+        }
+    };
+
+    let trimmed_company_name = company_name.trim().to_string();
+    let res_file = save_file(profile_sii, company_name_file).await;
+
+    if !res_file {
+        return Ok(ProfileCompanyNameResponse {
+            res: false,
+            company_name: None,
+            error: Some("Unable to write profile.sii".to_string()),
+        });
+    }
+
+    return Ok(ProfileCompanyNameResponse {
+        res: true,
+        company_name: Some(trimmed_company_name),
+        error: None,
+    });
+}
+
 #[tauri::command]
 async fn repair_trailer(dir_save: &str, wear: &str) -> Result<DefaultResponse, ()> {
     let file: Vec<String> = match read_file_text(dir_save).await {
@@ -1135,6 +1235,8 @@ pub fn run() {
             set_developer_game_status,
             set_convoy_size,
             set_new_profile_name,
+            get_profile_company_name_ets2,
+            set_profile_company_name_ets2,
             repair_trailer,
             repair_all_trailers,
             set_remove_truck_badge,

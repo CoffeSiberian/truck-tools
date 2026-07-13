@@ -67,3 +67,10 @@ pub struct ListCamerasResponse {
     pub location: Option<String>,
     pub rotation: Option<String>,
 }
+
+#[derive(Serialize)]
+pub struct ProfileCompanyNameResponse {
+    pub res: bool,
+    pub company_name: Option<String>,
+    pub error: Option<String>,
+}
