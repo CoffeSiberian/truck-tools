@@ -464,16 +464,16 @@
                 }
             },
             "custom_fuel": {
-                "description_card": "Set a custom fuel level for your current truck",
-                "label_card": "Custom fuel level",
+                "description_card": "Встановіть власний рівень палива для поточної вантажівки",
+                "label_card": "Власний рівень палива",
                 "modal": {
                     "btn_apply": "Дозаправити",
                     "btn_close": "Закрити",
                     "btn_open": "Змінити",
                     "btn_restore_fuel": "Відновити пальне",
-                    "description": "Set the fuel level for your current truck. A higher fuel level also increases the truck's weight, since fuel has physics and affects its handling.",
-                    "title": "Custom fuel level",
-                    "fuel_level": "Fuel level",
+                    "description": "Встановіть рівень палива для вашої поточної вантажівки. Більший рівень палива також збільшує вагу вантажівки, оскільки паливо підпорядковується законам фізики і впливає на керованість вантажівки.",
+                    "title": "Власний рівень палива",
+                    "fuel_level": "Рівень палива",
                     "warning_message": {
                         "message": "Щоб ця функція почала працювати, будь ласка, <b>вимкніть параметр «Реалістична модель витрат пального»</b> в розділі налаштувань «Геймплей».",
                         "title": "Зауважте"

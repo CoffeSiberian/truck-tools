@@ -170,7 +170,7 @@
                 }
             },
             "dealer_visited": {
-                "description_card": "",
+                "description_card": "Imposta tutti gli stati del concessionario sul tuo profilo",
                 "label_card": "Scopri tutti i rivenditori",
                 "modal": {
                     "btn_apply": "Applica",
@@ -188,7 +188,7 @@
                 }
             },
             "garage_status": {
-                "description_card": "",
+                "description_card": "Imposta lo stato di qualsiasi garage nel tuo profilo",
                 "label_card": "Compra tutti i garage",
                 "modal": {
                     "btn_apply": "Applica",
