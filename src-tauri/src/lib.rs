@@ -25,6 +25,8 @@ use main_options::trucks::{
 
 use std::path::Path;
 
+use main_options::routes::{cancel_current_job as cancel_job_backend, get_route_catalog, get_save_game_route_data as get_route_data_backend, start_route as start_route_backend};
+use structs::vec_routes::{CustomRoutePayload, SaveRouteDataResponse};
 use structs::experience_skills::ExperienceSkills;
 use structs::responses::{
     DefaultResponse, DeveloperValues, ListCamerasResponse, ListProfilesResponse,
@@ -1091,6 +1093,76 @@ async fn set_player_position(
     return Ok(DefaultResponse { res: true });
 }
 
+#[tauri::command]
+async fn get_save_game_route_data(
+    dir_save: &str,
+    game: &str,
+) -> Result<SaveRouteDataResponse, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => {
+            return Ok(SaveRouteDataResponse {
+                res: false,
+                visited_cities: Vec::new(),
+                all_cities: Vec::new(),
+                companies_by_city: Vec::new(),
+                origin_companies_by_city: Vec::new(),
+                cargos: Vec::new(),
+                current_job: None,
+                cargo_trailers: std::collections::HashMap::new(),
+                own_trailer: None,
+                companies: std::collections::HashMap::new(),
+                cities: std::collections::HashMap::new(),
+                cargo_names: std::collections::HashMap::new(),
+                positions: std::collections::HashMap::new(),
+            })
+        }
+    };
+
+    let data = get_route_data_backend(&file, get_route_catalog(game));
+    return Ok(data);
+}
+
+#[tauri::command]
+async fn set_custom_route(
+    dir_save: &str,
+    route_data: CustomRoutePayload,
+    game: &str,
+) -> Result<DefaultResponse, ()> {
+    if route_data.game.as_deref().is_some_and(|value| value != game) {
+        return Ok(DefaultResponse { res: false });
+    }
+
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let modified_file = match start_route_backend(&file, &route_data, get_route_catalog(game)) {
+        Some(modified) => modified,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let res = save_file(dir_save.to_string(), modified_file).await;
+    return Ok(DefaultResponse { res });
+}
+
+#[tauri::command]
+async fn cancel_current_job(dir_save: &str) -> Result<DefaultResponse, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let modified_file = match cancel_job_backend(&file) {
+        Some(modified) => modified,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let res = save_file(dir_save.to_string(), modified_file).await;
+    return Ok(DefaultResponse { res });
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -1145,6 +1217,9 @@ pub fn run() {
             set_player_trailer,
             get_save_player_camera,
             set_player_position,
+            get_save_game_route_data,
+            set_custom_route,
+            cancel_current_job,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
