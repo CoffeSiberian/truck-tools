@@ -136,7 +136,7 @@ const CreateRouteModal = () => {
 		null
 	);
 	const [onlyDiscovered, setOnlyDiscovered] = useState<boolean>(true);
-	const [showUnusual, setShowUnusual] = useState<boolean>(false);
+	const [showUnusual, setShowUnusual] = useState<boolean>(true);
 	const [showAdvanced, setShowAdvanced] = useState<boolean>(false);
 
 	// Form selections. Everything is optional: effective* values below fall back
@@ -477,14 +477,30 @@ const CreateRouteModal = () => {
 										<p className="text-default-600 max-w-md text-sm">
 											{nextStepMessage}
 										</p>
-										<Button
-											variant="flat"
-											color="primary"
-											className="mt-2"
-											onPress={loadSaveRouteInfo}
-										>
-											{text.btn_new_route}
-										</Button>
+										<div className="mt-2 flex flex-wrap justify-center gap-2">
+											{appliedMode !== "take_now" && (
+												<Button
+													color="primary"
+													startContent={
+														copiedConvoy ? (
+															<IconCheck size={18} />
+														) : (
+															<IconShare size={18} />
+														)
+													}
+													onPress={exportConvoyCode}
+												>
+													{text.btn_convoy}
+												</Button>
+											)}
+											<Button
+												variant="flat"
+												color="primary"
+												onPress={loadSaveRouteInfo}
+											>
+												{text.btn_new_route}
+											</Button>
+										</div>
 									</div>
 								) : (
 									<>
