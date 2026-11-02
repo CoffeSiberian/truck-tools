@@ -11,6 +11,7 @@ import { Tabs, Tab } from "@heroui/tabs";
 import TrailersOptions from "@/routes/pages/TrailersOptions/TrailersOptions";
 import TrucksOptions from "@/routes/pages/TrucksOptions/TrucksOptions";
 import ProfilesOptions from "@/routes/pages/ProfilesOptions/ProfilesOptions";
+import RoutesOptions from "@/routes/pages/RoutesOptions/RoutesOptions";
 import AboutModal from "@/components/Modals/AboutModal";
 import SettingsModal from "@/components/Modals/SettingsModal";
 
@@ -29,12 +30,13 @@ import {
 	IconPackages,
 	IconPaw,
 	IconBrandGithub,
+	IconRoute,
 } from "@tabler/icons-react";
 
 // image
 import kofi from "@/static/icons/kofi/kofi.webp";
 
-type ItemId = "trailer" | "truck" | "profile" | "settings" | "about";
+type ItemId = "trailer" | "truck" | "routes" | "profile" | "settings" | "about";
 
 interface ItemsTypes {
 	id: ItemId;
@@ -48,7 +50,7 @@ const RenderOptions = () => {
 	const { translations } = useContext(LocaleContext);
 	const { darkMode } = useContext(DarkModeContex);
 	const [activeIndex, setActiveIndex] = useState<ItemId>("trailer");
-	const { trailers, trucks, profile, settings, about } =
+	const { trailers, trucks, profile, settings, about, routes } =
 		translations.menu_options;
 
 	const {
@@ -77,6 +79,13 @@ const RenderOptions = () => {
 			jsx: <TrucksOptions />,
 			modal: false,
 			icon: <IconTruck />,
+		},
+		{
+			id: "routes",
+			label: routes?.tab_title || "Routes",
+			jsx: <RoutesOptions />,
+			modal: false,
+			icon: <IconRoute />,
 		},
 		{
 			id: "profile",

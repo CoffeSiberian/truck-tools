@@ -190,6 +190,109 @@ export interface MenuOptions {
 	settings: Settings;
 	trailers: Trailers;
 	trucks: Trucks;
+	routes: Routes;
+}
+
+export interface Routes {
+	tab_title: string;
+	create_route: CreateRouteCard;
+	convoy_share: ConvoyShareCard;
+	cancel_job: CancelJobCard;
+}
+
+export interface CreateRouteCard {
+	description_card: string;
+	label_card: string;
+	modal: CreateRouteModalTrans;
+}
+
+export interface CreateRouteModalTrans {
+	step_origin: string;
+	step_cargo: string;
+	step_destination: string;
+	step_start: string;
+	cargo_hint: string;
+	show_unusual: string;
+	no_cargos: string;
+	mode_offer_title: string;
+	mode_offer_desc: string;
+	mode_teleport_title: string;
+	mode_teleport_desc: string;
+	mode_take_title: string;
+	mode_take_desc: string;
+	unavailable_no_place: string;
+	unavailable_no_trailer: string;
+	unavailable_active_job: string;
+	btn_offer: string;
+	btn_teleport: string;
+	btn_take: string;
+	btn_reload: string;
+	btn_new_route: string;
+	btn_convoy: string;
+	success_title: string;
+	next_offer: string;
+	next_teleport: string;
+	next_take: string;
+	advanced: string;
+	trailer_label: string;
+	variant_label: string;
+	distance_estimate: string;
+	active_job_warning: string;
+	close_game_note: string;
+	title: string;
+	description: string;
+	btn_open: string;
+	btn_close: string;
+	filter_discovered_only: string;
+	origin_city_label: string;
+	origin_company_label: string;
+	dest_city_label: string;
+	dest_company_label: string;
+	cargo_label: string;
+	cargo_placeholder: string;
+	urgency_label: string;
+	urgency_normal: string;
+	urgency_urgent: string;
+	urgency_critical: string;
+	units_count_label: string;
+	loading_data: string;
+	error_message: string;
+}
+
+export interface ConvoyShareCard {
+	description_card: string;
+	label_card: string;
+	modal: ConvoyShareModalTrans;
+}
+
+export interface ConvoyShareModalTrans {
+	title: string;
+	description: string;
+	btn_open: string;
+	btn_import: string;
+	btn_close: string;
+	input_code_label: string;
+	input_code_placeholder: string;
+	invalid_code: string;
+	other_game_code: string;
+}
+
+export interface CancelJobCard {
+	description_card: string;
+	label_card: string;
+	modal: CancelJobModalTrans;
+}
+
+export interface CancelJobModalTrans {
+	title: string;
+	description: string;
+	btn_open: string;
+	btn_apply: string;
+	btn_close: string;
+	no_active_job: string;
+	active_job_info: string;
+	success_message: string;
+	error_message: string;
 }
 
 export interface About {

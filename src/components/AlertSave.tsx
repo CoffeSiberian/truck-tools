@@ -28,7 +28,7 @@ const AlertSave: FC<props> = ({ message, error, show, setShowFalse }) => {
 			className={classNames(
 				"fixed top-10 right-8 w-full max-w-80",
 				"transition-opacity duration-300",
-				show ? "opacity-100" : "opacity-0"
+				show ? "opacity-100" : "pointer-events-none opacity-0"
 			)}
 		>
 			<Alert

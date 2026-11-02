@@ -30,6 +30,8 @@ import {
 	ResponseSaveGameTrucks,
 	ResponseSaveGameTrailers,
 	ResponseSaveCameraPositions,
+	ResponseSaveGameRouteData,
+	CustomRoutePayload,
 } from "@/types/fileEditTypes";
 import {
 	IColorRgbToValidate,
@@ -1005,4 +1007,62 @@ export const getCurrentLocale = async (): Promise<Langs> => {
 	}
 
 	return locale_store;
+};
+
+export const getSaveGameRouteData = async (
+	dirSave: string,
+	game: GamesNames
+): Promise<ResponseSaveGameRouteData | null> => {
+	try {
+		const rustParams = {
+			dirSave: dirSave + "/game.sii",
+			game,
+		};
+		const invokeRes = (await invoke(
+			"get_save_game_route_data",
+			rustParams
+		)) as ResponseSaveGameRouteData;
+
+		return invokeRes;
+	} catch {
+		return null;
+	}
+};
+
+export const setCustomRoute = async (
+	dirSave: string,
+	routeData: CustomRoutePayload,
+	game: GamesNames
+): Promise<boolean> => {
+	try {
+		const rustParams = {
+			dirSave: dirSave + "/game.sii",
+			routeData,
+			game,
+		};
+		const invokeRes = (await invoke(
+			"set_custom_route",
+			rustParams
+		)) as responseRustTypes;
+
+		return invokeRes.res;
+	} catch {
+		return false;
+	}
+};
+
+export const cancelCurrentJob = async (dirSave: string): Promise<boolean> => {
+	try {
+		const rustParams = {
+			dirSave: dirSave + "/game.sii",
+		};
+		const invokeRes = (await invoke(
+			"cancel_current_job",
+			rustParams
+		)) as responseRustTypes;
+
+		return invokeRes.res;
+	} catch {
+		return false;
+	}
 };

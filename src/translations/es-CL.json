@@ -134,6 +134,95 @@
         }
     },
     "menu_options": {
+        "routes": {
+            "tab_title": "Rutas",
+            "create_route": {
+                "description_card": "Crea tu propia ruta y trabajo personalizado con tu origen, destino, empresa, carga y remolque preferidos.",
+                "label_card": "Crear Ruta Personalizada",
+                "modal": {
+                    "step_origin": "¿De dónde sale?",
+                    "step_cargo": "¿Qué vas a llevar?",
+                    "step_destination": "¿A dónde va?",
+                    "step_start": "¿Cómo quieres empezar?",
+                    "cargo_hint": "Se muestran las cargas que envía esta empresa, y como destino las empresas que las reciben.",
+                    "show_unusual": "Incluir cargas y destinos poco habituales",
+                    "no_cargos": "No hay cargas disponibles con esta combinación.",
+                    "mode_offer_title": "Navegar hasta la empresa",
+                    "mode_offer_desc": "Crea la oferta. Acéptala en el mercado de transportes y el GPS te guiará.",
+                    "mode_teleport_title": "Teletransportarme",
+                    "mode_teleport_desc": "Crea la oferta y deja tu camión en la empresa de origen.",
+                    "mode_take_title": "Tomar la carga ahora",
+                    "mode_take_desc": "Empieza el trabajo con tu remolque enganchado, ya en la empresa de origen.",
+                    "unavailable_no_place": "No hay coordenadas para esta empresa; puede venir de un mod.",
+                    "unavailable_no_trailer": "Engancha tu propio remolque y guarda la partida para usar esta opción.",
+                    "unavailable_active_job": "Termina o cancela tu trabajo activo para usar esta opción.",
+                    "btn_offer": "Crear oferta",
+                    "btn_teleport": "Crear y teletransportarme",
+                    "btn_take": "Empezar trabajo",
+                    "btn_reload": "Recargar datos de la partida",
+                    "btn_new_route": "Crear otra ruta",
+                    "btn_convoy": "Copiar código para convoy",
+                    "success_title": "¡Ruta lista!",
+                    "next_offer": "Carga esta partida en el juego y abre el mercado de transportes: tu oferta está en {company}, {city}.",
+                    "next_teleport": "Carga esta partida en el juego: tu camión estará en {company}, {city}, con la oferta en el mercado de transportes.",
+                    "next_take": "Carga esta partida en el juego: estarás en {company}, {city}, con el trabajo ya activo.",
+                    "advanced": "Opciones avanzadas",
+                    "trailer_label": "Remolque",
+                    "variant_label": "Variante",
+                    "distance_estimate": "≈ {km} km",
+                    "active_job_warning": "Tienes un trabajo activo: el juego no te dejará aceptar la oferta hasta que lo termines o lo canceles.",
+                    "close_game_note": "Guarda y cierra la partida antes de aplicar. Los cambios se verán al volver a cargarla.",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Crear Ruta",
+                    "cargo_label": "Carga",
+                    "cargo_placeholder": "Selecciona la carga",
+                    "dest_city_label": "Ciudad de Destino",
+                    "dest_company_label": "Empresa de Destino",
+                    "description": "Elige de dónde sale, qué llevas y a dónde va. Nosotros completamos el resto.",
+                    "error_message": "No se pudo aplicar la ruta. Recarga los datos y revisa que la carga, el remolque y las empresas existan en esta partida.",
+                    "filter_discovered_only": "Mostrar solo ciudades descubiertas",
+                    "loading_data": "Leyendo ciudades, empresas y cargas de la partida...",
+                    "origin_city_label": "Ciudad de Origen",
+                    "origin_company_label": "Empresa de Origen",
+                    "title": "Creador de Rutas Personalizadas",
+                    "units_count_label": "Unidades de Carga / Peso",
+                    "urgency_critical": "Crítico (Entrega de emergencia)",
+                    "urgency_label": "Nivel de Urgencia",
+                    "urgency_normal": "Estándar (Normal)",
+                    "urgency_urgent": "Urgente"
+                }
+            },
+            "convoy_share": {
+                "description_card": "Exporta o importa un código de ruta para sincronizar rutas con amigos en convoy multijugador.",
+                "label_card": "Compartir Ruta para Convoy",
+                "modal": {
+                    "other_game_code": "Este código es de otro juego. Selecciona ese juego para importarlo.",
+                    "btn_close": "Cerrar",
+                    "btn_import": "Importar y Cargar Ruta",
+                    "btn_open": "Compartir / Importar",
+                    "description": "Comparte tu ruta personalizada con otros jugadores para convoyes multijugador o importa el código de ruta de un compañero.",
+                    "input_code_label": "Código de Ruta de Convoy",
+                    "input_code_placeholder": "Pega el código de ruta aquí...",
+                    "invalid_code": "Formato de código de ruta no válido.",
+                    "title": "Compartir Ruta de Convoy"
+                }
+            },
+            "cancel_job": {
+                "description_card": "Cancela y restablece tu trabajo activo actual en el juego sin ninguna penalización.",
+                "label_card": "Cancelar Trabajo Actual",
+                "modal": {
+                    "active_job_info": "Trabajo activo actual:",
+                    "btn_apply": "Confirmar Cancelación",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Cancelar Trabajo",
+                    "description": "¿Estás seguro de que deseas cancelar tu trabajo activo actual? Esto restablecerá tu trabajo en la partida sin penalizaciones ni multas.",
+                    "error_message": "Error al cancelar el trabajo activo.",
+                    "no_active_job": "Actualmente no hay ningún trabajo activo en esta partida guardada.",
+                    "success_message": "¡Trabajo activo cancelado con éxito!",
+                    "title": "Cancelar Trabajo Actual"
+                }
+            }
+        },
         "about": {
             "description": "Esta es una aplicación de código abierto creada con el fin de ayudar a los jugadores de ETS 2 y ATS a editar su Game Save de una manera simple y fácil para aquellos que no quieren editar estos códigos manualmente.",
             "tab_title": "Acerca de"

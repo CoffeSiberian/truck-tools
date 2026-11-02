@@ -12,9 +12,22 @@ import {
 } from "@/types/TranslationsTypes";
 
 const getLang = async (lang: LangsTypes): Promise<TranslationsTypes> => {
-	const res_lags = await import(`@/translations/${lang}.json`);
+	const res_lags = (await import(
+		`@/translations/${lang}.json`
+	)) as TranslationsTypes;
 
-	return res_lags as TranslationsTypes;
+	if (res_lags.menu_options.routes) return res_lags;
+
+	const english =
+		(await import("@/translations/en-US.json")) as TranslationsTypes;
+
+	return {
+		...res_lags,
+		menu_options: {
+			...res_lags.menu_options,
+			routes: english.menu_options.routes,
+		},
+	};
 };
 
 // eslint-disable-next-line react-refresh/only-export-components
