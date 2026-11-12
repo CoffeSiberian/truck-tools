@@ -502,13 +502,17 @@ async fn set_profile_money(dir_save: &str, money: &str) -> Result<DefaultRespons
 }
 
 #[tauri::command]
-async fn set_profile_experience(dir_save: &str, experience: &str) -> Result<DefaultResponse, ()> {
+async fn set_profile_experience(
+    dir_save: &str,
+    experience: &str,
+    bus_experience: &str,
+) -> Result<DefaultResponse, ()> {
     let file: Vec<String> = match read_file_text(dir_save).await {
         Some(file) => file,
         None => return Ok(DefaultResponse { res: false }),
     };
 
-    let profile_experience: Vec<String> = match set_experience(&file, experience) {
+    let profile_experience: Vec<String> = match set_experience(&file, experience, bus_experience) {
         Some(profile_experience) => profile_experience,
         None => return Ok(DefaultResponse { res: false }),
     };

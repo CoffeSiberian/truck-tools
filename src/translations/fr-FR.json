@@ -148,8 +148,12 @@
                     "btn_open": "Ouvrir",
                     "description": "Entrez la quantité d’expérience que vous souhaitez ajouter à votre profil",
                     "input_experience": {
-                        "label": "Expérience",
-                        "placeholder": "Entrez la quantité d’expérience en chiffres"
+                        "label": "Expérience en mode camion",
+                        "placeholder": "Saisissez les points d’expérience en mode camion"
+                    },
+                    "input_bus_experience": {
+                        "label": "Expérience en mode autocar",
+                        "placeholder": "Saisissez les points d’expérience en mode autocar"
                     },
                     "title": "Changer d'expérience"
                 }

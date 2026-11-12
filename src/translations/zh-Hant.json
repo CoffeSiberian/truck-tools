@@ -148,8 +148,12 @@
                     "btn_open": "查看詳情",
                     "description": "輸入要修改的存檔經驗值數量",
                     "input_experience": {
-                        "label": "經驗值",
-                        "placeholder": "輸入經驗值數量"
+                        "label": "卡車模式經驗值",
+                        "placeholder": "輸入卡車模式經驗值數量"
+                    },
+                    "input_bus_experience": {
+                        "label": "客運模式經驗值",
+                        "placeholder": "輸入客運模式經驗值數量"
                     },
                     "title": "修改經驗"
                 }

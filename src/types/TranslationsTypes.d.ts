@@ -219,6 +219,7 @@ export interface AddExperienceModal {
 	btn_open: string;
 	description: string;
 	input_experience: Input;
+	input_bus_experience: Input;
 	title: string;
 }
 

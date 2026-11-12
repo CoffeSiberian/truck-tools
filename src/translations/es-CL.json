@@ -148,8 +148,12 @@
                     "btn_open": "Abrir",
                     "description": "Introduce la cantidad de experiencia que deseas cambiar a tu perfil",
                     "input_experience": {
-                        "label": "Experiencia",
-                        "placeholder": "Introduce la cantidad de experiencia"
+                        "label": "Experiencia del modo camión",
+                        "placeholder": "Ingresa los puntos de experiencia del modo camión"
+                    },
+                    "input_bus_experience": {
+                        "label": "Experiencia del modo autobús",
+                        "placeholder": "Ingresa los puntos de experiencia del modo autobús"
                     },
                     "title": "Cambiar experiencia"
                 }

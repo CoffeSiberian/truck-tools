@@ -385,11 +385,13 @@ export const setProfileMoney = async (
 
 export const setProfileExperience = async (
 	dirSave: string,
-	experience: string
+	experience: string,
+	busExperience: string
 ): Promise<boolean> => {
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 		experience,
+		busExperience,
 	};
 
 	const invoceRes = (await invoke(

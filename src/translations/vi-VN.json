@@ -148,8 +148,12 @@
                     "btn_open": "Mở",
                     "description": "Nhập số lượng kinh nghiệm bạn muốn thêm vào hồ sơ của mình",
                     "input_experience": {
-                        "label": "Kinh nghiệm",
-                        "placeholder": "Nhập số điểm kinh nghiệm bằng số"
+                        "label": "Kinh nghiệm chế độ xe tải",
+                        "placeholder": "Nhập số điểm kinh nghiệm chế độ xe tải"
+                    },
+                    "input_bus_experience": {
+                        "label": "Kinh nghiệm chế độ xe khách",
+                        "placeholder": "Nhập số điểm kinh nghiệm chế độ xe khách"
                     },
                     "title": "Thay đổi kinh nghiệm"
                 }

@@ -148,8 +148,12 @@
                     "btn_open": "Edytuj",
                     "description": "Wprowadź ilość punktów doświadczenia, którą chcesz dodać do swojego profilu",
                     "input_experience": {
-                        "label": "Punkty doświadczenia",
-                        "placeholder": "Wprowadź ilość punktów doświadczenia"
+                        "label": "Doświadczenie w trybie ciężarówki",
+                        "placeholder": "Wpisz liczbę punktów doświadczenia w trybie ciężarówki"
+                    },
+                    "input_bus_experience": {
+                        "label": "Doświadczenie w trybie autobusu",
+                        "placeholder": "Wpisz liczbę punktów doświadczenia w trybie autobusu"
                     },
                     "title": "Edytuj doświadczenie"
                 }

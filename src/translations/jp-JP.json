@@ -148,8 +148,12 @@
                     "btn_open": "開く",
                     "description": "プロフィールに追加したい経験値の量を入力してください",
                     "input_experience": {
-                        "label": "経験値",
-                        "placeholder": "経験値を数字で入力してください"
+                        "label": "トラックモードの経験値",
+                        "placeholder": "トラックモードの経験値を入力"
+                    },
+                    "input_bus_experience": {
+                        "label": "バスモードの経験値",
+                        "placeholder": "バスモードの経験値を入力"
                     },
                     "title": "経験値を変更"
                 }

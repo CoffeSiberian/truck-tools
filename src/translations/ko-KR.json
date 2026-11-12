@@ -148,8 +148,12 @@
                     "btn_open": "열기",
                     "description": "프로필에 추가하려는 경험치 입력",
                     "input_experience": {
-                        "label": "경험치",
-                        "placeholder": "경험치 수를 숫자로 입력합니다"
+                        "label": "트럭 모드 경험치",
+                        "placeholder": "트럭 모드 경험치를 입력하세요"
+                    },
+                    "input_bus_experience": {
+                        "label": "버스 모드 경험치",
+                        "placeholder": "버스 모드 경험치를 입력하세요"
                     },
                     "title": "경험치 변경"
                 }

@@ -148,8 +148,12 @@
                     "btn_open": "Öffnen",
                     "description": "Geben Sie die Menge an Erfahrung ein, die Sie Ihrem Profil hinzufügen möchten",
                     "input_experience": {
-                        "label": "Erfahrung",
-                        "placeholder": "Geben Sie die Menge an Erfahrung in Zahlen ein"
+                        "label": "Erfahrung im Lkw-Modus",
+                        "placeholder": "Erfahrungspunkte im Lkw-Modus eingeben"
+                    },
+                    "input_bus_experience": {
+                        "label": "Erfahrung im Bus-Modus",
+                        "placeholder": "Erfahrungspunkte im Bus-Modus eingeben"
                     },
                     "title": "Erfahrung ändern"
                 }

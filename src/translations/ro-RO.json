@@ -148,8 +148,12 @@
                     "btn_open": "Deschide",
                     "description": "Introduceți cantitatea de experiență pe care doriți să o adăugați profilului dvs",
                     "input_experience": {
-                        "label": "Experienţă",
-                        "placeholder": "Introduceți cantitatea de experiență în cifre"
+                        "label": "Experiență în modul camion",
+                        "placeholder": "Introdu punctele de experiență în modul camion"
+                    },
+                    "input_bus_experience": {
+                        "label": "Experiență în modul autobuz",
+                        "placeholder": "Introdu punctele de experiență în modul autobuz"
                     },
                     "title": "Schimbați experiența"
                 }

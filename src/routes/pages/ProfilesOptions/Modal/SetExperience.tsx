@@ -37,6 +37,7 @@ const SetExperience = () => {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [Experience, setExperience] = useState<string>("575700");
+	const [busExperience, setBusExperience] = useState<string>("568700");
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [completed, setCompleted] = useState<completedProps>({
 		error: false,
@@ -52,7 +53,11 @@ const SetExperience = () => {
 
 		setIsLoading(true);
 
-		const res = await setProfileExperience(selectedSave.dir, Experience);
+		const res = await setProfileExperience(
+			selectedSave.dir,
+			Experience,
+			busExperience
+		);
 
 		setCompleted({
 			error: !res,
@@ -65,6 +70,13 @@ const SetExperience = () => {
 		const regex = /^[0-9]*$/;
 		if (value === "" || regex.test(value)) {
 			setExperience(value);
+		}
+	};
+
+	const setBusExperienceNumbers = (value: string) => {
+		const regex = /^[0-9]*$/;
+		if (value === "" || regex.test(value)) {
+			setBusExperience(value);
 		}
 	};
 
@@ -106,6 +118,18 @@ const SetExperience = () => {
 									}
 									value={Experience}
 									onValueChange={(value) => setExperienceNumbers(value)}
+									variant="bordered"
+								/>
+								<Input
+									className="mt-1"
+									startContent={<IconArrowBigUpLine />}
+									isInvalid={busExperience === ""}
+									label={add_experience.modal.input_bus_experience.label}
+									placeholder={
+										add_experience.modal.input_bus_experience.placeholder
+									}
+									value={busExperience}
+									onValueChange={(value) => setBusExperienceNumbers(value)}
 									variant="bordered"
 								/>
 								<AlertSave

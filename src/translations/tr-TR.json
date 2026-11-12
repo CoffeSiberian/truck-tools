@@ -148,8 +148,12 @@
                     "btn_open": "Aç",
                     "description": "Profilinize eklemek istediğiniz tecrübe puanı miktarını girin",
                     "input_experience": {
-                        "label": "Tecrübe",
-                        "placeholder": "Tecrübe puanı miktarını sayı olarak girin"
+                        "label": "Kamyon modu deneyimi",
+                        "placeholder": "Kamyon modu deneyim puanını girin"
+                    },
+                    "input_bus_experience": {
+                        "label": "Otobüs modu deneyimi",
+                        "placeholder": "Otobüs modu deneyim puanını girin"
                     },
                     "title": "Tecrübeyi düzenle"
                 }

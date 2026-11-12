@@ -148,8 +148,12 @@
 					"btn_open": "Open",
 					"description": "Enter the amount of experience you want to add to your profile",
 					"input_experience": {
-						"label": "Experience",
-						"placeholder": "Enter the amount of experience in numbers"
+						"label": "Truck mode experience",
+						"placeholder": "Enter truck mode experience in numbers"
+					},
+					"input_bus_experience": {
+						"label": "Bus mode experience",
+						"placeholder": "Enter bus mode experience in numbers"
 					},
 					"title": "Change experience"
 				}

@@ -498,12 +498,23 @@ pub fn set_bank_money(arr_val: &Vec<String>, money: &str) -> Option<Vec<String>>
     return Some(arr_val_clone);
 }
 
-pub fn set_experience(arr_val: &Vec<String>, experience: &str) -> Option<Vec<String>> {
+pub fn set_experience(
+    arr_val: &Vec<String>,
+    experience: &str,
+    bus_experience: &str,
+) -> Option<Vec<String>> {
     let mut arr_val_clone = arr_val.clone();
 
     for (i, item) in arr_val.iter().enumerate() {
         if item.contains(" experience_points:") {
             arr_val_clone[i] = format!(" experience_points: {}", experience);
+            break;
+        }
+    }
+
+    for (i, item) in arr_val.iter().enumerate() {
+        if item.contains(" bus_experience_points:") {
+            arr_val_clone[i] = format!(" bus_experience_points: {}", bus_experience);
             break;
         }
     }

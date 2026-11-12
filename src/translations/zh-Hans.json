@@ -148,8 +148,12 @@
                     "btn_open": "打开",
                     "description": "输入要修改的存档经验值数量",
                     "input_experience": {
-                        "label": "经验值",
-                        "placeholder": "输入经验值数量"
+                        "label": "卡车模式经验值",
+                        "placeholder": "输入卡车模式经验值数量"
+                    },
+                    "input_bus_experience": {
+                        "label": "客运模式经验值",
+                        "placeholder": "输入客运模式经验值数量"
                     },
                     "title": "修改经验"
                 }

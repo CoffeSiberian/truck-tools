@@ -148,8 +148,12 @@
                     "btn_open": "",
                     "description": "",
                     "input_experience": {
-                        "label": "",
-                        "placeholder": ""
+                        "label": "Kamionos mód tapasztalati pontjai",
+                        "placeholder": "Add meg a kamionos mód tapasztalati pontjait"
+                    },
+                    "input_bus_experience": {
+                        "label": "Buszos mód tapasztalati pontjai",
+                        "placeholder": "Add meg a buszos mód tapasztalati pontjait"
                     },
                     "title": ""
                 }
