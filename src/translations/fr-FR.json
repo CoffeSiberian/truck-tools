@@ -211,6 +211,24 @@
                     "title": "Acheter tous les garages"
                 }
             },
+            "bus_stops": {
+                "description_card": "Débloquer 224 arrêts urbains et 98 arrêts touristiques",
+                "label_card": "Débloquer les arrêts d’autocar",
+                "modal": {
+                    "btn_apply": "appliquer",
+                    "btn_close": "Fermé",
+                    "btn_open": "Ouvrir",
+                    "description": "Choisissez de débloquer ou de verrouiller tous les arrêts",
+                    "input_city_status": {
+                        "label": "Arrêts d’autocar",
+                        "options": {
+                            "unvisit_all": "Verrouiller tous les arrêts",
+                            "visit_all": "Débloquer tous les arrêts"
+                        }
+                    },
+                    "title": "Débloquer les arrêts d’autocar"
+                }
+            },
             "skills_points": {
                 "description_card": "Définir les compétences d’expérience à votre profil",
                 "label_card": "Définir les compétences d’expérience",
@@ -218,7 +236,7 @@
                     "btn_apply": "appliquer",
                     "btn_close": "Fermé",
                     "btn_open": "Ouvrir",
-                    "description": "Entrez la quantité d’expérience dont vous avez besoin",
+                    "description": "Définissez les niveaux de compétence des modes camion et autobus",
                     "eco_driving": "éco-conduite",
                     "fragile_cargo": "cargaisons fragiles",
                     "high_value_cargo": "marchandises de valeur",
@@ -234,7 +252,17 @@
                     },
                     "just_in_time_delivery": "livraison juste-à-temps",
                     "long_distance": "longue distance",
-                    "title": "Compétences de l’expérience"
+                    "title": "Compétences de l’expérience",
+                    "truck_mode": "Mode camion",
+                    "bus_mode": "Mode autocar",
+                    "bus_skills": {
+                        "long_duty": "Longs trajets",
+                        "tight_schedule": "Horaires serrés",
+                        "satisfaction_decrease": "Perte de satisfaction réduite",
+                        "low_acceleration": "Conduite souple",
+                        "satisfaction_increase": "Satisfaction accrue",
+                        "ecodriving": "éco-conduite"
+                    }
                 }
             },
             "tab_title": "profil",

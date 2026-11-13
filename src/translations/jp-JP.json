@@ -211,6 +211,24 @@
                     "title": "すべてのガレージを購入する"
                 }
             },
+            "bus_stops": {
+                "description_card": "都市の停留所224か所と観光地の停留所98か所を解放",
+                "label_card": "バス停留所を解放",
+                "modal": {
+                    "btn_apply": "適用",
+                    "btn_close": "閉じる",
+                    "btn_open": "開く",
+                    "description": "すべての停留所の解放またはロックを選択",
+                    "input_city_status": {
+                        "label": "停留所の状態",
+                        "options": {
+                            "unvisit_all": "すべての停留所をロック",
+                            "visit_all": "すべての停留所を解放"
+                        }
+                    },
+                    "title": "バス停留所を解放"
+                }
+            },
             "skills_points": {
                 "description_card": "プロフィールに経験スキルを設定する",
                 "label_card": "経験スキルを設定する",
@@ -218,7 +236,7 @@
                     "btn_apply": "適用",
                     "btn_close": "閉じる",
                     "btn_open": "開く",
-                    "description": "必要な経験スキルを入力してください",
+                    "description": "トラックモードとバスモードのスキルレベルを設定します",
                     "eco_driving": "エコドライブ",
                     "fragile_cargo": "精密貨物",
                     "high_value_cargo": "高額貨物",
@@ -234,7 +252,17 @@
                     },
                     "just_in_time_delivery": "ジャストインタイム配送",
                     "long_distance": "長距離",
-                    "title": "経験スキルを設定する"
+                    "title": "経験スキルを設定する",
+                    "truck_mode": "トラックモード",
+                    "bus_mode": "バスモード",
+                    "bus_skills": {
+                        "long_duty": "長距離運行",
+                        "tight_schedule": "厳しい時刻表",
+                        "satisfaction_decrease": "満足度の低下を軽減",
+                        "low_acceleration": "スムーズな運転",
+                        "satisfaction_increase": "満足度の向上",
+                        "ecodriving": "エコドライブ"
+                    }
                 }
             },
             "tab_title": "プロフィール",

@@ -453,6 +453,17 @@ export const setProfileDealerDiscovered = async (
 	return invoceRes.res;
 };
 
+export const setBusStopsStatus = async (
+	dirSave: string,
+	discovered: boolean
+): Promise<boolean> => {
+	const res = await invoke<responseRustTypes>("set_bus_stops_status", {
+		dirSave: dirSave + "/game.sii",
+		discovered,
+	});
+	return res.res;
+};
+
 export const setProfileSkill = async (
 	dirSave: string,
 	experience: ExperienceSkillsTypes

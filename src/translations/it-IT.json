@@ -211,6 +211,24 @@
                     "title": "Compra tutti i garage"
                 }
             },
+            "bus_stops": {
+                "description_card": "Sblocca 224 fermate urbane e 98 fermate turistiche",
+                "label_card": "Sblocca le fermate degli autobus",
+                "modal": {
+                    "btn_apply": "Applica",
+                    "btn_close": "Chiudi",
+                    "btn_open": "Apri",
+                    "description": "Scegli se sbloccare o bloccare tutte le fermate",
+                    "input_city_status": {
+                        "label": "Fermate degli autobus",
+                        "options": {
+                            "unvisit_all": "Blocca tutte le fermate",
+                            "visit_all": "Sblocca tutte le fermate"
+                        }
+                    },
+                    "title": "Sblocca le fermate degli autobus"
+                }
+            },
             "skills_points": {
                 "description_card": "Imposta delle abilità al tuo profilo",
                 "label_card": "Imposta abilità",
@@ -218,7 +236,7 @@
                     "btn_apply": "Applica",
                     "btn_close": "Chiudi",
                     "btn_open": "Apri",
-                    "description": "Inserisci la quantità di esperienza necessaria",
+                    "description": "Imposta i livelli delle abilità per le modalità camion e autobus",
                     "eco_driving": "Guida Economica",
                     "fragile_cargo": "Carico Fragile",
                     "high_value_cargo": "Alto Valore",
@@ -234,7 +252,17 @@
                     },
                     "just_in_time_delivery": "Consegna Puntuale",
                     "long_distance": "Lunga Distanza",
-                    "title": "Imposta abilità"
+                    "title": "Imposta abilità",
+                    "truck_mode": "Modalità camion",
+                    "bus_mode": "Modalità autobus",
+                    "bus_skills": {
+                        "long_duty": "Lunghi tragitti",
+                        "tight_schedule": "Orari serrati",
+                        "satisfaction_decrease": "Minore perdita di soddisfazione",
+                        "low_acceleration": "Guida fluida",
+                        "satisfaction_increase": "Maggiore soddisfazione",
+                        "ecodriving": "Guida Economica"
+                    }
                 }
             },
             "tab_title": "Profilo",

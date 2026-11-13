@@ -211,6 +211,24 @@
                     "title": "Tüm garajları satın al"
                 }
             },
+            "bus_stops": {
+                "description_card": "224 şehir durağının ve 98 turistik durağın kilidini aç",
+                "label_card": "Otobüs duraklarının kilidini aç",
+                "modal": {
+                    "btn_apply": "Uygula",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "description": "Tüm durakların kilidini açmayı veya kilitlemeyi seçin",
+                    "input_city_status": {
+                        "label": "Otobüs durakları",
+                        "options": {
+                            "unvisit_all": "Tüm durakları kilitle",
+                            "visit_all": "Tüm durakların kilidini aç"
+                        }
+                    },
+                    "title": "Otobüs duraklarının kilidini aç"
+                }
+            },
             "skills_points": {
                 "description_card": "Profilinizin tecrübe puanını düzenleyin",
                 "label_card": "Tecrübeleri seç",
@@ -218,7 +236,7 @@
                     "btn_apply": "Uygula",
                     "btn_close": "Kapat",
                     "btn_open": "Aç",
-                    "description": "İhtiyacınız olan deneyim miktarını girin",
+                    "description": "Kamyon ve otobüs modlarının beceri seviyelerini ayarlayın",
                     "eco_driving": "Ekonomik sürüş",
                     "fragile_cargo": "Kırılgan yük",
                     "high_value_cargo": "Yüksek değerli yük",
@@ -234,7 +252,17 @@
                     },
                     "just_in_time_delivery": "Tam zamanında teslimat",
                     "long_distance": "Uzun mesafe",
-                    "title": "Tecrübe puanını belirle"
+                    "title": "Tecrübe puanını belirle",
+                    "truck_mode": "Kamyon modu",
+                    "bus_mode": "Otobüs modu",
+                    "bus_skills": {
+                        "long_duty": "Uzun yolculuklar",
+                        "tight_schedule": "Sıkışık tarife",
+                        "satisfaction_decrease": "Daha az memnuniyet kaybı",
+                        "low_acceleration": "Sarsıntısız sürüş",
+                        "satisfaction_increase": "Daha yüksek memnuniyet",
+                        "ecodriving": "Ekonomik sürüş"
+                    }
                 }
             },
             "tab_title": "Profil",

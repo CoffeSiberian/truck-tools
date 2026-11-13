@@ -6,8 +6,8 @@ use hex::encode_upper;
 
 use main_options::profiles::{
     copy_profile_configs, set_any_status_garage, set_bank_money, set_dealerships_discovered_status,
-    set_experience, set_experience_skills, set_player_map_position, set_profile_name,
-    set_visited_cities,
+    set_bus_stops_discovered, set_experience, set_experience_skills, set_player_map_position,
+    set_profile_name, set_visited_cities,
 };
 use main_options::trailers::{
     get_list_trailers_info, get_my_trailer_id, get_trailer_def_id, get_trailer_def_index,
@@ -578,6 +578,22 @@ async fn set_dealerships_discovered(
 }
 
 #[tauri::command]
+async fn set_bus_stops_status(dir_save: &str, discovered: bool) -> Result<DefaultResponse, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let bus_stops = match set_bus_stops_discovered(&file, discovered) {
+        Some(bus_stops) => bus_stops,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let res = save_file(dir_save.to_string(), bus_stops).await;
+    Ok(DefaultResponse { res })
+}
+
+#[tauri::command]
 async fn set_profile_experience_skills(
     dir_save: &str,
     adr_bin: &str,
@@ -586,8 +602,28 @@ async fn set_profile_experience_skills(
     fragile: &str,
     urgent: &str,
     mechanical: &str,
+    long_duty: &str,
+    tight_schedule: &str,
+    satisfaction_decrease: &str,
+    low_acceleration: &str,
+    satisfaction_increase: &str,
+    ecodriving: &str,
 ) -> Result<DefaultResponse, ()> {
     if adr_bin.chars().count() != 6 {
+        return Ok(DefaultResponse { res: false });
+    }
+
+    if ![
+        long_duty,
+        tight_schedule,
+        satisfaction_decrease,
+        low_acceleration,
+        satisfaction_increase,
+        ecodriving,
+    ]
+    .iter()
+    .all(|value| value.parse::<u8>().is_ok_and(|rank| rank <= 3))
+    {
         return Ok(DefaultResponse { res: false });
     }
 
@@ -603,6 +639,12 @@ async fn set_profile_experience_skills(
         fragile: fragile.to_string(),
         urgent: urgent.to_string(),
         mechanical: mechanical.to_string(),
+        long_duty: long_duty.to_string(),
+        tight_schedule: tight_schedule.to_string(),
+        satisfaction_decrease: satisfaction_decrease.to_string(),
+        low_acceleration: low_acceleration.to_string(),
+        satisfaction_increase: satisfaction_increase.to_string(),
+        ecodriving: ecodriving.to_string(),
     };
 
     let experience_skills: Vec<String> = match set_experience_skills(&file, experience_skills) {
@@ -1131,6 +1173,7 @@ pub fn run() {
             set_cities_visited,
             set_dealerships_discovered,
             set_profile_experience_skills,
+            set_bus_stops_status,
             backup_profile,
             copy_profile,
             copy_controls_config,

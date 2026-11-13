@@ -211,6 +211,24 @@
                     "title": "Cumpărați toate garajele"
                 }
             },
+            "bus_stops": {
+                "description_card": "Deblochează 224 de stații urbane și 98 de stații turistice",
+                "label_card": "Deblochează stațiile de autobuz",
+                "modal": {
+                    "btn_apply": "Aplicați",
+                    "btn_close": "închide",
+                    "btn_open": "Deschide",
+                    "description": "Alege deblocarea sau blocarea tuturor stațiilor",
+                    "input_city_status": {
+                        "label": "Stații de autobuz",
+                        "options": {
+                            "unvisit_all": "Blochează toate stațiile",
+                            "visit_all": "Deblochează toate stațiile"
+                        }
+                    },
+                    "title": "Deblochează stațiile de autobuz"
+                }
+            },
             "skills_points": {
                 "description_card": "Setați abilitățile de experiență în profilul dvs",
                 "label_card": "Setați abilități de experiență",
@@ -218,7 +236,7 @@
                     "btn_apply": "Aplicați",
                     "btn_close": "închide",
                     "btn_open": "Deschide",
-                    "description": "Introduceți cantitatea de experiență de care aveți nevoie",
+                    "description": "Setează nivelurile abilităților pentru modurile camion și autobuz",
                     "eco_driving": "Conducere ecologică",
                     "fragile_cargo": "Marfă fragilă",
                     "high_value_cargo": "Marfă de mare valoare",
@@ -234,7 +252,17 @@
                     },
                     "just_in_time_delivery": "Livrare la timp",
                     "long_distance": "Distanță lungă",
-                    "title": "Setați abilități de experiență"
+                    "title": "Setați abilități de experiență",
+                    "truck_mode": "Mod camion",
+                    "bus_mode": "Mod autobuz",
+                    "bus_skills": {
+                        "long_duty": "Curse lungi",
+                        "tight_schedule": "Program strâns",
+                        "satisfaction_decrease": "Pierdere redusă a satisfacției",
+                        "low_acceleration": "Condus lin",
+                        "satisfaction_increase": "Satisfacție sporită",
+                        "ecodriving": "Conducere ecologică"
+                    }
                 }
             },
             "tab_title": "Profil",

@@ -43,6 +43,12 @@ export interface ExperienceSkillsTypes {
 	fragile: string;
 	urgent: string;
 	mechanical: string;
+	longDuty: string;
+	tightSchedule: string;
+	satisfactionDecrease: string;
+	lowAcceleration: string;
+	satisfactionIncrease: string;
+	ecodriving: string;
 }
 
 /////////////////////////////////////////////////////////

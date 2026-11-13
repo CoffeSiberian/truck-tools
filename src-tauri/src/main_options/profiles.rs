@@ -595,6 +595,25 @@ pub fn set_dealerships_discovered_status(
     return Some(arr_val_clone);
 }
 
+pub fn set_bus_stops_discovered(arr_val: &[String], discovered: bool) -> Option<Vec<String>> {
+    let mut result = arr_val.to_vec();
+    let mut in_bus_stop = false;
+    let mut found = false;
+
+    for (i, item) in arr_val.iter().enumerate() {
+        if item.starts_with("bus_stop : ") && item.trim_end().ends_with('{') {
+            in_bus_stop = true;
+        } else if item.trim() == "}" {
+            in_bus_stop = false;
+        } else if in_bus_stop && item.trim_start().starts_with("discovered:") {
+            result[i] = format!(" discovered: {}", discovered);
+            found = true;
+        }
+    }
+
+    found.then_some(result)
+}
+
 pub fn set_experience_skills(
     arr_val: &Vec<String>,
     experience_skills: ExperienceSkills,
@@ -626,6 +645,30 @@ pub fn set_experience_skills(
             }
             " mechanical" => {
                 arr_val_clone[i] = format!(" mechanical: {}", experience_skills.mechanical);
+            }
+            " long_duty" => {
+                arr_val_clone[i] = format!(" long_duty: {}", experience_skills.long_duty);
+            }
+            " tight_schedule" => {
+                arr_val_clone[i] = format!(" tight_schedule: {}", experience_skills.tight_schedule);
+            }
+            " satisfaction_decrease" => {
+                arr_val_clone[i] = format!(
+                    " satisfaction_decrease: {}",
+                    experience_skills.satisfaction_decrease
+                );
+            }
+            " low_acceleration" => {
+                arr_val_clone[i] = format!(" low_acceleration: {}", experience_skills.low_acceleration);
+            }
+            " satisfaction_increase" => {
+                arr_val_clone[i] = format!(
+                    " satisfaction_increase: {}",
+                    experience_skills.satisfaction_increase
+                );
+            }
+            " ecodriving" => {
+                arr_val_clone[i] = format!(" ecodriving: {}", experience_skills.ecodriving);
             }
             " user_colors" => {
                 break;

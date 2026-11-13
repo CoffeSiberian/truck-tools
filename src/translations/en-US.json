@@ -211,6 +211,24 @@
 					"title": "Buy all garages"
 				}
 			},
+			"bus_stops": {
+				"description_card": "Unlock 224 city stops and 98 sightseeing stops",
+				"label_card": "Unlock bus mode stops",
+				"modal": {
+					"btn_apply": "Apply",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"description": "Select whether to unlock or lock all bus stops",
+					"input_city_status": {
+						"label": "Bus stops",
+						"options": {
+							"unvisit_all": "Lock all stops",
+							"visit_all": "Unlock all stops"
+						}
+					},
+					"title": "Unlock bus mode stops"
+				}
+			},
 			"skills_points": {
 				"description_card": "Set experience skills to your profile",
 				"label_card": "Set experience skills",
@@ -218,7 +236,7 @@
 					"btn_apply": "Apply",
 					"btn_close": "Close",
 					"btn_open": "Open",
-					"description": "Enter the amount of experience you need",
+					"description": "Set skill levels for truck and bus modes",
 					"eco_driving": "Eco driving",
 					"fragile_cargo": "Fragile cargo",
 					"high_value_cargo": "High value cargo",
@@ -234,7 +252,17 @@
 					},
 					"just_in_time_delivery": "Just in time delivery",
 					"long_distance": "Long distance",
-					"title": "Set Experience Skills"
+					"title": "Set Experience Skills",
+					"truck_mode": "Truck mode",
+					"bus_mode": "Bus mode",
+					"bus_skills": {
+						"long_duty": "Long duty",
+						"tight_schedule": "Tight schedule",
+						"satisfaction_decrease": "Reduced satisfaction loss",
+						"low_acceleration": "Smooth driving",
+						"satisfaction_increase": "Increased satisfaction",
+						"ecodriving": "Eco driving"
+					}
 				}
 			},
 			"tab_title": "Profile",

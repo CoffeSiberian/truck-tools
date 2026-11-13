@@ -211,6 +211,24 @@
                     "title": "Kup wszystkie garaże"
                 }
             },
+            "bus_stops": {
+                "description_card": "Odblokuj 224 przystanki miejskie i 98 turystycznych",
+                "label_card": "Odblokuj przystanki autobusowe",
+                "modal": {
+                    "btn_apply": "Zastosuj",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Edytuj",
+                    "description": "Wybierz odblokowanie lub zablokowanie wszystkich przystanków",
+                    "input_city_status": {
+                        "label": "Przystanki autobusowe",
+                        "options": {
+                            "unvisit_all": "Zablokuj wszystkie przystanki",
+                            "visit_all": "Odblokuj wszystkie przystanki"
+                        }
+                    },
+                    "title": "Odblokuj przystanki autobusowe"
+                }
+            },
             "skills_points": {
                 "description_card": "Przydziel punkty doświadczenia dla swojego profilu",
                 "label_card": "Przydziel punkty doświadczenia",
@@ -218,7 +236,7 @@
                     "btn_apply": "Zastosuj",
                     "btn_close": "Zamknij",
                     "btn_open": "Edytuj",
-                    "description": "Przydziel punkty doświadczenia do poszczególnych zdolności",
+                    "description": "Ustaw poziomy umiejętności w trybach ciężarówki i autobusu",
                     "eco_driving": "Ekologiczna jazda",
                     "fragile_cargo": "Delikatny ładunek",
                     "high_value_cargo": "Ładunek o wysokiej wartości",
@@ -234,7 +252,17 @@
                     },
                     "just_in_time_delivery": "Dostawa na czas",
                     "long_distance": "Długodystansowiec",
-                    "title": "Przydziel punkty doświadczenia"
+                    "title": "Przydziel punkty doświadczenia",
+                    "truck_mode": "Tryb ciężarówki",
+                    "bus_mode": "Tryb autobusu",
+                    "bus_skills": {
+                        "long_duty": "Długie trasy",
+                        "tight_schedule": "Napięty rozkład jazdy",
+                        "satisfaction_decrease": "Mniejszy spadek zadowolenia",
+                        "low_acceleration": "Płynna jazda",
+                        "satisfaction_increase": "Większe zadowolenie",
+                        "ecodriving": "Ekologiczna jazda"
+                    }
                 }
             },
             "tab_title": "Profil",

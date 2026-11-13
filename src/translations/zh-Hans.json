@@ -152,8 +152,8 @@
                         "placeholder": "输入卡车模式经验值数量"
                     },
                     "input_bus_experience": {
-                        "label": "客运模式经验值",
-                        "placeholder": "输入客运模式经验值数量"
+                        "label": "客车模式经验值",
+                        "placeholder": "输入客车模式经验值数量"
                     },
                     "title": "修改经验"
                 }
@@ -211,6 +211,24 @@
                     "title": "购买所有车库"
                 }
             },
+            "bus_stops": {
+                "description_card": "解锁224个城市站与98个景点站",
+                "label_card": "解锁客运模式停靠站",
+                "modal": {
+                    "btn_apply": "应用",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "description": "选择解锁或取消解锁全部停靠站",
+                    "input_city_status": {
+                        "label": "停靠站状态",
+                        "options": {
+                            "unvisit_all": "取消解锁",
+                            "visit_all": "解锁全部停靠站"
+                        }
+                    },
+                    "title": "解锁客运模式停靠站"
+                }
+            },
             "skills_points": {
                 "description_card": "设置驾驶员技能等级",
                 "label_card": "设置技能等级",
@@ -218,7 +236,7 @@
                     "btn_apply": "应用",
                     "btn_close": "关闭",
                     "btn_open": "打开",
-                    "description": "选择需要解锁的危险品运输许可",
+                    "description": "设置卡车模式与客车模式的技能等级",
                     "eco_driving": "节油驾驶",
                     "fragile_cargo": "易碎货物",
                     "high_value_cargo": "贵重货物",
@@ -234,7 +252,17 @@
                     },
                     "just_in_time_delivery": "加急运输",
                     "long_distance": "长途运输",
-                    "title": "设置玩家技能点"
+                    "title": "设置玩家技能点",
+                    "truck_mode": "卡车模式",
+                    "bus_mode": "客车模式",
+                    "bus_skills": {
+                        "long_duty": "长途驾驶",
+                        "tight_schedule": "紧凑时刻表",
+                        "satisfaction_decrease": "满意度损失减缓",
+                        "low_acceleration": "平稳驾驶",
+                        "satisfaction_increase": "满意度提升",
+                        "ecodriving": "节油驾驶"
+                    }
                 }
             },
             "tab_title": "存档基本修改",

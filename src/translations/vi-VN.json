@@ -211,6 +211,24 @@
                     "title": "Mua tất cả gara"
                 }
             },
+            "bus_stops": {
+                "description_card": "Mở khóa 224 điểm dừng trong thành phố và 98 điểm dừng du lịch",
+                "label_card": "Mở khóa điểm dừng xe khách",
+                "modal": {
+                    "btn_apply": "Áp dụng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
+                    "description": "Chọn mở khóa hoặc khóa tất cả điểm dừng",
+                    "input_city_status": {
+                        "label": "Điểm dừng xe khách",
+                        "options": {
+                            "unvisit_all": "Khóa tất cả điểm dừng",
+                            "visit_all": "Mở khóa tất cả điểm dừng"
+                        }
+                    },
+                    "title": "Mở khóa điểm dừng xe khách"
+                }
+            },
             "skills_points": {
                 "description_card": "Đặt kỹ năng kinh nghiệm vào hồ sơ của bạn",
                 "label_card": "Đặt kỹ năng kinh nghiệm",
@@ -218,7 +236,7 @@
                     "btn_apply": "Áp dụng",
                     "btn_close": "Đóng",
                     "btn_open": "Mở",
-                    "description": "Nhập số lượng kinh nghiệm bạn cần",
+                    "description": "Thiết lập cấp độ kỹ năng cho chế độ xe tải và xe khách",
                     "eco_driving": "Lái xe sinh thái",
                     "fragile_cargo": "Hàng dễ vỡ",
                     "high_value_cargo": "Hàng có giá trị cao",
@@ -234,7 +252,17 @@
                     },
                     "just_in_time_delivery": "Giao hàng đúng hẹn",
                     "long_distance": "Khoảng cách dài",
-                    "title": "Đặt Kỹ Năng Kinh Nghiệm"
+                    "title": "Đặt Kỹ Năng Kinh Nghiệm",
+                    "truck_mode": "Chế độ xe tải",
+                    "bus_mode": "Chế độ xe khách",
+                    "bus_skills": {
+                        "long_duty": "Hành trình dài",
+                        "tight_schedule": "Lịch trình gấp",
+                        "satisfaction_decrease": "Giảm mất mức hài lòng",
+                        "low_acceleration": "Lái xe êm ái",
+                        "satisfaction_increase": "Tăng mức hài lòng",
+                        "ecodriving": "Lái xe sinh thái"
+                    }
                 }
             },
             "tab_title": "Hồ sơ",

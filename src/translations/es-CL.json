@@ -211,6 +211,24 @@
                     "title": "Comprar todos los garajes"
                 }
             },
+            "bus_stops": {
+                "description_card": "Desbloquea 224 paradas urbanas y 98 paradas turísticas",
+                "label_card": "Desbloquear paradas de autobús",
+                "modal": {
+                    "btn_apply": "Aplicar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "description": "Selecciona si quieres desbloquear o bloquear todas las paradas",
+                    "input_city_status": {
+                        "label": "Paradas de autobús",
+                        "options": {
+                            "unvisit_all": "Bloquear todas las paradas",
+                            "visit_all": "Desbloquear todas las paradas"
+                        }
+                    },
+                    "title": "Desbloquear paradas de autobús"
+                }
+            },
             "skills_points": {
                 "description_card": "Establecer habilidades de experiencia en tu perfil",
                 "label_card": "Establecer habilidades de experiencia",
@@ -218,7 +236,7 @@
                     "btn_apply": "Aplicar",
                     "btn_close": "Cerrar",
                     "btn_open": "Abrir",
-                    "description": "Introduce la cantidad de experiencia que necesitas",
+                    "description": "Configura los niveles de habilidad de los modos camión y autobús",
                     "eco_driving": "Conducción económica",
                     "fragile_cargo": "Carga frágil",
                     "high_value_cargo": "Carga de alto valor",
@@ -234,7 +252,17 @@
                     },
                     "just_in_time_delivery": "Entrega justo a tiempo",
                     "long_distance": "Larga distancia",
-                    "title": "Establecer habilidades de experiencia"
+                    "title": "Establecer habilidades de experiencia",
+                    "truck_mode": "Modo camión",
+                    "bus_mode": "Modo autobús",
+                    "bus_skills": {
+                        "long_duty": "Trayectos largos",
+                        "tight_schedule": "Horario ajustado",
+                        "satisfaction_decrease": "Menor pérdida de satisfacción",
+                        "low_acceleration": "Conducción suave",
+                        "satisfaction_increase": "Mayor satisfacción",
+                        "ecodriving": "Conducción económica"
+                    }
                 }
             },
             "tab_title": "Perfil",

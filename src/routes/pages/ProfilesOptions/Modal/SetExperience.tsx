@@ -37,7 +37,7 @@ const SetExperience = () => {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const [Experience, setExperience] = useState<string>("575700");
-	const [busExperience, setBusExperience] = useState<string>("568700");
+	const [busExperience, setBusExperience] = useState<string>("575700");
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [completed, setCompleted] = useState<completedProps>({
 		error: false,

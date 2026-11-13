@@ -205,6 +205,7 @@ export interface Profile {
 	skills_points: SkillsPoints;
 	tab_title: string;
 	visited_cities: VisitedCities;
+	bus_stops: VisitedCities;
 }
 
 export interface AddExperience {
@@ -297,6 +298,16 @@ export interface SkillsPoints {
 }
 
 export interface SkillsPointsModal {
+	truck_mode: string;
+	bus_mode: string;
+	bus_skills: {
+		long_duty: string;
+		tight_schedule: string;
+		satisfaction_decrease: string;
+		low_acceleration: string;
+		satisfaction_increase: string;
+		ecodriving: string;
+	};
 	btn_apply: string;
 	btn_close: string;
 	btn_open: string;
