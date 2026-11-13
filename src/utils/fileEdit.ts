@@ -30,6 +30,10 @@ import {
 	ResponseSaveGameTrucks,
 	ResponseSaveGameTrailers,
 	ResponseSaveCameraPositions,
+	ResponseSaveCoaches,
+	CoachEdit,
+	CoachJobOptions,
+	CoachJobRequest,
 } from "@/types/fileEditTypes";
 import {
 	IColorRgbToValidate,
@@ -40,6 +44,41 @@ import { Langs } from "@/types/TranslationsTypes";
 import { IColor } from "react-color-palette";
 
 const STORE_FILE = ".settings.dat";
+
+export const getCoachJobOptions = (dirSave: string) =>
+	invoke<CoachJobOptions | null>("get_coach_job_options", {
+		dirSave: dirSave + "/game.sii",
+	});
+
+export const generateCoachJob = async (
+	dirSave: string,
+	request: CoachJobRequest
+): Promise<boolean> => {
+	const response = await invoke<responseRustTypes>("generate_coach_job", {
+		dirSave: dirSave + "/game.sii",
+		request,
+	});
+	return response.res;
+};
+
+export const getSaveCoaches = async (
+	dirSave: string
+): Promise<ResponseSaveCoaches> => {
+	return invoke<ResponseSaveCoaches>("get_save_coaches", {
+		dirSave: dirSave + "/game.sii",
+	});
+};
+
+export const updateCoach = async (
+	dirSave: string,
+	edit: CoachEdit
+): Promise<boolean> => {
+	const response = await invoke<responseRustTypes>("update_coach", {
+		dirSave: dirSave + "/game.sii",
+		edit,
+	});
+	return response.res;
+};
 export const ATS_DIR = "American Truck Simulator";
 export const ETS2_DIR = "Euro Truck Simulator 2";
 

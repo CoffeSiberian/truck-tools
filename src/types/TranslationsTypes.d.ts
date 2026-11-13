@@ -190,6 +190,55 @@ export interface MenuOptions {
 	settings: Settings;
 	trailers: Trailers;
 	trucks: Trucks;
+	coaches: Coaches;
+}
+
+export interface Coaches {
+	city_names: Record<string, string>;
+	job_generator: TrucksLicensePlate;
+	job_inputs: {
+		mode: Input;
+		stop: Input;
+		source: Input;
+		route: Input;
+		passengers: Input;
+		departure_delay: Input;
+	};
+	job_controls: {
+		custom: string;
+		existing: string;
+		add_stop: string;
+		remove_stop: string;
+		move_up: string;
+		move_down: string;
+		stop_limit: string;
+		unreachable: string;
+	};
+	job_status: {
+		active_job: string;
+		no_coach: string;
+		no_routes: string;
+	};
+	powertrain_inputs: {
+		brands: Input;
+		models: Input;
+		engines: Input;
+		transmissions: Input;
+	};
+	change_engine: TrucksLicensePlate;
+	change_transmission: TrucksLicensePlate;
+	part_names: Record<string, string>;
+	tab_title: string;
+	empty: string;
+	load_error: string;
+	license_plate: TrucksLicensePlate;
+	change_km: ChangeKM;
+	repair_coach: RepairTruck;
+	repair_all_coaches: RepairAllTrucks;
+	paint_job: TrucksLicensePlate;
+	paint_label: string;
+	color_label: string;
+	paint_names: Record<string, string>;
 }
 
 export interface About {

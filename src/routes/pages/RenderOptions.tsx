@@ -10,6 +10,7 @@ import { Button } from "@heroui/button";
 import { Tabs, Tab } from "@heroui/tabs";
 import TrailersOptions from "@/routes/pages/TrailersOptions/TrailersOptions";
 import TrucksOptions from "@/routes/pages/TrucksOptions/TrucksOptions";
+import CoachesOptions from "@/routes/pages/CoachesOptions/CoachesOptions";
 import ProfilesOptions from "@/routes/pages/ProfilesOptions/ProfilesOptions";
 import AboutModal from "@/components/Modals/AboutModal";
 import SettingsModal from "@/components/Modals/SettingsModal";
@@ -24,6 +25,7 @@ import classNames from "classnames";
 // Icons
 import {
 	IconTruck,
+	IconBus,
 	IconUserCircle,
 	IconSettings,
 	IconPackages,
@@ -34,7 +36,7 @@ import {
 // image
 import kofi from "@/static/icons/kofi/kofi.webp";
 
-type ItemId = "trailer" | "truck" | "profile" | "settings" | "about";
+type ItemId = "trailer" | "truck" | "coach" | "profile" | "settings" | "about";
 
 interface ItemsTypes {
 	id: ItemId;
@@ -48,7 +50,7 @@ const RenderOptions = () => {
 	const { translations } = useContext(LocaleContext);
 	const { darkMode } = useContext(DarkModeContex);
 	const [activeIndex, setActiveIndex] = useState<ItemId>("trailer");
-	const { trailers, trucks, profile, settings, about } =
+	const { trailers, trucks, coaches, profile, settings, about } =
 		translations.menu_options;
 
 	const {
@@ -77,6 +79,13 @@ const RenderOptions = () => {
 			jsx: <TrucksOptions />,
 			modal: false,
 			icon: <IconTruck />,
+		},
+		{
+			id: "coach",
+			label: coaches.tab_title,
+			jsx: <CoachesOptions />,
+			modal: false,
+			icon: <IconBus />,
 		},
 		{
 			id: "profile",

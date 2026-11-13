@@ -3,11 +3,13 @@ mod structs;
 mod utils;
 
 use hex::encode_upper;
+use main_options::coaches::jobs::{CoachJobOptions, CoachJobRequest, generate_job, job_options};
+use main_options::coaches::{CoachEdit, CoachesResponse, edit_coach, list_coaches};
 
 use main_options::profiles::{
-    copy_profile_configs, set_any_status_garage, set_bank_money, set_dealerships_discovered_status,
-    set_bus_stops_discovered, set_experience, set_experience_skills, set_player_map_position,
-    set_profile_name, set_visited_cities,
+    copy_profile_configs, set_any_status_garage, set_bank_money, set_bus_stops_discovered,
+    set_dealerships_discovered_status, set_experience, set_experience_skills,
+    set_player_map_position, set_profile_name, set_visited_cities,
 };
 use main_options::trailers::{
     get_list_trailers_info, get_my_trailer_id, get_trailer_def_id, get_trailer_def_index,
@@ -44,6 +46,54 @@ use utils::file_edit::{
 };
 
 const IGNORED_FOLDERS: [&str; 1] = ["album"];
+
+#[tauri::command]
+async fn get_coach_job_options(dir_save: &str) -> Result<Option<CoachJobOptions>, ()> {
+    Ok(read_file_text(dir_save)
+        .await
+        .and_then(|file| job_options(&file)))
+}
+
+#[tauri::command]
+async fn generate_coach_job(
+    dir_save: &str,
+    request: CoachJobRequest,
+) -> Result<DefaultResponse, ()> {
+    let Some(file) = read_file_text(dir_save).await else {
+        return Ok(DefaultResponse { res: false });
+    };
+    let Some(updated) = generate_job(&file, &request) else {
+        return Ok(DefaultResponse { res: false });
+    };
+    Ok(DefaultResponse {
+        res: save_file(dir_save.to_owned(), updated).await,
+    })
+}
+
+#[tauri::command]
+async fn get_save_coaches(dir_save: &str) -> Result<CoachesResponse, ()> {
+    Ok(read_file_text(dir_save)
+        .await
+        .and_then(|file| list_coaches(&file))
+        .unwrap_or(CoachesResponse {
+            res: false,
+            current_coach_id: None,
+            coaches: Vec::new(),
+        }))
+}
+
+#[tauri::command]
+async fn update_coach(dir_save: &str, edit: CoachEdit) -> Result<DefaultResponse, ()> {
+    let Some(file) = read_file_text(dir_save).await else {
+        return Ok(DefaultResponse { res: false });
+    };
+    let Some(updated) = edit_coach(&file, &edit) else {
+        return Ok(DefaultResponse { res: false });
+    };
+    Ok(DefaultResponse {
+        res: save_file(dir_save.to_owned(), updated).await,
+    })
+}
 
 #[tauri::command]
 async fn decrypt_to_save(dir_save: &str) -> Result<DefaultResponse, ()> {
@@ -1192,6 +1242,10 @@ pub fn run() {
             set_player_trailer,
             get_save_player_camera,
             set_player_position,
+            get_save_coaches,
+            update_coach,
+            get_coach_job_options,
+            generate_coach_job,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

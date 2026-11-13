@@ -18,6 +18,27 @@ import Freightliner from "@/static/icons/brands/ats/freightliner.webp";
 // types
 import { BrandType } from "@/types/ConstTypes";
 
+export const COACH_BRANDS: BrandType[] = [
+	{
+		key: "man",
+		name: "MAN",
+		icon: ManIcon,
+		models: [{ key: "man.lions_24", name: "MAN Lion’s Coach" }],
+	},
+	{
+		key: "scania",
+		name: "Scania",
+		icon: ScaniaIcon,
+		models: [{ key: "scania.touring_23", name: "Scania Touring" }],
+	},
+	{
+		key: "volvo",
+		name: "Volvo",
+		icon: VolvoIcon,
+		models: [{ key: "volvo.9700_23", name: "Volvo 9700" }],
+	},
+];
+
 export const BRANDS_ETS2: BrandType[] = [
 	{
 		key: "scania",
