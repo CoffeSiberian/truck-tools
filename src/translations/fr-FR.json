@@ -760,16 +760,20 @@
             },
             "job_generator": {
                 "label_card": "Générateur de missions en autocar",
-                "description_card": "Créer une mission régulière déjà acceptée.",
+                "description_card": "Générez une ligne régulière à accepter au départ ou un contrat déjà accepté.",
                 "modal": {
                     "btn_apply": "Appliquer",
                     "btn_close": "Fermé",
                     "btn_open": "Ouvrir",
                     "title": "Générateur de missions en autocar",
-                    "description": "Choisissez les villes dans l’ordre ou un itinéraire existant. Votre autocar personnel actuellement conduit est utilisé, avec les passagers à bord. Le véhicule reste à sa position actuelle."
+                    "description": "Choisissez les villes dans l’ordre ou un itinéraire existant. Acceptez le contrat au départ ou commencez avec les passagers à bord. La position du véhicule est conservée."
                 }
             },
             "job_inputs": {
+                "generation": {
+                    "label": "État du contrat",
+                    "placeholder": "État du contrat"
+                },
                 "source": {
                     "label": "Ville de départ",
                     "placeholder": "Ville de départ"
@@ -799,6 +803,13 @@
                 "active_job": "Terminez ou annulez la mission actuelle avant d’en générer une autre.",
                 "no_coach": "Conduisez d’abord votre propre autocar avec un châssis d’origine pris en charge.",
                 "no_routes": "Aucune ligne régulière valide trouvée dans cette sauvegarde."
+            },
+            "job_error": {
+              "changed_save": "La sauvegarde ou le car sélectionné a changé. Fermez puis rouvrez le générateur.",
+              "invalid_route": "Cet itinéraire n’est plus disponible dans la sauvegarde. Rouvrez le générateur et sélectionnez à nouveau les arrêts.",
+              "invalid_request": "Vérifiez le nombre de passagers et le délai de départ.",
+              "unsupported_save": "Des champs nécessaires à la mission en car sont absents de la sauvegarde. Aucune modification n’a été enregistrée.",
+              "navigation_error": "Les données de navigation de la sauvegarde sont incomplètes. Aucune modification n’a été enregistrée."
             },
             "city_names": {
                 "a_coruna": "La Corogne",
@@ -1236,6 +1247,9 @@
                 "zurich": "Zurich"
             },
             "job_controls": {
+                "offer": "Accepter au départ",
+                "accepted": "Déjà accepté",
+                "offer_hint": "Rejoignez l’arrêt de départ pour accepter le contrat et embarquer les passagers. Le jeu détermine leur nombre.",
                 "custom": "Arrêts personnalisés",
                 "existing": "Itinéraires existants",
                 "add_stop": "Ajouter un arrêt",

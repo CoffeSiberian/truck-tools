@@ -760,16 +760,20 @@
             },
             "job_generator": {
                 "label_card": "Otobüs işi oluşturucu",
-                "description_card": "Kabul edilmiş bir tarifeli sefer işi oluşturun.",
+                "description_card": "Başlangıç durağında kabul edilecek düzenli bir hat veya kabul edilmiş bir iş oluşturun.",
                 "modal": {
                     "btn_apply": "Uygula",
                     "btn_close": "Kapat",
                     "btn_open": "Aç",
                     "title": "Otobüs işi oluşturucu",
-                    "description": "Şehirleri sırayla veya mevcut bir güzergâhı seçin. Şu anda sürdüğünüz kendi otobüsünüz, yolcular araçta olacak şekilde kullanılır. Araç mevcut konumunda kalır."
+                    "description": "Şehirleri sırayla veya mevcut bir güzergâhı seçin. İşi başlangıç durağında kabul edin ya da yolcular araçtayken başlayın. Aracın konumu korunur."
                 }
             },
             "job_inputs": {
+                "generation": {
+                    "label": "İş durumu",
+                    "placeholder": "İş durumu"
+                },
                 "source": {
                     "label": "Kalkış şehri",
                     "placeholder": "Kalkış şehri"
@@ -799,6 +803,13 @@
                 "active_job": "Yeni iş oluşturmadan önce mevcut işi tamamlayın veya iptal edin.",
                 "no_coach": "Önce desteklenen orijinal şasiye sahip kendi otobüsünüzü sürün.",
                 "no_routes": "Bu kayıtta geçerli bir tarifeli güzergâh bulunamadı."
+            },
+            "job_error": {
+              "changed_save": "Seçilen kayıt veya otobüs değişti. Oluşturucuyu kapatıp yeniden açın.",
+              "invalid_route": "Bu güzergâh artık kayıtta kullanılamıyor. Oluşturucuyu yeniden açıp durakları tekrar seçin.",
+              "invalid_request": "Yolcu sayısını ve kalkış gecikmesini kontrol edin.",
+              "unsupported_save": "Kayıtta otobüs görevi için gerekli alanlar eksik. Hiçbir değişiklik kaydedilmedi.",
+              "navigation_error": "Kayıttaki navigasyon verileri eksik. Hiçbir değişiklik kaydedilmedi."
             },
             "city_names": {
                 "a_coruna": "A Coruña",
@@ -1236,6 +1247,9 @@
                 "zurich": "Zürih"
             },
             "job_controls": {
+                "offer": "Başlangıç durağında kabul et",
+                "accepted": "Zaten kabul edilmiş",
+                "offer_hint": "İşi kabul etmek ve yolcuları almak için kalkış durağına sürün. Yolcu sayısını oyun belirler.",
                 "custom": "Özel duraklar",
                 "existing": "Mevcut güzergâhlar",
                 "add_stop": "Durak ekle",

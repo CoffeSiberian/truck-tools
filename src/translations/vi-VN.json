@@ -760,16 +760,20 @@
             },
             "job_generator": {
                 "label_card": "Trình tạo công việc xe khách",
-                "description_card": "Tạo công việc tuyến thường đã nhận.",
+                "description_card": "Tạo tuyến xe khách thường để nhận tại điểm xuất phát hoặc công việc đã nhận.",
                 "modal": {
                     "btn_apply": "Áp dụng",
                     "btn_close": "Đóng",
                     "btn_open": "Mở",
                     "title": "Trình tạo công việc xe khách",
-                    "description": "Chọn các thành phố theo thứ tự hoặc tuyến có sẵn. Sử dụng xe khách sở hữu đang lái với hành khách trên xe. Xe giữ nguyên vị trí hiện tại."
+                    "description": "Chọn các thành phố theo thứ tự hoặc một tuyến có sẵn. Nhận tại điểm xuất phát hoặc bắt đầu khi khách đã lên xe. Vị trí xe được giữ nguyên."
                 }
             },
             "job_inputs": {
+                "generation": {
+                    "label": "Trạng thái công việc",
+                    "placeholder": "Trạng thái công việc"
+                },
                 "source": {
                     "label": "Thành phố khởi hành",
                     "placeholder": "Thành phố khởi hành"
@@ -799,6 +803,13 @@
                 "active_job": "Hoàn thành hoặc hủy công việc hiện tại trước khi tạo công việc mới.",
                 "no_coach": "Trước tiên hãy lái xe khách sở hữu có khung gầm nguyên bản được hỗ trợ.",
                 "no_routes": "Không tìm thấy tuyến thường hợp lệ trong bản lưu này."
+            },
+            "job_error": {
+              "changed_save": "Bản lưu hoặc xe khách đã chọn đã thay đổi. Hãy đóng rồi mở lại trình tạo.",
+              "invalid_route": "Tuyến này không còn khả dụng trong bản lưu. Hãy mở lại trình tạo và chọn lại các điểm dừng.",
+              "invalid_request": "Hãy kiểm tra số hành khách và thời gian hoãn khởi hành.",
+              "unsupported_save": "Bản lưu thiếu các trường cần thiết cho nhiệm vụ xe khách. Không có thay đổi nào được lưu.",
+              "navigation_error": "Dữ liệu dẫn đường trong bản lưu không đầy đủ. Không có thay đổi nào được lưu."
             },
             "city_names": {
                 "a_coruna": "A Coruña",
@@ -1236,6 +1247,9 @@
                 "zurich": "Zürich"
             },
             "job_controls": {
+                "offer": "Nhận tại điểm xuất phát",
+                "accepted": "Đã nhận",
+                "offer_hint": "Lái xe đến trạm xuất phát để nhận công việc và đón khách. Trò chơi quyết định số hành khách.",
                 "custom": "Điểm dừng tùy chỉnh",
                 "existing": "Tuyến có sẵn",
                 "add_stop": "Thêm điểm dừng",

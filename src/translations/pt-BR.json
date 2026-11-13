@@ -760,16 +760,20 @@
             },
             "job_generator": {
                 "label_card": "Gerador de trabalhos de ônibus",
-                "description_card": "Gere um trabalho regular já aceito.",
+                "description_card": "Gere uma linha regular para aceitar na origem ou um trabalho já aceito.",
                 "modal": {
                     "btn_apply": "Aplicar",
                     "btn_close": "Fechar",
                     "btn_open": "Abrir",
                     "title": "Gerador de trabalhos de ônibus",
-                    "description": "Escolha as cidades em ordem ou uma rota existente. Usa seu ônibus próprio atualmente conduzido, com passageiros a bordo. O veículo permanece na posição atual."
+                    "description": "Escolha as cidades em ordem ou uma rota existente. Aceite na origem ou comece com passageiros a bordo. A posição do veículo é mantida."
                 }
             },
             "job_inputs": {
+                "generation": {
+                    "label": "Estado do trabalho",
+                    "placeholder": "Estado do trabalho"
+                },
                 "source": {
                     "label": "Cidade de partida",
                     "placeholder": "Cidade de partida"
@@ -799,6 +803,13 @@
                 "active_job": "Conclua ou cancele o trabalho atual antes de gerar outro.",
                 "no_coach": "Primeiro dirija um ônibus próprio com um chassi original compatível.",
                 "no_routes": "Nenhuma linha regular válida foi encontrada neste jogo salvo."
+            },
+            "job_error": {
+              "changed_save": "O jogo salvo ou o ônibus selecionado mudou. Feche e abra novamente o gerador.",
+              "invalid_route": "Esta rota não está mais disponível no jogo salvo. Reabra o gerador e selecione as paradas novamente.",
+              "invalid_request": "Verifique o número de passageiros e o atraso da partida.",
+              "unsupported_save": "O jogo salvo não contém os campos necessários para o serviço de ônibus. Nenhuma alteração foi salva.",
+              "navigation_error": "Os dados de navegação do jogo salvo estão incompletos. Nenhuma alteração foi salva."
             },
             "city_names": {
                 "a_coruna": "A Coruña",
@@ -1236,6 +1247,9 @@
                 "zurich": "Zurique"
             },
             "job_controls": {
+                "offer": "Aceitar na origem",
+                "accepted": "Já aceito",
+                "offer_hint": "Dirija até a parada de partida para aceitar o trabalho e embarcar passageiros. O jogo determina a quantidade de passageiros.",
                 "custom": "Paradas personalizadas",
                 "existing": "Rotas existentes",
                 "add_stop": "Adicionar parada",

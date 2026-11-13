@@ -34,6 +34,7 @@ import {
 	CoachEdit,
 	CoachJobOptions,
 	CoachJobRequest,
+	CoachJobResponse,
 } from "@/types/fileEditTypes";
 import {
 	IColorRgbToValidate,
@@ -53,12 +54,11 @@ export const getCoachJobOptions = (dirSave: string) =>
 export const generateCoachJob = async (
 	dirSave: string,
 	request: CoachJobRequest
-): Promise<boolean> => {
-	const response = await invoke<responseRustTypes>("generate_coach_job", {
+): Promise<CoachJobResponse> => {
+	return invoke<CoachJobResponse>("generate_coach_job", {
 		dirSave: dirSave + "/game.sii",
 		request,
 	});
-	return response.res;
 };
 
 export const getSaveCoaches = async (

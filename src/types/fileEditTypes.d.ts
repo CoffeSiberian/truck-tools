@@ -120,12 +120,30 @@ export interface CoachConnection {
 }
 
 export interface CoachJobRequest {
+	generation: "offer" | "accepted";
 	offer_id: string | null;
 	coach_id: string;
 	source: string;
 	targets: string[];
 	passengers: number;
 	departure_delay: number;
+}
+
+export type CoachJobError =
+	| "read_error"
+	| "write_error"
+	| "active_job"
+	| "no_coach"
+	| "no_routes"
+	| "changed_save"
+	| "invalid_route"
+	| "invalid_request"
+	| "unsupported_save"
+	| "navigation_error";
+
+export interface CoachJobResponse {
+	res: boolean;
+	error: CoachJobError | null;
 }
 
 export interface SaveCoach {

@@ -197,6 +197,7 @@ export interface Coaches {
 	city_names: Record<string, string>;
 	job_generator: TrucksLicensePlate;
 	job_inputs: {
+		generation: Input;
 		mode: Input;
 		stop: Input;
 		source: Input;
@@ -205,6 +206,9 @@ export interface Coaches {
 		departure_delay: Input;
 	};
 	job_controls: {
+		offer: string;
+		accepted: string;
+		offer_hint: string;
 		custom: string;
 		existing: string;
 		add_stop: string;
@@ -218,6 +222,13 @@ export interface Coaches {
 		active_job: string;
 		no_coach: string;
 		no_routes: string;
+	};
+	job_error: {
+		changed_save: string;
+		invalid_route: string;
+		invalid_request: string;
+		unsupported_save: string;
+		navigation_error: string;
 	};
 	powertrain_inputs: {
 		brands: Input;

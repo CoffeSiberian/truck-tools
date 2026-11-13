@@ -760,16 +760,20 @@
             },
             "job_generator": {
                 "label_card": "客運任務產生器",
-                "description_card": "直接產生已接取的一般客運任務。",
+                "description_card": "產生到起點接取的一般客運路線，或直接產生已接取任務。",
                 "modal": {
                     "btn_apply": "應用",
                     "btn_close": "取消",
                     "btn_open": "查看詳情",
                     "title": "客運任務產生器",
-                    "description": "依序選擇停靠城市，或選擇現有路線。使用目前駕駛的自有客車，乘客已上車，車輛保留目前位置。"
+                    "description": "依序選擇停靠城市，或選擇現有路線。可選擇到起點接取，或直接產生乘客已上車的任務。車輛位置保持不變。"
                 }
             },
             "job_inputs": {
+                "generation": {
+                    "label": "任務狀態",
+                    "placeholder": "任務狀態"
+                },
                 "source": {
                     "label": "出發城市",
                     "placeholder": "出發城市"
@@ -799,6 +803,13 @@
                 "active_job": "請先完成或取消目前任務，再產生新任務。",
                 "no_coach": "請先駕駛一輛使用支援原廠底盤的自有客車。",
                 "no_routes": "此存檔中沒有有效的一般客運路線。"
+            },
+            "job_error": {
+              "changed_save": "所選存檔或客車已變更，請關閉後重新開啟產生器。",
+              "invalid_route": "存檔中已無法使用此路線，請重新開啟產生器並選擇停靠站。",
+              "invalid_request": "請檢查乘客人數和出發延遲。",
+              "unsupported_save": "存檔缺少客運任務所需欄位，未儲存任何修改。",
+              "navigation_error": "存檔的導航資料不完整，未儲存任何修改。"
             },
             "city_names": {
                 "a_coruna": "拉科魯尼亞",
@@ -1236,6 +1247,9 @@
                 "zurich": "蘇黎世市"
             },
             "job_controls": {
+                "offer": "到起點接取",
+                "accepted": "已接取任務",
+                "offer_hint": "開到起點站接取任務並上客，乘客人數由遊戲決定。",
                 "custom": "自訂停靠站",
                 "existing": "現有路線",
                 "add_stop": "新增停靠站",

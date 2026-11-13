@@ -760,16 +760,20 @@
             },
             "job_generator": {
                 "label_card": "Reisebus-Auftragsgenerator",
-                "description_card": "Einen angenommenen Linienauftrag erstellen.",
+                "description_card": "Erstelle eine reguläre Buslinie zur Annahme am Start oder einen bereits angenommenen Auftrag.",
                 "modal": {
                     "btn_apply": "Übernehmen",
                     "btn_close": "Schließen",
                     "btn_open": "Öffnen",
                     "title": "Reisebus-Auftragsgenerator",
-                    "description": "Wähle Städte in der gewünschten Reihenfolge oder eine vorhandene Route. Dein aktuell gefahrener eigener Reisebus wird mit Fahrgästen an Bord verwendet. Das Fahrzeug bleibt an seinem Standort."
+                    "description": "Wähle Städte in der gewünschten Reihenfolge oder eine bestehende Route. Nimm den Auftrag am Start an oder beginne mit Fahrgästen an Bord. Die Fahrzeugposition bleibt erhalten."
                 }
             },
             "job_inputs": {
+                "generation": {
+                    "label": "Auftragsstatus",
+                    "placeholder": "Auftragsstatus"
+                },
                 "source": {
                     "label": "Abfahrtsstadt",
                     "placeholder": "Abfahrtsstadt"
@@ -799,6 +803,13 @@
                 "active_job": "Beende oder storniere zuerst den aktuellen Auftrag.",
                 "no_coach": "Fahre zuerst einen eigenen Reisebus mit einem unterstützten Serienfahrgestell.",
                 "no_routes": "In diesem Spielstand wurden keine gültigen Linienrouten gefunden."
+            },
+            "job_error": {
+              "changed_save": "Der ausgewählte Spielstand oder Reisebus wurde geändert. Öffne den Generator erneut.",
+              "invalid_route": "Diese Route ist im Spielstand nicht mehr verfügbar. Öffne den Generator erneut und wähle die Haltestellen neu aus.",
+              "invalid_request": "Prüfe die Fahrgastzahl und die Abfahrtsverzögerung.",
+              "unsupported_save": "Im Spielstand fehlen erforderliche Felder für den Reisebusauftrag. Es wurden keine Änderungen gespeichert.",
+              "navigation_error": "Die Navigationsdaten im Spielstand sind unvollständig. Es wurden keine Änderungen gespeichert."
             },
             "city_names": {
                 "a_coruna": "A Coruña",
@@ -1236,6 +1247,9 @@
                 "zurich": "Zürich"
             },
             "job_controls": {
+                "offer": "Am Start annehmen",
+                "accepted": "Bereits angenommen",
+                "offer_hint": "Fahre zur Abfahrtshaltestelle, um den Auftrag anzunehmen und Fahrgäste einsteigen zu lassen. Die Fahrgastzahl bestimmt das Spiel.",
                 "custom": "Eigene Haltestellen",
                 "existing": "Vorhandene Routen",
                 "add_stop": "Haltestelle hinzufügen",

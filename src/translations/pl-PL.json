@@ -760,16 +760,20 @@
             },
             "job_generator": {
                 "label_card": "Generator zleceń autokarowych",
-                "description_card": "Utwórz przyjęte zlecenie na regularnej linii.",
+                "description_card": "Utwórz regularną linię do przyjęcia na przystanku początkowym lub już przyjęte zlecenie.",
                 "modal": {
                     "btn_apply": "Zastosuj",
                     "btn_close": "Zamknij",
                     "btn_open": "Edytuj",
                     "title": "Generator zleceń autokarowych",
-                    "description": "Wybierz miasta w kolejności lub istniejącą trasę. Używany jest aktualnie prowadzony własny autokar z pasażerami na pokładzie. Pojazd pozostaje w obecnym miejscu."
+                    "description": "Wybierz miasta w kolejności lub istniejącą trasę. Przyjmij zlecenie na początku trasy albo zacznij z pasażerami na pokładzie. Pozycja pojazdu pozostaje bez zmian."
                 }
             },
             "job_inputs": {
+                "generation": {
+                    "label": "Stan zlecenia",
+                    "placeholder": "Stan zlecenia"
+                },
                 "source": {
                     "label": "Miasto odjazdu",
                     "placeholder": "Miasto odjazdu"
@@ -799,6 +803,13 @@
                 "active_job": "Najpierw ukończ lub anuluj bieżące zlecenie.",
                 "no_coach": "Najpierw prowadź własny autokar z obsługiwanym fabrycznym podwoziem.",
                 "no_routes": "W tym zapisie nie znaleziono prawidłowych regularnych tras."
+            },
+            "job_error": {
+              "changed_save": "Wybrany zapis lub autokar uległ zmianie. Zamknij i ponownie otwórz generator.",
+              "invalid_route": "Ta trasa nie jest już dostępna w zapisie. Otwórz generator ponownie i wybierz przystanki.",
+              "invalid_request": "Sprawdź liczbę pasażerów i opóźnienie odjazdu.",
+              "unsupported_save": "W zapisie brakuje pól wymaganych dla zlecenia autokarowego. Nie zapisano żadnych zmian.",
+              "navigation_error": "Dane nawigacji w zapisie są niekompletne. Nie zapisano żadnych zmian."
             },
             "city_names": {
                 "a_coruna": "A Coruña",
@@ -1236,6 +1247,9 @@
                 "zurich": "Zurych"
             },
             "job_controls": {
+                "offer": "Przyjmij na przystanku początkowym",
+                "accepted": "Już przyjęte",
+                "offer_hint": "Jedź na przystanek początkowy, aby przyjąć zlecenie i zabrać pasażerów. Liczbę pasażerów ustala gra.",
                 "custom": "Własne przystanki",
                 "existing": "Istniejące trasy",
                 "add_stop": "Dodaj przystanek",

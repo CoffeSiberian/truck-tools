@@ -760,16 +760,20 @@
             },
             "job_generator": {
                 "label_card": "Autóbuszos fuvar generátor",
-                "description_card": "Elfogadott menetrend szerinti fuvar létrehozása.",
+                "description_card": "Hozz létre az indulási helyen elfogadható menetrendi járatot vagy már elfogadott fuvart.",
                 "modal": {
                     "btn_apply": "Alkalmaz",
                     "btn_close": "Bezárás",
                     "btn_open": "Megnyitás",
                     "title": "Autóbuszos fuvar generátor",
-                    "description": "Válassz városokat sorrendben vagy egy meglévő útvonalat. A jelenleg vezetett saját autóbuszodat használja, utasokkal a fedélzeten. A jármű a jelenlegi helyén marad."
+                    "description": "Válassz városokat sorrendben vagy egy meglévő útvonalat. Fogadd el a fuvart az indulási helyen, vagy kezdj utasokkal a fedélzeten. A jármű helyzete megmarad."
                 }
             },
             "job_inputs": {
+                "generation": {
+                    "label": "Fuvar állapota",
+                    "placeholder": "Fuvar állapota"
+                },
                 "source": {
                     "label": "Indulási város",
                     "placeholder": "Indulási város"
@@ -799,6 +803,13 @@
                 "active_job": "Előbb fejezd be vagy mondd le a jelenlegi fuvart.",
                 "no_coach": "Előbb vezess saját autóbuszt támogatott gyári alvázzal.",
                 "no_routes": "Ebben a mentésben nincs érvényes menetrend szerinti útvonal."
+            },
+            "job_error": {
+              "changed_save": "A kiválasztott mentés vagy távolsági busz megváltozott. Zárd be, majd nyisd meg újra a generátort.",
+              "invalid_route": "Ez az útvonal már nem érhető el a mentésben. Nyisd meg újra a generátort, és válaszd ki ismét a megállókat.",
+              "invalid_request": "Ellenőrizd az utasok számát és az indulási késleltetést.",
+              "unsupported_save": "A mentésből hiányoznak a buszos feladathoz szükséges mezők. Nem történt módosítás.",
+              "navigation_error": "A mentés navigációs adatai hiányosak. Nem történt módosítás."
             },
             "city_names": {
                 "a_coruna": "A Coruña",
@@ -1236,6 +1247,9 @@
                 "zurich": "Zürich"
             },
             "job_controls": {
+                "offer": "Elfogadás az indulási helyen",
+                "accepted": "Már elfogadva",
+                "offer_hint": "Vezess az induló megállóhoz a fuvar elfogadásához és az utasok felvételéhez. Az utasok számát a játék határozza meg.",
                 "custom": "Egyéni megállók",
                 "existing": "Meglévő útvonalak",
                 "add_stop": "Megálló hozzáadása",

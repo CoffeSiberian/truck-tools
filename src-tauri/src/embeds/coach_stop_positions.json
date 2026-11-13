@@ -1,0 +1,2562 @@
+{
+  "a_coruna": [
+    {
+      "position": [
+        -20939602,
+        1148,
+        6852734
+      ],
+      "direction": "forward"
+    }
+  ],
+  "aalborg": [
+    {
+      "position": [
+        249258,
+        1520,
+        -9207940
+      ],
+      "direction": "forward"
+    }
+  ],
+  "aarhus": [
+    {
+      "position": [
+        299918,
+        371,
+        -7862327
+      ],
+      "direction": "forward"
+    }
+  ],
+  "ajaccio": [
+    {
+      "position": [
+        -2449910,
+        1208,
+        12263491
+      ],
+      "direction": "forward"
+    }
+  ],
+  "akureyri": [
+    {
+      "position": [
+        -15763670,
+        2208,
+        -26664533
+      ],
+      "direction": "forward"
+    }
+  ],
+  "albacete": [
+    {
+      "position": [
+        -14922396,
+        5581,
+        15025214
+      ],
+      "direction": "forward"
+    }
+  ],
+  "alesund": [
+    {
+      "position": [
+        -1994884,
+        1027,
+        -17237295
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        -2003672,
+        1000,
+        -17229286
+      ],
+      "direction": "forward"
+    }
+  ],
+  "algeciras": [
+    {
+      "position": [
+        -20289429,
+        1255,
+        18248944
+      ],
+      "direction": "forward"
+    }
+  ],
+  "almeria": [
+    {
+      "position": [
+        -16274340,
+        1536,
+        17889940
+      ],
+      "direction": "forward"
+    }
+  ],
+  "alta": [
+    {
+      "position": [
+        8649137,
+        4992,
+        -28948036
+      ],
+      "direction": "forward"
+    }
+  ],
+  "amsterdam": [
+    {
+      "position": [
+        -4761148,
+        256,
+        -2971499
+      ],
+      "direction": "forward"
+    }
+  ],
+  "ancona": [
+    {
+      "position": [
+        2743607,
+        512,
+        10208878
+      ],
+      "direction": "forward"
+    }
+  ],
+  "andenes": [
+    {
+      "position": [
+        4888793,
+        1598,
+        -27695865
+      ],
+      "direction": "forward"
+    }
+  ],
+  "antwerp": [
+    {
+      "position": [
+        -5559414,
+        2560,
+        -1355696
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        -5570144,
+        1964,
+        -1429606
+      ],
+      "direction": "forward"
+    }
+  ],
+  "argostoli": [
+    {
+      "position": [
+        10709955,
+        470,
+        18317476
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        10400423,
+        500,
+        18114444
+      ],
+      "direction": "forward"
+    }
+  ],
+  "athens": [
+    {
+      "position": [
+        14598820,
+        512,
+        18178944
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        14708229,
+        512,
+        18235377
+      ],
+      "direction": "forward"
+    }
+  ],
+  "badajoz": [
+    {
+      "position": [
+        -21206819,
+        7680,
+        13640999
+      ],
+      "direction": "forward"
+    }
+  ],
+  "banja_luka": [
+    {
+      "position": [
+        6613521,
+        4124,
+        8549901
+      ],
+      "direction": "forward"
+    }
+  ],
+  "barcelona": [
+    {
+      "position": [
+        -9404321,
+        1536,
+        12250708
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        -9509144,
+        1536,
+        12252968
+      ],
+      "direction": "forward"
+    }
+  ],
+  "bari": [
+    {
+      "position": [
+        6241620,
+        776,
+        13908704
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        5817981,
+        -1032,
+        13812016
+      ],
+      "direction": "forward"
+    }
+  ],
+  "bastia": [
+    {
+      "position": [
+        -1835411,
+        703,
+        11262209
+      ],
+      "direction": "forward"
+    }
+  ],
+  "beograd": [
+    {
+      "position": [
+        10038830,
+        4745,
+        8179656
+      ],
+      "direction": "forward"
+    }
+  ],
+  "berlin": [
+    {
+      "position": [
+        2453460,
+        10604,
+        -2513466
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        2730558,
+        9908,
+        -2572305
+      ],
+      "direction": "forward"
+    }
+  ],
+  "bern": [
+    {
+      "position": [
+        -3178440,
+        9360,
+        5124757
+      ],
+      "direction": "forward"
+    }
+  ],
+  "bialystok": [
+    {
+      "position": [
+        11250113,
+        10780,
+        -3901416
+      ],
+      "direction": "forward"
+    }
+  ],
+  "bijelo_polje": [
+    {
+      "position": [
+        9253547,
+        14738,
+        10896848
+      ],
+      "direction": "forward"
+    }
+  ],
+  "birmingham": [
+    {
+      "position": [
+        -11733598,
+        8928,
+        -5245024
+      ],
+      "direction": "forward"
+    }
+  ],
+  "blonduos": [
+    {
+      "position": [
+        -16719139,
+        2924,
+        -27169717
+      ],
+      "direction": "forward"
+    }
+  ],
+  "bodo": [
+    {
+      "position": [
+        3733050,
+        2041,
+        -24076958
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        3739973,
+        1792,
+        -24016738
+      ],
+      "direction": "forward"
+    }
+  ],
+  "bologna": [
+    {
+      "position": [
+        828650,
+        11716,
+        8996858
+      ],
+      "direction": "forward"
+    }
+  ],
+  "bonifacio": [
+    {
+      "position": [
+        -2122158,
+        780,
+        13407268
+      ],
+      "direction": "forward"
+    }
+  ],
+  "bordeaux": [
+    {
+      "position": [
+        -12349855,
+        11033,
+        7173194
+      ],
+      "direction": "forward"
+    }
+  ],
+  "borlange": [
+    {
+      "position": [
+        4421912,
+        3546,
+        -13903104
+      ],
+      "direction": "forward"
+    }
+  ],
+  "bourges": [
+    {
+      "position": [
+        -8186662,
+        7680,
+        4255388
+      ],
+      "direction": "forward"
+    }
+  ],
+  "bratislava": [
+    {
+      "position": [
+        6316270,
+        16305,
+        3768701
+      ],
+      "direction": "forward"
+    }
+  ],
+  "bremen": [
+    {
+      "position": [
+        -1198589,
+        1346,
+        -3554346
+      ],
+      "direction": "forward"
+    }
+  ],
+  "brest": [
+    {
+      "position": [
+        -14453426,
+        768,
+        1306139
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        -14488009,
+        840,
+        1322463
+      ],
+      "direction": "forward"
+    }
+  ],
+  "brno": [
+    {
+      "position": [
+        5660135,
+        12541,
+        2285814
+      ],
+      "direction": "forward"
+    }
+  ],
+  "brussel": [
+    {
+      "position": [
+        -5663400,
+        4039,
+        -502406
+      ],
+      "direction": "forward"
+    }
+  ],
+  "bucuresti": [
+    {
+      "position": [
+        15726495,
+        2635,
+        8159635
+      ],
+      "direction": "forward"
+    }
+  ],
+  "budapest": [
+    {
+      "position": [
+        8325880,
+        7192,
+        4601165
+      ],
+      "direction": "forward"
+    }
+  ],
+  "burgas": [
+    {
+      "position": [
+        17578473,
+        2414,
+        10314256
+      ],
+      "direction": "forward"
+    }
+  ],
+  "burgos": [
+    {
+      "position": [
+        -15914851,
+        11758,
+        9745332
+      ],
+      "direction": "forward"
+    }
+  ],
+  "bystrica": [
+    {
+      "position": [
+        8318573,
+        16982,
+        2738466
+      ],
+      "direction": "forward"
+    }
+  ],
+  "cagliari": [
+    {
+      "position": [
+        -2464468,
+        4352,
+        16461803
+      ],
+      "direction": "forward"
+    }
+  ],
+  "calais": [
+    {
+      "position": [
+        -7732946,
+        2915,
+        -1215110
+      ],
+      "direction": "forward"
+    }
+  ],
+  "cambridge": [
+    {
+      "position": [
+        -9438130,
+        18863,
+        -4206670
+      ],
+      "direction": "forward"
+    }
+  ],
+  "carlisle": [
+    {
+      "position": [
+        -11746659,
+        25949,
+        -10143643
+      ],
+      "direction": "forward"
+    }
+  ],
+  "cassino": [
+    {
+      "position": [
+        3135369,
+        5632,
+        13370260
+      ],
+      "direction": "forward"
+    }
+  ],
+  "catanzaro": [
+    {
+      "position": [
+        6030173,
+        424,
+        17174780
+      ],
+      "direction": "forward"
+    }
+  ],
+  "chios": [
+    {
+      "position": [
+        16966670,
+        399,
+        16931280
+      ],
+      "direction": "forward"
+    }
+  ],
+  "ciudad_real": [
+    {
+      "position": [
+        -17472815,
+        14905,
+        14505976
+      ],
+      "direction": "forward"
+    }
+  ],
+  "clermont": [
+    {
+      "position": [
+        -7879724,
+        10801,
+        6393245
+      ],
+      "direction": "forward"
+    }
+  ],
+  "cluj_napoca": [
+    {
+      "position": [
+        12915308,
+        2539,
+        4682671
+      ],
+      "direction": "forward"
+    }
+  ],
+  "daugavpils": [
+    {
+      "position": [
+        13518343,
+        1163,
+        -8054599
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        13587899,
+        2256,
+        -8148886
+      ],
+      "direction": "forward"
+    }
+  ],
+  "debrecen": [
+    {
+      "position": [
+        10703996,
+        18208,
+        4558780
+      ],
+      "direction": "forward"
+    }
+  ],
+  "dijon": [
+    {
+      "position": [
+        -5689161,
+        11028,
+        4220539
+      ],
+      "direction": "forward"
+    }
+  ],
+  "dortmund": [
+    {
+      "position": [
+        -3030846,
+        10240,
+        -1733808
+      ],
+      "direction": "forward"
+    }
+  ],
+  "dover": [
+    {
+      "position": [
+        -8518859,
+        6014,
+        -1904291
+      ],
+      "direction": "forward"
+    }
+  ],
+  "dresden": [
+    {
+      "position": [
+        3160719,
+        12090,
+        -530030
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        3155956,
+        12135,
+        -516372
+      ],
+      "direction": "forward"
+    }
+  ],
+  "duisburg": [
+    {
+      "position": [
+        -3342858,
+        11195,
+        -1581301
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        -3327464,
+        11195,
+        -1583289
+      ],
+      "direction": "forward"
+    }
+  ],
+  "durres": [
+    {
+      "position": [
+        9363565,
+        592,
+        13310892
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        9099038,
+        589,
+        13280511
+      ],
+      "direction": "forward"
+    }
+  ],
+  "dusseldorf": [
+    {
+      "position": [
+        -3618951,
+        12257,
+        -1173656
+      ],
+      "direction": "forward"
+    }
+  ],
+  "edinburgh": [
+    {
+      "position": [
+        -11528664,
+        22859,
+        -11972919
+      ],
+      "direction": "forward"
+    }
+  ],
+  "edirne": [
+    {
+      "position": [
+        17091527,
+        2250,
+        11996412
+      ],
+      "direction": "forward"
+    }
+  ],
+  "egilsstadir": [
+    {
+      "position": [
+        -14029581,
+        1440,
+        -24988436
+      ],
+      "direction": "forward"
+    }
+  ],
+  "esbjerg": [
+    {
+      "position": [
+        -1237047,
+        1051,
+        -7081052
+      ],
+      "direction": "forward"
+    }
+  ],
+  "faro": [
+    {
+      "position": [
+        -23037439,
+        1027,
+        15924089
+      ],
+      "direction": "forward"
+    }
+  ],
+  "firenze": [
+    {
+      "position": [
+        378487,
+        5030,
+        10029459
+      ],
+      "direction": "forward"
+    }
+  ],
+  "frankfurt": [
+    {
+      "position": [
+        -1601690,
+        11648,
+        685149
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        -1645930,
+        11672,
+        650287
+      ],
+      "direction": "forward"
+    }
+  ],
+  "gavle": [
+    {
+      "position": [
+        5718415,
+        3238,
+        -14311100
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        5692673,
+        3238,
+        -14359172
+      ],
+      "direction": "forward"
+    }
+  ],
+  "gdansk": [
+    {
+      "position": [
+        7283246,
+        11186,
+        -5301759
+      ],
+      "direction": "forward"
+    }
+  ],
+  "geneve": [
+    {
+      "position": [
+        -4349702,
+        7916,
+        6011004
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        -4260159,
+        7915,
+        6093891
+      ],
+      "direction": "forward"
+    }
+  ],
+  "genova": [
+    {
+      "position": [
+        -2283965,
+        1731,
+        8973061
+      ],
+      "direction": "forward"
+    }
+  ],
+  "gijon": [
+    {
+      "position": [
+        -18048217,
+        1388,
+        7427898
+      ],
+      "direction": "forward"
+    }
+  ],
+  "glasgow": [
+    {
+      "position": [
+        -12868400,
+        25705,
+        -12404831
+      ],
+      "direction": "forward"
+    }
+  ],
+  "goteborg": [
+    {
+      "position": [
+        2194479,
+        1322,
+        -10154031
+      ],
+      "direction": "forward"
+    }
+  ],
+  "groningen": [
+    {
+      "position": [
+        -3266521,
+        2816,
+        -4085684
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        -3259631,
+        2816,
+        -4093851
+      ],
+      "direction": "forward"
+    }
+  ],
+  "hamburg": [
+    {
+      "position": [
+        -301391,
+        1664,
+        -4266844
+      ],
+      "direction": "forward"
+    }
+  ],
+  "helsinki": [
+    {
+      "position": [
+        11415492,
+        -774,
+        -14423820
+      ],
+      "direction": "forward"
+    }
+  ],
+  "heraklion": [
+    {
+      "position": [
+        16855616,
+        538,
+        21849186
+      ],
+      "direction": "forward"
+    }
+  ],
+  "hofn": [
+    {
+      "position": [
+        -15047333,
+        802,
+        -23900273
+      ],
+      "direction": "forward"
+    }
+  ],
+  "hunedoara": [
+    {
+      "position": [
+        12648274,
+        3072,
+        6742092
+      ],
+      "direction": "forward"
+    }
+  ],
+  "husavik": [
+    {
+      "position": [
+        -14844858,
+        2725,
+        -27038028
+      ],
+      "direction": "forward"
+    }
+  ],
+  "iasi": [
+    {
+      "position": [
+        16696013,
+        1287,
+        3962183
+      ],
+      "direction": "forward"
+    }
+  ],
+  "innsbruck": [
+    {
+      "position": [
+        546387,
+        2878,
+        5017639
+      ],
+      "direction": "forward"
+    }
+  ],
+  "isafjordur": [
+    {
+      "position": [
+        -18182276,
+        757,
+        -28836908
+      ],
+      "direction": "forward"
+    }
+  ],
+  "istanbul": [
+    {
+      "position": [
+        19339062,
+        2118,
+        12335131
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        19131771,
+        3038,
+        12247280
+      ],
+      "direction": "forward"
+    }
+  ],
+  "ivalo": [
+    {
+      "position": [
+        11059626,
+        3323,
+        -26837463
+      ],
+      "direction": "forward"
+    }
+  ],
+  "joensuu": [
+    {
+      "position": [
+        14631718,
+        4762,
+        -17842052
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        14102676,
+        2995,
+        -18232786
+      ],
+      "direction": "forward"
+    }
+  ],
+  "jonkoping": [
+    {
+      "position": [
+        3619624,
+        1271,
+        -10095871
+      ],
+      "direction": "forward"
+    }
+  ],
+  "kaliningrad": [
+    {
+      "position": [
+        8556842,
+        792,
+        -5881140
+      ],
+      "direction": "forward"
+    }
+  ],
+  "karlskrona": [
+    {
+      "position": [
+        4405834,
+        -445,
+        -7958503
+      ],
+      "direction": "forward"
+    }
+  ],
+  "karlstad": [
+    {
+      "position": [
+        3286454,
+        3584,
+        -12382645
+      ],
+      "direction": "forward"
+    }
+  ],
+  "kassel": [
+    {
+      "position": [
+        -817460,
+        20227,
+        -819222
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        -913231,
+        20227,
+        -766525
+      ],
+      "direction": "forward"
+    }
+  ],
+  "katowice": [
+    {
+      "position": [
+        7850972,
+        21473,
+        541036
+      ],
+      "direction": "forward"
+    }
+  ],
+  "kaunas": [
+    {
+      "position": [
+        11541272,
+        2575,
+        -6500784
+      ],
+      "direction": "forward"
+    }
+  ],
+  "keflavik": [
+    {
+      "position": [
+        -19378006,
+        1061,
+        -25350777
+      ],
+      "direction": "forward"
+    }
+  ],
+  "kiel": [
+    {
+      "position": [
+        205256,
+        2634,
+        -5511698
+      ],
+      "direction": "forward"
+    }
+  ],
+  "kiruna": [
+    {
+      "position": [
+        6928048,
+        11776,
+        -25107522
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        7172869,
+        12164,
+        -25173175
+      ],
+      "direction": "forward"
+    }
+  ],
+  "klagenfurt": [
+    {
+      "position": [
+        3465293,
+        -806,
+        6081514
+      ],
+      "direction": "forward"
+    }
+  ],
+  "klaipeda": [
+    {
+      "position": [
+        9338331,
+        2584,
+        -7594389
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        9195646,
+        794,
+        -7470712
+      ],
+      "direction": "forward"
+    }
+  ],
+  "kobenhavn": [
+    {
+      "position": [
+        1845369,
+        1544,
+        -7008415
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        1894870,
+        2088,
+        -7279262
+      ],
+      "direction": "forward"
+    }
+  ],
+  "koln": [
+    {
+      "position": [
+        -3175224,
+        12266,
+        -705689
+      ],
+      "direction": "forward"
+    }
+  ],
+  "koper": [
+    {
+      "position": [
+        2762333,
+        832,
+        7574241
+      ],
+      "direction": "forward"
+    }
+  ],
+  "kosice": [
+    {
+      "position": [
+        10102909,
+        19946,
+        2690683
+      ],
+      "direction": "forward"
+    }
+  ],
+  "kotka": [
+    {
+      "position": [
+        12874401,
+        2308,
+        -14789354
+      ],
+      "direction": "forward"
+    }
+  ],
+  "krakow": [
+    {
+      "position": [
+        8865015,
+        24455,
+        815778
+      ],
+      "direction": "forward"
+    }
+  ],
+  "lahti": [
+    {
+      "position": [
+        11556020,
+        3967,
+        -15583808
+      ],
+      "direction": "forward"
+    }
+  ],
+  "lamia": [
+    {
+      "position": [
+        12701563,
+        2051,
+        16697533
+      ],
+      "direction": "forward"
+    }
+  ],
+  "larissa": [
+    {
+      "position": [
+        12922159,
+        8192,
+        15745879
+      ],
+      "direction": "forward"
+    }
+  ],
+  "larochelle": [
+    {
+      "position": [
+        -11845050,
+        1048,
+        4827399
+      ],
+      "direction": "forward"
+    }
+  ],
+  "lehavre": [
+    {
+      "position": [
+        -9654019,
+        768,
+        288772
+      ],
+      "direction": "forward"
+    }
+  ],
+  "leipzig": [
+    {
+      "position": [
+        1732935,
+        11604,
+        -736504
+      ],
+      "direction": "forward"
+    }
+  ],
+  "lemans": [
+    {
+      "position": [
+        -10204495,
+        8261,
+        2554640
+      ],
+      "direction": "forward"
+    }
+  ],
+  "liepaja": [
+    {
+      "position": [
+        9212929,
+        1657,
+        -8508723
+      ],
+      "direction": "forward"
+    }
+  ],
+  "lille": [
+    {
+      "position": [
+        -6824587,
+        1810,
+        -571277
+      ],
+      "direction": "forward"
+    }
+  ],
+  "lillehammer": [
+    {
+      "position": [
+        1193071,
+        10175,
+        -15099833
+      ],
+      "direction": "forward"
+    }
+  ],
+  "limoges": [
+    {
+      "position": [
+        -9636458,
+        9053,
+        5996608
+      ],
+      "direction": "forward"
+    }
+  ],
+  "linkoping": [
+    {
+      "position": [
+        4780123,
+        3097,
+        -11064396
+      ],
+      "direction": "forward"
+    }
+  ],
+  "lisboa": [
+    {
+      "position": [
+        -23676310,
+        3615,
+        12870704
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        -23708023,
+        235,
+        12979699
+      ],
+      "direction": "forward"
+    }
+  ],
+  "liverpool": [
+    {
+      "position": [
+        -12436848,
+        18193,
+        -7416319
+      ],
+      "direction": "forward"
+    }
+  ],
+  "livorno": [
+    {
+      "position": [
+        -706638,
+        2560,
+        10386377
+      ],
+      "direction": "forward"
+    }
+  ],
+  "ljubljana": [
+    {
+      "position": [
+        3906477,
+        7424,
+        6597342
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        3916880,
+        7424,
+        6564172
+      ],
+      "direction": "forward"
+    }
+  ],
+  "lodz": [
+    {
+      "position": [
+        8055469,
+        2362,
+        -1558837
+      ],
+      "direction": "forward"
+    }
+  ],
+  "london": [
+    {
+      "position": [
+        -10168535,
+        15865,
+        -2933617
+      ],
+      "direction": "forward"
+    }
+  ],
+  "lublin": [
+    {
+      "position": [
+        11051227,
+        18326,
+        -1096590
+      ],
+      "direction": "forward"
+    }
+  ],
+  "lulea": [
+    {
+      "position": [
+        8544774,
+        1280,
+        -21796811
+      ],
+      "direction": "forward"
+    }
+  ],
+  "luxembourg": [
+    {
+      "position": [
+        -4295250,
+        14918,
+        995232
+      ],
+      "direction": "forward"
+    }
+  ],
+  "lyon": [
+    {
+      "position": [
+        -6294720,
+        13235,
+        6083664
+      ],
+      "direction": "forward"
+    }
+  ],
+  "madrid": [
+    {
+      "position": [
+        -16747546,
+        11008,
+        12520875
+      ],
+      "direction": "forward"
+    }
+  ],
+  "malaga": [
+    {
+      "position": [
+        -18971252,
+        1810,
+        17496526
+      ],
+      "direction": "forward"
+    }
+  ],
+  "malmo": [
+    {
+      "position": [
+        2874996,
+        1997,
+        -7025516
+      ],
+      "direction": "forward"
+    }
+  ],
+  "manchester": [
+    {
+      "position": [
+        -11605665,
+        20593,
+        -7087391
+      ],
+      "direction": "forward"
+    }
+  ],
+  "maribor": [
+    {
+      "position": [
+        4696263,
+        7749,
+        5863423
+      ],
+      "direction": "forward"
+    }
+  ],
+  "marseille": [
+    {
+      "position": [
+        -5794725,
+        694,
+        10405786
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        -5964576,
+        2313,
+        10001530
+      ],
+      "direction": "forward"
+    }
+  ],
+  "metz": [
+    {
+      "position": [
+        -4180169,
+        12292,
+        1930196
+      ],
+      "direction": "forward"
+    }
+  ],
+  "milano": [
+    {
+      "position": [
+        -1387548,
+        14923,
+        7604180
+      ],
+      "direction": "forward"
+    }
+  ],
+  "mitilini": [
+    {
+      "position": [
+        17147323,
+        310,
+        15933146
+      ],
+      "direction": "forward"
+    }
+  ],
+  "montpellier": [
+    {
+      "position": [
+        -7742371,
+        8420,
+        9273779
+      ],
+      "direction": "forward"
+    }
+  ],
+  "munchen": [
+    {
+      "position": [
+        764311,
+        10844,
+        3630498
+      ],
+      "direction": "forward"
+    }
+  ],
+  "nantes": [
+    {
+      "position": [
+        -12381128,
+        7936,
+        3314725
+      ],
+      "direction": "forward"
+    }
+  ],
+  "napoli": [
+    {
+      "position": [
+        3380844,
+        509,
+        14521564
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        3363608,
+        512,
+        14494989
+      ],
+      "direction": "forward"
+    }
+  ],
+  "narvik": [
+    {
+      "position": [
+        5354661,
+        2117,
+        -25961868
+      ],
+      "direction": "forward"
+    }
+  ],
+  "nice": [
+    {
+      "position": [
+        -4052799,
+        2011,
+        9726386
+      ],
+      "direction": "forward"
+    }
+  ],
+  "nis": [
+    {
+      "position": [
+        11691210,
+        2916,
+        10137861
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        11159702,
+        14538,
+        10430728
+      ],
+      "direction": "forward"
+    }
+  ],
+  "novi_sad": [
+    {
+      "position": [
+        9158510,
+        1518,
+        7718979
+      ],
+      "direction": "forward"
+    }
+  ],
+  "nurnberg": [
+    {
+      "position": [
+        741596,
+        13345,
+        1395883
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        624150,
+        13193,
+        1442469
+      ],
+      "direction": "forward"
+    }
+  ],
+  "odense": [
+    {
+      "position": [
+        391889,
+        3328,
+        -6825721
+      ],
+      "direction": "forward"
+    }
+  ],
+  "olafsvik": [
+    {
+      "position": [
+        -19394307,
+        903,
+        -26971363
+      ],
+      "direction": "forward"
+    }
+  ],
+  "olhao": [
+    {
+      "position": [
+        -22721544,
+        234,
+        16097423
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        -22704583,
+        1024,
+        15965321
+      ],
+      "direction": "forward"
+    }
+  ],
+  "olsztyn": [
+    {
+      "position": [
+        8897194,
+        10776,
+        -4556069
+      ],
+      "direction": "forward"
+    }
+  ],
+  "ornskoldsvik": [
+    {
+      "position": [
+        6705940,
+        1267,
+        -18201845
+      ],
+      "direction": "forward"
+    }
+  ],
+  "osijek": [
+    {
+      "position": [
+        7978048,
+        3840,
+        7337059
+      ],
+      "direction": "forward"
+    }
+  ],
+  "oslo": [
+    {
+      "position": [
+        1444376,
+        1817,
+        -13444086
+      ],
+      "direction": "forward"
+    }
+  ],
+  "osnabruck": [
+    {
+      "position": [
+        -2009595,
+        9408,
+        -2385875
+      ],
+      "direction": "forward"
+    }
+  ],
+  "ostersund": [
+    {
+      "position": [
+        3898476,
+        5315,
+        -17976668
+      ],
+      "direction": "forward"
+    }
+  ],
+  "ostrava": [
+    {
+      "position": [
+        7188732,
+        20001,
+        1426636
+      ],
+      "direction": "forward"
+    }
+  ],
+  "oulu": [
+    {
+      "position": [
+        10588538,
+        622,
+        -21080162
+      ],
+      "direction": "forward"
+    }
+  ],
+  "palermo": [
+    {
+      "position": [
+        2296784,
+        1280,
+        18173957
+      ],
+      "direction": "forward"
+    }
+  ],
+  "panevezys": [
+    {
+      "position": [
+        11930513,
+        512,
+        -7724036
+      ],
+      "direction": "forward"
+    }
+  ],
+  "paris": [
+    {
+      "position": [
+        -7635215,
+        5207,
+        1381381
+      ],
+      "direction": "forward"
+    }
+  ],
+  "parnu": [
+    {
+      "position": [
+        11393272,
+        1802,
+        -11519413
+      ],
+      "direction": "forward"
+    }
+  ],
+  "patreksfjord": [
+    {
+      "position": [
+        -19412272,
+        657,
+        -28359903
+      ],
+      "direction": "forward"
+    }
+  ],
+  "pecs": [
+    {
+      "position": [
+        7381779,
+        5030,
+        6721517
+      ],
+      "direction": "forward"
+    }
+  ],
+  "pleven": [
+    {
+      "position": [
+        14639883,
+        4238,
+        9598822
+      ],
+      "direction": "forward"
+    }
+  ],
+  "plovdiv": [
+    {
+      "position": [
+        14987058,
+        1408,
+        11917289
+      ],
+      "direction": "forward"
+    }
+  ],
+  "podgorica": [
+    {
+      "position": [
+        8908802,
+        1897,
+        11634046
+      ],
+      "direction": "forward"
+    }
+  ],
+  "porto": [
+    {
+      "position": [
+        -21977485,
+        12416,
+        9765505
+      ],
+      "direction": "forward"
+    }
+  ],
+  "poznan": [
+    {
+      "position": [
+        5857083,
+        -883,
+        -2403212
+      ],
+      "direction": "forward"
+    }
+  ],
+  "prague": [
+    {
+      "position": [
+        3760532,
+        18550,
+        938402
+      ],
+      "direction": "forward"
+    }
+  ],
+  "pristina": [
+    {
+      "position": [
+        10995756,
+        11675,
+        11181992
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        11037731,
+        12288,
+        11043268
+      ],
+      "direction": "forward"
+    }
+  ],
+  "reims": [
+    {
+      "position": [
+        -6180617,
+        10729,
+        1524617
+      ],
+      "direction": "forward"
+    }
+  ],
+  "rennes": [
+    {
+      "position": [
+        -11869502,
+        14859,
+        2221489
+      ],
+      "direction": "forward"
+    }
+  ],
+  "reykjavik": [
+    {
+      "position": [
+        -18837035,
+        1152,
+        -25467446
+      ],
+      "direction": "forward"
+    }
+  ],
+  "rezekne": [
+    {
+      "position": [
+        14184883,
+        1280,
+        -9162601
+      ],
+      "direction": "forward"
+    }
+  ],
+  "riga": [
+    {
+      "position": [
+        11321519,
+        466,
+        -9520604
+      ],
+      "direction": "forward"
+    }
+  ],
+  "roma": [
+    {
+      "position": [
+        1128116,
+        6060,
+        12890457
+      ],
+      "direction": "forward"
+    }
+  ],
+  "roscoff": [
+    {
+      "position": [
+        -13819524,
+        2988,
+        756324
+      ],
+      "direction": "forward"
+    }
+  ],
+  "rostock": [
+    {
+      "position": [
+        1505491,
+        468,
+        -4854696
+      ],
+      "direction": "forward"
+    }
+  ],
+  "rotterdam": [
+    {
+      "position": [
+        -4889931,
+        513,
+        -2475294
+      ],
+      "direction": "forward"
+    }
+  ],
+  "rovaniemi": [
+    {
+      "position": [
+        10292863,
+        4085,
+        -23160808
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        10678525,
+        5888,
+        -23660487
+      ],
+      "direction": "forward"
+    }
+  ],
+  "salamanca": [
+    {
+      "position": [
+        -18709614,
+        3328,
+        11319123
+      ],
+      "direction": "forward"
+    }
+  ],
+  "salzburg": [
+    {
+      "position": [
+        2376632,
+        7020,
+        4055210
+      ],
+      "direction": "forward"
+    }
+  ],
+  "sangiovanni": [
+    {
+      "position": [
+        4941036,
+        1825,
+        18129105
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        4942861,
+        2193,
+        18170306
+      ],
+      "direction": "forward"
+    }
+  ],
+  "sarajevo": [
+    {
+      "position": [
+        7748604,
+        3995,
+        9890454
+      ],
+      "direction": "forward"
+    }
+  ],
+  "sevilla": [
+    {
+      "position": [
+        -20355978,
+        0,
+        16212569
+      ],
+      "direction": "forward"
+    }
+  ],
+  "sheffield": [
+    {
+      "position": [
+        -10974322,
+        11391,
+        -6921541
+      ],
+      "direction": "forward"
+    }
+  ],
+  "skopje": [
+    {
+      "position": [
+        11188695,
+        2443,
+        12389044
+      ],
+      "direction": "forward"
+    }
+  ],
+  "sofia": [
+    {
+      "position": [
+        13050232,
+        6664,
+        10883805
+      ],
+      "direction": "forward"
+    }
+  ],
+  "split": [
+    {
+      "position": [
+        5615005,
+        4334,
+        10490618
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        5593220,
+        2944,
+        10550691
+      ],
+      "direction": "forward"
+    }
+  ],
+  "stavanger": [
+    {
+      "position": [
+        -2760646,
+        4422,
+        -12273102
+      ],
+      "direction": "forward"
+    }
+  ],
+  "stockholm": [
+    {
+      "position": [
+        6272865,
+        51,
+        -12262013
+      ],
+      "direction": "forward"
+    }
+  ],
+  "strasbourg": [
+    {
+      "position": [
+        -2801489,
+        9321,
+        2902537
+      ],
+      "direction": "forward"
+    }
+  ],
+  "stuttgart": [
+    {
+      "position": [
+        -1308499,
+        7670,
+        2500381
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        -1256567,
+        7670,
+        2495343
+      ],
+      "direction": "forward"
+    }
+  ],
+  "szczecin": [
+    {
+      "position": [
+        3858882,
+        11917,
+        -3931295
+      ],
+      "direction": "forward"
+    }
+  ],
+  "szeged": [
+    {
+      "position": [
+        9437604,
+        6206,
+        6213404
+      ],
+      "direction": "forward"
+    }
+  ],
+  "tallinn": [
+    {
+      "position": [
+        11396710,
+        1024,
+        -12943417
+      ],
+      "direction": "forward"
+    }
+  ],
+  "tartu": [
+    {
+      "position": [
+        13017244,
+        1024,
+        -11803972
+      ],
+      "direction": "forward"
+    }
+  ],
+  "tekirdag": [
+    {
+      "position": [
+        17817899,
+        5780,
+        12535831
+      ],
+      "direction": "forward"
+    }
+  ],
+  "thessaloniki": [
+    {
+      "position": [
+        13256694,
+        951,
+        14267634
+      ],
+      "direction": "forward"
+    }
+  ],
+  "thorshofn": [
+    {
+      "position": [
+        -13562731,
+        770,
+        -26615028
+      ],
+      "direction": "forward"
+    }
+  ],
+  "tirana": [
+    {
+      "position": [
+        9809909,
+        3740,
+        13072845
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        9811978,
+        3740,
+        13071078
+      ],
+      "direction": "forward"
+    }
+  ],
+  "torino": [
+    {
+      "position": [
+        -3320259,
+        8771,
+        8026087
+      ],
+      "direction": "forward"
+    }
+  ],
+  "toulouse": [
+    {
+      "position": [
+        -9879866,
+        7297,
+        9153791
+      ],
+      "direction": "forward"
+    }
+  ],
+  "trelleborg": [
+    {
+      "position": [
+        2793691,
+        714,
+        -6669510
+      ],
+      "direction": "forward"
+    }
+  ],
+  "tromso": [
+    {
+      "position": [
+        6233213,
+        1834,
+        -28576098
+      ],
+      "direction": "forward"
+    }
+  ],
+  "trondheim": [
+    {
+      "position": [
+        978032,
+        5492,
+        -18581401
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        832649,
+        1024,
+        -18713065
+      ],
+      "direction": "forward"
+    }
+  ],
+  "turku": [
+    {
+      "position": [
+        9561934,
+        1330,
+        -14288008
+      ],
+      "direction": "forward"
+    }
+  ],
+  "umea": [
+    {
+      "position": [
+        7293671,
+        3445,
+        -19287719
+      ],
+      "direction": "forward"
+    }
+  ],
+  "uppsala": [
+    {
+      "position": [
+        6102475,
+        4123,
+        -13194263
+      ],
+      "direction": "forward"
+    }
+  ],
+  "vaasa": [
+    {
+      "position": [
+        8590514,
+        2132,
+        -18242016
+      ],
+      "direction": "forward"
+    }
+  ],
+  "valmiera": [
+    {
+      "position": [
+        12234486,
+        2586,
+        -10460482
+      ],
+      "direction": "forward"
+    }
+  ],
+  "venezia": [
+    {
+      "position": [
+        1233353,
+        6871,
+        7631094
+      ],
+      "direction": "forward"
+    }
+  ],
+  "verona": [
+    {
+      "position": [
+        -20743,
+        9175,
+        7537931
+      ],
+      "direction": "forward"
+    }
+  ],
+  "vigo": [
+    {
+      "position": [
+        -21700315,
+        1280,
+        8484504
+      ],
+      "direction": "forward"
+    }
+  ],
+  "villarreal": [
+    {
+      "position": [
+        -12714423,
+        784,
+        13747967
+      ],
+      "direction": "forward"
+    }
+  ],
+  "vilnius": [
+    {
+      "position": [
+        13078524,
+        3462,
+        -6652303
+      ],
+      "direction": "forward"
+    }
+  ],
+  "warszawa": [
+    {
+      "position": [
+        9482292,
+        11029,
+        -2449266
+      ],
+      "direction": "forward"
+    }
+  ],
+  "wien": [
+    {
+      "position": [
+        5283074,
+        15936,
+        3635270
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        5263932,
+        15935,
+        3638638
+      ],
+      "direction": "forward"
+    }
+  ],
+  "wroclaw": [
+    {
+      "position": [
+        6029928,
+        54,
+        -435436
+      ],
+      "direction": "forward"
+    }
+  ],
+  "zagreb": [
+    {
+      "position": [
+        5586595,
+        4455,
+        6885715
+      ],
+      "direction": "forward"
+    }
+  ],
+  "zaragoza": [
+    {
+      "position": [
+        -13648900,
+        1659,
+        11352510
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        -12917672,
+        2560,
+        11423844
+      ],
+      "direction": "forward"
+    }
+  ],
+  "zurich": [
+    {
+      "position": [
+        -2334556,
+        10449,
+        4647703
+      ],
+      "direction": "forward"
+    },
+    {
+      "position": [
+        -2308638,
+        10449,
+        4671187
+      ],
+      "direction": "forward"
+    }
+  ]
+}

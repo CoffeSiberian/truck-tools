@@ -3,7 +3,9 @@ mod structs;
 mod utils;
 
 use hex::encode_upper;
-use main_options::coaches::jobs::{CoachJobOptions, CoachJobRequest, generate_job, job_options};
+use main_options::coaches::jobs::{
+    CoachJobError, CoachJobOptions, CoachJobRequest, CoachJobResponse, generate_job, job_options,
+};
 use main_options::coaches::{CoachEdit, CoachesResponse, edit_coach, list_coaches};
 
 use main_options::profiles::{
@@ -58,15 +60,37 @@ async fn get_coach_job_options(dir_save: &str) -> Result<Option<CoachJobOptions>
 async fn generate_coach_job(
     dir_save: &str,
     request: CoachJobRequest,
-) -> Result<DefaultResponse, ()> {
-    let Some(file) = read_file_text(dir_save).await else {
-        return Ok(DefaultResponse { res: false });
+) -> Result<CoachJobResponse, ()> {
+    let outcome = async {
+        let file = read_file_text(dir_save)
+            .await
+            .ok_or(CoachJobError::ReadError)?;
+        let updated = generate_job(&file, &request)?;
+        if !save_file(dir_save.to_owned(), updated).await {
+            return Err(CoachJobError::WriteError);
+        }
+        Ok(())
+    }
+    .await;
+    let error = outcome.err();
+    if let Some(error) = error {
+        // Retain the failed route and validation result so intermittent failures can be
+        // reproduced without asking the user to remember their selections. No save data.
+        let diagnostic = serde_json::json!({
+            "save": dir_save, "request": request, "error": error,
+            "timestamp": std::time::SystemTime::now()
+                .duration_since(std::time::UNIX_EPOCH).ok().map(|time| time.as_secs()),
+        });
+        if let Ok(text) = serde_json::to_string_pretty(&diagnostic) {
+            let _ = std::fs::write(
+                std::env::temp_dir().join("truck-tools-coach-job-error.json"),
+                text,
+            );
+        }
     };
-    let Some(updated) = generate_job(&file, &request) else {
-        return Ok(DefaultResponse { res: false });
-    };
-    Ok(DefaultResponse {
-        res: save_file(dir_save.to_owned(), updated).await,
+    Ok(CoachJobResponse {
+        res: error.is_none(),
+        error,
     })
 }
 

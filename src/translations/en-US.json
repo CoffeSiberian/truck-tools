@@ -760,16 +760,20 @@
 			},
 			"job_generator": {
 				"label_card": "Coach job generator",
-				"description_card": "Generate an accepted regular coach job.",
+				"description_card": "Generate a regular coach route to accept at its origin, or an already accepted job.",
 				"modal": {
 					"btn_apply": "Apply",
 					"btn_close": "Close",
 					"btn_open": "Open",
 					"title": "Coach job generator",
-					"description": "Choose cities in order or select an existing route. Uses your currently driven owned coach, with passengers already aboard. The vehicle stays at its current position."
+					"description": "Choose cities in order or select an existing route. Choose whether to drive to the origin to accept, or start with passengers already aboard. The vehicle stays at its current position."
 				}
 			},
 			"job_inputs": {
+				"generation": {
+					"label": "Job state",
+					"placeholder": "Job state"
+				},
 				"source": {
 					"label": "Departure city",
 					"placeholder": "Departure city"
@@ -799,6 +803,13 @@
 				"active_job": "Finish or cancel the current job before generating another.",
 				"no_coach": "Drive an owned coach with a supported stock chassis first.",
 				"no_routes": "No valid regular routes were found in this save."
+			},
+			"job_error": {
+				"changed_save": "The selected save or coach has changed. Close and reopen the generator.",
+				"invalid_route": "This route is no longer available in the save. Reopen the generator and select the stops again.",
+				"invalid_request": "Check the passenger count and departure delay.",
+				"unsupported_save": "The save is missing required coach job fields. No changes were saved.",
+				"navigation_error": "The save contains incomplete navigation data. No changes were saved."
 			},
 			"city_names": {
 				"a_coruna": "A Coruña",
@@ -1236,6 +1247,9 @@
 				"zurich": "Zürich"
 			},
 			"job_controls": {
+				"offer": "Drive to the origin to accept",
+				"accepted": "Already accepted",
+				"offer_hint": "Drive to the departure stop to accept and board passengers. Passenger numbers are determined by the game.",
 				"custom": "Custom stops",
 				"existing": "Existing routes",
 				"add_stop": "Add stop",

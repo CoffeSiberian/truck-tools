@@ -760,16 +760,20 @@
             },
             "job_generator": {
                 "label_card": "Generatore di incarichi in pullman",
-                "description_card": "Genera un incarico di linea già accettato.",
+                "description_card": "Genera una linea regolare da accettare alla partenza o un lavoro già accettato.",
                 "modal": {
                     "btn_apply": "Applica",
                     "btn_close": "Chiudi",
                     "btn_open": "Apri",
                     "title": "Generatore di incarichi in pullman",
-                    "description": "Scegli le città in ordine o un itinerario esistente. Usa il pullman di tua proprietà attualmente guidato, con i passeggeri a bordo. Il veicolo resta nella posizione attuale."
+                    "description": "Scegli le città in ordine o un percorso esistente. Accetta alla partenza oppure inizia con i passeggeri a bordo. La posizione del veicolo viene mantenuta."
                 }
             },
             "job_inputs": {
+                "generation": {
+                    "label": "Stato del lavoro",
+                    "placeholder": "Stato del lavoro"
+                },
                 "source": {
                     "label": "Città di partenza",
                     "placeholder": "Città di partenza"
@@ -799,6 +803,13 @@
                 "active_job": "Completa o annulla l’incarico attuale prima di generarne un altro.",
                 "no_coach": "Guida prima un pullman di tua proprietà con un telaio originale supportato.",
                 "no_routes": "Nessuna linea regolare valida trovata in questo salvataggio."
+            },
+            "job_error": {
+              "changed_save": "Il salvataggio o il pullman selezionato è cambiato. Chiudi e riapri il generatore.",
+              "invalid_route": "Questo percorso non è più disponibile nel salvataggio. Riapri il generatore e seleziona di nuovo le fermate.",
+              "invalid_request": "Controlla il numero di passeggeri e il ritardo di partenza.",
+              "unsupported_save": "Nel salvataggio mancano campi necessari per il lavoro con il pullman. Nessuna modifica è stata salvata.",
+              "navigation_error": "I dati di navigazione del salvataggio sono incompleti. Nessuna modifica è stata salvata."
             },
             "city_names": {
                 "a_coruna": "La Coruña",
@@ -1236,6 +1247,9 @@
                 "zurich": "Zurigo"
             },
             "job_controls": {
+                "offer": "Accetta alla partenza",
+                "accepted": "Già accettato",
+                "offer_hint": "Raggiungi la fermata di partenza per accettare e far salire i passeggeri. Il numero di passeggeri è deciso dal gioco.",
                 "custom": "Fermate personalizzate",
                 "existing": "Itinerari esistenti",
                 "add_stop": "Aggiungi fermata",

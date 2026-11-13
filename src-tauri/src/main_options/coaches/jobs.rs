@@ -30,15 +30,52 @@ pub struct CoachConnection {
     pub target: String,
 }
 
-#[derive(Deserialize)]
+#[derive(Deserialize, Serialize)]
 #[serde(deny_unknown_fields)]
 pub struct CoachJobRequest {
+    #[serde(default)]
+    pub generation: Generation,
     pub offer_id: Option<String>,
     pub coach_id: String,
     pub source: String,
     pub targets: Vec<String>,
     pub passengers: u32,
     pub departure_delay: u32,
+}
+
+#[derive(Default, Deserialize, Serialize, PartialEq)]
+#[serde(rename_all = "snake_case")]
+pub enum Generation {
+    Offer,
+    #[default]
+    Accepted,
+}
+
+#[derive(Clone, Copy, Debug, Serialize)]
+#[serde(rename_all = "snake_case")]
+pub enum CoachJobError {
+    ReadError,
+    WriteError,
+    ActiveJob,
+    NoCoach,
+    NoRoutes,
+    ChangedSave,
+    InvalidRoute,
+    InvalidRequest,
+    UnsupportedSave,
+    NavigationError,
+}
+
+#[derive(Serialize)]
+pub struct CoachJobResponse {
+    pub res: bool,
+    pub error: Option<CoachJobError>,
+}
+
+#[derive(Clone, Deserialize)]
+struct NavigationPoint {
+    position: [i32; 3],
+    direction: String,
 }
 
 struct Route {
@@ -377,14 +414,56 @@ pub fn job_options(lines: &[String]) -> Option<CoachJobOptions> {
     Some(options)
 }
 
-pub fn generate_job(lines: &[String], request: &CoachJobRequest) -> Option<Vec<String>> {
+pub fn generate_job(
+    lines: &[String],
+    request: &CoachJobRequest,
+) -> Result<Vec<String>, CoachJobError> {
+    let options = job_options(lines).ok_or(CoachJobError::UnsupportedSave)?;
+    match options.status.as_str() {
+        "active_job" => return Err(CoachJobError::ActiveJob),
+        "no_coach" => return Err(CoachJobError::NoCoach),
+        "no_routes" => return Err(CoachJobError::NoRoutes),
+        _ => {}
+    }
+    if options.coach_id.as_deref() != Some(request.coach_id.as_str()) {
+        return Err(CoachJobError::ChangedSave);
+    }
+    if request.departure_delay > 10080
+        || (request.generation == Generation::Accepted
+            && (request.passengers == 0 || request.passengers > options.capacity))
+    {
+        return Err(CoachJobError::InvalidRequest);
+    }
+    let index = units(lines).ok_or(CoachJobError::UnsupportedSave)?;
+    let selected = if let Some(id) = &request.offer_id {
+        let offer = index.get(id.as_str()).ok_or(CoachJobError::ChangedSave)?;
+        route(lines, offer, &index)
+    } else {
+        custom_route(lines, request, &index)
+    }
+    .ok_or(CoachJobError::InvalidRoute)?;
+    if selected.public.source != request.source || selected.public.targets != request.targets {
+        return Err(CoachJobError::ChangedSave);
+    }
+    let (updated, destinations) =
+        generate_job_data(lines, request).ok_or(CoachJobError::UnsupportedSave)?;
+    with_navigation(updated, request, &destinations).ok_or(CoachJobError::NavigationError)
+}
+
+fn generate_job_data(
+    lines: &[String],
+    request: &CoachJobRequest,
+) -> Option<(Vec<String>, Vec<String>)> {
     let index = units(lines)?;
     let player = index.values().find(|u| u.kind == "player")?;
     if busy(lines, player) || request.departure_delay > 10080 {
         return None;
     }
     let (coach, capacity) = current_coach(lines, &index)?;
-    if coach.id != request.coach_id || request.passengers == 0 || request.passengers > capacity {
+    if coach.id != request.coach_id
+        || (request.generation == Generation::Accepted
+            && (request.passengers == 0 || request.passengers > capacity))
+    {
         return None;
     }
     let route = if let Some(offer_id) = &request.offer_id {
@@ -400,6 +479,10 @@ pub fn generate_job(lines: &[String], request: &CoachJobRequest) -> Option<Vec<S
     let departure = now.checked_add(request.departure_delay)?;
     if departure.checked_add(route.public.minutes)? > i32::MAX as u32 {
         return None;
+    }
+    if request.generation == Generation::Offer {
+        let result = generate_offer(lines, request, &route, &index, player, now, departure)?;
+        return Some((result, vec![route.public.source.clone()]));
     }
     let count = request.passengers;
     // SII anonymous unit IDs have at most 12 hexadecimal digits after _nameless.
@@ -483,8 +566,343 @@ pub fn generate_job(lines: &[String], request: &CoachJobRequest) -> Option<Vec<S
     result[current_line] = format!(" current_bus_job: {job}");
     result[selected_line] = " selected_bus_offer: null".into();
     result[mass_line] = format!(" passenger_mass: {}", count * 75);
+    // The game keeps the boarded and requested masses in sync for an active coach job.
+    if let Some((requested_mass_line, _, _)) =
+        fields(lines, coach).find(|(_, key, _)| *key == "requested_passenger_mass")
+    {
+        result[requested_mass_line] = format!(" requested_passenger_mass: {}", count * 75);
+    }
     result.splice(closing..closing, additions);
+    let destinations = route
+        .public
+        .targets
+        .iter()
+        .map(|target| format!("bus_stop.{target}"))
+        .collect::<Vec<_>>();
+    Some((result, destinations))
+}
+
+fn with_navigation(
+    mut lines: Vec<String>,
+    request: &CoachJobRequest,
+    destinations: &[String],
+) -> Option<Vec<String>> {
+    let positions: BTreeMap<String, Vec<NavigationPoint>> =
+        serde_json::from_str(include_str!("../../embeds/coach_stop_positions.json")).ok()?;
+    let Some(targets) = destinations
+        .iter()
+        .map(|id| {
+            positions
+                .get(id.strip_prefix("bus_stop.city.")?)?
+                .first()
+                .cloned()
+        })
+        .collect::<Option<Vec<_>>>()
+    else {
+        // Mod cities are not in the stock map catalog; keep their existing navigation intact.
+        return Some(lines);
+    };
+    let index = units(&lines)?;
+    let economy = index.values().find(|u| u.kind == "economy")?;
+    let player = index.values().find(|u| u.kind == "player")?;
+    let slot = index.get(value(&lines, player, "assigned_vehicles")?)?;
+    if value(&lines, slot, "vehicle")? != request.coach_id {
+        return None;
+    }
+    let placement = value(&lines, slot, "stored_vehicle_placement")?;
+    let position = placement.strip_prefix('(')?.split_once(')')?.0;
+    let current: Vec<i32> = position
+        .split(',')
+        .map(|part| {
+            let part = part.trim();
+            let number = if let Some(hex) = part.strip_prefix('&') {
+                f32::from_bits(u32::from_str_radix(hex, 16).ok()?) as f64
+            } else {
+                part.parse::<f64>().ok()?
+            };
+            let scaled = number * 256.0;
+            (scaled.is_finite() && scaled > i32::MIN as f64 && scaled < i32::MAX as f64)
+                .then_some(scaled.round() as i32)
+        })
+        .collect::<Option<_>>()?;
+    let current: [i32; 3] = current.try_into().ok()?;
+    let distance = |point: &NavigationPoint| -> u128 {
+        point
+            .position
+            .iter()
+            .zip(current)
+            .map(|(a, b)| {
+                let delta = *a as i128 - b as i128;
+                (delta * delta) as u128
+            })
+            .sum()
+    };
+    // GPS storage identifies exact road nodes, not arbitrary world positions. Reuse the
+    // nearest saved ordinary waypoint/history node or stock station entrance for the start.
+    let saved_points = fields(&lines, economy)
+        .filter(|(_, key, _)| {
+            [
+                "stored_gps_behind_waypoints[",
+                "stored_gps_ahead_waypoints[",
+                "stored_gps_waypoints_history[",
+            ]
+            .iter()
+            .any(|prefix| key.starts_with(prefix))
+        })
+        .filter_map(|(_, _, id)| {
+            let unit = index.get(id)?;
+            if unit.kind != "gps_waypoint_storage" {
+                return None;
+            }
+            let raw = value(&lines, unit, "nav_node_position")?
+                .strip_prefix('(')?
+                .strip_suffix(')')?;
+            let position: Vec<i32> = raw
+                .split(',')
+                .map(|n| n.trim().parse().ok())
+                .collect::<Option<_>>()?;
+            let direction = value(&lines, unit, "direction")?;
+            ["any", "forward", "backward"]
+                .contains(&direction)
+                .then_some(NavigationPoint {
+                    position: position.try_into().ok()?,
+                    direction: "any".into(),
+                })
+        });
+    // Prefer a nearby node already resolved by the game. A station entrance alone may
+    // otherwise become both ends of a zero-length route when driving near the origin.
+    let nearby_saved = saved_points
+        .min_by_key(&distance)
+        .filter(|point| distance(point) <= (1000u128 * 256).pow(2));
+    let start =
+        nearby_saved.or_else(|| positions.values().flatten().cloned().min_by_key(&distance))?;
+    let mut additions = Vec::new();
+    let mut used = std::collections::HashSet::new();
+    let mut waypoint = |point: NavigationPoint| {
+        let id = loop {
+            let bits = Uuid::new_v4().as_u128() as u64 & 0xffff_ffff_ffff;
+            let id = format!(
+                "_nameless.{:x}.{:04x}.{:04x}",
+                bits >> 32,
+                (bits >> 16) & 0xffff,
+                bits & 0xffff
+            );
+            if !index.contains_key(id.as_str()) && used.insert(id.clone()) {
+                break id;
+            }
+        };
+        additions.extend([
+            format!("gps_waypoint_storage : {id} {{"),
+            format!(
+                " nav_node_position: ({}, {}, {})",
+                point.position[0], point.position[1], point.position[2]
+            ),
+            format!(" direction: {}", point.direction),
+            "}".into(),
+            String::new(),
+        ]);
+        id
+    };
+    let behind = waypoint(NavigationPoint {
+        direction: "any".into(),
+        ..start
+    });
+    let ahead: Vec<_> = targets.into_iter().map(&mut waypoint).collect();
+    let mut replacements = BTreeMap::new();
+    let mut removed = std::collections::HashSet::new();
+    let mut previous_waypoints = std::collections::HashSet::new();
+    for (key, ids) in [
+        ("stored_gps_behind_waypoints", vec![behind]),
+        ("stored_gps_ahead_waypoints", ahead),
+    ] {
+        let field = fields(&lines, economy).find(|(_, k, _)| *k == key)?.0;
+        let count = value(&lines, economy, key)?.parse::<usize>().ok()?;
+        if count > 4096 {
+            return None;
+        }
+        let prefix = format!("{key}[");
+        let old: Vec<_> = fields(&lines, economy)
+            .filter(|(_, k, _)| k.starts_with(&prefix))
+            .collect();
+        if old.len() != count {
+            return None;
+        }
+        for i in 0..count {
+            let id = value(&lines, economy, &format!("{key}[{i}]"))?;
+            if index.get(id)?.kind != "gps_waypoint_storage" {
+                return None;
+            }
+            previous_waypoints.insert(id);
+        }
+        for (line, _, _) in old {
+            removed.insert(line);
+        }
+        let mut replacement = vec![format!(" {key}: {}", ids.len())];
+        replacement.extend(
+            ids.iter()
+                .enumerate()
+                .map(|(i, id)| format!(" {key}[{i}]: {id}")),
+        );
+        replacements.insert(field, replacement);
+    }
+    // Detached waypoint units become extra unit trees and prevent the game from loading.
+    // History, avoidance and online navigation can share them, so retain any still referenced.
+    let retained: std::collections::HashSet<_> = index
+        .values()
+        .flat_map(|unit| fields(&lines, unit))
+        .filter(|(line, _, _)| !removed.contains(line))
+        .map(|(_, _, id)| id)
+        .collect();
+    for id in previous_waypoints {
+        if !retained.contains(id) {
+            let unit = index.get(id)?;
+            removed.extend(unit.start..=unit.end);
+        }
+    }
+    for (key, setting) in [
+        ("stored_gps_behind", "0"),
+        ("stored_gps_ahead", "0"),
+        (
+            "stored_nav_start_pos",
+            "(2147483647, 2147483647, 2147483647)",
+        ),
+        ("stored_nav_end_pos", "(2147483647, 2147483647, 2147483647)"),
+    ] {
+        let field = fields(&lines, economy).find(|(_, k, _)| *k == key)?.0;
+        replacements.insert(field, vec![format!(" {key}: {setting}")]);
+    }
+    let closing = lines.iter().rposition(|s| !s.trim().is_empty())?;
+    if lines[closing].trim() != "}" {
+        return None;
+    }
+    let mut result = Vec::with_capacity(lines.len() + additions.len());
+    for (i, line) in lines.drain(..).enumerate() {
+        if i == closing {
+            result.append(&mut additions);
+        }
+        if removed.contains(&i) {
+            continue;
+        }
+        if let Some(replacement) = replacements.remove(&i) {
+            result.extend(replacement);
+        } else {
+            result.push(line);
+        }
+    }
     Some(result)
+}
+
+// Match a selected contract: the game creates the job and boards passengers at the origin.
+fn generate_offer(
+    lines: &[String],
+    request: &CoachJobRequest,
+    route: &Route,
+    index: &HashMap<&str, Unit<'_>>,
+    player: &Unit,
+    now: u32,
+    departure: u32,
+) -> Option<Vec<String>> {
+    let stop = index.get(request.source.as_str())?;
+    let count_line = fields(lines, stop).find(|(_, k, _)| *k == "lines_offer")?.0;
+    let count = value(lines, stop, "lines_offer")?.parse::<usize>().ok()?;
+    if count > 4096
+        || fields(lines, stop)
+            .filter(|(_, k, _)| k.starts_with("lines_offer["))
+            .count()
+            != count
+    {
+        return None;
+    }
+    for i in 0..count {
+        let offer = index.get(value(lines, stop, &format!("lines_offer[{i}]"))?)?;
+        let source = value(lines, offer, "source")?;
+        // The game retains inactive regular/tourist offers with a null source in this list.
+        if offer.kind != "line_offer_data" || (source != stop.id && source != "null") {
+            return None;
+        }
+    }
+    // Reuse a real offer's stock vehicle definition; it is only used by game-supplied coaches.
+    let template = if let Some(id) = &request.offer_id {
+        index.get(id.as_str())?
+    } else {
+        index
+            .values()
+            .filter(|u| {
+                value(lines, u, "source") == Some(stop.id) && route_for_template(lines, u, index)
+            })
+            .min_by_key(|u| u.id)?
+    };
+    let bus_name = value(lines, template, "bus_name")?;
+    if bus_name.is_empty()
+        || !bus_name
+            .bytes()
+            .all(|b| b.is_ascii_alphanumeric() || b == b'_')
+    {
+        return None;
+    }
+    let expiration = now.checked_add(10080)?.max(departure.checked_add(1440)?);
+    if expiration > i32::MAX as u32 {
+        return None;
+    }
+    let id = loop {
+        let bits = Uuid::new_v4().as_u128() as u64 & 0xffff_ffff_ffff;
+        let id = format!(
+            "_nameless.{:x}.{:04x}.{:04x}",
+            bits >> 32,
+            (bits >> 16) & 0xffff,
+            bits & 0xffff
+        );
+        if !index.contains_key(id.as_str()) {
+            break id;
+        }
+    };
+    let mut additions = vec![
+        format!("line_offer_data : {id} {{"),
+        " type: regular".into(),
+        format!(" source: {}", stop.id),
+        format!(" saved_targets: {}", route.public.targets.len()),
+    ];
+    for (i, target) in route.public.targets.iter().enumerate() {
+        additions.push(format!(" saved_targets[{i}]: \"{target}\""));
+    }
+    for (key, values) in [
+        ("targets_distances", &route.distances),
+        ("targets_times", &route.times),
+        ("targets_ferry_times", &route.ferry_times),
+        ("targets_base_times", &route.base_times),
+    ] {
+        additions.push(format!(" {key}: {}", values.len()));
+        for (i, value) in values.iter().enumerate() {
+            additions.push(format!(" {key}[{i}]: {value}"));
+        }
+    }
+    additions.extend([
+        format!(" departure_time_of_day: {}", departure % 1440),
+        format!(" bus_name: {bus_name}"),
+        format!(" expiration_time: {expiration}"),
+        format!(" tight_schedule_rank: {}", route.ranks[0]),
+        format!(" satisfaction_decrease_rank: {}", route.ranks[1]),
+        format!(" low_acceleration_rank: {}", route.ranks[2]),
+        "}".into(),
+        String::new(),
+    ]);
+    let selected_line = fields(lines, player)
+        .find(|(_, k, _)| *k == "selected_bus_offer")?
+        .0;
+    let closing = lines.iter().rposition(|s| !s.trim().is_empty())?;
+    if lines[closing].trim() != "}" || index.values().any(|u| u.end >= closing) {
+        return None;
+    }
+    let mut result = lines.to_vec();
+    result[selected_line] = format!(" selected_bus_offer: {id}");
+    result[count_line] = format!(" lines_offer: {}", count + 1);
+    result.splice(closing..closing, additions);
+    result.insert(stop.end, format!(" lines_offer[{count}]: {id}"));
+    Some(result)
+}
+
+fn route_for_template(lines: &[String], unit: &Unit, index: &HashMap<&str, Unit<'_>>) -> bool {
+    route(lines, unit, index).is_some() && value(lines, unit, "bus_name").is_some()
 }
 
 #[cfg(test)]

@@ -760,16 +760,20 @@
             },
             "job_generator": {
                 "label_card": "客运任务生成器",
-                "description_card": "直接生成已接取的常规客运任务。",
+                "description_card": "生成到起点接取的常规客运线路，或直接生成已接取任务。",
                 "modal": {
                     "btn_apply": "应用",
                     "btn_close": "关闭",
                     "btn_open": "打开",
                     "title": "客运任务生成器",
-                    "description": "依次选择停靠城市，或选择已有线路。使用当前驾驶的自有客车，乘客已上车，车辆保留当前位置。"
+                    "description": "按顺序选择停靠城市，或选择已有线路。可选择到起点接取，或直接生成乘客已上车的任务。车辆位置保持不变。"
                 }
             },
             "job_inputs": {
+                "generation": {
+                    "label": "任务状态",
+                    "placeholder": "任务状态"
+                },
                 "source": {
                     "label": "出发城市",
                     "placeholder": "出发城市"
@@ -799,6 +803,13 @@
                 "active_job": "请先完成或取消当前任务，再生成新任务。",
                 "no_coach": "请先驾驶一辆使用受支持原厂底盘的自有客车。",
                 "no_routes": "此存档中没有有效的常规客运线路。"
+            },
+            "job_error": {
+              "changed_save": "所选存档或客车已变化，请关闭后重新打开生成器。",
+              "invalid_route": "存档中已无法使用该线路，请重新打开生成器并选择停靠站。",
+              "invalid_request": "请检查乘客人数和出发延迟。",
+              "unsupported_save": "存档缺少客运任务所需字段，未保存任何修改。",
+              "navigation_error": "存档的导航数据不完整，未保存任何修改。"
             },
             "city_names": {
                 "a_coruna": "拉科鲁尼亚",
@@ -1236,6 +1247,9 @@
                 "zurich": "苏黎世"
             },
             "job_controls": {
+                "offer": "到起点接取",
+                "accepted": "已接取任务",
+                "offer_hint": "开到起点站接取任务并上客，乘客数量由游戏决定。",
                 "custom": "自定义停靠站",
                 "existing": "已有线路",
                 "add_stop": "添加停靠站",

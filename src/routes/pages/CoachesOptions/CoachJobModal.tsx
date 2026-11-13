@@ -25,7 +25,7 @@ import AlertSave from "@/components/AlertSave";
 import CustomRadio from "@/components/CustomRadio";
 import { LocaleContext } from "@/hooks/useLocaleContext";
 import { ProfileContex } from "@/hooks/useProfileContex";
-import { CoachJobOptions } from "@/types/fileEditTypes";
+import { CoachJobError, CoachJobOptions } from "@/types/fileEditTypes";
 import { generateCoachJob, getCoachJobOptions } from "@/utils/fileEdit";
 
 const CoachJobModal = () => {
@@ -41,12 +41,14 @@ const CoachJobModal = () => {
 	const [loadError, setLoadError] = useState(false);
 	const [saving, setSaving] = useState(false);
 	const [generated, setGenerated] = useState(false);
+	const [failure, setFailure] = useState<CoachJobError | null>(null);
 	const [completed, setCompleted] = useState({
 		error: false,
 		completed: false,
 	});
 	const [source, setSource] = useState("");
 	const [mode, setMode] = useState("custom");
+	const [generation, setGeneration] = useState<"offer" | "accepted">("offer");
 	const [stops, setStops] = useState([""]);
 	const [routeId, setRouteId] = useState("");
 	const [passengers, setPassengers] = useState("30");
@@ -113,9 +115,10 @@ const CoachJobModal = () => {
 			: !source || unreachable || stops.some((stop) => !stop)) ||
 		loading ||
 		!options?.coach_id ||
-		!/^\d+$/.test(passengers) ||
-		Number(passengers) < 1 ||
-		Number(passengers) > (options?.capacity ?? 0) ||
+		(generation === "accepted" &&
+			(!/^\d+$/.test(passengers) ||
+				Number(passengers) < 1 ||
+				Number(passengers) > (options?.capacity ?? 0))) ||
 		!/^\d+$/.test(delay) ||
 		Number(delay) > 10080 ||
 		generated;
@@ -129,11 +132,13 @@ const CoachJobModal = () => {
 		setGenerated(false);
 		setSource("");
 		setMode("custom");
+		setGeneration("offer");
 		setStops([""]);
 		setRouteId("");
 		setPassengers("30");
 		setDelay("0");
 		setCompleted({ error: false, completed: false });
+		setFailure(null);
 		try {
 			const response = await getCoachJobOptions(selectedSave.dir);
 			if (current !== version.current) return;
@@ -149,9 +154,11 @@ const CoachJobModal = () => {
 	const apply = async () => {
 		if (!selectedSave || !options?.coach_id || invalid || saving) return;
 		setSaving(true);
+		setFailure(null);
 		setCompleted({ error: false, completed: false });
 		try {
-			const res = await generateCoachJob(selectedSave.dir, {
+			const response = await generateCoachJob(selectedSave.dir, {
+				generation,
 				offer_id: mode === "existing" ? route!.id : null,
 				coach_id: options.coach_id,
 				source,
@@ -159,16 +166,29 @@ const CoachJobModal = () => {
 					mode === "existing"
 						? route!.targets
 						: stops.map((stop) => stop.replace(/^bus_stop\./, "")),
-				passengers: Number(passengers),
+				passengers: generation === "accepted" ? Number(passengers) : 1,
 				departure_delay: Number(delay),
 			});
-			setCompleted({ error: !res, completed: true });
-			setGenerated(res);
+			setFailure(response.error);
+			setCompleted({ error: !response.res, completed: true });
+			setGenerated(response.res);
 		} catch {
 			setCompleted({ error: true, completed: true });
 		} finally {
 			setSaving(false);
 		}
+	};
+	const errorMessage = () => {
+		if (!failure || failure === "write_error")
+			return translations.components.alert_on_save_default.error;
+		if (failure === "read_error") return t.load_error;
+		if (
+			failure === "active_job" ||
+			failure === "no_coach" ||
+			failure === "no_routes"
+		)
+			return t.job_status[failure];
+		return t.job_error[failure];
 	};
 
 	return (
@@ -209,6 +229,30 @@ const CoachJobModal = () => {
 								{loading && <Spinner size="sm" />}
 								{ready && options && !loading && (
 									<>
+										<RadioGroup
+											value={generation}
+											label={t.job_inputs.generation.label}
+											isDisabled={saving}
+											onValueChange={(value) =>
+												setGeneration(value as "offer" | "accepted")
+											}
+										>
+											<CustomRadio
+												value="offer"
+												selectedGarage={generation}
+												text={t.job_controls.offer}
+											/>
+											<CustomRadio
+												value="accepted"
+												selectedGarage={generation}
+												text={t.job_controls.accepted}
+											/>
+										</RadioGroup>
+										{generation === "offer" && (
+											<p className="text-small text-default-500">
+												{t.job_controls.offer_hint}
+											</p>
+										)}
 										<RadioGroup
 											value={mode}
 											label={t.job_inputs.mode.label}
@@ -384,18 +428,20 @@ const CoachJobModal = () => {
 												)}
 											</>
 										)}
-										<Input
-											type="number"
-											variant="bordered"
-											label={t.job_inputs.passengers.label}
-											placeholder={t.job_inputs.passengers.placeholder}
-											min={1}
-											max={options.capacity}
-											value={passengers}
-											onValueChange={setPassengers}
-											isDisabled={saving}
-											description={`1–${options.capacity}`}
-										/>
+										{generation === "accepted" && (
+											<Input
+												type="number"
+												variant="bordered"
+												label={t.job_inputs.passengers.label}
+												placeholder={t.job_inputs.passengers.placeholder}
+												min={1}
+												max={options.capacity}
+												value={passengers}
+												onValueChange={setPassengers}
+												isDisabled={saving}
+												description={`1–${options.capacity}`}
+											/>
+										)}
 										<Input
 											type="number"
 											variant="bordered"
@@ -421,7 +467,7 @@ const CoachJobModal = () => {
 								<AlertSave
 									message={
 										completed.error
-											? translations.components.alert_on_save_default.error
+											? errorMessage()
 											: translations.components.alert_on_save_default.succes
 									}
 									error={completed.error}

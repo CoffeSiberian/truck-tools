@@ -760,16 +760,20 @@
             },
             "job_generator": {
                 "label_card": "Generador de trabajos de autocar",
-                "description_card": "Genera un trabajo regular ya aceptado.",
+                "description_card": "Genera una ruta regular de autocar para aceptar en el origen o un trabajo ya aceptado.",
                 "modal": {
                     "btn_apply": "Aplicar",
                     "btn_close": "Cerrar",
                     "btn_open": "Abrir",
                     "title": "Generador de trabajos de autocar",
-                    "description": "Elige ciudades en orden o una ruta existente. Se usa el autocar propio que conduces, con los pasajeros a bordo. El vehículo conserva su posición actual."
+                    "description": "Elige las ciudades en orden o una ruta existente. Puedes aceptar en el origen o empezar con pasajeros a bordo. Se conserva la posición del vehículo."
                 }
             },
             "job_inputs": {
+                "generation": {
+                    "label": "Estado del trabajo",
+                    "placeholder": "Estado del trabajo"
+                },
                 "source": {
                     "label": "Ciudad de salida",
                     "placeholder": "Ciudad de salida"
@@ -799,6 +803,13 @@
                 "active_job": "Termina o cancela el trabajo actual antes de generar otro.",
                 "no_coach": "Primero conduce un autocar propio con un chasis original compatible.",
                 "no_routes": "No se encontraron rutas regulares válidas en esta partida."
+            },
+            "job_error": {
+              "changed_save": "La partida o el autocar seleccionado ha cambiado. Cierra y vuelve a abrir el generador.",
+              "invalid_route": "Esta ruta ya no está disponible en la partida. Vuelve a abrir el generador y selecciona las paradas de nuevo.",
+              "invalid_request": "Revisa la cantidad de pasajeros y el retraso de salida.",
+              "unsupported_save": "Faltan campos necesarios para el trabajo de autocar en la partida. No se guardaron cambios.",
+              "navigation_error": "Los datos de navegación de la partida están incompletos. No se guardaron cambios."
             },
             "city_names": {
                 "a_coruna": "A Coruña",
@@ -1236,6 +1247,9 @@
                 "zurich": "Zúrich"
             },
             "job_controls": {
+                "offer": "Aceptar en el origen",
+                "accepted": "Ya aceptado",
+                "offer_hint": "Conduce hasta la parada de salida para aceptar y recoger pasajeros. El juego determina la cantidad de pasajeros.",
                 "custom": "Paradas personalizadas",
                 "existing": "Rutas existentes",
                 "add_stop": "Añadir parada",

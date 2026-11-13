@@ -760,16 +760,20 @@
             },
             "job_generator": {
                 "label_card": "Generator de curse cu autocarul",
-                "description_card": "Generează o cursă regulată deja acceptată.",
+                "description_card": "Generează o linie regulată de acceptat la plecare sau o cursă deja acceptată.",
                 "modal": {
                     "btn_apply": "Aplicați",
                     "btn_close": "închide",
                     "btn_open": "Deschide",
                     "title": "Generator de curse cu autocarul",
-                    "description": "Alege orașele în ordine sau o rută existentă. Se folosește autocarul propriu condus în prezent, cu pasagerii la bord. Vehiculul rămâne în poziția actuală."
+                    "description": "Alege orașele în ordine sau o rută existentă. Acceptă la plecare sau începe cu pasagerii la bord. Poziția vehiculului este păstrată."
                 }
             },
             "job_inputs": {
+                "generation": {
+                    "label": "Starea cursei",
+                    "placeholder": "Starea cursei"
+                },
                 "source": {
                     "label": "Oraș de plecare",
                     "placeholder": "Oraș de plecare"
@@ -799,6 +803,13 @@
                 "active_job": "Finalizează sau anulează cursa actuală înainte de a genera alta.",
                 "no_coach": "Condu mai întâi un autocar propriu cu un șasiu original compatibil.",
                 "no_routes": "Nu s-au găsit rute regulate valide în această salvare."
+            },
+            "job_error": {
+              "changed_save": "Salvarea sau autocarul selectat s-a schimbat. Închide și redeschide generatorul.",
+              "invalid_route": "Această rută nu mai este disponibilă în salvare. Redeschide generatorul și selectează din nou stațiile.",
+              "invalid_request": "Verifică numărul de pasageri și întârzierea plecării.",
+              "unsupported_save": "Din salvare lipsesc câmpuri necesare cursei cu autocarul. Nu s-au salvat modificări.",
+              "navigation_error": "Datele de navigație din salvare sunt incomplete. Nu s-au salvat modificări."
             },
             "city_names": {
                 "a_coruna": "La Coruña",
@@ -1236,6 +1247,9 @@
                 "zurich": "Zürich"
             },
             "job_controls": {
+                "offer": "Acceptă la plecare",
+                "accepted": "Deja acceptată",
+                "offer_hint": "Condu până la stația de plecare pentru a accepta cursa și a îmbarca pasagerii. Numărul pasagerilor este stabilit de joc.",
                 "custom": "Opriri personalizate",
                 "existing": "Rute existente",
                 "add_stop": "Adaugă oprire",
