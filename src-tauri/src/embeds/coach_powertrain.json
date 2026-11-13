@@ -1,0 +1,82 @@
+[
+  {
+    "path": "/def/vehicle/bus/man.lions_24/engine/d2676_324.sii",
+    "name": "engine_d2676_lfaz_324_euro_6e",
+    "model": "man.lions_24"
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/engine/d2676_353.sii",
+    "name": "engine_d2676_lfay_353_euro_6e",
+    "model": "man.lions_24"
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/engine/d2676_382.sii",
+    "name": "engine_d2676_lfax_382_euro_6e",
+    "model": "man.lions_24"
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/engine/dc13_450.sii",
+    "name": "engine_dc13_148_450_euro_6",
+    "model": "scania.touring_23"
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/engine/d13k460.sii",
+    "name": "engine_d13k460_euro_6d",
+    "model": "volvo.9700_23"
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/engine/d13k500.sii",
+    "name": "engine_d13k500_euro_6d",
+    "model": "volvo.9700_23"
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/transmission/tm_1226dd.sii",
+    "name": "transmission_tipmatic_12_26_dd",
+    "model": "man.lions_24"
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/transmission/tm_1226ddr.sii",
+    "name": "transmission_tipmatic_12_26_dd_r",
+    "model": "man.lions_24"
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/transmission/zf_ecolife2.sii",
+    "name": "transmission_zf_ecolife_2",
+    "model": "man.lions_24"
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/transmission/zf_ecolife2_r.sii",
+    "name": "transmission_zf_ecolife_2_r",
+    "model": "man.lions_24"
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/transmission/grso895.sii",
+    "name": "transmission_opticruise_grso_895",
+    "model": "scania.touring_23"
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/transmission/grso895_r.sii",
+    "name": "transmission_opticruise_grso_895r",
+    "model": "scania.touring_23"
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/transmission/zf_ecolife2.sii",
+    "name": "transmission_zf_ecolife_2",
+    "model": "scania.touring_23"
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/transmission/zf_ecolife2_r.sii",
+    "name": "transmission_zf_ecolife_2_r",
+    "model": "scania.touring_23"
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/transmission/at2612f.sii",
+    "name": "transmission_ishift_at2612f",
+    "model": "volvo.9700_23"
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/transmission/at2612f_r.sii",
+    "name": "transmission_ishift_at2612f_retth",
+    "model": "volvo.9700_23"
+  }
+]

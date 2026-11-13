@@ -54,6 +54,22 @@ const SetExperienceSkills = () => {
 		mechanical: "0",
 		urgent: "0",
 	});
+	const [busSkill, setBusSkill] = useState({
+		longDuty: "0",
+		tightSchedule: "0",
+		satisfactionDecrease: "0",
+		lowAcceleration: "0",
+		satisfactionIncrease: "0",
+		ecodriving: "0",
+	});
+	const busSkillFields = [
+		["longDuty", "long_duty"],
+		["tightSchedule", "tight_schedule"],
+		["satisfactionDecrease", "satisfaction_decrease"],
+		["lowAcceleration", "low_acceleration"],
+		["satisfactionIncrease", "satisfaction_increase"],
+		["ecodriving", "ecodriving"],
+	] as const;
 	const [selectedAdr, setSelectedAdr] = useState<Set<string>>(new Set([]));
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [completed, setCompleted] = useState<completedProps>({
@@ -98,7 +114,11 @@ const SetExperienceSkills = () => {
 		setIsLoading(true);
 
 		const adrBin = getBinATR();
-		const res = await setProfileSkill(selectedSave.dir, { adrBin, ...Skill });
+		const res = await setProfileSkill(selectedSave.dir, {
+			adrBin,
+			...Skill,
+			...busSkill,
+		});
 
 		setCompleted({
 			error: !res,
@@ -132,7 +152,8 @@ const SetExperienceSkills = () => {
 			</Button>
 			<Modal
 				hideCloseButton
-				size="md"
+				size="4xl"
+				scrollBehavior="inside"
 				backdrop="blur"
 				isOpen={isOpen}
 				onOpenChange={onOpenChange}
@@ -146,113 +167,151 @@ const SetExperienceSkills = () => {
 							<Divider />
 							<ModalBody className="py-1">
 								<p>{skills_points.modal.description}</p>
-								<Select
-									isInvalid={Skill.fragile.length === 0}
-									selectionMode="multiple"
-									items={ATR_LIST}
-									selectedKeys={selectedAdr}
-									onSelectionChange={(keys) =>
-										setSelectedAdr(keys as Set<string>)
-									}
-									label={skills_points.modal.input_skills_points.label}
-									placeholder={
-										skills_points.modal.input_skills_points.placeholder
-									}
-									labelPlacement="inside"
-									variant="bordered"
-									size="md"
-								>
-									{(adr_value) => (
-										<SelectItem key={adr_value.name} textValue={adr_value.name}>
-											<div className="flex items-center gap-2">
-												<div className="flex items-center gap-2">
-													<div className="w-7.5">
-														<Image
-															src={adr_value.img}
-															alt="ADR-icon"
-															radius="full"
-															loading="lazy"
-														/>
+								<div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+									<div className="flex min-w-0 flex-col gap-3">
+										<h4 className="text-large font-bold">
+											{skills_points.modal.truck_mode}
+										</h4>
+										<Select
+											isInvalid={Skill.fragile.length === 0}
+											selectionMode="multiple"
+											items={ATR_LIST}
+											selectedKeys={selectedAdr}
+											onSelectionChange={(keys) =>
+												setSelectedAdr(keys as Set<string>)
+											}
+											label={skills_points.modal.input_skills_points.label}
+											placeholder={
+												skills_points.modal.input_skills_points.placeholder
+											}
+											labelPlacement="inside"
+											variant="bordered"
+											size="md"
+										>
+											{(adr_value) => (
+												<SelectItem
+													key={adr_value.name}
+													textValue={adr_value.name}
+												>
+													<div className="flex items-center gap-2">
+														<div className="flex items-center gap-2">
+															<div className="w-7.5">
+																<Image
+																	src={adr_value.img}
+																	alt="ADR-icon"
+																	radius="full"
+																	loading="lazy"
+																/>
+															</div>
+														</div>
+														<div className="flex flex-col">
+															<span className="text-small">
+																{adr_value.name}
+															</span>
+														</div>
 													</div>
-												</div>
-												<div className="flex flex-col">
-													<span className="text-small">{adr_value.name}</span>
-												</div>
-											</div>
-										</SelectItem>
-									)}
-								</Select>
-								<Slider
-									size="lg"
-									value={parseInt(Skill.longDist)}
-									onChange={(e) =>
-										setSkill({ ...Skill, longDist: e.toString() })
-									}
-									step={1}
-									color="warning"
-									label={skills_points.modal.long_distance}
-									showSteps={true}
-									maxValue={6}
-									minValue={0}
-									defaultValue={1}
-									className="max-w-md"
-								/>
-								<Slider
-									size="lg"
-									value={parseInt(Skill.heavy)}
-									onChange={(e) => setSkill({ ...Skill, heavy: e.toString() })}
-									step={1}
-									color="warning"
-									label={skills_points.modal.high_value_cargo}
-									showSteps={true}
-									maxValue={6}
-									minValue={0}
-									defaultValue={1}
-									className="max-w-md"
-								/>
-								<Slider
-									size="lg"
-									value={parseInt(Skill.fragile)}
-									onChange={(e) =>
-										setSkill({ ...Skill, fragile: e.toString() })
-									}
-									step={1}
-									color="warning"
-									label={skills_points.modal.fragile_cargo}
-									showSteps={true}
-									maxValue={6}
-									minValue={0}
-									defaultValue={1}
-									className="max-w-md"
-								/>
-								<Slider
-									size="lg"
-									value={parseInt(Skill.urgent)}
-									onChange={(e) => setSkill({ ...Skill, urgent: e.toString() })}
-									step={1}
-									color="warning"
-									label={skills_points.modal.just_in_time_delivery}
-									showSteps={true}
-									maxValue={6}
-									minValue={0}
-									defaultValue={1}
-									className="max-w-md"
-								/>
-								<Slider
-									size="lg"
-									value={parseInt(Skill.mechanical)}
-									onChange={(e) =>
-										setSkill({ ...Skill, mechanical: e.toString() })
-									}
-									step={1}
-									color="warning"
-									label={skills_points.modal.eco_driving}
-									showSteps={true}
-									maxValue={6}
-									minValue={0}
-									defaultValue={1}
-									className="max-w-md"
-								/>
+												</SelectItem>
+											)}
+										</Select>
+										<Slider
+											size="lg"
+											value={parseInt(Skill.longDist)}
+											onChange={(e) =>
+												setSkill({ ...Skill, longDist: e.toString() })
+											}
+											step={1}
+											color="warning"
+											label={skills_points.modal.long_distance}
+											showSteps={true}
+											maxValue={6}
+											minValue={0}
+											defaultValue={1}
+											className="max-w-md"
+										/>
+										<Slider
+											size="lg"
+											value={parseInt(Skill.heavy)}
+											onChange={(e) =>
+												setSkill({ ...Skill, heavy: e.toString() })
+											}
+											step={1}
+											color="warning"
+											label={skills_points.modal.high_value_cargo}
+											showSteps={true}
+											maxValue={6}
+											minValue={0}
+											defaultValue={1}
+											className="max-w-md"
+										/>
+										<Slider
+											size="lg"
+											value={parseInt(Skill.fragile)}
+											onChange={(e) =>
+												setSkill({ ...Skill, fragile: e.toString() })
+											}
+											step={1}
+											color="warning"
+											label={skills_points.modal.fragile_cargo}
+											showSteps={true}
+											maxValue={6}
+											minValue={0}
+											defaultValue={1}
+											className="max-w-md"
+										/>
+										<Slider
+											size="lg"
+											value={parseInt(Skill.urgent)}
+											onChange={(e) =>
+												setSkill({ ...Skill, urgent: e.toString() })
+											}
+											step={1}
+											color="warning"
+											label={skills_points.modal.just_in_time_delivery}
+											showSteps={true}
+											maxValue={6}
+											minValue={0}
+											defaultValue={1}
+											className="max-w-md"
+										/>
+										<Slider
+											size="lg"
+											value={parseInt(Skill.mechanical)}
+											onChange={(e) =>
+												setSkill({ ...Skill, mechanical: e.toString() })
+											}
+											step={1}
+											color="warning"
+											label={skills_points.modal.eco_driving}
+											showSteps={true}
+											maxValue={6}
+											minValue={0}
+											defaultValue={1}
+											className="max-w-md"
+										/>
+									</div>
+									<div className="flex min-w-0 flex-col gap-3">
+										<h4 className="text-large font-bold">
+											{skills_points.modal.bus_mode}
+										</h4>
+										{busSkillFields.map(([key, label]) => (
+											<Slider
+												key={key}
+												size="lg"
+												value={parseInt(busSkill[key])}
+												onChange={(value) =>
+													setBusSkill({ ...busSkill, [key]: value.toString() })
+												}
+												step={1}
+												color="warning"
+												label={skills_points.modal.bus_skills[label]}
+												showSteps={true}
+												maxValue={3}
+												minValue={0}
+												className="max-w-md"
+											/>
+										))}
+									</div>
+								</div>
 								<AlertSave
 									message={
 										completed.error

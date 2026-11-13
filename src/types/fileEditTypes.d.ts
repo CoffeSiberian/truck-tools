@@ -86,3 +86,99 @@ export interface ResponseSaveCameraPositions extends responseRustTypes {
 	location: string;
 	rotation: string;
 }
+
+export interface CoachPaintJob {
+	path: string;
+	name: string;
+}
+
+export interface CoachPart extends CoachPaintJob {
+	model: string;
+}
+
+export interface CoachRoute {
+	id: string;
+	source: string;
+	targets: string[];
+	distance: number;
+	minutes: number;
+}
+
+export interface CoachJobOptions {
+	res: boolean;
+	status: "ready" | "active_job" | "no_coach" | "no_routes";
+	coach_id: string | null;
+	capacity: number;
+	routes: CoachRoute[];
+	stops: string[];
+	connections: CoachConnection[];
+}
+
+export interface CoachConnection {
+	source: string;
+	target: string;
+}
+
+export interface CoachJobRequest {
+	generation: "offer" | "accepted";
+	offer_id: string | null;
+	coach_id: string;
+	source: string;
+	targets: string[];
+	passengers: number;
+	departure_delay: number;
+}
+
+export type CoachJobError =
+	| "read_error"
+	| "write_error"
+	| "active_job"
+	| "no_coach"
+	| "no_routes"
+	| "changed_save"
+	| "invalid_route"
+	| "invalid_request"
+	| "unsupported_save"
+	| "navigation_error";
+
+export interface CoachJobResponse {
+	res: boolean;
+	error: CoachJobError | null;
+}
+
+export interface SaveCoach {
+	id: string;
+	model: string;
+	odometer: number | null;
+	license_plate: string;
+	paint_job: string | null;
+	paint_color: string | null;
+	paint_jobs: CoachPaintJob[];
+	engine: string | null;
+	transmission: string | null;
+	engines: CoachPart[];
+	transmissions: CoachPart[];
+}
+
+export interface ResponseSaveCoaches extends responseRustTypes {
+	current_coach_id: string | null;
+	coaches: SaveCoach[];
+}
+
+export type CoachEdit =
+	| { action: "engine" | "transmission"; path: string }
+	| { action: "repair" }
+	| { action: "repair_all" }
+	| { action: "odometer"; km: number }
+	| {
+			action: "license_plate";
+			text: string;
+			background: string;
+			foreground: string;
+			margin: boolean;
+	  }
+	| {
+			action: "paint_job";
+			path: string;
+			color: string | null;
+	  };

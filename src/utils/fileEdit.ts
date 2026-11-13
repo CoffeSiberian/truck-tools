@@ -30,6 +30,11 @@ import {
 	ResponseSaveGameTrucks,
 	ResponseSaveGameTrailers,
 	ResponseSaveCameraPositions,
+	ResponseSaveCoaches,
+	CoachEdit,
+	CoachJobOptions,
+	CoachJobRequest,
+	CoachJobResponse,
 } from "@/types/fileEditTypes";
 import {
 	IColorRgbToValidate,
@@ -40,6 +45,40 @@ import { Langs } from "@/types/TranslationsTypes";
 import { IColor } from "react-color-palette";
 
 const STORE_FILE = ".settings.dat";
+
+export const getCoachJobOptions = (dirSave: string) =>
+	invoke<CoachJobOptions | null>("get_coach_job_options", {
+		dirSave: dirSave + "/game.sii",
+	});
+
+export const generateCoachJob = async (
+	dirSave: string,
+	request: CoachJobRequest
+): Promise<CoachJobResponse> => {
+	return invoke<CoachJobResponse>("generate_coach_job", {
+		dirSave: dirSave + "/game.sii",
+		request,
+	});
+};
+
+export const getSaveCoaches = async (
+	dirSave: string
+): Promise<ResponseSaveCoaches> => {
+	return invoke<ResponseSaveCoaches>("get_save_coaches", {
+		dirSave: dirSave + "/game.sii",
+	});
+};
+
+export const updateCoach = async (
+	dirSave: string,
+	edit: CoachEdit
+): Promise<boolean> => {
+	const response = await invoke<responseRustTypes>("update_coach", {
+		dirSave: dirSave + "/game.sii",
+		edit,
+	});
+	return response.res;
+};
 export const ATS_DIR = "American Truck Simulator";
 export const ETS2_DIR = "Euro Truck Simulator 2";
 
@@ -385,11 +424,13 @@ export const setProfileMoney = async (
 
 export const setProfileExperience = async (
 	dirSave: string,
-	experience: string
+	experience: string,
+	busExperience: string
 ): Promise<boolean> => {
 	const rustParams = {
 		dirSave: dirSave + "/game.sii",
 		experience,
+		busExperience,
 	};
 
 	const invoceRes = (await invoke(
@@ -449,6 +490,17 @@ export const setProfileDealerDiscovered = async (
 	)) as responseRustTypes;
 
 	return invoceRes.res;
+};
+
+export const setBusStopsStatus = async (
+	dirSave: string,
+	discovered: boolean
+): Promise<boolean> => {
+	const res = await invoke<responseRustTypes>("set_bus_stops_status", {
+		dirSave: dirSave + "/game.sii",
+		discovered,
+	});
+	return res.res;
 };
 
 export const setProfileSkill = async (

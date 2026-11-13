@@ -19,6 +19,7 @@ import { getStoredLicensePlate, storeLicensePlate } from "@/utils/fileEdit";
 import { licensePlateSaved } from "@/types/fileEditTypes";
 
 interface CustomLicensePlateProps {
+	portalContainer?: Element;
 	bgColor: IColor;
 	txColor: IColor;
 	plateText: string;
@@ -32,6 +33,7 @@ interface CustomLicensePlateProps {
 }
 
 const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
+	portalContainer,
 	bgColor,
 	txColor,
 	plateText,
@@ -149,23 +151,39 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 			<div className="flex">
 				<div className="flex w-full flex-col items-center gap-3">
 					<div
-						className="flex h-12 items-center rounded-lg p-1"
+						className="relative shrink-0 overflow-hidden"
 						style={{
-							minWidth: "170px",
-							maxWidth: "170px",
-							backgroundColor: `${bgColor.hex}`,
-							borderStyle: "solid",
-							borderColor: `${isColorMargin ? txColor.hex : "transparent"}`,
-							borderWidth: `${isColorMargin ? "3px" : "0px"}`,
+							width: 200,
+							height: 50,
+							backgroundColor: isColorMargin ? txColor.hex : bgColor.hex,
 						}}
 					>
+						{/* Match the saved 200×50 outer image and 155×35 colored inset. */}
+						{isColorMargin && (
+							<div
+								style={{
+									position: "absolute",
+									left: 22.5,
+									top: 7.5,
+									width: 155,
+									height: 35,
+									backgroundColor: bgColor.hex,
+								}}
+							/>
+						)}
 						<p
-							className="truncate text-2xl whitespace-break-spaces"
+							className="absolute flex h-full items-center whitespace-pre"
 							style={{
-								color: `${txColor.hex}`,
+								left: isColorMargin ? 24.5 : 2,
+								color: txColor.hex,
+								fontFamily:
+									'"Arial Narrow", "Liberation Sans Narrow", Arial, sans-serif',
+								fontSize: 28,
+								fontWeight: 400,
+								lineHeight: 1,
 							}}
 						>
-							<b>{plateText}</b>
+							{plateText}
 						</p>
 					</div>
 					<Input
@@ -206,6 +224,7 @@ const CustomLicensePlate: FC<CustomLicensePlateProps> = ({
 				</div>
 				<div className="flex w-full max-w-60 flex-col justify-center gap-3">
 					<Select
+						popoverProps={portalContainer ? { portalContainer } : undefined}
 						items={ListLicensePlates}
 						isLoading={isLoadingStore}
 						isDisabled={ListLicensePlates.length === 0}

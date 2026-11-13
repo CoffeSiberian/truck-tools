@@ -3,11 +3,15 @@ mod structs;
 mod utils;
 
 use hex::encode_upper;
+use main_options::coaches::jobs::{
+    CoachJobError, CoachJobOptions, CoachJobRequest, CoachJobResponse, generate_job, job_options,
+};
+use main_options::coaches::{CoachEdit, CoachesResponse, edit_coach, list_coaches};
 
 use main_options::profiles::{
-    copy_profile_configs, set_any_status_garage, set_bank_money, set_dealerships_discovered_status,
-    set_experience, set_experience_skills, set_player_map_position, set_profile_name,
-    set_visited_cities,
+    copy_profile_configs, set_any_status_garage, set_bank_money, set_bus_stops_discovered,
+    set_dealerships_discovered_status, set_experience, set_experience_skills,
+    set_player_map_position, set_profile_name, set_visited_cities,
 };
 use main_options::trailers::{
     get_list_trailers_info, get_my_trailer_id, get_trailer_def_id, get_trailer_def_index,
@@ -44,6 +48,76 @@ use utils::file_edit::{
 };
 
 const IGNORED_FOLDERS: [&str; 1] = ["album"];
+
+#[tauri::command]
+async fn get_coach_job_options(dir_save: &str) -> Result<Option<CoachJobOptions>, ()> {
+    Ok(read_file_text(dir_save)
+        .await
+        .and_then(|file| job_options(&file)))
+}
+
+#[tauri::command]
+async fn generate_coach_job(
+    dir_save: &str,
+    request: CoachJobRequest,
+) -> Result<CoachJobResponse, ()> {
+    let outcome = async {
+        let file = read_file_text(dir_save)
+            .await
+            .ok_or(CoachJobError::ReadError)?;
+        let updated = generate_job(&file, &request)?;
+        if !save_file(dir_save.to_owned(), updated).await {
+            return Err(CoachJobError::WriteError);
+        }
+        Ok(())
+    }
+    .await;
+    let error = outcome.err();
+    if let Some(error) = error {
+        // Retain the failed route and validation result so intermittent failures can be
+        // reproduced without asking the user to remember their selections. No save data.
+        let diagnostic = serde_json::json!({
+            "save": dir_save, "request": request, "error": error,
+            "timestamp": std::time::SystemTime::now()
+                .duration_since(std::time::UNIX_EPOCH).ok().map(|time| time.as_secs()),
+        });
+        if let Ok(text) = serde_json::to_string_pretty(&diagnostic) {
+            let _ = std::fs::write(
+                std::env::temp_dir().join("truck-tools-coach-job-error.json"),
+                text,
+            );
+        }
+    };
+    Ok(CoachJobResponse {
+        res: error.is_none(),
+        error,
+    })
+}
+
+#[tauri::command]
+async fn get_save_coaches(dir_save: &str) -> Result<CoachesResponse, ()> {
+    Ok(read_file_text(dir_save)
+        .await
+        .and_then(|file| list_coaches(&file))
+        .unwrap_or(CoachesResponse {
+            res: false,
+            current_coach_id: None,
+            coaches: Vec::new(),
+        }))
+}
+
+#[tauri::command]
+async fn update_coach(dir_save: &str, edit: CoachEdit) -> Result<DefaultResponse, ()> {
+    let Some(file) = read_file_text(dir_save).await else {
+        return Ok(DefaultResponse { res: false });
+    };
+    let Some(updated) = edit_coach(&file, &edit) else {
+        return Ok(DefaultResponse { res: false });
+    };
+    Ok(DefaultResponse {
+        res: save_file(dir_save.to_owned(), updated).await,
+    })
+}
 
 #[tauri::command]
 async fn decrypt_to_save(dir_save: &str) -> Result<DefaultResponse, ()> {
@@ -502,13 +576,17 @@ async fn set_profile_money(dir_save: &str, money: &str) -> Result<DefaultRespons
 }
 
 #[tauri::command]
-async fn set_profile_experience(dir_save: &str, experience: &str) -> Result<DefaultResponse, ()> {
+async fn set_profile_experience(
+    dir_save: &str,
+    experience: &str,
+    bus_experience: &str,
+) -> Result<DefaultResponse, ()> {
     let file: Vec<String> = match read_file_text(dir_save).await {
         Some(file) => file,
         None => return Ok(DefaultResponse { res: false }),
     };
 
-    let profile_experience: Vec<String> = match set_experience(&file, experience) {
+    let profile_experience: Vec<String> = match set_experience(&file, experience, bus_experience) {
         Some(profile_experience) => profile_experience,
         None => return Ok(DefaultResponse { res: false }),
     };
@@ -574,6 +652,22 @@ async fn set_dealerships_discovered(
 }
 
 #[tauri::command]
+async fn set_bus_stops_status(dir_save: &str, discovered: bool) -> Result<DefaultResponse, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let bus_stops = match set_bus_stops_discovered(&file, discovered) {
+        Some(bus_stops) => bus_stops,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let res = save_file(dir_save.to_string(), bus_stops).await;
+    Ok(DefaultResponse { res })
+}
+
+#[tauri::command]
 async fn set_profile_experience_skills(
     dir_save: &str,
     adr_bin: &str,
@@ -582,8 +676,28 @@ async fn set_profile_experience_skills(
     fragile: &str,
     urgent: &str,
     mechanical: &str,
+    long_duty: &str,
+    tight_schedule: &str,
+    satisfaction_decrease: &str,
+    low_acceleration: &str,
+    satisfaction_increase: &str,
+    ecodriving: &str,
 ) -> Result<DefaultResponse, ()> {
     if adr_bin.chars().count() != 6 {
+        return Ok(DefaultResponse { res: false });
+    }
+
+    if ![
+        long_duty,
+        tight_schedule,
+        satisfaction_decrease,
+        low_acceleration,
+        satisfaction_increase,
+        ecodriving,
+    ]
+    .iter()
+    .all(|value| value.parse::<u8>().is_ok_and(|rank| rank <= 3))
+    {
         return Ok(DefaultResponse { res: false });
     }
 
@@ -599,6 +713,12 @@ async fn set_profile_experience_skills(
         fragile: fragile.to_string(),
         urgent: urgent.to_string(),
         mechanical: mechanical.to_string(),
+        long_duty: long_duty.to_string(),
+        tight_schedule: tight_schedule.to_string(),
+        satisfaction_decrease: satisfaction_decrease.to_string(),
+        low_acceleration: low_acceleration.to_string(),
+        satisfaction_increase: satisfaction_increase.to_string(),
+        ecodriving: ecodriving.to_string(),
     };
 
     let experience_skills: Vec<String> = match set_experience_skills(&file, experience_skills) {
@@ -1127,6 +1247,7 @@ pub fn run() {
             set_cities_visited,
             set_dealerships_discovered,
             set_profile_experience_skills,
+            set_bus_stops_status,
             backup_profile,
             copy_profile,
             copy_controls_config,
@@ -1145,6 +1266,10 @@ pub fn run() {
             set_player_trailer,
             get_save_player_camera,
             set_player_position,
+            get_save_coaches,
+            update_coach,
+            get_coach_job_options,
+            generate_coach_job,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

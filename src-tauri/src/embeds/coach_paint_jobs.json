@@ -1,0 +1,1277 @@
+[
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/city_a.sii",
+    "name": "pj_landmark_hopper",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/121h4.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.057805, 0.417885, 0.351514)",
+      "mask_g_color": "(0.184488, 0.545724, 0.490998)",
+      "mask_b_color": "(0.356400, 0.672416, 0.623960)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/city_b.sii",
+    "name": "pj_landmark_hopper",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/139h6.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.057805, 0.417885, 0.351514)",
+      "mask_g_color": "(0.184488, 0.545724, 0.490998)",
+      "mask_b_color": "(0.356400, 0.672416, 0.623960)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color0_a.sii",
+    "name": "pj_custom_colour",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/121h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.600000, 0.600000, 0.600000)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.150000, 0.150000, 0.150000)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color0_b.sii",
+    "name": "pj_custom_colour",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/139h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.600000, 0.600000, 0.600000)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.150000, 0.150000, 0.150000)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color0m_a.sii",
+    "name": "pj_custom_metallic_colour",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/121h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.600000, 0.600000, 0.600000)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.150000, 0.150000, 0.150000)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color0m_b.sii",
+    "name": "pj_custom_metallic_colour",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/139h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.600000, 0.600000, 0.600000)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.150000, 0.150000, 0.150000)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color10m_a.sii",
+    "name": "pj_black_cherry_pearl",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/121h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.061246, 0.004778, 0.007501)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(0.603801, 0.001821, 0.054480)",
+      "flip_color": "(0.061246, 0.004778, 0.007501)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color10m_b.sii",
+    "name": "pj_black_cherry_pearl",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/139h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.061246, 0.004778, 0.007501)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(0.603801, 0.001821, 0.054480)",
+      "flip_color": "(0.061246, 0.004778, 0.007501)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color1_a.sii",
+    "name": "pj_pure_white",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/121h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.752942, 0.752942, 0.752942)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color1_b.sii",
+    "name": "pj_pure_white",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/139h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.752942, 0.752942, 0.752942)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color2_a.sii",
+    "name": "pj_jet_black",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/121h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.003348, 0.003348, 0.003348)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color2_b.sii",
+    "name": "pj_jet_black",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/139h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.003348, 0.003348, 0.003348)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color3_a.sii",
+    "name": "pj_gentian_blue",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/121h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.000000, 0.068478, 0.191215)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color3_b.sii",
+    "name": "pj_gentian_blue",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/139h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.000000, 0.068478, 0.191215)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color4_a.sii",
+    "name": "pj_grey_blue",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/121h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.019382, 0.035606, 0.048172)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color4_b.sii",
+    "name": "pj_grey_blue",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/139h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.019382, 0.035606, 0.048172)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color5_a.sii",
+    "name": "pj_vos_orange",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/121h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.597202, 0.040921, 0.000000)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color5_b.sii",
+    "name": "pj_vos_orange",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/139h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.597202, 0.040921, 0.000000)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color6m_a.sii",
+    "name": "pj_anthracite_metallic",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/121h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.254136, 0.226966, 0.177901)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(0.318547, 0.296121, 0.258183)",
+      "flip_color": "(0.318547, 0.296121, 0.258183)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color6m_b.sii",
+    "name": "pj_anthracite_metallic",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/139h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.254136, 0.226966, 0.177901)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(0.318547, 0.296121, 0.258183)",
+      "flip_color": "(0.318547, 0.296121, 0.258183)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color7m_a.sii",
+    "name": "pj_mystic_ocean",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/121h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.010963, 0.152938, 0.238383)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(0.010963, 0.152938, 0.238383)",
+      "flip_color": "(0.061246, 0.171454, 0.250158)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color7m_b.sii",
+    "name": "pj_mystic_ocean",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/139h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.010963, 0.152938, 0.238383)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(0.010963, 0.152938, 0.238383)",
+      "flip_color": "(0.061246, 0.171454, 0.250158)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color8m_a.sii",
+    "name": "pj_golden_topaz",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/121h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.896269, 0.479298, 0.043741)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(0.715665, 0.623960, 0.445180)",
+      "flip_color": "(0.527091, 0.246186, 0.015996)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color8m_b.sii",
+    "name": "pj_golden_topaz",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/139h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.896269, 0.479298, 0.043741)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(0.715665, 0.623960, 0.445180)",
+      "flip_color": "(0.527091, 0.246186, 0.015996)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color9m_a.sii",
+    "name": "pj_alamo_ama_green",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/121h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.004391, 0.181164, 0.107023)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(0.012983, 0.068478, 0.049713)",
+      "flip_color": "(0.038210, 0.168269, 0.127438)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/color9m_b.sii",
+    "name": "pj_alamo_ama_green",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/139h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.004391, 0.181164, 0.107023)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(0.012983, 0.068478, 0.049713)",
+      "flip_color": "(0.038210, 0.168269, 0.127438)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/elevation_a.sii",
+    "name": "pj_the_divider",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/121h4.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.000000, 0.138432, 1.000000)",
+      "mask_g_color": "(0.000000, 0.063017, 0.327778)",
+      "mask_b_color": "(0.346704, 0.533276, 0.723055)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/elevation_b.sii",
+    "name": "pj_the_divider",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/139h6.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.000000, 0.138432, 1.000000)",
+      "mask_g_color": "(0.000000, 0.063017, 0.327778)",
+      "mask_b_color": "(0.346704, 0.533276, 0.723055)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/glide_a.sii",
+    "name": "pj_swooshmaster",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/121h4.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.930111, 0.391552, 0.002428)",
+      "mask_g_color": "(0.007501, 0.025187, 0.138432)",
+      "mask_b_color": "(0.930111, 0.391552, 0.002428)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/glide_b.sii",
+    "name": "pj_swooshmaster",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/139h6.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.930111, 0.391552, 0.002428)",
+      "mask_g_color": "(0.007501, 0.025187, 0.138432)",
+      "mask_b_color": "(0.930111, 0.391552, 0.002428)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/lines_a.sii",
+    "name": "pj_knife_edge",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/121h4.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.938652, 0.617180, 0.001821)",
+      "mask_g_color": "(0.991068, 0.871335, 0.423247)",
+      "mask_b_color": "(0.000000, 0.063017, 0.327778)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/lines_b.sii",
+    "name": "pj_knife_edge",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/139h6.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.938652, 0.617180, 0.001821)",
+      "mask_g_color": "(0.991068, 0.871335, 0.423247)",
+      "mask_b_color": "(0.000000, 0.063017, 0.327778)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/tropical_a.sii",
+    "name": "pj_tropical_motion",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/121h4.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/man.lions_24/paint_job/tropical_b.sii",
+    "name": "pj_tropical_motion",
+    "cabins": [
+      "/def/vehicle/bus/man.lions_24/cabin/139h6.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/city_a.sii",
+    "name": "pj_landmark_hopper",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/129h4.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.057805, 0.417885, 0.351514)",
+      "mask_g_color": "(0.184488, 0.545724, 0.490998)",
+      "mask_b_color": "(0.356400, 0.672416, 0.623960)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/city_b.sii",
+    "name": "pj_landmark_hopper",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/137h6.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.057805, 0.417885, 0.351514)",
+      "mask_g_color": "(0.184488, 0.545724, 0.490998)",
+      "mask_b_color": "(0.356400, 0.672416, 0.623960)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color0_a.sii",
+    "name": "pj_custom_colour",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/129h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.600000, 0.600000, 0.600000)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.150000, 0.150000, 0.150000)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color0_b.sii",
+    "name": "pj_custom_colour",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/137h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.600000, 0.600000, 0.600000)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.150000, 0.150000, 0.150000)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color0m_a.sii",
+    "name": "pj_custom_metallic_colour",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/129h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.600000, 0.600000, 0.600000)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.150000, 0.150000, 0.150000)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color0m_b.sii",
+    "name": "pj_custom_metallic_colour",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/137h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.600000, 0.600000, 0.600000)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.150000, 0.150000, 0.150000)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color1_a.sii",
+    "name": "pj_phantom_white",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/129h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.752942, 0.752942, 0.752942)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.361288, 0.366253, 0.386429)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color1_b.sii",
+    "name": "pj_phantom_white",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/137h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.752942, 0.752942, 0.752942)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.361288, 0.366253, 0.386429)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color1m_a.sii",
+    "name": "pj_blue_ocean_metallic",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/129h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.045186, 0.111932, 0.423268)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(0.799103, 0.838799, 1.000000)",
+      "flip_color": "(0.005182, 0.010960, 0.056128)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color1m_b.sii",
+    "name": "pj_blue_ocean_metallic",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/137h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.045186, 0.111932, 0.423268)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(0.799103, 0.838799, 1.000000)",
+      "flip_color": "(0.005182, 0.010960, 0.056128)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color2_a.sii",
+    "name": "pj_coffee_brown",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/129h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.034300, 0.022500, 0.014300)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.361288, 0.366253, 0.386429)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color2_b.sii",
+    "name": "pj_coffee_brown",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/137h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.034300, 0.022500, 0.014300)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.361288, 0.366253, 0.386429)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color2m_a.sii",
+    "name": "pj_cardinal_red_metallic",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/129h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.300544, 0.018500, 0.018500)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 0.603828, 0.644480)",
+      "flip_color": "(0.124772, 0.000000, 0.004777)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color2m_b.sii",
+    "name": "pj_cardinal_red_metallic",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/137h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.300544, 0.018500, 0.018500)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 0.603828, 0.644480)",
+      "flip_color": "(0.124772, 0.000000, 0.004777)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color3_a.sii",
+    "name": "pj_eucalyptus_green",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/129h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.017600, 0.147000, 0.076200)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.361288, 0.366253, 0.386429)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color3_b.sii",
+    "name": "pj_eucalyptus_green",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/137h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.017600, 0.147000, 0.076200)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.361288, 0.366253, 0.386429)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color3m_a.sii",
+    "name": "pj_pure_black_metallic",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/129h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.052861, 0.052861, 0.052861)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.007499, 0.007499, 0.007499)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color3m_b.sii",
+    "name": "pj_pure_black_metallic",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/137h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.052861, 0.052861, 0.052861)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.007499, 0.007499, 0.007499)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color4_a.sii",
+    "name": "pj_industrial_grey",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/129h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.391552, 0.412522, 0.456389)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.361288, 0.366253, 0.386429)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color4_b.sii",
+    "name": "pj_industrial_grey",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/137h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.391552, 0.412522, 0.456389)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.361288, 0.366253, 0.386429)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color4m_a.sii",
+    "name": "pj_urban_grey_metallic",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/129h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.514918, 0.491021, 0.462077)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 0.947307, 0.846873)",
+      "flip_color": "(0.036889, 0.034340, 0.029557)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color4m_b.sii",
+    "name": "pj_urban_grey_metallic",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/137h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.514918, 0.491021, 0.462077)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 0.947307, 0.846873)",
+      "flip_color": "(0.036889, 0.034340, 0.029557)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color5_a.sii",
+    "name": "pj_aurora_blue",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/129h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.022178, 0.093059, 0.234551)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.361288, 0.366253, 0.386429)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color5_b.sii",
+    "name": "pj_aurora_blue",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/137h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.022178, 0.093059, 0.234551)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.361288, 0.366253, 0.386429)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color5m_a.sii",
+    "name": "pj_scandinavian_blue_metallic",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/129h4.sii"
+    ],
+    "colors": {
+      "base_color": "(0.401978, 0.571125, 1.000000)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.045186, 0.102242, 0.407240)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/color5m_b.sii",
+    "name": "pj_scandinavian_blue_metallic",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/137h6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.401978, 0.571125, 1.000000)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.045186, 0.102242, 0.407240)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/elevation_a.sii",
+    "name": "pj_the_divider",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/129h4.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.000000, 0.138432, 1.000000)",
+      "mask_g_color": "(0.000000, 0.063017, 0.327778)",
+      "mask_b_color": "(0.346704, 0.533276, 0.723055)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/elevation_b.sii",
+    "name": "pj_the_divider",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/137h6.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.000000, 0.138432, 1.000000)",
+      "mask_g_color": "(0.000000, 0.063017, 0.327778)",
+      "mask_b_color": "(0.346704, 0.533276, 0.723055)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/glide_a.sii",
+    "name": "pj_swooshmaster",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/129h4.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.930111, 0.391552, 0.002428)",
+      "mask_g_color": "(0.007501, 0.025187, 0.138432)",
+      "mask_b_color": "(0.930111, 0.391552, 0.002428)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/glide_b.sii",
+    "name": "pj_swooshmaster",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/137h6.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.930111, 0.391552, 0.002428)",
+      "mask_g_color": "(0.007501, 0.025187, 0.138432)",
+      "mask_b_color": "(0.930111, 0.391552, 0.002428)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/lines_a.sii",
+    "name": "pj_knife_edge",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/129h4.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.938652, 0.617180, 0.001821)",
+      "mask_g_color": "(0.991068, 0.871335, 0.423247)",
+      "mask_b_color": "(0.000000, 0.063017, 0.327778)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/lines_b.sii",
+    "name": "pj_knife_edge",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/137h6.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.938652, 0.617180, 0.001821)",
+      "mask_g_color": "(0.991068, 0.871335, 0.423247)",
+      "mask_b_color": "(0.000000, 0.063017, 0.327778)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/tropical_a.sii",
+    "name": "pj_tropical_motion",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/129h4.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/scania.touring_23/paint_job/tropical_b.sii",
+    "name": "pj_tropical_motion",
+    "cabins": [
+      "/def/vehicle/bus/scania.touring_23/cabin/137h6.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/paint_job/city_a.sii",
+    "name": "pj_landmark_hopper",
+    "cabins": [
+      "/def/vehicle/bus/volvo.9700_23/cabin/143d6.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.057805, 0.417885, 0.351514)",
+      "mask_g_color": "(0.184488, 0.545724, 0.490998)",
+      "mask_b_color": "(0.356400, 0.672416, 0.623960)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/paint_job/color0_a.sii",
+    "name": "pj_custom_colour",
+    "cabins": [
+      "/def/vehicle/bus/volvo.9700_23/cabin/143d6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.600000, 0.600000, 0.600000)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.150000, 0.150000, 0.150000)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/paint_job/color0m_a.sii",
+    "name": "pj_custom_metallic_colour",
+    "cabins": [
+      "/def/vehicle/bus/volvo.9700_23/cabin/143d6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.600000, 0.600000, 0.600000)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 1.000000, 1.000000)",
+      "flip_color": "(0.150000, 0.150000, 0.150000)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/paint_job/color10m_a.sii",
+    "name": "pj_indigo_black_metallic",
+    "cabins": [
+      "/def/vehicle/bus/volvo.9700_23/cabin/143d6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.026245, 0.042311, 0.063017)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(0.022178, 0.048172, 0.045186)",
+      "flip_color": "(0.002126, 0.012983, 0.017642)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/paint_job/color1_a.sii",
+    "name": "pj_frost_white",
+    "cabins": [
+      "/def/vehicle/bus/volvo.9700_23/cabin/143d6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.752942, 0.752942, 0.752942)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/paint_job/color2_a.sii",
+    "name": "pj_pale_green",
+    "cabins": [
+      "/def/vehicle/bus/volvo.9700_23/cabin/143d6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.178760, 0.251120, 0.215520)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/paint_job/color3_a.sii",
+    "name": "pj_yara_light_blue",
+    "cabins": [
+      "/def/vehicle/bus/volvo.9700_23/cabin/143d6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.445180, 0.590593, 0.672416)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/paint_job/color4_a.sii",
+    "name": "pj_coke_red",
+    "cabins": [
+      "/def/vehicle/bus/volvo.9700_23/cabin/143d6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.099908, 0.009724, 0.015996)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/paint_job/color5_a.sii",
+    "name": "pj_autonomous_orange",
+    "cabins": [
+      "/def/vehicle/bus/volvo.9700_23/cabin/143d6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.679542, 0.116971, 0.025187)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/paint_job/color6m_a.sii",
+    "name": "pj_olive_gray_metallic",
+    "cabins": [
+      "/def/vehicle/bus/volvo.9700_23/cabin/143d6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.168270, 0.167670, 0.162680)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(0.423270, 0.345840, 0.232170)",
+      "flip_color": "(0.046670, 0.041460, 0.027770)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/paint_job/color7m_a.sii",
+    "name": "pj_flame_red",
+    "cabins": [
+      "/def/vehicle/bus/volvo.9700_23/cabin/143d6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.283149, 0.013705, 0.008570)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1.000000, 0.119548, 0.000000)",
+      "flip_color": "(0.000000, 0.000000, 0.000000)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/paint_job/color8m_a.sii",
+    "name": "pj_cool_breeze_metallic",
+    "cabins": [
+      "/def/vehicle/bus/volvo.9700_23/cabin/143d6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.439657, 0.637597, 0.665387)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(0.597202, 0.737910, 0.752942)",
+      "flip_color": "(0.219526, 0.346704, 0.376262)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/paint_job/color9m_a.sii",
+    "name": "pj_sparkle_jade",
+    "cabins": [
+      "/def/vehicle/bus/volvo.9700_23/cabin/143d6.sii"
+    ],
+    "colors": {
+      "base_color": "(0.000000, 0.095316, 0.057805)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(0.043741, 0.423247, 0.212245)",
+      "flip_color": "(0.000000, 0.005182, 0.000305)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/paint_job/elevation_a.sii",
+    "name": "pj_the_divider",
+    "cabins": [
+      "/def/vehicle/bus/volvo.9700_23/cabin/143d6.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.000000, 0.138432, 1.000000)",
+      "mask_g_color": "(0.000000, 0.063017, 0.327778)",
+      "mask_b_color": "(0.346704, 0.533276, 0.723055)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/paint_job/glide_a.sii",
+    "name": "pj_swooshmaster",
+    "cabins": [
+      "/def/vehicle/bus/volvo.9700_23/cabin/143d6.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.930111, 0.391552, 0.002428)",
+      "mask_g_color": "(0.007501, 0.025187, 0.138432)",
+      "mask_b_color": "(0.930111, 0.391552, 0.002428)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/paint_job/lines_a.sii",
+    "name": "pj_knife_edge",
+    "cabins": [
+      "/def/vehicle/bus/volvo.9700_23/cabin/143d6.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(0.938652, 0.617180, 0.001821)",
+      "mask_g_color": "(0.991068, 0.871335, 0.423247)",
+      "mask_b_color": "(0.000000, 0.063017, 0.327778)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  },
+  {
+    "path": "/def/vehicle/bus/volvo.9700_23/paint_job/tropical_a.sii",
+    "name": "pj_tropical_motion",
+    "cabins": [
+      "/def/vehicle/bus/volvo.9700_23/cabin/143d6.sii"
+    ],
+    "colors": {
+      "base_color": "(1, 1, 1)",
+      "mask_r_color": "(1, 0, 0)",
+      "mask_g_color": "(0, 1, 0)",
+      "mask_b_color": "(0, 0, 1)",
+      "flake_color": "(1, 1, 1)",
+      "flip_color": "(0.15, 0.15, 0.15)"
+    }
+  }
+]
