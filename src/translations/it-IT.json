@@ -152,8 +152,8 @@
                         "placeholder": "Inserisci i punti esperienza in modalità camion"
                     },
                     "input_bus_experience": {
-                        "label": "Esperienza in modalità autobus",
-                        "placeholder": "Inserisci i punti esperienza in modalità autobus"
+                        "label": "Esperienza — Modalità Pullman",
+                        "placeholder": "Inserisci i punti esperienza per Modalità Pullman"
                     },
                     "title": "Modifica esperienza"
                 }
@@ -236,7 +236,7 @@
                     "btn_apply": "Applica",
                     "btn_close": "Chiudi",
                     "btn_open": "Apri",
-                    "description": "Imposta i livelli delle abilità per le modalità camion e autobus",
+                    "description": "Imposta i livelli delle abilità per Modalità Camion e Modalità Pullman",
                     "eco_driving": "Guida Economica",
                     "fragile_cargo": "Carico Fragile",
                     "high_value_cargo": "Alto Valore",
@@ -253,15 +253,15 @@
                     "just_in_time_delivery": "Consegna Puntuale",
                     "long_distance": "Lunga Distanza",
                     "title": "Imposta abilità",
-                    "truck_mode": "Modalità camion",
-                    "bus_mode": "Modalità autobus",
+                    "truck_mode": "Modalità Camion",
+                    "bus_mode": "Modalità Pullman",
                     "bus_skills": {
-                        "long_duty": "Lunghi tragitti",
-                        "tight_schedule": "Orari serrati",
-                        "satisfaction_decrease": "Minore perdita di soddisfazione",
-                        "low_acceleration": "Guida fluida",
-                        "satisfaction_increase": "Maggiore soddisfazione",
-                        "ecodriving": "Guida Economica"
+                        "long_duty": "Turni più lunghi",
+                        "tight_schedule": "Orari impegnativi",
+                        "satisfaction_decrease": "Servizio premium",
+                        "low_acceleration": "Viaggio confortevole",
+                        "satisfaction_increase": "Autista preferito",
+                        "ecodriving": "Guida economica"
                     }
                 }
             },

@@ -152,8 +152,8 @@
                         "placeholder": "Nhập số điểm kinh nghiệm chế độ xe tải"
                     },
                     "input_bus_experience": {
-                        "label": "Kinh nghiệm chế độ xe khách",
-                        "placeholder": "Nhập số điểm kinh nghiệm chế độ xe khách"
+                        "label": "Kinh nghiệm Mode Xe khách",
+                        "placeholder": "Nhập số điểm kinh nghiệm Mode Xe khách"
                     },
                     "title": "Thay đổi kinh nghiệm"
                 }
@@ -236,7 +236,7 @@
                     "btn_apply": "Áp dụng",
                     "btn_close": "Đóng",
                     "btn_open": "Mở",
-                    "description": "Thiết lập cấp độ kỹ năng cho chế độ xe tải và xe khách",
+                    "description": "Thiết lập cấp độ kỹ năng cho Mode Xe tải và Mode Xe khách",
                     "eco_driving": "Lái xe sinh thái",
                     "fragile_cargo": "Hàng dễ vỡ",
                     "high_value_cargo": "Hàng có giá trị cao",
@@ -253,15 +253,15 @@
                     "just_in_time_delivery": "Giao hàng đúng hẹn",
                     "long_distance": "Khoảng cách dài",
                     "title": "Đặt Kỹ Năng Kinh Nghiệm",
-                    "truck_mode": "Chế độ xe tải",
-                    "bus_mode": "Chế độ xe khách",
+                    "truck_mode": "Mode Xe tải",
+                    "bus_mode": "Mode Xe khách",
                     "bus_skills": {
-                        "long_duty": "Hành trình dài",
-                        "tight_schedule": "Lịch trình gấp",
-                        "satisfaction_decrease": "Giảm mất mức hài lòng",
-                        "low_acceleration": "Lái xe êm ái",
-                        "satisfaction_increase": "Tăng mức hài lòng",
-                        "ecodriving": "Lái xe sinh thái"
+                        "long_duty": "Ca chạy dài hơn",
+                        "tight_schedule": "Lịch trình khắt khe",
+                        "satisfaction_decrease": "Dịch vụ cao cấp",
+                        "low_acceleration": "Hành trình êm ái",
+                        "satisfaction_increase": "Khách hàng yêu thích",
+                        "ecodriving": "Lái xe tiết kiệm"
                     }
                 }
             },

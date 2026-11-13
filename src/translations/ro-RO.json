@@ -152,8 +152,8 @@
                         "placeholder": "Introdu punctele de experiență în modul camion"
                     },
                     "input_bus_experience": {
-                        "label": "Experiență în modul autobuz",
-                        "placeholder": "Introdu punctele de experiență în modul autobuz"
+                        "label": "Experiență — Modul Autocar",
+                        "placeholder": "Introdu punctele de experiență pentru Modul Autocar"
                     },
                     "title": "Schimbați experiența"
                 }
@@ -236,7 +236,7 @@
                     "btn_apply": "Aplicați",
                     "btn_close": "închide",
                     "btn_open": "Deschide",
-                    "description": "Setează nivelurile abilităților pentru modurile camion și autobuz",
+                    "description": "Setează nivelurile abilităților pentru Modul Camion și Modul Autocar",
                     "eco_driving": "Conducere ecologică",
                     "fragile_cargo": "Marfă fragilă",
                     "high_value_cargo": "Marfă de mare valoare",
@@ -253,15 +253,15 @@
                     "just_in_time_delivery": "Livrare la timp",
                     "long_distance": "Distanță lungă",
                     "title": "Setați abilități de experiență",
-                    "truck_mode": "Mod camion",
-                    "bus_mode": "Mod autobuz",
+                    "truck_mode": "Modul Camion",
+                    "bus_mode": "Modul Autocar",
                     "bus_skills": {
-                        "long_duty": "Curse lungi",
-                        "tight_schedule": "Program strâns",
-                        "satisfaction_decrease": "Pierdere redusă a satisfacției",
-                        "low_acceleration": "Condus lin",
-                        "satisfaction_increase": "Satisfacție sporită",
-                        "ecodriving": "Conducere ecologică"
+                        "long_duty": "Curse Mai Lungi",
+                        "tight_schedule": "Respectare Orar Strâns",
+                        "satisfaction_decrease": "Deservire Premium",
+                        "low_acceleration": "Călătorie Confortabilă",
+                        "satisfaction_increase": "Favoritul Pasagerilor",
+                        "ecodriving": "Condus Economic"
                     }
                 }
             },

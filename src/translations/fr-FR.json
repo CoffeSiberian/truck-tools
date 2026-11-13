@@ -152,8 +152,8 @@
                         "placeholder": "Saisissez les points d’expérience en mode camion"
                     },
                     "input_bus_experience": {
-                        "label": "Expérience en mode autocar",
-                        "placeholder": "Saisissez les points d’expérience en mode autocar"
+                        "label": "Expérience — Mode autocar",
+                        "placeholder": "Saisissez les points d’expérience du Mode autocar"
                     },
                     "title": "Changer d'expérience"
                 }
@@ -236,7 +236,7 @@
                     "btn_apply": "appliquer",
                     "btn_close": "Fermé",
                     "btn_open": "Ouvrir",
-                    "description": "Définissez les niveaux de compétence des modes camion et autobus",
+                    "description": "Définissez les niveaux de compétence du Mode camion et du Mode autocar",
                     "eco_driving": "éco-conduite",
                     "fragile_cargo": "cargaisons fragiles",
                     "high_value_cargo": "marchandises de valeur",
@@ -256,12 +256,12 @@
                     "truck_mode": "Mode camion",
                     "bus_mode": "Mode autocar",
                     "bus_skills": {
-                        "long_duty": "Longs trajets",
-                        "tight_schedule": "Horaires serrés",
-                        "satisfaction_decrease": "Perte de satisfaction réduite",
-                        "low_acceleration": "Conduite souple",
-                        "satisfaction_increase": "Satisfaction accrue",
-                        "ecodriving": "éco-conduite"
+                        "long_duty": "Services plus longs",
+                        "tight_schedule": "Plannings exigeants",
+                        "satisfaction_decrease": "Service premium",
+                        "low_acceleration": "Voyage confortable",
+                        "satisfaction_increase": "Chouchou des passagers",
+                        "ecodriving": "Éco-conduite"
                     }
                 }
             },

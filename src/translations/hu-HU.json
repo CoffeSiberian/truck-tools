@@ -152,8 +152,8 @@
                         "placeholder": "Add meg a kamionos mód tapasztalati pontjait"
                     },
                     "input_bus_experience": {
-                        "label": "Buszos mód tapasztalati pontjai",
-                        "placeholder": "Add meg a buszos mód tapasztalati pontjait"
+                        "label": "Buszmód tapasztalati pontjai",
+                        "placeholder": "Add meg a Buszmód tapasztalati pontjait"
                     },
                     "title": ""
                 }
@@ -236,7 +236,7 @@
                     "btn_apply": "",
                     "btn_close": "",
                     "btn_open": "",
-                    "description": "Állítsd be a kamionos és buszos mód képességszintjeit",
+                    "description": "Állítsd be a Truck Mode és a Buszmód képességszintjeit",
                     "eco_driving": "",
                     "fragile_cargo": "",
                     "high_value_cargo": "",
@@ -253,15 +253,15 @@
                     "just_in_time_delivery": "",
                     "long_distance": "",
                     "title": "",
-                    "truck_mode": "Kamionos mód",
-                    "bus_mode": "Buszos mód",
+                    "truck_mode": "Truck Mode",
+                    "bus_mode": "Buszmód",
                     "bus_skills": {
-                        "long_duty": "Hosszú utak",
-                        "tight_schedule": "Szoros menetrend",
-                        "satisfaction_decrease": "Kisebb elégedettségvesztés",
-                        "low_acceleration": "Egyenletes vezetés",
-                        "satisfaction_increase": "Nagyobb elégedettség",
-                        "ecodriving": "Üzemanyag-takarékos vezetés"
+                        "long_duty": "Longer Duties",
+                        "tight_schedule": "Demanding Timetables",
+                        "satisfaction_decrease": "Premium Service",
+                        "low_acceleration": "Cushioned Journey",
+                        "satisfaction_increase": "Passenger Favourite",
+                        "ecodriving": "Ökovezetés"
                     }
                 }
             },

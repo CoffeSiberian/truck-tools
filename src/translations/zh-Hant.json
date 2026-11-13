@@ -152,8 +152,8 @@
                         "placeholder": "輸入卡車模式經驗值數量"
                     },
                     "input_bus_experience": {
-                        "label": "客車模式經驗值",
-                        "placeholder": "輸入客車模式經驗值數量"
+                        "label": "Coach Mode 經驗值",
+                        "placeholder": "輸入 Coach Mode 經驗值數量"
                     },
                     "title": "修改經驗"
                 }
@@ -213,7 +213,7 @@
             },
             "bus_stops": {
                 "description_card": "解鎖224個城市站與98個景點站",
-                "label_card": "解鎖客運模式停靠站",
+                "label_card": "解鎖 Coach Mode 停靠站",
                 "modal": {
                     "btn_apply": "應用",
                     "btn_close": "取消",
@@ -226,7 +226,7 @@
                             "visit_all": "解鎖全部停靠站"
                         }
                     },
-                    "title": "解鎖客運模式停靠站"
+                    "title": "解鎖 Coach Mode 停靠站"
                 }
             },
             "skills_points": {
@@ -236,7 +236,7 @@
                     "btn_apply": "應用",
                     "btn_close": "取消",
                     "btn_open": "查看詳情",
-                    "description": "設定卡車模式與客車模式的技能等級",
+                    "description": "設定 Truck Mode 與 Coach Mode 的技能等級",
                     "eco_driving": "節油駕駛",
                     "fragile_cargo": "易碎貨物",
                     "high_value_cargo": "貴重貨物",
@@ -253,15 +253,15 @@
                     "just_in_time_delivery": "加急運輸",
                     "long_distance": "長途運輸",
                     "title": "設定玩家技能點",
-                    "truck_mode": "卡車模式",
-                    "bus_mode": "客車模式",
+                    "truck_mode": "Truck Mode",
+                    "bus_mode": "Coach Mode",
                     "bus_skills": {
-                        "long_duty": "長途駕駛",
-                        "tight_schedule": "緊湊時刻表",
-                        "satisfaction_decrease": "滿意度損失減緩",
-                        "low_acceleration": "平穩駕駛",
-                        "satisfaction_increase": "滿意度提升",
-                        "ecodriving": "節油駕駛"
+                        "long_duty": "長程執勤",
+                        "tight_schedule": "嚴苛時刻表",
+                        "satisfaction_decrease": "尊榮服務",
+                        "low_acceleration": "平穩旅程",
+                        "satisfaction_increase": "乘客最愛",
+                        "ecodriving": "環保駕駛"
                     }
                 }
             },

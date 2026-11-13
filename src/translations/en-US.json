@@ -152,8 +152,8 @@
 						"placeholder": "Enter truck mode experience in numbers"
 					},
 					"input_bus_experience": {
-						"label": "Bus mode experience",
-						"placeholder": "Enter bus mode experience in numbers"
+						"label": "Coach Mode experience",
+						"placeholder": "Enter Coach Mode experience in numbers"
 					},
 					"title": "Change experience"
 				}
@@ -213,7 +213,7 @@
 			},
 			"bus_stops": {
 				"description_card": "Unlock 224 city stops and 98 sightseeing stops",
-				"label_card": "Unlock bus mode stops",
+				"label_card": "Unlock Coach Mode stops",
 				"modal": {
 					"btn_apply": "Apply",
 					"btn_close": "Close",
@@ -226,7 +226,7 @@
 							"visit_all": "Unlock all stops"
 						}
 					},
-					"title": "Unlock bus mode stops"
+					"title": "Unlock Coach Mode stops"
 				}
 			},
 			"skills_points": {
@@ -236,7 +236,7 @@
 					"btn_apply": "Apply",
 					"btn_close": "Close",
 					"btn_open": "Open",
-					"description": "Set skill levels for truck and bus modes",
+					"description": "Set skill levels for Truck Mode and Coach Mode",
 					"eco_driving": "Eco driving",
 					"fragile_cargo": "Fragile cargo",
 					"high_value_cargo": "High value cargo",
@@ -253,15 +253,15 @@
 					"just_in_time_delivery": "Just in time delivery",
 					"long_distance": "Long distance",
 					"title": "Set Experience Skills",
-					"truck_mode": "Truck mode",
-					"bus_mode": "Bus mode",
+					"truck_mode": "Truck Mode",
+					"bus_mode": "Coach Mode",
 					"bus_skills": {
-						"long_duty": "Long duty",
-						"tight_schedule": "Tight schedule",
-						"satisfaction_decrease": "Reduced satisfaction loss",
-						"low_acceleration": "Smooth driving",
-						"satisfaction_increase": "Increased satisfaction",
-						"ecodriving": "Eco driving"
+						"long_duty": "Longer Duties",
+						"tight_schedule": "Demanding Timetables",
+						"satisfaction_decrease": "Premium Service",
+						"low_acceleration": "Cushioned Journey",
+						"satisfaction_increase": "Passenger Favourite",
+						"ecodriving": "Ecodriving"
 					}
 				}
 			},

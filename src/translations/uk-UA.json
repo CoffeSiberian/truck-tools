@@ -152,8 +152,8 @@
                         "placeholder": "Введіть кількість очок досвіду в режимі вантажівки"
                     },
                     "input_bus_experience": {
-                        "label": "Досвід у режимі автобуса",
-                        "placeholder": "Введіть кількість очок досвіду в режимі автобуса"
+                        "label": "Досвід у Coach Mode",
+                        "placeholder": "Введіть кількість очок досвіду в Coach Mode"
                     },
                     "title": "Зміна досвіду"
                 }
@@ -236,7 +236,7 @@
                     "btn_apply": "Застосувати",
                     "btn_close": "Закрити",
                     "btn_open": "Змінити",
-                    "description": "Встановіть рівні навичок для режимів вантажівки й автобуса",
+                    "description": "Встановіть рівні навичок для Truck Mode і Coach Mode",
                     "eco_driving": "Еко-водіння",
                     "fragile_cargo": "Обережність",
                     "high_value_cargo": "Цінний вантаж",
@@ -253,15 +253,15 @@
                     "just_in_time_delivery": "Термінові замовлення",
                     "long_distance": "Далекі відстані",
                     "title": "Встановлення навичок досвіду в грі",
-                    "truck_mode": "Режим вантажівки",
-                    "bus_mode": "Режим автобуса",
+                    "truck_mode": "Truck Mode",
+                    "bus_mode": "Coach Mode",
                     "bus_skills": {
-                        "long_duty": "Тривалі рейси",
-                        "tight_schedule": "Щільний розклад",
-                        "satisfaction_decrease": "Зменшення втрати задоволеності",
-                        "low_acceleration": "Плавне водіння",
-                        "satisfaction_increase": "Підвищення задоволеності",
-                        "ecodriving": "Еко-водіння"
+                        "long_duty": "Довгі маршрути",
+                        "tight_schedule": "Стислі графіки",
+                        "satisfaction_decrease": "Рівень обслуговування",
+                        "low_acceleration": "Комфорт поїздки",
+                        "satisfaction_increase": "Улюбленець пасажирів",
+                        "ecodriving": "Ecodriving"
                     }
                 }
             },

@@ -152,8 +152,8 @@
                         "placeholder": "Digite os pontos de experiência no modo caminhão"
                     },
                     "input_bus_experience": {
-                        "label": "Experiência no modo ônibus",
-                        "placeholder": "Digite os pontos de experiência no modo ônibus"
+                        "label": "Experiência — Modo Ônibus",
+                        "placeholder": "Digite os pontos de experiência do Modo Ônibus"
                     },
                     "title": "Mudar experiência"
                 }
@@ -236,7 +236,7 @@
                     "btn_apply": "Aplicar",
                     "btn_close": "Fechar",
                     "btn_open": "Abrir",
-                    "description": "Defina os níveis de habilidade dos modos caminhão e ônibus",
+                    "description": "Defina os níveis de habilidade do Modo Caminhão e do Modo Ônibus",
                     "eco_driving": "Ecocondução",
                     "fragile_cargo": "Carga Frágil",
                     "high_value_cargo": "Carga de Alto Valor",
@@ -253,15 +253,15 @@
                     "just_in_time_delivery": "Entrega Pontual",
                     "long_distance": "Longa Distância",
                     "title": "Defina Pontos de Habilidades",
-                    "truck_mode": "Modo caminhão",
-                    "bus_mode": "Modo ônibus",
+                    "truck_mode": "Modo Caminhão",
+                    "bus_mode": "Modo Ônibus",
                     "bus_skills": {
-                        "long_duty": "Viagens longas",
-                        "tight_schedule": "Horário apertado",
-                        "satisfaction_decrease": "Menor perda de satisfação",
-                        "low_acceleration": "Direção suave",
-                        "satisfaction_increase": "Maior satisfação",
-                        "ecodriving": "Ecocondução"
+                        "long_duty": "Jornadas mais longas",
+                        "tight_schedule": "Cronogramas rigorosos",
+                        "satisfaction_decrease": "Serviço premium",
+                        "low_acceleration": "Jornada confortável",
+                        "satisfaction_increase": "Queridinho dos passageiros",
+                        "ecodriving": "Direção econômica"
                     }
                 }
             },

@@ -213,7 +213,7 @@
             },
             "bus_stops": {
                 "description_card": "解锁224个城市站与98个景点站",
-                "label_card": "解锁客运模式停靠站",
+                "label_card": "解锁客车模式停靠站",
                 "modal": {
                     "btn_apply": "应用",
                     "btn_close": "关闭",
@@ -226,7 +226,7 @@
                             "visit_all": "解锁全部停靠站"
                         }
                     },
-                    "title": "解锁客运模式停靠站"
+                    "title": "解锁客车模式停靠站"
                 }
             },
             "skills_points": {
@@ -256,12 +256,12 @@
                     "truck_mode": "卡车模式",
                     "bus_mode": "客车模式",
                     "bus_skills": {
-                        "long_duty": "长途驾驶",
-                        "tight_schedule": "紧凑时刻表",
-                        "satisfaction_decrease": "满意度损失减缓",
-                        "low_acceleration": "平稳驾驶",
-                        "satisfaction_increase": "满意度提升",
-                        "ecodriving": "节油驾驶"
+                        "long_duty": "延长班次",
+                        "tight_schedule": "高要求时刻表",
+                        "satisfaction_decrease": "优质服务",
+                        "low_acceleration": "行程平稳",
+                        "satisfaction_increase": "乘客之选",
+                        "ecodriving": "环保驾驶"
                     }
                 }
             },

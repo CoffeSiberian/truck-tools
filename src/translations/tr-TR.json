@@ -152,8 +152,8 @@
                         "placeholder": "Kamyon modu deneyim puanını girin"
                     },
                     "input_bus_experience": {
-                        "label": "Otobüs modu deneyimi",
-                        "placeholder": "Otobüs modu deneyim puanını girin"
+                        "label": "Otobüs Modu deneyimi",
+                        "placeholder": "Otobüs Modu deneyim puanını girin"
                     },
                     "title": "Tecrübeyi düzenle"
                 }
@@ -236,7 +236,7 @@
                     "btn_apply": "Uygula",
                     "btn_close": "Kapat",
                     "btn_open": "Aç",
-                    "description": "Kamyon ve otobüs modlarının beceri seviyelerini ayarlayın",
+                    "description": "Çekici Modu ve Otobüs Modu için beceri seviyelerini ayarlayın",
                     "eco_driving": "Ekonomik sürüş",
                     "fragile_cargo": "Kırılgan yük",
                     "high_value_cargo": "Yüksek değerli yük",
@@ -253,15 +253,15 @@
                     "just_in_time_delivery": "Tam zamanında teslimat",
                     "long_distance": "Uzun mesafe",
                     "title": "Tecrübe puanını belirle",
-                    "truck_mode": "Kamyon modu",
-                    "bus_mode": "Otobüs modu",
+                    "truck_mode": "Çekici Modu",
+                    "bus_mode": "Otobüs Modu",
                     "bus_skills": {
-                        "long_duty": "Uzun yolculuklar",
-                        "tight_schedule": "Sıkışık tarife",
-                        "satisfaction_decrease": "Daha az memnuniyet kaybı",
-                        "low_acceleration": "Sarsıntısız sürüş",
-                        "satisfaction_increase": "Daha yüksek memnuniyet",
-                        "ecodriving": "Ekonomik sürüş"
+                        "long_duty": "Uzun Yol",
+                        "tight_schedule": "Zorlu Sefer Programı",
+                        "satisfaction_decrease": "Premium Hizmet",
+                        "low_acceleration": "Rahat Yolculuk",
+                        "satisfaction_increase": "Yolcu Gözdesi",
+                        "ecodriving": "Ekonomik Sürüş"
                     }
                 }
             },

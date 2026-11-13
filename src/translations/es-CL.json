@@ -152,8 +152,8 @@
                         "placeholder": "Ingresa los puntos de experiencia del modo camión"
                     },
                     "input_bus_experience": {
-                        "label": "Experiencia del modo autobús",
-                        "placeholder": "Ingresa los puntos de experiencia del modo autobús"
+                        "label": "Experiencia de Coach Mode",
+                        "placeholder": "Ingresa los puntos de experiencia de Coach Mode"
                     },
                     "title": "Cambiar experiencia"
                 }
@@ -236,7 +236,7 @@
                     "btn_apply": "Aplicar",
                     "btn_close": "Cerrar",
                     "btn_open": "Abrir",
-                    "description": "Configura los niveles de habilidad de los modos camión y autobús",
+                    "description": "Configura los niveles de habilidad de Truck Mode y Coach Mode",
                     "eco_driving": "Conducción económica",
                     "fragile_cargo": "Carga frágil",
                     "high_value_cargo": "Carga de alto valor",
@@ -253,15 +253,15 @@
                     "just_in_time_delivery": "Entrega justo a tiempo",
                     "long_distance": "Larga distancia",
                     "title": "Establecer habilidades de experiencia",
-                    "truck_mode": "Modo camión",
-                    "bus_mode": "Modo autobús",
+                    "truck_mode": "Truck Mode",
+                    "bus_mode": "Coach Mode",
                     "bus_skills": {
-                        "long_duty": "Trayectos largos",
-                        "tight_schedule": "Horario ajustado",
-                        "satisfaction_decrease": "Menor pérdida de satisfacción",
+                        "long_duty": "Jornadas más largas",
+                        "tight_schedule": "Horarios estrictos",
+                        "satisfaction_decrease": "Servicio prémium",
                         "low_acceleration": "Conducción suave",
-                        "satisfaction_increase": "Mayor satisfacción",
-                        "ecodriving": "Conducción económica"
+                        "satisfaction_increase": "Elección del pasajero",
+                        "ecodriving": "Ecodriving"
                     }
                 }
             },

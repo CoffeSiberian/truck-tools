@@ -152,8 +152,8 @@
                         "placeholder": "Erfahrungspunkte im Lkw-Modus eingeben"
                     },
                     "input_bus_experience": {
-                        "label": "Erfahrung im Bus-Modus",
-                        "placeholder": "Erfahrungspunkte im Bus-Modus eingeben"
+                        "label": "Erfahrung im Reisebus-Modus",
+                        "placeholder": "Erfahrungspunkte im Reisebus-Modus eingeben"
                     },
                     "title": "Erfahrung ändern"
                 }
@@ -236,7 +236,7 @@
                     "btn_apply": "Übernehmen",
                     "btn_close": "Schließen",
                     "btn_open": "Öffnen",
-                    "description": "Wähle die Fähigkeiten für den Lkw- und Busmodus aus",
+                    "description": "Wähle die Fähigkeiten für Truck-Modus und Reisebus-Modus aus",
                     "eco_driving": "Umweltfreundliches Fahren",
                     "fragile_cargo": "Zerbrechliche Fracht",
                     "high_value_cargo": "Hochwertige Fracht",
@@ -253,15 +253,15 @@
                     "just_in_time_delivery": "Just-in-time-Lieferung",
                     "long_distance": "Langstrecke",
                     "title": "Erfahrungsfähigkeiten festlegen",
-                    "truck_mode": "Lkw-Modus",
-                    "bus_mode": "Bus-Modus",
+                    "truck_mode": "Truck-Modus",
+                    "bus_mode": "Reisebus-Modus",
                     "bus_skills": {
-                        "long_duty": "Lange Fahrten",
-                        "tight_schedule": "Enger Fahrplan",
-                        "satisfaction_decrease": "Geringerer Zufriedenheitsverlust",
+                        "long_duty": "Längere Fahrten",
+                        "tight_schedule": "Anspruchsvolle Fahrpläne",
+                        "satisfaction_decrease": "Erstklassiger Service",
                         "low_acceleration": "Sanftes Fahren",
-                        "satisfaction_increase": "Höhere Zufriedenheit",
-                        "ecodriving": "Umweltfreundliches Fahren"
+                        "satisfaction_increase": "Fahrgastliebling",
+                        "ecodriving": "Sparsame Fahrweise"
                     }
                 }
             },

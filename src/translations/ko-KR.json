@@ -152,8 +152,8 @@
                         "placeholder": "트럭 모드 경험치를 입력하세요"
                     },
                     "input_bus_experience": {
-                        "label": "버스 모드 경험치",
-                        "placeholder": "버스 모드 경험치를 입력하세요"
+                        "label": "코치 모드 경험치",
+                        "placeholder": "코치 모드 경험치를 입력하세요"
                     },
                     "title": "경험치 변경"
                 }
@@ -236,7 +236,7 @@
                     "btn_apply": "적용",
                     "btn_close": "닫기",
                     "btn_open": "열기",
-                    "description": "트럭 모드와 버스 모드의 스킬 레벨을 설정하세요",
+                    "description": "트럭 모드 및 코치 모드의 스킬 레벨을 설정하세요",
                     "eco_driving": "에코 드라이빙",
                     "fragile_cargo": "파손 주의 화물",
                     "high_value_cargo": "고부가가치 화물",
@@ -254,14 +254,14 @@
                     "long_distance": "장거리",
                     "title": "경험 기술 설정",
                     "truck_mode": "트럭 모드",
-                    "bus_mode": "버스 모드",
+                    "bus_mode": "코치 모드",
                     "bus_skills": {
-                        "long_duty": "장거리 운행",
-                        "tight_schedule": "빠듯한 시간표",
-                        "satisfaction_decrease": "만족도 감소 완화",
-                        "low_acceleration": "부드러운 운전",
-                        "satisfaction_increase": "만족도 향상",
-                        "ecodriving": "에코 드라이빙"
+                        "long_duty": "더 긴 임무",
+                        "tight_schedule": "촉박한 일정",
+                        "satisfaction_decrease": "프리미엄 서비스",
+                        "low_acceleration": "편안한 여정",
+                        "satisfaction_increase": "선호하는 승객",
+                        "ecodriving": "연비 주행"
                     }
                 }
             },

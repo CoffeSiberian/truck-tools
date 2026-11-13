@@ -236,7 +236,7 @@
                     "btn_apply": "Применить",
                     "btn_close": "Закрыть",
                     "btn_open": "Открыть",
-                    "description": "Установите уровни навыков для режимов грузовика и автобуса",
+                    "description": "Установите уровни навыков: Режим грузовика и Режим автобуса",
                     "eco_driving": "Эко вождение",
                     "fragile_cargo": "Хрупкий груз",
                     "high_value_cargo": "Дорогостоящий груз",
@@ -256,12 +256,12 @@
                     "truck_mode": "Режим грузовика",
                     "bus_mode": "Режим автобуса",
                     "bus_skills": {
-                        "long_duty": "Длительные рейсы",
-                        "tight_schedule": "Плотное расписание",
-                        "satisfaction_decrease": "Снижение потери удовлетворённости",
-                        "low_acceleration": "Плавное вождение",
-                        "satisfaction_increase": "Повышение удовлетворённости",
-                        "ecodriving": "Эко вождение"
+                        "long_duty": "Длительные поездки",
+                        "tight_schedule": "Требовательные расписания",
+                        "satisfaction_decrease": "Премиум-обслуживание",
+                        "low_acceleration": "Мягкая поездка",
+                        "satisfaction_increase": "Любимчик пассажиров",
+                        "ecodriving": "Эко-вождение"
                     }
                 }
             },

@@ -152,8 +152,8 @@
                         "placeholder": "Wpisz liczbę punktów doświadczenia w trybie ciężarówki"
                     },
                     "input_bus_experience": {
-                        "label": "Doświadczenie w trybie autobusu",
-                        "placeholder": "Wpisz liczbę punktów doświadczenia w trybie autobusu"
+                        "label": "Doświadczenie — Autokar",
+                        "placeholder": "Wpisz liczbę punktów doświadczenia — Autokar"
                     },
                     "title": "Edytuj doświadczenie"
                 }
@@ -236,7 +236,7 @@
                     "btn_apply": "Zastosuj",
                     "btn_close": "Zamknij",
                     "btn_open": "Edytuj",
-                    "description": "Ustaw poziomy umiejętności w trybach ciężarówki i autobusu",
+                    "description": "Ustaw poziomy umiejętności — Ciężarówka i Autokar",
                     "eco_driving": "Ekologiczna jazda",
                     "fragile_cargo": "Delikatny ładunek",
                     "high_value_cargo": "Ładunek o wysokiej wartości",
@@ -253,14 +253,14 @@
                     "just_in_time_delivery": "Dostawa na czas",
                     "long_distance": "Długodystansowiec",
                     "title": "Przydziel punkty doświadczenia",
-                    "truck_mode": "Tryb ciężarówki",
-                    "bus_mode": "Tryb autobusu",
+                    "truck_mode": "Ciężarówka",
+                    "bus_mode": "Autokar",
                     "bus_skills": {
-                        "long_duty": "Długie trasy",
-                        "tight_schedule": "Napięty rozkład jazdy",
-                        "satisfaction_decrease": "Mniejszy spadek zadowolenia",
-                        "low_acceleration": "Płynna jazda",
-                        "satisfaction_increase": "Większe zadowolenie",
+                        "long_duty": "Dłuższe kursy",
+                        "tight_schedule": "Wymagające rozkłady jazdy",
+                        "satisfaction_decrease": "Obsługa premium",
+                        "low_acceleration": "Komfortowa jazda",
+                        "satisfaction_increase": "Ulubieniec pasażerów",
                         "ecodriving": "Ekologiczna jazda"
                     }
                 }
